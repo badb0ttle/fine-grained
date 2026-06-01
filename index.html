@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Intelligence — 每日 AI 技术情报</title>
+  <meta name="description" content="每日自动采集的 AI 最新动态、论文、博客和技术讨论">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+
+<header>
+  <h1>🤖 AI Intelligence</h1>
+  <p class="subtitle">每日 AI 技术情报 — 自动采集最新动态</p>
+  <div class="meta" id="meta-bar">
+    <span>⏳ 加载中...</span>
+  </div>
+</header>
+
+<div class="refresh-notice" id="refresh-notice">
+  数据每日自动更新 · <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
+</div>
+
+<main id="main-content">
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>正在加载最新情报...</p>
+  </div>
+</main>
+
+<footer>
+  <p>由 <a href="https://github.com/badb0ttle/fine-grained" target="_blank">AI Intel Scanner</a> 自动生成 · 托管于 GitHub Pages</p>
+  <p style="margin-top:0.3rem">🔄 每日自动更新 · <span id="footer-date"></span></p>
+</footer>
+
+<script>
+const CATEGORY_ICONS = {
+  "AI Lab":       { icon: "🔬", cls: "dot-ai-lab" },
+  "Paper":        { icon: "📄", cls: "dot-paper" },
+  "Community":    { icon: "🌐", cls: "dot-community" },
+  "Blog":         { icon: "📝", cls: "dot-blog" },
+  "Discussion":   { icon: "💬", cls: "dot-discussion" },
+};
+const DEFAULT_CAT = { icon: "📌", cls: "dot-ai-lab" };
+
+function getCatMeta(cat) {
+  return CATEGORY_ICONS[cat] || DEFAULT_CAT;
+}
+
+function renderArticle(a) {
+  const s = a.summary ? `<div class="article-summary">${escapeHtml(a.summary.slice(0, 300))}</div>` : "";
+  return `
+    <div class="article">
+      <div class="article-title"><a href="${escapeHtml(a.link)}" target="_blank">${escapeHtml(a.title)}</a></div>
+      <div class="article-meta">
+        <span class="source">${escapeHtml(a.source)}</span>
+        <span>·</span>
+        <span>${escapeHtml(a.published)}</span>
+      </div>
+      ${s}
+    </div>
+  `;
+}
+
+function escapeHtml(s) {
+  if (!s) return "";
+  const div = document.createElement("div");
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+function render(data) {
+  const meta = document.getElementById("meta-bar");
+  const main = document.getElementById("main-content");
+  const footerDate = document.getElementById("footer-date");
+
+  if (!data || !data.articles || data.articles.length === 0) {
+    main.innerHTML = `<div class="error-state"><div class="emoji">📭</div><p>暂无数据，等待首次扫描完成...</p></div>`;
+    meta.innerHTML = `<span>⏳ 等待首次数据采集</span>`;
+    return;
+  }
+
+  const scanDate = data.scanned_at ? data.scanned_at.slice(0, 10) : "未知";
+  const scanTime = data.scanned_at ? data.scanned_at.slice(11, 16) : "";
+
+  meta.innerHTML = `
+    <span>📅 ${scanDate} ${scanTime}</span>
+    <span>📡 ${data.successful_sources}/${data.total_sources} 个源</span>
+    <span>📰 ${data.articles.length} 篇文章</span>
+  `;
+
+  footerDate.textContent = `最后更新: ${scanDate} ${scanTime}`;
+
+  // Group by category
+  const byCat = {};
+  for (const a of data.articles) {
+    const cat = a.category || "其他";
+    if (!byCat[cat]) byCat[cat] = [];
+    byCat[cat].push(a);
+  }
+
+  const catOrder = ["AI Lab", "Paper", "Blog", "Community", "Discussion"];
+  let html = "";
+
+  for (const cat of catOrder) {
+    if (!byCat[cat]) continue;
+    const cm = getCatMeta(cat);
+    html += `<div class="category">`;
+    html += `<div class="category-header">`;
+    html += `<span class="category-dot ${cm.cls}"></span>`;
+    html += `<h2>${cm.icon} ${cat}</h2>`;
+    html += `<span class="count">${byCat[cat].length}</span>`;
+    html += `</div>`;
+    for (const a of byCat[cat]) {
+      html += renderArticle(a);
+    }
+    html += `</div>`;
+    delete byCat[cat];
+  }
+
+  // Remaining categories
+  for (const [cat, items] of Object.entries(byCat)) {
+    const cm = getCatMeta(cat);
+    html += `<div class="category">`;
+    html += `<div class="category-header">`;
+    html += `<span class="category-dot ${cm.cls}"></span>`;
+    html += `<h2>${cm.icon} ${cat}</h2>`;
+    html += `<span class="count">${items.length}</span>`;
+    html += `</div>`;
+    for (const a of items) {
+      html += renderArticle(a);
+    }
+    html += `</div>`;
+  }
+
+  main.innerHTML = html;
+}
+
+// Fetch data
+fetch("data/latest.json")
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
+  .then(render)
+  .catch(err => {
+    document.getElementById("loading").innerHTML = `
+      <div class="error-state">
+        <div class="emoji">📭</div>
+        <p>还没有数据，等待首次采集...</p>
+        <p style="font-size:0.8rem;margin-top:0.5rem;color:var(--text2)">${err.message}</p>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
