@@ -12,7 +12,7 @@ import feedparser
 import requests
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-SUMMARY_FILE = DATA_DIR / "latest.json"
+SUMMARY_FILE = DATA_DIR / "raw.json"
 HISTORY_DIR = DATA_DIR / "history"
 
 SOURCES = [
@@ -141,7 +141,7 @@ def save_result(result):
     with open(history_file, "w") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     
-    print(f"\n💾 Saved: {len(result['articles'])} articles to latest.json")
+    print(f"\n💾 Saved: {len(result['articles'])} articles to raw.json")
     print(f"💾 History: {history_file.name}")
     
     return result

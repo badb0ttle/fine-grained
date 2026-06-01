@@ -50,10 +50,12 @@ function getCatMeta(cat) {
 }
 
 function renderArticle(a) {
-  const s = a.summary ? `<div class="article-summary">${escapeHtml(a.summary.slice(0, 300))}</div>` : "";
+  const title = a.title_cn || a.title;
+  const summary = a.summary_cn || a.summary;
+  const s = summary ? `<div class="article-summary">${escapeHtml(summary.slice(0, 300))}</div>` : "";
   return `
     <div class="article">
-      <div class="article-title"><a href="${escapeHtml(a.link)}" target="_blank">${escapeHtml(a.title)}</a></div>
+      <div class="article-title"><a href="${escapeHtml(a.link)}" target="_blank">${escapeHtml(title)}</a></div>
       <div class="article-meta">
         <span class="source">${escapeHtml(a.source)}</span>
         <span>·</span>
