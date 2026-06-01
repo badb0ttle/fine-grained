@@ -16,27 +16,28 @@ SUMMARY_FILE = DATA_DIR / "latest.json"
 HISTORY_DIR = DATA_DIR / "history"
 
 SOURCES = [
-    # AI Labs & Research
-    {"name": "OpenAI Blog",       "url": "https://openai.com/blog/rss.xml",                "category": "AI Lab"},
-    {"name": "Google AI",         "url": "https://blog.research.google/feeds/posts/default", "category": "AI Lab"},
-    {"name": "DeepMind Blog",     "url": "https://deepmind.google/discover/blog/rss.xml",    "category": "AI Lab"},
-    {"name": "Meta AI",           "url": "https://ai.meta.com/blog/rss.xml",                "category": "AI Lab"},
-    {"name": "Anthropic Blog",    "url": "https://www.anthropic.com/feed.xml",              "category": "AI Lab"},
-    {"name": "Mistral AI News",   "url": "https://mistral.ai/news/rss.xml",                 "category": "AI Lab"},
-    
-    # ArXiv (ML recent papers)
-    {"name": "ArXiv cs.AI",       "url": "https://rss.arxiv.org/rss/cs.AI",                 "category": "Paper"},
-    {"name": "ArXiv cs.LG",       "url": "https://rss.arxiv.org/rss/cs.LG",                 "category": "Paper"},
-    {"name": "ArXiv cs.CL",       "url": "https://rss.arxiv.org/rss/cs.CL",                 "category": "Paper"},
-    {"name": "ArXiv stat.ML",     "url": "https://rss.arxiv.org/rss/stat.ML",               "category": "Paper"},
-    
-    # Tech & AI Media
-    {"name": "HuggingFace Blog",  "url": "https://huggingface.co/blog/feed.xml",            "category": "Community"},
-    {"name": "Hacker News (AI)",  "url": "https://hnrss.org/frontpage?q=AI+OR+LLM+OR+GPT+OR+neural&count=15", "category": "Discussion"},
-    {"name": "The Gradient",      "url": "https://thegradient.pub/feed.xml",                "category": "Blog"},
-    {"name": "Lil'Log (Lilian Weng)", "url": "https://lilianweng.github.io/feed.xml",      "category": "Blog"},
-    {"name": "Stability AI",      "url": "https://stability.ai/feed.xml",                   "category": "AI Lab"},
-    {"name": "Cohere Research",   "url": "https://cohere.com/blog/feed.xml",                "category": "AI Lab"},
+    # ✅ Working: AI Labs & Research
+    {"name": "OpenAI Blog",          "url": "https://openai.com/blog/rss.xml",                    "category": "AI Lab"},
+    {"name": "Google AI",            "url": "https://blog.research.google/feeds/posts/default",   "category": "AI Lab"},
+
+    # ✅ Working: ArXiv
+    {"name": "ArXiv cs.AI",          "url": "https://rss.arxiv.org/rss/cs.AI",                    "category": "Paper"},
+    {"name": "ArXiv cs.LG",          "url": "https://rss.arxiv.org/rss/cs.LG",                    "category": "Paper"},
+    {"name": "ArXiv cs.CL",          "url": "https://rss.arxiv.org/rss/cs.CL",                    "category": "Paper"},
+    {"name": "ArXiv cs.CV",          "url": "https://rss.arxiv.org/rss/cs.CV",                    "category": "Paper"},
+    {"name": "ArXiv stat.ML",        "url": "https://rss.arxiv.org/rss/stat.ML",                  "category": "Paper"},
+
+    # ✅ Working: Community
+    {"name": "HuggingFace Blog",     "url": "https://huggingface.co/blog/feed.xml",               "category": "Community"},
+
+    # 🔄 Alternative sources (likely working)
+    {"name": "Google DeepMind",      "url": "https://blog.google/technology/ai/rss/",             "category": "AI Lab"},
+    {"name": "Apple ML Research",    "url": "https://machinelearning.apple.com/rss.xml",           "category": "AI Lab"},
+    {"name": "NVIDIA Blog",          "url": "https://developer.nvidia.com/blog/feed",              "category": "AI Lab"},
+    {"name": "PyTorch Blog",         "url": "https://pytorch.org/blog/feed.xml",                  "category": "Community"},
+
+    {"name": "TechCrunch AI",        "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "Blog"},
+    {"name": "VentureBeat AI",       "url": "https://feeds.feedburner.com/venturebeat/SZYF",       "category": "Blog"},
 ]
 
 
