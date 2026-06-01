@@ -1,9 +1,169 @@
 {
-  "scanned_at": "2026-06-01T12:37:34.268207+00:00",
-  "total_sources": 17,
-  "successful_sources": 14,
-  "total_articles": 246,
+  "scanned_at": "2026-06-01T13:06:13.075529+00:00",
+  "total_sources": 15,
+  "successful_sources": 15,
+  "total_articles": 266,
   "articles": [
+    {
+      "title": "一颗288核的至强6+，为什么能同时运行500个Agent？",
+      "link": "https://www.leiphone.com/category/chips/WxcUhbV0RIXlGVdR.html",
+      "summary": "过去两年，AI基础设施行业有一个几乎无人质疑的共识：GPU决定AI的上限。从大模型训练到推理部署，产业的关注点几乎都围绕着GPU展开。显存够不够大、带宽够不够高、Token吞吐量能达到多少，成为衡量AI基础设施能力的核心指标。但Agent的出现，正在改变这套逻辑。与传统聊天机器人不同，Agent并不只是完成一次问答，而是需要持续执行任务。它需要调用工具、访问数据库、浏览网页、管理记忆系统，甚至不断创建和调度新的子Agent协同完成工作。当AI开始从生成答案转向执行任务，一个长期被GPU光环掩盖的角色重新回到了舞台中央——CPU。Computex 2026台北国际电脑展期间，英特尔发布了首款基于Intel 18A工艺打造的数据中心处理器——至强6+（代号Clearwater Forest）。这款处理器拥有288个能效核（E-Core），还拥有一个非常吸引人的特性，在实际测试中，一颗288核至强6+可以轻松同时部署400至500个Agent。这背后折射出的，并不仅仅是一颗新CPU的发布，而是Agent时代AI基础设施底层逻辑的一次深刻变化。一颗CPU能同时运行500个Agent的关键是什么",
+      "published": "2026-06-01 10:20:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026｜狭窄空间中机器人主动感知与操作",
+      "link": "https://www.leiphone.com/category/robot/jaAehYeDHYw3l3Zi.html",
+      "summary": "原文作者：用户“胖头鱼在此”原文链接：https://www.xiaohongshu.com我们的论文被 ICRA 2026 录取了！论文编号是 Paper TuI1I.294。&nbsp;这篇工作想回答一个很实际的问题：如果机器人要在狭窄、杂乱、看不清的空间里抓东西，它应该怎么“边看边动”，而不是盲目伸手？\t在很多真实场景里，机器人并不是一开始就拥有完整地图。比如目标物体可能被障碍物挡住，机械臂周围也可能有箱子、墙壁、柜子等限制。机器人既看不清目标，又不能随便乱动，因为一不小心就会撞到环境，或者摆出一个根本抓不到东西的姿态。\t所以，狭窄空间操作的难点不只是“怎么抓”，而是：机器人要先安全地探索环境，找到目标，再生成真正可执行的抓取动作。\t我们提出了 COMPASS，一个面向狭窄空间操作的主动感知与操作规划框架。它主要包含三步：\t第一步，机器人先做 Near-Field Awareness Scan，用腕部相机小心地扫描自己附近的空间，先搞清楚“身边哪里不能碰”。\t第二步，机器人使用 Manipulation-Utility Exploration RRT主动选择下一个观察视角。它不是",
+      "published": "2026-06-01 10:06:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "速卖通为品牌出海搭建百大网红直播矩阵，618正式开播",
+      "link": "https://www.leiphone.com/category/industrynews/qXwM8BMsMTmxDk9c.html",
+      "summary": "速卖通AliExpress品牌出海计划再升级！今年618期间，阿里旗下跨境电商平台速卖通开启大规模直播带货，组建百大海外网红矩阵，为超60个中国品牌进行100多场直播，覆盖全球14个国家。&nbsp;这是速卖通品牌出海计划的又一迭代升级，继续从单一“卖货”渠道向“品牌成长基础设施”跃迁。&nbsp;&nbsp;&nbsp;6月1日是速卖通海外618大促的第一天，记者在杭州阿里总部看到，两位来自西班牙和日本的网红，正在透过镜头向当地消费者介绍速卖通Brand+里的中国品牌。&nbsp;镜头的另一端，是Youtube上两位网红的粉丝们，弹幕和评论蹭蹭跳出，咨询商品的型号、折扣、发货时间。&nbsp;据速卖通介绍，这样的直播今年618期间将有至少100场，除了今天在杭州开播的2场，其余均在海外当地开播，覆盖西班牙、法国、意大利、波兰、德国、美国、巴西等14个国家。参与直播的中国品牌数量达到了60个，如小米、Gamesir（盖世小鸡）、荣耀、绿联等，这些品牌均已加入速卖通Brand+品牌出海计划。&nbsp;（）直播矩阵将成为品牌出海的“生态基建”&nbsp;速卖通国家业务负责人英朋介绍说，当",
+      "published": "2026-06-01 09:43:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "速卖通为品牌出海搭建百大网红直播矩阵，今起开播！",
+      "link": "https://www.leiphone.com/category/industrynews/Avvjhlpt3LxaVxYu.html",
+      "summary": "速卖通AliExpress品牌出海计划再升级！记者获悉，今年海外618期间，阿里旗下跨境电商平台速卖通搭建100多名海外网红组成的直播矩阵，在全球14个国家为中国品牌“上链接”。从去年开始，速卖通推出Brand+品牌出海计划，从单一“卖货”渠道向“品牌成长基础设施”跃迁，打造品牌出海全新主场。本次全球开播，就将重点推荐Brand+计划里的60多个中国品牌。据悉，速卖通海外618已于今日（6月1日）正式开售，将持续到6月10日。",
+      "published": "2026-06-01 09:41:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026高校论文榜重磅出炉： 清华74篇断层领跑，中国高校席卷半壁江山",
+      "link": "https://www.leiphone.com/category/robot/fzywXI4kHzSeCDVS.html",
+      "summary": "一、中国高校霸榜：11所入围Top 20，全球机器人学术权力中心东移ICRA 2026今日（6月1日）在维也纳正式开幕。本届大会以&quot;Robots for All（机器人惠及所有人）&quot;为主题，收到来自86个国家的4,947篇投稿，创下ICRA历史新高。随着官方论文接收数据出炉，第一作者单位排名折射出全球机器人学术版图的深刻变化——中国高校正在从&quot;最大参与方&quot;变身为&quot;最强产出方&quot;。在雷峰网按第一作者单位统计的论文接收数量Top 20榜单中，中国高校占据了11个席位，占比高达55%。美国高校占据6席，亚洲其他国家（韩国、新加坡）占据2席，欧洲仅德国慕尼黑工业大学1所入围。这一格局在五年前几乎不可想象。▎ 清华大学以74篇论文的绝对优势登顶榜首，领先第二名上海交通大学（53篇）21篇之多。这个差距相当于第12名哈工大（31篇）的全部产出量。▎ &quot;清北交浙&quot;四校（清华、上海交大、浙大、北大）合计接收212篇，占Top 20总量的31.7%，构成了中国机器人学术的第一梯队。值得关注的是，北航以34篇与北大并列第七，在航",
+      "published": "2026-06-01 09:38:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "牧原与阿里云达成AI战略合作  联合打造AI助手将猪群健康检测提效超百倍",
+      "link": "https://www.leiphone.com/category/industrynews/a1O4dfBTREuQ2uLq.html",
+      "summary": "6月1日，全球领先的畜牧企业牧原集团与阿里云达成AI战略合作。双方将依托牧原在畜牧行业积累的海量数据与专家经验，结合千问大模型与阿里云智算算力，共同打造智能养猪大模型，推动AI在饲料营养、种猪育种、养殖管理、兽医健康等核心领域的落地。目前，基于千问打造的AI应用&quot;小牧助手&quot;已将每批次约600头猪的健康检测耗时从20分钟大幅缩短至秒级，效率提升超百倍。&nbsp;&nbsp;&nbsp;小牧助手使用场景&nbsp;牧原集团是全球最大的生猪养殖企业，业务覆盖&quot;饲料加工—种猪育种—商品猪饲养—屠宰肉食&quot;全产业链。长期以来，养殖一线人员面临的最大难题就是“兽医荒”。疾病早期识别、精准诊断等高度依赖兽医，而一名兽医通常要管理成千上万头猪。一旦遇到突发情况，往往会错过最佳防控窗口期。&nbsp;为此，牧原集团联合千问大模型和阿里云共同破解这一难题。基于千问系列模型，牧原集团打造猪病诊断智能体，并通过“小牧助手”提供服务。&nbsp;据介绍，牧原集团的猪病诊断智能体可综合猪只体态、病史、养殖环境等18项结构化数据，以及一线兽医的专业诊断Skill，完成对呼吸道",
+      "published": "2026-06-01 09:32:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "VAST 斩获近2亿美元A轮系列融资，同步推出世界模型，顶级财投和产业资本鼎力入局",
+      "link": "https://www.leiphone.com/category/industrynews/cd9pn4fdlQ4qhMzP.html",
+      "summary": "近日，全球领先的通用人工智能公司VAST宣布完成A+及A++两轮融资，合计近2亿美元。本轮融资由渶策资本、国寿长三角科创基金领投，深圳市人工智能终端产业基金（产业方为全球头部终端厂商荣耀）、知名产业战投、上海半导体产投等产业投资方，深创投、元生资本、沃赋创投与方广资本等一线财务资本联合投资，投资方汇聚头部市场化基金、国资平台与产业龙头战投，形成多元赋能体系；同时，春华创投、靖亚资本、BV百度风投、东方嘉富等老股东亦持续超额追投。这是 VAST 继今年 3 月融资后，时隔两月再度获得资本加持。&nbsp;与此同时，VAST 揭晓了全新的世界模型项目——Project Eden。区别于业内“动作条件视频生成”与“静态 3D 场景生成”等常规路径，Project Eden 创造性地将底层状态推演与视觉呈现进行了原生解耦。这一突破使它成为全球首个允许对世界状态进行自主维护与确定性控制的世界模型，并自然解锁了环境长程持久、场景自由复用、多人并发交互等颠覆性能力。Project Eden 旨在成为下一代低门槛交互式内容创作的底层引擎，同时能够为具身智能等智能体提供具备高逻辑一致性的训练与评测环境。",
+      "published": "2026-06-01 09:24:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "除了外卖，京东还在押注什么？",
+      "link": "https://www.leiphone.com/category/industrynews/jnBGW8KfBf9D8qk6.html",
+      "summary": "5月12日港股盘后，京东公布了2026年Q1季报。营收方面，一季度，京东集团实现营收 3,157 亿元（458亿美元），同比增长 4.9%。这一数字不仅高于高盛此前的预期（3%），也优于市场一致预期（2%-4%）。利润方面，一季度，京东集团归母净利润为 51 亿元（7亿美元），去年同期为 109 亿元，同比下降 53.15%；非美国通用会计准则下（Non-GAAP）净利润 74 亿元（11亿美元），去年同期为 128 亿元。同比下降 43.5%。此前市场普遍预计同比下降 50%-60%。超预期的财报，反映在当日股价上。京东美股盘前一度拉升涨超4%，收盘涨幅收窄至1.3%。次日，京东港股股价则高开高走，一度涨幅超过8%，截至收盘，报 128.200 港元/股，创 2026 年以来股价新高。然而，看似稳健的态势，却难掩京东面临的多重现实压力。国补退坡的冲击还将持续，核心 3C 家电品类消费疲软，包括京东外卖、京东产发、京喜及海外业务在内的新业务盈利前景尚不明朗，电商行业存量竞争内卷加剧…… 京东的牌，打得依旧不轻松。业务结构“换挡”，强调盈利质量众所周知，受国补“退潮”冲击最大的，除了头部",
+      "published": "2026-06-01 08:51:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "美团2026年Q1营收910亿元，环比减亏96亿元",
+      "link": "https://www.leiphone.com/category/industrynews/I4Rtep5h0Tvq74oL.html",
+      "summary": "6月1日，美团发布2026年第一季度业绩，收入910亿元，同比增长5.6%，经营亏损由上季度的161亿元减少至65亿元。其中，核心本地商业经营亏损20亿元，较上季度的100亿元大幅减亏；新业务亏损21亿元，较上季度的46亿元显著收窄。",
+      "published": "2026-06-01 08:47:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "独家｜ 京东零售高层大调整：杨博接棒汽车事业部，钟波执掌拍卖业务",
+      "link": "https://www.leiphone.com/category/industrynews/XeZ2kvzh5LO5yiMz.html",
+      "summary": "近日，京东掀起一波高管人事变动浪潮。雷峰网独家获悉，5月20日，京东内部发布人事调整公告，涉及汽车、拍卖两大零售业务线负责人更迭。公告显示，杨博被任命为京东集团京东零售汽车事业部负责人，钟波出任京东集团京东零售拍卖业务部负责人，二人均向京东零售CEO许冉汇报。杨博，2017年7月加入京东，是京东内部成长起来的年轻管理者，历经京喜事业群湖北战区负责人，京东零售汽车事业部产品研发部负责人，养车连锁业务部负责人等多个岗位历练，创新实战经验丰富。钟波，2015年4月加入京东，历经拍卖业务部海关拍卖部，金融拍卖部及区域等多岗位历练，现任京东零售拍卖业务部闽浙业务部负责人，创新能力突出，擅长通过供应链服务创新建立差异化服务壁垒。消息人士向雷峰网透露，原汽车业务负责人缪钦，以及原拍卖业务负责人韩成信两位老将均已卸任一线管理职务，目前皆挂职京东零售办公室。其中，对于缪钦的调任，不少人感到有些意外。公开资料显示，缪钦，中专学历，早年扎根餐饮连锁行业，从麦当劳基层员工做起，历任麦当劳中国副总裁、金钱豹首席执行官，深耕实体门店管理多年。2015 年，缪钦创立茶饮品牌因味茶，获得刘强东资本加持。2020 年 ",
+      "published": "2026-06-01 08:43:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "喜马拉雅曾设“流程效率部”，因无效率改“流程部”；红薯厂曾力推 “男人计划”；某厂高管圈把沙漠当会议室丨鲸犀情报局Vol.13",
+      "link": "https://www.leiphone.com/category/industrynews/M7FRXnNgfYHQcK0q.html",
+      "summary": "制定「男人计划」，红薯厂比大家想象的更渴求男性用户&nbsp;都说“男性消费不如狗”，但没有男性用户的平台可能也不行。有消息人士透露，红薯厂曾经找过陌陌的一位高管加入，只为提高男性用户比例，据说当时搞了不少有个性的特色内容。\n不仅如此，该厂的一位前员工透露，2022年-2023年间，其创始人曾牵头拉过一个名为「男人计划」的项目，试图增加平台男性用户比例。为此，该平台在后来一段时间内大力发展运动、户外等等品类。\n不过，从后续结果来看，其男性用户比例似乎并没有太大变动，看来社区属性真的很难改。喜马拉雅为提效曾设”流程效率部“，因没有效率所以改名为“流程部”喜马拉雅有一个地狱段子，在被鹅厂收购前，公司内部早已是一团乱麻。大批员工消极怠工，上班纯摆烂，摸鱼划水成常态。据说公司原来专门设有一个流程效率部，初衷是想提升“效率”，结果被现实狠狠打脸，该部门运营效率低到离谱。估计内部自己都觉得这名字太扎眼，为了挽尊，直接把 “效率” 俩字删了，改成 “流程部”。其他大厂吃瓜群众则表示，这波改名操作，多少有点掩耳盗铃那味了。有员工表示，现在被鹅厂收购其实是好事，双方团队能暂时进入一段稳定期，虽然现阶段肯",
+      "published": "2026-06-01 08:38:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "扣子 3.0 正式上线，开启Agent 团队协作新方式",
+      "link": "https://www.leiphone.com/category/industrynews/2zFXEr1gabpabWik.html",
+      "summary": "6月1日，扣子 3.0 正式上线，扣子手机端 （iOS / Android）、电脑端（Mac OS / Windows）、网页端三端全量更新。&nbsp;扣子 3.0 提出了 AI 团队协作方式的全新架构，将 Agent 带入更完整的工作现场。在扣子 3.0 中，Agent 可以被创建、接入和随时调度，任务可以被放进项目中拆解、分配和沉淀，行业技能包可以为复杂任务提供更专业的能力起点。而扣子的网页端、桌面端和手机 App 端，则让 Agent 有机会与用户的文件、本地设备和工作场景接通，让 AI 能够更深入地参与到真实的生产现场。&nbsp;自定义Agent开箱即用，支持云端创建和本地接入&nbsp;过去，用户通过单个 Agent 完成特定任务，但面对复杂任务时，单一Agent助手的局限性逐渐显现。在扣子 3.0 中，Agent 不再只有一种形态：用户能够添加自定义 Agent，组建自己的 Agent team。&nbsp;扣子 3.0 支持接入本地 Agent。用户可将本地使用的 Claude Code、Codex CLI、OpenClaw等工具接入扣子，接入后，这些本地 Agent",
+      "published": "2026-06-01 08:21:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "BEYOND  Expo 2026 现场观察：AI 加速落地物理世界，AI硬件集体「做专做深」",
+      "link": "https://www.leiphone.com/category/iot/u5VaCPOrtcNboIOU.html",
+      "summary": "作者｜吴优编辑｜刘伟5 月 27 日，BEYOND Expo 2026 在澳门启幕，本届展会以AI：数实共生为核心议题，近 800 家全球企业集中展示了 AI 从数字系统走向物理实体的最新成果。雷峰网在现场走访超20个展台后发现，行业正从概念炒作转向场景落地、垂直深耕，AI 硬件不再比拼 “大而全”，而是在细分场景里拼精准、拼体验、拼商业闭环。底座和终端厂商积极采取下一步行动，AI 走进物理世界BEYOND Expo 联合创始人贺建东在开幕式上直言，亚洲兼具软件模型创新与先进制造、硬件供应链能力，是 Physical AI 落地的核心阵地 —— 数字智能要扎根现实，必须有芯片、硬件、制造体系作为底座。现场最直观的信号，是底座厂商和终端厂商都在积极采取下一步行动：NVIDIA机器人与边缘AI副总裁Deepu Talla在主题演讲中提到，ChatGPT、Gemini 等数字AI场景中，模型只做到 95% 甚至 99% 的准确率，人类能补齐最后的1%，但AI 应用到机器人领域一直困难重重，因为这个领域对精度要求极高，而相关技术直到最近才真正成熟，NVIDIA现在能够提供算力、参考模型与加速器",
+      "published": "2026-06-01 08:13:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "港中文团队提出 Skill 生命周期管理 SLIM，让大模型智能体不再盲目堆积 Skill ！",
+      "link": "https://www.leiphone.com/category/academic/YlpyUWTgMBNTc9YK.html",
+      "summary": "SLIM：让模型判断外部能力的去留，在复杂任务中保留真正有用的支撑。&nbsp; &nbsp; 作者丨郑佳美&nbsp; &nbsp; 编辑丨马晓宁&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;大模型智能体正在从“会聊天”走向“会做事”。在网页搜索、工具调用、自动",
+      "published": "2026-06-01 07:34:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026|艾欧智能 ：从跨国遥操作到真实任务数据开放",
+      "link": "https://www.leiphone.com/category/robot/SUOiioK6H6zIr4qx.html",
+      "summary": "原文作者：公众号“艾欧智能”原文链接：https://mp.weixin.qq.com/s/hqvxAUemcbsLmqBjQ2H4HA2026 年 6 月 1 日至 5 日，IEEE International Conference on Robotics &amp; Automation（ICRA 2026）将在奥地利维也纳举办。作为机器人与自动化领域最具影响力的国际会议之一，ICRA 持续汇聚全球机器人研究机构、开发者与产业生态伙伴，共同推动机器人技术在真实世界中的研发与落地。今年，艾欧智能（IO-AI TECH）将继续亮相 ICRA 2026（Booth&nbsp;#106），并作为第二届 WBCD（What Bimanuals Can Do）Competition 的合作支持方之一，参与比赛相关数据支持与生态合作。什么是 WBCD？WBCD（What Bimanuals Can Do）是基于 ICRA 的双臂机器人挑战赛。官方将其定义为：“Real Tasks. Real Robots. Real Benchmarks.”比赛围绕真实世界中的机器人任务展开，覆盖物流、实验室操",
+      "published": "2026-06-01 07:31:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026 | 像素级相对 3D 地图领航！MASt3R-Nav：打造高精度无全局重建视觉导航新范式",
+      "link": "https://www.leiphone.com/category/robot/aAoey1V3pku7wCOR.html",
+      "summary": "原文作者：公众号“视觉语言导航”原文链接：https://mp.weixin.qq.com/s/4dTxzJyX4bWfaNjziaQ3nQ作者：Vansh Garg¹†, Rohit Jayanti¹∗, Krish Pandya¹∗, Sarthak Chittawar¹∗, Siddharth Tourani²,³, Muhammad Haris Khan³, Sourav Garg¹‡, Madhava Krishna¹‡单位：¹印度海德拉巴国际信息技术研究所机器人研究中心，²德国海德堡大学，³穆罕默德·本·扎耶德人工智能大学论文标题：MASt3R-Nav: WayPixel Navigation in Relative 3D Maps论文链接：https://arxiv.org/abs/2605.24111项目主页：https://mast3r-nav.github.io/代码链接：https://github.com/vanshg1729/mast3r-nav研究背景视觉导航是自主机器人、智能移动设备的核心能力，而环境表征方式直接决定导航精度、鲁棒性与落地门槛。当前主流视觉",
+      "published": "2026-06-01 07:19:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026 | VPP-TC: 基于可行性理论的被动力矩安全控制框架",
+      "link": "https://www.leiphone.com/category/robot/0fJDGewcDJ37Us9K.html",
+      "summary": "原文作者：公众号“机器之心”原文链接：https://mp.weixin.qq.com/s/vPNP8686ZQ09KDzSMn-iaw本篇文章被 ICRA 2026 接收并获得 IROS 2025 双料 Workshop 最佳论文，第一作者张子哲(site:&nbsp;zizhe.io)是宾夕法尼亚大学机器人学硕士生，同时在 GRASP 实验室担任科研助理，导师为 Nadia Figueroa 教授，研究兴趣涵盖机器学习，安全控制以及人机交互。论文标题：Viability-Preserving Passive Torque Control论文链接：https://arxiv.org/abs/2510.03367项目主页：https://vpp-tc.github.io/webpage/一、一句话总结本文提出了&nbsp;VPP-TC（Viability-Preserving Passive Torque Control），一种基于可行性（viability）理论的被动力矩控制框架。该框架在关节位置 - 速度的增广状态空间中预计算安全集合，将可行性约束转化为关节加速度（进而力矩）的仿射",
+      "published": "2026-06-01 07:10:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "ICRA 2026｜给机器人装上“驾驶舱”与“任务大脑”，一体化遥操作平台破解长时程复杂任务执行难题",
+      "link": "https://www.leiphone.com/category/robot/6VkiG3DfTSFEqLty.html",
+      "summary": "原文作者：公众号“交叉力学与智能系统”原文链接：https://mp.weixin.qq.com/s/mI8zvot0fBjmkZ-gra2Prw模仿学习是让机器人掌握复杂技能的重要途径，而高质量的遥操作演示数据是关键。现有移动操作系统常面临操控分离、协同困难、长时程任务推理能力不足等问题，限制了机器人在真实场景中的应用能力。核心创新一：RoboMatch 一体化遥操作平台单人协同操控：通过VR头显、主从机械臂与脚踏板集成，实现移动底盘与双臂的同步控制。沉浸式感知：多视角视觉反馈与运动映射，提升操作直观性与数据采集效率。硬件系统：搭载7自由度从臂（ViperX-300）、差分驱动移动底盘、末端IMU与主臂（WidowX-250），构建高拟人化操控体验。核心创新二：感知增强扩散策略（PVE-DP）空间-频域视觉融合：提出FE-EMA模块，结合离散小波变换提取多尺度视觉特征。丰富本体感知：末端IMU采集四元数数据，与关节角度融合，提升姿态感知精度。精细化操作提升：在模拟与真实任务（如物体插拔、桌面清洁）中，成功率提升20-30%。核心创新三：自动匹配网络（AMN）架构任务分解与动态匹配：基",
+      "published": "2026-06-01 06:57:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "已登ICRA 2026，VLA实用化路线彻底杀疯了！",
+      "link": "https://www.leiphone.com/category/robot/WNEhGhgcUGO5coEw.html",
+      "summary": "原文作者：公众号“计算机顶会大全”原文链接：https://mp.weixin.qq.com/s/SbiHonAq0qYEP-sC-sB-bA近期顶会工作来看，VLA正在进入新阶段：不只是能做任务，而是要能稳定、低成本、跨场景地落地到真实机器人系统中。这类研究共同释放了一个信号：具身智能的竞争点正在从大模型能力展示转向实用化能力验证。一方面，研究开始关注多机器人本体、导航与操作统一、仿真到真实迁移等真实部署问题；另一方面，评测标准也不再只看平均成功率，而是更重视空间扰动、物体变化、语言歧义和任务复杂度下的鲁棒性退化。同时，力觉、触觉等非视觉模态也开始被纳入VLA框架，用来解决接触丰富操作中的精细控制难题。本文整理了20篇 VLA实用化相关前沿论文。论文介绍：ICRA 2026| Rethinking the Practicality of Vision-language-action Model: A Comprehensive Benchmark and An Improved Baseline现有VLA真的适合真实机器人部署吗？论文指出，当前很多VLA模型依赖大参数规模、大规模预训",
+      "published": "2026-06-01 06:46:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
+    {
+      "title": "相约维也纳，Flex 2混驱灵巧手ICRA线下首发",
+      "link": "https://www.leiphone.com/category/robot/nCQprK6kFq7a3L4O.html",
+      "summary": "原文作者：公众号“Xynova曦诺未来”原文链接：https://mp.weixin.qq.com/s/YclHbokp7XJaM-Uft86cEw距离ICRA开幕还剩1天，“Robots for all”的风已经吹遍了全球各地，数据显示：已有86个国家参展2026 ICRA，除了中国、美国外，日本、韩国、德国、沙特等国家的投资机构、研究机构、高校实验室以及企业等行业顶尖学、研、产资源，已在奔赴维也纳·奥地利·ICRA展会现场的路上。ICRA之所以被称为具身智能领域的“奥林匹克”，影响力不止体现在地域上，还和每年大量投递的顶尖学术研究有关。据雷峰网报道：2026 ICRA已收到4947篇投稿，1882篇论文将被接收，是创办40多年以来投稿量、接收量最多的一年。这里不仅是学术交流的殿堂，更是洞察全球自动化与具身智能趋势的前沿窗口。“ICRA是离机器人落地最近的学术顶会之一”。相比以往，今年灵巧操作赛道成为大热门，共有16家展商参展，灵巧手、触觉、遥操作等环节均有企业展陈，曦诺未来Xynova作为全球领先的通用灵巧操作解决方案商，也是2026 ICRA 灵巧手赛道的明星企业。从本次大会灵巧",
+      "published": "2026-06-01 06:13:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体"
+    },
     {
       "title": "How to Post-Train Autonomous Vehicle Models in Closed-Loop with NVIDIA Alpamayo",
       "link": "https://developer.nvidia.com/blog/how-to-post-train-autonomous-vehicle-models-in-closed-loop-with-nvidia-alpamayo/",
@@ -1165,17 +1325,17 @@
       "category": "AI Lab"
     },
     {
-      "title": "OpenAI’s Frontier Governance Framework",
-      "link": "https://openai.com/index/openai-frontier-governance-framework",
-      "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
+      "title": "MUFG aims to become AI-native with OpenAI",
+      "link": "https://openai.com/index/mufg",
+      "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
       "published": "2026-05-28 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"
     },
     {
-      "title": "MUFG aims to become AI-native with OpenAI",
-      "link": "https://openai.com/index/mufg",
-      "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
+      "title": "OpenAI’s Frontier Governance Framework",
+      "link": "https://openai.com/index/openai-frontier-governance-framework",
+      "summary": "Explore OpenAI’s Frontier Governance Framework and how our AI safety, security, and risk practices align with emerging EU and California regulations.",
       "published": "2026-05-28 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"
@@ -1261,17 +1421,17 @@
       "category": "Community"
     },
     {
-      "title": "Warp’s big bet on building open source with GPT-5.5",
-      "link": "https://openai.com/index/warp",
-      "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
+      "title": "Election information and safeguards in 2026",
+      "link": "https://openai.com/index/election-safeguards-2026",
+      "summary": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
       "published": "2026-05-27 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"
     },
     {
-      "title": "Election information and safeguards in 2026",
-      "link": "https://openai.com/index/election-safeguards-2026",
-      "summary": "Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency",
+      "title": "Warp’s big bet on building open source with GPT-5.5",
+      "link": "https://openai.com/index/warp",
+      "summary": "Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.",
       "published": "2026-05-27 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"
@@ -1477,17 +1637,17 @@
       "category": "Community"
     },
     {
-      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
-      "link": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
-      "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
+      "title": "How Ramp engineers accelerate code review with Codex",
+      "link": "https://openai.com/index/ramp",
+      "summary": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
       "published": "2026-05-20 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"
     },
     {
-      "title": "How Ramp engineers accelerate code review with Codex",
-      "link": "https://openai.com/index/ramp",
-      "summary": "How Ramp engineers use Codex with GPT-5.5 to review code and ship improvements, allowing them to get substantive feedback in minutes instead of hours.",
+      "title": "An OpenAI model has disproved a central conjecture in discrete geometry",
+      "link": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+      "summary": "An OpenAI model solved the 80-year-old unit distance problem, disproving a major conjecture in discrete geometry and marking a milestone in AI-driven mathematics.",
       "published": "2026-05-20 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab"

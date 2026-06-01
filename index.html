@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Intelligence — 每日 AI 技术情报</title>
-  <meta name="description" content="每日自动采集的 AI 最新动态、论文、博客和技术讨论">
+  <title>AI 情报站 — 每日 AI 技术动态</title>
+  <meta name="description" content="每日自动采集全球 AI 最新动态、论文、博客和技术讨论">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
 </head>
 <body>
 
 <header>
-  <h1>🤖 AI Intelligence</h1>
-  <p class="subtitle">每日 AI 技术情报 — 自动采集最新动态</p>
+  <h1>🤖 AI 情报站</h1>
+  <p class="subtitle">每日全球 AI 技术动态 — 自动采集汇总</p>
   <div class="meta" id="meta-bar">
     <span>⏳ 加载中...</span>
   </div>
 </header>
 
 <div class="refresh-notice" id="refresh-notice">
-  数据每日自动更新 · <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
+  数据每日自动更新 · <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub 仓库</a>
 </div>
 
 <main id="main-content">
@@ -30,22 +30,23 @@
 </main>
 
 <footer>
-  <p>由 <a href="https://github.com/badb0ttle/fine-grained" target="_blank">AI Intel Scanner</a> 自动生成 · 托管于 GitHub Pages</p>
+  <p>由 <a href="https://github.com/badb0ttle/fine-grained" target="_blank">AI Intel Scanner</a> 自动采集 · <a href="https://ai.hjhai.xyz" target="_blank">ai.hjhai.xyz</a></p>
   <p style="margin-top:0.3rem">🔄 每日自动更新 · <span id="footer-date"></span></p>
 </footer>
 
 <script>
-const CATEGORY_ICONS = {
-  "AI Lab":       { icon: "🔬", cls: "dot-ai-lab" },
-  "Paper":        { icon: "📄", cls: "dot-paper" },
-  "Community":    { icon: "🌐", cls: "dot-community" },
-  "Blog":         { icon: "📝", cls: "dot-blog" },
-  "Discussion":   { icon: "💬", cls: "dot-discussion" },
+const CATEGORY_LABELS = {
+  "AI Lab":       { icon: "🔬", label: "AI 实验室",         cls: "dot-ai-lab" },
+  "Paper":        { icon: "📄", label: "学术论文",           cls: "dot-paper" },
+  "Community":    { icon: "🌐", label: "社区动态",           cls: "dot-community" },
+  "Blog":         { icon: "📝", label: "技术博客",           cls: "dot-blog" },
+  "Discussion":   { icon: "💬", label: "技术讨论",           cls: "dot-discussion" },
+  "中文媒体":      { icon: "🇨🇳", label: "中文媒体",          cls: "dot-discussion" },
 };
-const DEFAULT_CAT = { icon: "📌", cls: "dot-ai-lab" };
+const DEFAULT_CAT = { icon: "📌", label: "其他", cls: "dot-ai-lab" };
 
 function getCatMeta(cat) {
-  return CATEGORY_ICONS[cat] || DEFAULT_CAT;
+  return CATEGORY_LABELS[cat] || DEFAULT_CAT;
 }
 
 function renderArticle(a) {
@@ -86,7 +87,7 @@ function render(data) {
 
   meta.innerHTML = `
     <span>📅 ${scanDate} ${scanTime}</span>
-    <span>📡 ${data.successful_sources}/${data.total_sources} 个源</span>
+    <span>📡 ${data.successful_sources}/${data.total_sources} 个信息源</span>
     <span>📰 ${data.articles.length} 篇文章</span>
   `;
 
@@ -100,7 +101,7 @@ function render(data) {
     byCat[cat].push(a);
   }
 
-  const catOrder = ["AI Lab", "Paper", "Blog", "Community", "Discussion"];
+  const catOrder = ["AI Lab", "Paper", "中文媒体", "Blog", "Community", "Discussion"];
   let html = "";
 
   for (const cat of catOrder) {
@@ -109,7 +110,7 @@ function render(data) {
     html += `<div class="category">`;
     html += `<div class="category-header">`;
     html += `<span class="category-dot ${cm.cls}"></span>`;
-    html += `<h2>${cm.icon} ${cat}</h2>`;
+    html += `<h2>${cm.icon} ${cm.label}</h2>`;
     html += `<span class="count">${byCat[cat].length}</span>`;
     html += `</div>`;
     for (const a of byCat[cat]) {
@@ -125,7 +126,7 @@ function render(data) {
     html += `<div class="category">`;
     html += `<div class="category-header">`;
     html += `<span class="category-dot ${cm.cls}"></span>`;
-    html += `<h2>${cm.icon} ${cat}</h2>`;
+    html += `<h2>${cm.icon} ${cm.label}</h2>`;
     html += `<span class="count">${items.length}</span>`;
     html += `</div>`;
     for (const a of items) {
