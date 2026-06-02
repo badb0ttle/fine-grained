@@ -1,9 +1,9 @@
 {
-  "scanned_at": "2026-06-02T00:10:26.221919+00:00",
+  "scanned_at": "2026-06-02T03:35:58.998748+00:00",
+  "curated_at": "2026-06-02T03:35:58.998873+00:00",
   "total_sources": 15,
-  "successful_sources": 15,
-  "total_articles": 266,
-  "curated_at": "2026-06-02T08:15:00+08:00",
+  "successful_sources": 14,
+  "total_articles": 268,
   "curated_count": 10,
   "articles": [
     {
@@ -17,54 +17,14 @@
       "summary_cn": "中国 AI 初创公司 MiniMax 发布 M3 大模型，在多项关键基准测试中超越了 OpenAI 的 GPT-5.5 和 Google 的 Gemini 3.1 Pro，而推理成本仅为它们的 5-10%，在性能价格比上形成碾压优势，震动企业 AI 市场。"
     },
     {
-      "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
-      "link": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
-      "summary": "",
-      "published": "2026-06-01 04:44:55",
-      "source": "HuggingFace Blog",
-      "category": "Community",
-      "title_cn": "NVIDIA Cosmos 3 发布：首个开放的物理 AI 推理与行动全模态模型",
-      "summary_cn": "NVIDIA 发布 Cosmos 3，这是首个开放的面向物理 AI 的全模态基础模型，能够同时进行推理、世界建模和行动生成，为机器人、自动驾驶和智能空间等物理 AI 系统提供统一的基础能力。"
-    },
-    {
-      "title": "Anthropic files to go public",
-      "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
-      "summary": "Anthropic, now an AI powerhouse that has landed top-tier enterprise customers, was once considered an underdog in the emerging world of large language models.",
-      "published": "2026-06-01 16:36:55",
-      "source": "TechCrunch AI",
-      "category": "Blog",
-      "title_cn": "Anthropic 提交 IPO 申请，AI 巨头加速资本化",
-      "summary_cn": "AI 明星公司 Anthropic 正式提交上市申请，这家曾被视为行业黑马的公司在拿下大量顶级企业客户后，正通过 IPO 加速扩张，标志着 AI 行业进入资本密集型竞争的新阶段。"
-    },
-    {
-      "title": "Alphabet plans to raise $80B to pay for AI buildout",
-      "link": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
-      "summary": "\"The company is experiencing strong demand for its AI solutions and services from enterprises and consumers, at levels that are exceeding the company’s available supply,\" Alphabet said in its statement.",
-      "published": "2026-06-01 22:55:09",
-      "source": "TechCrunch AI",
-      "category": "Blog",
-      "title_cn": "Alphabet 计划融资 800 亿美元用于 AI 基础设施建设",
-      "summary_cn": "Alphabet 宣布计划筹集 800 亿美元巨资以支持 AI 基础设施建设，公司表示来自企业和消费者的 AI 需求远超现有供给能力，反映出 AI 算力军备竞赛的进一步升级。"
-    },
-    {
-      "title": "OpenAI frontier models and Codex are now available on AWS",
-      "link": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
-      "summary": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
-      "published": "2026-06-01 10:00:00",
-      "source": "OpenAI Blog",
-      "category": "AI Lab",
-      "title_cn": "OpenAI 前沿模型及 Codex 正式登陆 AWS",
-      "summary_cn": "OpenAI 的前沿模型和 Codex 编程智能体现在已在 AWS 上全面可用，企业用户获得了一条通过 AWS 使用 OpenAI 技术的新路径，两大巨头从竞争走向深度合作。"
-    },
-    {
-      "title": "Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP",
-      "link": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
-      "summary": "If Nvidia has cracked a way to bring AI agents easily, safely, and usefully to the masses, it could — and should — be big.",
-      "published": "2026-06-01 21:35:00",
-      "source": "TechCrunch AI",
-      "category": "Blog",
-      "title_cn": "NVIDIA 联手微软、戴尔、惠普进军 2000 亿美元 CPU 市场，推出 AI Agent PC",
-      "summary_cn": "NVIDIA 与微软、戴尔、惠普合作推出 AI Agent PC，正式切入价值 2000 亿美元的 CPU 市场。如果 NVIDIA 成功将 AI Agent 安全、易用地带给大众消费者，这将是一次 PC 产业格局的重大重塑。"
+      "title": "VLM3: Vision Language Models Are Native 3D Learners",
+      "link": "https://arxiv.org/abs/2605.30561",
+      "summary": "arXiv:2605.30561v1 Announce Type: new \nAbstract: Vision Language Models (VLMs) enable a unified model to solve various vision tasks through prompting. They have shown promising performance in semantic understanding. However, 3D understanding still largely relies on expert vision models with complex task-specific designs. The key argument this work wants to make is that VLMs are native 3D learners. Our in-depth large scale study shows that 1) focal length unification, 2) text-based pixel referenc",
+      "published": "2026-06-01 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "VLM3：视觉语言模型是天然的 3D 学习器",
+      "summary_cn": "最新研究 VLM3 证明视觉语言模型（VLM）具备原生 3D 学习能力，无需专门的 3D 架构即可理解和推理三维空间关系，为通用视觉智能体在物理世界中的应用开辟了新路径。"
     },
     {
       "title": "星海图新一代具身基础模型G0.5发布，全面提升零样本泛化能力，让机器人边思考边行动",
@@ -75,6 +35,16 @@
       "category": "中文媒体",
       "title_cn": "星海图发布新一代具身基础模型 G0.5：让机器人边思考边行动",
       "summary_cn": "星海图发布新一代具身基础模型 G0.5，基于 VLA（视觉-语言-行动）架构实现零样本泛化能力的大幅提升——机器人不再是机械执行预设动作，而是能够先理解场景再规划行动，边思考边操作。"
+    },
+    {
+      "title": "OpenAI frontier models and Codex are now available on AWS",
+      "link": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
+      "summary": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
+      "published": "2026-06-01 10:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "OpenAI 前沿模型及 Codex 正式登陆 AWS",
+      "summary_cn": "OpenAI 的前沿模型和 Codex 编程智能体现在已在 AWS 上全面可用，企业用户获得了一条通过 AWS 使用 OpenAI 技术的新路径，两大巨头从竞争走向深度合作。"
     },
     {
       "title": "扣子 3.0 正式上线，开启Agent 团队协作新方式",
@@ -97,14 +67,44 @@
       "summary_cn": "香港中文大学团队提出 SLIM（Skill 生命周期管理）框架，解决了大模型智能体在复杂任务中 Skill 盲目堆积的难题——让模型自主判断外部能力的去留，只保留真正有用的 Skill 支撑。"
     },
     {
-      "title": "VLM3: Vision Language Models Are Native 3D Learners",
-      "link": "https://arxiv.org/abs/2605.30561",
-      "summary": "arXiv:2605.30561v1 Announce Type: new \nAbstract: Vision Language Models (VLMs) enable a unified model to solve various vision tasks through prompting. They have shown promising performance in semantic understanding. However, 3D understanding still largely relies on expert vision models with complex task-specific designs. The key argument this work wants to make is that VLMs are native 3D learners. Our in-depth large scale study shows that 1) focal length unification, 2) text-based pixel referenc",
-      "published": "2026-06-01 04:00:00",
-      "source": "ArXiv cs.CV",
-      "category": "Paper",
-      "title_cn": "VLM3：视觉语言模型是天然的 3D 学习器",
-      "summary_cn": "最新研究 VLM3 证明视觉语言模型（VLM）具备原生 3D 学习能力，无需专门的 3D 架构即可理解和推理三维空间关系，为通用视觉智能体在物理世界中的应用开辟了新路径。"
+      "title": "Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP",
+      "link": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      "summary": "If Nvidia has cracked a way to bring AI agents easily, safely, and usefully to the masses, it could — and should — be big.",
+      "published": "2026-06-01 21:35:00",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "title_cn": "NVIDIA 联手微软、戴尔、惠普进军 2000 亿美元 CPU 市场，推出 AI Agent PC",
+      "summary_cn": "NVIDIA 与微软、戴尔、惠普合作推出 AI Agent PC，正式切入价值 2000 亿美元的 CPU 市场。如果 NVIDIA 成功将 AI Agent 安全、易用地带给大众消费者，这将是一次 PC 产业格局的重大重塑。"
+    },
+    {
+      "title": "Alphabet plans to raise $80B to pay for AI buildout",
+      "link": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
+      "summary": "\"The company is experiencing strong demand for its AI solutions and services from enterprises and consumers, at levels that are exceeding the company’s available supply,\" Alphabet said in its statement.",
+      "published": "2026-06-01 22:55:09",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "title_cn": "Alphabet 计划融资 800 亿美元用于 AI 基础设施建设",
+      "summary_cn": "Alphabet 宣布计划筹集 800 亿美元巨资以支持 AI 基础设施建设，公司表示来自企业和消费者的 AI 需求远超现有供给能力，反映出 AI 算力军备竞赛的进一步升级。"
+    },
+    {
+      "title": "Anthropic files to go public",
+      "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
+      "summary": "Anthropic, now an AI powerhouse that has landed top-tier enterprise customers, was once considered an underdog in the emerging world of large language models.",
+      "published": "2026-06-01 16:36:55",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "title_cn": "Anthropic 提交 IPO 申请，AI 巨头加速资本化",
+      "summary_cn": "AI 明星公司 Anthropic 正式提交上市申请，这家曾被视为行业黑马的公司在拿下大量顶级企业客户后，正通过 IPO 加速扩张，标志着 AI 行业进入资本密集型竞争的新阶段。"
+    },
+    {
+      "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
+      "link": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
+      "summary": "",
+      "published": "2026-06-01 04:44:55",
+      "source": "HuggingFace Blog",
+      "category": "Community",
+      "title_cn": "NVIDIA Cosmos 3 发布：首个开放的物理 AI 推理与行动全模态模型",
+      "summary_cn": "NVIDIA 发布 Cosmos 3，这是首个开放的面向物理 AI 的全模态基础模型，能够同时进行推理、世界建模和行动生成，为机器人、自动驾驶和智能空间等物理 AI 系统提供统一的基础能力。"
     }
   ]
 }

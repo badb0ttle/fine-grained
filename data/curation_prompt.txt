@@ -1,0 +1,111 @@
+从以下 20 篇候选文章中选出最重要的 10 篇进行中文翻译和解读。
+
+要求：
+1. 筛选最值得关注的 AI 新闻/论文
+2. title_cn: 中文标题（保留核心技术名词英文）
+3. summary_cn: 中文摘要（80字以内，突出核心信息）
+4. curated: true
+
+返回严格 JSON 数组格式：
+[
+  {"id": <article_id>, "title_cn": "...", "summary_cn": "..."},
+  ...
+]
+
+候选文章：
+[1] [84.6] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
+    Source: VentureBeat AI | 2026-06-01 16:10:05
+    Summary: Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and 
+
+[2] [83.9] Title: Distilling LLM Feedback for Lean Theorem Proving
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30861v1 Announce Type: new 
+Abstract: Post-training for reasoning models typically combines supervised fine-tuning with reinforcement learning from verifiable rewards, most commonly with GR
+
+[3] [81.9] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30576v1 Announce Type: new 
+Abstract: Exploration in reinforcement learning for autonomous driving is inherently unsafe: agents must experience novel behaviors to learn, yet exploration can
+
+[4] [78.2] Title: SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
+    Source: ArXiv stat.ML | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30711v1 Announce Type: cross 
+Abstract: Agentic LLMs must continuously decide whether newly extracted facts should be added, merged with existing memories, or ignored, yet prior work has fo
+
+[5] [77.9] Title: NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
+    Source: ArXiv cs.LG | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30393v1 Announce Type: new 
+Abstract: Public numeric benchmarks appear in pretraining, so an evaluation that conditions on a date may be measuring memorized recall rather than out-of-sample
+
+[6] [77.9] Title: Auditing LLM Benchmarks with Item Response Theory
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30504v1 Announce Type: new 
+Abstract: LLM benchmark labels are frozen at release and silently propagated into downstream benchmarks, errors and all. We introduce an Item Response Theory-bas
+
+[7] [77.2] Title: 一颗288核的至强6+，为什么能同时运行500个Agent？
+    Source: 雷锋网 AI | 2026-06-01 10:20:00
+    Summary: 过去两年，AI基础设施行业有一个几乎无人质疑的共识：GPU决定AI的上限。从大模型训练到推理部署，产业的关注点几乎都围绕着GPU展开。显存够不够大、带宽够不够高、Token吞吐量能达到多少，成为衡量AI基础设施能力的核心指标。但Agent的出现，正在改变这套逻辑。与传统聊天机器人不同，Agent并不只是完成一次问答，而是需要持续执行任务。它需要调用工具、访问数据库、浏览网页、管理记忆系统，甚至不断
+
+[8] [77.2] Title: Benchmark of Likelihood-Free Inference Methods based on Neural and Optimal Transport Approaches
+    Source: ArXiv stat.ML | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30516v1 Announce Type: cross 
+Abstract: Simulation-based inference (SBI) has become an increasingly important framework for parameter estimation in models for which simulation is feasible, 
+
+[9] [76.9] Title: Domain Adaptation and Reasoning Frameworks in Language Models: A Controlled Experiment with Historical Cosmology
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30415v1 Announce Type: new 
+Abstract: We investigate how domain adaptation reshapes explanatory behavior in language models using historical cosmology as a controlled setting. In Phase 1, w
+
+[10] [76.9] Title: CanLegalRAGBench: Evaluating Retrieval-Augmented Generation on Canadian Case Law
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30497v1 Announce Type: new 
+Abstract: RAG-based legal assistants have been growing in popularity, but LLM hallucinations remain a key issue and potentially undermines justice. While benchma
+
+[11] [76.2] Title: SANA-Streaming: Real-time Streaming Video Editing with Hybrid Diffusion Transformer
+    Source: ArXiv cs.CV | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30409v1 Announce Type: new 
+Abstract: Real-time streaming video-to-video editing (V2V) is critical for interactive applications such as live broadcasting and gaming, yet it remains a formid
+
+[12] [74.9] Title: Gait2Hip-60: A Unified Deep Learning Benchmark for Predicting Hip Muscle Forces and Joint Moments from Multi-Cadence Gait Kinematics
+    Source: ArXiv cs.LG | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30374v1 Announce Type: new 
+Abstract: Estimating hip muscle forces and joint moments during gait typically relies on musculoskeletal simulation, which is informative but time-consuming and 
+
+[13] [73.9] Title: EHRBench: An Automated and Reliable EHR-based Benchmark for Clinical Decision Making with LLMs
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30637v1 Announce Type: new 
+Abstract: Clinical decision-making (CDM) is central to real-world clinical workflows, where clinicians infer diagnoses, select treatments, or anticipate future h
+
+[14] [73.9] Title: BilliardPhys-Bench: Benchmarking Physical Reasoning and Visual Dynamics of Multimodal LLMs
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30900v1 Announce Type: new 
+Abstract: Current multimodal models handle static image recognition well, but intuitive physical reasoning remains a weakness. Predicting how objects will move a
+
+[15] [73.9] Title: Generalistic or Specific Embeddings, Which is Better? An Empirical Study on Search for Clinical Coding in Non-English Languages
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30529v1 Announce Type: new 
+Abstract: Sentence-embedding models for semantic search are overwhelmingly developed and evaluated on English corpora. When applied to clinical retrieval in othe
+
+[16] [73.9] Title: Speculative Decoding Across Languages
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30580v1 Announce Type: new 
+Abstract: Speculative decoding has become a crucial component of large language model (LLM) inference, enabling faster generation by drafting multiple tokens and
+
+[17] [73.2] Title: PInVerify: An Offline Embodied Benchmark for Active Instance Verification
+    Source: ArXiv cs.CV | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30639v1 Announce Type: new 
+Abstract: Embodied agents have made strong progress in navigating to target objects, but reaching the goal vicinity does not guarantee that the agent has found t
+
+[18] [73.2] Title: Seeing Before Agreeing: Aligning Multi-Agent Consensus with Visual Evidence
+    Source: ArXiv cs.CV | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30698v1 Announce Type: new 
+Abstract: Vision-language models (VLMs) have achieved strong performance on visual question answering (VQA). To mitigate individual hallucinations and blind spot
+
+[19] [72.9] Title: Generating and Refining Dynamic Evaluation Rubrics for LLM-as-a-Judge
+    Source: ArXiv cs.CL | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30568v1 Announce Type: new 
+Abstract: LLM-as-a-Judge is a scalable alternative to human evaluation, yet existing rubric-based methods rely on human-annotated data such as reference answers 
+
+[20] [72.5] Title: MeMo's memory model lets teams upgrade their LLM without retraining it — and performance jumps 26%
+    Source: VentureBeat AI | 2026-05-29 19:28:17
+    Summary: Enabling LLMs to acquire new knowledge after training remains a major hurdle for enterprise AI — current solutions are either too expensive, too slow, or constrained by context window limits.MeMo, a f

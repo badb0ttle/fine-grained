@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仪表盘 — AI 情报站</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg:#0a0a0f; --surface:#12121a; --surface2:#1a1a28;
+      --border:#2a2a3e; --text:#e4e4ed; --text2:#8888a0;
+      --accent:#6c5ce7; --green:#00b894; --red:#e17055;
+      --orange:#fdcb6e; --blue:#74b9ff;
+    }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter",sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6;
+      padding:1.5rem; max-width:1200px; margin:0 auto;
+    }
+    h1 {
+      font-size:1.6rem; margin-bottom:.3rem;
+      background:linear-gradient(135deg,var(--accent),var(--blue));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .subtitle { color:var(--text2); font-size:.85rem; margin-bottom:2rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:1.2rem; }
+    .card {
+      background:var(--surface); border:1px solid var(--border);
+      border-radius:12px; padding:1.2rem;
+    }
+    .card-full { grid-column:1/-1; }
+    .card h2 {
+      font-size:.95rem; color:var(--text2); text-transform:uppercase;
+      letter-spacing:.05em; margin-bottom:1rem;
+    }
+    .kpi-row { display:flex; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .kpi {
+      background:var(--surface2); border-radius:10px; padding:1rem 1.2rem;
+      min-width:130px; flex:1;
+    }
+    .kpi .value { font-size:1.6rem; font-weight:700; color:var(--accent); }
+    .kpi .label { font-size:.78rem; color:var(--text2); margin-top:.2rem; }
+    table { width:100%; border-collapse:collapse; font-size:.85rem; }
+    th { text-align:left; color:var(--text2); padding:.5rem .6rem; border-bottom:1px solid var(--border); }
+    td { padding:.45rem .6rem; border-bottom:1px solid var(--border); color:var(--text); }
+    .badge {
+      display:inline-block; padding:.15rem .5rem; border-radius:999px;
+      font-size:.72rem; font-weight:600;
+    }
+    .badge-healthy { background:rgba(0,184,148,.15); color:var(--green); }
+    .badge-degraded { background:rgba(253,203,110,.15); color:var(--orange); }
+    .badge-down { background:rgba(225,112,85,.15); color:var(--red); }
+    .score-bar {
+      display:inline-block; height:6px; border-radius:3px;
+      background:var(--accent); vertical-align:middle; margin-right:.4rem;
+    }
+    canvas { max-height:280px; }
+    .loading { text-align:center; padding:3rem; color:var(--text2); }
+    .back-link {
+      display:inline-block; margin-top:2rem; color:var(--text2);
+      text-decoration:none; font-size:.85rem;
+    }
+    .back-link:hover { color:var(--accent); }
+  </style>
+</head>
+<body>
+  <h1>📊 AI 情报站 · 仪表盘</h1>
+  <p class="subtitle">Pipeline 运行状态 & 数据洞察</p>
+
+  <div id="app" class="loading">⏳ 加载中...</div>
+  <a href="/" class="back-link">← 返回首页</a>
+
+<script>
+async function load() {
+  try {
+    const resp = await fetch("data/stats.json");
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const d = await resp.json();
+    render(d);
+  } catch(e) {
+    document.getElementById("app").innerHTML =
+      `<div style="padding:3rem;text-align:center;color:var(--text2)">📭 暂无仪表盘数据<br><small>${e.message}</small></div>`;
+  }
+}
+
+function render(d) {
+  const tr = d.daily_trends || [];
+  const totalArts = tr.length ? tr[tr.length-1].total_articles : 0;
+  const healthySources = (d.source_health||[]).filter(s=>s.status==="healthy").length;
+
+  let html = `
+    <div class="kpi-row">
+      <div class="kpi"><div class="value">${totalArts}</div><div class="label">📰 总文章数</div></div>
+      <div class="kpi"><div class="value">${healthySources}/${(d.source_health||[]).length}</div><div class="label">📡 信源健康</div></div>
+      <div class="kpi"><div class="value">${d.score_distribution?.['80-100'] || 0}</div><div class="label">⭐ 高分文章 (80+)</div></div>
+      <div class="kpi"><div class="value">${(d.category_distribution||{})['Paper'] || 0}</div><div class="label">📄 论文数</div></div>
+    </div>
+    <div class="grid">
+  `;
+
+  // Daily trends chart
+  if (tr.length > 1) {
+    html += `
+      <div class="card card-full">
+        <h2>📈 每日采集趋势</h2>
+        <canvas id="trendChart"></canvas>
+      </div>
+    `;
+  }
+
+  // Source health table
+  html += `
+    <div class="card">
+      <h2>📡 信源健康</h2>
+      <table>
+        <tr><th>信源</th><th>分类</th><th>状态</th><th>上次采集</th></tr>
+  `;
+  for (const s of (d.source_health||[])) {
+    const badgeCls = s.status==="healthy"?"badge-healthy":s.status==="degraded"?"badge-degraded":"badge-down";
+    const last = s.last_success ? s.last_success.slice(0,16) : "从未成功";
+    html += `<tr>
+      <td>${esc(s.name)}</td>
+      <td style="color:var(--text2)">${esc(s.category)}</td>
+      <td><span class="badge ${badgeCls}">${s.status}</span></td>
+      <td style="color:var(--text2);font-size:.78rem">${last}</td>
+    </tr>`;
+  }
+  html += `</table></div>`;
+
+  // Category distribution
+  const cats = d.category_distribution || {};
+  if (Object.keys(cats).length) {
+    html += `
+      <div class="card">
+        <h2>🏷️ 分类分布</h2>
+        <canvas id="catChart"></canvas>
+      </div>
+    `;
+  }
+
+  // Top scored articles
+  const tops = d.top_articles || [];
+  html += `
+    <div class="card">
+      <h2>🏆 最高分文章</h2>
+      <table>
+        <tr><th>文章</th><th>分数</th><th>来源</th></tr>
+  `;
+  for (const a of tops) {
+    html += `<tr>
+      <td style="max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(a.title)}</td>
+      <td><span class="score-bar" style="width:${a.score}px"></span>${a.score}</td>
+      <td style="color:var(--text2);font-size:.78rem">${esc(a.source)}</td>
+    </tr>`;
+  }
+  html += `</table></div>`;
+
+  html += `</div>`;
+  document.getElementById("app").innerHTML = html;
+
+  // Draw charts
+  if (tr.length > 1) {
+    new Chart(document.getElementById("trendChart"), {
+      type:"line",
+      data:{
+        labels: tr.map(r=>r.date.slice(5)),
+        datasets:[
+          {label:"总文章数", data:tr.map(r=>r.total_articles), borderColor:"#6c5ce7", tension:.3, yAxisID:"y"},
+          {label:"新增", data:tr.map(r=>r.new_articles), borderColor:"#00b894", tension:.3, yAxisID:"y"},
+          {label:"精选", data:tr.map(r=>r.curated_count), borderColor:"#fdcb6e", tension:.3, yAxisID:"y"},
+        ]
+      },
+      options:{
+        responsive:true,
+        plugins:{ legend:{ labels:{ color:"#8888a0" } } },
+        scales:{
+          x:{ ticks:{ color:"#8888a0" }, grid:{ color:"#1a1a28" } },
+          y:{ ticks:{ color:"#8888a0" }, grid:{ color:"#1a1a28" }, beginAtZero:true, title:{display:true,text:"篇数",color:"#8888a0"} },
+        }
+      }
+    });
+  }
+
+  if (Object.keys(cats).length) {
+    const colors = {"AI Lab":"#6c5ce7","Paper":"#00b894","Community":"#74b9ff","Blog":"#fdcb6e","中文媒体":"#fd79a8","Discussion":"#e17055","其他":"#8888a0"};
+    new Chart(document.getElementById("catChart"), {
+      type:"doughnut",
+      data:{
+        labels: Object.keys(cats),
+        datasets:[{
+          data: Object.values(cats),
+          backgroundColor: Object.keys(cats).map(c=>colors[c]||"#8888a0"),
+          borderColor:"#12121a",
+        }]
+      },
+      options:{
+        responsive:true,
+        plugins:{ legend:{ position:"bottom", labels:{ color:"#8888a0" } } }
+      }
+    });
+  }
+}
+
+function esc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+load();
+</script>
+</body>
+</html>
