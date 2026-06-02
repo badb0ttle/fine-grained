@@ -53,6 +53,7 @@ function renderArticle(a) {
   const title = a.title_cn || a.title;
   const summary = a.summary_cn || a.summary;
   const s = summary ? `<div class="article-summary">${escapeHtml(summary.slice(0, 300))}</div>` : "";
+  const wim = a.why_it_matters ? `<div class="article-why">💡 ${escapeHtml(a.why_it_matters)}</div>` : "";
   return `
     <div class="article">
       <div class="article-title"><a href="${escapeHtml(a.link)}" target="_blank">${escapeHtml(title)}</a></div>
@@ -62,6 +63,7 @@ function renderArticle(a) {
         <span>${escapeHtml(a.published)}</span>
       </div>
       ${s}
+      ${wim}
     </div>
   `;
 }

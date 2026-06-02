@@ -5,7 +5,7 @@ import argparse
 import time
 from pathlib import Path
 
-from pipeline import scanner, dedup, scorer, curator, publisher
+from pipeline import scanner, dedup, scorer, curator, publisher, paper_analyzer
 
 
 def run_full():
@@ -68,6 +68,7 @@ def run_stage(stage: str):
         "dedup": dedup.run,
         "scorer": scorer.run,
         "curator": lambda: curator.get_candidates(10),
+        "paper": lambda: paper_analyzer.get_unanalyzed_papers(5),
         "publisher": publisher.run,
     }
     if stage not in stages:

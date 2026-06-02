@@ -113,6 +113,7 @@ def export_stats_json() -> dict:
         "category_distribution": category_distribution,
         "daily_trends": daily_trends,
         "top_articles": top_articles,
+        "keyword_trends": __import__('scripts.pipeline.trends', fromlist=['compute_trends']).compute_trends(7),
     }
 
 

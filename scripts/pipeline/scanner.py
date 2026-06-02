@@ -16,6 +16,14 @@ def content_hash(title: str, link: str) -> str:
     return hashlib.sha256(f"{title.strip().lower()}|{link.strip()}".encode()).hexdigest()
 
 
+_ARXIV_ID_RE = re.compile(r'arxiv\.org/(?:abs|pdf)/([\w.-]+)')
+
+def extract_paper_id(link: str) -> str | None:
+    """Extract ArXiv paper ID from link. Returns None if not an ArXiv paper."""
+    m = _ARXIV_ID_RE.search(link)
+    return m.group(1) if m else None
+
+
 def fetch_feed(source: dict, retries: int = 2) -> list[dict]:
     """Fetch a single RSS feed with retry on transient errors, return list of article dicts."""
     last_error = None
@@ -80,15 +88,17 @@ def run() -> dict:
             inserted = 0
             for a in articles:
                 h = content_hash(a["title"], a["link"])
+                paper_id = extract_paper_id(a["link"])
+                is_paper = 1 if paper_id else 0
                 try:
                     conn.execute(
                         """INSERT OR IGNORE INTO articles
                            (title, link, summary, published, source_name, category,
-                            content_hash, scanned_at)
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                            content_hash, scanned_at, is_paper, paper_id)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                         (a["title"], a["link"], a["summary"],
                          a["published"], a["source_name"], a["category"],
-                         h, scanned_at)
+                         h, scanned_at, is_paper, paper_id)
                     )
                     if conn.total_changes > 0:
                         inserted += 1

@@ -42,13 +42,13 @@ def get_curation_prompt(candidates: list[dict], count: int = 10) -> str:
 
 要求：
 1. 筛选最值得关注的 AI 新闻/论文
-2. title_cn: 中文标题（保留核心技术名词英文）
-3. summary_cn: 中文摘要（80字以内，突出核心信息）
-4. curated: true
+2. title_cn: 中文标题（保留核心技术名词英文，20字以内）
+3. summary_cn: 中文摘要（60-100字，突出核心信息）
+4. why_it_matters: 一句话（30字内），说明对 AI 从业者的实际影响或意义
 
 返回严格 JSON 数组格式：
 [
-  {{"id": <article_id>, "title_cn": "...", "summary_cn": "..."}},
+  {{"id": <article_id>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."}},
   ...
 ]
 

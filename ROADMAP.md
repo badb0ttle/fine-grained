@@ -68,67 +68,50 @@ Phase 6: 分发运营     ░░░░░░░░░░░░░░░░░░
 
 ---
 
-## Phase 2: 内容深度升级 ✍️
+## Phase 2: 内容深度升级 ✍️ ✅ (2026-06-02)
 
 > **目标：** 从「翻译搬运」变成「分析洞察」，建立内容壁垒。
+> **状态：** ✅ 完成
 
-### #27 质量评分
+### #27 质量评分 ✅
 
-**评分维度：**
+**评分维度：** (Phase 1 已实现于 `scripts/pipeline/scorer.py`)
 
 | 维度 | 权重 | 说明 |
 |------|------|------|
 | 信源权威度 | 25% | ArXiv / OpenAI Blog > TechCrunch > 雷锋网 |
 | 时效性 | 20% | 越新分越高，超过 7 天衰减 |
-| 技术深度 | 30% | 字数、是否含代码片段、Benchmark 数据、技术术语密度 |
+| 技术深度 | 30% | 字数、技术术语密度 |
 | 相关性 | 25% | 标题/摘要与 AI 核心领域的语义匹配度 |
 
-- 评分在 Pipeline 的「分类打分」阶段完成
-- 输出 `scored.json`，前端可按分数排序
-- 精选阶段用评分作为初筛依据
+- 评分在 Pipeline 的 scorer 阶段完成
+- 精选阶段用评分 Top 20 作为候选
 
-### #5 「这为什么重要」
+### #5 「这为什么重要」 ✅
 
-**每篇精选文章附加一段短评：**
-- 一句话说明「这对 AI 从业者意味着什么」
-- LLM 基于文章内容 + 上下文（领域知识）生成
-- 前端展示在标题下方，用小字灰色高亮
+- curator.py prompt 增加 `why_it_matters` 字段
+- 前端 `.article-why` 样式展示（💡 橙色高亮）
+- cron job 每日自动生成
 
-**实现：** 在精选阶段的 prompt 中加入 `why_it_matters` 字段要求。
+### #3 论文深度解读 ✅
 
-### #3 论文深度解读
+- Scanner 自动识别 ArXiv 论文链接，标记 `is_paper` + 提取 `paper_id`
+- `scripts/pipeline/paper_analyzer.py` — 结构化提取 prompt
+- DB 字段：`paper_method`, `paper_benchmark`, `paper_takeaway`
+- cron job Step 3 每日处理新论文
 
-**对 ArXiv 论文做结构化提取：**
+### #2 每周深度简报 ✅
 
-```json
-{
-  "paper_id": "2501.xxxxx",
-  "title": "...",
-  "authors": ["..."],
-  "abstract": "...",
-  "structured_analysis": {
-    "problem": "解决了什么问题",
-    "method": "核心方法（2-3 句）",
-    "key_result": "关键 Benchmark 分数",
-    "vs_sota": "相比 SOTA 提升 X%",
-    "code_url": "GitHub 链接（如有）",
-    "takeaway": "一句话启发"
-  }
-}
-```
+- `scripts/pipeline/weekly_report.py` — 每周数据汇总 + LLM prompt 生成
+- Cron job: 每周日 10:00 自动运行
+- 输出：`data/weekly/{date}.md` Markdown 分析文章
 
-- 在采集阶段对 ArXiv 论文标记 `is_paper: true`
-- 论文解读作为独立的 LLM 处理阶段
-- 前端论文卡片展示结构化字段，区别于普通文章
+### #1 趋势分析 ✅
 
-### #2 每周/每月深度简报
-
-- **每周日**生成「本周 AI 十大事件」— 不限来源，按热度+质量聚合
-- **每月 1 号**生成「月度 AI 趋势报告」— 分类统计 + 趋势解读 + 下月展望
-- LLM 扫描本周/本月所有文章，生成连贯的分析文章（不是摘要堆砌）
-- 输出为 Markdown → 前端渲染为独立页面 `/weekly-reports/`
-
-### #1 趋势分析
+- `scripts/pipeline/trends.py` — 35 个 AI 关键词频率追踪
+- 7 天滑动窗口，对比上周期 → 计算变化百分比
+- 分类：🚀飙升 / 📈上升 / 📉下降 / 🔻下滑 / ➡️平稳
+- 仪表盘新增 `🔥 关键词趋势` 模块
 
 **实现：** 统计层 + 展示层
 

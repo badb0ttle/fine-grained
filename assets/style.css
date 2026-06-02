@@ -173,6 +173,15 @@ main {
   -webkit-line-clamp: unset;
 }
 
+.article-why {
+  font-size: 0.82rem;
+  color: var(--orange);
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.4;
+}
+
 /* Footer */
 footer {
   text-align: center;

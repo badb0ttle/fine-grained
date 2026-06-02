@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS articles (
     paper_authors   TEXT,
     paper_method    TEXT,
     paper_benchmark TEXT,
+    paper_takeaway  TEXT,
     github_repo     TEXT,                          -- linked GitHub repo
     -- Curation
     curated         INTEGER DEFAULT 0,             -- 1 = in top 10

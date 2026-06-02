@@ -156,6 +156,21 @@ function render(d) {
   }
   html += `</table></div>`;
 
+  // Keyword trends
+  const trends = d.keyword_trends?.keywords || [];
+  if (trends.length > 0) {
+    const dirMap = {surging:"🚀飙升",rising:"📈上升",falling:"📉下降",declining:"🔻下滑",stable:"➡️平稳"};
+    html += `<div class="card card-full"><h2>🔥 关键词趋势 (7天)</h2><div style="display:flex;flex-wrap:wrap;gap:.5rem">`;
+    for (const t of trends.slice(0, 15)) {
+      const dir = dirMap[t.direction] || t.direction;
+      const opacity = Math.min(1, 0.3 + Math.abs(t.change_pct)/100);
+      html += `<span style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:.35rem .7rem;font-size:.82rem;opacity:${opacity}">
+        ${dir} <strong>${esc(t.keyword)}</strong> <span style="color:${t.change_pct>0?'var(--green)':'var(--red)'}">${t.change_pct>0?'+':''}${t.change_pct}%</span>
+      </span>`;
+    }
+    html += `</div></div>`;
+  }
+
   html += `</div>`;
   document.getElementById("app").innerHTML = html;
 
