@@ -83,9 +83,10 @@ function renderArticle(a){
 
 function renderTrending(data){
   if(!data||!data.repos||!data.repos.length) return;
-  const section = document.getElementById("trending-section");
+  const section = document.getElementById("trending");
   const grid = document.getElementById("trending-grid");
   const date = document.getElementById("trending-date");
+  if(!section||!grid||!date) return;
   if(data.snapshot_at) date.textContent = "📅 " + data.snapshot_at.slice(0,10);
 
   let html = "";
@@ -111,6 +112,9 @@ function renderTrending(data){
   }
   grid.innerHTML = html;
   section.style.display = "block";
+  if(location.hash === "#trending"){
+    section.scrollIntoView();
+  }
 }
 
 function render(data){
