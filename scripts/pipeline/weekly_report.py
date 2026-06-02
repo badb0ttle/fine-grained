@@ -96,8 +96,9 @@ def get_weekly_prompt(data: dict) -> str:
 - 文章总长 500-800 字
 - 提到具体公司/模型/论文时用原文名称
 - 不要用"本周"开头，直接进入分析
-- 文件头用 `# 本周 AI 大事记 (YYYY-MM-DD)`
-- 保存到 data/weekly/{{date}}.md"""
+- 输出纯 HTML（可直接在浏览器打开），包含完整 <!DOCTYPE html>...<link rel="stylesheet" href="../../assets/style.css">...
+- 正文用 <article> 包裹，样式 class 参考 index.html 中的 article-item
+- 保存到 data/weekly/{{date}}.html"""
 
     return prompt
 
