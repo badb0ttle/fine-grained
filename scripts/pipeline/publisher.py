@@ -134,6 +134,12 @@ def export_files(data: dict) -> dict:
     stats_path.write_text(json.dumps(stats_data, ensure_ascii=False, indent=2))
     print(f"💾 stats.json: dashboard data exported")
 
+    # Write leaderboard.json for model tracker
+    leaderboard_data = __import__('scripts.pipeline.model_tracker', fromlist=['export_leaderboard_json']).export_leaderboard_json()
+    lb_path = data_dir / "leaderboard.json"
+    lb_path.write_text(json.dumps(leaderboard_data, ensure_ascii=False, indent=2))
+    print(f"💾 leaderboard.json: {len(leaderboard_data.get('models',[]))} models")
+
     # Write history snapshot
     from datetime import datetime
     date_str = datetime.now().strftime("%Y-%m-%d")

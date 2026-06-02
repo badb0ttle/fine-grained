@@ -121,31 +121,27 @@ Phase 6: 分发运营     ░░░░░░░░░░░░░░░░░░
 
 ---
 
-## Phase 3: 知识图谱 & 追踪 🕸️
+## Phase 3: 知识图谱 & 追踪 🕸️ ✅ (2026-06-02)
 
 > **目标：** 让数据之间建立关联，从「文章列表」变成「可查询的知识网络」。
+> **状态：** ✅ 完成
 
-### #7 模型追踪器
+### #7 模型追踪器 ✅
 
-**自动追踪 AI 模型的关键指标：**
+- `models` + `model_benchmarks` 两张新表
+- `scripts/pipeline/model_tracker.py` — LLM 从文章中提取模型名称、提供方、Benchmark 分数、参数规模
+- `leaderboard.html` — 排行榜页面，按模型展示 Benchmark 分数
+- `data/leaderboard.json` — 前端数据源，publisher 自动导出
+- cron job Step 4 每日自动提取
 
-```
-模型名         | 参数    | 发布日    | MMLU  | HumanEval | GSM8K | 来源
-GPT-5.5        | ?       | 2026-03  | 92.5% | 94.2%     | ?     | OpenAI Blog
-Claude 4.5     | ?       | 2026-04  | 91.8% | 92.1%     | 95.0% | Anthropic Blog
-Gemini 3.1 Pro | ?       | 2026-05  | 93.1% | 90.5%     | 96.2% | Google AI
-MiniMax-M3     | ?       | 2026-06  | 93.5% | 93.8%     | 97.1% | VentureBeat
-```
+### #8 论文-代码链接 ✅
 
-- LLM 从文章中提取模型名 + Benchmark 分数
-- SQLite 存为结构化记录
-- 前端生成排行榜页面（可排序表格） + 趋势图
-- 历史快照，能看到模型排名的变化轨迹
-
-### #8 论文-代码链接
-
-- 对 ArXiv 论文，自动搜索关联的 GitHub 仓库
-- 方法：论文标题 + 作者名 → GitHub Search API / Papers With Code API
+- `scripts/pipeline/paper_code_link.py` — GitHub Search API 双策略匹配
+  - 策略 1: 精确搜索 ArXiv ID
+  - 策略 2: 关键词搜索论文标题
+- 结果写入 `articles.github_repo` 字段
+- 支持 GitHub token 认证（提高速率限制）
+- cron job Step 5 每日自动关联
 - 匹配结果存入 SQLite（`paper_id → repo_url, stars, last_commit`）
 - 前端论文卡片显示「💻 代码仓库」链接
 

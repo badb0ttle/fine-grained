@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 模型排行榜 — AI 情报站</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --bg:#0a0a0f; --surface:#12121a; --surface2:#1a1a28;
+      --border:#2a2a3e; --text:#e4e4ed; --text2:#8888a0;
+      --accent:#6c5ce7; --green:#00b894; --orange:#fdcb6e;
+      --blue:#74b9ff; --pink:#fd79a8; --red:#e17055;
+    }
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter",sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6;
+      padding:1.5rem; max-width:1000px; margin:0 auto;
+    }
+    h1 {
+      font-size:1.6rem; margin-bottom:.3rem;
+      background:linear-gradient(135deg,var(--accent),var(--blue));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .subtitle { color:var(--text2); font-size:.85rem; margin-bottom:1.5rem; }
+    table { width:100%; border-collapse:collapse; font-size:.88rem; }
+    th {
+      text-align:left; color:var(--text2); padding:.7rem .8rem;
+      border-bottom:2px solid var(--border); cursor:pointer; user-select:none;
+    }
+    th:hover { color:var(--text); }
+    th .arrow { font-size:.7rem; margin-left:.2rem; }
+    td { padding:.6rem .8rem; border-bottom:1px solid var(--border); }
+    tr:hover td { background:var(--surface2); }
+    .model-name { font-weight:600; color:var(--accent); }
+    .model-provider { font-size:.78rem; color:var(--text2); }
+    .bench-tag {
+      display:inline-block; padding:.1rem .5rem; border-radius:999px;
+      font-size:.75rem; font-weight:500; margin:.15rem .2rem;
+    }
+    .bench-1 { background:rgba(108,92,231,.15); color:var(--accent); }
+    .bench-2 { background:rgba(0,184,148,.15); color:var(--green); }
+    .bench-3 { background:rgba(116,185,255,.15); color:var(--blue); }
+    .bench-4 { background:rgba(253,203,110,.15); color:var(--orange); }
+    .no-data { text-align:center; padding:4rem; color:var(--text2); }
+    .loading { text-align:center; padding:3rem; color:var(--text2); }
+    .back-link {
+      display:inline-block; margin-top:2rem; color:var(--text2);
+      text-decoration:none; font-size:.85rem;
+    }
+    .back-link:hover { color:var(--accent); }
+  </style>
+</head>
+<body>
+  <h1>🏆 AI 模型排行榜</h1>
+  <p class="subtitle">从每日情报中自动提取模型 Benchmark 数据</p>
+
+  <div id="app" class="loading">⏳ 加载中...</div>
+  <a href="/" class="back-link">← 返回首页</a> · <a href="dashboard.html" class="back-link">📊 仪表盘</a>
+
+<script>
+const BENCH_COLORS = ['bench-1','bench-2','bench-3','bench-4'];
+
+async function load() {
+  try {
+    const resp = await fetch("data/leaderboard.json");
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const d = await resp.json();
+    render(d.models || []);
+  } catch(e) {
+    document.getElementById("app").innerHTML =
+      `<div class="no-data">📭 暂无模型数据<br><small>${e.message}</small></div>`;
+  }
+}
+
+function render(models) {
+  if (!models.length) {
+    document.getElementById("app").innerHTML = `<div class="no-data">📭 暂无模型数据<br><small>等待 LLM 从文章中提取模型信息</small></div>`;
+    return;
+  }
+
+  // Build table header
+  html = `<table><thead><tr>
+    <th onclick="sortBy('name')">模型 <span class="arrow"></span></th>
+    <th onclick="sortBy('provider')">提供方 <span class="arrow"></span></th>
+    <th>参数</th>
+    <th>Benchmark</th>
+  </tr></thead><tbody>`;
+
+  for (const m of models) {
+    const benchmarks = m.benchmarks || [];
+    const benchTags = benchmarks.slice(0, 4).map((b,i) =>
+      `<span class="bench-tag ${BENCH_COLORS[i%4]}">${esc(b.benchmark)}: ${esc(b.score)}</span>`
+    ).join('');
+
+    html += `<tr>
+      <td><div class="model-name">${esc(m.name)}</div></td>
+      <td><span class="model-provider">${esc(m.provider||'')}</span></td>
+      <td style="font-size:.82rem;color:var(--text2)">${esc(m.parameters||'—')}</td>
+      <td>${benchTags || '<span style="color:var(--text2);font-size:.78rem">暂无</span>'}</td>
+    </tr>`;
+  }
+
+  html += '</tbody></table>';
+  html += `<p style="margin-top:1rem;font-size:.78rem;color:var(--text2)">📊 共 ${models.length} 个模型 · 自动从每日情报中提取</p>`;
+  document.getElementById("app").innerHTML = html;
+}
+
+function esc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+load();
+</script>
+</body>
+</html>
