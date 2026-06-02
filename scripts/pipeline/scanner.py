@@ -2,6 +2,7 @@
 """Stage 1: Scanner — fetch RSS feeds, save raw articles to SQLite."""
 
 import hashlib
+import json
 import re
 import time
 from datetime import datetime, timezone
@@ -66,6 +67,58 @@ def fetch_feed(source: dict, retries: int = 2) -> list[dict]:
     return []
 
 
+def fetch_wp_api(source: dict, retries: int = 2) -> list[dict]:
+    """Fetch articles from a WordPress REST API endpoint."""
+    last_error = None
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(source["url"], timeout=20, headers={
+                "User-Agent": "AI-Intel-Scanner/2.0"
+            })
+            resp.raise_for_status()
+            posts = json.loads(resp.text)
+            if not isinstance(posts, list):
+                print(f"    ⚠️  Unexpected WP API response type: {type(posts).__name__}")
+                return []
+
+            articles = []
+            for post in posts[:20]:
+                title = post.get("title", {})
+                if isinstance(title, dict):
+                    title = title.get("rendered", "Untitled")
+
+                excerpt = post.get("excerpt", {})
+                if isinstance(excerpt, dict):
+                    excerpt_text = excerpt.get("rendered", "")
+                else:
+                    excerpt_text = str(excerpt)
+
+                # Clean HTML from excerpt
+                summary = re.sub(r"<[^>]+>", "", excerpt_text)[:500]
+
+                link = post.get("link", "")
+                pub_date = post.get("date", "") or post.get("date_gmt", "")
+
+                articles.append({
+                    "title": title,
+                    "link": link,
+                    "summary": summary,
+                    "published": pub_date or "Unknown",
+                    "source_name": source["name"],
+                    "category": source["category"],
+                })
+            return articles
+        except Exception as e:
+            last_error = e
+            if attempt < retries:
+                wait = (attempt + 1) * 2
+                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait}s ({e})")
+                time.sleep(wait)
+            else:
+                print(f"  ⚠️  {source['name']}: {last_error}")
+    return []
+
+
 def run() -> dict:
     """Run scanner, return stats dict."""
     print(f"📡 Scanner — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -79,8 +132,9 @@ def run() -> dict:
 
     for i, source in enumerate(SOURCES, 1):
         name = source["name"]
+        source_type = source.get("type", "rss")
         print(f"  [{i}/{len(SOURCES)}] {name}...", end=" ", flush=True)
-        articles = fetch_feed(source)
+        articles = fetch_wp_api(source) if source_type == "wp_api" else fetch_feed(source)
 
         if articles:
             success_count += 1

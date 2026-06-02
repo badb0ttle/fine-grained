@@ -288,3 +288,56 @@ tr:hover td { background:var(--bg-hover); }
   .dash-grid { grid-template-columns:1fr; }
   .container { padding:1rem; }
 }
+
+/* ── GitHub Trending ── */
+.trending-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:.8rem; margin-bottom:1.5rem;
+  border-bottom:1px solid var(--border);
+}
+.trending-header h2 {
+  font-family:'Newsreader',serif; font-size:1.2rem; font-weight:600;
+  color:var(--text-primary); margin:0;
+}
+.trending-date { color:var(--text-muted); font-size:.8rem; }
+
+.trending-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:1rem;
+}
+.trending-card {
+  display:block; background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--radius-md); padding:1.1rem 1.2rem;
+  text-decoration:none; transition:all .2s;
+}
+.trending-card:hover {
+  border-color:var(--accent); background:var(--bg-hover);
+  transform:translateY(-1px);
+}
+.trending-repo {
+  font-size:.85rem; color:var(--text-secondary); margin-bottom:.5rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.trending-repo strong { color:var(--accent2); }
+.trending-owner { color:var(--text-muted); }
+.trending-desc {
+  font-size:.78rem; color:var(--text-secondary); line-height:1.5;
+  margin-bottom:.6rem; display:-webkit-box; -webkit-line-clamp:2;
+  -webkit-box-orient:vertical; overflow:hidden;
+}
+.trending-meta {
+  display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+  font-size:.72rem; color:var(--text-muted);
+}
+.trending-stars { color:var(--orange); font-weight:500; }
+.trending-total { color:var(--text-muted); }
+.trending-lang {
+  padding:1px 6px; border-radius:var(--radius-sm);
+  background:rgba(116,185,255,0.12); color:var(--blue); font-size:.7rem;
+}
+.trending-badge {
+  padding:1px 6px; border-radius:var(--radius-sm); font-size:.7rem;
+}
+.trending-badge.paper-link {
+  background:rgba(108,92,231,0.15); color:var(--accent);
+}

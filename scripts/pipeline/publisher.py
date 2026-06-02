@@ -140,6 +140,12 @@ def export_files(data: dict) -> dict:
     lb_path.write_text(json.dumps(leaderboard_data, ensure_ascii=False, indent=2))
     print(f"💾 leaderboard.json: {len(leaderboard_data.get('models',[]))} models")
 
+    # Write trending.json for GitHub Trending
+    trending_data = __import__('scripts.pipeline.github_trending', fromlist=['export_trending_json']).export_trending_json()
+    trending_path = data_dir / "trending.json"
+    trending_path.write_text(json.dumps(trending_data, ensure_ascii=False, indent=2))
+    print(f"💾 trending.json: {trending_data.get('count',0)} repos")
+
     # Write history snapshot
     from datetime import datetime
     date_str = datetime.now().strftime("%Y-%m-%d")
@@ -172,7 +178,7 @@ def git_push() -> dict:
     run(["git", "pull", "origin", branch, "--rebase"], check=False)
 
     # Stage
-    run(["git", "add", "data/latest.json", "data/history/", "data/ai_intel.db"], check=False)
+    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/history/", "data/ai_intel.db"], check=False)
 
     # Check if anything to commit
     status = subprocess.run(

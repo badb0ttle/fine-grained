@@ -17,6 +17,7 @@
       <a href="dashboard.html">📊 仪表盘</a>
       <a href="leaderboard.html">🏆 排行榜</a>
       <a href="data/weekly/">📰 周报</a>
+      <a href="#trending">🔥 Trending</a>
       <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
     </nav>
   </div>
@@ -38,6 +39,15 @@
     <p>正在加载最新情报...</p>
   </div>
 </main>
+
+<!-- GitHub Trending Section -->
+<section class="container" id="trending-section" style="display:none">
+  <div class="trending-header">
+    <h2>🔥 GitHub Trending · AI/ML</h2>
+    <span class="trending-date" id="trending-date"></span>
+  </div>
+  <div class="trending-grid" id="trending-grid"></div>
+</section>
 
 <footer class="site-footer">
   <p>每日自动更新 · <a href="https://ai.hjhai.xyz">ai.hjhai.xyz</a></p>
@@ -69,6 +79,38 @@ function renderArticle(a){
     ${summary?`<div class="article-summary">${esc(summary.slice(0,280))}</div>`:""}
     ${wim}
   </div>`;
+}
+
+function renderTrending(data){
+  if(!data||!data.repos||!data.repos.length) return;
+  const section = document.getElementById("trending-section");
+  const grid = document.getElementById("trending-grid");
+  const date = document.getElementById("trending-date");
+  if(data.snapshot_at) date.textContent = "📅 " + data.snapshot_at.slice(0,10);
+
+  let html = "";
+  for(const r of data.repos.slice(0,12)){
+    const owner = r.repo_full.split("/")[0];
+    const name = r.repo_full.split("/")[1];
+    const paperBadge = r.paper_linked
+      ? `<span class="trending-badge paper-link" title="有对应论文">📄 论文</span>`
+      : "";
+    const langTag = r.language ? `<span class="trending-lang">${esc(r.language)}</span>` : "";
+    html += `<a href="${esc(r.url)}" target="_blank" rel="noopener" class="trending-card">
+      <div class="trending-repo">
+        <span class="trending-owner">${esc(owner)}/</span><strong>${esc(name)}</strong>
+      </div>
+      <div class="trending-desc">${esc(r.description.slice(0,120))}</div>
+      <div class="trending-meta">
+        <span class="trending-stars">⭐ ${r.stars_today} today</span>
+        <span class="trending-total">${r.total_stars.toLocaleString()} total</span>
+        ${langTag}
+        ${paperBadge}
+      </div>
+    </a>`;
+  }
+  grid.innerHTML = html;
+  section.style.display = "block";
 }
 
 function render(data){
@@ -121,6 +163,11 @@ fetch("data/latest.json")
     document.getElementById("loading").innerHTML=
       `<div class="empty">📭 暂无数据<br><small>${e}</small></div>`;
   });
+
+fetch("data/trending.json")
+  .then(r=>r.ok?r.json():Promise.reject(r.status))
+  .then(renderTrending)
+  .catch(()=>{});
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ import argparse
 import time
 from pathlib import Path
 
-from pipeline import scanner, dedup, scorer, curator, publisher, paper_analyzer
+from pipeline import scanner, dedup, scorer, curator, publisher, paper_analyzer, github_trending
 
 
 def run_full():
@@ -31,7 +31,7 @@ def run_full():
     scorer_stats = scorer.run()
 
     # Stage 4: Curator — prepare candidates for LLM
-    print("\n[4/4] Curator (candidate selection)")
+    print("\n[4/5] Curator (candidate selection)")
     candidates = curator.get_candidates(20)
     top_n = min(10, len(candidates))
     print(f"   {len(candidates)} candidates ready for LLM curation")
@@ -43,6 +43,10 @@ def run_full():
         prompt_path = Path(__file__).parent.parent / "data" / "curation_prompt.txt"
         prompt_path.write_text(prompt)
         print(f"   📝 Curation prompt saved to data/curation_prompt.txt")
+
+    # Stage 5: GitHub Trending
+    print("\n[5/5] GitHub Trending")
+    trending_stats = github_trending.run()
 
     elapsed = time.time() - t0
     print(f"\n{'=' * 60}")
