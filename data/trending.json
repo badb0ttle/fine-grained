@@ -1,0 +1,40 @@
+{
+  "snapshot_at": "2026-06-02T05:59:52.102593+00:00",
+  "count": 3,
+  "repos": [
+    {
+      "repo_full": "FareedKhan-dev/train-llm-from-scratch",
+      "description": "",
+      "language": "Jupyter Notebook",
+      "stars_today": 861,
+      "total_stars": 3846,
+      "url": "https://github.com/FareedKhan-dev/train-llm-from-scratch",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "TauricResearch/TradingAgents",
+      "description": "",
+      "language": "Python",
+      "stars_today": 299,
+      "total_stars": 81940,
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "stefan-jansen/machine-learning-for-trading",
+      "description": "",
+      "language": "Jupyter Notebook",
+      "stars_today": 93,
+      "total_stars": 17988,
+      "url": "https://github.com/stefan-jansen/machine-learning-for-trading",
+      "paper_linked": false,
+      "paper_id": null
+    }
+  ],
+  "history_dates": [
+    "2026-06-02",
+    "2026-06-02"
+  ]
+}
