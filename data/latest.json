@@ -1,9 +1,21 @@
 {
-  "scanned_at": "2026-06-01T13:10:56.450345+00:00",
+  "scanned_at": "2026-06-02T00:10:26.221919+00:00",
   "total_sources": 15,
   "successful_sources": 15,
-  "total_articles": 10,
+  "total_articles": 266,
+  "curated_at": "2026-06-02T08:15:00+08:00",
+  "curated_count": 10,
   "articles": [
+    {
+      "title": "MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost",
+      "link": "https://venturebeat.com/technology/minimax-m3-debuts-eclipsing-gpt-5-5-and-gemini-3-1-pro-on-key-benchmark-performance-for-just-5-10-of-the-cost",
+      "summary": "Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and agentic performance with a 1-million-token context window and native multimodality for a fraction of the cost of leading proprietary models, with pricing starting at just $20 per month under its new subscription token plans. The company&#x27;s leadership also announced plans to deliver the model und",
+      "published": "2026-06-01 16:10:05",
+      "source": "VentureBeat AI",
+      "category": "Blog",
+      "title_cn": "MiniMax-M3 发布：关键基准测试超越 GPT-5.5 和 Gemini 3.1 Pro，成本仅为其 5-10%",
+      "summary_cn": "中国 AI 初创公司 MiniMax 发布 M3 大模型，在多项关键基准测试中超越了 OpenAI 的 GPT-5.5 和 Google 的 Gemini 3.1 Pro，而推理成本仅为它们的 5-10%，在性能价格比上形成碾压优势，震动企业 AI 市场。"
+    },
     {
       "title": "Welcome NVIDIA Cosmos 3: The First Open Omni-model for Physical AI Reasoning and Action",
       "link": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
@@ -11,98 +23,88 @@
       "published": "2026-06-01 04:44:55",
       "source": "HuggingFace Blog",
       "category": "Community",
-      "title_cn": "NVIDIA Cosmos 3 发布：首个面向物理 AI 推理与行动的开源全模态模型",
-      "summary_cn": "NVIDIA 正式发布 Cosmos 3，这是首个开源的全模态物理 AI 模型，能够理解物理世界并进行推理、规划和行动，标志着物理 AI 领域的重要里程碑。"
+      "title_cn": "NVIDIA Cosmos 3 发布：首个开放的物理 AI 推理与行动全模态模型",
+      "summary_cn": "NVIDIA 发布 Cosmos 3，这是首个开放的面向物理 AI 的全模态基础模型，能够同时进行推理、世界建模和行动生成，为机器人、自动驾驶和智能空间等物理 AI 系统提供统一的基础能力。"
     },
     {
-      "title": "Boston Children’s uses AI to unlock new diagnoses",
-      "link": "https://openai.com/index/boston-childrens-hospital",
-      "summary": "Boston Children’s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cases.",
-      "published": "2026-05-29 12:00:00",
-      "source": "OpenAI Blog",
-      "category": "AI Lab",
-      "title_cn": "波士顿儿童医院利用 AI 解锁新诊断方式",
-      "summary_cn": "OpenAI 与波士顿儿童医院合作，将 AI 应用于临床诊断，帮助医生发现传统方法难以识别的罕见病症，展示了 AI 在医疗领域的实际落地价值。"
-    },
-    {
-      "title": "NVIDIA Vera CPU Sets a New Standard for Agentic Workloads in AI Factories",
-      "link": "https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/",
-      "summary": "Each wave of AI has created a new scaling law. Pretraining scaled intelligence through larger datasets, more parameters, and massively parallel GPU systems....",
-      "published": "2026-06-01 03:59:15",
-      "source": "NVIDIA Blog",
-      "category": "AI Lab",
-      "title_cn": "NVIDIA Vera CPU 为 AI 工厂中的智能体工作负载树立新标准",
-      "summary_cn": "NVIDIA 推出 Vera CPU，专为 AI 工厂中的智能体（Agent）工作负载设计，在推理性能和能效上实现重大突破，为大规模 AI 部署提供了新的算力基础。"
-    },
-    {
-      "title": "How Braintrust turns customer requests into code with Codex",
-      "link": "https://openai.com/index/braintrust",
-      "summary": "How Braintrust engineers use Codex with GPT-5.5 to run experiments and code faster.",
-      "published": "2026-05-29 12:00:00",
-      "source": "OpenAI Blog",
-      "category": "AI Lab",
-      "title_cn": "Braintrust 借助 Codex 将客户需求转化为代码",
-      "summary_cn": "Braintrust 分享了使用 OpenAI Codex 的实践经验，展示了 AI 编程助手如何将客户的自然语言需求自动转化为可运行代码，大幅提升开发效率。"
-    },
-    {
-      "title": "一颗288核的至强6+，为什么能同时运行500个Agent？",
-      "link": "https://www.leiphone.com/category/chips/WxcUhbV0RIXlGVdR.html",
-      "summary": "过去两年，AI基础设施行业有一个几乎无人质疑的共识：GPU决定AI的上限。从大模型训练到推理部署，产业的关注点几乎都围绕着GPU展开。显存够不够大、带宽够不够高、Token吞吐量能达到多少，成为衡量AI基础设施能力的核心指标。但Agent的出现，正在改变这套逻辑。与传统聊天机器人不同，Agent并不只是完成一次问答，而是需要持续执行任务。它需要调用工具、访问数据库、浏览网页、管理记忆系统，甚至不断创建和调度新的子Agent协同完成工作。当AI开始从生成答案转向执行任务，一个长期被GPU光环掩盖的角色重新回到了舞台中央——CPU。Computex 2026台北国际电脑展期间，英特尔发布了首款基于Intel 18A工艺打造的数据中心处理器——至强6+（代号Clearwater Forest）。这款处理器拥有288个能效核（E-Core），还拥有一个非常吸引人的特性，在实际测试中，一颗288核至强6+可以轻松同时部署400至500个Agent。这背后折射出的，并不仅仅是一颗新CPU的发布，而是Agent时代AI基础设施底层逻辑的一次深刻变化。一颗CPU能同时运行500个Agent的关键是什么",
-      "published": "2026-06-01 10:20:00",
-      "source": "雷锋网 AI",
-      "category": "中文媒体",
-      "title_cn": "一颗288核的至强6+，为什么能同时运行500个Agent？",
-      "summary_cn": "Intel 至强6+ 处理器以 288 核的惊人规格，展示了同时运行 500 个 AI Agent 的能力，为大规模智能体部署提供了强大的 CPU 底座。"
-    },
-    {
-      "title": "ICRA 2026高校论文榜重磅出炉： 清华74篇断层领跑，中国高校席卷半壁江山",
-      "link": "https://www.leiphone.com/category/robot/fzywXI4kHzSeCDVS.html",
-      "summary": "一、中国高校霸榜：11所入围Top 20，全球机器人学术权力中心东移ICRA 2026今日（6月1日）在维也纳正式开幕。本届大会以&quot;Robots for All（机器人惠及所有人）&quot;为主题，收到来自86个国家的4,947篇投稿，创下ICRA历史新高。随着官方论文接收数据出炉，第一作者单位排名折射出全球机器人学术版图的深刻变化——中国高校正在从&quot;最大参与方&quot;变身为&quot;最强产出方&quot;。在雷峰网按第一作者单位统计的论文接收数量Top 20榜单中，中国高校占据了11个席位，占比高达55%。美国高校占据6席，亚洲其他国家（韩国、新加坡）占据2席，欧洲仅德国慕尼黑工业大学1所入围。这一格局在五年前几乎不可想象。▎ 清华大学以74篇论文的绝对优势登顶榜首，领先第二名上海交通大学（53篇）21篇之多。这个差距相当于第12名哈工大（31篇）的全部产出量。▎ &quot;清北交浙&quot;四校（清华、上海交大、浙大、北大）合计接收212篇，占Top 20总量的31.7%，构成了中国机器人学术的第一梯队。值得关注的是，北航以34篇与北大并列第七，在航",
-      "published": "2026-06-01 09:38:00",
-      "source": "雷锋网 AI",
-      "category": "中文媒体",
-      "title_cn": "ICRA 2026 高校论文榜：清华 74 篇断层领跑，中国高校席卷半壁江山",
-      "summary_cn": "机器人领域顶会 ICRA 2026 统计各高校论文发表量，清华大学以 74 篇遥遥领先，中国高校整体表现强势，占据了论文总数的近半壁江山。"
-    },
-    {
-      "title": "ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM",
-      "link": "https://huggingface.co/blog/ibm-research/itbench-aa",
-      "summary": "",
-      "published": "2026-05-27 17:20:29",
-      "source": "HuggingFace Blog",
-      "category": "Community",
-      "title_cn": "ITBench-AA 基准测试：前沿模型在企业 IT 任务上得分不到 50%",
-      "summary_cn": "Artificial Analysis 与 IBM 联合发布 ITBench-AA 基准，测试 AI 在企业 IT 运维任务上的表现，结果显示即使是目前最先进的前沿模型，得分也不到 50%，说明企业级 AI 自动化仍有巨大提升空间。"
-    },
-    {
-      "title": "Up to 580tps! New Speed Record of Qwen3.5-397B-A17B on GPU for Agentic Workloads with TokenSpeed",
-      "link": "https://pytorch.org/blog/up-to-580tps-new-speed-record-of-qwen3-5-397b-a17b-on-gpu-for-agentic-workloads-with-tokenspeed/",
-      "summary": "TL;DR: The TokenSpeed inference engine achieved a record-breaking 580 tps running the Qwen3.5-397B-A17B model on GPUs. This extreme performance for agentic workloads is driven by systematic elimination of memory copies,...",
-      "published": "2026-05-27 15:39:42",
-      "source": "PyTorch Blog",
-      "category": "Community",
-      "title_cn": "Qwen3.5-397B 在 GPU 上创下 580 tps 的 Agent 工作负载新速度纪录",
-      "summary_cn": "借助 TokenSpeed 优化，Qwen3.5-397B-A17B 超大模型在 GPU 上达到每秒 580 tokens 的处理速度，刷新了 Agent 工作负载的性能纪录，为大模型推理效率提供了新标杆。"
-    },
-    {
-      "title": "‘What a joke’: Github Copilot’s new token-based billing spurs consternation among devs",
-      "link": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
-      "summary": "The golden age of Microsoft's Github Copilot appears to be at an end.",
-      "published": "2026-05-30 16:30:00",
+      "title": "Anthropic files to go public",
+      "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
+      "summary": "Anthropic, now an AI powerhouse that has landed top-tier enterprise customers, was once considered an underdog in the emerging world of large language models.",
+      "published": "2026-06-01 16:36:55",
       "source": "TechCrunch AI",
       "category": "Blog",
-      "title_cn": "GitHub Copilot 改用 Token 计费引发开发者强烈不满",
-      "summary_cn": "GitHub 宣布 Copilot 将采用基于 Token 消耗的新计费模式，引发开发者社区的广泛批评，许多人认为这将大幅增加使用成本，担忧 AI 编程助手的普及将因此受阻。"
+      "title_cn": "Anthropic 提交 IPO 申请，AI 巨头加速资本化",
+      "summary_cn": "AI 明星公司 Anthropic 正式提交上市申请，这家曾被视为行业黑马的公司在拿下大量顶级企业客户后，正通过 IPO 加速扩张，标志着 AI 行业进入资本密集型竞争的新阶段。"
     },
     {
-      "title": "Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler",
-      "link": "https://huggingface.co/blog/torch-profiler",
-      "summary": "",
-      "published": "2026-05-29 00:00:00",
-      "source": "HuggingFace Blog",
-      "category": "Community",
-      "title_cn": "PyTorch Profiler 入门指南：初学者也能掌握的性能分析工具",
-      "summary_cn": "PyTorch 官方发布 torch.profiler 系列教程的第一篇，帮助开发者轻松入门深度学习模型的性能分析和优化，是 PyTorch 生态建设的重要补充。"
+      "title": "Alphabet plans to raise $80B to pay for AI buildout",
+      "link": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
+      "summary": "\"The company is experiencing strong demand for its AI solutions and services from enterprises and consumers, at levels that are exceeding the company’s available supply,\" Alphabet said in its statement.",
+      "published": "2026-06-01 22:55:09",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "title_cn": "Alphabet 计划融资 800 亿美元用于 AI 基础设施建设",
+      "summary_cn": "Alphabet 宣布计划筹集 800 亿美元巨资以支持 AI 基础设施建设，公司表示来自企业和消费者的 AI 需求远超现有供给能力，反映出 AI 算力军备竞赛的进一步升级。"
+    },
+    {
+      "title": "OpenAI frontier models and Codex are now available on AWS",
+      "link": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
+      "summary": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
+      "published": "2026-06-01 10:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "OpenAI 前沿模型及 Codex 正式登陆 AWS",
+      "summary_cn": "OpenAI 的前沿模型和 Codex 编程智能体现在已在 AWS 上全面可用，企业用户获得了一条通过 AWS 使用 OpenAI 技术的新路径，两大巨头从竞争走向深度合作。"
+    },
+    {
+      "title": "Nvidia chases $200B CPU market with AI agent PCs from Microsoft, Dell, and HP",
+      "link": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      "summary": "If Nvidia has cracked a way to bring AI agents easily, safely, and usefully to the masses, it could — and should — be big.",
+      "published": "2026-06-01 21:35:00",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "title_cn": "NVIDIA 联手微软、戴尔、惠普进军 2000 亿美元 CPU 市场，推出 AI Agent PC",
+      "summary_cn": "NVIDIA 与微软、戴尔、惠普合作推出 AI Agent PC，正式切入价值 2000 亿美元的 CPU 市场。如果 NVIDIA 成功将 AI Agent 安全、易用地带给大众消费者，这将是一次 PC 产业格局的重大重塑。"
+    },
+    {
+      "title": "星海图新一代具身基础模型G0.5发布，全面提升零样本泛化能力，让机器人边思考边行动",
+      "link": "https://www.leiphone.com/category/industrynews/i8V0VCdEywlci8jo.html",
+      "summary": "过去，机器人听到“帮我把毛巾放进洗手池”——它只会机械地执行一串预设动作。现在，我们让G0.5做到了：先想——毛巾在哪？洗手池在哪？应该先拿起毛巾，再移动过去，最后放下。边思考，边行动。这一能力依托于我们最新的 VLA（视觉-语言-行动）模型架构设计：让同一个模型、同一套权重，同时完成推理与行动，让机器人拥有“行动中的思考能力”。言出法随：零样本泛化至新物体、新环境、新指令G0.5 在 R1 Lite 机器人上，零样本（未经任何该场景的微调），仅凭自然语言指令直接驱动机器人完成操作任务。模型从未见过当前的环境布局、物体类别和指令组合，却能实时理解指令意图、分解动作并输出流畅的双臂控制。这正是 G0.5 “言出法随”的开箱即用能力——一个模型，一句话，直接干活。从“记住任务”到“学会操作”过去，机器人学习一项新任务通常意味着：重新采集数据、重新微调模型、重新适配场景。它们可以出色地完成被训练过的任务，却很难泛化到新的物体、新的环境和新的指令。我们通过大规模、多任务预训练，让 G0.5 形成了可迁移、可组合的操作智能。抓取、放置、推拉、开合、移动等原子动作，不再是单个任务中的固定片段，而是",
+      "published": "2026-06-01 12:33:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "星海图发布新一代具身基础模型 G0.5：让机器人边思考边行动",
+      "summary_cn": "星海图发布新一代具身基础模型 G0.5，基于 VLA（视觉-语言-行动）架构实现零样本泛化能力的大幅提升——机器人不再是机械执行预设动作，而是能够先理解场景再规划行动，边思考边操作。"
+    },
+    {
+      "title": "扣子 3.0 正式上线，开启Agent 团队协作新方式",
+      "link": "https://www.leiphone.com/category/industrynews/2zFXEr1gabpabWik.html",
+      "summary": "6月1日，扣子 3.0 正式上线，扣子手机端 （iOS / Android）、电脑端（Mac OS / Windows）、网页端三端全量更新。&nbsp;扣子 3.0 提出了 AI 团队协作方式的全新架构，将 Agent 带入更完整的工作现场。在扣子 3.0 中，Agent 可以被创建、接入和随时调度，任务可以被放进项目中拆解、分配和沉淀，行业技能包可以为复杂任务提供更专业的能力起点。而扣子的网页端、桌面端和手机 App 端，则让 Agent 有机会与用户的文件、本地设备和工作场景接通，让 AI 能够更深入地参与到真实的生产现场。&nbsp;自定义Agent开箱即用，支持云端创建和本地接入&nbsp;过去，用户通过单个 Agent 完成特定任务，但面对复杂任务时，单一Agent助手的局限性逐渐显现。在扣子 3.0 中，Agent 不再只有一种形态：用户能够添加自定义 Agent，组建自己的 Agent team。&nbsp;扣子 3.0 支持接入本地 Agent。用户可将本地使用的 Claude Code、Codex CLI、OpenClaw等工具接入扣子，接入后，这些本地 Agent",
+      "published": "2026-06-01 08:21:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "字节跳动扣子 3.0 正式上线：开启 Agent 团队协作新方式",
+      "summary_cn": "字节跳动旗下 AI 应用开发平台扣子（Coze）3.0 版本正式全端上线，提出 AI 团队协作的全新架构，将多个 Agent 组合为协作团队完成复杂工作流，代表了 Agent 应用从单兵作战走向团队协作的趋势。"
+    },
+    {
+      "title": "港中文团队提出 Skill 生命周期管理 SLIM，让大模型智能体不再盲目堆积 Skill ！",
+      "link": "https://www.leiphone.com/category/academic/YlpyUWTgMBNTc9YK.html",
+      "summary": "SLIM：让模型判断外部能力的去留，在复杂任务中保留真正有用的支撑。&nbsp; &nbsp; 作者丨郑佳美&nbsp; &nbsp; 编辑丨马晓宁&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;大模型智能体正在从“会聊天”走向“会做事”。在网页搜索、工具调用、自动",
+      "published": "2026-06-01 07:34:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "港中文团队提出 SLIM：让大模型智能体的 Skill 实现生命周期管理",
+      "summary_cn": "香港中文大学团队提出 SLIM（Skill 生命周期管理）框架，解决了大模型智能体在复杂任务中 Skill 盲目堆积的难题——让模型自主判断外部能力的去留，只保留真正有用的 Skill 支撑。"
+    },
+    {
+      "title": "VLM3: Vision Language Models Are Native 3D Learners",
+      "link": "https://arxiv.org/abs/2605.30561",
+      "summary": "arXiv:2605.30561v1 Announce Type: new \nAbstract: Vision Language Models (VLMs) enable a unified model to solve various vision tasks through prompting. They have shown promising performance in semantic understanding. However, 3D understanding still largely relies on expert vision models with complex task-specific designs. The key argument this work wants to make is that VLMs are native 3D learners. Our in-depth large scale study shows that 1) focal length unification, 2) text-based pixel referenc",
+      "published": "2026-06-01 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "VLM3：视觉语言模型是天然的 3D 学习器",
+      "summary_cn": "最新研究 VLM3 证明视觉语言模型（VLM）具备原生 3D 学习能力，无需专门的 3D 架构即可理解和推理三维空间关系，为通用视觉智能体在物理世界中的应用开辟了新路径。"
     }
   ]
 }
