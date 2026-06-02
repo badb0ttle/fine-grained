@@ -16,38 +16,46 @@ def content_hash(title: str, link: str) -> str:
     return hashlib.sha256(f"{title.strip().lower()}|{link.strip()}".encode()).hexdigest()
 
 
-def fetch_feed(source: dict) -> list[dict]:
-    """Fetch a single RSS feed, return list of article dicts."""
-    try:
-        resp = requests.get(source["url"], timeout=15, headers={
-            "User-Agent": "AI-Intel-Scanner/2.0"
-        })
-        resp.raise_for_status()
-        feed = feedparser.parse(resp.content)
-
-        articles = []
-        for entry in feed.entries[:20]:
-            pub_date = None
-            if hasattr(entry, "published_parsed") and entry.published_parsed:
-                pub_date = time.strftime("%Y-%m-%d %H:%M:%S", entry.published_parsed)
-            elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-                pub_date = time.strftime("%Y-%m-%d %H:%M:%S", entry.updated_parsed)
-
-            summary = entry.get("summary", "") or ""
-            clean_summary = re.sub(r"<[^>]+>", "", summary)[:500]
-
-            articles.append({
-                "title": entry.get("title", "Untitled"),
-                "link": entry.get("link", ""),
-                "summary": clean_summary,
-                "published": pub_date or "Unknown",
-                "source_name": source["name"],
-                "category": source["category"],
+def fetch_feed(source: dict, retries: int = 2) -> list[dict]:
+    """Fetch a single RSS feed with retry on transient errors, return list of article dicts."""
+    last_error = None
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(source["url"], timeout=20, headers={
+                "User-Agent": "AI-Intel-Scanner/2.0"
             })
-        return articles
-    except Exception as e:
-        print(f"  ⚠️  {source['name']}: {e}")
-        return []
+            resp.raise_for_status()
+            feed = feedparser.parse(resp.content)
+
+            articles = []
+            for entry in feed.entries[:20]:
+                pub_date = None
+                if hasattr(entry, "published_parsed") and entry.published_parsed:
+                    pub_date = time.strftime("%Y-%m-%d %H:%M:%S", entry.published_parsed)
+                elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
+                    pub_date = time.strftime("%Y-%m-%d %H:%M:%S", entry.updated_parsed)
+
+                summary = entry.get("summary", "") or ""
+                clean_summary = re.sub(r"<[^>]+>", "", summary)[:500]
+
+                articles.append({
+                    "title": entry.get("title", "Untitled"),
+                    "link": entry.get("link", ""),
+                    "summary": clean_summary,
+                    "published": pub_date or "Unknown",
+                    "source_name": source["name"],
+                    "category": source["category"],
+                })
+            return articles
+        except Exception as e:
+            last_error = e
+            if attempt < retries:
+                wait = (attempt + 1) * 2
+                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait}s ({e})")
+                time.sleep(wait)
+            else:
+                print(f"  ⚠️  {source['name']}: {last_error}")
+    return []
 
 
 def run() -> dict:
