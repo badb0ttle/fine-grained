@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>话题聚类 · AI 情报站</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    .cluster-wrap {
+      position: relative; width: 100%; overflow: hidden;
+      background: var(--bg-base); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); margin: 1rem 0;
+    }
+    .cluster-wrap canvas { display: block; width: 100%; height: auto; cursor: crosshair; }
+
+    .cluster-tooltip {
+      position: absolute; pointer-events: none; z-index: 50;
+      background: var(--bg-card); border: 1px solid var(--border-strong);
+      border-radius: var(--radius); padding: .7rem .9rem;
+      max-width: 280px; font-size: .8rem;
+      box-shadow: var(--shadow-lg); opacity: 0; transition: opacity .15s;
+    }
+    .cluster-tooltip .tt-title {
+      color: var(--text-primary); font-weight: 500;
+      line-height: 1.35; margin-bottom: .3rem;
+    }
+    .cluster-tooltip .tt-meta {
+      color: var(--text-muted); font-size: .72rem;
+      display: flex; gap: .5rem; flex-wrap: wrap;
+    }
+
+    .cluster-legend {
+      display: flex; flex-wrap: wrap; gap: .6rem;
+      justify-content: center; padding: .8rem 0;
+    }
+    .cluster-legend-item {
+      display: flex; align-items: center; gap: .35rem;
+      font-size: .75rem; color: var(--text-secondary);
+      cursor: pointer; padding: .25rem .6rem;
+      border-radius: 999px; border: 1px solid transparent;
+      transition: all var(--fast) var(--ease);
+    }
+    .cluster-legend-item:hover {
+      border-color: var(--border); background: var(--bg-hover);
+    }
+    .cluster-legend-item .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .cluster-legend-item .count {
+      color: var(--text-muted); font-size: .68rem;
+    }
+
+    .cluster-info {
+      text-align: center; padding: .5rem;
+      color: var(--text-muted); font-size: .78rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">🤖 AI 情报站</a>
+    <nav class="site-nav">
+      <a href="/">🏠 首页</a>
+      <a href="dashboard.html">📊 仪表盘</a>
+      <a href="leaderboard.html">🏆 排行榜</a>
+      <a href="timeline.html">📅 时间线</a>
+      <a href="clusters.html" class="active">🗺️ 聚类</a>
+      <a href="data/weekly/">📰 周报</a>
+      <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>🗺️ 话题聚类</h1>
+    <p>基于 TF-IDF 语义相似度的文章聚类可视化。每点代表一篇文章，相近的文章自动聚在一起。</p>
+  </div>
+</section>
+
+<div class="container-wide">
+  <div class="cluster-legend" id="legend"></div>
+
+  <div class="cluster-wrap" id="cluster-wrap">
+    <canvas id="cluster-canvas"></canvas>
+    <div class="cluster-tooltip" id="tooltip"></div>
+  </div>
+  <div class="cluster-info" id="info"></div>
+</div>
+
+<footer class="site-footer">
+  <p>每日自动更新 · <a href="https://ai.hjhai.xyz">ai.hjhai.xyz</a></p>
+  <p><a href="https://github.com/badb0ttle/fine-grained">GitHub</a></p>
+</footer>
+
+<script>
+function esc(s){if(!s)return"";const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+const PADDING = 50;
+const DOT_RADIUS = 4;
+const HOVER_RADIUS = 8;
+
+let clusterData = null;
+let activeCluster = -1; // -1 = all
+
+fetch('data/clusters.json')
+  .then(r => r.json())
+  .then(data => {
+    clusterData = data;
+    renderLegend();
+    drawScatter();
+  })
+  .catch(e => {
+    document.getElementById('info').textContent = '⚠️ 聚类数据加载失败: ' + e;
+  });
+
+function renderLegend() {
+  const legend = document.getElementById('legend');
+  let html = `<div class="cluster-legend-item" data-cluster="-1" style="border-color:var(--border)">
+    <span class="dot" style="background:var(--text-muted)"></span> 全部 <span class="count">(${clusterData.total_articles})</span>
+  </div>`;
+  for (const c of clusterData.clusters) {
+    html += `<div class="cluster-legend-item" data-cluster="${c.id}">
+      <span class="dot" style="background:${c.color}"></span>
+      ${esc(c.title.slice(0, 35))} <span class="count">(${c.count})</span>
+    </div>`;
+  }
+  legend.innerHTML = html;
+
+  legend.addEventListener('click', function(e) {
+    const item = e.target.closest('.cluster-legend-item');
+    if (!item) return;
+    activeCluster = parseInt(item.dataset.cluster);
+    legend.querySelectorAll('.cluster-legend-item').forEach(el => {
+      el.style.borderColor = parseInt(el.dataset.cluster) === activeCluster
+        ? 'var(--accent)' : 'transparent';
+    });
+    drawScatter();
+  });
+}
+
+function drawScatter() {
+  if (!clusterData) return;
+
+  const canvas = document.getElementById('cluster-canvas');
+  const wrap = document.getElementById('cluster-wrap');
+  const tooltip = document.getElementById('tooltip');
+  const info = document.getElementById('info');
+
+  // High-DPI canvas
+  const dpr = window.devicePixelRatio || 1;
+  const rect = wrap.getBoundingClientRect();
+  const W = rect.width;
+  const H = Math.min(W * 0.7, 550);
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  // Background
+  ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--bg-base').trim() || '#0a0a12';
+  ctx.fillRect(0, 0, W, H);
+
+  // Filter points
+  let points = clusterData.points;
+  if (activeCluster >= 0) {
+    points = points.filter(p => p.cluster === activeCluster);
+  }
+
+  // Map points to canvas coords
+  const plotW = W - PADDING * 2;
+  const plotH = H - PADDING * 2;
+  const canvasPoints = points.map(p => ({
+    ...p,
+    cx: PADDING + p.x * plotW,
+    cy: PADDING + (1 - p.y) * plotH,
+  }));
+
+  // Draw grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 4; i++) {
+    const gx = PADDING + (plotW / 4) * i;
+    const gy = PADDING + (plotH / 4) * i;
+    ctx.beginPath(); ctx.moveTo(gx, PADDING); ctx.lineTo(gx, PADDING + plotH); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(PADDING, gy); ctx.lineTo(PADDING + plotW, gy); ctx.stroke();
+  }
+
+  // Draw points
+  const clusterMap = {};
+  for (const c of clusterData.clusters) clusterMap[c.id] = c.color;
+
+  for (const p of canvasPoints) {
+    const color = clusterMap[p.cluster] || '#888';
+    const alpha = activeCluster >= 0 ? 0.9 : 0.65;
+    ctx.beginPath();
+    ctx.arc(p.cx, p.cy, DOT_RADIUS, 0, Math.PI * 2);
+    ctx.fillStyle = color + Math.round(alpha * 255).toString(16).padStart(2, '0');
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+    ctx.lineWidth = 0.3;
+    ctx.stroke();
+  }
+
+  info.textContent = `显示 ${canvasPoints.length} 篇文章 · 共 ${clusterData.n_clusters} 个聚类`;
+
+  // Hover interaction
+  let hoveredPoint = null;
+
+  canvas.onmousemove = function(e) {
+    const mx = e.offsetX;
+    const my = e.offsetY;
+
+    // Find closest point within threshold
+    let closest = null;
+    let minDist = 15;
+    for (const p of canvasPoints) {
+      const dx = mx - p.cx;
+      const dy = my - p.cy;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < minDist) { minDist = d; closest = p; }
+    }
+
+    if (closest !== hoveredPoint) {
+      // Redraw to clear old highlight
+      drawScatter();
+
+      if (closest) {
+        // Highlight
+        ctx.beginPath();
+        ctx.arc(closest.cx, closest.cy, HOVER_RADIUS, 0, Math.PI * 2);
+        const color = clusterMap[closest.cluster] || '#888';
+        ctx.fillStyle = color + '40';
+        ctx.fill();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Tooltip
+        tooltip.innerHTML = `
+          <div class="tt-title">${esc(closest.title)}</div>
+          <div class="tt-meta">
+            <span>${esc(closest.source)}</span>
+            <span>${esc((closest.published||'').slice(0,10))}</span>
+            <span>⭐ ${closest.score}</span>
+          </div>`;
+        tooltip.style.opacity = '1';
+
+        const tw = tooltip.offsetWidth;
+        const th = tooltip.offsetHeight;
+        let tx = e.offsetX + 16;
+        let ty = e.offsetY - th - 10;
+        if (tx + tw > W) tx = e.offsetX - tw - 16;
+        if (ty < 0) ty = e.offsetY + 16;
+        tooltip.style.left = tx + 'px';
+        tooltip.style.top = ty + 'px';
+      } else {
+        tooltip.style.opacity = '0';
+      }
+      hoveredPoint = closest;
+    }
+  };
+
+  canvas.onclick = function(e) {
+    const mx = e.offsetX;
+    const my = e.offsetY;
+    let closest = null;
+    let minDist = 15;
+    for (const p of canvasPoints) {
+      const dx = mx - p.cx;
+      const dy = my - p.cy;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d < minDist) { minDist = d; closest = p; }
+    }
+    if (closest && closest.link) {
+      window.open(closest.link, '_blank');
+    }
+  };
+
+  canvas.onmouseleave = function() {
+    tooltip.style.opacity = '0';
+    hoveredPoint = null;
+    drawScatter();
+  };
+}
+
+window.addEventListener('resize', function() {
+  drawScatter();
+});
+</script>
+</body>
+</html>

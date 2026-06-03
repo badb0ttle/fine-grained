@@ -117,6 +117,34 @@ def export_stats_json() -> dict:
     }
 
 
+def export_search_index() -> list:
+    """Export all articles as a searchable index for client-side full-text search (Phase 5)."""
+    from . import get_db
+    conn = get_db()
+    rows = conn.execute("""
+        SELECT id, title, title_cn, summary, summary_cn, source_name,
+               category, published, link, is_paper, paper_id, score_total
+        FROM articles
+        WHERE score_total > 0
+        ORDER BY published DESC
+    """).fetchall()
+    conn.close()
+    return [{
+        "id": r["id"],
+        "title": r["title"],
+        "title_cn": r["title_cn"],
+        "summary": (r["summary"] or "")[:300],
+        "summary_cn": (r["summary_cn"] or "")[:300],
+        "source": r["source_name"],
+        "category": r["category"],
+        "published": r["published"],
+        "link": r["link"],
+        "is_paper": bool(r["is_paper"]),
+        "paper_id": r["paper_id"],
+        "score": round(r["score_total"], 1) if r["score_total"] else 0,
+    } for r in rows]
+
+
 def export_files(data: dict) -> dict:
     """Write latest.json and history snapshot."""
     data_dir = REPO_DIR / "data"
@@ -145,6 +173,18 @@ def export_files(data: dict) -> dict:
     trending_path = data_dir / "trending.json"
     trending_path.write_text(json.dumps(trending_data, ensure_ascii=False, indent=2))
     print(f"💾 trending.json: {trending_data.get('count',0)} repos")
+
+    # Write search_index.json for full-text search (Phase 5)
+    search_data = export_search_index()
+    search_path = data_dir / "search_index.json"
+    search_path.write_text(json.dumps(search_data, ensure_ascii=False, indent=2))
+    print(f"💾 search_index.json: {len(search_data)} articles")
+
+    # Write clusters.json for topic visualization (Phase 5)
+    cluster_data = __import__('scripts.pipeline.cluster_viz', fromlist=['compute_clusters']).compute_clusters()
+    cluster_path = data_dir / "clusters.json"
+    cluster_path.write_text(json.dumps(cluster_data, ensure_ascii=False, indent=2))
+    print(f"💾 clusters.json: {cluster_data.get('total_articles',0)} points, {cluster_data.get('n_clusters',0)} clusters")
 
     # Write history snapshot
     from datetime import datetime
@@ -178,7 +218,7 @@ def git_push() -> dict:
     run(["git", "pull", "origin", branch, "--rebase"], check=False)
 
     # Stage
-    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/history/", "data/ai_intel.db"], check=False)
+    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/search_index.json", "data/clusters.json", "data/history/", "data/ai_intel.db"], check=False)
 
     # Check if anything to commit
     status = subprocess.run(

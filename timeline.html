@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时间线 · AI 情报站</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <style>
+    .timeline-wrap {
+      position: relative; overflow-x: auto; overflow-y: hidden;
+      padding: 2rem 1rem 2rem; -webkit-overflow-scrolling: touch;
+    }
+    .timeline-track {
+      position: relative; min-width: max-content;
+      height: 500px; padding: 0 60px;
+    }
+    .timeline-line {
+      position: absolute; top: 50%; left: 0; right: 0;
+      height: 2px; background: var(--border-strong);
+      transform: translateY(-50%);
+    }
+    .timeline-month {
+      position: absolute; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); border: 2px solid var(--bg-deep);
+      z-index: 2; cursor: default;
+    }
+    .timeline-month-label {
+      position: absolute; top: calc(50% + 16px);
+      transform: translateX(-50%);
+      font-size: .72rem; color: var(--text-muted);
+      white-space: nowrap; font-family: var(--font-mono);
+    }
+    .timeline-card {
+      position: absolute;
+      width: 220px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: .9rem 1rem; text-decoration: none;
+      transition: all var(--normal) var(--ease);
+      z-index: 3;
+    }
+    .timeline-card:hover {
+      border-color: var(--accent); background: var(--bg-hover);
+      transform: translateY(-2px); box-shadow: var(--shadow);
+    }
+    .timeline-card.above { top: 30px; }
+    .timeline-card.below { bottom: 30px; }
+    .timeline-card .tc-title {
+      font-size: .82rem; font-weight: 500; color: var(--text-primary);
+      line-height: 1.35; margin-bottom: .35rem;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .timeline-card .tc-meta {
+      font-size: .7rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: .4rem; flex-wrap: wrap;
+    }
+    .timeline-card .tc-dot {
+      width: 6px; height: 6px; border-radius: 50%; display: inline-block;
+    }
+    .tc-dot.cat-AI{background:var(--accent)}
+    .tc-dot.cat-Paper{background:var(--green)}
+    .tc-dot.cat-Blog{background:var(--orange)}
+    .tc-dot.cat-Community{background:var(--blue)}
+    .tc-dot.cat-中文媒体{background:var(--pink)}
+
+    .timeline-filters {
+      display: flex; gap: .5rem; justify-content: center;
+      padding: 1rem 0 0; flex-wrap: wrap;
+    }
+    .timeline-filters button {
+      padding: .3rem .8rem; border: 1px solid var(--border);
+      border-radius: 999px; background: transparent; color: var(--text-secondary);
+      font-size: .78rem; cursor: pointer; transition: all var(--fast) var(--ease);
+      font-family: var(--font-body);
+    }
+    .timeline-filters button:hover, .timeline-filters button.active {
+      border-color: var(--accent); color: var(--accent);
+      background: rgba(108,92,231,0.08);
+    }
+    .timeline-filters .count { font-size: .65rem; color: var(--text-muted); }
+
+    .timeline-legend {
+      display: flex; gap: 1rem; justify-content: center;
+      padding: .5rem 0 1.5rem; flex-wrap: wrap;
+    }
+    .timeline-legend span {
+      font-size: .72rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: .3rem;
+    }
+
+    /* ── Timeline connnector lines ── */
+    .timeline-connector {
+      position: absolute; width: 1px;
+      background: var(--border); z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-track { height: 400px; padding: 0 20px; }
+      .timeline-card { width: 180px; padding: .7rem .8rem; }
+      .timeline-card.above { top: 20px; }
+      .timeline-card.below { bottom: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">🤖 AI 情报站</a>
+    <nav class="site-nav">
+      <a href="/">🏠 首页</a>
+      <a href="dashboard.html">📊 仪表盘</a>
+      <a href="leaderboard.html">🏆 排行榜</a>
+      <a href="timeline.html" class="active">📅 时间线</a>
+      <a href="data/weekly/">📰 周报</a>
+      <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>📅 文章时间线</h1>
+    <p>按时间分布浏览所有 AI 技术动态</p>
+    <div class="timeline-legend">
+      <span><span class="tc-dot cat-AI" style="width:8px;height:8px"></span> AI 实验室</span>
+      <span><span class="tc-dot cat-Paper" style="width:8px;height:8px"></span> 学术论文</span>
+      <span><span class="tc-dot cat-Blog" style="width:8px;height:8px"></span> 技术博客</span>
+      <span><span class="tc-dot cat-Community" style="width:8px;height:8px"></span> 社区动态</span>
+      <span><span class="tc-dot cat-中文媒体" style="width:8px;height:8px"></span> 中文媒体</span>
+    </div>
+    <div class="timeline-filters" id="filters">
+      <button class="active" data-cat="all">全部</button>
+      <button data-cat="AI Lab">AI 实验室</button>
+      <button data-cat="Paper">学术论文</button>
+      <button data-cat="Blog">技术博客</button>
+      <button data-cat="Community">社区动态</button>
+      <button data-cat="中文媒体">中文媒体</button>
+    </div>
+  </div>
+</section>
+
+<div class="timeline-wrap" id="timeline-wrap">
+  <div class="timeline-track" id="timeline-track">
+    <div class="timeline-line"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>每日自动更新 · <a href="https://ai.hjhai.xyz">ai.hjhai.xyz</a></p>
+  <p><a href="https://github.com/badb0ttle/fine-grained">GitHub</a></p>
+</footer>
+
+<script>
+function esc(s){if(!s)return"";const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+const DAY_MS = 86400000;
+const CARD_W = 240;
+const CARD_GAP = 20;
+
+function buildTimeline(articles) {
+  if (!articles.length) return;
+
+  const track = document.getElementById('timeline-track');
+  // Remove old cards
+  track.querySelectorAll('.timeline-card,.timeline-month,.timeline-month-label,.timeline-connector').forEach(el=>el.remove());
+
+  // Parse dates and sort
+  const parsed = articles.map(a => {
+    const d = new Date(a.published);
+    return { ...a, _ts: d.getTime() };
+  }).filter(a => !isNaN(a._ts)).sort((a,b) => a._ts - b._ts);
+
+  if (!parsed.length) return;
+
+  const minTs = parsed[0]._ts;
+  const maxTs = parsed[parsed.length-1]._ts;
+  const range = maxTs - minTs || DAY_MS * 30;
+  const totalWidth = Math.max(1200, (range / (DAY_MS * 1)) * (CARD_W + CARD_GAP));
+
+  track.style.width = totalWidth + 'px';
+
+  // Place month markers
+  const monthSet = new Set();
+  for (const a of parsed) {
+    const d = new Date(a._ts);
+    monthSet.add(d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'));
+  }
+
+  for (const m of monthSet) {
+    const [y, mo] = m.split('-');
+    const mid = new Date(+y, +mo - 1, 15).getTime();
+    const x = ((mid - minTs) / range) * totalWidth + 40;
+    const dot = document.createElement('div');
+    dot.className = 'timeline-month';
+    dot.style.left = x + 'px';
+    track.appendChild(dot);
+
+    const label = document.createElement('div');
+    label.className = 'timeline-month-label';
+    label.style.left = x + 'px';
+    label.textContent = y + '-' + mo;
+    track.appendChild(label);
+  }
+
+  // Place article cards
+  const cols = {}; // date string -> count
+  for (let i = 0; i < parsed.length; i++) {
+    const a = parsed[i];
+    const x = ((a._ts - minTs) / range) * totalWidth + 30;
+    const dateKey = new Date(a._ts).toDateString();
+    cols[dateKey] = (cols[dateKey] || 0) + 1;
+    const above = cols[dateKey] % 2 === 1;
+
+    const card = document.createElement('a');
+    card.href = a.link;
+    card.target = '_blank';
+    card.rel = 'noopener';
+    card.className = 'timeline-card ' + (above ? 'above' : 'below');
+    card.style.left = x + 'px';
+    card.dataset.cat = a.category || '';
+
+    const catClass = (a.category||'').replace(/\s+/g,'-') || 'AI';
+    card.innerHTML = `
+      <div class="tc-title">${esc(a.title_cn || a.title)}</div>
+      <div class="tc-meta">
+        <span class="tc-dot cat-${esc(catClass)}"></span>
+        <span>${esc(a.source)}</span>
+        <span>${esc((a.published||'').slice(0,10))}</span>
+      </div>`;
+    track.appendChild(card);
+  }
+}
+
+let allArticles = [];
+let activeFilter = 'all';
+
+fetch('data/search_index.json')
+  .then(r => r.json())
+  .then(data => {
+    allArticles = data;
+    applyFilter();
+  });
+
+function applyFilter() {
+  let filtered = allArticles;
+  if (activeFilter !== 'all') {
+    filtered = allArticles.filter(a => a.category === activeFilter);
+  }
+  // Update button counts
+  document.querySelectorAll('.timeline-filters button').forEach(btn => {
+    const cat = btn.dataset.cat;
+    const count = cat === 'all' ? allArticles.length : allArticles.filter(a => a.category === cat).length;
+    btn.innerHTML = btn.textContent.replace(/\s*\(\d+\)$/, '') + ` <span class="count">(${count})</span>`;
+  });
+  buildTimeline(filtered);
+}
+
+document.getElementById('filters').addEventListener('click', function(e) {
+  if (e.target.tagName === 'BUTTON') {
+    document.querySelectorAll('.timeline-filters button').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    activeFilter = e.target.dataset.cat;
+    applyFilter();
+  }
+});
+</script>
+</body>
+</html>
