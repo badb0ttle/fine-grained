@@ -9,7 +9,7 @@
   "use strict";
 
   // ⚠️ 部署后替换为你的 Worker URL
-  const WORKER_URL = "https://ai-assistant.YOUR_SUBDOMAIN.workers.dev/ask";
+  const WORKER_URL = "https://ai-intel-assistant.hjhai.workers.dev/ask";
   const DAILY_LIMIT = 10;
 
   // ── 状态 ──

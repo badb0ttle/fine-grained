@@ -7,7 +7,7 @@ compatibility_date = "2025-06-03"
 # 把输出的 id 填入下面
 [[kv_namespaces]]
 binding = "AI_ASSISTANT_KV"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "46b0837d1a6b4e93adfbe277a9ecc157"
 
 [observability]
 enabled = true
