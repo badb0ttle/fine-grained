@@ -1,4 +1,51 @@
 {
-  "generated_at": "2026-06-03T00:12:35.683131+00:00",
-  "models": []
+  "models": [
+    {
+      "name": "GPT-5.5",
+      "provider": "OpenAI",
+      "parameters": "未知",
+      "context_window": "未知",
+      "modalities": "text+vision+code",
+      "description": "OpenAI旗舰模型，被MiniMax M3在多项基准测试中超越",
+      "release_date": "",
+      "benchmarks": []
+    },
+    {
+      "name": "Gemini 3.1 Pro",
+      "provider": "Google",
+      "parameters": "未知",
+      "context_window": "未知",
+      "modalities": "text+vision+code",
+      "description": "Google旗舰模型，被MiniMax M3在多项基准测试中超越",
+      "release_date": "",
+      "benchmarks": []
+    },
+    {
+      "name": "MiniMax-M3",
+      "provider": "MiniMax",
+      "parameters": "未知",
+      "context_window": "1M tokens",
+      "modalities": "text+vision+code",
+      "description": "中国AI公司MiniMax发布旗舰大模型，编码和推理达前沿水平",
+      "release_date": "",
+      "benchmarks": [
+        {
+          "name": "综合编码推理",
+          "score": "超越GPT-5.5和Gemini 3.1 Pro",
+          "source": "MiniMax M3发布"
+        }
+      ]
+    },
+    {
+      "name": "Qwen3.7-Plus",
+      "provider": "Alibaba",
+      "parameters": "未知",
+      "context_window": "未知",
+      "modalities": "text+vision+audio",
+      "description": "阿里千问多模态智能体新基座，支持文/图/音输入",
+      "release_date": "",
+      "benchmarks": []
+    }
+  ],
+  "generated_at": "2026-06-03T10:33:36.202082"
 }

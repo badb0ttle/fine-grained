@@ -91,11 +91,20 @@
       display: flex; align-items: center; gap: .3rem;
     }
 
-    /* ── Timeline connnector lines ── */
+    /* ── Timeline connector lines ── */
     .timeline-connector {
       position: absolute; width: 1px;
       background: var(--border); z-index: 1;
     }
+
+    /* ── Dark scrollbar ── */
+    .timeline-wrap::-webkit-scrollbar { height: 6px; }
+    .timeline-wrap::-webkit-scrollbar-track { background: var(--bg-deep); }
+    .timeline-wrap::-webkit-scrollbar-thumb {
+      background: var(--border-strong); border-radius: 3px;
+    }
+    .timeline-wrap::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    .timeline-wrap { scrollbar-color: var(--border-strong) var(--bg-deep); scrollbar-width: thin; }
 
     @media (max-width: 768px) {
       .timeline-track { height: 400px; padding: 0 20px; }
@@ -115,6 +124,7 @@
       <a href="dashboard.html">📊 仪表盘</a>
       <a href="leaderboard.html">🏆 排行榜</a>
       <a href="timeline.html" class="active">📅 时间线</a>
+      <a href="clusters.html">🗺️ 聚类</a>
       <a href="data/weekly/">📰 周报</a>
       <a href="https://github.com/badb0ttle/fine-grained" target="_blank">GitHub</a>
     </nav>
@@ -158,37 +168,41 @@
 function esc(s){if(!s)return"";const d=document.createElement("div");d.textContent=s;return d.innerHTML}
 
 const DAY_MS = 86400000;
-const CARD_W = 240;
-const CARD_GAP = 20;
+const MAX_DAYS = 90;
+const CARD_W = 220;
 
 function buildTimeline(articles) {
   if (!articles.length) return;
 
   const track = document.getElementById('timeline-track');
-  // Remove old cards
   track.querySelectorAll('.timeline-card,.timeline-month,.timeline-month-label,.timeline-connector').forEach(el=>el.remove());
 
-  // Parse dates and sort
+  // Parse dates, filter to recent, sort
+  const now = Date.now();
+  const cutoff = now - MAX_DAYS * DAY_MS;
   const parsed = articles.map(a => {
     const d = new Date(a.published);
     return { ...a, _ts: d.getTime() };
-  }).filter(a => !isNaN(a._ts)).sort((a,b) => a._ts - b._ts);
+  }).filter(a => !isNaN(a._ts) && a._ts >= cutoff).sort((a,b) => a._ts - b._ts);
 
   if (!parsed.length) return;
 
   const minTs = parsed[0]._ts;
   const maxTs = parsed[parsed.length-1]._ts;
-  const range = maxTs - minTs || DAY_MS * 30;
-  const totalWidth = Math.max(1200, (range / (DAY_MS * 1)) * (CARD_W + CARD_GAP));
+  const range = Math.max(maxTs - minTs, DAY_MS * 7);
+  const totalWidth = Math.max(1200, (range / (DAY_MS * 3)) * (CARD_W + 30));
 
   track.style.width = totalWidth + 'px';
+  track.style.height = 'auto';
+  track.style.minHeight = '420px';
 
-  // Place month markers
+  // Month markers
   const monthSet = new Set();
   for (const a of parsed) {
     const d = new Date(a._ts);
     monthSet.add(d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0'));
   }
+  const lineY = 60; // top line position
 
   for (const m of monthSet) {
     const [y, mo] = m.split('-');
@@ -197,42 +211,71 @@ function buildTimeline(articles) {
     const dot = document.createElement('div');
     dot.className = 'timeline-month';
     dot.style.left = x + 'px';
+    dot.style.top = lineY + 'px';
     track.appendChild(dot);
 
     const label = document.createElement('div');
     label.className = 'timeline-month-label';
     label.style.left = x + 'px';
+    label.style.top = (lineY + 16) + 'px';
     label.textContent = y + '-' + mo;
     track.appendChild(label);
   }
 
-  // Place article cards
-  const cols = {}; // date string -> count
-  for (let i = 0; i < parsed.length; i++) {
-    const a = parsed[i];
-    const x = ((a._ts - minTs) / range) * totalWidth + 30;
-    const dateKey = new Date(a._ts).toDateString();
-    cols[dateKey] = (cols[dateKey] || 0) + 1;
-    const above = cols[dateKey] % 2 === 1;
+  // Timeline line
+  const line = document.createElement('div');
+  line.className = 'timeline-line';
+  line.style.top = lineY + 'px';
+  line.style.transform = 'none';
+  track.appendChild(line);
 
-    const card = document.createElement('a');
-    card.href = a.link;
-    card.target = '_blank';
-    card.rel = 'noopener';
-    card.className = 'timeline-card ' + (above ? 'above' : 'below');
-    card.style.left = x + 'px';
-    card.dataset.cat = a.category || '';
-
-    const catClass = (a.category||'').replace(/\s+/g,'-') || 'AI';
-    card.innerHTML = `
-      <div class="tc-title">${esc(a.title_cn || a.title)}</div>
-      <div class="tc-meta">
-        <span class="tc-dot cat-${esc(catClass)}"></span>
-        <span>${esc(a.source)}</span>
-        <span>${esc((a.published||'').slice(0,10))}</span>
-      </div>`;
-    track.appendChild(card);
+  // Group articles by day, place cards below the line
+  const dayGroups = {};
+  for (const a of parsed) {
+    const dk = new Date(a._ts).toDateString();
+    if (!dayGroups[dk]) dayGroups[dk] = [];
+    dayGroups[dk].push(a);
   }
+
+  const ROW_H = 100; // height per row
+  const CARD_TOP_START = lineY + 30;
+  let maxBottom = CARD_TOP_START;
+
+  for (const [dk, items] of Object.entries(dayGroups)) {
+    items.sort((a,b) => b.score - a.score);
+    for (let i = 0; i < items.length; i++) {
+      const a = items[i];
+      const x = ((a._ts - minTs) / range) * totalWidth + 20;
+      const row = Math.floor(i / 3); // 3 cards per row
+      const col = i % 3;
+      const top = CARD_TOP_START + row * ROW_H;
+      const left = x + col * (CARD_W + 10);
+
+      const card = document.createElement('a');
+      card.href = a.link;
+      card.target = '_blank';
+      card.rel = 'noopener';
+      card.className = 'timeline-card';
+      card.style.position = 'absolute';
+      card.style.left = left + 'px';
+      card.style.top = top + 'px';
+      card.style.width = CARD_W + 'px';
+      card.dataset.cat = a.category || '';
+
+      const catClass = (a.category||'').replace(/\s+/g,'-') || 'AI';
+      card.innerHTML = `
+        <div class="tc-title">${esc(a.title_cn || a.title)}</div>
+        <div class="tc-meta">
+          <span class="tc-dot cat-${esc(catClass)}"></span>
+          <span>${esc(a.source)}</span>
+          <span>${esc((a.published||'').slice(0,10))}</span>
+        </div>`;
+      track.appendChild(card);
+      maxBottom = Math.max(maxBottom, top + 80);
+    }
+  }
+
+  track.style.height = (maxBottom + 40) + 'px';
 }
 
 let allArticles = [];
