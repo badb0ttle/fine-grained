@@ -29,6 +29,14 @@
     // 恢复已用次数 (localStorage, 当天)
     restoreQuota();
 
+    // 强制 Service Worker 更新（拿到最新版 HTML）
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+      try { navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' }); } catch (e) {}
+      navigator.serviceWorker.getRegistration().then(function (reg) {
+        if (reg) reg.update();
+      });
+    }
+
     // 注入 HTML
     const html = `
       <button class="ai-fab" id="ai-fab" title="AI 助手">
@@ -129,6 +137,9 @@
     }
 
     updateFabState();
+
+    // 恢复今日会话历史
+    setTimeout(function () { restoreHistory(); }, 100);
   }
 
   // ── 打开/关闭 ──
@@ -253,12 +264,20 @@
   }
 
   // ── 消息渲染 ──
-  function addMessage(role, text) {
-    const div = document.createElement("div");
+  function addMessage(role, text, skipSave) {
+    var div = document.createElement("div");
     div.className = "ai-msg " + role;
-    div.innerHTML = text;
+    // 用户消息用纯文本（防止 XSS），AI 消息渲染 Markdown
+    if (role === "user") {
+      div.textContent = text;
+      div._rawText = text;
+    } else {
+      div.innerHTML = renderMarkdown(text);
+      div._rawText = text;
+    }
     elMessages.appendChild(div);
     scrollToBottom();
+    if (!skipSave) saveHistory();
     return div;
   }
 
@@ -336,6 +355,75 @@
     const d = document.createElement("div");
     d.textContent = s;
     return d.innerHTML;
+  }
+
+  /** 轻量 Markdown → HTML（bold, italic, inline code, code block, link, newline） */
+  function renderMarkdown(text) {
+    if (!text) return "";
+    var html = escHtml(text);
+
+    // 代码块 ```...```
+    html = html.replace(/```(\w*)\n([\s\S]*?)```/g, function (_, lang, code) {
+      return '<pre><code>' + code.trim() + '</code></pre>';
+    });
+
+    // 行内代码 `...`
+    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+    // 粗体 **...**
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+    // 斜体 *...* (但不匹配 **)
+    html = html.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, '<em>$1</em>');
+
+    // 链接 [text](url)
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+    // 换行
+    html = html.replace(/\n/g, '<br>');
+
+    return html;
+  }
+
+  // ── 会话历史持久化 ──
+  function getHistoryKey() {
+    return "ai_chat_" + new Date().toISOString().slice(0, 10); // 按天分
+  }
+
+  function saveHistory() {
+    try {
+      var msgs = [];
+      var children = elMessages.children;
+      for (var i = 0; i < children.length; i++) {
+        var c = children[i];
+        if (c.classList.contains("ai-msg") && !c.classList.contains("ai-typing-msg")) {
+          msgs.push({ role: c.classList.contains("user") ? "user" : "assistant", text: c._rawText || c.textContent });
+        }
+      }
+      if (msgs.length > 0) {
+        localStorage.setItem(getHistoryKey(), JSON.stringify(msgs));
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function restoreHistory() {
+    try {
+      var raw = localStorage.getItem(getHistoryKey());
+      if (!raw) return;
+      var msgs = JSON.parse(raw);
+      // 保留欢迎消息
+      var welcome = elMessages.querySelector(".ai-welcome");
+      elMessages.innerHTML = "";
+      if (welcome) elMessages.appendChild(welcome);
+      for (var i = 0; i < msgs.length; i++) {
+        var m = msgs[i];
+        addMessage(m.role, m.text, /* skipSave */ true);
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function clearHistory() {
+    try { localStorage.removeItem(getHistoryKey()); } catch (e) {}
   }
 
   // ── 页面加载时初始化 ──

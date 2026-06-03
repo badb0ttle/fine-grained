@@ -1,7 +1,7 @@
 // AI 情报站 · Service Worker (Phase 5)
 // Cache-first for static assets, network-first for data files
 
-const CACHE_NAME = 'ai-intel-v1';
+const CACHE_NAME = 'ai-intel-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -12,6 +12,8 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/assets/style.css',
   '/assets/icon.svg',
+  '/assets/ai-assistant.css',
+  '/assets/ai-assistant.js',
 ];
 
 // Install — cache static assets
@@ -38,7 +40,14 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch — network-first for data, cache-first for static
+// Handle SKIP_WAITING message from client
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+// Fetch — network-first for data, network-first for HTML, cache-first for static
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
@@ -48,16 +57,17 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Cache-first for static assets
-  if (STATIC_ASSETS.includes(url.pathname) ||
-      url.pathname.startsWith('/assets/')) {
-    event.respondWith(cacheFirst(event.request));
+  // Network-first for HTML pages (always get latest version)
+  if (event.request.mode === 'navigate' ||
+      url.pathname.endsWith('.html') ||
+      url.pathname === '/') {
+    event.respondWith(networkFirst(event.request));
     return;
   }
 
-  // For navigation requests (HTML pages), use network-first with offline fallback
-  if (event.request.mode === 'navigate') {
-    event.respondWith(networkFirst(event.request));
+  // Cache-first for versioned static assets
+  if (url.pathname.startsWith('/assets/')) {
+    event.respondWith(cacheFirst(event.request));
     return;
   }
 
