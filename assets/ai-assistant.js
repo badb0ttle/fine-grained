@@ -110,6 +110,24 @@
       if (e.key === "Escape" && drawerOpen) closeDrawer();
     });
 
+    // 移动端键盘适配 (Visual Viewport API)
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", function () {
+        if (drawerOpen) {
+          var offset = window.innerHeight - window.visualViewport.height;
+          if (offset > 80) {
+            // 键盘弹出 — 确保输入区可见
+            elMessages.scrollTop = elMessages.scrollHeight;
+          }
+        }
+      });
+      window.visualViewport.addEventListener("scroll", function () {
+        if (drawerOpen) {
+          elMessages.scrollTop = elMessages.scrollHeight;
+        }
+      });
+    }
+
     updateFabState();
   }
 
