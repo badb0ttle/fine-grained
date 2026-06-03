@@ -6,6 +6,7 @@
   <title>AI 情报站 — 每日 AI 技术动态</title>
   <meta name="description" content="每日自动采集全球 AI 最新动态、论文、博客和技术讨论">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/ai-assistant.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#6C5CE7">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,10 +116,14 @@ function renderArticle(a){
   var read=isRead(a.link)?' read':'';
   var fav=isFav(a.link)?' fav':'';
   var favIcon=isFav(a.link)?'★':'☆';
+  var askTitle=esc(title||'').replace(/'/g,"\\'");
+  var askSummary=esc(summary||'').replace(/'/g,"\\'");
+  var askSource=esc(a.source||'').replace(/'/g,"\\'");
   return '<div class="article-item'+read+fav+'">'+
     '<div class="article-title">'+
       '<a '+articleLinkAttr(a.link,title)+'>'+esc(title)+'</a>'+
       '<button class="fav-btn" '+favBtnAttr(a.link,title)+' title="收藏">'+favIcon+'</button>'+
+      '<button class="article-ask-ai" onclick="event.preventDefault();event.stopPropagation();AIAssistant.openWithArticle(\''+askTitle+'\',\''+askSummary+'\',\''+askSource+'\')" title="问 AI">🤖 问 AI</button>'+
     '</div>'+
     '<div class="article-meta">'+
       '<span class="source-name">'+esc(a.source)+'</span><span>·</span><span>'+esc(a.published)+'</span>'+
@@ -323,5 +328,6 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(function(){});
 }
 </script>
+<script src="assets/ai-assistant.js"></script>
 </body>
 </html>

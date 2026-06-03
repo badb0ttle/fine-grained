@@ -1,0 +1,15 @@
+# AI 情报站智能助手 — Cloudflare Worker
+name = "ai-intel-assistant"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+[[kv_namespaces]]
+binding = "AI_ASSISTANT_KV"
+id = "YOUR_KV_NAMESPACE_ID"  # npx wrangler kv:namespace create AI_ASSISTANT_KV 后替换
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# 绑定到 ai.hjhai.xyz 子域名（可选）
+# npx wrangler deploy 后配置 routes
