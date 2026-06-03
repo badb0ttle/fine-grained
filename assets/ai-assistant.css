@@ -278,10 +278,16 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   resize: none;
+  overflow-y: auto;
   min-height: 40px;
   max-height: 120px;
   outline: none;
   transition: border-color var(--fast);
+  /* 隐藏 WebKit resize gripper + scrollbar */
+  &::-webkit-resizer { display: none; }
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+  &::-webkit-scrollbar-track { background: transparent; }
 }
 
 .ai-input:focus {
