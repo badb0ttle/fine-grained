@@ -1,0 +1,63 @@
+分析以下 10 篇 ArXiv 论文，对每篇提取结构化信息。
+
+对每篇论文返回：
+- paper_method: 核心方法（50字内，中文，说清楚用了什么技术）
+- paper_benchmark: 关键 Benchmark 结果（如 "MMLU 92.5%, HumanEval 94.2%"，如无则写"未报告"）
+- paper_takeaway: 一句话启发（30字内，对从业者的意义）
+
+返回严格 JSON 数组：
+[
+  {"id": <article_id>, "paper_method": "...", "paper_benchmark": "...", "paper_takeaway": "..."},
+  ...
+]
+
+论文列表：
+[ID=1459] Paper: Do Value Vectors in Deep Layers Need Context from the Residual Stream?
+    ArXiv: 2606.02780
+    Abstract: arXiv:2606.02780v1 Announce Type: new 
+Abstract: The success of the transformer architecture as the backbone of modern LLMs is in large part due to its use of attention layers. An attention layer follows the standard neural network paradigm: it takes the residual stream as input and thereby produces context-dependent query, key, and value vectors. However, we find that model performance meaningful
+
+[ID=1484] Paper: Automated Report-Derived Oncology VQA Benchmark for Evaluating Vision-Language Models on 3D Medical Imaging
+    ArXiv: 2606.02809
+    Abstract: arXiv:2606.02809v1 Announce Type: new 
+Abstract: Evaluating vision-language models (VLMs) on medical images requires benchmarks that are clinically grounded, scalable, and controlled for evaluation confounds. Existing public benchmarks are limited in scale, manually annotated, or potentially leaked into VLM pretraining corpora. We present an automated agent-driven pipeline that generates multiple-
+
+[ID=1461] Paper: Fixing FOLIO and MALLS: Verified Annotations and an LLM-assisted Framework to Focus Human Relabeling
+    ArXiv: 2606.02837
+    Abstract: arXiv:2606.02837v1 Announce Type: new 
+Abstract: Accurate translation from Natural Language to First-Order Logic (NL-to-FOL) underpins neurosymbolic AI systems and Natural Language Inference (NLI), making the quality of NL-to-FOL benchmarks essential -- yet these datasets have never been rigorously audited. Our first contribution is to present a systematic human inspection of the validation split 
+
+[ID=1482] Paper: Diagnosis of Human Object Interaction Detectors for Real World Educational Applications
+    ArXiv: 2606.02789
+    Abstract: arXiv:2606.02789v1 Announce Type: new 
+Abstract: Human-object interaction (HOI) recognition is critical for automatically analyzing student behavior in complex educational environments. Although state-of-the-art (SOTA) HOI detectors perform well on benchmark datasets, their performance often degrades when deployed in real-world training environments due to domain-specific objects, occlusions, and 
+
+[ID=1481] Paper: GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving
+    ArXiv: 2606.02774
+    Abstract: arXiv:2606.02774v1 Announce Type: new 
+Abstract: Vision-language models (VLMs) for autonomous driving have shown promising performance, but their ability to handle region-specific traffic rules remains underexplored, raising uncertainties about their deployment across diverse global settings. We therefore introduce GeoDrive-Bench, a novel benchmark that enables the systematic investigation of VLMs
+
+[ID=1434] Paper: ToolGate: Token-Efficient Pre-Call Control for Tool-Augmented Vision-Language Agents
+    ArXiv: 2606.03054
+    Abstract: arXiv:2606.03054v1 Announce Type: new 
+Abstract: Tool-augmented vision-language agents can acquire external perceptual evidence through OCR, detection, segmentation, and other tools, but executing every proposed tool call is costly and sometimes unnecessary. We study the pre-call control problem: after a ReAct-style VLM agent proposes a perceptual tool call, should the call be executed, or skipped
+
+[ID=1447] Paper: Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs
+    ArXiv: 2606.02628
+    Abstract: arXiv:2606.02628v1 Announce Type: new 
+Abstract: We investigate whether open-source LLMs encode a linearly separable truthfulness signal in their hidden states, and at which network depth this signal is strongest. Across three $7$B--$8$B instruction-tuned models (Llama-3.1-8B, Mistral-7B, Qwen2.5-7B) loaded in $4$-bit NF4 quantization, we extract per-layer hidden states on four hallucination bench
+
+[ID=1444] Paper: Geometry-Aware Tabular Diffusion
+    ArXiv: 2606.02607
+    Abstract: arXiv:2606.02607v1 Announce Type: new 
+Abstract: Tabular synthesis is critical for privacy-preserving sharing and augmentation, yet diffusion models rely on implicit mechanisms to capture inter-column relationships. We introduce Geometry-Aware Tabular Diffusion (GATD), which augments tabular diffusion denoisers with pairwise angles and lengths computed from column value differences and used as inp
+
+[ID=1469] Paper: EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction
+    ArXiv: 2606.02971
+    Abstract: arXiv:2606.02971v1 Announce Type: new 
+Abstract: Extracting reporting obligations from EU legislation is critical for assessing and reducing regulatory reporting burden. However, distinguishing reporting requirements from structurally similar provisions requires specialised legal understanding. Current legal NLP methods lack specialised datasets with clear guidelines and comparative evaluation of 
+
+[ID=615] Paper: Improved Belief-Attention in Vision Task
+    ArXiv: 2606.00077
+    Abstract: arXiv:2606.00077v1 Announce Type: new 
+Abstract: Recently, Belief-Attention \cite{Guoqiang25BeliefAttention} has been proposed by first performing an orthogonal projection of the softmax-based weighted summation of $V$ vectors with respect to the original $V$ vectors and then taking the perpendicular component as the residual signal in Transformer for performance improvement. In this paper, we fir
