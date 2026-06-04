@@ -1,114 +1,1734 @@
 {
-  "generated_at": "2026-06-03T10:23:08.254739",
-  "total_articles": 440,
+  "generated_at": "2026-06-04T08:13:57.113611",
+  "total_articles": 578,
   "n_clusters": 8,
   "clusters": [
     {
       "id": 0,
-      "title": "MELON: Reconstructing 3D objects from images with unknown po",
+      "title": "星海图发布新一代具身基础模型 G0.5：让机器人边思考边行动",
       "keywords": [
-        "a small",
-        "a critical",
-        "abstract deep",
+        "6月2日",
+        "a major",
         "a fundamental",
-        "a low"
+        "a low",
+        "6月1日"
       ],
       "count": 19,
       "color": "#6C5CE7"
     },
     {
       "id": 1,
-      "title": "Statistical Analysis of using the Shapley Value for Sensor A",
+      "title": "Trump signs narrower executive order on AI oversight after i",
       "keywords": [
-        "a fundamental",
-        "a low",
-        "a critical",
-        "abstract paper",
-        "a major"
+        "6月2日",
+        "a novel",
+        "a common",
+        "a compact",
+        "a unified"
       ],
-      "count": 162,
+      "count": 93,
       "color": "#00CEC9"
     },
     {
       "id": 2,
-      "title": "OpenAI挖走中科大少年班校友！12岁上大学，哈佛史上最年轻正教授",
+      "title": "Linear Probes Detect Task Format, Not Reasoning Mode in Lang",
       "keywords": [
-        "a compact",
         "6月1日",
-        "abstract large",
+        "a core",
+        "abstract as",
         "a framework",
-        "abstract multi"
+        "a colorful"
       ],
-      "count": 144,
+      "count": 53,
       "color": "#00b894"
     },
     {
       "id": 3,
-      "title": "100 things we announced at I/O 2026",
+      "title": "ICRA 2026五篇最佳论文Finalist出炉！灵巧手三雄争霸，Day 1精华全在这｜ICRA 日报",
       "keywords": [
-        "a multi",
-        "a compact",
-        "a unified",
-        "a core",
-        "ability"
+        "ability",
+        "a colorful",
+        "abstract",
+        "6月1日",
+        "a core"
       ],
-      "count": 8,
+      "count": 22,
       "color": "#f0a050"
     },
     {
       "id": 4,
-      "title": "ICRA 2026 | VPP-TC: 基于可行性理论的被动力矩安全控制框架",
+      "title": "Set-Preserving Calibration from Conformal P-Values to E-Valu",
       "keywords": [
         "a compact",
-        "a critical",
-        "a framework",
-        "abstract as",
-        "abstract in"
+        "a fundamental",
+        "a low",
+        "a unified",
+        "a novel"
       ],
-      "count": 7,
+      "count": 235,
       "color": "#74b9ff"
     },
     {
       "id": 5,
-      "title": "Momenta高阶自动驾驶示范应用许可落地新城市 Robotaxi全球布局加速",
+      "title": "世界模型榜首易主！跨维智能登顶WorldArena",
       "keywords": [
-        "6月2日",
-        "a critical",
+        "a central",
         "a dataset",
-        "abstract multi",
-        "abstract deep"
+        "a framework",
+        "ability to",
+        "a single"
       ],
-      "count": 9,
+      "count": 119,
       "color": "#fd79a8"
     },
     {
       "id": 6,
-      "title": "Trump signs narrower executive order on AI oversight after i",
+      "title": "Google at APS 2024",
       "keywords": [
-        "abstract deep",
+        "a compact",
+        "6月2日",
         "a central",
-        "abstract in",
-        "abstract paper",
-        "a key"
+        "a low",
+        "a fixed"
       ],
-      "count": 54,
+      "count": 20,
       "color": "#a29bfe"
     },
     {
       "id": 7,
-      "title": "Evaluating using Mock Tool Calls to Quarantine Untrusted Pro",
+      "title": "速卖通为品牌出海搭建百大网红直播矩阵，618正式开播",
       "keywords": [
         "6月2日",
-        "a dataset",
-        "a core",
-        "a central",
-        "a key"
+        "a model",
+        "a fundamental",
+        "a common",
+        "a low"
       ],
-      "count": 37,
+      "count": 17,
       "color": "#55efc4"
     }
   ],
   "points": [
+    {
+      "id": 1615,
+      "title": "从看懂世界到做对动作，卧安机器人OneModel 1.7用一条「隐式通路」打通了具身智能的关键断层",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-03T20:28:44",
+      "link": "https://www.qbitai.com/2026/06/428703.html",
+      "score": 19.1,
+      "x": 0.0792,
+      "y": 0.0299,
+      "cluster": 5
+    },
+    {
+      "id": 1616,
+      "title": "世界模型榜首易主！跨维智能登顶WorldArena",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-03T17:54:18",
+      "link": "https://www.qbitai.com/2026/06/428435.html",
+      "score": 23.5,
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
+    },
+    {
+      "id": 1617,
+      "title": "刚刚，Anthropic提交了招股书！",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-03T11:55:19",
+      "link": "https://www.qbitai.com/2026/06/428407.html",
+      "score": 18.9,
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
+    },
+    {
+      "id": 1618,
+      "title": "刚刚，Meta Skill来了",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-03T09:29:35",
+      "link": "https://www.qbitai.com/2026/06/428335.html",
+      "score": 19.8,
+      "x": 0.0258,
+      "y": 0.0137,
+      "cluster": 5
+    },
+    {
+      "id": 1635,
+      "title": "Lovable signs multiyear deal with Google Cloud to up usage 5x, source says",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 22:56:51",
+      "link": "https://techcrunch.com/2026/06/03/lovable-signs-multi-year-deal-with-google-cloud-to-up-usage-5x-source-says/",
+      "score": 45.5,
+      "x": 0.4654,
+      "y": 0.0139,
+      "cluster": 6
+    },
+    {
+      "id": 1636,
+      "title": "Alphabet’s record-breaking $85B raise for Google’s AI business is a helluva good signal",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 19:38:32",
+      "link": "https://techcrunch.com/2026/06/03/alphabets-record-breaking-85b-raise-for-googles-ai-business-is-a-helluva-good-signal/",
+      "score": 44.4,
+      "x": 0.4068,
+      "y": 0.0185,
+      "cluster": 1
+    },
+    {
+      "id": 1637,
+      "title": "Google’s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 19:07:42",
+      "link": "https://techcrunch.com/2026/06/03/googles-dreambeans-its-weirdest-named-ai-tool-to-date-will-turn-your-life-into-a-cartoon/",
+      "score": 42.4,
+      "x": 0.6289,
+      "y": 0.0133,
+      "cluster": 1
+    },
+    {
+      "id": 1655,
+      "title": "Google's new open source Gemma 4 12B analyzes audio, video — and runs entirely locally on a typical 16GB enterprise laptop",
+      "source": "VentureBeat AI",
+      "category": "Blog",
+      "published": "2026-06-03 18:49:00",
+      "link": "https://venturebeat.com/technology/googles-new-open-source-gemma-4-12b-analyzes-audio-video-and-runs-entirely-locally-on-a-typical-16gb-enterprise-laptop",
+      "score": 69.4,
+      "x": 0.4472,
+      "y": 0.0144,
+      "cluster": 5
+    },
+    {
+      "id": 1638,
+      "title": "Amazon will show AI product images when you search for some reason",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 15:50:26",
+      "link": "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/",
+      "score": 44.5,
+      "x": 0.3489,
+      "y": 0.0142,
+      "cluster": 1
+    },
+    {
+      "id": 1585,
+      "title": "Using Muon Optimizer with DeepSpeed",
+      "source": "PyTorch Blog",
+      "category": "Community",
+      "published": "2026-06-03 15:05:17",
+      "link": "https://pytorch.org/blog/using-muon-optimizer-with-deepspeed/",
+      "score": 53.0,
+      "x": 0.3732,
+      "y": 0.015,
+      "cluster": 1
+    },
+    {
+      "id": 1639,
+      "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 15:00:00",
+      "link": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
+      "score": 41.3,
+      "x": 0.2878,
+      "y": 0.018,
+      "cluster": 1
+    },
+    {
+      "id": 1640,
+      "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 14:58:33",
+      "link": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
+      "score": 45.7,
+      "x": 0.4632,
+      "y": 0.0118,
+      "cluster": 1
+    },
+    {
+      "id": 1641,
+      "title": "Meta’s AI agent for WhatsApp Business is now available globally",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 13:40:00",
+      "link": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
+      "score": 50.1,
+      "x": 0.39,
+      "y": 0.0159,
+      "cluster": 1
+    },
+    {
+      "id": 1595,
+      "title": "NUS 余浩泳教授：外骨骼的轻量化与任务感知丨ICRA 2026",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 13:27:00",
+      "link": "https://www.leiphone.com/category/ai/MCcFD9ZyKWLuFSwB.html",
+      "score": 50.0,
+      "x": 0.0481,
+      "y": 0.9939,
+      "cluster": 7
+    },
+    {
+      "id": 1375,
+      "title": "Introducing new capabilities to GPT-Rosalind",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "published": "2026-06-03 13:15:00",
+      "link": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
+      "score": 59.0,
+      "x": 0.1965,
+      "y": 0.0132,
+      "cluster": 5
+    },
+    {
+      "id": 1642,
+      "title": "Coralogix raises $200M on bet that someone needs to watch the AI agents",
+      "source": "TechCrunch AI",
+      "category": "Blog",
+      "published": "2026-06-03 13:02:51",
+      "link": "https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/",
+      "score": 54.3,
+      "x": 0.5801,
+      "y": 0.012,
+      "cluster": 1
+    },
+    {
+      "id": 1535,
+      "title": "5 ways Google Search can level up your thrift and vintage shopping",
+      "source": "Google DeepMind",
+      "category": "AI Lab",
+      "published": "2026-06-03 13:00:00",
+      "link": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
+      "score": 54.4,
+      "x": 0.4568,
+      "y": 0.0106,
+      "cluster": 0
+    },
+    {
+      "id": 1515,
+      "title": "Direct Preference Optimization Beyond Chatbots",
+      "source": "HuggingFace Blog",
+      "category": "Community",
+      "published": "2026-06-03 12:55:11",
+      "link": "https://huggingface.co/blog/Dharma-AI/direct-preference-optimization-beyond-chatbots",
+      "score": 38.7,
+      "x": 0.0776,
+      "y": 0.0148,
+      "cluster": 5
+    },
+    {
+      "id": 1596,
+      "title": "宏利香港与阿里云达成战略合作，加速保险业AI规模化落地",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 12:06:00",
+      "link": "https://www.leiphone.com/category/industrynews/J3XU4sTWcepPWWvO.html",
+      "score": 49.8,
+      "x": 0.0476,
+      "y": 0.8979,
+      "cluster": 7
+    },
+    {
+      "id": 1376,
+      "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "published": "2026-06-03 12:00:00",
+      "link": "https://openai.com/index/wasmer",
+      "score": 60.1,
+      "x": 0.3902,
+      "y": 0.0134,
+      "cluster": 0
+    },
+    {
+      "id": 1378,
+      "title": "A blueprint for democratic governance of frontier AI",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "published": "2026-06-03 10:00:00",
+      "link": "https://openai.com/index/frontier-safety-blueprint",
+      "score": 52.1,
+      "x": 0.4663,
+      "y": 0.0134,
+      "cluster": 1
+    },
+    {
+      "id": 1377,
+      "title": "OpenAI public policy agenda",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "published": "2026-06-03 10:00:00",
+      "link": "https://openai.com/index/public-policy-agenda",
+      "score": 50.0,
+      "x": 0.265,
+      "y": 0.0156,
+      "cluster": 1
+    },
+    {
+      "id": 1597,
+      "title": "对话桥介数物尚阳星：机器人运动能力，远远没有被解决",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 09:09:00",
+      "link": "https://www.leiphone.com/category/robot/OAl1Kvwa2rq9N4yx.html",
+      "score": 49.5,
+      "x": 0.0472,
+      "y": 0.9984,
+      "cluster": 7
+    },
+    {
+      "id": 1598,
+      "title": "NUS 余浩泳教授：外骨骼的轻量化与任务感知丨ICRA 2026",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 08:42:00",
+      "link": "https://www.leiphone.com/category/ai/PYN0oRnRzlHOje1t.html",
+      "score": 49.4,
+      "x": 0.0902,
+      "y": 0.8381,
+      "cluster": 7
+    },
+    {
+      "id": 1600,
+      "title": "从\"各自为战\"到\"共生共筑\"：信创产业的多路线安全逻辑",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 08:40:00",
+      "link": "https://www.leiphone.com/category/industrynews/PP4OSjbCtQUK0i75.html",
+      "score": 49.4,
+      "x": 0.0206,
+      "y": 0.0234,
+      "cluster": 5
+    },
+    {
+      "id": 1599,
+      "title": "上海交大王贺升教授：从画地图到预测未来，传统 SLAM 正走出静态世界 | ICRA 2026",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 08:40:00",
+      "link": "https://www.leiphone.com/category/industrynews/6skT5df7T8GJJdye.html",
+      "score": 49.4,
+      "x": 0.2332,
+      "y": 0.2586,
+      "cluster": 3
+    },
+    {
+      "id": 1601,
+      "title": "独家解读丨日薪高达17万：华尔街为何疯抢「AI落地官」？",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 06:53:00",
+      "link": "https://www.leiphone.com/category/industrynews/CWwpUPhxV4XiT1WK.html",
+      "score": 64.2,
+      "x": 0.0589,
+      "y": 0.0143,
+      "cluster": 5
+    },
+    {
+      "id": 1602,
+      "title": "千问宣布向第三方Agent、Skill全面开放，肯德基、瑞幸、蜜雪冰城、东航将首批接入",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 06:43:00",
+      "link": "https://www.leiphone.com/category/industrynews/wsfm6yIgeRQ9ij1X.html",
+      "score": 54.2,
+      "x": 0.0443,
+      "y": 0.5772,
+      "cluster": 7
+    },
+    {
+      "id": 1603,
+      "title": "独家｜成立10个月融资10亿元，星源智加码世界模型",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 06:25:00",
+      "link": "https://www.leiphone.com/category/robot/GAmW6Awf44VOgN0q.html",
+      "score": 54.1,
+      "x": 0.0479,
+      "y": 0.9984,
+      "cluster": 7
+    },
+    {
+      "id": 1604,
+      "title": "击败主场霸主英伟达与PI！千寻智能登上具身智能「奥林匹克」最高领奖台",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 05:59:00",
+      "link": "https://www.leiphone.com/category/robot/BUcvmdZCB019Vzpd.html",
+      "score": 49.1,
+      "x": 0.0469,
+      "y": 0.9955,
+      "cluster": 7
+    },
+    {
+      "id": 1605,
+      "title": "独家实拍｜苏昊旗下机器人全球首次亮相，苏度科技惊艳 ICRA 2026",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 05:45:00",
+      "link": "https://www.leiphone.com/category/robot/YZ4WenhvXsr0SVB6.html",
+      "score": 57.1,
+      "x": 0.0502,
+      "y": 0.9994,
+      "cluster": 7
+    },
+    {
+      "id": 1606,
+      "title": "独家｜原华为终端云大模型技术负责人、天才少年李一同加盟吉翼智能",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 05:38:00",
+      "link": "https://www.leiphone.com/category/robot/Fuw8flcg1tdQR1aG.html",
+      "score": 59.1,
+      "x": 0.0472,
+      "y": 0.9982,
+      "cluster": 7
+    },
+    {
+      "id": 1514,
+      "title": "A Fast Screening Approach for High-dimensional Outcomes and High-dimensional Predictors",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03018",
+      "score": 60.6,
+      "x": 0.4386,
+      "y": 0.0078,
+      "cluster": 4
+    },
+    {
+      "id": 1513,
+      "title": "Neural Networks Provably Learn Spectral Representations for Group Composition",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02993",
+      "score": 68.6,
+      "x": 0.674,
+      "y": 0.0055,
+      "cluster": 4
+    },
+    {
+      "id": 1512,
+      "title": "Neural Posterior Estimation for Stochastic Epidemic Models Using Final Outcome Data",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02874",
+      "score": 71.6,
+      "x": 0.715,
+      "y": 0.0046,
+      "cluster": 4
+    },
+    {
+      "id": 1511,
+      "title": "Recovering Direct Price Effects of Environmental Amenities in Housing Markets: Regression and Causal Machine Learning Model Assessment with Empirical Monte Carlo Simulation",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02795",
+      "score": 63.6,
+      "x": 0.483,
+      "y": 0.0076,
+      "cluster": 4
+    },
+    {
+      "id": 1510,
+      "title": "Rashomon-Seeded Annealing for Robust Bayesian Inference in Factorial Designs",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02589",
+      "score": 73.6,
+      "x": 0.6695,
+      "y": 0.0041,
+      "cluster": 4
+    },
+    {
+      "id": 1509,
+      "title": "Privacy-Robust Incrementality Measurement for Advertising Systems under Signal Loss",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03878",
+      "score": 55.6,
+      "x": 0.3547,
+      "y": 0.0095,
+      "cluster": 4
+    },
+    {
+      "id": 1508,
+      "title": "A Quantitative Approximation Framework for Flow Distillation in Diffusion Models",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03820",
+      "score": 68.6,
+      "x": 0.54,
+      "y": 0.0064,
+      "cluster": 4
+    },
+    {
+      "id": 1507,
+      "title": "Resource-Constrained Adaptive Inference for Sequential Pricing",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03736",
+      "score": 65.6,
+      "x": 0.4076,
+      "y": 0.0088,
+      "cluster": 4
+    },
+    {
+      "id": 1506,
+      "title": "Set-Preserving Calibration from Conformal P-Values to E-Values",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03600",
+      "score": 60.6,
+      "x": 0.4507,
+      "y": 0.0077,
+      "cluster": 4
+    },
+    {
+      "id": 1505,
+      "title": "Few-Shot Prediction for Pulsar Noise with Long Short-Term Memory Network",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03574",
+      "score": 66.6,
+      "x": 0.6432,
+      "y": 0.0059,
+      "cluster": 4
+    },
+    {
+      "id": 1504,
+      "title": "A Robust Optimization Approach to Sparse Principal Component Analysis",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03553",
+      "score": 60.6,
+      "x": 0.654,
+      "y": 0.0047,
+      "cluster": 4
+    },
+    {
+      "id": 1503,
+      "title": "Combining Statistical Features and Deep Encodings for Rehearsal-Based Class-Incremental Time Series Classification",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03292",
+      "score": 58.6,
+      "x": 0.6469,
+      "y": 0.0061,
+      "cluster": 4
+    },
+    {
+      "id": 1502,
+      "title": "Hierarchies of Calibration: Classification meets Regression",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03245",
+      "score": 55.6,
+      "x": 0.6509,
+      "y": 0.0059,
+      "cluster": 4
+    },
+    {
+      "id": 1501,
+      "title": "An Asymptotic Theory of Chain-of-Thought in In-Context Learning",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03217",
+      "score": 60.6,
+      "x": 0.784,
+      "y": 0.0018,
+      "cluster": 2
+    },
+    {
+      "id": 1500,
+      "title": "Trajectory-Aware Node Contributions and the Limits of Static Controllability",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03067",
+      "score": 55.6,
+      "x": 0.799,
+      "y": 0.004,
+      "cluster": 4
+    },
+    {
+      "id": 1499,
+      "title": "Scalable Derivative Gaussian Processes via Exact Gradient Reduction",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02909",
+      "score": 69.6,
+      "x": 0.3918,
+      "y": 0.0139,
+      "cluster": 4
+    },
+    {
+      "id": 1498,
+      "title": "ScoreStop: Gradient-based early stopping using functional score tests",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02740",
+      "score": 64.6,
+      "x": 0.5944,
+      "y": 0.0066,
+      "cluster": 4
+    },
+    {
+      "id": 1497,
+      "title": "State-Coupled Volatility in Latent Dynamical Systems: Recovery Under Partial Observation",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02664",
+      "score": 55.6,
+      "x": 0.5742,
+      "y": 0.0056,
+      "cluster": 4
+    },
+    {
+      "id": 1496,
+      "title": "Target Updates May Stabilize Linear Q-Learning: Periodic and Soft Dynamics",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02645",
+      "score": 60.6,
+      "x": 0.4947,
+      "y": 0.0075,
+      "cluster": 4
+    },
+    {
+      "id": 1495,
+      "title": "Position: Prioritize Identifying Structure, Not Complex Models, for Scientific Discovery",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02632",
+      "score": 65.6,
+      "x": 0.7203,
+      "y": 0.0062,
+      "cluster": 2
+    },
+    {
+      "id": 1494,
+      "title": "Hand Trajectory Fusion for Egocentric Natural Language Query Grounding",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02962",
+      "score": 58.6,
+      "x": 0.5618,
+      "y": 0.0085,
+      "cluster": 4
+    },
+    {
+      "id": 1493,
+      "title": "The Road Ahead in Autonomous Driving: The KITScenes Multimodal Dataset",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02956",
+      "score": 63.6,
+      "x": 0.5168,
+      "y": 0.0059,
+      "cluster": 4
+    },
+    {
+      "id": 1492,
+      "title": "CAD-to-CT Registration of Cylindrical Objects via Ellipse-Based Axis Estimation",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02935",
+      "score": 69.6,
+      "x": 0.809,
+      "y": 0.0042,
+      "cluster": 4
+    },
+    {
+      "id": 1491,
+      "title": "SaluNet: Enabling Total Plasticity in Normalization-Free Deep Networks",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02927",
+      "score": 61.6,
+      "x": 0.7438,
+      "y": 0.0021,
+      "cluster": 4
+    },
+    {
+      "id": 1490,
+      "title": "ATLAS: A Large-Scale Evaluation Benchmark for Adversarial LiDAR Perception",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02924",
+      "score": 69.6,
+      "x": 0.6273,
+      "y": 0.0056,
+      "cluster": 4
+    },
+    {
+      "id": 1489,
+      "title": "Pixel Cube: Diffusion-based Portrait Video Relighting Through Realistic Lighting Reproduction",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02919",
+      "score": 66.6,
+      "x": 0.6172,
+      "y": 0.006,
+      "cluster": 4
+    },
+    {
+      "id": 1488,
+      "title": "Any2Poster: Any-Source Poster Generation Across Modalities and Domains",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02915",
+      "score": 66.6,
+      "x": 0.6054,
+      "y": 0.0075,
+      "cluster": 4
+    },
+    {
+      "id": 1487,
+      "title": "Tiny Collaborative Inference for Occlusion-Robust Object Detection",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02894",
+      "score": 66.6,
+      "x": 0.5661,
+      "y": 0.0065,
+      "cluster": 4
+    },
+    {
+      "id": 1486,
+      "title": "Pathway-Structured Privileged Distillation for Deployable Computational Pathology",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02877",
+      "score": 71.6,
+      "x": 0.6915,
+      "y": 0.0034,
+      "cluster": 4
+    },
+    {
+      "id": 1485,
+      "title": "Principled Reflection Separation via Nonlinear Superposition and Feature Interaction",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02831",
+      "score": 55.6,
+      "x": 0.592,
+      "y": 0.0049,
+      "cluster": 4
+    },
+    {
+      "id": 1484,
+      "title": "自动化肿瘤 VQA：3D 医学影像评估新基准",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02809",
+      "score": 85.6,
+      "x": 0.0786,
+      "y": 0.0186,
+      "cluster": 5
+    },
+    {
+      "id": 1483,
+      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02800",
+      "score": 68.6,
+      "x": 0.6447,
+      "y": 0.0082,
+      "cluster": 4
+    },
+    {
+      "id": 1482,
+      "title": "Diagnosis of Human Object Interaction Detectors for Real World Educational Applications",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02789",
+      "score": 80.6,
+      "x": 0.5458,
+      "y": 0.006,
+      "cluster": 4
+    },
+    {
+      "id": 1481,
+      "title": "GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02774",
+      "score": 79.6,
+      "x": 0.6,
+      "y": 0.0047,
+      "cluster": 2
+    },
+    {
+      "id": 1480,
+      "title": "From Local Training to Large-Scale Mapping: A Comparative Assessment of Machine Learning and Deep Learning for Transferable Satellite-Derived Bathymetry",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02764",
+      "score": 71.6,
+      "x": 0.6889,
+      "y": 0.0045,
+      "cluster": 4
+    },
+    {
+      "id": 1479,
+      "title": "MetaWorld: Scaling Multi-Agent Video World Model from Single-view Video Data",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02753",
+      "score": 60.6,
+      "x": 0.7216,
+      "y": 0.0056,
+      "cluster": 4
+    },
+    {
+      "id": 1478,
+      "title": "Plan2Map: A Multimodal Benchmark for Document-Grounded Geospatial Boundary Reconstruction from Planning Records",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02747",
+      "score": 68.6,
+      "x": 0.4907,
+      "y": 0.0054,
+      "cluster": 4
+    },
+    {
+      "id": 1477,
+      "title": "Consistent Yet Wrong: Evidence Insensitivity in Spatial Vision-Language Models",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02742",
+      "score": 65.6,
+      "x": 0.7747,
+      "y": 0.0043,
+      "cluster": 2
+    },
+    {
+      "id": 1476,
+      "title": "AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02724",
+      "score": 66.6,
+      "x": 0.5045,
+      "y": 0.0083,
+      "cluster": 4
+    },
+    {
+      "id": 1475,
+      "title": "COD10K-C: Benchmarking Robustness of Camouflaged Object Detection Under Natural Image Corruptions",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02603",
+      "score": 69.6,
+      "x": 0.5834,
+      "y": 0.0058,
+      "cluster": 4
+    },
+    {
+      "id": 1474,
+      "title": "Pretraining Language Models on Historical Text",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02991",
+      "score": 67.4,
+      "x": 0.7319,
+      "y": 0.0034,
+      "cluster": 2
+    },
+    {
+      "id": 1473,
+      "title": "A Locally Deployed RAG-Based Academic Advising System for Course Selection",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02983",
+      "score": 61.4,
+      "x": 0.6393,
+      "y": 0.006,
+      "cluster": 4
+    },
+    {
+      "id": 1472,
+      "title": "Predicting Inference-Time Scaling Gains from Labeled Validation-Set Output Statistics",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02981",
+      "score": 67.4,
+      "x": 0.6848,
+      "y": 0.0114,
+      "cluster": 4
+    },
+    {
+      "id": 1471,
+      "title": "Memory Retrieval for Changing Preferences",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02976",
+      "score": 59.4,
+      "x": 0.624,
+      "y": 0.0055,
+      "cluster": 4
+    },
+    {
+      "id": 1470,
+      "title": "Chatbots Output Meaningful (but Problematic) Language",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02973",
+      "score": 61.4,
+      "x": 0.6693,
+      "y": 0.0074,
+      "cluster": 4
+    },
+    {
+      "id": 1469,
+      "title": "EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02971",
+      "score": 78.4,
+      "x": 0.3217,
+      "y": 0.0108,
+      "cluster": 4
+    },
+    {
+      "id": 1468,
+      "title": "Fast-dLLM++: Fr\\'{e}chet Profile Decoding for Faster Diffusion LLM Inference",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02955",
+      "score": 76.4,
+      "x": 0.5737,
+      "y": 0.0053,
+      "cluster": 2
+    },
+    {
+      "id": 1467,
+      "title": "Linguistic Productivity in Large Language Models: Models Coerce, but do not Preempt",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02953",
+      "score": 56.4,
+      "x": 0.8159,
+      "y": 0.0015,
+      "cluster": 2
+    },
+    {
+      "id": 1466,
+      "title": "The Ghost Annotator: a Framework to Explore Human Label Variation in Content Moderation through Conformal Prediction",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02911",
+      "score": 72.4,
+      "x": 0.7636,
+      "y": 0.0043,
+      "cluster": 4
+    },
+    {
+      "id": 1465,
+      "title": "WRIT: Write-Read Intensive Trajectory Synthesis for Multi-Turn User-Facing Agents",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02908",
+      "score": 64.4,
+      "x": 0.4657,
+      "y": 0.007,
+      "cluster": 4
+    },
+    {
+      "id": 1464,
+      "title": "Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02907",
+      "score": 75.4,
+      "x": 0.7409,
+      "y": 0.0038,
+      "cluster": 2
+    },
+    {
+      "id": 1463,
+      "title": "Adaptive Latent Agentic Reasoning",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02871",
+      "score": 72.4,
+      "x": 0.6398,
+      "y": 0.0052,
+      "cluster": 2
+    },
+    {
+      "id": 1462,
+      "title": "Economy of Minds: Emerging Multi-Agent Intelligence with Economic Interactions",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02859",
+      "score": 61.4,
+      "x": 0.8028,
+      "y": 0.0045,
+      "cluster": 4
+    },
+    {
+      "id": 1461,
+      "title": "FOLIO+MALLS 标注审计：LLM 辅助修复逻辑基准",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02837",
+      "score": 83.4,
+      "x": 0.3384,
+      "y": 0.0142,
+      "cluster": 1
+    },
+    {
+      "id": 1460,
+      "title": "Translating Classical Poetry into Modern Prose",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02806",
+      "score": 64.4,
+      "x": 0.6809,
+      "y": 0.0043,
+      "cluster": 4
+    },
+    {
+      "id": 1459,
+      "title": "Transformer 深层 Value 向量可脱离上下文？",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02780",
+      "score": 90.4,
+      "x": 0.0584,
+      "y": 0.0125,
+      "cluster": 5
+    },
+    {
+      "id": 1458,
+      "title": "Topics as Proxies for Sociodemographics: How Conversational Context Affects LLM Answers",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02776",
+      "score": 61.4,
+      "x": 0.826,
+      "y": 0.0028,
+      "cluster": 2
+    },
+    {
+      "id": 1457,
+      "title": "On the Persistent Effects of Lexicality in Large Language Mod",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02750",
+      "score": 61.4,
+      "x": 0.9039,
+      "y": 0.0009,
+      "cluster": 2
+    },
+    {
+      "id": 1456,
+      "title": "Greener Than Humans? Environmental Attitudes in Large Language Models",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02741",
+      "score": 74.4,
+      "x": 0.8065,
+      "y": 0.003,
+      "cluster": 2
+    },
+    {
+      "id": 1455,
+      "title": "IdiomX A Multilingual Benchmark for Idiom Understanding, Retrieval, and Interpretation",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02584",
+      "score": 72.4,
+      "x": 0.6679,
+      "y": 0.0048,
+      "cluster": 4
+    },
+    {
+      "id": 1454,
+      "title": "Before Fusion, Ask What to Keep: Contextual Calibration of Multimodal Signals",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02679",
+      "score": 61.4,
+      "x": 0.6464,
+      "y": 0.0049,
+      "cluster": 4
+    },
+    {
+      "id": 1453,
+      "title": "Aligning Data-Driven Predictors with Allocation: A Decision-Focused Approach to Survival Analysis",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02671",
+      "score": 61.4,
+      "x": 0.6899,
+      "y": 0.0052,
+      "cluster": 4
+    },
+    {
+      "id": 1452,
+      "title": "Anomalies in Multivariate Time Series Benchmarks Are Mostly Univariate",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02670",
+      "score": 67.4,
+      "x": 0.5332,
+      "y": 0.0059,
+      "cluster": 4
+    },
+    {
+      "id": 1451,
+      "title": "AdaWeather: Adaptively Mixing Probabilistic Weather Forecasts with Logarithmic Regret",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02663",
+      "score": 70.4,
+      "x": 0.5404,
+      "y": 0.0067,
+      "cluster": 4
+    },
+    {
+      "id": 1450,
+      "title": "Improvise, Adapt, Overcome: An On-The-Fly Multifidelity Algorithm for Efficient Machine Learning",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02662",
+      "score": 64.4,
+      "x": 0.6081,
+      "y": 0.0048,
+      "cluster": 4
+    },
+    {
+      "id": 1449,
+      "title": "CL-DMDF:Dynamic Multimodal Data Fusion Model Based on Contrastive Learning",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02659",
+      "score": 61.4,
+      "x": 0.5983,
+      "y": 0.0058,
+      "cluster": 4
+    },
+    {
+      "id": 1448,
+      "title": "Regime-Arrival Uncertainty in Generalization Bounds under Distribution Shift",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02657",
+      "score": 62.4,
+      "x": 0.5136,
+      "y": 0.0071,
+      "cluster": 4
+    },
+    {
+      "id": 1447,
+      "title": "量化 LLM 的幻觉信号可在中间层线性解码",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02628",
+      "score": 79.4,
+      "x": 0.1948,
+      "y": 0.0211,
+      "cluster": 0
+    },
+    {
+      "id": 1446,
+      "title": "Building Better Activation Oracles",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02609",
+      "score": 65.4,
+      "x": 0.5287,
+      "y": 0.0067,
+      "cluster": 4
+    },
+    {
+      "id": 1445,
+      "title": "Pruning Deep Neural Networks via the Marchenko--Pastur Distribution",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02608",
+      "score": 69.4,
+      "x": 0.5102,
+      "y": 0.0084,
+      "cluster": 4
+    },
+    {
+      "id": 1444,
+      "title": "几何感知表格扩散模型",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02607",
+      "score": 78.4,
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
+    },
+    {
+      "id": 1443,
+      "title": "ReLoRA: Knowledge-Reusing Adaptation for Fast Rollout of Evolving LLM Services",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02606",
+      "score": 69.4,
+      "x": 0.5884,
+      "y": 0.0048,
+      "cluster": 2
+    },
+    {
+      "id": 1442,
+      "title": "Cross-Modal Contrastive Learning of ECG and Angiography Representations for Severe Stenosis Classification",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02605",
+      "score": 56.4,
+      "x": 0.5896,
+      "y": 0.0054,
+      "cluster": 4
+    },
+    {
+      "id": 1441,
+      "title": "Auditable Climate Risk Intelligence from Fragmented ESG Data: Deterministic Orchestration and Imbalance-Aware Learning for Scope 1-3 Validation",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02604",
+      "score": 64.4,
+      "x": 0.4645,
+      "y": 0.0146,
+      "cluster": 5
+    },
+    {
+      "id": 1440,
+      "title": "Graph Mamba Survival Analysis Based on Topology-Aware ordering",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02602",
+      "score": 69.4,
+      "x": 0.523,
+      "y": 0.006,
+      "cluster": 4
+    },
+    {
+      "id": 1439,
+      "title": "Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02601",
+      "score": 65.4,
+      "x": 0.4935,
+      "y": 0.0066,
+      "cluster": 4
+    },
+    {
+      "id": 1438,
+      "title": "Assessing Region-Level EEG Contributions to Cognitive Workload Prediction",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02598",
+      "score": 65.4,
+      "x": 0.4804,
+      "y": 0.0077,
+      "cluster": 4
+    },
+    {
+      "id": 1437,
+      "title": "Making Brain-Computer Interfaces More Secure",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02597",
+      "score": 67.4,
+      "x": 0.6097,
+      "y": 0.0058,
+      "cluster": 4
+    },
+    {
+      "id": 1436,
+      "title": "Spectral Asymptotics of Neural Network Loss Landscapes: An Exact Decomposition of the Curvature Exponent",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02596",
+      "score": 74.4,
+      "x": 0.6073,
+      "y": 0.0099,
+      "cluster": 4
+    },
+    {
+      "id": 1435,
+      "title": "Human-in-the-Loop Contextual Bandits for Short-Term Rental Dynamic Pricing: Structural Equivalence of Historical Warm-Up and Approval-Gated Live Learning",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02595",
+      "score": 64.4,
+      "x": 0.496,
+      "y": 0.0069,
+      "cluster": 4
+    },
+    {
+      "id": 1434,
+      "title": "ToolGate：VLM Agent 工具调用预筛选",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03054",
+      "score": 79.4,
+      "x": 0.1495,
+      "y": 0.0128,
+      "cluster": 5
+    },
+    {
+      "id": 1433,
+      "title": "RelGT-AC: A Relational Graph Transformer for Autocomplete Tasks in Relational Databases",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03040",
+      "score": 76.4,
+      "x": 0.5834,
+      "y": 0.0053,
+      "cluster": 4
+    },
+    {
+      "id": 1432,
+      "title": "TriEval: A Resource-Efficient Pipeline for LLM Bias, Toxicity, and Truthfulness Assessment",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03036",
+      "score": 64.4,
+      "x": 0.7188,
+      "y": 0.0057,
+      "cluster": 4
+    },
+    {
+      "id": 1431,
+      "title": "AUDITFLOW: Executable Symbolic Environments for Structured Financial Reporting Verification",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.03031",
+      "score": 67.4,
+      "x": 0.5676,
+      "y": 0.0072,
+      "cluster": 4
+    },
+    {
+      "id": 1430,
+      "title": "Inducing Reasoning Primitives from Agent Traces",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02994",
+      "score": 66.4,
+      "x": 0.6464,
+      "y": 0.0039,
+      "cluster": 4
+    },
+    {
+      "id": 1429,
+      "title": "WISE-HAR: A Generalizable Ensemble Deep Learning Framework for WiFi-Based Human Activity Recognition",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02974",
+      "score": 64.4,
+      "x": 0.5572,
+      "y": 0.0053,
+      "cluster": 4
+    },
+    {
+      "id": 1428,
+      "title": "What Benchmarks Don't Measure: The Case for Evaluating Abstention Competence in Autonomous Agents",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02965",
+      "score": 69.4,
+      "x": 0.6262,
+      "y": 0.0078,
+      "cluster": 4
+    },
+    {
+      "id": 1427,
+      "title": "Large AI Models in Dental Healthcare: From General-Purpose Systems to Domain-Specific Foundation Models",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02914",
+      "score": 59.4,
+      "x": 0.7359,
+      "y": 0.0076,
+      "cluster": 2
+    },
+    {
+      "id": 1426,
+      "title": "Handoff Debt: The Rediscovery Cost When Coding Agents Take Over Interrupted Tasks",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02875",
+      "score": 69.4,
+      "x": 0.6454,
+      "y": 0.0056,
+      "cluster": 4
+    },
+    {
+      "id": 1425,
+      "title": "When Helping Hurts and How to Fix It: Multi-Agent Debate for Data Cleaning",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02866",
+      "score": 72.4,
+      "x": 0.6227,
+      "y": 0.0182,
+      "cluster": 5
+    },
+    {
+      "id": 1424,
+      "title": "Don't Gamble, GAMBLe: An Analytical Framework for AI-Driven Research Systems",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02863",
+      "score": 70.4,
+      "x": 0.6285,
+      "y": 0.0081,
+      "cluster": 4
+    },
+    {
+      "id": 1423,
+      "title": "Toward a Modular Architecture for Embedded AI Agent Systems at the Edge",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02862",
+      "score": 72.4,
+      "x": 0.8524,
+      "y": 0.0046,
+      "cluster": 2
+    },
+    {
+      "id": 1422,
+      "title": "Thinking Past the Answer: Evaluating Harmful Overthinking in Large Reasoning Models",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02835",
+      "score": 65.4,
+      "x": 0.5915,
+      "y": 0.0048,
+      "cluster": 2
+    },
+    {
+      "id": 1421,
+      "title": "An Exploration of Collision-based Enemy Morphology Generation",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02832",
+      "score": 64.4,
+      "x": 0.645,
+      "y": 0.0046,
+      "cluster": 4
+    },
+    {
+      "id": 1420,
+      "title": "Traj-Evolve: A Self-Evolving Multi-Agent System for Patient Trajectory Modeling in Lung Cancer Early Detection",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02812",
+      "score": 76.4,
+      "x": 0.6039,
+      "y": 0.0047,
+      "cluster": 4
+    },
+    {
+      "id": 1419,
+      "title": "ChatHealthAI: Aligning Electronic Health Record Representations with Large Language Models for Grounded Clinical Reasoning",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02802",
+      "score": 74.4,
+      "x": 0.7708,
+      "y": 0.0022,
+      "cluster": 2
+    },
+    {
+      "id": 1418,
+      "title": "BehaviorBench: Modeling Real-World User Decisions from Behavioral Traces",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02798",
+      "score": 72.4,
+      "x": 0.6116,
+      "y": 0.0068,
+      "cluster": 4
+    },
+    {
+      "id": 1417,
+      "title": "Evaluating Transformer and LSTM Frameworks for Prediction in Ungauged Basins",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02791",
+      "score": 69.4,
+      "x": 0.5965,
+      "y": 0.005,
+      "cluster": 4
+    },
+    {
+      "id": 1416,
+      "title": "AURA: Action-Gated Memory for Robot Policies at Constant VRAM",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02775",
+      "score": 74.4,
+      "x": 0.5056,
+      "y": 0.0118,
+      "cluster": 4
+    },
+    {
+      "id": 1415,
+      "title": "Visual Graph Scaffolds for Structural Reasoning in Large Language Models",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "published": "2026-06-03 04:00:00",
+      "link": "https://arxiv.org/abs/2606.02673",
+      "score": 61.4,
+      "x": 1.0,
+      "y": 0.0005,
+      "cluster": 2
+    },
+    {
+      "id": 1607,
+      "title": "ICRA 2026五篇最佳论文Finalist出炉！灵巧手三雄争霸，Day 1精华全在这｜ICRA 日报",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 02:55:00",
+      "link": "https://www.leiphone.com/category/robot/Vh6UTLMHOhAzCsVq.html",
+      "score": 53.7,
+      "x": 0.1209,
+      "y": 0.2666,
+      "cluster": 3
+    },
+    {
+      "id": 1608,
+      "title": "雷峰网现场直击，ICRA 2026开幕全景解码！",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-03 02:01:00",
+      "link": "https://www.leiphone.com/category/robot/t3oqWMirgZAJlUr2.html",
+      "score": 61.6,
+      "x": 0.1357,
+      "y": 0.314,
+      "cluster": 3
+    },
+    {
+      "id": 1516,
+      "title": "Adding MCP Tools to Reachy Mini",
+      "source": "HuggingFace Blog",
+      "category": "Community",
+      "published": "2026-06-03 00:00:00",
+      "link": "https://huggingface.co/blog/adding-mcp-tools-to-reachy-mini",
+      "score": 37.1,
+      "x": 0.1622,
+      "y": 0.0133,
+      "cluster": 5
+    },
     {
       "id": 1328,
       "title": "MiniMax M3一手实测：老黄PPT上74个Logo，我以为能难住它",
@@ -117,9 +1737,9 @@
       "published": "2026-06-02T23:50:16",
       "link": "https://www.qbitai.com/2026/06/428092.html",
       "score": 19.2,
-      "x": 0.0098,
-      "y": 0.2227,
-      "cluster": 2
+      "x": 0.0059,
+      "y": 0.0139,
+      "cluster": 5
     },
     {
       "id": 1329,
@@ -130,8 +1750,8 @@
       "link": "https://www.qbitai.com/2026/06/428003.html",
       "score": 18.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1330,
@@ -142,8 +1762,32 @@
       "link": "https://www.qbitai.com/2026/06/427922.html",
       "score": 19.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
+    },
+    {
+      "id": 1622,
+      "title": "橡木果发布“本能驱动”技术路线，开辟自下而上具身智能新范式",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-02T21:01:45",
+      "link": "https://www.qbitai.com/2026/06/428413.html",
+      "score": 19.1,
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
+    },
+    {
+      "id": 1623,
+      "title": "滴滴2026Q1财报：国内基本盘稳固 国际业务成第二增长引擎",
+      "source": "量子位",
+      "category": "中文媒体",
+      "published": "2026-06-02T20:28:08",
+      "link": "https://www.qbitai.com/2026/06/428331.html",
+      "score": 19.4,
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1331,
@@ -154,8 +1798,8 @@
       "link": "https://www.qbitai.com/2026/06/427810.html",
       "score": 34.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1332,
@@ -166,8 +1810,8 @@
       "link": "https://www.qbitai.com/2026/06/427760.html",
       "score": 19.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1333,
@@ -177,9 +1821,9 @@
       "published": "2026-06-02T15:47:30",
       "link": "https://www.qbitai.com/2026/06/427754.html",
       "score": 30.9,
-      "x": 0.0529,
-      "y": 0.2592,
-      "cluster": 2
+      "x": 0.0462,
+      "y": 0.029,
+      "cluster": 5
     },
     {
       "id": 754,
@@ -190,8 +1834,8 @@
       "link": "https://www.qbitai.com/2026/06/427729.html",
       "score": 29.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 755,
@@ -201,9 +1845,9 @@
       "published": "2026-06-02T11:15:52",
       "link": "https://www.qbitai.com/2026/06/427730.html",
       "score": 19.6,
-      "x": 0.0435,
-      "y": 0.2585,
-      "cluster": 2
+      "x": 0.0388,
+      "y": 0.0146,
+      "cluster": 0
     },
     {
       "id": 756,
@@ -214,8 +1858,8 @@
       "link": "https://www.qbitai.com/2026/06/427472.html",
       "score": 25.0,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 757,
@@ -226,8 +1870,8 @@
       "link": "https://www.qbitai.com/2026/06/427541.html",
       "score": 24.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1348,
@@ -237,9 +1881,9 @@
       "published": "2026-06-02 22:50:56",
       "link": "https://techcrunch.com/2026/06/02/cyera-eyes-12b-valuation-at-80x-arr-multiple-despite-operating-losses/",
       "score": 41.9,
-      "x": 0.3032,
-      "y": 0.249,
-      "cluster": 2
+      "x": 0.2506,
+      "y": 0.0109,
+      "cluster": 5
     },
     {
       "id": 1368,
@@ -249,9 +1893,9 @@
       "published": "2026-06-02 22:40:00",
       "link": "https://venturebeat.com/technology/alibabas-qwen3-7-plus-supports-text-video-and-imagery-inputs-at-low-cost-of-0-4-1-6-per-1m-token-but-its-proprietary",
       "score": 74.8,
-      "x": 0.4731,
-      "y": 0.3023,
-      "cluster": 2
+      "x": 0.4284,
+      "y": 0.0162,
+      "cluster": 0
     },
     {
       "id": 1349,
@@ -261,9 +1905,9 @@
       "published": "2026-06-02 19:11:48",
       "link": "https://techcrunch.com/2026/06/02/uber-caps-employee-ai-spending-after-blowing-through-budget-in-four-months/",
       "score": 47.3,
-      "x": 0.5224,
-      "y": 0.516,
-      "cluster": 6
+      "x": 0.4484,
+      "y": 0.0167,
+      "cluster": 1
     },
     {
       "id": 1369,
@@ -273,9 +1917,9 @@
       "published": "2026-06-02 19:08:17",
       "link": "https://venturebeat.com/technology/perplexity-ai-unveils-hybrid-local-cloud-inference-system-at-computex-2026",
       "score": 59.4,
-      "x": 0.5653,
-      "y": 0.5368,
-      "cluster": 6
+      "x": 0.5075,
+      "y": 0.0354,
+      "cluster": 1
     },
     {
       "id": 1350,
@@ -285,9 +1929,9 @@
       "published": "2026-06-02 19:02:21",
       "link": "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/",
       "score": 56.1,
-      "x": 0.4015,
-      "y": 0.4273,
-      "cluster": 6
+      "x": 0.3378,
+      "y": 0.0135,
+      "cluster": 1
     },
     {
       "id": 1278,
@@ -297,9 +1941,9 @@
       "published": "2026-06-02 19:00:00",
       "link": "https://developer.nvidia.com/blog/build-personal-ai-agents-on-windows-pcs-with-new-tools-from-microsoft-and-nvidia/",
       "score": 52.6,
-      "x": 0.5514,
-      "y": 0.6674,
-      "cluster": 6
+      "x": 0.4636,
+      "y": 0.0174,
+      "cluster": 1
     },
     {
       "id": 1370,
@@ -309,9 +1953,9 @@
       "published": "2026-06-02 18:49:41",
       "link": "https://venturebeat.com/resources/the-agentic-reckoning-enterprise-ai-organizations-have-a-runtime-problem-not-a-model-problem",
       "score": 64.4,
-      "x": 0.5317,
-      "y": 0.4486,
-      "cluster": 2
+      "x": 0.4699,
+      "y": 0.023,
+      "cluster": 1
     },
     {
       "id": 1351,
@@ -321,9 +1965,9 @@
       "published": "2026-06-02 18:16:53",
       "link": "https://techcrunch.com/2026/06/02/martin-scorsese-becomes-the-latest-and-most-unlikely-hollywood-voice-for-ai/",
       "score": 42.3,
-      "x": 0.4468,
-      "y": 0.4054,
-      "cluster": 6
+      "x": 0.3949,
+      "y": 0.0154,
+      "cluster": 1
     },
     {
       "id": 1352,
@@ -333,9 +1977,9 @@
       "published": "2026-06-02 18:02:44",
       "link": "https://techcrunch.com/2026/06/02/microsoft-launches-scout-an-openclaw-inspired-personal-assistant/",
       "score": 43.8,
-      "x": 0.42,
-      "y": 0.3983,
-      "cluster": 6
+      "x": 0.3448,
+      "y": 0.0125,
+      "cluster": 1
     },
     {
       "id": 1371,
@@ -345,9 +1989,9 @@
       "published": "2026-06-02 18:00:00",
       "link": "https://venturebeat.com/data/enterprise-ai-agents-keep-creating-data-silos-microsofts-build-answer-is-microsoft-iq-and-rayfin",
       "score": 61.3,
-      "x": 0.5872,
-      "y": 0.5069,
-      "cluster": 6
+      "x": 0.5076,
+      "y": 0.0132,
+      "cluster": 1
     },
     {
       "id": 1354,
@@ -357,9 +2001,9 @@
       "published": "2026-06-02 18:00:00",
       "link": "https://techcrunch.com/2026/06/02/microsoft-offers-devs-a-better-way-to-control-ai-agent-behavior/",
       "score": 48.6,
-      "x": 0.4766,
-      "y": 0.416,
-      "cluster": 6
+      "x": 0.4333,
+      "y": 0.0132,
+      "cluster": 1
     },
     {
       "id": 1353,
@@ -369,9 +2013,9 @@
       "published": "2026-06-02 18:00:00",
       "link": "https://techcrunch.com/2026/06/02/google-rolls-out-fake-call-detection-to-protect-against-ai-deepfake-impersonation-scams/",
       "score": 48.4,
-      "x": 0.5594,
-      "y": 0.4499,
-      "cluster": 6
+      "x": 0.491,
+      "y": 0.0135,
+      "cluster": 1
     },
     {
       "id": 1355,
@@ -381,9 +2025,9 @@
       "published": "2026-06-02 17:47:28",
       "link": "https://techcrunch.com/2026/06/02/amazon-faces-class-action-lawsuit-over-ring-facial-recognition-feature/",
       "score": 45.0,
-      "x": 0.306,
-      "y": 0.2577,
-      "cluster": 2
+      "x": 0.263,
+      "y": 0.0121,
+      "cluster": 5
     },
     {
       "id": 1373,
@@ -393,9 +2037,9 @@
       "published": "2026-06-02 16:30:00",
       "link": "https://venturebeat.com/infrastructure/microsoft-debuts-surface-rtx-spark-dev-box-to-run-large-ai-models-without-cloud-costs",
       "score": 67.1,
-      "x": 0.609,
-      "y": 0.4679,
-      "cluster": 6
+      "x": 0.5131,
+      "y": 0.0155,
+      "cluster": 1
     },
     {
       "id": 1372,
@@ -405,9 +2049,9 @@
       "published": "2026-06-02 16:30:00",
       "link": "https://venturebeat.com/security/microsoft-launches-mxc-an-os-level-sandbox-for-ai-agents-with-openai-and-nvidia-already-on-board",
       "score": 56.1,
-      "x": 0.5409,
-      "y": 0.521,
-      "cluster": 6
+      "x": 0.4452,
+      "y": 0.015,
+      "cluster": 1
     },
     {
       "id": 1356,
@@ -417,9 +2061,9 @@
       "published": "2026-06-02 16:23:08",
       "link": "https://techcrunch.com/2026/06/02/trump-signs-narrower-executive-order-on-ai-oversight-after-industry-objections/",
       "score": 44.2,
-      "x": 0.4134,
-      "y": 0.4162,
-      "cluster": 6
+      "x": 0.3539,
+      "y": 0.0129,
+      "cluster": 1
     },
     {
       "id": 1374,
@@ -429,9 +2073,9 @@
       "published": "2026-06-02 16:00:00",
       "link": "https://venturebeat.com/orchestration/openais-codex-update-lets-agents-build-interactive-enterprise-workspaces-via-sites-and-role-specific-plugins",
       "score": 61.0,
-      "x": 0.6063,
-      "y": 0.5232,
-      "cluster": 2
+      "x": 0.5041,
+      "y": 0.0318,
+      "cluster": 1
     },
     {
       "id": 1357,
@@ -441,9 +2085,9 @@
       "published": "2026-06-02 16:00:00",
       "link": "https://techcrunch.com/2026/06/02/openai-launches-new-codex-tools-for-white-collar-work/",
       "score": 56.5,
-      "x": 0.4673,
-      "y": 0.3679,
-      "cluster": 2
+      "x": 0.394,
+      "y": 0.0113,
+      "cluster": 1
     },
     {
       "id": 1279,
@@ -453,9 +2097,9 @@
       "published": "2026-06-02 16:00:00",
       "link": "https://developer.nvidia.com/blog/deploy-self-evolving-agents-for-faster-more-secure-research-with-a-hermes-agent-and-nvidia-nemoclaw/",
       "score": 52.6,
-      "x": 0.5461,
-      "y": 0.4388,
-      "cluster": 6
+      "x": 0.4857,
+      "y": 0.0131,
+      "cluster": 1
     },
     {
       "id": 1358,
@@ -465,9 +2109,9 @@
       "published": "2026-06-02 14:44:21",
       "link": "https://techcrunch.com/2026/06/02/anthropic-scales-claude-mythos-to-critical-infrastructure-in-15-countries/",
       "score": 53.2,
-      "x": 0.4503,
-      "y": 0.3182,
-      "cluster": 2
+      "x": 0.3995,
+      "y": 0.012,
+      "cluster": 5
     },
     {
       "id": 1308,
@@ -477,9 +2121,9 @@
       "published": "2026-06-02 14:41:00",
       "link": "https://www.leiphone.com/category/industrynews/ruUeurLUnJpRTu9J.html",
       "score": 49.3,
-      "x": 0.0906,
-      "y": 0.5202,
-      "cluster": 2
+      "x": 0.0697,
+      "y": 0.0993,
+      "cluster": 3
     },
     {
       "id": 1228,
@@ -489,9 +2133,9 @@
       "published": "2026-06-02 14:13:23",
       "link": "https://huggingface.co/blog/Hcompany/holo31",
       "score": 43.8,
-      "x": 0.1722,
-      "y": 0.2988,
-      "cluster": 2
+      "x": 0.1729,
+      "y": 0.0202,
+      "cluster": 5
     },
     {
       "id": 1309,
@@ -501,8 +2145,20 @@
       "published": "2026-06-02 14:02:00",
       "link": "https://www.leiphone.com/category/industrynews/kUT9gYphwdNIkstm.html",
       "score": 65.1,
-      "x": 0.0188,
-      "y": 0.6266,
+      "x": 0.0281,
+      "y": 0.3905,
+      "cluster": 5
+    },
+    {
+      "id": 1611,
+      "title": "中国工程院院士金涌 ：全固态电池量产至少再等十年 | 大湾区车展观察",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "published": "2026-06-02 13:30:00",
+      "link": "https://www.leiphone.com/category/transportation/fpS0tNUGZ3WzNanS.html",
+      "score": 47.1,
+      "x": 0.0052,
+      "y": 0.0492,
       "cluster": 5
     },
     {
@@ -513,9 +2169,9 @@
       "published": "2026-06-02 12:32:59",
       "link": "https://techcrunch.com/2026/06/02/zerodrift-raises-10-million-to-protect-ai-models-from-themselves/",
       "score": 43.0,
-      "x": 0.6143,
-      "y": 0.5158,
-      "cluster": 6
+      "x": 0.5179,
+      "y": 0.0144,
+      "cluster": 1
     },
     {
       "id": 1310,
@@ -525,9 +2181,9 @@
       "published": "2026-06-02 12:06:00",
       "link": "https://www.leiphone.com/category/industrynews/TLncvcB4REobjDD1.html",
       "score": 52.8,
-      "x": 0.0061,
-      "y": 0.2791,
-      "cluster": 2
+      "x": 0.005,
+      "y": 0.0437,
+      "cluster": 5
     },
     {
       "id": 1360,
@@ -537,9 +2193,9 @@
       "published": "2026-06-02 12:00:00",
       "link": "https://techcrunch.com/2026/06/02/rocket-engine-startup-impulse-raises-500-million-to-hire-people-not-ai/",
       "score": 41.4,
-      "x": 0.415,
-      "y": 0.4005,
-      "cluster": 6
+      "x": 0.3536,
+      "y": 0.0149,
+      "cluster": 1
     },
     {
       "id": 1088,
@@ -549,9 +2205,9 @@
       "published": "2026-06-02 12:00:00",
       "link": "https://openai.com/index/travelers",
       "score": 58.4,
-      "x": 0.3467,
-      "y": 0.517,
-      "cluster": 6
+      "x": 0.2955,
+      "y": 0.0149,
+      "cluster": 1
     },
     {
       "id": 1311,
@@ -561,9 +2217,9 @@
       "published": "2026-06-02 10:46:00",
       "link": "https://www.leiphone.com/category/ai/NdytmjkC1MmPszoq.html",
       "score": 49.7,
-      "x": 0.0231,
-      "y": 0.8554,
-      "cluster": 5
+      "x": 0.0469,
+      "y": 0.9959,
+      "cluster": 7
     },
     {
       "id": 1312,
@@ -574,8 +2230,8 @@
       "link": "https://www.leiphone.com/category/ai/5vSr76eWChdbpFwY.html",
       "score": 64.6,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1313,
@@ -585,9 +2241,9 @@
       "published": "2026-06-02 10:07:00",
       "link": "https://www.leiphone.com/category/industrynews/wE6cbVFYNVjCvx4G.html",
       "score": 62.6,
-      "x": 0.0679,
-      "y": 0.4603,
-      "cluster": 2
+      "x": 0.0511,
+      "y": 0.0714,
+      "cluster": 3
     },
     {
       "id": 1314,
@@ -597,9 +2253,9 @@
       "published": "2026-06-02 09:28:00",
       "link": "https://www.leiphone.com/category/industrynews/FnNWmRGGBxasmJ9I.html",
       "score": 54.5,
-      "x": 0.0274,
-      "y": 0.8353,
-      "cluster": 5
+      "x": 0.0469,
+      "y": 0.8533,
+      "cluster": 7
     },
     {
       "id": 1089,
@@ -609,9 +2265,9 @@
       "published": "2026-06-02 09:00:00",
       "link": "https://openai.com/index/codex-for-every-role-tool-workflow",
       "score": 54.1,
-      "x": 0.1984,
-      "y": 0.3995,
-      "cluster": 2
+      "x": 0.1631,
+      "y": 0.015,
+      "cluster": 1
     },
     {
       "id": 1090,
@@ -621,9 +2277,9 @@
       "published": "2026-06-02 07:00:00",
       "link": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
       "score": 54.7,
-      "x": 0.3859,
-      "y": 0.4165,
-      "cluster": 2
+      "x": 0.3354,
+      "y": 0.0137,
+      "cluster": 1
     },
     {
       "id": 1315,
@@ -633,9 +2289,9 @@
       "published": "2026-06-02 06:35:00",
       "link": "https://www.leiphone.com/category/industrynews/VEQzCEDU0APjbVou.html",
       "score": 49.2,
-      "x": 0.0658,
-      "y": 0.4514,
-      "cluster": 2
+      "x": 0.0508,
+      "y": 0.085,
+      "cluster": 3
     },
     {
       "id": 653,
@@ -645,9 +2301,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.02008",
       "score": 74.8,
-      "x": 0.6979,
-      "y": 0.1139,
-      "cluster": 1
+      "x": 0.621,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 652,
@@ -657,9 +2313,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.01645",
       "score": 68.8,
-      "x": 0.6175,
-      "y": 0.076,
-      "cluster": 1
+      "x": 0.5574,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 651,
@@ -669,9 +2325,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.01468",
       "score": 63.8,
-      "x": 0.7734,
-      "y": 0.0764,
-      "cluster": 1
+      "x": 0.7331,
+      "y": 0.0036,
+      "cluster": 4
     },
     {
       "id": 650,
@@ -681,9 +2337,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.01427",
       "score": 65.8,
-      "x": 0.6611,
-      "y": 0.0698,
-      "cluster": 1
+      "x": 0.6277,
+      "y": 0.004,
+      "cluster": 4
     },
     {
       "id": 649,
@@ -693,9 +2349,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.01256",
       "score": 65.8,
-      "x": 0.5815,
-      "y": 0.1288,
-      "cluster": 1
+      "x": 0.5013,
+      "y": 0.0077,
+      "cluster": 4
     },
     {
       "id": 648,
@@ -705,9 +2361,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.01244",
       "score": 62.8,
-      "x": 0.6672,
-      "y": 0.0644,
-      "cluster": 1
+      "x": 0.5474,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 647,
@@ -717,9 +2373,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00984",
       "score": 60.8,
-      "x": 0.4703,
-      "y": 0.0991,
-      "cluster": 1
+      "x": 0.401,
+      "y": 0.0073,
+      "cluster": 4
     },
     {
       "id": 646,
@@ -729,9 +2385,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00934",
       "score": 65.8,
-      "x": 0.4805,
-      "y": 0.1154,
-      "cluster": 1
+      "x": 0.4663,
+      "y": 0.0068,
+      "cluster": 4
     },
     {
       "id": 645,
@@ -741,9 +2397,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00913",
       "score": 76.8,
-      "x": 0.7203,
-      "y": 0.0958,
-      "cluster": 1
+      "x": 0.6627,
+      "y": 0.0044,
+      "cluster": 4
     },
     {
       "id": 644,
@@ -753,9 +2409,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00867",
       "score": 60.8,
-      "x": 0.5584,
-      "y": 0.1282,
-      "cluster": 1
+      "x": 0.5216,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 643,
@@ -765,9 +2421,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00758",
       "score": 60.8,
-      "x": 0.7375,
-      "y": 0.1022,
-      "cluster": 1
+      "x": 0.6828,
+      "y": 0.0037,
+      "cluster": 4
     },
     {
       "id": 642,
@@ -777,9 +2433,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00661",
       "score": 53.7,
-      "x": 0.6107,
-      "y": 0.1129,
-      "cluster": 1
+      "x": 0.5523,
+      "y": 0.0054,
+      "cluster": 4
     },
     {
       "id": 641,
@@ -789,9 +2445,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00643",
       "score": 62.8,
-      "x": 0.7402,
-      "y": 0.0852,
-      "cluster": 1
+      "x": 0.5821,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 640,
@@ -801,9 +2457,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00584",
       "score": 60.8,
-      "x": 0.5689,
-      "y": 0.0672,
-      "cluster": 1
+      "x": 0.5019,
+      "y": 0.0073,
+      "cluster": 4
     },
     {
       "id": 639,
@@ -813,9 +2469,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00419",
       "score": 70.8,
-      "x": 0.7022,
-      "y": 0.107,
-      "cluster": 1
+      "x": 0.581,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 638,
@@ -825,9 +2481,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00413",
       "score": 57.8,
-      "x": 0.5838,
-      "y": 0.0722,
-      "cluster": 1
+      "x": 0.4832,
+      "y": 0.006,
+      "cluster": 4
     },
     {
       "id": 637,
@@ -837,9 +2493,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00302",
       "score": 66.8,
-      "x": 0.7006,
-      "y": 0.109,
-      "cluster": 1
+      "x": 0.6149,
+      "y": 0.0048,
+      "cluster": 4
     },
     {
       "id": 636,
@@ -849,9 +2505,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00296",
       "score": 60.8,
-      "x": 0.7129,
-      "y": 0.1021,
-      "cluster": 1
+      "x": 0.6146,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 635,
@@ -861,9 +2517,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00265",
       "score": 57.8,
-      "x": 0.7135,
-      "y": 0.0762,
-      "cluster": 1
+      "x": 0.6393,
+      "y": 0.0041,
+      "cluster": 4
     },
     {
       "id": 634,
@@ -873,9 +2529,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00157",
       "score": 70.8,
-      "x": 0.7613,
-      "y": 0.0564,
-      "cluster": 1
+      "x": 0.7114,
+      "y": 0.003,
+      "cluster": 4
     },
     {
       "id": 633,
@@ -885,21 +2541,21 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00124",
       "score": 70.8,
-      "x": 0.7564,
-      "y": 0.1275,
-      "cluster": 1
+      "x": 0.7042,
+      "y": 0.0047,
+      "cluster": 4
     },
     {
       "id": 632,
-      "title": "CardioLens: Revealing the Clinical Reality Gap of MLLMs via Multi-Sequence Cardiac MRI Evaluations",
+      "title": "CardioLens：揭示多模态大模型临床真实差距",
       "source": "ArXiv cs.CV",
       "category": "Paper",
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00123",
       "score": 81.8,
-      "x": 0.6901,
-      "y": 0.0706,
-      "cluster": 7
+      "x": 0.0842,
+      "y": 0.0145,
+      "cluster": 5
     },
     {
       "id": 631,
@@ -909,9 +2565,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00121",
       "score": 73.8,
-      "x": 0.5703,
-      "y": 0.0946,
-      "cluster": 1
+      "x": 0.4979,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 630,
@@ -921,9 +2577,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00115",
       "score": 65.8,
-      "x": 0.8328,
-      "y": 0.1139,
-      "cluster": 1
+      "x": 0.7267,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 629,
@@ -933,9 +2589,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00114",
       "score": 62.8,
-      "x": 0.6317,
-      "y": 0.1184,
-      "cluster": 1
+      "x": 0.59,
+      "y": 0.0061,
+      "cluster": 4
     },
     {
       "id": 628,
@@ -945,9 +2601,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00110",
       "score": 60.8,
-      "x": 0.683,
-      "y": 0.0809,
-      "cluster": 1
+      "x": 0.6092,
+      "y": 0.0045,
+      "cluster": 4
     },
     {
       "id": 627,
@@ -957,9 +2613,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00109",
       "score": 70.8,
-      "x": 0.8,
-      "y": 0.1495,
-      "cluster": 1
+      "x": 0.5487,
+      "y": 0.0117,
+      "cluster": 4
     },
     {
       "id": 626,
@@ -969,9 +2625,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00105",
       "score": 70.8,
-      "x": 0.78,
-      "y": 0.0319,
-      "cluster": 7
+      "x": 0.7995,
+      "y": 0.0012,
+      "cluster": 2
     },
     {
       "id": 625,
@@ -981,9 +2637,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00101",
       "score": 73.8,
-      "x": 0.6706,
-      "y": 0.1752,
-      "cluster": 1
+      "x": 0.6108,
+      "y": 0.0065,
+      "cluster": 4
     },
     {
       "id": 624,
@@ -993,9 +2649,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00100",
       "score": 65.8,
-      "x": 0.4488,
-      "y": 0.0769,
-      "cluster": 1
+      "x": 0.3939,
+      "y": 0.007,
+      "cluster": 4
     },
     {
       "id": 623,
@@ -1005,9 +2661,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00098",
       "score": 62.8,
-      "x": 0.4907,
-      "y": 0.0789,
-      "cluster": 1
+      "x": 0.4267,
+      "y": 0.008,
+      "cluster": 4
     },
     {
       "id": 622,
@@ -1017,9 +2673,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00096",
       "score": 62.8,
-      "x": 0.6557,
-      "y": 0.1427,
-      "cluster": 1
+      "x": 0.5919,
+      "y": 0.0054,
+      "cluster": 4
     },
     {
       "id": 621,
@@ -1029,21 +2685,21 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00095",
       "score": 72.8,
-      "x": 0.678,
-      "y": 0.0734,
-      "cluster": 7
+      "x": 0.6402,
+      "y": 0.0042,
+      "cluster": 2
     },
     {
       "id": 620,
-      "title": "Diffusion Image Generation with Explicit Modeling of Data Manifold Geometry",
+      "title": "显式建模数据流形几何的图像扩散生成",
       "source": "ArXiv cs.CV",
       "category": "Paper",
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00094",
       "score": 81.8,
-      "x": 0.8269,
-      "y": 0.0868,
-      "cluster": 1
+      "x": 0.0,
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 619,
@@ -1053,9 +2709,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00092",
       "score": 65.8,
-      "x": 0.6406,
-      "y": 0.1165,
-      "cluster": 1
+      "x": 0.5657,
+      "y": 0.007,
+      "cluster": 4
     },
     {
       "id": 618,
@@ -1065,9 +2721,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00087",
       "score": 65.8,
-      "x": 0.5181,
-      "y": 0.0777,
-      "cluster": 1
+      "x": 0.4849,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 617,
@@ -1077,9 +2733,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00080",
       "score": 68.8,
-      "x": 0.6649,
-      "y": 0.0955,
-      "cluster": 1
+      "x": 0.631,
+      "y": 0.0066,
+      "cluster": 4
     },
     {
       "id": 616,
@@ -1089,9 +2745,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00078",
       "score": 57.8,
-      "x": 0.5612,
-      "y": 0.0919,
-      "cluster": 1
+      "x": 0.5253,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 615,
@@ -1101,9 +2757,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00077",
       "score": 76.8,
-      "x": 0.7888,
-      "y": 0.0847,
-      "cluster": 1
+      "x": 0.7339,
+      "y": 0.0034,
+      "cluster": 4
     },
     {
       "id": 614,
@@ -1113,9 +2769,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00076",
       "score": 73.8,
-      "x": 0.7132,
-      "y": 0.0941,
-      "cluster": 1
+      "x": 0.645,
+      "y": 0.0038,
+      "cluster": 4
     },
     {
       "id": 613,
@@ -1125,9 +2781,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00250",
       "score": 71.5,
-      "x": 0.9852,
-      "y": 0.0409,
-      "cluster": 7
+      "x": 0.8572,
+      "y": 0.0019,
+      "cluster": 2
     },
     {
       "id": 612,
@@ -1137,9 +2793,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00203",
       "score": 63.5,
-      "x": 0.6902,
-      "y": 0.0942,
-      "cluster": 1
+      "x": 0.616,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 611,
@@ -1149,9 +2805,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00193",
       "score": 61.5,
-      "x": 0.9045,
-      "y": 0.1225,
-      "cluster": 1
+      "x": 0.8079,
+      "y": 0.0052,
+      "cluster": 4
     },
     {
       "id": 610,
@@ -1161,9 +2817,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00168",
       "score": 74.5,
-      "x": 0.9449,
-      "y": 0.4356,
-      "cluster": 6
+      "x": 0.8308,
+      "y": 0.0086,
+      "cluster": 1
     },
     {
       "id": 609,
@@ -1173,9 +2829,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00116",
       "score": 67.5,
-      "x": 0.8773,
-      "y": 0.0932,
-      "cluster": 1
+      "x": 0.8192,
+      "y": 0.0023,
+      "cluster": 4
     },
     {
       "id": 608,
@@ -1185,9 +2841,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00093",
       "score": 75.5,
-      "x": 0.6024,
-      "y": 0.1634,
-      "cluster": 1
+      "x": 0.5327,
+      "y": 0.0081,
+      "cluster": 4
     },
     {
       "id": 607,
@@ -1198,8 +2854,8 @@
       "link": "https://arxiv.org/abs/2606.00091",
       "score": 81.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 606,
@@ -1209,9 +2865,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00062",
       "score": 69.5,
-      "x": 0.7594,
-      "y": 0.0397,
-      "cluster": 7
+      "x": 0.6984,
+      "y": 0.0029,
+      "cluster": 2
     },
     {
       "id": 605,
@@ -1221,9 +2877,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00031",
       "score": 76.5,
-      "x": 0.6969,
-      "y": 0.1093,
-      "cluster": 1
+      "x": 0.6323,
+      "y": 0.0052,
+      "cluster": 4
     },
     {
       "id": 604,
@@ -1233,9 +2889,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00029",
       "score": 66.5,
-      "x": 0.5721,
-      "y": 0.0598,
-      "cluster": 1
+      "x": 0.5303,
+      "y": 0.005,
+      "cluster": 4
     },
     {
       "id": 603,
@@ -1246,8 +2902,8 @@
       "link": "https://arxiv.org/abs/2606.00027",
       "score": 77.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 602,
@@ -1257,9 +2913,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00026",
       "score": 71.5,
-      "x": 0.6328,
-      "y": 0.1168,
-      "cluster": 1
+      "x": 0.5881,
+      "y": 0.0071,
+      "cluster": 4
     },
     {
       "id": 601,
@@ -1269,9 +2925,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00024",
       "score": 68.5,
-      "x": 0.8008,
-      "y": 0.0501,
-      "cluster": 7
+      "x": 0.7725,
+      "y": 0.0035,
+      "cluster": 2
     },
     {
       "id": 600,
@@ -1281,9 +2937,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00023",
       "score": 71.5,
-      "x": 0.7129,
-      "y": 0.0522,
-      "cluster": 7
+      "x": 0.6244,
+      "y": 0.0037,
+      "cluster": 2
     },
     {
       "id": 599,
@@ -1293,9 +2949,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00022",
       "score": 61.5,
-      "x": 0.6318,
-      "y": 0.1417,
-      "cluster": 1
+      "x": 0.6019,
+      "y": 0.0188,
+      "cluster": 4
     },
     {
       "id": 598,
@@ -1306,20 +2962,20 @@
       "link": "https://arxiv.org/abs/2606.00021",
       "score": 81.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 597,
-      "title": "CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards",
+      "title": "CSRP：思维链+强化学习的中文纠错新范式",
       "source": "ArXiv cs.CL",
       "category": "Paper",
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00020",
       "score": 79.5,
-      "x": 0.6934,
-      "y": 0.0115,
-      "cluster": 7
+      "x": 0.0083,
+      "y": 0.0217,
+      "cluster": 5
     },
     {
       "id": 596,
@@ -1329,9 +2985,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00016",
       "score": 71.5,
-      "x": 0.7866,
-      "y": 0.201,
-      "cluster": 1
+      "x": 0.7086,
+      "y": 0.0061,
+      "cluster": 4
     },
     {
       "id": 595,
@@ -1341,9 +2997,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00014",
       "score": 73.5,
-      "x": 0.7575,
-      "y": 0.0828,
-      "cluster": 7
+      "x": 0.6807,
+      "y": 0.0043,
+      "cluster": 2
     },
     {
       "id": 594,
@@ -1353,9 +3009,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00012",
       "score": 66.5,
-      "x": 0.8017,
-      "y": 0.1089,
-      "cluster": 1
+      "x": 0.5429,
+      "y": 0.007,
+      "cluster": 4
     },
     {
       "id": 593,
@@ -1365,9 +3021,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00189",
       "score": 76.5,
-      "x": 0.5981,
-      "y": 0.165,
-      "cluster": 1
+      "x": 0.5443,
+      "y": 0.0085,
+      "cluster": 4
     },
     {
       "id": 592,
@@ -1377,9 +3033,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00187",
       "score": 64.5,
-      "x": 0.6597,
-      "y": 0.2615,
-      "cluster": 1
+      "x": 0.5603,
+      "y": 0.0085,
+      "cluster": 4
     },
     {
       "id": 591,
@@ -1389,9 +3045,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00183",
       "score": 76.5,
-      "x": 0.8542,
-      "y": 0.1271,
-      "cluster": 1
+      "x": 0.7756,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 590,
@@ -1401,9 +3057,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00180",
       "score": 69.5,
-      "x": 0.6161,
-      "y": 0.0711,
-      "cluster": 1
+      "x": 0.5675,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 589,
@@ -1413,9 +3069,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00169",
       "score": 71.5,
-      "x": 0.8927,
-      "y": 0.2094,
-      "cluster": 1
+      "x": 0.7649,
+      "y": 0.0053,
+      "cluster": 4
     },
     {
       "id": 588,
@@ -1425,9 +3081,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00151",
       "score": 79.5,
-      "x": 0.7491,
-      "y": 0.0793,
-      "cluster": 1
+      "x": 0.6403,
+      "y": 0.0056,
+      "cluster": 4
     },
     {
       "id": 587,
@@ -1437,9 +3093,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00147",
       "score": 74.5,
-      "x": 0.5957,
-      "y": 0.1196,
-      "cluster": 1
+      "x": 0.5312,
+      "y": 0.0077,
+      "cluster": 4
     },
     {
       "id": 586,
@@ -1449,9 +3105,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00144",
       "score": 74.5,
-      "x": 0.711,
-      "y": 0.1429,
-      "cluster": 1
+      "x": 0.6307,
+      "y": 0.0066,
+      "cluster": 4
     },
     {
       "id": 585,
@@ -1461,9 +3117,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00141",
       "score": 67.5,
-      "x": 0.6875,
-      "y": 0.1121,
-      "cluster": 1
+      "x": 0.6255,
+      "y": 0.0052,
+      "cluster": 4
     },
     {
       "id": 584,
@@ -1473,9 +3129,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00140",
       "score": 73.5,
-      "x": 0.7645,
-      "y": 0.1093,
-      "cluster": 1
+      "x": 0.6599,
+      "y": 0.0043,
+      "cluster": 4
     },
     {
       "id": 583,
@@ -1485,9 +3141,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00136",
       "score": 58.5,
-      "x": 0.8776,
-      "y": 0.2656,
-      "cluster": 1
+      "x": 0.7268,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 582,
@@ -1497,9 +3153,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00135",
       "score": 74.5,
-      "x": 0.7179,
-      "y": 0.1718,
-      "cluster": 7
+      "x": 0.657,
+      "y": 0.0086,
+      "cluster": 2
     },
     {
       "id": 581,
@@ -1510,8 +3166,8 @@
       "link": "https://arxiv.org/abs/2606.00133",
       "score": 77.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 580,
@@ -1521,9 +3177,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00132",
       "score": 69.5,
-      "x": 0.5205,
-      "y": 0.1025,
-      "cluster": 1
+      "x": 0.4646,
+      "y": 0.0078,
+      "cluster": 4
     },
     {
       "id": 579,
@@ -1533,9 +3189,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00130",
       "score": 63.5,
-      "x": 0.7044,
-      "y": 0.0893,
-      "cluster": 1
+      "x": 0.5774,
+      "y": 0.0049,
+      "cluster": 4
     },
     {
       "id": 578,
@@ -1545,9 +3201,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00129",
       "score": 63.5,
-      "x": 0.8255,
-      "y": 0.0452,
-      "cluster": 7
+      "x": 0.7786,
+      "y": 0.0023,
+      "cluster": 2
     },
     {
       "id": 577,
@@ -1557,9 +3213,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00083",
       "score": 68.5,
-      "x": 0.8054,
-      "y": 0.053,
-      "cluster": 7
+      "x": 0.6992,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 576,
@@ -1569,9 +3225,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00082",
       "score": 69.5,
-      "x": 0.6373,
-      "y": 0.1012,
-      "cluster": 1
+      "x": 0.5919,
+      "y": 0.0059,
+      "cluster": 4
     },
     {
       "id": 575,
@@ -1581,9 +3237,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00081",
       "score": 71.5,
-      "x": 0.675,
-      "y": 0.0607,
-      "cluster": 1
+      "x": 0.6437,
+      "y": 0.0038,
+      "cluster": 4
     },
     {
       "id": 574,
@@ -1594,8 +3250,8 @@
       "link": "https://arxiv.org/abs/2606.00079",
       "score": 78.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 573,
@@ -1605,9 +3261,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00272",
       "score": 66.5,
-      "x": 0.7727,
-      "y": 0.1571,
-      "cluster": 1
+      "x": 0.6504,
+      "y": 0.0081,
+      "cluster": 4
     },
     {
       "id": 572,
@@ -1617,9 +3273,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00270",
       "score": 74.5,
-      "x": 0.81,
-      "y": 0.0763,
-      "cluster": 1
+      "x": 0.7012,
+      "y": 0.0046,
+      "cluster": 4
     },
     {
       "id": 571,
@@ -1629,9 +3285,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00269",
       "score": 58.5,
-      "x": 0.8327,
-      "y": 0.0886,
-      "cluster": 7
+      "x": 0.7265,
+      "y": 0.0056,
+      "cluster": 2
     },
     {
       "id": 570,
@@ -1641,9 +3297,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00251",
       "score": 66.5,
-      "x": 0.8685,
-      "y": 0.1047,
-      "cluster": 7
+      "x": 0.8018,
+      "y": 0.0051,
+      "cluster": 2
     },
     {
       "id": 569,
@@ -1653,9 +3309,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00248",
       "score": 61.5,
-      "x": 0.4711,
-      "y": 0.0715,
-      "cluster": 1
+      "x": 0.4402,
+      "y": 0.0061,
+      "cluster": 4
     },
     {
       "id": 568,
@@ -1665,9 +3321,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00240",
       "score": 68.5,
-      "x": 0.6715,
-      "y": 0.1802,
-      "cluster": 1
+      "x": 0.6168,
+      "y": 0.0096,
+      "cluster": 4
     },
     {
       "id": 567,
@@ -1677,9 +3333,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00232",
       "score": 73.5,
-      "x": 0.7966,
-      "y": 0.0462,
-      "cluster": 1
+      "x": 0.7201,
+      "y": 0.0034,
+      "cluster": 4
     },
     {
       "id": 566,
@@ -1689,9 +3345,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00172",
       "score": 71.5,
-      "x": 0.6451,
-      "y": 0.0423,
-      "cluster": 7
+      "x": 0.6558,
+      "y": 0.0044,
+      "cluster": 2
     },
     {
       "id": 565,
@@ -1701,9 +3357,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00138",
       "score": 66.5,
-      "x": 0.7903,
-      "y": 0.2213,
-      "cluster": 1
+      "x": 0.7191,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 564,
@@ -1713,9 +3369,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00103",
       "score": 77.5,
-      "x": 0.8624,
-      "y": 0.0372,
-      "cluster": 7
+      "x": 0.8107,
+      "y": 0.0017,
+      "cluster": 2
     },
     {
       "id": 563,
@@ -1725,9 +3381,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00102",
       "score": 61.5,
-      "x": 0.8912,
-      "y": 0.1239,
-      "cluster": 1
+      "x": 0.7993,
+      "y": 0.0026,
+      "cluster": 4
     },
     {
       "id": 562,
@@ -1737,9 +3393,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00052",
       "score": 58.5,
-      "x": 0.6079,
-      "y": 0.1517,
-      "cluster": 1
+      "x": 0.5522,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 561,
@@ -1749,9 +3405,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00050",
       "score": 71.5,
-      "x": 0.6374,
-      "y": 0.1146,
-      "cluster": 1
+      "x": 0.5637,
+      "y": 0.0059,
+      "cluster": 4
     },
     {
       "id": 560,
@@ -1761,9 +3417,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00045",
       "score": 74.5,
-      "x": 0.6473,
-      "y": 0.0872,
-      "cluster": 1
+      "x": 0.5687,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 559,
@@ -1773,9 +3429,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00017",
       "score": 71.5,
-      "x": 0.7299,
-      "y": 0.1602,
-      "cluster": 1
+      "x": 0.6815,
+      "y": 0.0046,
+      "cluster": 4
     },
     {
       "id": 558,
@@ -1785,9 +3441,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00009",
       "score": 58.5,
-      "x": 0.6009,
-      "y": 0.1204,
-      "cluster": 1
+      "x": 0.5254,
+      "y": 0.0068,
+      "cluster": 4
     },
     {
       "id": 557,
@@ -1797,9 +3453,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00008",
       "score": 66.5,
-      "x": 0.5901,
-      "y": 0.1184,
-      "cluster": 1
+      "x": 0.5388,
+      "y": 0.0078,
+      "cluster": 4
     },
     {
       "id": 556,
@@ -1809,9 +3465,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00007",
       "score": 63.5,
-      "x": 0.6776,
-      "y": 0.2603,
-      "cluster": 1
+      "x": 0.6113,
+      "y": 0.0077,
+      "cluster": 4
     },
     {
       "id": 555,
@@ -1821,9 +3477,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00005",
       "score": 67.5,
-      "x": 0.7221,
-      "y": 0.2343,
-      "cluster": 1
+      "x": 0.6285,
+      "y": 0.0074,
+      "cluster": 4
     },
     {
       "id": 554,
@@ -1833,9 +3489,9 @@
       "published": "2026-06-02 04:00:00",
       "link": "https://arxiv.org/abs/2606.00002",
       "score": 58.5,
-      "x": 0.5167,
-      "y": 0.0953,
-      "cluster": 1
+      "x": 0.4827,
+      "y": 0.009,
+      "cluster": 4
     },
     {
       "id": 734,
@@ -1846,8 +3502,8 @@
       "link": "https://www.leiphone.com/category/zaobao/yAJQisxWU7cumsJk.html",
       "score": 60.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 735,
@@ -1857,9 +3513,9 @@
       "published": "2026-06-02 03:21:00",
       "link": "https://www.leiphone.com/category/robot/IH4SUHF1ihnMy0Ne.html",
       "score": 60.9,
-      "x": 0.169,
-      "y": 0.5414,
-      "cluster": 4
+      "x": 0.1516,
+      "y": 0.0953,
+      "cluster": 3
     },
     {
       "id": 736,
@@ -1869,9 +3525,9 @@
       "published": "2026-06-02 03:06:00",
       "link": "https://www.leiphone.com/category/transportation/YWDYr6e3rN64B5IF.html",
       "score": 53.9,
-      "x": 0.0657,
-      "y": 0.3198,
-      "cluster": 2
+      "x": 0.0454,
+      "y": 0.0265,
+      "cluster": 0
     },
     {
       "id": 737,
@@ -1881,9 +3537,9 @@
       "published": "2026-06-02 02:38:00",
       "link": "https://www.leiphone.com/category/robot/uwy7axUrzoMJapQ4.html",
       "score": 75.8,
-      "x": 0.2687,
-      "y": 0.5428,
-      "cluster": 4
+      "x": 0.2493,
+      "y": 0.1002,
+      "cluster": 3
     },
     {
       "id": 738,
@@ -1893,9 +3549,9 @@
       "published": "2026-06-02 02:28:00",
       "link": "https://www.leiphone.com/category/robot/Ss8tddP1aKt5qqdo.html",
       "score": 50.8,
-      "x": 0.0688,
-      "y": 1.0,
-      "cluster": 5
+      "x": 0.0861,
+      "y": 0.9458,
+      "cluster": 7
     },
     {
       "id": 740,
@@ -1905,9 +3561,9 @@
       "published": "2026-06-02 02:22:00",
       "link": "https://www.leiphone.com/category/robot/ZLhJjZVkHkws8Ski.html",
       "score": 60.8,
-      "x": 0.0962,
-      "y": 0.6268,
-      "cluster": 4
+      "x": 0.0821,
+      "y": 0.1245,
+      "cluster": 3
     },
     {
       "id": 739,
@@ -1917,9 +3573,9 @@
       "published": "2026-06-02 02:22:00",
       "link": "https://www.leiphone.com/category/industrynews/NwSFpk8WjfjsmFpP.html",
       "score": 63.1,
-      "x": 0.0606,
-      "y": 0.2713,
-      "cluster": 2
+      "x": 0.0547,
+      "y": 0.026,
+      "cluster": 0
     },
     {
       "id": 741,
@@ -1929,9 +3585,9 @@
       "published": "2026-06-02 02:16:00",
       "link": "https://www.leiphone.com/category/ai/09QWfOVoTbKrJfIH.html",
       "score": 55.8,
-      "x": 0.0226,
-      "y": 0.8477,
-      "cluster": 5
+      "x": 0.0464,
+      "y": 0.9893,
+      "cluster": 7
     },
     {
       "id": 742,
@@ -1941,9 +3597,9 @@
       "published": "2026-06-02 02:08:00",
       "link": "https://www.leiphone.com/category/ai/BZVmvZeYhmXZawA4.html",
       "score": 50.8,
-      "x": 0.0231,
-      "y": 0.8554,
-      "cluster": 5
+      "x": 0.047,
+      "y": 0.9965,
+      "cluster": 7
     },
     {
       "id": 743,
@@ -1954,8 +3610,8 @@
       "link": "https://www.leiphone.com/category/transportation/x3ymsavV9YAtMx7C.html",
       "score": 50.8,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1091,
@@ -1965,9 +3621,9 @@
       "published": "2026-06-02 02:00:00",
       "link": "https://openai.com/index/codex-for-knowledge-work",
       "score": 54.7,
-      "x": 0.5586,
-      "y": 0.4246,
-      "cluster": 2
+      "x": 0.4979,
+      "y": 0.011,
+      "cluster": 1
     },
     {
       "id": 437,
@@ -1977,9 +3633,9 @@
       "published": "2026-06-02 02:00:00",
       "link": "https://developer.nvidia.com/blog/deploy-agentic-ready-ai-at-the-edge-with-memory-efficiency-in-nvidia-jetpack-7-2/",
       "score": 53.2,
-      "x": 0.5665,
-      "y": 0.55,
-      "cluster": 6
+      "x": 0.4928,
+      "y": 0.0196,
+      "cluster": 1
     },
     {
       "id": 744,
@@ -1989,9 +3645,9 @@
       "published": "2026-06-02 01:49:00",
       "link": "https://www.leiphone.com/category/robot/U1Z9pMdNcBaY5COP.html",
       "score": 55.8,
-      "x": 0.036,
-      "y": 0.5773,
-      "cluster": 2
+      "x": 0.0383,
+      "y": 0.3296,
+      "cluster": 5
     },
     {
       "id": 467,
@@ -2001,9 +3657,9 @@
       "published": "2026-06-02 00:58:00",
       "link": "https://www.leiphone.com/category/zaobao/H4KB4Yaqa6dhc9hf.html",
       "score": 58.9,
-      "x": 0.0188,
-      "y": 0.2563,
-      "cluster": 2
+      "x": 0.0181,
+      "y": 0.0144,
+      "cluster": 5
     },
     {
       "id": 758,
@@ -2013,9 +3669,9 @@
       "published": "2026-06-01T18:34:31",
       "link": "https://www.qbitai.com/2026/06/427530.html",
       "score": 19.4,
-      "x": 0.1071,
-      "y": 0.4898,
-      "cluster": 2
+      "x": 0.0803,
+      "y": 0.0679,
+      "cluster": 3
     },
     {
       "id": 759,
@@ -2026,8 +3682,8 @@
       "link": "https://www.qbitai.com/2026/06/427516.html",
       "score": 24.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 760,
@@ -2038,8 +3694,8 @@
       "link": "https://www.qbitai.com/2026/06/427231.html",
       "score": 18.5,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 761,
@@ -2049,9 +3705,9 @@
       "published": "2026-06-01T15:57:16",
       "link": "https://www.qbitai.com/2026/06/427332.html",
       "score": 19.0,
-      "x": 0.2067,
-      "y": 0.4826,
-      "cluster": 6
+      "x": 0.167,
+      "y": 0.0245,
+      "cluster": 1
     },
     {
       "id": 762,
@@ -2062,8 +3718,8 @@
       "link": "https://www.qbitai.com/2026/06/427238.html",
       "score": 18.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 763,
@@ -2074,8 +3730,8 @@
       "link": "https://www.qbitai.com/2026/06/427141.html",
       "score": 30.0,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 764,
@@ -2086,8 +3742,8 @@
       "link": "https://www.qbitai.com/2026/06/427142.html",
       "score": 38.0,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 1,
@@ -2097,9 +3753,9 @@
       "published": "2026-06-01 22:55:09",
       "link": "https://techcrunch.com/2026/06/01/alphabet-plans-to-raise-80-billion-to-pay-for-ai-buildout/",
       "score": 47.0,
-      "x": 0.5732,
-      "y": 0.9531,
-      "cluster": 6
+      "x": 0.3172,
+      "y": 0.02,
+      "cluster": 1
     },
     {
       "id": 2,
@@ -2109,9 +3765,9 @@
       "published": "2026-06-01 22:00:00",
       "link": "https://developer.nvidia.com/blog/run-local-ai-agents-with-faster-models-and-multi-node-clustering-on-nvidia-dgx-spark/",
       "score": 60.9,
-      "x": 0.6578,
-      "y": 0.4927,
-      "cluster": 6
+      "x": 0.5552,
+      "y": 0.0126,
+      "cluster": 1
     },
     {
       "id": 3,
@@ -2121,9 +3777,9 @@
       "published": "2026-06-01 21:35:00",
       "link": "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
       "score": 47.9,
-      "x": 0.3394,
-      "y": 0.6347,
-      "cluster": 6
+      "x": 0.3068,
+      "y": 0.0195,
+      "cluster": 1
     },
     {
       "id": 4,
@@ -2133,9 +3789,9 @@
       "published": "2026-06-01 20:03:40",
       "link": "https://techcrunch.com/2026/06/01/florida-sues-openai-sam-altman-in-first-of-its-kind-lawsuit-over-violent-incidents/",
       "score": 48.2,
-      "x": 0.453,
-      "y": 0.3016,
-      "cluster": 2
+      "x": 0.3919,
+      "y": 0.0117,
+      "cluster": 5
     },
     {
       "id": 5,
@@ -2145,9 +3801,9 @@
       "published": "2026-06-01 18:19:53",
       "link": "https://techcrunch.com/2026/06/01/water-access-is-now-a-risk-factor-in-spacexs-ipo/",
       "score": 43.6,
-      "x": 0.6405,
-      "y": 0.3253,
-      "cluster": 2
+      "x": 0.5686,
+      "y": 0.0121,
+      "cluster": 5
     },
     {
       "id": 6,
@@ -2157,9 +3813,9 @@
       "published": "2026-06-01 17:00:00",
       "link": "https://openai.com/index/our-views-on-ai-policy-and-political-advocacy",
       "score": 56.5,
-      "x": 0.4587,
-      "y": 0.5409,
-      "cluster": 6
+      "x": 0.4,
+      "y": 0.0168,
+      "cluster": 1
     },
     {
       "id": 7,
@@ -2169,9 +3825,9 @@
       "published": "2026-06-01 16:36:55",
       "link": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/",
       "score": 44.1,
-      "x": 0.266,
-      "y": 0.5687,
-      "cluster": 6
+      "x": 0.2251,
+      "y": 0.0174,
+      "cluster": 1
     },
     {
       "id": 8,
@@ -2181,9 +3837,9 @@
       "published": "2026-06-01 16:10:05",
       "link": "https://venturebeat.com/technology/minimax-m3-debuts-eclipsing-gpt-5-5-and-gemini-3-1-pro-on-key-benchmark-performance-for-just-5-10-of-the-cost",
       "score": 84.6,
-      "x": 0.0982,
-      "y": 0.3266,
-      "cluster": 2
+      "x": 0.0865,
+      "y": 0.0283,
+      "cluster": 0
     },
     {
       "id": 10,
@@ -2193,9 +3849,9 @@
       "published": "2026-06-01 16:00:00",
       "link": "https://techcrunch.com/2026/06/01/this-ai-weather-startup-is-out-forecasting-government-agencies/",
       "score": 54.1,
-      "x": 0.5517,
-      "y": 0.329,
-      "cluster": 2
+      "x": 0.5083,
+      "y": 0.0108,
+      "cluster": 5
     },
     {
       "id": 9,
@@ -2205,8 +3861,8 @@
       "published": "2026-06-01 16:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
       "score": 54.3,
-      "x": 0.6551,
-      "y": 0.5316,
+      "x": 0.5448,
+      "y": 0.0264,
       "cluster": 3
     },
     {
@@ -2217,9 +3873,9 @@
       "published": "2026-06-01 15:50:32",
       "link": "https://venturebeat.com/security/anthropic-browser-agent-hijacked-31-percent-before-safeguards-engaged",
       "score": 63.6,
-      "x": 0.5444,
-      "y": 0.3709,
-      "cluster": 2
+      "x": 0.4904,
+      "y": 0.0132,
+      "cluster": 0
     },
     {
       "id": 12,
@@ -2229,9 +3885,9 @@
       "published": "2026-06-01 15:45:17",
       "link": "https://huggingface.co/blog/JetBrains/mellum2-launch",
       "score": 38.6,
-      "x": 0.4871,
-      "y": 0.2252,
-      "cluster": 2
+      "x": 0.3301,
+      "y": 0.0099,
+      "cluster": 5
     },
     {
       "id": 13,
@@ -2241,9 +3897,9 @@
       "published": "2026-06-01 14:53:22",
       "link": "https://pytorch.org/blog/how-linkedin-uses-pytorch-to-solve-extreme-scale-optimization-problems/",
       "score": 53.6,
-      "x": 0.3716,
-      "y": 0.2836,
-      "cluster": 2
+      "x": 0.3261,
+      "y": 0.013,
+      "cluster": 5
     },
     {
       "id": 14,
@@ -2253,9 +3909,9 @@
       "published": "2026-06-01 14:49:10",
       "link": "https://techcrunch.com/2026/06/01/duckduckgo-makes-its-no-ai-search-engine-easier-to-access-as-its-traffic-booms/",
       "score": 40.9,
-      "x": 0.3334,
-      "y": 0.4487,
-      "cluster": 6
+      "x": 0.2809,
+      "y": 0.0146,
+      "cluster": 1
     },
     {
       "id": 15,
@@ -2265,9 +3921,9 @@
       "published": "2026-06-01 13:51:18",
       "link": "https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption",
       "score": 48.4,
-      "x": 0.3012,
-      "y": 0.4442,
-      "cluster": 6
+      "x": 0.2774,
+      "y": 0.0173,
+      "cluster": 1
     },
     {
       "id": 16,
@@ -2277,9 +3933,9 @@
       "published": "2026-06-01 12:33:00",
       "link": "https://www.leiphone.com/category/industrynews/i8V0VCdEywlci8jo.html",
       "score": 69.5,
-      "x": 0.0723,
-      "y": 0.3045,
-      "cluster": 2
+      "x": 0.0655,
+      "y": 0.0214,
+      "cluster": 0
     },
     {
       "id": 17,
@@ -2289,9 +3945,9 @@
       "published": "2026-06-01 12:25:00",
       "link": "https://www.leiphone.com/category/industrynews/MYA0O3dUUzFSpCDF.html",
       "score": 47.6,
-      "x": 0.4793,
-      "y": 0.3286,
-      "cluster": 2
+      "x": 0.4456,
+      "y": 0.0234,
+      "cluster": 5
     },
     {
       "id": 18,
@@ -2301,9 +3957,9 @@
       "published": "2026-06-01 12:12:00",
       "link": "https://www.leiphone.com/category/industrynews/YNqCVFixyMS70MD1.html",
       "score": 52.4,
-      "x": 0.0471,
-      "y": 0.5143,
-      "cluster": 2
+      "x": 0.0529,
+      "y": 0.3461,
+      "cluster": 5
     },
     {
       "id": 19,
@@ -2313,9 +3969,9 @@
       "published": "2026-06-01 12:00:00",
       "link": "https://openai.com/index/stargate-michigan-data-center",
       "score": 55.1,
-      "x": 0.5807,
-      "y": 0.4059,
-      "cluster": 2
+      "x": 0.5111,
+      "y": 0.0121,
+      "cluster": 1
     },
     {
       "id": 20,
@@ -2325,9 +3981,9 @@
       "published": "2026-06-01 10:20:00",
       "link": "https://www.leiphone.com/category/chips/WxcUhbV0RIXlGVdR.html",
       "score": 77.2,
-      "x": 0.141,
-      "y": 0.325,
-      "cluster": 2
+      "x": 0.1719,
+      "y": 0.0125,
+      "cluster": 5
     },
     {
       "id": 21,
@@ -2337,9 +3993,9 @@
       "published": "2026-06-01 10:06:00",
       "link": "https://www.leiphone.com/category/robot/jaAehYeDHYw3l3Zi.html",
       "score": 54.2,
-      "x": 0.0907,
-      "y": 0.7101,
-      "cluster": 4
+      "x": 0.0897,
+      "y": 0.3138,
+      "cluster": 3
     },
     {
       "id": 22,
@@ -2349,9 +4005,9 @@
       "published": "2026-06-01 10:00:00",
       "link": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
       "score": 64.4,
-      "x": 0.1501,
-      "y": 0.4103,
-      "cluster": 2
+      "x": 0.1175,
+      "y": 0.0146,
+      "cluster": 1
     },
     {
       "id": 23,
@@ -2361,9 +4017,9 @@
       "published": "2026-06-01 09:43:00",
       "link": "https://www.leiphone.com/category/industrynews/qXwM8BMsMTmxDk9c.html",
       "score": 49.1,
-      "x": 0.0278,
-      "y": 0.9034,
-      "cluster": 5
+      "x": 0.0511,
+      "y": 1.0,
+      "cluster": 7
     },
     {
       "id": 24,
@@ -2373,9 +4029,9 @@
       "published": "2026-06-01 09:41:00",
       "link": "https://www.leiphone.com/category/industrynews/Avvjhlpt3LxaVxYu.html",
       "score": 44.9,
-      "x": 0.0136,
-      "y": 0.2686,
-      "cluster": 2
+      "x": 0.0116,
+      "y": 0.0367,
+      "cluster": 5
     },
     {
       "id": 25,
@@ -2385,9 +4041,9 @@
       "published": "2026-06-01 09:38:00",
       "link": "https://www.leiphone.com/category/robot/fzywXI4kHzSeCDVS.html",
       "score": 52.1,
-      "x": 0.0243,
-      "y": 0.3714,
-      "cluster": 2
+      "x": 0.0238,
+      "y": 0.0881,
+      "cluster": 5
     },
     {
       "id": 26,
@@ -2397,9 +4053,9 @@
       "published": "2026-06-01 09:32:00",
       "link": "https://www.leiphone.com/category/industrynews/a1O4dfBTREuQ2uLq.html",
       "score": 59.1,
-      "x": 0.0302,
-      "y": 0.7578,
-      "cluster": 5
+      "x": 0.0414,
+      "y": 0.6739,
+      "cluster": 7
     },
     {
       "id": 27,
@@ -2409,9 +4065,9 @@
       "published": "2026-06-01 09:24:00",
       "link": "https://www.leiphone.com/category/industrynews/cd9pn4fdlQ4qhMzP.html",
       "score": 64.1,
-      "x": 0.0436,
-      "y": 0.4171,
-      "cluster": 2
+      "x": 0.0402,
+      "y": 0.1884,
+      "cluster": 5
     },
     {
       "id": 28,
@@ -2421,9 +4077,9 @@
       "published": "2026-06-01 08:51:00",
       "link": "https://www.leiphone.com/category/industrynews/jnBGW8KfBf9D8qk6.html",
       "score": 52.0,
-      "x": 0.1135,
-      "y": 0.3449,
-      "cluster": 2
+      "x": 0.1045,
+      "y": 0.019,
+      "cluster": 0
     },
     {
       "id": 29,
@@ -2433,9 +4089,9 @@
       "published": "2026-06-01 08:47:00",
       "link": "https://www.leiphone.com/category/industrynews/I4Rtep5h0Tvq74oL.html",
       "score": 42.9,
-      "x": 0.013,
-      "y": 0.276,
-      "cluster": 2
+      "x": 0.0167,
+      "y": 0.0452,
+      "cluster": 5
     },
     {
       "id": 30,
@@ -2445,9 +4101,9 @@
       "published": "2026-06-01 08:43:00",
       "link": "https://www.leiphone.com/category/industrynews/XeZ2kvzh5LO5yiMz.html",
       "score": 49.0,
-      "x": 0.0077,
-      "y": 0.2812,
-      "cluster": 2
+      "x": 0.0034,
+      "y": 0.0252,
+      "cluster": 5
     },
     {
       "id": 31,
@@ -2457,9 +4113,9 @@
       "published": "2026-06-01 08:38:00",
       "link": "https://www.leiphone.com/category/industrynews/M7FRXnNgfYHQcK0q.html",
       "score": 49.0,
-      "x": 0.0274,
-      "y": 0.8353,
-      "cluster": 5
+      "x": 0.0469,
+      "y": 0.8533,
+      "cluster": 7
     },
     {
       "id": 32,
@@ -2469,9 +4125,9 @@
       "published": "2026-06-01 08:21:00",
       "link": "https://www.leiphone.com/category/industrynews/2zFXEr1gabpabWik.html",
       "score": 59.0,
-      "x": 0.2892,
-      "y": 0.5471,
-      "cluster": 6
+      "x": 0.2728,
+      "y": 0.0169,
+      "cluster": 1
     },
     {
       "id": 33,
@@ -2481,9 +4137,9 @@
       "published": "2026-06-01 08:13:00",
       "link": "https://www.leiphone.com/category/iot/u5VaCPOrtcNboIOU.html",
       "score": 61.9,
-      "x": 0.4824,
-      "y": 0.9078,
-      "cluster": 6
+      "x": 0.3497,
+      "y": 0.0588,
+      "cluster": 1
     },
     {
       "id": 34,
@@ -2494,8 +4150,8 @@
       "link": "https://www.leiphone.com/category/academic/YlpyUWTgMBNTc9YK.html",
       "score": 58.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 35,
@@ -2505,9 +4161,9 @@
       "published": "2026-06-01 07:31:00",
       "link": "https://www.leiphone.com/category/robot/SUOiioK6H6zIr4qx.html",
       "score": 56.9,
-      "x": 0.1861,
-      "y": 0.7832,
-      "cluster": 4
+      "x": 0.1648,
+      "y": 0.2393,
+      "cluster": 3
     },
     {
       "id": 36,
@@ -2517,9 +4173,9 @@
       "published": "2026-06-01 07:19:00",
       "link": "https://www.leiphone.com/category/robot/aAoey1V3pku7wCOR.html",
       "score": 48.8,
-      "x": 0.1019,
-      "y": 0.6251,
-      "cluster": 4
+      "x": 0.0873,
+      "y": 0.1237,
+      "cluster": 3
     },
     {
       "id": 37,
@@ -2529,9 +4185,9 @@
       "published": "2026-06-01 07:10:00",
       "link": "https://www.leiphone.com/category/robot/0fJDGewcDJ37Us9K.html",
       "score": 48.8,
-      "x": 0.1041,
-      "y": 0.7464,
-      "cluster": 4
+      "x": 0.0944,
+      "y": 0.2595,
+      "cluster": 3
     },
     {
       "id": 38,
@@ -2541,9 +4197,9 @@
       "published": "2026-06-01 07:00:00",
       "link": "https://venturebeat.com/security/ai-doesnt-break-security-complexity-does",
       "score": 49.6,
-      "x": 0.6813,
-      "y": 0.356,
-      "cluster": 2
+      "x": 0.6383,
+      "y": 0.0094,
+      "cluster": 1
     },
     {
       "id": 39,
@@ -2553,9 +4209,9 @@
       "published": "2026-06-01 04:49:15",
       "link": "https://developer.nvidia.com/blog/how-to-post-train-autonomous-vehicle-models-in-closed-loop-with-nvidia-alpamayo/",
       "score": 48.7,
-      "x": 0.4464,
-      "y": 0.2518,
-      "cluster": 7
+      "x": 0.4197,
+      "y": 0.0134,
+      "cluster": 2
     },
     {
       "id": 40,
@@ -2565,9 +4221,9 @@
       "published": "2026-06-01 04:44:55",
       "link": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai",
       "score": 37.3,
-      "x": 0.4345,
-      "y": 0.8033,
-      "cluster": 6
+      "x": 0.2458,
+      "y": 0.0208,
+      "cluster": 1
     },
     {
       "id": 41,
@@ -2577,9 +4233,9 @@
       "published": "2026-06-01 04:43:58",
       "link": "https://developer.nvidia.com/blog/develop-physical-ai-reasoning-world-and-action-models-with-nvidia-cosmos-3/",
       "score": 45.6,
-      "x": 0.5432,
-      "y": 0.5047,
-      "cluster": 6
+      "x": 0.4344,
+      "y": 0.0189,
+      "cluster": 1
     },
     {
       "id": 42,
@@ -2589,9 +4245,9 @@
       "published": "2026-06-01 04:21:42",
       "link": "https://developer.nvidia.com/blog/advancing-ai-infrastructure-for-agentic-ai-with-nvidia-doca-in-silicon-security/",
       "score": 50.6,
-      "x": 0.6675,
-      "y": 0.6952,
-      "cluster": 6
+      "x": 0.5712,
+      "y": 0.0159,
+      "cluster": 1
     },
     {
       "id": 141,
@@ -2601,9 +4257,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30720",
       "score": 55.2,
-      "x": 0.6959,
-      "y": 0.1081,
-      "cluster": 1
+      "x": 0.5781,
+      "y": 0.0062,
+      "cluster": 4
     },
     {
       "id": 140,
@@ -2613,9 +4269,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30718",
       "score": 60.2,
-      "x": 0.6389,
-      "y": 0.0975,
-      "cluster": 1
+      "x": 0.5735,
+      "y": 0.0063,
+      "cluster": 4
     },
     {
       "id": 139,
@@ -2626,8 +4282,8 @@
       "link": "https://arxiv.org/abs/2605.30711",
       "score": 78.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 138,
@@ -2637,9 +4293,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30625",
       "score": 55.2,
-      "x": 0.6673,
-      "y": 0.0806,
-      "cluster": 1
+      "x": 0.5759,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 137,
@@ -2649,9 +4305,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30532",
       "score": 55.2,
-      "x": 0.6041,
-      "y": 0.0981,
-      "cluster": 1
+      "x": 0.4351,
+      "y": 0.0071,
+      "cluster": 4
     },
     {
       "id": 136,
@@ -2661,9 +4317,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30516",
       "score": 77.2,
-      "x": 0.7694,
-      "y": 0.0739,
-      "cluster": 1
+      "x": 0.6833,
+      "y": 0.0043,
+      "cluster": 4
     },
     {
       "id": 135,
@@ -2673,9 +4329,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30503",
       "score": 65.2,
-      "x": 0.5975,
-      "y": 0.1024,
-      "cluster": 1
+      "x": 0.5327,
+      "y": 0.0078,
+      "cluster": 4
     },
     {
       "id": 134,
@@ -2685,9 +4341,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31345",
       "score": 58.2,
-      "x": 0.8071,
-      "y": 0.1488,
-      "cluster": 1
+      "x": 0.6792,
+      "y": 0.0038,
+      "cluster": 4
     },
     {
       "id": 133,
@@ -2697,9 +4353,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31250",
       "score": 61.2,
-      "x": 0.6438,
-      "y": 0.1648,
-      "cluster": 1
+      "x": 0.5536,
+      "y": 0.0118,
+      "cluster": 4
     },
     {
       "id": 132,
@@ -2709,9 +4365,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31239",
       "score": 60.2,
-      "x": 0.7968,
-      "y": 0.0708,
-      "cluster": 1
+      "x": 0.6966,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 131,
@@ -2721,9 +4377,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31163",
       "score": 58.2,
-      "x": 0.6675,
-      "y": 0.1257,
-      "cluster": 1
+      "x": 0.632,
+      "y": 0.0052,
+      "cluster": 4
     },
     {
       "id": 130,
@@ -2733,9 +4389,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31152",
       "score": 65.2,
-      "x": 0.7299,
-      "y": 0.075,
-      "cluster": 1
+      "x": 0.6579,
+      "y": 0.0075,
+      "cluster": 4
     },
     {
       "id": 129,
@@ -2745,9 +4401,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31063",
       "score": 63.2,
-      "x": 0.5982,
-      "y": 0.1349,
-      "cluster": 1
+      "x": 0.5693,
+      "y": 0.0069,
+      "cluster": 4
     },
     {
       "id": 128,
@@ -2757,9 +4413,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31043",
       "score": 60.2,
-      "x": 0.5581,
-      "y": 0.069,
-      "cluster": 1
+      "x": 0.5214,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 127,
@@ -2769,9 +4425,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30997",
       "score": 71.2,
-      "x": 0.9697,
-      "y": 0.1602,
-      "cluster": 1
+      "x": 0.8184,
+      "y": 0.0056,
+      "cluster": 4
     },
     {
       "id": 126,
@@ -2781,9 +4437,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30976",
       "score": 65.2,
-      "x": 0.679,
-      "y": 0.1407,
-      "cluster": 1
+      "x": 0.5566,
+      "y": 0.0086,
+      "cluster": 4
     },
     {
       "id": 125,
@@ -2793,9 +4449,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30741",
       "score": 63.2,
-      "x": 0.7269,
-      "y": 0.1611,
-      "cluster": 1
+      "x": 0.662,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 124,
@@ -2805,9 +4461,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30619",
       "score": 55.2,
-      "x": 0.7249,
-      "y": 0.1245,
-      "cluster": 1
+      "x": 0.5711,
+      "y": 0.0153,
+      "cluster": 4
     },
     {
       "id": 123,
@@ -2817,9 +4473,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30509",
       "score": 63.2,
-      "x": 0.6386,
-      "y": 0.0906,
-      "cluster": 1
+      "x": 0.4928,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 122,
@@ -2829,9 +4485,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30700",
       "score": 60.2,
-      "x": 0.7223,
-      "y": 0.0894,
-      "cluster": 1
+      "x": 0.6677,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 121,
@@ -2841,9 +4497,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30698",
       "score": 73.2,
-      "x": 0.7232,
-      "y": 0.0868,
-      "cluster": 7
+      "x": 0.6891,
+      "y": 0.0037,
+      "cluster": 2
     },
     {
       "id": 120,
@@ -2853,9 +4509,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30689",
       "score": 61.2,
-      "x": 0.495,
-      "y": 0.1215,
-      "cluster": 1
+      "x": 0.45,
+      "y": 0.0079,
+      "cluster": 4
     },
     {
       "id": 119,
@@ -2865,9 +4521,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30671",
       "score": 66.2,
-      "x": 1.0,
-      "y": 0.0412,
-      "cluster": 1
+      "x": 0.5582,
+      "y": 0.0091,
+      "cluster": 4
     },
     {
       "id": 118,
@@ -2877,9 +4533,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30639",
       "score": 73.2,
-      "x": 0.5385,
-      "y": 0.1443,
-      "cluster": 1
+      "x": 0.4895,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 117,
@@ -2889,9 +4545,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30631",
       "score": 71.2,
-      "x": 0.63,
-      "y": 0.0518,
-      "cluster": 1
+      "x": 0.5452,
+      "y": 0.0047,
+      "cluster": 4
     },
     {
       "id": 116,
@@ -2901,9 +4557,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30611",
       "score": 60.2,
-      "x": 0.7042,
-      "y": 0.1533,
-      "cluster": 1
+      "x": 0.6388,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 115,
@@ -2913,9 +4569,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30587",
       "score": 63.2,
-      "x": 0.7861,
-      "y": 0.0,
-      "cluster": 7
+      "x": 0.7549,
+      "y": 0.0013,
+      "cluster": 2
     },
     {
       "id": 114,
@@ -2925,9 +4581,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30581",
       "score": 55.2,
-      "x": 0.8834,
-      "y": 0.1542,
-      "cluster": 1
+      "x": 0.7057,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 113,
@@ -2937,9 +4593,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30561",
       "score": 71.2,
-      "x": 0.0396,
-      "y": 0.2318,
-      "cluster": 2
+      "x": 0.0343,
+      "y": 0.0152,
+      "cluster": 5
     },
     {
       "id": 112,
@@ -2949,9 +4605,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30557",
       "score": 68.2,
-      "x": 0.7545,
-      "y": 0.1165,
-      "cluster": 7
+      "x": 0.713,
+      "y": 0.0047,
+      "cluster": 2
     },
     {
       "id": 111,
@@ -2961,9 +4617,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30544",
       "score": 60.2,
-      "x": 0.8797,
-      "y": 0.2364,
-      "cluster": 1
+      "x": 0.786,
+      "y": 0.0066,
+      "cluster": 4
     },
     {
       "id": 110,
@@ -2973,9 +4629,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30519",
       "score": 58.2,
-      "x": 0.5943,
-      "y": 0.1175,
-      "cluster": 1
+      "x": 0.5652,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 109,
@@ -2985,9 +4641,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30510",
       "score": 68.2,
-      "x": 0.517,
-      "y": 0.1118,
-      "cluster": 1
+      "x": 0.4752,
+      "y": 0.0075,
+      "cluster": 4
     },
     {
       "id": 108,
@@ -2997,9 +4653,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30467",
       "score": 69.2,
-      "x": 0.6007,
-      "y": 0.1046,
-      "cluster": 1
+      "x": 0.5322,
+      "y": 0.0059,
+      "cluster": 4
     },
     {
       "id": 107,
@@ -3009,9 +4665,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30444",
       "score": 60.2,
-      "x": 0.5329,
-      "y": 0.1229,
-      "cluster": 1
+      "x": 0.5152,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 106,
@@ -3021,9 +4677,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30437",
       "score": 55.2,
-      "x": 0.7562,
-      "y": 0.1613,
-      "cluster": 1
+      "x": 0.6656,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 105,
@@ -3033,9 +4689,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30431",
       "score": 71.2,
-      "x": 0.5689,
-      "y": 0.069,
-      "cluster": 1
+      "x": 0.5125,
+      "y": 0.0052,
+      "cluster": 4
     },
     {
       "id": 104,
@@ -3045,9 +4701,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30409",
       "score": 76.2,
-      "x": 0.6872,
-      "y": 0.1345,
-      "cluster": 1
+      "x": 0.633,
+      "y": 0.0067,
+      "cluster": 4
     },
     {
       "id": 103,
@@ -3057,9 +4713,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30380",
       "score": 66.2,
-      "x": 0.6116,
-      "y": 0.0719,
-      "cluster": 1
+      "x": 0.5328,
+      "y": 0.006,
+      "cluster": 4
     },
     {
       "id": 102,
@@ -3069,9 +4725,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30589",
       "score": 71.9,
-      "x": 0.6558,
-      "y": 0.178,
-      "cluster": 1
+      "x": 0.5784,
+      "y": 0.0084,
+      "cluster": 4
     },
     {
       "id": 101,
@@ -3081,9 +4737,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30582",
       "score": 58.9,
-      "x": 0.6934,
-      "y": 0.2378,
-      "cluster": 1
+      "x": 0.6232,
+      "y": 0.0065,
+      "cluster": 4
     },
     {
       "id": 100,
@@ -3093,9 +4749,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30580",
       "score": 73.9,
-      "x": 0.8405,
-      "y": 0.0677,
-      "cluster": 7
+      "x": 0.7769,
+      "y": 0.0031,
+      "cluster": 2
     },
     {
       "id": 99,
@@ -3105,9 +4761,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30574",
       "score": 58.9,
-      "x": 0.5061,
-      "y": 0.1375,
-      "cluster": 1
+      "x": 0.4519,
+      "y": 0.0072,
+      "cluster": 4
     },
     {
       "id": 98,
@@ -3117,9 +4773,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30568",
       "score": 72.9,
-      "x": 0.8189,
-      "y": 0.1019,
-      "cluster": 1
+      "x": 0.7408,
+      "y": 0.0042,
+      "cluster": 4
     },
     {
       "id": 97,
@@ -3129,9 +4785,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30545",
       "score": 58.9,
-      "x": 0.6077,
-      "y": 0.1001,
-      "cluster": 1
+      "x": 0.5531,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 96,
@@ -3141,9 +4797,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30529",
       "score": 73.9,
-      "x": 0.6999,
-      "y": 0.1451,
-      "cluster": 1
+      "x": 0.6182,
+      "y": 0.0094,
+      "cluster": 4
     },
     {
       "id": 95,
@@ -3153,9 +4809,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30521",
       "score": 65.9,
-      "x": 0.7474,
-      "y": 0.0896,
-      "cluster": 7
+      "x": 0.6854,
+      "y": 0.0042,
+      "cluster": 2
     },
     {
       "id": 94,
@@ -3166,8 +4822,8 @@
       "link": "https://arxiv.org/abs/2605.30504",
       "score": 77.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 93,
@@ -3177,9 +4833,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30501",
       "score": 65.9,
-      "x": 0.8728,
-      "y": 0.2096,
-      "cluster": 1
+      "x": 0.806,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 92,
@@ -3189,9 +4845,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30497",
       "score": 76.9,
-      "x": 0.6678,
-      "y": 0.0777,
-      "cluster": 1
+      "x": 0.6295,
+      "y": 0.0049,
+      "cluster": 4
     },
     {
       "id": 91,
@@ -3201,9 +4857,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30487",
       "score": 60.9,
-      "x": 0.739,
-      "y": 0.0892,
-      "cluster": 7
+      "x": 0.6836,
+      "y": 0.0048,
+      "cluster": 2
     },
     {
       "id": 90,
@@ -3213,9 +4869,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30481",
       "score": 63.9,
-      "x": 0.7651,
-      "y": 0.032,
-      "cluster": 7
+      "x": 0.7645,
+      "y": 0.0018,
+      "cluster": 2
     },
     {
       "id": 89,
@@ -3225,9 +4881,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30472",
       "score": 68.9,
-      "x": 0.9736,
-      "y": 0.1165,
-      "cluster": 7
+      "x": 0.8836,
+      "y": 0.0026,
+      "cluster": 2
     },
     {
       "id": 88,
@@ -3237,9 +4893,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30465",
       "score": 64.9,
-      "x": 0.6207,
-      "y": 0.101,
-      "cluster": 1
+      "x": 0.5668,
+      "y": 0.0056,
+      "cluster": 4
     },
     {
       "id": 87,
@@ -3249,9 +4905,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30459",
       "score": 66.9,
-      "x": 0.8064,
-      "y": 0.0659,
-      "cluster": 7
+      "x": 0.7954,
+      "y": 0.0026,
+      "cluster": 2
     },
     {
       "id": 86,
@@ -3261,9 +4917,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30443",
       "score": 60.9,
-      "x": 0.9301,
-      "y": 0.0118,
-      "cluster": 7
+      "x": 0.8842,
+      "y": 0.0,
+      "cluster": 2
     },
     {
       "id": 85,
@@ -3273,9 +4929,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30415",
       "score": 76.9,
-      "x": 0.9712,
-      "y": 0.0655,
-      "cluster": 7
+      "x": 0.8814,
+      "y": 0.0042,
+      "cluster": 2
     },
     {
       "id": 84,
@@ -3285,9 +4941,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30407",
       "score": 68.9,
-      "x": 0.9164,
-      "y": 0.0621,
-      "cluster": 7
+      "x": 0.8375,
+      "y": 0.0029,
+      "cluster": 2
     },
     {
       "id": 83,
@@ -3297,9 +4953,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30400",
       "score": 65.9,
-      "x": 0.6946,
-      "y": 0.1789,
-      "cluster": 1
+      "x": 0.6033,
+      "y": 0.0086,
+      "cluster": 4
     },
     {
       "id": 82,
@@ -3309,9 +4965,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30486",
       "score": 66.9,
-      "x": 0.5476,
-      "y": 0.1065,
-      "cluster": 1
+      "x": 0.519,
+      "y": 0.0066,
+      "cluster": 4
     },
     {
       "id": 81,
@@ -3321,9 +4977,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30482",
       "score": 65.9,
-      "x": 0.8738,
-      "y": 0.0816,
-      "cluster": 1
+      "x": 0.8167,
+      "y": 0.0026,
+      "cluster": 4
     },
     {
       "id": 80,
@@ -3333,9 +4989,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30479",
       "score": 55.9,
-      "x": 0.748,
-      "y": 0.0725,
-      "cluster": 1
+      "x": 0.6558,
+      "y": 0.0045,
+      "cluster": 4
     },
     {
       "id": 79,
@@ -3345,9 +5001,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30470",
       "score": 65.9,
-      "x": 0.7306,
-      "y": 0.0921,
-      "cluster": 1
+      "x": 0.6648,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 78,
@@ -3357,9 +5013,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30462",
       "score": 66.9,
-      "x": 0.6976,
-      "y": 0.1485,
-      "cluster": 1
+      "x": 0.6245,
+      "y": 0.007,
+      "cluster": 4
     },
     {
       "id": 77,
@@ -3369,9 +5025,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30461",
       "score": 65.9,
-      "x": 0.6154,
-      "y": 0.1037,
-      "cluster": 1
+      "x": 0.5689,
+      "y": 0.0055,
+      "cluster": 4
     },
     {
       "id": 76,
@@ -3381,9 +5037,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30456",
       "score": 58.9,
-      "x": 0.7959,
-      "y": 0.0512,
-      "cluster": 1
+      "x": 0.6851,
+      "y": 0.0035,
+      "cluster": 4
     },
     {
       "id": 75,
@@ -3393,9 +5049,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30452",
       "score": 63.9,
-      "x": 0.5688,
-      "y": 0.0732,
-      "cluster": 1
+      "x": 0.5163,
+      "y": 0.0054,
+      "cluster": 4
     },
     {
       "id": 74,
@@ -3405,9 +5061,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30451",
       "score": 63.9,
-      "x": 0.6038,
-      "y": 0.0787,
-      "cluster": 1
+      "x": 0.5746,
+      "y": 0.0071,
+      "cluster": 4
     },
     {
       "id": 73,
@@ -3417,9 +5073,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30448",
       "score": 60.9,
-      "x": 0.6451,
-      "y": 0.1377,
-      "cluster": 1
+      "x": 0.5609,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 72,
@@ -3429,9 +5085,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30447",
       "score": 55.9,
-      "x": 0.6633,
-      "y": 0.0603,
-      "cluster": 1
+      "x": 0.5405,
+      "y": 0.0058,
+      "cluster": 4
     },
     {
       "id": 71,
@@ -3441,9 +5097,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30434",
       "score": 68.9,
-      "x": 0.765,
-      "y": 0.1419,
-      "cluster": 1
+      "x": 0.7233,
+      "y": 0.0046,
+      "cluster": 4
     },
     {
       "id": 70,
@@ -3454,8 +5110,8 @@
       "link": "https://arxiv.org/abs/2605.30393",
       "score": 77.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 69,
@@ -3465,9 +5121,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30388",
       "score": 67.9,
-      "x": 0.7774,
-      "y": 0.0765,
-      "cluster": 1
+      "x": 0.6032,
+      "y": 0.0065,
+      "cluster": 4
     },
     {
       "id": 68,
@@ -3477,9 +5133,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30387",
       "score": 55.9,
-      "x": 0.5503,
-      "y": 0.1041,
-      "cluster": 1
+      "x": 0.4729,
+      "y": 0.0073,
+      "cluster": 4
     },
     {
       "id": 67,
@@ -3489,9 +5145,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30385",
       "score": 71.9,
-      "x": 0.88,
-      "y": 0.1099,
-      "cluster": 1
+      "x": 0.8184,
+      "y": 0.0032,
+      "cluster": 4
     },
     {
       "id": 66,
@@ -3501,9 +5157,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30381",
       "score": 60.9,
-      "x": 0.9337,
-      "y": 0.1668,
-      "cluster": 1
+      "x": 0.8152,
+      "y": 0.0039,
+      "cluster": 4
     },
     {
       "id": 65,
@@ -3513,9 +5169,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30376",
       "score": 70.9,
-      "x": 0.5891,
-      "y": 0.0889,
-      "cluster": 1
+      "x": 0.5594,
+      "y": 0.0056,
+      "cluster": 4
     },
     {
       "id": 64,
@@ -3525,9 +5181,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30374",
       "score": 74.9,
-      "x": 0.7085,
-      "y": 0.0963,
-      "cluster": 1
+      "x": 0.6257,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 63,
@@ -3537,9 +5193,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30358",
       "score": 69.9,
-      "x": 0.6352,
-      "y": 0.2038,
-      "cluster": 1
+      "x": 0.5733,
+      "y": 0.0096,
+      "cluster": 4
     },
     {
       "id": 62,
@@ -3549,9 +5205,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.31021",
       "score": 69.9,
-      "x": 0.7768,
-      "y": 0.1897,
-      "cluster": 1
+      "x": 0.6307,
+      "y": 0.0073,
+      "cluster": 4
     },
     {
       "id": 61,
@@ -3561,9 +5217,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30900",
       "score": 73.9,
-      "x": 0.7215,
-      "y": 0.1103,
-      "cluster": 1
+      "x": 0.6663,
+      "y": 0.0043,
+      "cluster": 4
     },
     {
       "id": 60,
@@ -3573,21 +5229,21 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30898",
       "score": 71.9,
-      "x": 0.7518,
-      "y": 0.0789,
-      "cluster": 7
+      "x": 0.7173,
+      "y": 0.0041,
+      "cluster": 2
     },
     {
       "id": 59,
-      "title": "Distilling LLM Feedback for Lean Theorem Proving",
+      "title": "蒸馏 LLM 反馈提升 Lean 定理证明",
       "source": "ArXiv cs.AI",
       "category": "Paper",
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30861",
       "score": 83.9,
-      "x": 0.5327,
-      "y": 0.032,
-      "cluster": 1
+      "x": 0.1285,
+      "y": 0.0186,
+      "cluster": 5
     },
     {
       "id": 58,
@@ -3597,9 +5253,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30838",
       "score": 65.9,
-      "x": 0.6398,
-      "y": 0.1536,
-      "cluster": 1
+      "x": 0.5687,
+      "y": 0.0065,
+      "cluster": 4
     },
     {
       "id": 57,
@@ -3609,9 +5265,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30832",
       "score": 68.9,
-      "x": 0.6632,
-      "y": 0.054,
-      "cluster": 7
+      "x": 0.5912,
+      "y": 0.0065,
+      "cluster": 2
     },
     {
       "id": 56,
@@ -3621,9 +5277,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30824",
       "score": 68.9,
-      "x": 0.8136,
-      "y": 0.0916,
-      "cluster": 1
+      "x": 0.7399,
+      "y": 0.0038,
+      "cluster": 4
     },
     {
       "id": 55,
@@ -3633,9 +5289,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30803",
       "score": 63.9,
-      "x": 0.8278,
-      "y": 0.1132,
-      "cluster": 1
+      "x": 0.7546,
+      "y": 0.0042,
+      "cluster": 4
     },
     {
       "id": 54,
@@ -3645,9 +5301,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30785",
       "score": 68.9,
-      "x": 0.5765,
-      "y": 0.1544,
-      "cluster": 1
+      "x": 0.5537,
+      "y": 0.0059,
+      "cluster": 4
     },
     {
       "id": 53,
@@ -3657,9 +5313,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30747",
       "score": 60.9,
-      "x": 0.6366,
-      "y": 0.0855,
-      "cluster": 1
+      "x": 0.592,
+      "y": 0.0051,
+      "cluster": 4
     },
     {
       "id": 52,
@@ -3669,9 +5325,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30738",
       "score": 68.9,
-      "x": 0.6893,
-      "y": 0.1102,
-      "cluster": 7
+      "x": 0.6793,
+      "y": 0.0051,
+      "cluster": 2
     },
     {
       "id": 51,
@@ -3681,9 +5337,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30680",
       "score": 68.9,
-      "x": 0.4486,
-      "y": 0.2148,
-      "cluster": 1
+      "x": 0.4117,
+      "y": 0.009,
+      "cluster": 4
     },
     {
       "id": 50,
@@ -3693,9 +5349,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30664",
       "score": 60.9,
-      "x": 0.6755,
-      "y": 0.1482,
-      "cluster": 1
+      "x": 0.6313,
+      "y": 0.0057,
+      "cluster": 4
     },
     {
       "id": 49,
@@ -3705,9 +5361,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30637",
       "score": 73.9,
-      "x": 0.6033,
-      "y": 0.1349,
-      "cluster": 1
+      "x": 0.5845,
+      "y": 0.0071,
+      "cluster": 4
     },
     {
       "id": 48,
@@ -3717,9 +5373,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30621",
       "score": 68.9,
-      "x": 0.5341,
-      "y": 0.1862,
-      "cluster": 1
+      "x": 0.4923,
+      "y": 0.0078,
+      "cluster": 4
     },
     {
       "id": 47,
@@ -3729,9 +5385,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30576",
       "score": 81.9,
-      "x": 0.6429,
-      "y": 0.1196,
-      "cluster": 1
+      "x": 0.5646,
+      "y": 0.0064,
+      "cluster": 4
     },
     {
       "id": 46,
@@ -3741,9 +5397,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30570",
       "score": 61.9,
-      "x": 0.5459,
-      "y": 0.1168,
-      "cluster": 1
+      "x": 0.496,
+      "y": 0.0081,
+      "cluster": 4
     },
     {
       "id": 45,
@@ -3753,9 +5409,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30563",
       "score": 60.9,
-      "x": 0.645,
-      "y": 0.1184,
-      "cluster": 1
+      "x": 0.546,
+      "y": 0.0051,
+      "cluster": 4
     },
     {
       "id": 44,
@@ -3765,9 +5421,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30542",
       "score": 55.9,
-      "x": 0.7132,
-      "y": 0.2608,
-      "cluster": 1
+      "x": 0.5731,
+      "y": 0.0083,
+      "cluster": 4
     },
     {
       "id": 43,
@@ -3777,9 +5433,9 @@
       "published": "2026-06-01 04:00:00",
       "link": "https://arxiv.org/abs/2605.30512",
       "score": 55.9,
-      "x": 0.6306,
-      "y": 0.0727,
-      "cluster": 1
+      "x": 0.5622,
+      "y": 0.005,
+      "cluster": 4
     },
     {
       "id": 142,
@@ -3789,9 +5445,9 @@
       "published": "2026-06-01 03:59:15",
       "link": "https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/",
       "score": 62.6,
-      "x": 0.5513,
-      "y": 0.4689,
-      "cluster": 6
+      "x": 0.4926,
+      "y": 0.0142,
+      "cluster": 1
     },
     {
       "id": 143,
@@ -3801,9 +5457,9 @@
       "published": "2026-06-01 03:36:52",
       "link": "https://developer.nvidia.com/blog/nvidia-dsx-os-delivers-open-modular-software-for-operating-ai-factories-at-scale/",
       "score": 53.4,
-      "x": 0.4749,
-      "y": 0.504,
-      "cluster": 6
+      "x": 0.397,
+      "y": 0.0144,
+      "cluster": 1
     },
     {
       "id": 765,
@@ -3814,8 +5470,8 @@
       "link": "https://www.qbitai.com/2026/05/427104.html",
       "score": 19.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 766,
@@ -3826,8 +5482,8 @@
       "link": "https://www.qbitai.com/2026/05/427005.html",
       "score": 29.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 767,
@@ -3837,9 +5493,9 @@
       "published": "2026-05-31T22:17:43",
       "link": "https://www.qbitai.com/2026/05/426991.html",
       "score": 19.1,
-      "x": 0.014,
-      "y": 0.2309,
-      "cluster": 2
+      "x": 0.0106,
+      "y": 0.0167,
+      "cluster": 5
     },
     {
       "id": 768,
@@ -3850,8 +5506,8 @@
       "link": "https://www.qbitai.com/2026/05/426984.html",
       "score": 23.9,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 769,
@@ -3862,8 +5518,8 @@
       "link": "https://www.qbitai.com/2026/05/426970.html",
       "score": 29.3,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 770,
@@ -3874,8 +5530,8 @@
       "link": "https://www.qbitai.com/2026/05/426832.html",
       "score": 34.1,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 771,
@@ -3886,8 +5542,8 @@
       "link": "https://www.qbitai.com/2026/05/426819.html",
       "score": 24.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 772,
@@ -3898,8 +5554,8 @@
       "link": "https://www.qbitai.com/2026/05/426793.html",
       "score": 29.2,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 144,
@@ -3909,9 +5565,9 @@
       "published": "2026-05-31 21:05:14",
       "link": "https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/",
       "score": 36.7,
-      "x": 0.239,
-      "y": 0.2266,
-      "cluster": 2
+      "x": 0.1877,
+      "y": 0.0113,
+      "cluster": 5
     },
     {
       "id": 145,
@@ -3921,9 +5577,9 @@
       "published": "2026-05-31 16:30:23",
       "link": "https://venturebeat.com/security/claude-mythos-exposed-a-hard-truth-your-enterprise-patching-process-is-way-too-slow",
       "score": 58.8,
-      "x": 0.5193,
-      "y": 0.2847,
-      "cluster": 2
+      "x": 0.462,
+      "y": 0.0102,
+      "cluster": 5
     },
     {
       "id": 146,
@@ -3933,9 +5589,9 @@
       "published": "2026-05-31 15:30:00",
       "link": "https://techcrunch.com/2026/05/31/making-sense-of-the-debate-over-ai-psychosis/",
       "score": 38.1,
-      "x": 0.6247,
-      "y": 0.5128,
-      "cluster": 6
+      "x": 0.5528,
+      "y": 0.0139,
+      "cluster": 1
     },
     {
       "id": 773,
@@ -3946,8 +5602,8 @@
       "link": "https://www.qbitai.com/2026/05/426706.html",
       "score": 29.4,
       "x": 0.0,
-      "y": 0.2218,
-      "cluster": 2
+      "y": 0.0136,
+      "cluster": 5
     },
     {
       "id": 147,
@@ -3957,9 +5613,9 @@
       "published": "2026-05-30 21:45:00",
       "link": "https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/",
       "score": 36.3,
-      "x": 0.468,
-      "y": 0.3366,
-      "cluster": 2
+      "x": 0.4098,
+      "y": 0.0138,
+      "cluster": 5
     },
     {
       "id": 148,
@@ -3969,9 +5625,9 @@
       "published": "2026-05-30 16:30:00",
       "link": "https://techcrunch.com/2026/05/30/what-a-joke-github-copilots-new-token-based-billing-spurs-consternation-among-devs/",
       "score": 43.9,
-      "x": 0.524,
-      "y": 0.3395,
-      "cluster": 2
+      "x": 0.4741,
+      "y": 0.0142,
+      "cluster": 1
     },
     {
       "id": 149,
@@ -3981,9 +5637,9 @@
       "published": "2026-05-30 15:59:58",
       "link": "https://techcrunch.com/2026/05/30/meta-is-reportedly-developing-an-ai-pendant/",
       "score": 33.2,
-      "x": 0.4173,
-      "y": 0.4849,
-      "cluster": 6
+      "x": 0.3698,
+      "y": 0.0145,
+      "cluster": 1
     },
     {
       "id": 150,
@@ -3993,9 +5649,9 @@
       "published": "2026-05-30 15:30:00",
       "link": "https://techcrunch.com/2026/05/30/i-put-googles-24-7-ai-assistant-gemini-spark-to-work-and-its-actually-pretty-useful/",
       "score": 37.6,
-      "x": 0.4307,
-      "y": 0.4553,
-      "cluster": 2
+      "x": 0.369,
+      "y": 0.0179,
+      "cluster": 1
     },
     {
       "id": 151,
@@ -4005,9 +5661,9 @@
       "published": "2026-05-30 14:49:27",
       "link": "https://techcrunch.com/2026/05/30/the-groupthink-boom-what-three-top-vcs-really-think-about-the-ai-frenzy/",
       "score": 42.6,
-      "x": 0.4815,
-      "y": 0.4083,
-      "cluster": 2
+      "x": 0.4033,
+      "y": 0.0125,
+      "cluster": 1
     },
     {
       "id": 152,
@@ -4017,9 +5673,9 @@
       "published": "2026-05-30 13:00:00",
       "link": "https://techcrunch.com/2026/05/30/as-the-browser-wars-heat-up-here-are-the-hottest-alternatives-to-chrome-and-safari-in-2026/",
       "score": 36.1,
-      "x": 0.5772,
-      "y": 0.3514,
-      "cluster": 2
+      "x": 0.5125,
+      "y": 0.0284,
+      "cluster": 5
     },
     {
       "id": 153,
@@ -4029,9 +5685,9 @@
       "published": "2026-05-29 22:31:03",
       "link": "https://developer.nvidia.com/blog/dynosim-simulating-the-pareto-frontier/",
       "score": 44.5,
-      "x": 0.5275,
-      "y": 0.2352,
-      "cluster": 2
+      "x": 0.47,
+      "y": 0.0097,
+      "cluster": 5
     },
     {
       "id": 154,
@@ -4041,9 +5697,9 @@
       "published": "2026-05-29 22:27:49",
       "link": "https://venturebeat.com/orchestration/the-ai-agent-bottleneck-isnt-model-performance-its-permissions",
       "score": 50.8,
-      "x": 0.7128,
-      "y": 0.4936,
-      "cluster": 6
+      "x": 0.6312,
+      "y": 0.0138,
+      "cluster": 1
     },
     {
       "id": 155,
@@ -4053,9 +5709,9 @@
       "published": "2026-05-29 22:14:22",
       "link": "https://techcrunch.com/2026/05/29/coders-are-refusing-to-work-without-ai-and-that-could-come-back-to-bite-them/",
       "score": 36.1,
-      "x": 0.4224,
-      "y": 0.4134,
-      "cluster": 6
+      "x": 0.3679,
+      "y": 0.0139,
+      "cluster": 1
     },
     {
       "id": 156,
@@ -4065,9 +5721,9 @@
       "published": "2026-05-29 19:28:17",
       "link": "https://venturebeat.com/orchestration/memo-memory-model-teams-upgrade-llm-without-retraining",
       "score": 72.5,
-      "x": 0.617,
-      "y": 0.2991,
-      "cluster": 2
+      "x": 0.5652,
+      "y": 0.0102,
+      "cluster": 5
     },
     {
       "id": 157,
@@ -4077,8 +5733,8 @@
       "published": "2026-05-29 19:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-vibe-coded-quiz/",
       "score": 37.5,
-      "x": 0.4916,
-      "y": 0.682,
+      "x": 0.4084,
+      "y": 0.0439,
       "cluster": 3
     },
     {
@@ -4089,9 +5745,9 @@
       "published": "2026-05-29 18:49:19",
       "link": "https://techcrunch.com/2026/05/29/artificial-intelligence-definition-glossary-hallucinations-guide-to-common-ai-terms/",
       "score": 36.3,
-      "x": 0.6404,
-      "y": 0.4518,
-      "cluster": 6
+      "x": 0.4963,
+      "y": 0.0125,
+      "cluster": 1
     },
     {
       "id": 159,
@@ -4101,9 +5757,9 @@
       "published": "2026-05-29 17:57:05",
       "link": "https://techcrunch.com/video/what-happens-when-companies-become-too-ai-pilled/",
       "score": 50.8,
-      "x": 0.7195,
-      "y": 0.6442,
-      "cluster": 6
+      "x": 0.6026,
+      "y": 0.0155,
+      "cluster": 1
     },
     {
       "id": 160,
@@ -4113,9 +5769,9 @@
       "published": "2026-05-29 17:30:00",
       "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
       "score": 34.7,
-      "x": 0.1879,
-      "y": 0.3402,
-      "cluster": 2
+      "x": 0.1652,
+      "y": 0.0155,
+      "cluster": 0
     },
     {
       "id": 161,
@@ -4125,9 +5781,9 @@
       "published": "2026-05-29 17:27:13",
       "link": "https://techcrunch.com/2026/05/29/after-nvidias-20b-not-acqui-hire-ai-chip-startup-groq-reportedly-raising-650m/",
       "score": 43.1,
-      "x": 0.7551,
-      "y": 0.5747,
-      "cluster": 6
+      "x": 0.6392,
+      "y": 0.0162,
+      "cluster": 1
     },
     {
       "id": 162,
@@ -4137,9 +5793,9 @@
       "published": "2026-05-29 16:24:25",
       "link": "https://venturebeat.com/orchestration/pinterest-cut-ai-costs-90-by-gutting-a-frontier-models-vision-layer",
       "score": 68.1,
-      "x": 0.4809,
-      "y": 0.3625,
-      "cluster": 2
+      "x": 0.4285,
+      "y": 0.014,
+      "cluster": 1
     },
     {
       "id": 163,
@@ -4149,9 +5805,9 @@
       "published": "2026-05-29 16:13:47",
       "link": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
       "score": 40.1,
-      "x": 0.3694,
-      "y": 0.4654,
-      "cluster": 6
+      "x": 0.3355,
+      "y": 0.0152,
+      "cluster": 1
     },
     {
       "id": 164,
@@ -4161,9 +5817,9 @@
       "published": "2026-05-29 16:00:00",
       "link": "https://developer.nvidia.com/blog/how-to-automate-ai-model-documentation-with-the-nvidia-mcg-toolkit/",
       "score": 41.5,
-      "x": 0.6287,
-      "y": 0.7366,
-      "cluster": 6
+      "x": 0.5401,
+      "y": 0.1705,
+      "cluster": 1
     },
     {
       "id": 167,
@@ -4173,9 +5829,9 @@
       "published": "2026-05-29 12:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs/",
       "score": 38.8,
-      "x": 0.5902,
-      "y": 0.4827,
-      "cluster": 6
+      "x": 0.4849,
+      "y": 0.0131,
+      "cluster": 1
     },
     {
       "id": 166,
@@ -4185,9 +5841,9 @@
       "published": "2026-05-29 12:00:00",
       "link": "https://openai.com/index/braintrust",
       "score": 50.5,
-      "x": 0.239,
-      "y": 0.3883,
-      "cluster": 2
+      "x": 0.2009,
+      "y": 0.0167,
+      "cluster": 0
     },
     {
       "id": 165,
@@ -4197,9 +5853,9 @@
       "published": "2026-05-29 12:00:00",
       "link": "https://openai.com/index/boston-childrens-hospital",
       "score": 43.9,
-      "x": 0.3649,
-      "y": 0.4572,
-      "cluster": 2
+      "x": 0.2909,
+      "y": 0.0178,
+      "cluster": 1
     },
     {
       "id": 168,
@@ -4209,9 +5865,9 @@
       "published": "2026-05-29 03:00:00",
       "link": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
       "score": 47.9,
-      "x": 0.3047,
-      "y": 0.4422,
-      "cluster": 2
+      "x": 0.2565,
+      "y": 0.0159,
+      "cluster": 1
     },
     {
       "id": 169,
@@ -4221,9 +5877,9 @@
       "published": "2026-05-29 00:07:11",
       "link": "https://developer.nvidia.com/blog/run-step-3-7-flash-on-nvidia-gpus-with-enterprise-ready-multimodal-ai/",
       "score": 41.1,
-      "x": 0.51,
-      "y": 0.5016,
-      "cluster": 6
+      "x": 0.4506,
+      "y": 0.0164,
+      "cluster": 1
     },
     {
       "id": 171,
@@ -4233,9 +5889,9 @@
       "published": "2026-05-29 00:00:00",
       "link": "https://huggingface.co/blog/torch-profiler",
       "score": 28.1,
-      "x": 0.4388,
-      "y": 0.3294,
-      "cluster": 2
+      "x": 0.3898,
+      "y": 0.0207,
+      "cluster": 5
     },
     {
       "id": 170,
@@ -4245,9 +5901,9 @@
       "published": "2026-05-29 00:00:00",
       "link": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
       "score": 42.0,
-      "x": 0.4668,
-      "y": 0.4282,
-      "cluster": 2
+      "x": 0.395,
+      "y": 0.0151,
+      "cluster": 1
     },
     {
       "id": 172,
@@ -4257,8 +5913,8 @@
       "published": "2026-05-28 15:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
       "score": 34.6,
-      "x": 0.2918,
-      "y": 0.4916,
+      "x": 0.2265,
+      "y": 0.0311,
       "cluster": 3
     },
     {
@@ -4269,9 +5925,9 @@
       "published": "2026-05-28 12:00:00",
       "link": "https://openai.com/index/endava",
       "score": 47.9,
-      "x": 0.3702,
-      "y": 0.3781,
-      "cluster": 2
+      "x": 0.3144,
+      "y": 0.0145,
+      "cluster": 1
     },
     {
       "id": 176,
@@ -4281,9 +5937,9 @@
       "published": "2026-05-28 00:00:00",
       "link": "https://machinelearning.apple.com/updates/apple-at-cvpr-2026",
       "score": 50.3,
-      "x": 0.3847,
-      "y": 0.3161,
-      "cluster": 2
+      "x": 0.3464,
+      "y": 0.0257,
+      "cluster": 5
     },
     {
       "id": 175,
@@ -4293,9 +5949,9 @@
       "published": "2026-05-28 00:00:00",
       "link": "https://openai.com/index/openai-frontier-governance-framework",
       "score": 39.5,
-      "x": 0.2882,
-      "y": 0.4432,
-      "cluster": 2
+      "x": 0.2494,
+      "y": 0.0173,
+      "cluster": 1
     },
     {
       "id": 174,
@@ -4305,9 +5961,9 @@
       "published": "2026-05-28 00:00:00",
       "link": "https://openai.com/index/mufg",
       "score": 47.0,
-      "x": 0.4904,
-      "y": 0.6199,
-      "cluster": 6
+      "x": 0.4251,
+      "y": 0.016,
+      "cluster": 1
     },
     {
       "id": 177,
@@ -4317,9 +5973,9 @@
       "published": "2026-05-27 23:09:52",
       "link": "https://developer.nvidia.com/blog/nvidia-dynamo-snapshot-fast-startup-for-inference-workloads-on-kubernetes/",
       "score": 41.2,
-      "x": 0.3807,
-      "y": 0.2902,
-      "cluster": 2
+      "x": 0.3517,
+      "y": 0.0133,
+      "cluster": 5
     },
     {
       "id": 178,
@@ -4329,9 +5985,9 @@
       "published": "2026-05-27 20:00:00",
       "link": "https://developer.nvidia.com/blog/nvidia-blackwell-sets-stac-ai-record-for-llm-inference-in-finance/",
       "score": 43.2,
-      "x": 0.7198,
-      "y": 0.2884,
-      "cluster": 7
+      "x": 0.6748,
+      "y": 0.0115,
+      "cluster": 2
     },
     {
       "id": 179,
@@ -4341,9 +5997,9 @@
       "published": "2026-05-27 19:09:42",
       "link": "https://pytorch.org/blog/why-is-pytorch-compile-so-fast-kernel-fusion/",
       "score": 33.8,
-      "x": 0.4819,
-      "y": 0.3631,
-      "cluster": 2
+      "x": 0.4189,
+      "y": 0.0169,
+      "cluster": 5
     },
     {
       "id": 180,
@@ -4353,9 +6009,9 @@
       "published": "2026-05-27 16:59:58",
       "link": "https://developer.nvidia.com/blog/whats-new-for-game-developers-in-nvidia-rtx-dlss-4-5-for-ue5-and-multilingual-ai-characters/",
       "score": 33.1,
-      "x": 0.4355,
-      "y": 0.4945,
-      "cluster": 6
+      "x": 0.3705,
+      "y": 0.019,
+      "cluster": 1
     },
     {
       "id": 181,
@@ -4365,9 +6021,9 @@
       "published": "2026-05-27 15:39:42",
       "link": "https://pytorch.org/blog/up-to-580tps-new-speed-record-of-qwen3-5-397b-a17b-on-gpu-for-agentic-workloads-with-tokenspeed/",
       "score": 52.9,
-      "x": 0.4868,
-      "y": 0.3251,
-      "cluster": 2
+      "x": 0.4409,
+      "y": 0.0141,
+      "cluster": 0
     },
     {
       "id": 182,
@@ -4377,9 +6033,9 @@
       "published": "2026-05-27 11:00:00",
       "link": "https://openai.com/index/cisco",
       "score": 44.0,
-      "x": 0.3002,
-      "y": 0.5558,
-      "cluster": 2
+      "x": 0.2439,
+      "y": 0.0165,
+      "cluster": 1
     },
     {
       "id": 183,
@@ -4389,9 +6045,9 @@
       "published": "2026-05-27 07:00:00",
       "link": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
       "score": 47.3,
-      "x": 0.2443,
-      "y": 0.3423,
-      "cluster": 2
+      "x": 0.221,
+      "y": 0.0127,
+      "cluster": 1
     },
     {
       "id": 184,
@@ -4401,9 +6057,9 @@
       "published": "2026-05-27 01:00:37",
       "link": "https://pytorch.org/blog/alibaba-cloud-joins-the-pytorch-foundation-as-a-platinum-member/",
       "score": 36.5,
-      "x": 0.5325,
-      "y": 0.3024,
-      "cluster": 2
+      "x": 0.4664,
+      "y": 0.0109,
+      "cluster": 5
     },
     {
       "id": 188,
@@ -4413,9 +6069,9 @@
       "published": "2026-05-27 00:00:00",
       "link": "https://huggingface.co/blog/delta-weight-sync",
       "score": 22.4,
-      "x": 0.5816,
-      "y": 0.2286,
-      "cluster": 2
+      "x": 0.5165,
+      "y": 0.0077,
+      "cluster": 5
     },
     {
       "id": 187,
@@ -4425,9 +6081,9 @@
       "published": "2026-05-27 00:00:00",
       "link": "https://huggingface.co/blog/local-reachy-mini-conversation",
       "score": 22.4,
-      "x": 0.0527,
-      "y": 0.2476,
-      "cluster": 2
+      "x": 0.0487,
+      "y": 0.0133,
+      "cluster": 5
     },
     {
       "id": 186,
@@ -4437,9 +6093,9 @@
       "published": "2026-05-27 00:00:00",
       "link": "https://openai.com/index/election-safeguards-2026",
       "score": 37.5,
-      "x": 0.3776,
-      "y": 0.4373,
-      "cluster": 2
+      "x": 0.3238,
+      "y": 0.0289,
+      "cluster": 1
     },
     {
       "id": 185,
@@ -4449,9 +6105,9 @@
       "published": "2026-05-27 00:00:00",
       "link": "https://openai.com/index/warp",
       "score": 52.3,
-      "x": 0.29,
-      "y": 0.3686,
-      "cluster": 2
+      "x": 0.2531,
+      "y": 0.0154,
+      "cluster": 0
     },
     {
       "id": 189,
@@ -4461,9 +6117,9 @@
       "published": "2026-05-26 22:08:56",
       "link": "https://developer.nvidia.com/blog/extract-more-kernel-performance-with-nvidia-compileiq-auto-tuning/",
       "score": 33.7,
-      "x": 0.3936,
-      "y": 0.3061,
-      "cluster": 2
+      "x": 0.3364,
+      "y": 0.0134,
+      "cluster": 5
     },
     {
       "id": 190,
@@ -4473,9 +6129,9 @@
       "published": "2026-05-26 21:40:16",
       "link": "https://developer.nvidia.com/blog/develop-high-performance-gpu-kernels-in-cpp-with-nvidia-cuda-tile/",
       "score": 33.5,
-      "x": 0.325,
-      "y": 0.411,
-      "cluster": 2
+      "x": 0.2877,
+      "y": 0.124,
+      "cluster": 5
     },
     {
       "id": 191,
@@ -4485,9 +6141,9 @@
       "published": "2026-05-26 21:39:17",
       "link": "https://developer.nvidia.com/blog/nvidia-cuda-13-3-enhances-gpu-development-with-tile-programming-in-c-compiler-autotuning-and-python-updates/",
       "score": 33.7,
-      "x": 0.3045,
-      "y": 0.3694,
-      "cluster": 2
+      "x": 0.2611,
+      "y": 0.0199,
+      "cluster": 5
     },
     {
       "id": 192,
@@ -4497,9 +6153,9 @@
       "published": "2026-05-26 16:00:00",
       "link": "https://developer.nvidia.com/blog/run-key-genomics-and-protein-folding-workloads-faster-with-nvidia-rtx-pro-4500-blackwell/",
       "score": 33.6,
-      "x": 0.2255,
-      "y": 0.4154,
-      "cluster": 2
+      "x": 0.2011,
+      "y": 0.1665,
+      "cluster": 5
     },
     {
       "id": 193,
@@ -4509,9 +6165,9 @@
       "published": "2026-05-26 13:26:13",
       "link": "https://pytorch.org/blog/tlx-block-attention-a-warp-specialized-blackwell-kernel-for-fixed-block-sparse-self-attention/",
       "score": 39.0,
-      "x": 0.4788,
-      "y": 0.263,
-      "cluster": 2
+      "x": 0.4223,
+      "y": 0.0178,
+      "cluster": 5
     },
     {
       "id": 195,
@@ -4521,9 +6177,9 @@
       "published": "2026-05-25 00:00:00",
       "link": "https://huggingface.co/blog/agent-glossary",
       "score": 27.0,
-      "x": 0.2299,
-      "y": 0.4779,
-      "cluster": 6
+      "x": 0.1986,
+      "y": 0.0149,
+      "cluster": 1
     },
     {
       "id": 194,
@@ -4533,9 +6189,9 @@
       "published": "2026-05-25 00:00:00",
       "link": "https://openai.com/index/grupo-folha-grupo-uol-partnership",
       "score": 38.5,
-      "x": 0.3837,
-      "y": 0.3539,
-      "cluster": 2
+      "x": 0.3279,
+      "y": 0.013,
+      "cluster": 1
     },
     {
       "id": 196,
@@ -4545,9 +6201,9 @@
       "published": "2026-05-22 20:24:22",
       "link": "https://pytorch.org/blog/join-the-pytorch-foundation-ambassador-program-a-global-network-of-community-leaders/",
       "score": 36.8,
-      "x": 0.4022,
-      "y": 0.2656,
-      "cluster": 2
+      "x": 0.3504,
+      "y": 0.0111,
+      "cluster": 5
     },
     {
       "id": 197,
@@ -4557,8 +6213,8 @@
       "published": "2026-05-22 18:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap/",
       "score": 28.7,
-      "x": 0.3352,
-      "y": 0.5731,
+      "x": 0.2609,
+      "y": 0.0468,
       "cluster": 3
     },
     {
@@ -4569,9 +6225,9 @@
       "published": "2026-05-22 16:00:00",
       "link": "https://developer.nvidia.com/blog/synthesize-realistic-3d-medical-images-at-scale-to-ship-pre-trained-models/",
       "score": 33.5,
-      "x": 0.5892,
-      "y": 0.2828,
-      "cluster": 2
+      "x": 0.5401,
+      "y": 0.0099,
+      "cluster": 5
     },
     {
       "id": 199,
@@ -4581,9 +6237,9 @@
       "published": "2026-05-22 15:25:59",
       "link": "https://huggingface.co/blog/Dharma-AI/specialization-beats-scale",
       "score": 22.0,
-      "x": 0.3977,
-      "y": 0.449,
-      "cluster": 6
+      "x": 0.3419,
+      "y": 0.0133,
+      "cluster": 1
     },
     {
       "id": 202,
@@ -4593,9 +6249,9 @@
       "published": "2026-05-22 00:00:00",
       "link": "https://machinelearning.apple.com/research/vsas-bench-streaming-assistant",
       "score": 53.0,
-      "x": 0.6997,
-      "y": 0.1558,
-      "cluster": 7
+      "x": 0.6532,
+      "y": 0.0062,
+      "cluster": 2
     },
     {
       "id": 201,
@@ -4605,9 +6261,9 @@
       "published": "2026-05-22 00:00:00",
       "link": "https://openai.com/index/gartner-2026-agentic-coding-leader",
       "score": 46.9,
-      "x": 0.5021,
-      "y": 0.5029,
-      "cluster": 2
+      "x": 0.4522,
+      "y": 0.0244,
+      "cluster": 1
     },
     {
       "id": 200,
@@ -4617,9 +6273,9 @@
       "published": "2026-05-22 00:00:00",
       "link": "https://openai.com/index/virgin-atlantic",
       "score": 43.6,
-      "x": 0.3501,
-      "y": 0.3296,
-      "cluster": 2
+      "x": 0.3071,
+      "y": 0.0138,
+      "cluster": 1
     },
     {
       "id": 203,
@@ -4629,9 +6285,9 @@
       "published": "2026-05-21 18:31:56",
       "link": "https://developer.nvidia.com/blog/automating-and-optimizing-financial-signal-discovery-with-multi-agent-systems/",
       "score": 35.6,
-      "x": 0.4563,
-      "y": 0.2544,
-      "cluster": 2
+      "x": 0.4256,
+      "y": 0.0097,
+      "cluster": 5
     },
     {
       "id": 204,
@@ -4641,9 +6297,9 @@
       "published": "2026-05-21 18:00:00",
       "link": "https://developer.nvidia.com/blog/get-real-time-visibility-into-gpu-usage-across-kubernetes-clusters/",
       "score": 30.6,
-      "x": 0.4249,
-      "y": 0.4185,
-      "cluster": 6
+      "x": 0.3941,
+      "y": 0.0154,
+      "cluster": 1
     },
     {
       "id": 205,
@@ -4653,9 +6309,9 @@
       "published": "2026-05-21 17:32:56",
       "link": "https://developer.nvidia.com/blog/unlock-exascale-performance-on-nvidia-gb200-nvl72-with-slurm-topology-aware-job-scheduling/",
       "score": 36.6,
-      "x": 0.5939,
-      "y": 0.3986,
-      "cluster": 6
+      "x": 0.517,
+      "y": 0.0156,
+      "cluster": 1
     },
     {
       "id": 206,
@@ -4665,9 +6321,9 @@
       "published": "2026-05-21 12:00:00",
       "link": "https://openai.com/index/adventhealth",
       "score": 37.6,
-      "x": 0.375,
-      "y": 0.3091,
-      "cluster": 2
+      "x": 0.3052,
+      "y": 0.0129,
+      "cluster": 5
     },
     {
       "id": 207,
@@ -4677,9 +6333,9 @@
       "published": "2026-05-20 20:40:00",
       "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
       "score": 29.6,
-      "x": 0.3043,
-      "y": 0.2785,
-      "cluster": 2
+      "x": 0.2697,
+      "y": 0.014,
+      "cluster": 5
     },
     {
       "id": 208,
@@ -4689,8 +6345,8 @@
       "published": "2026-05-20 19:30:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
       "score": 28.2,
-      "x": 0.2841,
-      "y": 0.4936,
+      "x": 0.212,
+      "y": 0.0332,
       "cluster": 3
     },
     {
@@ -4701,9 +6357,9 @@
       "published": "2026-05-20 16:45:00",
       "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
       "score": 32.5,
-      "x": 0.4714,
-      "y": 0.2647,
-      "cluster": 2
+      "x": 0.4284,
+      "y": 0.0112,
+      "cluster": 5
     },
     {
       "id": 210,
@@ -4713,9 +6369,9 @@
       "published": "2026-05-20 15:45:54",
       "link": "https://pytorch.org/blog/pytorch-docathon-2026-results/",
       "score": 31.9,
-      "x": 0.3435,
-      "y": 0.4204,
-      "cluster": 2
+      "x": 0.2948,
+      "y": 0.0395,
+      "cluster": 5
     },
     {
       "id": 212,
@@ -4725,9 +6381,9 @@
       "published": "2026-05-20 00:00:00",
       "link": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
       "score": 33.9,
-      "x": 0.6009,
-      "y": 0.3505,
-      "cluster": 2
+      "x": 0.5181,
+      "y": 0.0103,
+      "cluster": 1
     },
     {
       "id": 211,
@@ -4737,9 +6393,9 @@
       "published": "2026-05-20 00:00:00",
       "link": "https://openai.com/index/the-next-phase-of-education-for-countries",
       "score": 39.8,
-      "x": 0.4538,
-      "y": 0.4179,
-      "cluster": 2
+      "x": 0.3954,
+      "y": 0.014,
+      "cluster": 1
     },
     {
       "id": 213,
@@ -4749,9 +6405,9 @@
       "published": "2026-05-19 18:38:09",
       "link": "https://huggingface.co/blog/allenai/olmoearth-v1-1",
       "score": 22.0,
-      "x": 0.5724,
-      "y": 0.1773,
-      "cluster": 2
+      "x": 0.4089,
+      "y": 0.0139,
+      "cluster": 5
     },
     {
       "id": 220,
@@ -4761,8 +6417,8 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
       "score": 30.2,
-      "x": 0.3363,
-      "y": 0.5791,
+      "x": 0.2723,
+      "y": 0.0431,
       "cluster": 3
     },
     {
@@ -4773,8 +6429,8 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/",
       "score": 30.4,
-      "x": 0.4083,
-      "y": 0.5743,
+      "x": 0.3308,
+      "y": 0.0341,
       "cluster": 3
     },
     {
@@ -4785,9 +6441,9 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
       "score": 28.2,
-      "x": 0.5677,
-      "y": 0.4605,
-      "cluster": 6
+      "x": 0.419,
+      "y": 0.0122,
+      "cluster": 1
     },
     {
       "id": 217,
@@ -4797,9 +6453,9 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
       "score": 28.8,
-      "x": 0.2755,
-      "y": 0.349,
-      "cluster": 2
+      "x": 0.2474,
+      "y": 0.0148,
+      "cluster": 0
     },
     {
       "id": 216,
@@ -4809,8 +6465,8 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
       "score": 33.9,
-      "x": 0.4168,
-      "y": 0.5211,
+      "x": 0.3398,
+      "y": 0.0317,
       "cluster": 3
     },
     {
@@ -4821,9 +6477,9 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/",
       "score": 25.8,
-      "x": 0.266,
-      "y": 0.3132,
-      "cluster": 2
+      "x": 0.239,
+      "y": 0.0136,
+      "cluster": 6
     },
     {
       "id": 214,
@@ -4833,9 +6489,9 @@
       "published": "2026-05-19 17:45:00",
       "link": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
       "score": 35.7,
-      "x": 0.6456,
-      "y": 0.4468,
-      "cluster": 2
+      "x": 0.567,
+      "y": 0.0137,
+      "cluster": 1
     },
     {
       "id": 222,
@@ -4845,9 +6501,9 @@
       "published": "2026-05-19 00:00:00",
       "link": "https://machinelearning.apple.com/research/epicache",
       "score": 49.0,
-      "x": 0.553,
-      "y": 0.1714,
-      "cluster": 7
+      "x": 0.5376,
+      "y": 0.0085,
+      "cluster": 2
     },
     {
       "id": 221,
@@ -4857,9 +6513,9 @@
       "published": "2026-05-19 00:00:00",
       "link": "https://huggingface.co/blog/ettin-reranker",
       "score": 22.0,
-      "x": 0.0517,
-      "y": 0.2301,
-      "cluster": 2
+      "x": 0.0349,
+      "y": 0.0135,
+      "cluster": 5
     },
     {
       "id": 223,
@@ -4869,9 +6525,9 @@
       "published": "2026-05-18 17:25:11",
       "link": "https://pytorch.org/blog/vllm-and-pytorch-work-together-to-improve-the-developer-experience-on-aarch64/",
       "score": 40.4,
-      "x": 0.322,
-      "y": 0.3215,
-      "cluster": 2
+      "x": 0.2798,
+      "y": 0.0161,
+      "cluster": 5
     },
     {
       "id": 224,
@@ -4881,9 +6537,9 @@
       "published": "2026-05-18 15:30:50",
       "link": "https://pytorch.org/blog/running-pytorch-models-on-apple-silicon-gpus-with-the-executorch-mlx-delegate/",
       "score": 41.1,
-      "x": 0.3044,
-      "y": 0.2847,
-      "cluster": 2
+      "x": 0.2578,
+      "y": 0.0147,
+      "cluster": 5
     },
     {
       "id": 225,
@@ -4893,9 +6549,9 @@
       "published": "2026-05-18 15:12:46",
       "link": "https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers",
       "score": 27.0,
-      "x": 0.2353,
-      "y": 0.2971,
-      "cluster": 2
+      "x": 0.2148,
+      "y": 0.0138,
+      "cluster": 0
     },
     {
       "id": 226,
@@ -4905,9 +6561,9 @@
       "published": "2026-05-14 18:55:01",
       "link": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
       "score": 27.0,
-      "x": 0.1456,
-      "y": 0.2223,
-      "cluster": 2
+      "x": 0.13,
+      "y": 0.0144,
+      "cluster": 5
     },
     {
       "id": 227,
@@ -4917,9 +6573,9 @@
       "published": "2026-05-14 00:00:00",
       "link": "https://huggingface.co/blog/continuous_async",
       "score": 22.0,
-      "x": 0.2535,
-      "y": 0.2004,
-      "cluster": 2
+      "x": 0.2361,
+      "y": 0.011,
+      "cluster": 5
     },
     {
       "id": 228,
@@ -4929,9 +6585,9 @@
       "published": "2026-05-13 18:36:29",
       "link": "https://pytorch.org/blog/pytorch-2-12-release-blog/",
       "score": 30.9,
-      "x": 0.405,
-      "y": 0.2954,
-      "cluster": 2
+      "x": 0.3631,
+      "y": 0.019,
+      "cluster": 5
     },
     {
       "id": 229,
@@ -4941,9 +6597,9 @@
       "published": "2026-05-11 23:18:26",
       "link": "https://huggingface.co/blog/amazon/foundation-model-building-blocks",
       "score": 27.0,
-      "x": 0.3423,
-      "y": 0.2307,
-      "cluster": 2
+      "x": 0.3202,
+      "y": 0.0112,
+      "cluster": 5
     },
     {
       "id": 230,
@@ -4953,9 +6609,9 @@
       "published": "2026-05-11 06:00:00",
       "link": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
       "score": 28.0,
-      "x": 0.4976,
-      "y": 0.5097,
-      "cluster": 6
+      "x": 0.4253,
+      "y": 0.0141,
+      "cluster": 1
     },
     {
       "id": 231,
@@ -4965,9 +6621,9 @@
       "published": "2026-05-11 00:00:00",
       "link": "https://machinelearning.apple.com/research/balcaprl-mllm-image-captioning",
       "score": 68.0,
-      "x": 0.8516,
-      "y": 0.1813,
-      "cluster": 7
+      "x": 0.8329,
+      "y": 0.0055,
+      "cluster": 2
     },
     {
       "id": 232,
@@ -4977,9 +6633,9 @@
       "published": "2026-05-08 15:00:00",
       "link": "https://blog.google/company-news/inside-google/company-announcements/the-small-brief/",
       "score": 29.3,
-      "x": 0.3829,
-      "y": 0.4016,
-      "cluster": 6
+      "x": 0.3248,
+      "y": 0.0138,
+      "cluster": 1
     },
     {
       "id": 236,
@@ -4989,9 +6645,9 @@
       "published": "2026-05-08 00:00:00",
       "link": "https://machinelearning.apple.com/research/gaussian-head-reconstruction",
       "score": 48.0,
-      "x": 0.3809,
-      "y": 0.1858,
-      "cluster": 2
+      "x": 0.3497,
+      "y": 0.0097,
+      "cluster": 5
     },
     {
       "id": 235,
@@ -5001,9 +6657,9 @@
       "published": "2026-05-08 00:00:00",
       "link": "https://machinelearning.apple.com/updates/ppml-2026",
       "score": 47.0,
-      "x": 0.6224,
-      "y": 0.4656,
-      "cluster": 6
+      "x": 0.5502,
+      "y": 0.026,
+      "cluster": 1
     },
     {
       "id": 234,
@@ -5013,9 +6669,9 @@
       "published": "2026-05-08 00:00:00",
       "link": "https://machinelearning.apple.com/research/rvpo-risk-sensitive-alignment",
       "score": 47.0,
-      "x": 0.4037,
-      "y": 0.1697,
-      "cluster": 1
+      "x": 0.3607,
+      "y": 0.0094,
+      "cluster": 4
     },
     {
       "id": 233,
@@ -5025,9 +6681,9 @@
       "published": "2026-05-08 00:00:00",
       "link": "https://machinelearning.apple.com/research/velox",
       "score": 47.0,
-      "x": 0.4787,
-      "y": 0.1936,
-      "cluster": 1
+      "x": 0.4294,
+      "y": 0.0091,
+      "cluster": 4
     },
     {
       "id": 238,
@@ -5037,9 +6693,9 @@
       "published": "2026-05-07 00:00:00",
       "link": "https://machinelearning.apple.com/research/compression",
       "score": 39.0,
-      "x": 0.7011,
-      "y": 0.2373,
-      "cluster": 1
+      "x": 0.6161,
+      "y": 0.0082,
+      "cluster": 4
     },
     {
       "id": 237,
@@ -5049,9 +6705,9 @@
       "published": "2026-05-07 00:00:00",
       "link": "https://machinelearning.apple.com/research/text-conditional-jepa-visual-representations",
       "score": 47.0,
-      "x": 0.467,
-      "y": 0.1648,
-      "cluster": 1
+      "x": 0.405,
+      "y": 0.009,
+      "cluster": 4
     },
     {
       "id": 239,
@@ -5061,9 +6717,9 @@
       "published": "2026-05-06 19:06:55",
       "link": "https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections",
       "score": 27.0,
-      "x": 0.4577,
-      "y": 0.2123,
-      "cluster": 2
+      "x": 0.411,
+      "y": 0.0132,
+      "cluster": 5
     },
     {
       "id": 240,
@@ -5073,9 +6729,9 @@
       "published": "2026-05-06 16:00:00",
       "link": "https://blog.google/products-and-platforms/products/search/gardening-tips/",
       "score": 35.5,
-      "x": 0.8847,
-      "y": 0.267,
-      "cluster": 2
+      "x": 0.776,
+      "y": 0.0059,
+      "cluster": 0
     },
     {
       "id": 241,
@@ -5085,9 +6741,9 @@
       "published": "2026-05-06 00:00:00",
       "link": "https://huggingface.co/blog/open-asr-leaderboard-private-data",
       "score": 22.0,
-      "x": 0.2982,
-      "y": 0.2778,
-      "cluster": 2
+      "x": 0.1803,
+      "y": 0.0135,
+      "cluster": 5
     },
     {
       "id": 242,
@@ -5097,9 +6753,9 @@
       "published": "2026-05-05 16:00:00",
       "link": "https://blog.google/innovation-and-ai/technology/ai/future-vision-film-competition-xprize/",
       "score": 30.4,
-      "x": 0.3052,
-      "y": 0.3506,
-      "cluster": 2
+      "x": 0.2535,
+      "y": 0.0147,
+      "cluster": 0
     },
     {
       "id": 243,
@@ -5109,9 +6765,9 @@
       "published": "2026-04-29 15:01:48",
       "link": "https://huggingface.co/blog/ibm-granite/granite-4-1",
       "score": 27.0,
-      "x": 0.1914,
-      "y": 0.2833,
-      "cluster": 2
+      "x": 0.1829,
+      "y": 0.0191,
+      "cluster": 5
     },
     {
       "id": 244,
@@ -5121,9 +6777,9 @@
       "published": "2026-04-29 00:00:00",
       "link": "https://huggingface.co/blog/inference-providers-deepinfra",
       "score": 27.0,
-      "x": 0.2391,
-      "y": 0.2303,
-      "cluster": 2
+      "x": 0.1762,
+      "y": 0.0123,
+      "cluster": 5
     },
     {
       "id": 245,
@@ -5133,9 +6789,9 @@
       "published": "2026-04-28 15:58:57",
       "link": "https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence",
       "score": 32.0,
-      "x": 0.2474,
-      "y": 0.3297,
-      "cluster": 2
+      "x": 0.2345,
+      "y": 0.0139,
+      "cluster": 5
     },
     {
       "id": 246,
@@ -5145,9 +6801,9 @@
       "published": "2026-04-27 00:00:00",
       "link": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
       "score": 22.0,
-      "x": 0.2687,
-      "y": 0.4039,
-      "cluster": 2
+      "x": 0.2354,
+      "y": 0.018,
+      "cluster": 1
     },
     {
       "id": 247,
@@ -5157,9 +6813,9 @@
       "published": "2024-03-29 18:03:00",
       "link": "http://blog.research.google/2024/03/generative-ai-to-quantify-uncertainty.html",
       "score": 39.5,
-      "x": 0.6886,
-      "y": 0.4192,
-      "cluster": 0
+      "x": 0.5936,
+      "y": 0.0137,
+      "cluster": 6
     },
     {
       "id": 248,
@@ -5169,9 +6825,9 @@
       "published": "2024-03-28 20:53:00",
       "link": "http://blog.research.google/2024/03/autobnn-probabilistic-time-series.html",
       "score": 44.5,
-      "x": 0.3989,
-      "y": 0.2374,
-      "cluster": 0
+      "x": 0.3715,
+      "y": 0.0113,
+      "cluster": 6
     },
     {
       "id": 249,
@@ -5181,9 +6837,9 @@
       "published": "2024-03-20 20:54:00",
       "link": "http://blog.research.google/2024/03/computer-aided-diagnosis-for-lung.html",
       "score": 45.5,
-      "x": 0.3395,
-      "y": 0.2618,
-      "cluster": 0
+      "x": 0.2623,
+      "y": 0.0147,
+      "cluster": 6
     },
     {
       "id": 250,
@@ -5193,9 +6849,9 @@
       "published": "2024-03-20 16:06:00",
       "link": "http://blog.research.google/2024/03/using-ai-to-expand-global-access-to.html",
       "score": 42.5,
-      "x": 0.5993,
-      "y": 0.4236,
-      "cluster": 0
+      "x": 0.5046,
+      "y": 0.0132,
+      "cluster": 6
     },
     {
       "id": 251,
@@ -5205,9 +6861,9 @@
       "published": "2024-03-19 20:15:00",
       "link": "http://blog.research.google/2024/03/screenai-visual-language-model-for-ui.html",
       "score": 44.5,
-      "x": 0.5421,
-      "y": 0.2129,
-      "cluster": 0
+      "x": 0.5219,
+      "y": 0.0084,
+      "cluster": 6
     },
     {
       "id": 252,
@@ -5217,9 +6873,9 @@
       "published": "2024-03-19 15:00:00",
       "link": "http://blog.research.google/2024/03/scin-new-resource-for-representative.html",
       "score": 42.5,
-      "x": 0.6573,
-      "y": 0.29,
-      "cluster": 0
+      "x": 0.5796,
+      "y": 0.0078,
+      "cluster": 6
     },
     {
       "id": 253,
@@ -5229,9 +6885,9 @@
       "published": "2024-03-18 18:41:00",
       "link": "http://blog.research.google/2024/03/melon-reconstructing-3d-objects-from.html",
       "score": 42.5,
-      "x": 0.6715,
-      "y": 0.3311,
-      "cluster": 0
+      "x": 0.5924,
+      "y": 0.0107,
+      "cluster": 6
     },
     {
       "id": 254,
@@ -5241,9 +6897,9 @@
       "published": "2024-03-15 18:22:00",
       "link": "http://blog.research.google/2024/03/heal-framework-for-health-equity.html",
       "score": 50.5,
-      "x": 0.5575,
-      "y": 0.2859,
-      "cluster": 0
+      "x": 0.4918,
+      "y": 0.0095,
+      "cluster": 6
     },
     {
       "id": 255,
@@ -5253,9 +6909,9 @@
       "published": "2024-03-14 19:38:00",
       "link": "http://blog.research.google/2024/03/cappy-outperforming-and-boosting-large.html",
       "score": 50.5,
-      "x": 0.7671,
-      "y": 0.1464,
-      "cluster": 7
+      "x": 0.7154,
+      "y": 0.005,
+      "cluster": 2
     },
     {
       "id": 256,
@@ -5265,9 +6921,9 @@
       "published": "2024-03-12 21:15:00",
       "link": "http://blog.research.google/2024/03/talk-like-graph-encoding-graphs-for.html",
       "score": 42.5,
-      "x": 0.6608,
-      "y": 0.2393,
-      "cluster": 0
+      "x": 0.6141,
+      "y": 0.009,
+      "cluster": 6
     },
     {
       "id": 257,
@@ -5277,9 +6933,9 @@
       "published": "2024-03-11 19:08:00",
       "link": "http://blog.research.google/2024/03/chain-of-table-evolving-tables-in.html",
       "score": 44.5,
-      "x": 0.7417,
-      "y": 0.3005,
-      "cluster": 0
+      "x": 0.6953,
+      "y": 0.0088,
+      "cluster": 6
     },
     {
       "id": 258,
@@ -5289,9 +6945,9 @@
       "published": "2024-03-08 19:33:00",
       "link": "http://blog.research.google/2024/03/health-specific-embedding-tools-for.html",
       "score": 49.5,
-      "x": 0.5189,
-      "y": 0.311,
-      "cluster": 0
+      "x": 0.4415,
+      "y": 0.0112,
+      "cluster": 6
     },
     {
       "id": 259,
@@ -5301,9 +6957,9 @@
       "published": "2024-03-07 18:15:00",
       "link": "http://blog.research.google/2024/03/social-learning-collaborative-learning.html",
       "score": 55.5,
-      "x": 0.8044,
-      "y": 0.137,
-      "cluster": 0
+      "x": 0.7475,
+      "y": 0.0043,
+      "cluster": 2
     },
     {
       "id": 260,
@@ -5313,9 +6969,9 @@
       "published": "2024-03-06 18:26:00",
       "link": "http://blog.research.google/2024/03/croissant-metadata-format-for-ml-ready.html",
       "score": 47.5,
-      "x": 0.5254,
-      "y": 0.2695,
-      "cluster": 0
+      "x": 0.4653,
+      "y": 0.0107,
+      "cluster": 6
     },
     {
       "id": 261,
@@ -5325,9 +6981,9 @@
       "published": "2024-03-04 15:06:00",
       "link": "http://blog.research.google/2024/03/google-at-aps-2024.html",
       "score": 39.5,
-      "x": 0.5532,
-      "y": 0.3898,
-      "cluster": 0
+      "x": 0.474,
+      "y": 0.0126,
+      "cluster": 6
     },
     {
       "id": 262,
@@ -5337,9 +6993,9 @@
       "published": "2024-02-22 20:05:00",
       "link": "http://blog.research.google/2024/02/videoprism-foundational-visual-encoder.html",
       "score": 39.5,
-      "x": 0.682,
-      "y": 0.2954,
-      "cluster": 0
+      "x": 0.5993,
+      "y": 0.009,
+      "cluster": 6
     },
     {
       "id": 263,
@@ -5349,9 +7005,9 @@
       "published": "2024-02-21 20:15:00",
       "link": "http://blog.research.google/2024/02/advances-in-private-training-for.html",
       "score": 50.5,
-      "x": 0.6801,
-      "y": 0.2434,
-      "cluster": 0
+      "x": 0.6239,
+      "y": 0.0112,
+      "cluster": 6
     },
     {
       "id": 264,
@@ -5361,9 +7017,9 @@
       "published": "2024-02-14 18:32:00",
       "link": "http://blog.research.google/2024/02/learning-importance-of-training-data.html",
       "score": 42.5,
-      "x": 0.7659,
-      "y": 0.3255,
-      "cluster": 0
+      "x": 0.6594,
+      "y": 0.0082,
+      "cluster": 6
     },
     {
       "id": 265,
@@ -5373,9 +7029,9 @@
       "published": "2024-02-13 22:11:00",
       "link": "http://blog.research.google/2024/02/dp-auditorium-flexible-library-for.html",
       "score": 39.5,
-      "x": 0.6738,
-      "y": 0.3034,
-      "cluster": 0
+      "x": 0.5706,
+      "y": 0.0092,
+      "cluster": 6
     },
     {
       "id": 266,
@@ -5385,9 +7041,9 @@
       "published": "2024-02-06 19:17:00",
       "link": "http://blog.research.google/2024/02/graph-neural-networks-in-tensorflow.html",
       "score": 47.5,
-      "x": 0.5981,
-      "y": 0.2596,
-      "cluster": 0
+      "x": 0.5187,
+      "y": 0.0101,
+      "cluster": 6
     }
   ]
 }
