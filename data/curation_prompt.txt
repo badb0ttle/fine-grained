@@ -13,100 +13,101 @@
 ]
 
 候选文章：
-[1] [84.6] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
+[1] [90.4] Title: Do Value Vectors in Deep Layers Need Context from the Residual Stream?
+    Source: ArXiv cs.CL | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02780v1 Announce Type: new 
+Abstract: The success of the transformer architecture as the backbone of modern LLMs is in large part due to its use of attention layers. An attention layer foll
+
+[2] [85.6] Title: Automated Report-Derived Oncology VQA Benchmark for Evaluating Vision-Language Models on 3D Medical Imaging
+    Source: ArXiv cs.CV | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02809v1 Announce Type: new 
+Abstract: Evaluating vision-language models (VLMs) on medical images requires benchmarks that are clinically grounded, scalable, and controlled for evaluation co
+
+[3] [84.6] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
     Source: VentureBeat AI | 2026-06-01 16:10:05
     Summary: Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and 
 
-[2] [83.9] Title: Distilling LLM Feedback for Lean Theorem Proving
+[4] [83.9] Title: Distilling LLM Feedback for Lean Theorem Proving
     Source: ArXiv cs.AI | 2026-06-01 04:00:00
     Summary: arXiv:2605.30861v1 Announce Type: new 
 Abstract: Post-training for reasoning models typically combines supervised fine-tuning with reinforcement learning from verifiable rewards, most commonly with GR
 
-[3] [81.9] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+[5] [83.4] Title: Fixing FOLIO and MALLS: Verified Annotations and an LLM-assisted Framework to Focus Human Relabeling
+    Source: ArXiv cs.CL | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02837v1 Announce Type: new 
+Abstract: Accurate translation from Natural Language to First-Order Logic (NL-to-FOL) underpins neurosymbolic AI systems and Natural Language Inference (NLI), ma
+
+[6] [81.9] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
     Source: ArXiv cs.AI | 2026-06-01 04:00:00
     Summary: arXiv:2605.30576v1 Announce Type: new 
 Abstract: Exploration in reinforcement learning for autonomous driving is inherently unsafe: agents must experience novel behaviors to learn, yet exploration can
 
-[4] [81.8] Title: Diffusion Image Generation with Explicit Modeling of Data Manifold Geometry
+[7] [81.8] Title: Diffusion Image Generation with Explicit Modeling of Data Manifold Geometry
     Source: ArXiv cs.CV | 2026-06-02 04:00:00
     Summary: arXiv:2606.00094v1 Announce Type: new 
 Abstract: Image generative models aim to sample data points from the underlying data manifold, a task that requires learning and decoding a dense, low-dimensiona
 
-[5] [81.8] Title: CardioLens: Revealing the Clinical Reality Gap of MLLMs via Multi-Sequence Cardiac MRI Evaluations
+[8] [81.8] Title: CardioLens: Revealing the Clinical Reality Gap of MLLMs via Multi-Sequence Cardiac MRI Evaluations
     Source: ArXiv cs.CV | 2026-06-02 04:00:00
     Summary: arXiv:2606.00123v1 Announce Type: new 
 Abstract: Multimodal Large Language Models (MLLMs) have shown strong performance on public medical benchmarks, yet existing evaluations often remain weak proxies
 
-[6] [81.5] Title: SENSE: Semantic Embedding Navigation with Soft-gated Evaluation for Retrieval-based Speculative Decoding
+[9] [81.5] Title: SENSE: Semantic Embedding Navigation with Soft-gated Evaluation for Retrieval-based Speculative Decoding
     Source: ArXiv cs.CL | 2026-06-02 04:00:00
     Summary: arXiv:2606.00021v1 Announce Type: new 
 Abstract: Speculative Decoding (SD) accelerates Large Language Model (LLM) inference by employing a lightweight draft model to propose candidate tokens, which ar
 
-[7] [81.5] Title: DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models
+[10] [81.5] Title: DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models
     Source: ArXiv cs.CL | 2026-06-02 04:00:00
     Summary: arXiv:2606.00091v1 Announce Type: new 
 Abstract: Joint Embedding Predictive Architectures (JEPAs) have reshaped self-supervised representation learning in vision. The recent LLM-JEPA ported JEPA to au
 
-[8] [79.5] Title: Emergence of Exploration in Policy Gradient Reinforcement Learning via Retrying
+[11] [80.6] Title: Diagnosis of Human Object Interaction Detectors for Real World Educational Applications
+    Source: ArXiv cs.CV | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02789v1 Announce Type: new 
+Abstract: Human-object interaction (HOI) recognition is critical for automatically analyzing student behavior in complex educational environments. Although state
+
+[12] [79.6] Title: GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving
+    Source: ArXiv cs.CV | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02774v1 Announce Type: new 
+Abstract: Vision-language models (VLMs) for autonomous driving have shown promising performance, but their ability to handle region-specific traffic rules remain
+
+[13] [79.5] Title: Emergence of Exploration in Policy Gradient Reinforcement Learning via Retrying
     Source: ArXiv cs.LG | 2026-06-02 04:00:00
     Summary: arXiv:2606.00151v1 Announce Type: new 
 Abstract: In reinforcement learning (RL), agents benefit from exploration only because they repeatedly encounter similar states: trying different actions can imp
 
-[9] [79.5] Title: CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards
+[14] [79.5] Title: CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards
     Source: ArXiv cs.CL | 2026-06-02 04:00:00
     Summary: arXiv:2606.00020v1 Announce Type: new 
 Abstract: Large Language Model (LLM) based Chinese Grammatical Error Correction (CGEC) systems face two critical challenges: general-purpose models lack speciali
 
-[10] [78.5] Title: BitsMoE: Efficient Spectral Energy-Guided Bit Allocation for MoE LLM Quantization
+[15] [79.4] Title: ToolGate: Token-Efficient Pre-Call Control for Tool-Augmented Vision-Language Agents
+    Source: ArXiv cs.AI | 2026-06-03 04:00:00
+    Summary: arXiv:2606.03054v1 Announce Type: new 
+Abstract: Tool-augmented vision-language agents can acquire external perceptual evidence through OCR, detection, segmentation, and other tools, but executing eve
+
+[16] [79.4] Title: Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs
+    Source: ArXiv cs.LG | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02628v1 Announce Type: new 
+Abstract: We investigate whether open-source LLMs encode a linearly separable truthfulness signal in their hidden states, and at which network depth this signal 
+
+[17] [78.5] Title: BitsMoE: Efficient Spectral Energy-Guided Bit Allocation for MoE LLM Quantization
     Source: ArXiv cs.LG | 2026-06-02 04:00:00
     Summary: arXiv:2606.00079v1 Announce Type: new 
 Abstract: Mixture-of-Experts (MoE) large language models reduce per-token computation through sparse expert activation, but their deployment remains memory-inten
 
-[11] [78.2] Title: SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
+[18] [78.4] Title: Geometry-Aware Tabular Diffusion
+    Source: ArXiv cs.LG | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02607v1 Announce Type: new 
+Abstract: Tabular synthesis is critical for privacy-preserving sharing and augmentation, yet diffusion models rely on implicit mechanisms to capture inter-column
+
+[19] [78.4] Title: EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction
+    Source: ArXiv cs.CL | 2026-06-03 04:00:00
+    Summary: arXiv:2606.02971v1 Announce Type: new 
+Abstract: Extracting reporting obligations from EU legislation is critical for assessing and reducing regulatory reporting burden. However, distinguishing report
+
+[20] [78.2] Title: SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
     Source: ArXiv stat.ML | 2026-06-01 04:00:00
     Summary: arXiv:2605.30711v1 Announce Type: cross 
 Abstract: Agentic LLMs must continuously decide whether newly extracted facts should be added, merged with existing memories, or ignored, yet prior work has fo
-
-[12] [77.9] Title: NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
-    Source: ArXiv cs.LG | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30393v1 Announce Type: new 
-Abstract: Public numeric benchmarks appear in pretraining, so an evaluation that conditions on a date may be measuring memorized recall rather than out-of-sample
-
-[13] [77.9] Title: Auditing LLM Benchmarks with Item Response Theory
-    Source: ArXiv cs.CL | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30504v1 Announce Type: new 
-Abstract: LLM benchmark labels are frozen at release and silently propagated into downstream benchmarks, errors and all. We introduce an Item Response Theory-bas
-
-[14] [77.5] Title: Evaluating Interactive Reasoning in Large Language Models: A Hierarchical Benchmark with Executable Games
-    Source: ArXiv cs.AI | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00103v1 Announce Type: new 
-Abstract: We introduce a multi-turn interactive framework for reasoning evaluation that treats reasoning as active evidence acquisition and belief updating. Wher
-
-[15] [77.5] Title: World Models: A Comprehensive Survey of Architectures, Methodologies, Reasoning Paradigms, and Applications
-    Source: ArXiv cs.LG | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00133v1 Announce Type: new 
-Abstract: World models, internal simulators that learn the structure and dynamics of an environment, have emerged as a central paradigm in the pursuit of artific
-
-[16] [77.5] Title: A Multi-Domain Red Teaming Framework for Safety, Robustness, and Fairness Evaluation of Medical Large Language Models
-    Source: ArXiv cs.CL | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00027v1 Announce Type: new 
-Abstract: Large language models (LLMs) are increasingly deployed across healthcare, yet existing benchmarks fail to capture model behavior under adversarial or e
-
-[17] [77.2] Title: 一颗288核的至强6+，为什么能同时运行500个Agent？
-    Source: 雷锋网 AI | 2026-06-01 10:20:00
-    Summary: 过去两年，AI基础设施行业有一个几乎无人质疑的共识：GPU决定AI的上限。从大模型训练到推理部署，产业的关注点几乎都围绕着GPU展开。显存够不够大、带宽够不够高、Token吞吐量能达到多少，成为衡量AI基础设施能力的核心指标。但Agent的出现，正在改变这套逻辑。与传统聊天机器人不同，Agent并不只是完成一次问答，而是需要持续执行任务。它需要调用工具、访问数据库、浏览网页、管理记忆系统，甚至不断
-
-[18] [77.2] Title: Benchmark of Likelihood-Free Inference Methods based on Neural and Optimal Transport Approaches
-    Source: ArXiv stat.ML | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30516v1 Announce Type: cross 
-Abstract: Simulation-based inference (SBI) has become an increasingly important framework for parameter estimation in models for which simulation is feasible, 
-
-[19] [76.9] Title: Domain Adaptation and Reasoning Frameworks in Language Models: A Controlled Experiment with Historical Cosmology
-    Source: ArXiv cs.CL | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30415v1 Announce Type: new 
-Abstract: We investigate how domain adaptation reshapes explanatory behavior in language models using historical cosmology as a controlled setting. In Phase 1, w
-
-[20] [76.9] Title: CanLegalRAGBench: Evaluating Retrieval-Augmented Generation on Canadian Case Law
-    Source: ArXiv cs.CL | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30497v1 Announce Type: new 
-Abstract: RAG-based legal assistants have been growing in popularity, but LLM hallucinations remain a key issue and potentially undermines justice. While benchma
