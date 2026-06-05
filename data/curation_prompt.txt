@@ -13,101 +13,100 @@
 ]
 
 候选文章：
-[1] [90.4] Title: Do Value Vectors in Deep Layers Need Context from the Residual Stream?
-    Source: ArXiv cs.CL | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02780v1 Announce Type: new 
-Abstract: The success of the transformer architecture as the backbone of modern LLMs is in large part due to its use of attention layers. An attention layer foll
+[1] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04282v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
 
-[2] [85.6] Title: Automated Report-Derived Oncology VQA Benchmark for Evaluating Vision-Language Models on 3D Medical Imaging
-    Source: ArXiv cs.CV | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02809v1 Announce Type: new 
-Abstract: Evaluating vision-language models (VLMs) on medical images requires benchmarks that are clinically grounded, scalable, and controlled for evaluation co
+[2] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04302v1 Announce Type: new 
+Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
 
-[3] [84.6] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
+[3] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04484v1 Announce Type: new 
+Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
+
+[4] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
+    Source: 雷锋网 AI | 2026-06-04 13:38:00
+    Summary: 在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高
+
+[5] [77.3] Title: Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04037v1 Announce Type: new 
+Abstract: Pre-deployment verification of enterprise artificial intelligence (AI) agents remains a critical gap between large language model (LLM) capability benc
+
+[6] [77.3] Title: StepPRM-RTL: Stepwise Process-Reward Guided LLM Fine-Tuning for Enhanced RTL Synthesis
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04246v1 Announce Type: new 
+Abstract: Automatic generation of RTL code for digital hardware designs remains challenging due to long-horizon reasoning, multi-step dependencies, and strict co
+
+[7] [77.3] Title: Position: Deployed Reinforcement Learning should be Continual
+    Source: ArXiv cs.LG | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04029v1 Announce Type: new 
+Abstract: Reinforcement Learning (RL) has received increasing attention and adoption in real-world use cases. Most of these systems follow a train-then-fix parad
+
+[8] [77.3] Title: SaliMory: Orchestrating Cognitive Memory for Conversational Agents
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04120v1 Announce Type: new 
+Abstract: Conversational agents that serve as lifelong companions must maintain persistent memory across all interactions. However, simply expanding context wind
+
+[9] [77.3] Title: Long Live Fine-Tuning: Task-Specific Transformers Outperform Zero-Shot LLMs for Misinformation Response Classification on Reddit
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04274v1 Announce Type: new 
+Abstract: As large language models (LLMs) become default tools for online information verification, an implicit assumption follows them: that scale and general c
+
+[10] [77.3] Title: DLLG: Dynamic Logit-Level Gating of LLM Experts
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04378v1 Announce Type: new 
+Abstract: Leveraging multiple specialized LLMs can combine complementary strengths, but existing approaches trade adaptability for stability: routing commits pre
+
+[11] [76.4] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
     Source: VentureBeat AI | 2026-06-01 16:10:05
     Summary: Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and 
 
-[4] [83.9] Title: Distilling LLM Feedback for Lean Theorem Proving
+[12] [75.7] Title: Distilling LLM Feedback for Lean Theorem Proving
     Source: ArXiv cs.AI | 2026-06-01 04:00:00
     Summary: arXiv:2605.30861v1 Announce Type: new 
 Abstract: Post-training for reasoning models typically combines supervised fine-tuning with reinforcement learning from verifiable rewards, most commonly with GR
 
-[5] [83.4] Title: Fixing FOLIO and MALLS: Verified Annotations and an LLM-assisted Framework to Focus Human Relabeling
-    Source: ArXiv cs.CL | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02837v1 Announce Type: new 
-Abstract: Accurate translation from Natural Language to First-Order Logic (NL-to-FOL) underpins neurosymbolic AI systems and Natural Language Inference (NLI), ma
+[13] [75.3] Title: Can Generalist Agents Automate Data Curation?
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04261v1 Announce Type: new 
+Abstract: Curating training data is among the most consequential yet labor-intensive parts of modern AI development: practitioners iteratively propose, implement
 
-[6] [81.9] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+[14] [75.3] Title: The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04455v1 Announce Type: new 
+Abstract: Current AI benchmarks evaluate agents on task execution within human-designed workflows. These evaluations fundamentally fail to measure a critical nex
+
+[15] [74.6] Title: A Cookbook of 3D Vision: Data, Learning Paradigms, and Application
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04291v1 Announce Type: new 
+Abstract: 3D vision has rapidly evolved, driven by increasingly diverse data representations, learning paradigms, and modeling strategies. Yet the field remains 
+
+[16] [74.3] Title: RUBAS: Rubric-Based Reinforcement Learning for Agent Safety
+    Source: ArXiv cs.LG | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04051v1 Announce Type: new 
+Abstract: The evolution of LLMs into tool-enabled agents creates a new class of safety challenges associated with real-world execution rather than simple text ge
+
+[17] [74.3] Title: Supportive Token Revealing for Fast Diffusion Language Model Decoding
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04236v1 Announce Type: new 
+Abstract: Discrete diffusion language models can generate text efficiently by updating multiple masked positions in parallel, but this parallelism introduces a q
+
+[18] [73.7] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
     Source: ArXiv cs.AI | 2026-06-01 04:00:00
     Summary: arXiv:2605.30576v1 Announce Type: new 
 Abstract: Exploration in reinforcement learning for autonomous driving is inherently unsafe: agents must experience novel behaviors to learn, yet exploration can
 
-[7] [81.8] Title: Diffusion Image Generation with Explicit Modeling of Data Manifold Geometry
-    Source: ArXiv cs.CV | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00094v1 Announce Type: new 
-Abstract: Image generative models aim to sample data points from the underlying data manifold, a task that requires learning and decoding a dense, low-dimensiona
+[19] [73.6] Title: GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04184v1 Announce Type: new 
+Abstract: True general intelligence requires not only a model of the physical world but also a social world model: the capacity to infer how individual mental st
 
-[8] [81.8] Title: CardioLens: Revealing the Clinical Reality Gap of MLLMs via Multi-Sequence Cardiac MRI Evaluations
-    Source: ArXiv cs.CV | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00123v1 Announce Type: new 
-Abstract: Multimodal Large Language Models (MLLMs) have shown strong performance on public medical benchmarks, yet existing evaluations often remain weak proxies
-
-[9] [81.5] Title: SENSE: Semantic Embedding Navigation with Soft-gated Evaluation for Retrieval-based Speculative Decoding
-    Source: ArXiv cs.CL | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00021v1 Announce Type: new 
-Abstract: Speculative Decoding (SD) accelerates Large Language Model (LLM) inference by employing a lightweight draft model to propose candidate tokens, which ar
-
-[10] [81.5] Title: DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models
-    Source: ArXiv cs.CL | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00091v1 Announce Type: new 
-Abstract: Joint Embedding Predictive Architectures (JEPAs) have reshaped self-supervised representation learning in vision. The recent LLM-JEPA ported JEPA to au
-
-[11] [80.6] Title: Diagnosis of Human Object Interaction Detectors for Real World Educational Applications
-    Source: ArXiv cs.CV | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02789v1 Announce Type: new 
-Abstract: Human-object interaction (HOI) recognition is critical for automatically analyzing student behavior in complex educational environments. Although state
-
-[12] [79.6] Title: GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving
-    Source: ArXiv cs.CV | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02774v1 Announce Type: new 
-Abstract: Vision-language models (VLMs) for autonomous driving have shown promising performance, but their ability to handle region-specific traffic rules remain
-
-[13] [79.5] Title: Emergence of Exploration in Policy Gradient Reinforcement Learning via Retrying
-    Source: ArXiv cs.LG | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00151v1 Announce Type: new 
-Abstract: In reinforcement learning (RL), agents benefit from exploration only because they repeatedly encounter similar states: trying different actions can imp
-
-[14] [79.5] Title: CSRP: Chain-of-Thought Reasoning for Chinese Text Correction via Reinforcement Learning with Efficiency-Aware Rewards
-    Source: ArXiv cs.CL | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00020v1 Announce Type: new 
-Abstract: Large Language Model (LLM) based Chinese Grammatical Error Correction (CGEC) systems face two critical challenges: general-purpose models lack speciali
-
-[15] [79.4] Title: ToolGate: Token-Efficient Pre-Call Control for Tool-Augmented Vision-Language Agents
-    Source: ArXiv cs.AI | 2026-06-03 04:00:00
-    Summary: arXiv:2606.03054v1 Announce Type: new 
-Abstract: Tool-augmented vision-language agents can acquire external perceptual evidence through OCR, detection, segmentation, and other tools, but executing eve
-
-[16] [79.4] Title: Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs
-    Source: ArXiv cs.LG | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02628v1 Announce Type: new 
-Abstract: We investigate whether open-source LLMs encode a linearly separable truthfulness signal in their hidden states, and at which network depth this signal 
-
-[17] [78.5] Title: BitsMoE: Efficient Spectral Energy-Guided Bit Allocation for MoE LLM Quantization
-    Source: ArXiv cs.LG | 2026-06-02 04:00:00
-    Summary: arXiv:2606.00079v1 Announce Type: new 
-Abstract: Mixture-of-Experts (MoE) large language models reduce per-token computation through sparse expert activation, but their deployment remains memory-inten
-
-[18] [78.4] Title: Geometry-Aware Tabular Diffusion
-    Source: ArXiv cs.LG | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02607v1 Announce Type: new 
-Abstract: Tabular synthesis is critical for privacy-preserving sharing and augmentation, yet diffusion models rely on implicit mechanisms to capture inter-column
-
-[19] [78.4] Title: EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction
-    Source: ArXiv cs.CL | 2026-06-03 04:00:00
-    Summary: arXiv:2606.02971v1 Announce Type: new 
-Abstract: Extracting reporting obligations from EU legislation is critical for assessing and reducing regulatory reporting burden. However, distinguishing report
-
-[20] [78.2] Title: SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
-    Source: ArXiv stat.ML | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30711v1 Announce Type: cross 
-Abstract: Agentic LLMs must continuously decide whether newly extracted facts should be added, merged with existing memories, or ignored, yet prior work has fo
+[20] [73.6] Title: UniCanvas: A Diffusion-base Unified Model for Text-in-Image Joint Generation
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04264v1 Announce Type: new 
+Abstract: Recent years have seen remarkable progress in unified vision-language models handling both multimodal understanding and generation within a single arch

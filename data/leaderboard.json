@@ -1,45 +1,6 @@
 {
-  "generated_at": "2026-06-04T00:13:53.234860+00:00",
+  "generated_at": "2026-06-05T00:52:42.450703+00:00",
   "models": [
-    {
-      "name": "GPT-5.5",
-      "provider": "OpenAI",
-      "parameters": "未知",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": [
-        {
-          "benchmark": "被MiniMax-M3超越",
-          "score": "见MiniMax-M3"
-        }
-      ]
-    },
-    {
-      "name": "Gemini 3.1 Pro",
-      "provider": "Google",
-      "parameters": "未知",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": [
-        {
-          "benchmark": "被MiniMax-M3超越",
-          "score": "见MiniMax-M3"
-        }
-      ]
-    },
-    {
-      "name": "Llama-3.1-8B",
-      "provider": "Meta",
-      "parameters": "8B",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": [
-        {
-          "benchmark": "4-bit NF4量化幻觉检测",
-          "score": "线性可解码"
-        }
-      ]
-    },
     {
       "name": "MiniMax-M3",
       "provider": "MiniMax",
@@ -48,52 +9,10 @@
       "release_date": null,
       "benchmarks": [
         {
-          "benchmark": "Key Benchmarks (vs GPT-5.5)",
-          "score": "超越"
-        },
-        {
-          "benchmark": "Key Benchmarks (vs Gemini 3.1 Pro)",
-          "score": "超越"
-        },
-        {
-          "benchmark": "综合编码推理",
-          "score": "超越GPT-5.5和Gemini 3.1 Pro"
+          "benchmark": "MMLU",
+          "score": "92.5%"
         }
       ]
-    },
-    {
-      "name": "Mistral-7B",
-      "provider": "Mistral",
-      "parameters": "7B",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": [
-        {
-          "benchmark": "4-bit NF4量化幻觉检测",
-          "score": "线性可解码"
-        }
-      ]
-    },
-    {
-      "name": "Qwen2.5-7B",
-      "provider": "Alibaba",
-      "parameters": "7B",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": [
-        {
-          "benchmark": "4-bit NF4量化幻觉检测",
-          "score": "线性可解码"
-        }
-      ]
-    },
-    {
-      "name": "Qwen3.7-Plus",
-      "provider": "Alibaba",
-      "parameters": "未知",
-      "context_window": "未知",
-      "release_date": null,
-      "benchmarks": []
     }
   ]
 }

@@ -1,62 +1,62 @@
 [
   {
-    "id": 1459,
-    "paper_method": "研究 Transformer 深层 value 向量对残差流上下文的依赖程度，发现深层 value 计算可减弱对上下文的依赖",
+    "id": 116,
+    "paper_method": "提出格式感知的视觉检测基准，评估多模态大模型在结构化定位任务上的表现。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "深层 value 向量可解耦优化，为简化 Transformer 推理提供方向"
+    "paper_takeaway": "多模态大模型在结构化视觉任务上仍需专门评估。"
   },
   {
-    "id": 1484,
-    "paper_method": "自动化 agent pipeline 从临床报告生成肿瘤学 VQA benchmark，评估 VLM 在 3D 医学影像上的能力",
-    "paper_benchmark": "未报告（基准本身为贡献）",
-    "paper_takeaway": "自动化生成医学 benchmark 可缓解评估数据稀缺且易泄露的问题"
-  },
-  {
-    "id": 1461,
-    "paper_method": "系统性审计 NL-to-FOL 数据集 FOLIO 和 MALLS 的标注质量，用 LLM 辅助框架聚焦人工重标注",
+    "id": 95,
+    "paper_method": "提出延迟位置编码的KV缓存方法，优化长上下文RAG推理效率。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "逻辑推理 benchmark 标注质量审计是提高神经符号 AI 可靠性的前提"
+    "paper_takeaway": "长上下文推理可通过延迟编码减少计算开销。"
   },
   {
-    "id": 1482,
-    "paper_method": "诊断 SOTA HOI 检测器在真实教育场景下性能退化的原因，分析领域物体、遮挡等因素",
+    "id": 58,
+    "paper_method": "提出解耦多节点架构的分布式强化学习训练框架，分离智能体交互与模型优化。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "教育自动化需解决 HOI 检测器从 benchmark 到真实场景的域迁移问题"
+    "paper_takeaway": "分布式解耦架构可提升LLM智能体训练灵活性。"
   },
   {
-    "id": 1481,
-    "paper_method": "构建 GeoDrive-Bench 基准，系统评估 VLM 在不同地区交通规则下的多模态推理能力",
+    "id": 41,
+    "paper_method": "提出本体驱动的仿真与信任认证框架，用于企业AI智能体部署前验证。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "自动驾驶 VLM 全球化部署需考虑区域交通规则差异"
+    "paper_takeaway": "部署前仿真验证可弥补LLM智能体生产环境安全缺口。"
   },
   {
-    "id": 1434,
-    "paper_method": "提出 ToolGate：在 VLM agent 调用感知工具前判断必要性，跳过不必要调用以节省 token",
+    "id": 47,
+    "paper_method": "结合过程奖励建模与检索增强微调，优化RTL代码生成的逐步推理。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "工具调用前预筛选是降低多模态 agent 运行成本的有效手段"
+    "paper_takeaway": "过程奖励可提升硬件代码生成的长链推理正确性。"
   },
   {
-    "id": 1447,
-    "paper_method": "发现 4-bit 量化 LLM 中间层隐藏状态中存在线性可分离的真实性信号，可提前检测幻觉",
-    "paper_benchmark": "三款 7B-8B 模型（Llama-3.1-8B, Mistral-7B, Qwen2.5-7B），4-bit NF4 量化",
-    "paper_takeaway": "LLM 幻觉可在生成前通过简单线性探针检测，降低部署风险"
-  },
-  {
-    "id": 1444,
-    "paper_method": "引入 pairwise 角度和长度作为表格列间几何关系输入，增强扩散模型去噪器对列依赖的建模",
+    "id": 63,
+    "paper_method": "主张部署的强化学习系统应具备持续学习能力，而非训练后固定。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "几何先验可让表格扩散模型更好捕捉列间关系"
+    "paper_takeaway": "实际部署的RL系统需持续适应环境变化。"
   },
   {
-    "id": 1469,
-    "paper_method": "构建 EURO-5K 数据集，系统性比较领域预训练在欧盟报告义务提取任务中的实际收益",
+    "id": 84,
+    "paper_method": "设计认知记忆编排框架，通过结构化记忆管理提升对话智能体长期交互能力。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "法律 NLP 中领域预训练的价值因任务类型而异，不是万能药"
+    "paper_takeaway": "结构化记忆比简单扩展上下文更有效。"
   },
   {
-    "id": 615,
-    "paper_method": "改进 Belief-Attention：对 softmax 加权 V 做正交投影取垂直分量作为残差信号",
+    "id": 93,
+    "paper_method": "通过任务特定微调Transformer，在Reddit错误信息分类上超越零样本LLM。",
     "paper_benchmark": "未报告",
-    "paper_takeaway": "正交投影残差可替代标准注意力残差连接提升视觉 Transformer 性能"
+    "paper_takeaway": "微调小模型在特定任务上可超越通用大模型。"
+  },
+  {
+    "id": 100,
+    "paper_method": "提出动态logit级门控集成框架，灵活组合多个专业LLM的输出。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "logit级动态集成可避免路由或合并的缺陷。"
+  },
+  {
+    "id": 48,
+    "paper_method": "构建智能体中心基准Curation-Bench，评估通用编码智能体自动化数据整理能力。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "通用智能体有望自动化数据整理循环。"
   }
 ]

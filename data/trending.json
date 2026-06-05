@@ -1,13 +1,13 @@
 {
-  "snapshot_at": "2026-06-04T00:04:05.792516+00:00",
+  "snapshot_at": "2026-06-05T00:42:22.756198+00:00",
   "count": 2,
   "repos": [
     {
       "repo_full": "NousResearch/hermes-agent",
       "description": "",
       "language": "Python",
-      "stars_today": 1735,
-      "total_stars": 179074,
+      "stars_today": 1913,
+      "total_stars": 180974,
       "url": "https://github.com/NousResearch/hermes-agent",
       "paper_linked": false,
       "paper_id": null
@@ -16,17 +16,15 @@
       "repo_full": "Open-LLM-VTuber/Open-LLM-VTuber",
       "description": "",
       "language": "Python",
-      "stars_today": 693,
-      "total_stars": 8932,
+      "stars_today": 581,
+      "total_stars": 9585,
       "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
-    "2026-06-02",
-    "2026-06-02",
-    "2026-06-03",
-    "2026-06-04"
+    "2026-06-05",
+    "2026-06-05"
   ]
 }
