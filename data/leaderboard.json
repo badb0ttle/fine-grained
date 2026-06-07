@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T00:07:22.311268+00:00",
+  "generated_at": "2026-06-07T00:10:36.277444+00:00",
   "models": [
     {
       "name": "MiniMax-M3",
@@ -8,6 +8,10 @@
       "context_window": "1M tokens",
       "release_date": null,
       "benchmarks": [
+        {
+          "benchmark": "关键基准测试",
+          "score": "优于GPT-5.5和Gemini 3.1 Pro"
+        },
         {
           "benchmark": "关键基准测试",
           "score": "超越GPT-5.5和Gemini 3.1 Pro"
