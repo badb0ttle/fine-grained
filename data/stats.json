@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-06-07T08:10:36.239370",
+  "generated_at": "2026-06-08T08:11:04.155858",
   "source_health": [
     {
       "name": "Google AI",
       "category": "AI Lab",
       "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "article_count_last": 20,
-      "status": "degraded"
+      "status": "down"
     },
     {
       "name": "HuggingFace Blog",
       "category": "Community",
       "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "article_count_last": 20,
-      "status": "degraded"
+      "status": "down"
     },
     {
       "name": "VentureBeat AI",
       "category": "Blog",
       "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "article_count_last": 7,
-      "status": "degraded"
+      "status": "down"
     },
     {
       "name": "ArXiv cs.CL",
       "category": "Paper",
       "last_success": "2026-06-05T00:38:00.087669+00:00",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "article_count_last": 20,
       "status": "degraded"
     },
@@ -37,7 +37,7 @@
       "name": "ArXiv cs.CV",
       "category": "Paper",
       "last_success": "2026-06-05T00:38:00.087669+00:00",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "article_count_last": 20,
       "status": "degraded"
     },
@@ -45,7 +45,7 @@
       "name": "ArXiv cs.LG",
       "category": "Paper",
       "last_success": "2026-06-05T00:38:00.087669+00:00",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "article_count_last": 20,
       "status": "degraded"
     },
@@ -53,30 +53,30 @@
       "name": "ArXiv stat.ML",
       "category": "Paper",
       "last_success": "2026-06-05T00:38:00.087669+00:00",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
+      "article_count_last": 20,
+      "status": "degraded"
+    },
+    {
+      "name": "ArXiv cs.AI",
+      "category": "Paper",
+      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "consecutive_failures": 1,
       "article_count_last": 20,
       "status": "degraded"
     },
     {
       "name": "Apple ML Research",
       "category": "AI Lab",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
     },
     {
-      "name": "ArXiv cs.AI",
-      "category": "Paper",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
-      "consecutive_failures": 0,
-      "article_count_last": 20,
-      "status": "healthy"
-    },
-    {
       "name": "Google DeepMind",
       "category": "AI Lab",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -84,7 +84,7 @@
     {
       "name": "NVIDIA Blog",
       "category": "AI Lab",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -92,7 +92,7 @@
     {
       "name": "OpenAI Blog",
       "category": "AI Lab",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -100,7 +100,7 @@
     {
       "name": "PyTorch Blog",
       "category": "Community",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -108,7 +108,7 @@
     {
       "name": "TechCrunch AI",
       "category": "Blog",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -116,7 +116,7 @@
     {
       "name": "量子位",
       "category": "中文媒体",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -124,7 +124,7 @@
     {
       "name": "雷锋网 AI",
       "category": "中文媒体",
-      "last_success": "2026-06-07T00:04:08.590639+00:00",
+      "last_success": "2026-06-08T00:03:41.758757+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -133,15 +133,15 @@
   "score_distribution": {
     "80-100": 3,
     "60-79": 148,
-    "40-59": 231,
-    "20-39": 115,
-    "0-19": 25
+    "40-59": 233,
+    "20-39": 118,
+    "0-19": 28
   },
   "category_distribution": {
     "Paper": 216,
     "AI Lab": 107,
-    "中文媒体": 97,
-    "Blog": 65,
+    "中文媒体": 102,
+    "Blog": 68,
     "Community": 37
   },
   "daily_trends": [
@@ -199,6 +199,14 @@
       "successful_sources": 9,
       "total_articles": 522,
       "new_articles": 140,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-08",
+      "total_sources": 16,
+      "successful_sources": 8,
+      "total_articles": 530,
+      "new_articles": 120,
       "curated_count": 10
     }
   ],
@@ -418,10 +426,10 @@
       }
     ],
     "period": {
-      "current_start": "2026-05-31",
-      "current_end": "2026-06-07",
-      "previous_start": "2026-05-24",
-      "previous_end": "2026-05-31",
+      "current_start": "2026-06-01",
+      "current_end": "2026-06-08",
+      "previous_start": "2026-05-25",
+      "previous_end": "2026-06-01",
       "window_days": 7
     }
   }
