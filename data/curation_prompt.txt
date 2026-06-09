@@ -13,100 +13,101 @@
 ]
 
 候选文章：
-[1] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+[1] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06976v1 Announce Type: new 
+Abstract: Large language model (LLM)-based agents often make suboptimal tool-use decisions, including unsupported tool invocation and hallucinated direct respons
+
+[2] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06547v1 Announce Type: new 
+Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a "stability lag" where early decisions rema
+
+[3] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06546v1 Announce Type: new 
+Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
+
+[4] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06560v1 Announce Type: new 
+Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
+
+[5] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
     Source: ArXiv cs.CV | 2026-06-04 04:00:00
     Summary: arXiv:2606.04282v1 Announce Type: new 
 Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
 
-[2] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+[6] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
     Source: ArXiv cs.CL | 2026-06-04 04:00:00
     Summary: arXiv:2606.04302v1 Announce Type: new 
 Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
 
-[3] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+[7] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06673v1 Announce Type: new 
+Abstract: Sparse rewards and heterogeneous task sequences remain persistent challenges in Reinforcement Learning (RL), often resulting in slow convergence, weak 
+
+[8] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
     Source: ArXiv cs.AI | 2026-06-04 04:00:00
     Summary: arXiv:2606.04484v1 Announce Type: new 
 Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
 
-[4] [79.4] Title: What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems
+[9] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
+    Source: ArXiv cs.CV | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06709v1 Announce Type: new 
+Abstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and d
+
+[10] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
+    Source: ArXiv stat.ML | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06742v1 Announce Type: cross 
+Abstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression,
+
+[11] [79.4] Title: What Do People Actually Want From AI? Mapping Preference Plurality
+    Source: ArXiv cs.CL | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06674v1 Announce Type: new 
+Abstract: Large Language Models (LLMs) are often fine-tuned through Reinforcement Learning from Human Feedback (RLHF) to align with people's preferences and valu
+
+[12] [79.4] Title: What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems
     Source: ArXiv cs.AI | 2026-06-06 04:00:00
     Summary: arXiv:2606.05304v1 Announce Type: new 
 Abstract: Multi-agent systems (MAS) built on large language models are typically organized around roles, pipelines, and turn schedules, while the content that ag
 
-[5] [78.4] Title: Minimizing the Hidden Cost of Scales: Graph-Guided Ultra-Low-Bit Quantization for Large Language Models
+[13] [78.4] Title: Minimizing the Hidden Cost of Scales: Graph-Guided Ultra-Low-Bit Quantization for Large Language Models
     Source: ArXiv cs.AI | 2026-06-06 04:00:00
     Summary: arXiv:2606.05429v1 Announce Type: new 
 Abstract: Post-training quantization (PTQ) is critical for the efficient deployment of large language models (LLMs). Recent ultra-low-bit PTQ methods rely on rig
 
-[6] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
+[14] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
     Source: 雷锋网 AI | 2026-06-04 13:38:00
     Summary: 在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高
 
-[7] [77.4] Title: How Far Did They Go? The Persuasive Tactics of Covert LLM Agents in a Discontinued Field Experiment
+[15] [77.6] Title: Bradley-Terry Rankings for Recommender Systems Across Dataset Taxonomies
+    Source: ArXiv stat.ML | 2026-06-08 04:00:00
+    Summary: arXiv:2606.07492v1 Announce Type: cross 
+Abstract: The ranking of recommendation algorithms is a challenging problem since model performance is sensitive to dataset characteristics such as sparsity, s
+
+[16] [77.4] Title: How Far Did They Go? The Persuasive Tactics of Covert LLM Agents in a Discontinued Field Experiment
     Source: ArXiv cs.AI | 2026-06-06 04:00:00
     Summary: arXiv:2606.05256v1 Announce Type: new 
 Abstract: This study analyzes a publicly released dataset from a discontinued field experiment on Reddit's r/ChangeMyView. The intervention, conducted by unknown
 
-[8] [77.4] Title: GITCO: Gated Inference-Time Context Optimization in TSFMs
+[17] [77.4] Title: GITCO: Gated Inference-Time Context Optimization in TSFMs
     Source: ArXiv cs.AI | 2026-06-06 04:00:00
     Summary: arXiv:2606.05332v1 Announce Type: new 
 Abstract: Patch-based Time Series Foundation Models (TSFMs) suffer from context poisoning: structurally anomalous patches capture disproportionate attention and 
 
-[9] [77.3] Title: Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification
+[18] [77.3] Title: Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification
     Source: ArXiv cs.AI | 2026-06-04 04:00:00
     Summary: arXiv:2606.04037v1 Announce Type: new 
 Abstract: Pre-deployment verification of enterprise artificial intelligence (AI) agents remains a critical gap between large language model (LLM) capability benc
 
-[10] [77.3] Title: StepPRM-RTL: Stepwise Process-Reward Guided LLM Fine-Tuning for Enhanced RTL Synthesis
+[19] [77.3] Title: StepPRM-RTL: Stepwise Process-Reward Guided LLM Fine-Tuning for Enhanced RTL Synthesis
     Source: ArXiv cs.AI | 2026-06-04 04:00:00
     Summary: arXiv:2606.04246v1 Announce Type: new 
 Abstract: Automatic generation of RTL code for digital hardware designs remains challenging due to long-horizon reasoning, multi-step dependencies, and strict co
 
-[11] [77.3] Title: Position: Deployed Reinforcement Learning should be Continual
+[20] [77.3] Title: Position: Deployed Reinforcement Learning should be Continual
     Source: ArXiv cs.LG | 2026-06-04 04:00:00
     Summary: arXiv:2606.04029v1 Announce Type: new 
 Abstract: Reinforcement Learning (RL) has received increasing attention and adoption in real-world use cases. Most of these systems follow a train-then-fix parad
-
-[12] [77.3] Title: SaliMory: Orchestrating Cognitive Memory for Conversational Agents
-    Source: ArXiv cs.CL | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04120v1 Announce Type: new 
-Abstract: Conversational agents that serve as lifelong companions must maintain persistent memory across all interactions. However, simply expanding context wind
-
-[13] [77.3] Title: Long Live Fine-Tuning: Task-Specific Transformers Outperform Zero-Shot LLMs for Misinformation Response Classification on Reddit
-    Source: ArXiv cs.CL | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04274v1 Announce Type: new 
-Abstract: As large language models (LLMs) become default tools for online information verification, an implicit assumption follows them: that scale and general c
-
-[14] [77.3] Title: DLLG: Dynamic Logit-Level Gating of LLM Experts
-    Source: ArXiv cs.CL | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04378v1 Announce Type: new 
-Abstract: Leveraging multiple specialized LLMs can combine complementary strengths, but existing approaches trade adaptability for stability: routing commits pre
-
-[15] [76.4] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
-    Source: VentureBeat AI | 2026-06-01 16:10:05
-    Summary: Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and 
-
-[16] [75.7] Title: Distilling LLM Feedback for Lean Theorem Proving
-    Source: ArXiv cs.AI | 2026-06-01 04:00:00
-    Summary: arXiv:2605.30861v1 Announce Type: new 
-Abstract: Post-training for reasoning models typically combines supervised fine-tuning with reinforcement learning from verifiable rewards, most commonly with GR
-
-[17] [75.4] Title: Agents' Last Exam
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05405v1 Announce Type: new 
-Abstract: Recent AI systems have achieved strong results on a wide range of benchmarks, yet these gains have not translated into economically meaningful deployme
-
-[18] [75.3] Title: Can Generalist Agents Automate Data Curation?
-    Source: ArXiv cs.AI | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04261v1 Announce Type: new 
-Abstract: Curating training data is among the most consequential yet labor-intensive parts of modern AI development: practitioners iteratively propose, implement
-
-[19] [75.3] Title: The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?
-    Source: ArXiv cs.AI | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04455v1 Announce Type: new 
-Abstract: Current AI benchmarks evaluate agents on task execution within human-designed workflows. These evaluations fundamentally fail to measure a critical nex
-
-[20] [74.6] Title: A Cookbook of 3D Vision: Data, Learning Paradigms, and Application
-    Source: ArXiv cs.CV | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04291v1 Announce Type: new 
-Abstract: 3D vision has rapidly evolved, driven by increasingly diverse data representations, learning paradigms, and modeling strategies. Yet the field remains 
