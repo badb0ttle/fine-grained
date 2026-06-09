@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T00:11:04.194803+00:00",
+  "generated_at": "2026-06-09T00:09:24.543074+00:00",
   "models": [
     {
       "name": "GPT-5.5",
@@ -51,6 +51,14 @@
           "score": "92.5%"
         }
       ]
+    },
+    {
+      "name": "Organic Polymer Agent",
+      "provider": "苏州材科源图（MatSource）",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
     }
   ]
 }
