@@ -32,7 +32,7 @@ def get_curation_prompt(candidates: list[dict], count: int = 10) -> str:
     articles_text = []
     for i, a in enumerate(candidates, 1):
         articles_text.append(
-            f"[{i}] [{a['score_total']:.1f}] "
+            f"[{i}] [DB ID: {a['id']}] [{a['score_total']:.1f}] "
             f"Title: {a['title']}\n"
             f"    Source: {a['source_name']} | {a['published']}\n"
             f"    Summary: {a['summary'][:200]}\n"
@@ -46,9 +46,9 @@ def get_curation_prompt(candidates: list[dict], count: int = 10) -> str:
 3. summary_cn: 中文摘要（60-100字，突出核心信息）
 4. why_it_matters: 一句话（30字内），说明对 AI 从业者的实际影响或意义
 
-返回严格 JSON 数组格式：
+返回严格 JSON 数组格式（id 使用上方的数据库 DB ID，不是方括号序号）：
 [
-  {{"id": <article_id>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."}},
+  {{"id": <数据库 DB ID>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."}},
   ...
 ]
 
