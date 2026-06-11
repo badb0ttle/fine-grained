@@ -1,7 +1,7 @@
 // AI 情报站 · Service Worker (Phase 5)
 // Cache-first for static assets, network-first for data files
 
-const CACHE_NAME = 'ai-intel-v2';
+const CACHE_NAME = 'ai-intel-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -12,8 +12,7 @@ const STATIC_ASSETS = [
   '/manifest.json',
   '/assets/style.css',
   '/assets/icon.svg',
-  '/assets/ai-assistant.css',
-  '/assets/ai-assistant.js',
+  // AI助手已暂时关闭: '/assets/ai-assistant.css', '/assets/ai-assistant.js',
 ];
 
 // Install — cache static assets
