@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useStats } from '../hooks/useData'
+import { ICON } from '../lib/icons'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart as RePieChart, Pie, Cell, Legend,
@@ -13,12 +15,12 @@ const COLORS: Record<string, string> = {
   'Discussion': '#e17055',
 }
 
-const DIRECTION_MAP: Record<string, string> = {
-  surging: '🚀飙升',
-  rising: '📈上升',
-  falling: '📉下降',
-  declining: '🔻下滑',
-  stable: '➡️平稳',
+const DIRECTION_MAP: Record<string, { label: string; icon: typeof ICON.trendUp }> = {
+  surging: { label: '飙升', icon: ICON.rocket },
+  rising: { label: '上升', icon: ICON.trendUp },
+  falling: { label: '下降', icon: ICON.trendDown },
+  declining: { label: '下滑', icon: ICON.chevronDown },
+  stable: { label: '平稳', icon: ICON.arrowRight },
 }
 
 export function DashboardPage() {
@@ -36,7 +38,7 @@ export function DashboardPage() {
   if (error || !data) {
     return (
       <div className="text-center py-20">
-        <p className="text-4xl mb-4">📭</p>
+        <FontAwesomeIcon icon={ICON.inbox} className="text-4xl text-text-muted mb-4" />
         <p className="text-text-muted">暂无仪表盘数据</p>
         {error && <p className="text-xs text-red mt-2">{error}</p>}
       </div>
@@ -60,7 +62,10 @@ export function DashboardPage() {
   return (
     <div className="space-y-6">
       <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary">📊 Pipeline 仪表盘</h1>
+        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+          <FontAwesomeIcon icon={ICON.dashboard} className="text-accent" />
+          Pipeline 仪表盘
+        </h1>
         {data.generated_at && (
           <p className="mt-2 text-sm text-text-muted">
             更新于 {data.generated_at.slice(0, 16)}
@@ -70,17 +75,36 @@ export function DashboardPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <KpiCard value={tr.length ? tr[tr.length - 1].total_articles : 0} label="📰 总文章数" />
-        <KpiCard value={`${healthy}/${sh.length}`} label="📡 信源健康" />
-        <KpiCard value={data.score_distribution?.['80-100'] || 0} label="⭐ 高分 (80+)" />
-        <KpiCard value={(cats['Paper'] || 0)} label="📄 论文数" />
+        <KpiCard
+          value={tr.length ? tr[tr.length - 1].total_articles : 0}
+          label="总文章数"
+          icon={ICON.news}
+        />
+        <KpiCard
+          value={`${healthy}/${sh.length}`}
+          label="信源健康"
+          icon={ICON.satelliteDish}
+        />
+        <KpiCard
+          value={data.score_distribution?.['80-100'] || 0}
+          label="高分 (80+)"
+          icon={ICON.star}
+        />
+        <KpiCard
+          value={(cats['Paper'] || 0)}
+          label="论文数"
+          icon={ICON.paper}
+        />
       </div>
 
       {/* Charts row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {tr.length > 1 && (
           <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-            <h2 className="text-base font-semibold text-text-primary mb-4">📈 每日采集趋势</h2>
+            <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+              <FontAwesomeIcon icon={ICON.trendUp} className="text-accent" />
+              每日采集趋势
+            </h2>
             <ResponsiveContainer width="100%" height={260}>
               <LineChart data={trendData}>
                 <CartesianGrid stroke="rgba(255,255,255,0.04)" strokeDasharray="3 3" />
@@ -105,7 +129,10 @@ export function DashboardPage() {
 
         {Object.keys(cats).length > 0 && (
           <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-            <h2 className="text-base font-semibold text-text-primary mb-4">🏷️ 分类分布</h2>
+            <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+              <FontAwesomeIcon icon={ICON.tags} className="text-accent" />
+              分类分布
+            </h2>
             <ResponsiveContainer width="100%" height={260}>
               <RePieChart>
                 <Pie
@@ -142,7 +169,10 @@ export function DashboardPage() {
 
       {/* Source Health */}
       <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-        <h2 className="text-base font-semibold text-text-primary mb-4">📡 信源健康</h2>
+        <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.satelliteDish} className="text-accent" />
+          信源健康
+        </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -184,7 +214,10 @@ export function DashboardPage() {
 
       {/* Top Articles */}
       <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-        <h2 className="text-base font-semibold text-text-primary mb-4">🏆 最高分文章</h2>
+        <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.leaderboard} className="text-accent" />
+          最高分文章
+        </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -220,17 +253,22 @@ export function DashboardPage() {
       {/* Keyword Trends */}
       {data.keyword_trends?.keywords && data.keyword_trends.keywords.length > 0 && (
         <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-          <h2 className="text-base font-semibold text-text-primary mb-4">🔥 关键词趋势 (7 天)</h2>
+          <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+            <FontAwesomeIcon icon={ICON.fire} className="text-amber" />
+            关键词趋势 (7 天)
+          </h2>
           <div className="flex flex-wrap gap-2">
             {data.keyword_trends.keywords.slice(0, 18).map((t, i) => {
               const opacity = Math.min(1, 0.3 + Math.abs(t.change_pct) / 100)
+              const dir = DIRECTION_MAP[t.direction] || DIRECTION_MAP.stable
               return (
                 <span
                   key={i}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs bg-bg-secondary border border-border-muted"
                   style={{ opacity }}
                 >
-                  <span>{DIRECTION_MAP[t.direction] || t.direction}</span>
+                  <FontAwesomeIcon icon={dir.icon} className="text-text-muted" />
+                  <span className="text-text-muted">{dir.label}</span>
                   <strong className="text-text-primary">{t.keyword}</strong>
                   <span style={{ color: t.change_pct > 0 ? '#00b894' : '#e17055' }}>
                     {t.change_pct > 0 ? '+' : ''}{t.change_pct}%
@@ -245,11 +283,14 @@ export function DashboardPage() {
   )
 }
 
-function KpiCard({ value, label }: { value: string | number; label: string }) {
+function KpiCard({ value, label, icon }: { value: string | number; label: string; icon: typeof ICON.star }) {
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 transition-colors">
+      <div className="flex items-center gap-2 text-text-muted mb-1">
+        <FontAwesomeIcon icon={icon} className="text-xs" />
+        <span className="text-xs">{label}</span>
+      </div>
       <div className="text-2xl font-bold text-text-primary">{value}</div>
-      <div className="text-xs text-text-muted mt-1">{label}</div>
     </div>
   )
 }

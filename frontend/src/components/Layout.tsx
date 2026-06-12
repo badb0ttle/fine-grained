@@ -1,20 +1,23 @@
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cn } from '../lib/utils'
+import { ICON } from '../lib/icons'
 
 const NAV_ITEMS = [
-  { to: '/', label: '🏠 首页', end: true },
-  { to: '/dashboard', label: '📊 仪表盘' },
-  { to: '/leaderboard', label: '🏆 排行榜' },
-  { to: '/timeline', label: '📅 时间线' },
-  { to: '/clusters', label: '🗺️ 聚类' },
+  { to: '/', label: '首页', icon: ICON.home, end: true },
+  { to: '/dashboard', label: '仪表盘', icon: ICON.dashboard },
+  { to: '/leaderboard', label: '排行榜', icon: ICON.leaderboard },
+  { to: '/timeline', label: '时间线', icon: ICON.timeline },
+  { to: '/clusters', label: '聚类', icon: ICON.clusters },
 ]
 
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-md border-b border-border-default">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
-        <NavLink to="/" className="font-semibold text-lg tracking-tight text-text-primary hover:text-accent transition-colors">
-          🤖 AI 情报站
+        <NavLink to="/" className="font-semibold text-lg tracking-tight text-text-primary hover:text-accent transition-colors flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.robot} className="text-accent" />
+          AI 情报站
         </NavLink>
         <nav className="flex items-center gap-1 overflow-x-auto">
           {NAV_ITEMS.map(item => (
@@ -23,20 +26,22 @@ export function Header() {
               to={item.to}
               end={item.end}
               className={({ isActive }) => cn(
-                'px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors',
+                'px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-1.5',
                 isActive
                   ? 'bg-accent-muted text-accent'
                   : 'text-text-secondary hover:text-text-primary hover:bg-bg-hover'
               )}
             >
+              <FontAwesomeIcon icon={item.icon} className="text-xs" />
               {item.label}
             </NavLink>
           ))}
           <a
             href="/data/weekly/"
-            className="px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap text-text-secondary hover:text-text-primary hover:bg-bg-hover transition-colors"
+            className="px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap text-text-secondary hover:text-text-primary hover:bg-bg-hover transition-colors flex items-center gap-1.5"
           >
-            📰 周报
+            <FontAwesomeIcon icon={ICON.weekly} className="text-xs" />
+            周报
           </a>
           <a
             href="https://github.com/badb0ttle/fine-grained"

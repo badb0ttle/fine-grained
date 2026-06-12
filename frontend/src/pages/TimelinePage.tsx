@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useStats } from '../hooks/useData'
+import { ICON } from '../lib/icons'
 import {
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts'
@@ -19,7 +21,7 @@ export function TimelinePage() {
   if (!tr.length) {
     return (
       <div className="text-center py-20">
-        <p className="text-4xl mb-4">📅</p>
+        <FontAwesomeIcon icon={ICON.timeline} className="text-4xl text-text-muted mb-4" />
         <p className="text-text-muted">暂无时间线数据</p>
       </div>
     )
@@ -34,12 +36,18 @@ export function TimelinePage() {
   return (
     <div className="space-y-6">
       <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary">📅 时间线</h1>
+        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+          <FontAwesomeIcon icon={ICON.timeline} className="text-accent" />
+          时间线
+        </h1>
         <p className="mt-2 text-text-muted text-sm">每日采集数据总览</p>
       </div>
 
       <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-        <h2 className="text-base font-semibold text-text-primary mb-4">📊 每日柱状图</h2>
+        <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.chartBar} className="text-accent" />
+          每日柱状图
+        </h2>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={barData}>
             <CartesianGrid stroke="rgba(255,255,255,0.04)" strokeDasharray="3 3" />
@@ -67,11 +75,20 @@ export function TimelinePage() {
             className="bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 transition-all"
           >
             <div className="flex items-center justify-between">
-              <span className="font-medium text-text-primary">📅 {d.date}</span>
+              <span className="font-medium text-text-primary flex items-center gap-1.5">
+                <FontAwesomeIcon icon={ICON.timeline} className="text-text-muted" />
+                {d.date}
+              </span>
               <div className="flex items-center gap-4 text-sm">
-                <span className="text-text-muted">📰 总文章 <strong className="text-text-primary">{d.total_articles}</strong></span>
+                <span className="text-text-muted">
+                  <FontAwesomeIcon icon={ICON.news} className="mr-1" />
+                  总文章 <strong className="text-text-primary">{d.total_articles}</strong>
+                </span>
                 <span className="text-green">+{d.new_articles} 新增</span>
-                <span className="text-amber">⭐ {d.curated_count} 精选</span>
+                <span className="text-amber">
+                  <FontAwesomeIcon icon={ICON.star} className="mr-1" />
+                  {d.curated_count} 精选
+                </span>
               </div>
             </div>
           </div>

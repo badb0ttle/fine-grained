@@ -1,16 +1,18 @@
 import { useState, useEffect, useMemo } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLatest, useTrending } from '../hooks/useData'
 import type { Article, CategoryKey } from '../types'
+import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 
-const CATEGORY_META: Record<CategoryKey, { icon: string; name: string }> = {
-  'AI Lab': { icon: '🔬', name: 'AI 实验室' },
-  'Paper': { icon: '📄', name: '学术论文' },
-  '中文媒体': { icon: '🇨🇳', name: '中文媒体' },
-  'Blog': { icon: '📝', name: '技术博客' },
-  'Community': { icon: '🌐', name: '社区动态' },
-  'Discussion': { icon: '💬', name: '技术讨论' },
+const CATEGORY_META: Record<CategoryKey, { name: string }> = {
+  'AI Lab': { name: 'AI 实验室' },
+  'Paper': { name: '学术论文' },
+  '中文媒体': { name: '中文媒体' },
+  'Blog': { name: '技术博客' },
+  'Community': { name: '社区动态' },
+  'Discussion': { name: '技术讨论' },
 }
-const DEFAULT_META = { icon: '📌', name: '其他' }
+const DEFAULT_META = { name: '其他' }
 
 const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
 
@@ -64,14 +66,17 @@ function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSea
 
   return (
     <div className="relative" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
-      <input
-        type="text"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        onFocus={() => setFocused(true)}
-        placeholder="🔍 搜索文章..."
-        className="w-48 lg:w-56 bg-bg-secondary border border-border-default rounded-lg px-3 py-1.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
-      />
+      <div className="relative">
+        <FontAwesomeIcon icon={ICON.search} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
+        <input
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onFocus={() => setFocused(true)}
+          placeholder="搜索文章..."
+          className="w-60 lg:w-72 bg-bg-secondary border border-border-default rounded-lg pl-9 pr-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
+        />
+      </div>
       {focused && query.length >= 2 && (
         <div className="absolute top-full mt-2 left-0 w-80 bg-bg-card border border-border-default rounded-xl shadow-2xl overflow-hidden z-50">
           {results.length === 0 ? (
@@ -94,7 +99,9 @@ function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSea
                   <span>·</span>
                   <span>{(a.published || '').slice(0, 10)}</span>
                   {a.category && <span className="bg-bg-secondary px-1.5 py-0.5 rounded text-[10px]">{a.category}</span>}
-                  {a.is_paper && <span>📄</span>}
+                  {a.is_paper && (
+                    <span className="text-accent/70"><FontAwesomeIcon icon={ICON.fileLines} /></span>
+                  )}
                 </div>
               </a>
             ))
@@ -131,10 +138,10 @@ function FavButton({ link, title }: { link: string; title: string }) {
   return (
     <button
       onClick={toggle}
-      className="text-base hover:scale-110 transition-transform"
+      className={`text-base hover:scale-110 transition-transform ${fav ? 'text-amber' : 'text-text-muted'}`}
       title="收藏"
     >
-      {fav ? '★' : '☆'}
+      <FontAwesomeIcon icon={ICON.star} />
     </button>
   )
 }
@@ -152,6 +159,8 @@ function ArticleCard({ article }: { article: Article }) {
     } catch {}
   }
 
+  const catIcon = CATEGORY_ICONS[article.category] || DEFAULT_CATEGORY_ICON
+
   return (
     <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200">
       <div className="flex items-start justify-between gap-2">
@@ -162,11 +171,17 @@ function ArticleCard({ article }: { article: Article }) {
           onClick={handleClick}
           className="text-[15px] font-medium text-text-primary hover:text-accent transition-colors leading-snug flex-1"
         >
+          {article.is_paper && (
+            <FontAwesomeIcon icon={ICON.fileLines} className="mr-1.5 text-accent/60 text-xs" />
+          )}
           {title}
         </a>
         <FavButton link={article.link} title={title || ''} />
       </div>
       <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
+        <span>{article.category && (
+          <FontAwesomeIcon icon={catIcon} className="mr-1 text-text-muted/60" />
+        )}</span>
         <span className="text-text-secondary">{article.source}</span>
         <span>·</span>
         <span>{article.published}</span>
@@ -177,8 +192,9 @@ function ArticleCard({ article }: { article: Article }) {
         </p>
       )}
       {article.why_it_matters && (
-        <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5">
-          💡 {article.why_it_matters}
+        <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5 flex items-start gap-1.5">
+          <FontAwesomeIcon icon={ICON.lightbulb} className="mt-0.5 flex-shrink-0" />
+          {article.why_it_matters}
         </div>
       )}
     </div>
@@ -202,7 +218,7 @@ export function HomePage() {
   if (error || !data || !data.articles.length) {
     return (
       <div className="text-center py-20">
-        <p className="text-4xl mb-4">📭</p>
+        <FontAwesomeIcon icon={ICON.inbox} className="text-4xl text-text-muted mb-4" />
         <p className="text-text-muted">暂无数据，等待首次扫描完成...</p>
         {error && <p className="text-xs text-red mt-2">{error}</p>}
       </div>
@@ -223,9 +239,18 @@ export function HomePage() {
         <h1 className="text-3xl font-bold text-text-primary">AI 情报站</h1>
         <p className="mt-2 text-text-secondary">每日全球 AI 技术动态 · 自动采集精选</p>
         <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
-          <span>📅 {data.scanned_at?.slice(0, 16)}</span>
-          <span>📡 {data.successful_sources}/{data.total_sources} 源</span>
-          <span>📰 {data.articles.length} 篇精选</span>
+          <span className="flex items-center gap-1">
+            <FontAwesomeIcon icon={ICON.timeline} />
+            {data.scanned_at?.slice(0, 16)}
+          </span>
+          <span className="flex items-center gap-1">
+            <FontAwesomeIcon icon={ICON.satelliteDish} />
+            {data.successful_sources}/{data.total_sources} 源
+          </span>
+          <span className="flex items-center gap-1">
+            <FontAwesomeIcon icon={ICON.news} />
+            {data.articles.length} 篇精选
+          </span>
         </div>
         <div className="mt-4 flex justify-center">
           <SearchBar {...search} />
@@ -237,11 +262,12 @@ export function HomePage() {
         .filter(cat => byCat[cat])
         .map(cat => {
           const meta = CATEGORY_META[cat as CategoryKey] || DEFAULT_META
+          const catIcon = CATEGORY_ICONS[cat as CategoryKey] || DEFAULT_CATEGORY_ICON
           const items = byCat[cat]
           return (
             <section key={cat} className="animate-in">
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-lg">{meta.icon}</span>
+                <FontAwesomeIcon icon={catIcon} className="text-accent" />
                 <h2 className="text-lg font-semibold text-text-primary">{meta.name}</h2>
                 <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
               </div>
@@ -258,10 +284,13 @@ export function HomePage() {
       {trending && trending.repos && trending.repos.length > 0 && (
         <section>
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-lg">🔥</span>
+            <FontAwesomeIcon icon={ICON.fire} className="text-amber" />
             <h2 className="text-lg font-semibold text-text-primary">GitHub Trending · AI/ML</h2>
             {trending.snapshot_at && (
-              <span className="text-sm text-text-muted">📅 {trending.snapshot_at.slice(0, 10)}</span>
+              <span className="text-sm text-text-muted flex items-center gap-1">
+                <FontAwesomeIcon icon={ICON.timeline} />
+                {trending.snapshot_at.slice(0, 10)}
+              </span>
             )}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -282,7 +311,12 @@ export function HomePage() {
                   <span>⭐ {repo.stars_today} today</span>
                   <span>{repo.total_stars.toLocaleString()} total</span>
                   {repo.language && <span>{repo.language}</span>}
-                  {repo.paper_linked && <span className="text-blue">📄 论文</span>}
+                  {repo.paper_linked && (
+                    <span className="text-accent/70 flex items-center gap-0.5">
+                      <FontAwesomeIcon icon={ICON.fileLines} />
+                      论文
+                    </span>
+                  )}
                 </div>
               </a>
             ))}
@@ -310,7 +344,10 @@ function ContinueReading() {
 
   return (
     <section>
-      <h2 className="text-lg font-semibold text-text-primary mb-3">📖 继续阅读</h2>
+      <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+        <FontAwesomeIcon icon={ICON.bookOpen} className="text-accent" />
+        继续阅读
+      </h2>
       <div className="space-y-1">
         {items.map((item, i) => (
           <a

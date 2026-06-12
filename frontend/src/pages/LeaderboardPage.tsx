@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { Article } from '../types'
+import { ICON } from '../lib/icons'
 
 export function LeaderboardPage() {
   const [articles, setArticles] = useState<Article[]>([])
@@ -27,7 +29,10 @@ export function LeaderboardPage() {
   return (
     <div className="space-y-4">
       <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary">🏆 排行榜</h1>
+        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+          <FontAwesomeIcon icon={ICON.leaderboard} className="text-accent" />
+          排行榜
+        </h1>
         <p className="mt-2 text-text-muted text-sm">按评分排序的文章</p>
       </div>
 

@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useClusters } from '../hooks/useData'
+import { ICON } from '../lib/icons'
 
 const CLUSTER_COLORS = [
   '#6C5CE7', '#00b894', '#74b9ff', '#f0a050', '#fd79a8',
@@ -19,7 +21,7 @@ export function ClustersPage() {
   if (!data || !data.clusters || !data.clusters.length) {
     return (
       <div className="text-center py-20">
-        <p className="text-4xl mb-4">🗺️</p>
+        <FontAwesomeIcon icon={ICON.clusters} className="text-4xl text-text-muted mb-4" />
         <p className="text-text-muted">暂无聚类数据</p>
       </div>
     )
@@ -28,7 +30,10 @@ export function ClustersPage() {
   return (
     <div className="space-y-6">
       <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary">🗺️ 聚类分析</h1>
+        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+          <FontAwesomeIcon icon={ICON.clusters} className="text-accent" />
+          聚类分析
+        </h1>
         <p className="mt-2 text-text-muted text-sm">文章主题聚类 · {data.clusters.length} 个聚类</p>
       </div>
 
