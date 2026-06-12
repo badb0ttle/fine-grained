@@ -36,13 +36,18 @@ export function Header() {
               {item.label}
             </NavLink>
           ))}
-          <a
-            href="/data/weekly/"
-            className="px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap text-text-secondary hover:text-text-primary hover:bg-bg-hover transition-colors flex items-center gap-1.5"
+          <NavLink
+            to="/weekly"
+            className={({ isActive }) => cn(
+              'px-3 py-1.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors flex items-center gap-1.5',
+              isActive
+                ? 'bg-accent-muted text-accent'
+                : 'text-text-secondary hover:text-text-primary hover:bg-bg-hover'
+            )}
           >
             <FontAwesomeIcon icon={ICON.weekly} className="text-xs" />
             周报
-          </a>
+          </NavLink>
           <a
             href="https://github.com/badb0ttle/fine-grained"
             target="_blank"

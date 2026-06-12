@@ -6,6 +6,7 @@ import { DashboardPage } from './pages/DashboardPage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
 import { TimelinePage } from './pages/TimelinePage'
 import { ClustersPage } from './pages/ClustersPage'
+import { WeeklyPage } from './pages/WeeklyPage'
 
 function SpaRedirect() {
   const navigate = useNavigate()
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/clusters" element={<ClustersPage />} />
+          <Route path="/weekly" element={<WeeklyPage />} />
         </Routes>
       </main>
       <Footer />
