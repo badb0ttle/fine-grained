@@ -308,7 +308,7 @@ export function HomePage() {
                 </div>
                 <p className="mt-1.5 text-xs text-text-secondary line-clamp-2">{repo.description?.slice(0, 120)}</p>
                 <div className="mt-2 flex items-center gap-3 text-xs text-text-muted">
-                  <span>⭐ {repo.stars_today} today</span>
+                  <span className="flex items-center gap-1"><FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" /> {repo.stars_today} today</span>
                   <span>{repo.total_stars.toLocaleString()} total</span>
                   {repo.language && <span>{repo.language}</span>}
                   {repo.paper_linked && (
