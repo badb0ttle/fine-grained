@@ -1,0 +1,329 @@
+import { useState, useEffect, useMemo } from 'react'
+import { useLatest, useTrending } from '../hooks/useData'
+import type { Article, CategoryKey } from '../types'
+
+const CATEGORY_META: Record<CategoryKey, { icon: string; name: string }> = {
+  'AI Lab': { icon: '🔬', name: 'AI 实验室' },
+  'Paper': { icon: '📄', name: '学术论文' },
+  '中文媒体': { icon: '🇨🇳', name: '中文媒体' },
+  'Blog': { icon: '📝', name: '技术博客' },
+  'Community': { icon: '🌐', name: '社区动态' },
+  'Discussion': { icon: '💬', name: '技术讨论' },
+}
+const DEFAULT_META = { icon: '📌', name: '其他' }
+
+const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
+
+function useSearch() {
+  const [query, setQuery] = useState('')
+  const [index, setIndex] = useState<Article[]>([])
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}data/search_index.json`)
+      .then(r => r.json())
+      .then(setIndex)
+      .catch(() => {})
+  }, [])
+
+  const results = useMemo(() => {
+    if (query.length < 2 || !index.length) return []
+    const q = query.toLowerCase()
+    return index
+      .map(a => {
+        let score = 0
+        const t = (a.title_cn || a.title || '').toLowerCase()
+        const s = (a.summary_cn || a.summary || '').toLowerCase()
+        const src = (a.source || '').toLowerCase()
+        if (t.includes(q)) score += 10
+        if (t.startsWith(q)) score += 5
+        if (s.includes(q)) score += 3
+        if (src.includes(q)) score += 2
+        return { ...a, _score: score }
+      })
+      .filter(a => a._score > 0)
+      .sort((a, b) => b._score - a._score)
+      .slice(0, 12)
+  }, [query, index])
+
+  return { query, setQuery, results, clear: () => setQuery('') }
+}
+
+function highlightText(text: string, query: string) {
+  if (!query || query.length < 2) return text
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
+  return parts.map((part, i) =>
+    part.toLowerCase() === query.toLowerCase()
+      ? <mark key={i} className="bg-accent/30 text-accent rounded-sm px-0.5">{part}</mark>
+      : part
+  )
+}
+
+function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSearch>) {
+  const [focused, setFocused] = useState(false)
+
+  return (
+    <div className="relative" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
+      <input
+        type="text"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        onFocus={() => setFocused(true)}
+        placeholder="🔍 搜索文章..."
+        className="w-48 lg:w-56 bg-bg-secondary border border-border-default rounded-lg px-3 py-1.5 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
+      />
+      {focused && query.length >= 2 && (
+        <div className="absolute top-full mt-2 left-0 w-80 bg-bg-card border border-border-default rounded-xl shadow-2xl overflow-hidden z-50">
+          {results.length === 0 ? (
+            <div className="p-4 text-text-muted text-sm text-center">未找到相关文章</div>
+          ) : (
+            results.map((a, i) => (
+              <a
+                key={i}
+                href={a.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={clear}
+                className="block px-4 py-3 hover:bg-bg-hover transition-colors border-b border-border-muted last:border-0"
+              >
+                <div className="text-sm font-medium text-text-primary truncate">
+                  {highlightText(a.title_cn || a.title || '', query)}
+                </div>
+                <div className="text-xs text-text-muted mt-1 flex items-center gap-2">
+                  <span>{a.source}</span>
+                  <span>·</span>
+                  <span>{(a.published || '').slice(0, 10)}</span>
+                  {a.category && <span className="bg-bg-secondary px-1.5 py-0.5 rounded text-[10px]">{a.category}</span>}
+                  {a.is_paper && <span>📄</span>}
+                </div>
+              </a>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function FavButton({ link, title }: { link: string; title: string }) {
+  const [fav, setFav] = useState(() => {
+    try {
+      const f = JSON.parse(localStorage.getItem('ai_fav') || '[]')
+      return f.some((x: { link: string }) => x.link === link)
+    } catch { return false }
+  })
+
+  const toggle = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const f = JSON.parse(localStorage.getItem('ai_fav') || '[]')
+    const idx = f.findIndex((x: { link: string }) => x.link === link)
+    if (idx >= 0) {
+      f.splice(idx, 1)
+      setFav(false)
+    } else {
+      f.unshift({ link, title: (title || '').slice(0, 80), ts: Date.now() })
+      setFav(true)
+    }
+    localStorage.setItem('ai_fav', JSON.stringify(f.slice(0, 100)))
+  }
+
+  return (
+    <button
+      onClick={toggle}
+      className="text-base hover:scale-110 transition-transform"
+      title="收藏"
+    >
+      {fav ? '★' : '☆'}
+    </button>
+  )
+}
+
+function ArticleCard({ article }: { article: Article }) {
+  const title = article.title_cn || article.title
+  const summary = article.summary_cn || article.summary
+
+  const handleClick = () => {
+    try {
+      const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
+      const filtered = h.filter((x: { link: string }) => x.link !== article.link)
+      filtered.unshift({ link: article.link, title: (title || '').slice(0, 80), ts: Date.now() })
+      localStorage.setItem('ai_read', JSON.stringify(filtered.slice(0, 50)))
+    } catch {}
+  }
+
+  return (
+    <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200">
+      <div className="flex items-start justify-between gap-2">
+        <a
+          href={article.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleClick}
+          className="text-[15px] font-medium text-text-primary hover:text-accent transition-colors leading-snug flex-1"
+        >
+          {title}
+        </a>
+        <FavButton link={article.link} title={title || ''} />
+      </div>
+      <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
+        <span className="text-text-secondary">{article.source}</span>
+        <span>·</span>
+        <span>{article.published}</span>
+      </div>
+      {summary && (
+        <p className="mt-2 text-sm text-text-secondary leading-relaxed line-clamp-2">
+          {summary.slice(0, 280)}
+        </p>
+      )}
+      {article.why_it_matters && (
+        <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5">
+          💡 {article.why_it_matters}
+        </div>
+      )}
+    </div>
+  )
+}
+
+export function HomePage() {
+  const { data, loading, error } = useLatest()
+  const { data: trending } = useTrending()
+  const search = useSearch()
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20">
+        <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+        <p className="mt-4 text-text-muted">正在加载最新情报...</p>
+      </div>
+    )
+  }
+
+  if (error || !data || !data.articles.length) {
+    return (
+      <div className="text-center py-20">
+        <p className="text-4xl mb-4">📭</p>
+        <p className="text-text-muted">暂无数据，等待首次扫描完成...</p>
+        {error && <p className="text-xs text-red mt-2">{error}</p>}
+      </div>
+    )
+  }
+
+  const byCat: Record<string, Article[]> = {}
+  for (const a of data.articles) {
+    const cat = a.category || '其他'
+    if (!byCat[cat]) byCat[cat] = []
+    byCat[cat].push(a)
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Hero */}
+      <div className="text-center py-6">
+        <h1 className="text-3xl font-bold text-text-primary">AI 情报站</h1>
+        <p className="mt-2 text-text-secondary">每日全球 AI 技术动态 · 自动采集精选</p>
+        <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
+          <span>📅 {data.scanned_at?.slice(0, 16)}</span>
+          <span>📡 {data.successful_sources}/{data.total_sources} 源</span>
+          <span>📰 {data.articles.length} 篇精选</span>
+        </div>
+        <div className="mt-4 flex justify-center">
+          <SearchBar {...search} />
+        </div>
+      </div>
+
+      {/* Articles by category */}
+      {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
+        .filter(cat => byCat[cat])
+        .map(cat => {
+          const meta = CATEGORY_META[cat as CategoryKey] || DEFAULT_META
+          const items = byCat[cat]
+          return (
+            <section key={cat} className="animate-in">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">{meta.icon}</span>
+                <h2 className="text-lg font-semibold text-text-primary">{meta.name}</h2>
+                <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
+              </div>
+              <div className="space-y-2">
+                {items.map((a, i) => (
+                  <ArticleCard key={i} article={a} />
+                ))}
+              </div>
+            </section>
+          )
+        })}
+
+      {/* Trending */}
+      {trending && trending.repos && trending.repos.length > 0 && (
+        <section>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-lg">🔥</span>
+            <h2 className="text-lg font-semibold text-text-primary">GitHub Trending · AI/ML</h2>
+            {trending.snapshot_at && (
+              <span className="text-sm text-text-muted">📅 {trending.snapshot_at.slice(0, 10)}</span>
+            )}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {trending.repos.slice(0, 12).map((repo, i) => (
+              <a
+                key={i}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200"
+              >
+                <div className="font-medium text-sm text-text-primary truncate">
+                  <span className="text-text-muted">{repo.repo_full.split('/')[0]}/</span>
+                  <strong>{repo.repo_full.split('/')[1]}</strong>
+                </div>
+                <p className="mt-1.5 text-xs text-text-secondary line-clamp-2">{repo.description?.slice(0, 120)}</p>
+                <div className="mt-2 flex items-center gap-3 text-xs text-text-muted">
+                  <span>⭐ {repo.stars_today} today</span>
+                  <span>{repo.total_stars.toLocaleString()} total</span>
+                  {repo.language && <span>{repo.language}</span>}
+                  {repo.paper_linked && <span className="text-blue">📄 论文</span>}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Continue reading */}
+      <ContinueReading />
+    </div>
+  )
+}
+
+function ContinueReading() {
+  const [items, setItems] = useState<{ link: string; title: string }[]>([])
+
+  useEffect(() => {
+    try {
+      const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
+      setItems(h.slice(0, 5))
+    } catch {}
+  }, [])
+
+  if (!items.length) return null
+
+  return (
+    <section>
+      <h2 className="text-lg font-semibold text-text-primary mb-3">📖 继续阅读</h2>
+      <div className="space-y-1">
+        {items.map((item, i) => (
+          <a
+            key={i}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-sm text-text-secondary hover:text-accent transition-colors py-1"
+          >
+            {item.title}
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 116,
+    "paper_method": "提出格式感知的视觉检测基准，评估多模态大模型在结构化定位任务上的表现。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "多模态大模型在结构化视觉任务上仍需专门评估。"
+  },
+  {
+    "id": 95,
+    "paper_method": "提出延迟位置编码的KV缓存方法，优化长上下文RAG推理效率。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "长上下文推理可通过延迟编码减少计算开销。"
+  },
+  {
+    "id": 58,
+    "paper_method": "提出解耦多节点架构的分布式强化学习训练框架，分离智能体交互与模型优化。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "分布式解耦架构可提升LLM智能体训练灵活性。"
+  },
+  {
+    "id": 41,
+    "paper_method": "提出本体驱动的仿真与信任认证框架，用于企业AI智能体部署前验证。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "部署前仿真验证可弥补LLM智能体生产环境安全缺口。"
+  },
+  {
+    "id": 47,
+    "paper_method": "结合过程奖励建模与检索增强微调，优化RTL代码生成的逐步推理。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "过程奖励可提升硬件代码生成的长链推理正确性。"
+  },
+  {
+    "id": 63,
+    "paper_method": "主张部署的强化学习系统应具备持续学习能力，而非训练后固定。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "实际部署的RL系统需持续适应环境变化。"
+  },
+  {
+    "id": 84,
+    "paper_method": "设计认知记忆编排框架，通过结构化记忆管理提升对话智能体长期交互能力。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "结构化记忆比简单扩展上下文更有效。"
+  },
+  {
+    "id": 93,
+    "paper_method": "通过任务特定微调Transformer，在Reddit错误信息分类上超越零样本LLM。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "微调小模型在特定任务上可超越通用大模型。"
+  },
+  {
+    "id": 100,
+    "paper_method": "提出动态logit级门控集成框架，灵活组合多个专业LLM的输出。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "logit级动态集成可避免路由或合并的缺陷。"
+  },
+  {
+    "id": 48,
+    "paper_method": "构建智能体中心基准Curation-Bench，评估通用编码智能体自动化数据整理能力。",
+    "paper_benchmark": "未报告",
+    "paper_takeaway": "通用智能体有望自动化数据整理循环。"
+  }
+]

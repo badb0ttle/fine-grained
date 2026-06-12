@@ -1,0 +1,113 @@
+你是一位资深 AI 行业分析师。请根据以下本周（2026-05-26 至今）的 AI 情报数据，撰写一份「本周 AI 大事记」。
+
+## 数据概览
+- 本周精选文章: 10 篇
+- 分类分布:
+- Paper: 99 篇
+- AI Lab: 33 篇
+- Blog: 27 篇
+- 中文媒体: 21 篇
+- Community: 10 篇
+
+## 本周重点文章
+1. [Blog] MiniMax-M3 发布：关键基准测试超越 GPT-5.5 和 Gemini 3.1 Pro，成本仅为其 5-10%
+   中国 AI 初创公司 MiniMax 发布 M3 大模型，在多项关键基准测试中超越了 OpenAI 的 GPT-5.5 和 Google 的 Gemini 3.1 Pro，而推理成本仅为它们的 5-10%，在性能价格比上形成碾压优势，震动企业 AI 市场。
+   来源: VentureBeat AI | 2026-06-01 16:10:05
+
+2. [Paper] Distilling LLM Feedback for Lean Theorem Proving
+   
+   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+
+3. [Paper] Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+   
+   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+
+4. [Paper] SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
+   
+   来源: ArXiv stat.ML | 2026-06-01 04:00:00
+
+5. [Paper] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
+   
+   来源: ArXiv cs.LG | 2026-06-01 04:00:00
+
+6. [Paper] Auditing LLM Benchmarks with Item Response Theory
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+7. [中文媒体] 一颗288核的至强6+，为什么能同时运行500个Agent？
+   
+   来源: 雷锋网 AI | 2026-06-01 10:20:00
+
+8. [Paper] Benchmark of Likelihood-Free Inference Methods based on Neural and Optimal Transport Approaches
+   
+   来源: ArXiv stat.ML | 2026-06-01 04:00:00
+
+9. [Paper] Domain Adaptation and Reasoning Frameworks in Language Models: A Controlled Experiment with Historical Cosmology
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+10. [Paper] CanLegalRAGBench: Evaluating Retrieval-Augmented Generation on Canadian Case Law
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+11. [Paper] SANA-Streaming: Real-time Streaming Video Editing with Hybrid Diffusion Transformer
+   
+   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+
+12. [Paper] Gait2Hip-60: A Unified Deep Learning Benchmark for Predicting Hip Muscle Forces and Joint Moments from Multi-Cadence Gait Kinematics
+   
+   来源: ArXiv cs.LG | 2026-06-01 04:00:00
+
+13. [Paper] EHRBench: An Automated and Reliable EHR-based Benchmark for Clinical Decision Making with LLMs
+   
+   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+
+14. [Paper] BilliardPhys-Bench: Benchmarking Physical Reasoning and Visual Dynamics of Multimodal LLMs
+   
+   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+
+15. [Paper] Generalistic or Specific Embeddings, Which is Better? An Empirical Study on Search for Clinical Coding in Non-English Languages
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+16. [Paper] Speculative Decoding Across Languages
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+17. [Paper] PInVerify: An Offline Embodied Benchmark for Active Instance Verification
+   
+   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+
+18. [Paper] Seeing Before Agreeing: Aligning Multi-Agent Consensus with Visual Evidence
+   
+   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+
+19. [Paper] Generating and Refining Dynamic Evaluation Rubrics for LLM-as-a-Judge
+   
+   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+
+20. [Blog] MeMo's memory model lets teams upgrade their LLM without retraining it — and performance jumps 26%
+   
+   来源: VentureBeat AI | 2026-05-29 19:28:17
+
+
+## 写作要求
+
+用 Markdown 格式写一篇连贯的分析文章（不是列表），包含：
+
+### 🔥 本周头条 (1-2 段)
+选最重要的 1-2 件事深入分析。不要复述标题，要解读背后的趋势和影响。
+
+### 📊 趋势观察 (2-3 段)
+从本周文章中提炼 2-3 个值得关注的趋势，用具体文章作为例证。
+
+### 🏷️ 一句话总结
+用一句话概括本周 AI 行业的主题。
+
+## 格式要求
+- 中文输出
+- 文章总长 500-800 字
+- 提到具体公司/模型/论文时用原文名称
+- 不要用"本周"开头，直接进入分析
+- 文件头用 `# 本周 AI 大事记 (YYYY-MM-DD)`
+- 保存到 data/weekly/{date}.md

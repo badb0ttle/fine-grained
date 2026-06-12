@@ -4,7 +4,7 @@ __pycache__/
 .env
 data/ai_intel.db
 .venv/
-
+docs/data/ai_intel.db
 _cron_*.py
 _cleanup.py
 _cron_push.py

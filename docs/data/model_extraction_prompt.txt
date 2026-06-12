@@ -1,0 +1,80 @@
+从以下 AI 相关文章中提取大模型信息。对于每篇提到的模型，提取：
+
+- name: 模型名称（如 "GPT-5.5", "Gemini 3.1 Pro", "MiniMax-M3"）
+- provider: 模型提供方（如 "OpenAI", "Google", "MiniMax"）
+- benchmarks: 文章中提到的 Benchmark 分数列表，每项含 {"name": "MMLU", "score": "92.5%"}
+- parameters: 参数规模（如 "未知", "1.8T"）
+- context_window: 上下文窗口（如 "1M tokens", "128K"）
+
+返回严格 JSON 数组：
+[
+  {"name": "模型名", "provider": "提供方", "benchmarks": [{"name":"...","score":"..."}], "parameters": "..."},
+  ...
+]
+如果一篇文章没有提到具体模型，跳过它。
+
+文章列表：
+[1] Transformer 深层 Value 向量可脱离上下文？
+    研究者发现 Transformer 深层注意力中的 value 向量对残差流上下文的依赖明显弱于浅层，这一发现挑战了注意力层必须依赖上下文的传统认知，为简化深层计算、降低推理开销提供了理论基础。
+
+[2] 自动化肿瘤 VQA：3D 医学影像评估新基准
+    提出自动化 Agent pipeline 从临床报告生成肿瘤学 VQA 基准，解决了医学影像评估数据稀缺、人工标注昂贵且易泄露的问题，为 VLM 在 3D 医学影像上的评测提供了可扩展方案。
+
+[3] MiniMax M3发布：性能超越GPT-5.5且成本仅5-10%
+    中国AI公司MiniMax发布M3大语言模型，在多项关键基准测试中超越GPT-5.5和Gemini 3.1 Pro，推理成本仅为竞品的5-10%，在编码和推理任务上达到前沿水平，引发全球AI行业震动。
+
+[4] 蒸馏 LLM 反馈提升 Lean 定理证明
+    在 Lean 定理证明任务中，用 LLM 生成反馈信号蒸馏为小模型训练数据，替代传统基于可验证奖励的强化学习，在保持证明质量的同时大幅提升训练效率，为数学推理模型训练开辟新路径。
+
+[5] FOLIO+MALLS 标注审计：LLM 辅助修复逻辑基准
+    首次系统性审计两个主流 NL-to-FOL 数据集的标注质量，发现大量错误标注。提出 LLM 辅助框架聚焦人工重标注，显著提升逻辑推理 benchmark 的可靠性，对神经符号 AI 研究有重要意义。
+
+[6] Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+    arXiv:2605.30576v1 Announce Type: new 
+Abstract: Exploration in reinforcement learning for autonomous driving is inherently unsafe: agents must experience novel behaviors to learn, yet exploration can lead to collisions or off-road driving. We propose an uncertainty-aware framework that leverages ex
+
+[7] 显式建模数据流形几何的图像扩散生成
+    提出显式建模数据流形几何结构的扩散模型新方法，通过理解数据在低维流形上的分布特征改进生成质量，克服现有扩散模型对流形结构学习不足的根本限制。
+
+[8] CardioLens：揭示多模态大模型临床真实差距
+    通过多序列心脏 MRI 评估发现当前多模态大模型在公开医学 benchmark 上的高分存在虚高，在真实临床场景下准确率大幅下降，暴露了从 benchmark 到 clinical deployment 的巨大鸿沟。
+
+[9] SENSE：语义嵌入导航提升检索增强投机解码
+    SENSE通过语义嵌入导航替代传统字符串匹配，结合软门控评估机制动态决定是否接受草稿Token，显著提升检索增强投机解码的命中率和加速比，在保持生成质量不变的前提下实现高效推理。
+
+[10] DLLM-JEPA：JEPA架构迁移至掩码扩散语言模型
+    研究者将视觉领域成功的JEPA联合嵌入预测架构适配到掩码扩散语言模型，克服了LLM-JEPA在自回归模型上需要多视图数据和高昂双路前向传播成本的问题，为语言模型自监督学习开辟新范式。
+
+[11] Diagnosis of Human Object Interaction Detectors for Real World Educational Applications
+    arXiv:2606.02789v1 Announce Type: new 
+Abstract: Human-object interaction (HOI) recognition is critical for automatically analyzing student behavior in complex educational environments. Although state-of-the-art (SOTA) HOI detectors perform well on benchmark datasets, their performance often degrade
+
+[12] GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving
+    arXiv:2606.02774v1 Announce Type: new 
+Abstract: Vision-language models (VLMs) for autonomous driving have shown promising performance, but their ability to handle region-specific traffic rules remains underexplored, raising uncertainties about their deployment across diverse global settings. We the
+
+[13] Emergence of Exploration in Policy Gradient Reinforcement Learning via Retrying
+    arXiv:2606.00151v1 Announce Type: new 
+Abstract: In reinforcement learning (RL), agents benefit from exploration only because they repeatedly encounter similar states: trying different actions can improve performance or reduce uncertainty; without such retries, a greedy policy is optimal. We formali
+
+[14] CSRP：思维链+强化学习的中文纠错新范式
+    将思维链推理与效率感知奖励的强化学习结合用于中文语法纠错，解决通用大模型缺乏专用纠错知识和传统系统依赖大量标注数据的问题，在 CGEC 任务上取得 SOTA 效果。
+
+[15] ToolGate：VLM Agent 工具调用预筛选
+    提出 ToolGate 机制，在多模态 Agent 执行工具调用前判断是否必要，跳过不必要的 OCR、检测等调用，以极低计算开销减少无效工具调用，显著降低 Agent 运行 token 消耗。
+
+[16] 量化 LLM 的幻觉信号可在中间层线性解码
+    在三款 7B-8B 开源模型（Llama-3.1、Mistral、Qwen2.5）4-bit 量化版本中发现：LLM 的幻觉倾向在中间层隐藏状态中存在线性可分离信号，可在生成前通过简单线性探针检测。
+
+[17] BitsMoE：频谱能量引导的MoE混合精度量化
+    BitsMoE提出基于频谱能量引导的差异化比特分配方案，对MoE大语言模型的不同专家层采用不同精度量化，在保持模型容量的同时实现超低位宽压缩，解决了MoE模型显存占用过大的部署难题。
+
+[18] 几何感知表格扩散模型
+    引入列间 pairwise 角度和长度作为几何先验注入表格扩散模型的去噪过程，使其显式建模列依赖关系，克服传统方法依赖隐式学习列间联系的局限，在隐私保护的表格数据合成任务中取得突破。
+
+[19] EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction
+    arXiv:2606.02971v1 Announce Type: new 
+Abstract: Extracting reporting obligations from EU legislation is critical for assessing and reducing regulatory reporting burden. However, distinguishing reporting requirements from structurally similar provisions requires specialised legal understanding. Curr
+
+[20] SAGE：新颖性门控实现Agent LLM高效记忆进化
+    SAGE提出新颖性门控机制，让Agent LLM自主判断新获取的事实应新增、合并还是忽略，解决了Agent记忆系统持续膨胀和冗余积累的问题，在长期交互和多步任务中保持高效记忆管理。

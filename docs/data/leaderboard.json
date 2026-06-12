@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-05T00:52:42.450703+00:00",
+  "models": [
+    {
+      "name": "MiniMax-M3",
+      "provider": "MiniMax",
+      "parameters": "未知",
+      "context_window": "1M tokens",
+      "release_date": null,
+      "benchmarks": [
+        {
+          "benchmark": "MMLU",
+          "score": "92.5%"
+        }
+      ]
+    }
+  ]
+}

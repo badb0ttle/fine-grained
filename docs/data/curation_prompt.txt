@@ -1,0 +1,112 @@
+从以下 20 篇候选文章中选出最重要的 10 篇进行中文翻译和解读。
+
+要求：
+1. 筛选最值得关注的 AI 新闻/论文
+2. title_cn: 中文标题（保留核心技术名词英文，20字以内）
+3. summary_cn: 中文摘要（60-100字，突出核心信息）
+4. why_it_matters: 一句话（30字内），说明对 AI 从业者的实际影响或意义
+
+返回严格 JSON 数组格式：
+[
+  {"id": <article_id>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."},
+  ...
+]
+
+候选文章：
+[1] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04282v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
+
+[2] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04302v1 Announce Type: new 
+Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
+
+[3] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04484v1 Announce Type: new 
+Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
+
+[4] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
+    Source: 雷锋网 AI | 2026-06-04 13:38:00
+    Summary: 在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高
+
+[5] [77.3] Title: Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04037v1 Announce Type: new 
+Abstract: Pre-deployment verification of enterprise artificial intelligence (AI) agents remains a critical gap between large language model (LLM) capability benc
+
+[6] [77.3] Title: StepPRM-RTL: Stepwise Process-Reward Guided LLM Fine-Tuning for Enhanced RTL Synthesis
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04246v1 Announce Type: new 
+Abstract: Automatic generation of RTL code for digital hardware designs remains challenging due to long-horizon reasoning, multi-step dependencies, and strict co
+
+[7] [77.3] Title: Position: Deployed Reinforcement Learning should be Continual
+    Source: ArXiv cs.LG | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04029v1 Announce Type: new 
+Abstract: Reinforcement Learning (RL) has received increasing attention and adoption in real-world use cases. Most of these systems follow a train-then-fix parad
+
+[8] [77.3] Title: SaliMory: Orchestrating Cognitive Memory for Conversational Agents
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04120v1 Announce Type: new 
+Abstract: Conversational agents that serve as lifelong companions must maintain persistent memory across all interactions. However, simply expanding context wind
+
+[9] [77.3] Title: Long Live Fine-Tuning: Task-Specific Transformers Outperform Zero-Shot LLMs for Misinformation Response Classification on Reddit
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04274v1 Announce Type: new 
+Abstract: As large language models (LLMs) become default tools for online information verification, an implicit assumption follows them: that scale and general c
+
+[10] [77.3] Title: DLLG: Dynamic Logit-Level Gating of LLM Experts
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04378v1 Announce Type: new 
+Abstract: Leveraging multiple specialized LLMs can combine complementary strengths, but existing approaches trade adaptability for stability: routing commits pre
+
+[11] [76.4] Title: MiniMax-M3 debuts, eclipsing GPT-5.5 and Gemini 3.1 Pro on key benchmark performance for just 5-10% of the cost
+    Source: VentureBeat AI | 2026-06-01 16:10:05
+    Summary: Big news in enterprise AI broke over the weekend as Chinese AI startup MiniMax released its highly anticipated M3 large language model on Sunday evening Eastern time, pairing frontier-tier coding and 
+
+[12] [75.7] Title: Distilling LLM Feedback for Lean Theorem Proving
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30861v1 Announce Type: new 
+Abstract: Post-training for reasoning models typically combines supervised fine-tuning with reinforcement learning from verifiable rewards, most commonly with GR
+
+[13] [75.3] Title: Can Generalist Agents Automate Data Curation?
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04261v1 Announce Type: new 
+Abstract: Curating training data is among the most consequential yet labor-intensive parts of modern AI development: practitioners iteratively propose, implement
+
+[14] [75.3] Title: The Meta-Agent Challenge: Are Current Agents Capable of Autonomous Agent Development?
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04455v1 Announce Type: new 
+Abstract: Current AI benchmarks evaluate agents on task execution within human-designed workflows. These evaluations fundamentally fail to measure a critical nex
+
+[15] [74.6] Title: A Cookbook of 3D Vision: Data, Learning Paradigms, and Application
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04291v1 Announce Type: new 
+Abstract: 3D vision has rapidly evolved, driven by increasingly diverse data representations, learning paradigms, and modeling strategies. Yet the field remains 
+
+[16] [74.3] Title: RUBAS: Rubric-Based Reinforcement Learning for Agent Safety
+    Source: ArXiv cs.LG | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04051v1 Announce Type: new 
+Abstract: The evolution of LLMs into tool-enabled agents creates a new class of safety challenges associated with real-world execution rather than simple text ge
+
+[17] [74.3] Title: Supportive Token Revealing for Fast Diffusion Language Model Decoding
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04236v1 Announce Type: new 
+Abstract: Discrete diffusion language models can generate text efficiently by updating multiple masked positions in parallel, but this parallelism introduces a q
+
+[18] [73.7] Title: Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
+    Source: ArXiv cs.AI | 2026-06-01 04:00:00
+    Summary: arXiv:2605.30576v1 Announce Type: new 
+Abstract: Exploration in reinforcement learning for autonomous driving is inherently unsafe: agents must experience novel behaviors to learn, yet exploration can
+
+[19] [73.6] Title: GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04184v1 Announce Type: new 
+Abstract: True general intelligence requires not only a model of the physical world but also a social world model: the capacity to infer how individual mental st
+
+[20] [73.6] Title: UniCanvas: A Diffusion-base Unified Model for Text-in-Image Joint Generation
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04264v1 Announce Type: new 
+Abstract: Recent years have seen remarkable progress in unified vision-language models handling both multimodal understanding and generation within a single arch
