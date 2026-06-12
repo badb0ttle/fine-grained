@@ -12,52 +12,53 @@
 ]
 
 论文列表：
-[ID=1459] Paper: Do Value Vectors in Deep Layers Need Context from the Residual Stream?
-    ArXiv: 2606.02780
-    Abstract: arXiv:2606.02780v1 Announce Type: new 
-Abstract: The success of the transformer architecture as the backbone of modern LLMs is in large part due to its use of attention layers. An attention layer follows the standard neural network paradigm: it takes the residual stream as input and thereby produces context-dependent query, key, and value vectors. However, we find that model performance meaningful
+[ID=1756] Paper: LoHoSearch: Benchmarking Long-Horizon Search Agents Beyond the Human Difficulty Ceiling
+    ArXiv: 2606.12837
+    Abstract: arXiv:2606.12837v1 Announce Type: new 
+Abstract: Search agent benchmarks exemplified by BrowseComp have rapidly saturated over the past year, with the strongest models surpassing 90% accuracy. Since these benchmarks are predominantly human-authored, annotators lack a global perspective on entity statistics and cannot systematically maximize search space size and structural complexity. This creates
 
-[ID=1484] Paper: Automated Report-Derived Oncology VQA Benchmark for Evaluating Vision-Language Models on 3D Medical Imaging
-    ArXiv: 2606.02809
-    Abstract: arXiv:2606.02809v1 Announce Type: new 
-Abstract: Evaluating vision-language models (VLMs) on medical images requires benchmarks that are clinically grounded, scalable, and controlled for evaluation confounds. Existing public benchmarks are limited in scale, manually annotated, or potentially leaked into VLM pretraining corpora. We present an automated agent-driven pipeline that generates multiple-
+[ID=1735] Paper: RoVE: Rotary Value Embeddings Attention for Relative Position-dependent Value Pathways
+    ArXiv: 2606.11275
+    Abstract: arXiv:2606.11275v1 Announce Type: new 
+Abstract: Rotary Position Embeddings (RoPE) make attention scores position-relative but leave the value pathway position-blind: the message sent by a value token is the same regardless of its distance from the query. We propose RoVE, a parameter-free modification that makes values position-sensitive by rotating them simultaneously with keys, and show that it 
 
-[ID=1461] Paper: Fixing FOLIO and MALLS: Verified Annotations and an LLM-assisted Framework to Focus Human Relabeling
-    ArXiv: 2606.02837
-    Abstract: arXiv:2606.02837v1 Announce Type: new 
-Abstract: Accurate translation from Natural Language to First-Order Logic (NL-to-FOL) underpins neurosymbolic AI systems and Natural Language Inference (NLI), making the quality of NL-to-FOL benchmarks essential -- yet these datasets have never been rigorously audited. Our first contribution is to present a systematic human inspection of the validation split 
+[ID=1738] Paper: FlowBank: Query-Adaptive Agentic Workflows Optimization through Precompute-and-Reuse
+    ArXiv: 2606.11290
+    Abstract: arXiv:2606.11290v1 Announce Type: new 
+Abstract: Large Language Model (LLM)-based multi-agent systems are increasingly powerful, but current agentic workflow optimization paradigms make an unsatisfying trade-off. Task-level methods spend substantial offline compute yet deploy only a single workflow, leaving complementary candidates unused, while query-level methods synthesize a new workflow per qu
 
-[ID=1482] Paper: Diagnosis of Human Object Interaction Detectors for Real World Educational Applications
-    ArXiv: 2606.02789
-    Abstract: arXiv:2606.02789v1 Announce Type: new 
-Abstract: Human-object interaction (HOI) recognition is critical for automatically analyzing student behavior in complex educational environments. Although state-of-the-art (SOTA) HOI detectors perform well on benchmark datasets, their performance often degrades when deployed in real-world training environments due to domain-specific objects, occlusions, and 
+[ID=1729] Paper: PermDoRA -- Understanding Adapter Interference in Language Models: Limits of Parameter-Space Geometry
+    ArXiv: 2606.11262
+    Abstract: arXiv:2606.11262v1 Announce Type: new 
+Abstract: Access control in large language models (LLMs) requires modular mechanisms to enable domain-specific behavior without retraining or cross-domain interference. A common hypothesis is that interference during adapter composition arises from overlap in linear parameter updates, suggesting that enforcing orthogonality or directional independence should 
 
-[ID=1481] Paper: GeoDrive-Bench: Benchmarking Region-Specific Multimodal Reasoning in Autonomous Driving
-    ArXiv: 2606.02774
-    Abstract: arXiv:2606.02774v1 Announce Type: new 
-Abstract: Vision-language models (VLMs) for autonomous driving have shown promising performance, but their ability to handle region-specific traffic rules remains underexplored, raising uncertainties about their deployment across diverse global settings. We therefore introduce GeoDrive-Bench, a novel benchmark that enables the systematic investigation of VLMs
+[ID=1541] Paper: Generalization in Deep Neural Networks: Minimax Rates for Gradient Methods
+    ArXiv: 2606.06772
+    Abstract: arXiv:2606.06772v1 Announce Type: new 
+Abstract: Understanding the generalization performance of over-parameterized neural networks has become a central topic in deep learning theory. While recent advances, particularly works under the Neural Tangent Kernel (NTK) regime, have shed light on the behavior of shallow architectures, the statistical generalization properties of deep neural networks (DNN
 
-[ID=1434] Paper: ToolGate: Token-Efficient Pre-Call Control for Tool-Augmented Vision-Language Agents
-    ArXiv: 2606.03054
-    Abstract: arXiv:2606.03054v1 Announce Type: new 
-Abstract: Tool-augmented vision-language agents can acquire external perceptual evidence through OCR, detection, segmentation, and other tools, but executing every proposed tool call is costly and sometimes unnecessary. We study the pre-call control problem: after a ReAct-style VLM agent proposes a perceptual tool call, should the call be executed, or skipped
+[ID=1484] Paper: WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers
+    ArXiv: 2606.06564
+    Abstract: arXiv:2606.06564v1 Announce Type: new 
+Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual
 
-[ID=1447] Paper: Hallucination Is Linearly Decodable from Mid-Layer Hidden States in Quantized LLMs
-    ArXiv: 2606.02628
-    Abstract: arXiv:2606.02628v1 Announce Type: new 
-Abstract: We investigate whether open-source LLMs encode a linearly separable truthfulness signal in their hidden states, and at which network depth this signal is strongest. Across three $7$B--$8$B instruction-tuned models (Llama-3.1-8B, Mistral-7B, Qwen2.5-7B) loaded in $4$-bit NF4 quantization, we extract per-layer hidden states on four hallucination bench
+[ID=1509] Paper: Data-Efficient Autoregressive-to-Diffusion Language Models via On-Policy Distillation
+    ArXiv: 2606.06712
+    Abstract: arXiv:2606.06712v1 Announce Type: new 
+Abstract: We study the transformation of autoregressive models (ARLMs) into diffusion language models (DLMs). Rather than pretraining from scratch, prior work replaces the causal attention in ARLMs with bidirectional attention and then trains the resulting model using a DLM objective. However, these approaches incur two distribution shifts. First, transitioni
 
-[ID=1444] Paper: Geometry-Aware Tabular Diffusion
-    ArXiv: 2606.02607
-    Abstract: arXiv:2606.02607v1 Announce Type: new 
-Abstract: Tabular synthesis is critical for privacy-preserving sharing and augmentation, yet diffusion models rely on implicit mechanisms to capture inter-column relationships. We introduce Geometry-Aware Tabular Diffusion (GATD), which augments tabular diffusion denoisers with pairwise angles and lengths computed from column value differences and used as inp
+[ID=1518] Paper: TA-RAG: Tone-Aware Retrieval-Augmented Generation for Peer-Support Health Communication
+    ArXiv: 2606.06794
+    Abstract: arXiv:2606.06794v1 Announce Type: new 
+Abstract: Retrieval-augmented generation (RAG) successfully grounds large language model (LLM) outputs in trusted documents, but factual grounding alone is insufficient for sensitive peer-support health communication. In domains such as HIV peer support, responses must also be accessible, stigma-free, empathetic, and tailored to the recipient. This paper pres
 
-[ID=1469] Paper: EURO-5K: When Does Domain Pretraining Matter? Benchmarking Transformers for EU Reporting Obligation Extraction
-    ArXiv: 2606.02971
-    Abstract: arXiv:2606.02971v1 Announce Type: new 
-Abstract: Extracting reporting obligations from EU legislation is critical for assessing and reducing regulatory reporting burden. However, distinguishing reporting requirements from structurally similar provisions requires specialised legal understanding. Current legal NLP methods lack specialised datasets with clear guidelines and comparative evaluation of 
+[ID=1707] Paper: Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents
+    ArXiv: 2606.12674
+    Abstract: arXiv:2606.12674v1 Announce Type: new 
+Abstract: Compact language models (LMs) reduce cost, latency, and deployment risk for tool agents. Yet MCP-style tool use requires more than isolated function calling: an agent must discover tools from live catalogs, satisfy schemas, preserve dependencies across intermediate outputs, and ground final responses in executed evidence. Small planners often genera
 
-[ID=615] Paper: Improved Belief-Attention in Vision Task
-    ArXiv: 2606.00077
-    Abstract: arXiv:2606.00077v1 Announce Type: new 
-Abstract: Recently, Belief-Attention \cite{Guoqiang25BeliefAttention} has been proposed by first performing an orthogonal projection of the softmax-based weighted summation of $V$ vectors with respect to the original $V$ vectors and then taking the perpendicular component as the residual signal in Transformer for performance improvement. In this paper, we fir
+[ID=1716] Paper: Constructing Evaluation Datasets for Procedural Reasoning: Balancing Naturalness, Grounding, and Multi-Hop Coverage
+    ArXiv: 2606.12767
+    Abstract: arXiv:2606.12767v1 Announce Type: new 
+Abstract: Evaluating procedural reasoning in AI-supported learning systems requires question-answer datasets that are both learner-like and grounded in the instructional knowledge the system is expected to use. We study how TMK-based question generation strategies affect dataset quality for procedural and multi-hop reasoning.
+  We compare three strategies: st

@@ -1,14 +1,1 @@
-[
-  {
-    "name": "MiniMax-M3",
-    "provider": "MiniMax",
-    "benchmarks": [
-      {
-        "name": "MMLU",
-        "score": "92.5%"
-      }
-    ],
-    "parameters": "未知",
-    "context_window": "1M tokens"
-  }
-]
+[]
