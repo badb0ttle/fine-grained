@@ -1,0 +1,27 @@
+🤖 **AI 情报站 · 每日精选**
+📅 2026-06-12 · 13/16 信源 · 860 篇文章
+
+1️⃣ [📄 ArXiv cs.CL] [小LLM用于生物医学声明验证](https://arxiv.org/abs/2606.12854)
+   💡 为资源受限的医疗AI应用提供了低成本、高可靠性的验证方案。
+
+2️⃣ [📄 ArXiv cs.CL] [DPO 对话微调实证研究](https://arxiv.org/abs/2606.12881)
+   💡 DPO 是当前最主流的 LLM 对齐方法，本文提供的实证结论可直接指导生产级微调。
+
+3️⃣ [📄 ArXiv cs.AI] [ToolSense：LLM 工具知识诊断框架](https://arxiv.org/abs/2606.12451)
+   💡 Agent 工具调用是 2026 年核心方向，诊断工具知识盲区对构建可靠 Agent 系统至关重要。
+
+4️⃣ [📄 ArXiv cs.AI] [基于不确定性对齐的 Agent 工具调用决策](https://arxiv.org/abs/2606.06976)
+
+5️⃣ [📄 ArXiv cs.LG] [FAIR-Calib：扩散LLM后训练量化](https://arxiv.org/abs/2606.06547)
+
+6️⃣ [📄 ArXiv cs.LG] [MacArena：macOS 计算机使用 Agent 基准](https://arxiv.org/abs/2606.06560)
+
+7️⃣ [📄 ArXiv cs.AI] [AI Agent 科学发现能力基准测试](https://arxiv.org/abs/2606.12736)
+
+8️⃣ [📄 ArXiv cs.AI] [MLUBench：多模态 LLM 终身遗忘评估](https://arxiv.org/abs/2606.12809)
+
+9️⃣ [📄 ArXiv cs.CL] [LazyAttention：延迟位置编码的高效 RAG](https://arxiv.org/abs/2606.04302)
+
+🔟 [📄 ArXiv cs.LG] [不确定性感知LLM引导策略塑造](https://arxiv.org/abs/2606.06673)
+
+🌐 [ai.hjhai.xyz](https://ai.hjhai.xyz) | 📊 [仪表盘](https://ai.hjhai.xyz/dashboard.html)
