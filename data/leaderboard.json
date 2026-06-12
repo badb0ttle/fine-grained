@@ -1,6 +1,14 @@
 {
-  "generated_at": "2026-06-09T00:09:24.543074+00:00",
+  "generated_at": "2026-06-12T07:24:40.121236+00:00",
   "models": [
+    {
+      "name": "GPT-4o",
+      "provider": "OpenAI",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
+    },
     {
       "name": "GPT-5.5",
       "provider": "OpenAI",
