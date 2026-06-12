@@ -6,8 +6,9 @@ import sys
 import time
 from pathlib import Path
 
-# Make sure scripts/ is on the path
-sys.path.insert(0, str(Path(__file__).parent))
+# The workdir is set to project root by cron (--workdir /root/fine-grained)
+# Add <workdir>/scripts/ to path so 'from pipeline import ...' works
+sys.path.insert(0, str(Path.cwd() / "scripts"))
 
 from pipeline import scanner, dedup, scorer
 
