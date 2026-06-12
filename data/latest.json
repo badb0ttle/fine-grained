@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-12T07:24:39.984006+00:00",
-  "curated_at": "2026-06-12T07:24:39.984020+00:00",
+  "scanned_at": "2026-06-12T07:55:12.954876+00:00",
+  "curated_at": "2026-06-12T07:55:12.954898+00:00",
   "total_sources": 16,
   "successful_sources": 13,
-  "total_articles": 856,
-  "curated_count": 29,
+  "total_articles": 860,
+  "curated_count": 32,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -18,15 +18,26 @@
       "why_it_matters": "为资源受限的医疗AI应用提供了低成本、高可靠性的验证方案。"
     },
     {
+      "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
+      "link": "https://arxiv.org/abs/2606.12881",
+      "summary": "arXiv:2606.12881v1 Announce Type: new \nAbstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experimental results demonstrate that DPO simplifies the training pipeline, improves computational efficiency, and achieves competitive performance. The evaluation using BLEU, ROUGE, and cosine similarity metrics indicates effective learning and convergence, though further investigation is needed to addres",
+      "published": "2026-06-12 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "DPO 对话微调实证研究",
+      "summary_cn": "系统性研究使用 Direct Preference Optimization (DPO) 微调大语言模型的实验方案，对比不同超参数和训练策略对对话质量的影响，为 LLM 对话微调提供实用指南。",
+      "why_it_matters": "DPO 是当前最主流的 LLM 对齐方法，本文提供的实证结论可直接指导生产级微调。"
+    },
+    {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
       "link": "https://arxiv.org/abs/2606.12451",
       "summary": "arXiv:2606.12451v1 Announce Type: new \nAbstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches rely on compact encoders that may under-capture specialized tool semantics, parametric tool retrieval addresses this by encoding each tool as a virtual token appended to the LLM vocabulary, fine-tuned in two stages (memorization then retrieval SFT) to use the LLM as a retriever, achieving strong perfo",
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "ToolSense：LLM工具知识审计框架",
-      "summary_cn": "提出ToolSense诊断框架，用于审计LLM中参数化工具知识的准确性。研究发现基于嵌入的工具检索存在瓶颈，该框架可系统评估模型对工具功能的理解程度。",
-      "why_it_matters": "提升LLM Agent工具调用的可靠性和可解释性，避免错误工具选择。"
+      "title_cn": "ToolSense：LLM 工具知识诊断框架",
+      "summary_cn": "提出 ToolSense 诊断框架，系统审计大语言模型对工具 API 的参数化知识掌握程度，揭示 embedding 检索在处理大规模工具目录时的关键瓶颈并提出改进方向。",
+      "why_it_matters": "Agent 工具调用是 2026 年核心方向，诊断工具知识盲区对构建可靠 Agent 系统至关重要。"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -35,9 +46,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "不确定性对齐强化学习的工具调用",
-      "summary_cn": "提出不确定性对齐的强化学习方法，优化LLM Agent的工具调用决策。通过量化模型不确定性，减少无根据的工具调用和幻觉直接响应，提升决策质量。",
-      "why_it_matters": "直接改善LLM Agent在实际任务中的工具使用准确性和鲁棒性。"
+      "title_cn": "基于不确定性对齐的 Agent 工具调用决策",
+      "summary_cn": "利用不确定性对齐的强化学习方法优化 LLM Agent 的工具调用决策，减少不支持的工具调用和幻觉式直接回答，提升 Agent 在复杂任务中的可靠性。",
+      "why_it_matters": "解决 Agent 工具调用中的幻觉问题，直接提升 AI Agent 在实际部署中的可用性。"
     },
     {
       "title": "FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models",
@@ -57,9 +68,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "MacArena：macOS环境计算机使用基准",
-      "summary_cn": "发布MacArena基准，在真实macOS在线环境中评估计算机使用Agent。涵盖多种GUI操作任务，揭示当前Agent在复杂桌面环境中的能力边界和提升方向。",
-      "why_it_matters": "为开发通用计算机使用Agent提供标准化评估平台，推动人机交互自动化。"
+      "title_cn": "MacArena：macOS 计算机使用 Agent 基准",
+      "summary_cn": "提出 MacArena 基准测试，在在线 macOS 环境中评估计算机使用 Agent (CUA) 的视觉理解和 GUI 操控能力，覆盖多步骤桌面操作任务。",
+      "why_it_matters": "计算机使用 Agent 是 2026 年最热门方向之一，该基准为评估 CUA 能力提供了标准化测试平台。"
     },
     {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
@@ -68,9 +79,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "跨尺度科学挑战AI Agent基准",
-      "summary_cn": "提出跨尺度AI Agent基准，系统评估其在真实科研场景中的能力。涵盖从分子到生态系统多个尺度，揭示当前Agent在实验设计、数据分析和假设生成方面的不足。",
-      "why_it_matters": "为AI驱动科学发现提供标准化评估，指导Agent研发方向。"
+      "title_cn": "AI Agent 科学发现能力基准测试",
+      "summary_cn": "构建跨尺度科学挑战基准，系统评估 AI Agent 在真实科研环境中的实验设计、数据分析和假设验证能力，揭示当前 Agent 在科学发现中的实际水平。",
+      "why_it_matters": "AI for Science 是长期趋势，该基准帮助量化 Agent 在科学发现中的真实进展。"
     },
     {
       "title": "MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs",
@@ -79,9 +90,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "MLUBench：多模态LLM终身遗忘基准",
-      "summary_cn": "提出MLUBench基准，评估多模态大模型在终身学习场景中的数据遗忘能力。涵盖图像、文本等多模态数据，测试模型在删除特定数据后的表现和隐私保护效果。",
-      "why_it_matters": "解决多模态模型数据隐私合规问题，推动可信AI发展。"
+      "title_cn": "MLUBench：多模态 LLM 终身遗忘评估",
+      "summary_cn": "提出 MLUBench 基准测试，评估多模态大语言模型在执行数据遗忘（unlearning）后的能力保留与遗忘效果，应对数据隐私合规需求。",
+      "why_it_matters": "数据遗忘是 AI 合规的核心需求，该基准为多模态模型的隐私保护能力提供了标准化评估。"
     },
     {
       "title": "LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding",
@@ -90,9 +101,9 @@
       "published": "2026-06-04 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "LazyAttention：延迟位置编码的RAG",
-      "summary_cn": "提出LazyAttention方法，通过延迟位置编码优化检索增强生成中的KV缓存效率。在保持生成质量的同时，显著降低长上下文推理的内存占用和延迟。",
-      "why_it_matters": "大幅提升RAG系统的推理效率，降低长文档处理成本。"
+      "title_cn": "LazyAttention：延迟位置编码的高效 RAG",
+      "summary_cn": "提出 LazyAttention 技术，通过延迟位置编码减少 RAG 场景下 KV 缓存的重复计算，显著提升长上下文推理效率，降低显存占用。",
+      "why_it_matters": "RAG 系统普遍存在推理效率瓶颈，该技术可降低生产环境的推理成本和延迟。"
     },
     {
       "title": "Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning",
@@ -106,15 +117,37 @@
       "why_it_matters": "为复杂稀疏奖励任务提供高效强化学习解决方案。"
     },
     {
+      "title": "Deployment-Centered Evaluation: Predicting Query-Level Rejection Risk in a Clinical LLM System",
+      "link": "https://arxiv.org/abs/2606.12702",
+      "summary": "arXiv:2606.12702v1 Announce Type: new \nAbstract: Large language models (LLMs) are increasingly integrated into clinical systems, making it essential to evaluate the real-world utility of these systems. However, static benchmarks tend to measure correctness rather than user acceptance, aggregate performance across queries, and require densely annotated datasets -- leading to major blind spots for evaluating clinical systems. In this work, we perform a deployment-centered evaluation of an LLM syst",
+      "published": "2026-06-12 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "面向部署的临床 LLM 拒绝风险评估",
+      "summary_cn": "提出面向实际部署的评估方法，预测临床 LLM 系统在查询级别的拒答风险，确保医疗 AI 系统在安全边界内运行，避免高风险场景的误判。",
+      "why_it_matters": "医疗 AI 部署安全是生死攸关的问题，该评估方法为临床 LLM 上线提供了安全保障。"
+    },
+    {
       "title": "AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning",
       "link": "https://arxiv.org/abs/2606.04484",
       "summary": "arXiv:2606.04484v1 Announce Type: new \nAbstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks that tightly couple agent rollouts with model optimization, AgentJet adopts a decoupled multi-node architecture in which swarm server nodes host trainable models and run optimization on GPU clusters, whereas swarm client nodes execute arbitrary agents on arbitrary devices. This design provides capab",
       "published": "2026-06-04 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "AgentJet：Agent强化学习分布式框架",
-      "summary_cn": "提出AgentJet分布式群训练框架，专为LLM Agent强化学习设计。相比集中式框架，支持灵活扩展和高效通信，显著加速多Agent协作训练过程。",
-      "why_it_matters": "为大规模Agent强化学习训练提供可扩展基础设施。"
+      "title_cn": "AgentJet：分布式 Agent 强化学习训练框架",
+      "summary_cn": "提出 AgentJet 分布式群体训练框架，支持大规模 LLM Agent 的强化学习训练，解决集中式框架的扩展瓶颈，实现多 Agent 并行探索和策略共享。",
+      "why_it_matters": "大规模 Agent 训练基础设施是 Agent 能力规模化的关键瓶颈，该框架填补了工程空白。"
+    },
+    {
+      "title": "What Do People Actually Want From AI? Mapping Preference Plurality",
+      "link": "https://arxiv.org/abs/2606.06674",
+      "summary": "arXiv:2606.06674v1 Announce Type: new \nAbstract: Large Language Models (LLMs) are often fine-tuned through Reinforcement Learning from Human Feedback (RLHF) to align with people's preferences and values. However, this method has known limitations: it aggregates conflicting preferences, often relies on unrepresentative samples, and uses only binary comparisons. Analysing 1,500 open-ended responses from the PRISM dataset across 75 countries, we examine what people actually want from AI systems and",
+      "published": "2026-06-08 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "人类对 AI 的真实需求：偏好多样性图谱",
+      "summary_cn": "大规模调研人类对 AI 的真实偏好，揭示不同人群对 AI 行为的期望存在显著差异，挑战单一 RLHF 对齐范式的普适性，呼吁多元对齐策略。",
+      "why_it_matters": "RLHF 对齐假设统一偏好，本文揭示的偏好多样性对产品设计和模型训练有直接指导意义。"
     },
     {
       "title": "How Endava is redesigning software delivery around AI agents",
