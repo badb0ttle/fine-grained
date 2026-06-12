@@ -2,13 +2,17 @@
 """Headless scanner — runs scanner → dedup → scorer, zero LLM cost.
 Designed for no_agent cron: silent stdout on success, errors to stderr.
 """
+import os
 import sys
 import time
 from pathlib import Path
 
-# The workdir is set to project root by cron (--workdir /root/fine-grained)
-# Add <workdir>/scripts/ to path so 'from pipeline import ...' works
-sys.path.insert(0, str(Path.cwd() / "scripts"))
+# Cron script runs from ~/.hermes/scripts/, need to find the project
+# Try current workdir first, fall back to known path
+_project_root = Path(os.environ.get("HERMES_CRON_WORKDIR", Path.cwd()))
+if not (_project_root / "scripts" / "pipeline").exists():
+    _project_root = Path("/root/fine-grained")  # server fallback
+sys.path.insert(0, str(_project_root / "scripts"))
 
 from pipeline import scanner, dedup, scorer
 
