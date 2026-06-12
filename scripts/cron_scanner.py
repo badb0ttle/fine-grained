@@ -35,10 +35,8 @@ try:
     )
     print(summary, file=sys.stderr)
     
-    # Silent stdout on success → no notification spam
-    # Only print to stdout if there are new articles (optional notification)
-    if new_count > 0:
-        print(f"📡 {new_count} new articles collected")
+    # Always silent stdout on success — no notification spam
+    # All output goes to stderr for journal/diagnostic use
     
 except Exception as e:
     print(f"❌ Scanner failed: {e}", file=sys.stderr)
