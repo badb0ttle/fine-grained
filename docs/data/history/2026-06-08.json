@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-09T00:09:24.435255+00:00",
-  "curated_at": "2026-06-09T00:09:24.435276+00:00",
+  "scanned_at": "2026-06-08T00:11:04.105235+00:00",
+  "curated_at": "2026-06-08T00:11:04.105250+00:00",
   "total_sources": 16,
-  "successful_sources": 13,
-  "total_articles": 677,
-  "curated_count": 19,
+  "successful_sources": 8,
+  "total_articles": 530,
+  "curated_count": 17,
   "articles": [
     {
       "title": "How Endava is redesigning software delivery around AI agents",
@@ -13,9 +13,9 @@
       "published": "2026-06-04 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "不确定性对齐强化学习驱动工具调用",
-      "summary_cn": "提出不确定性对齐强化学习方法，解决LLM智能体工具调用决策中的次优问题，包括错误调用和幻觉响应，通过对齐不确定性来提升决策质量。",
-      "why_it_matters": "直接提升LLM智能体工具调用的可靠性和准确性。"
+      "title_cn": "FindIt：面向通用多模态大模型的格式感知视觉检测基准",
+      "summary_cn": "提出FindIt基准，评估多模态大模型在格式敏感视觉检测任务上的表现，如文档、图表、UI中的结构化元素识别，填补了现有自由形式视觉问答评测的空白。",
+      "why_it_matters": "为多模态模型在结构化视觉任务中的能力提供标准化评测，推动模型在文档智能等场景落地。"
     },
     {
       "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
@@ -35,9 +35,9 @@
       "published": "2026-06-01 10:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "全球首个有机高分子材料AI智能体",
-      "summary_cn": "苏州材科源图发布全球首个有机高分子材料研发应用智能体，基于通用材料科学智能体框架，解决配方变量多、试错成本高等行业瓶颈。",
-      "why_it_matters": "AI驱动材料科学范式变革，显著降低研发试错成本。"
+      "title_cn": "DLLG：专家LLM的动态logit级门控机制",
+      "summary_cn": "提出DLLG方法，在logit级别动态融合多个专用LLM的输出，克服传统路由方法在适应性和稳定性之间的权衡，实现更灵活的模型组合。",
+      "why_it_matters": "提供高效的多模型协同方案，无需重新训练即可组合专家能力，降低集成成本。"
     },
     {
       "title": "Introducing new capabilities to GPT-Rosalind",
@@ -46,9 +46,9 @@
       "published": "2026-06-03 13:15:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "MacArena:在线macOS环境智能体基准",
-      "summary_cn": "提出MacArena基准，用于评估计算机使用智能体(CUA)在真实在线macOS环境中的GUI操作能力，涵盖视觉和控制原始任务。",
-      "why_it_matters": "为CUA智能体提供真实环境评估标准，推动自主操作发展。"
+      "title_cn": "全球首个有机高分子材料研发智能体发布",
+      "summary_cn": "苏州材科源图发布全球首个有机高分子材料研发应用智能体，基于自主材料科学智能体框架，旨在解决配方设计依赖专家经验、试错成本高等行业痛点。",
+      "why_it_matters": "AI智能体在垂直科研领域的重要落地案例，展示LLM加速材料研发的潜力。"
     },
     {
       "title": "Dreaming: Better memory for a more helpful ChatGPT",
@@ -57,20 +57,9 @@
       "published": "2026-06-04 09:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "FAIR-Calib:扩散LLM后训练量化校准",
-      "summary_cn": "针对扩散大语言模型(dLLM)迭代生成中的稳定性滞后问题，提出前沿感知不稳定性重加权校准方法，实现高效后训练量化。",
-      "why_it_matters": "解决扩散LLM部署中的量化精度损失关键问题。"
-    },
-    {
-      "title": "Travelers deploys AI-powered claims countrywide with OpenAI",
-      "link": "https://openai.com/index/travelers",
-      "summary": "Travelers built an AI-powered Claim Assistant with OpenAI to guide customers through filing claims, provide 24/7 support, and scale operations during peak demand.",
-      "published": "2026-06-02 12:00:00",
-      "source": "OpenAI Blog",
-      "category": "AI Lab",
-      "title_cn": "AgentJet:灵活智能体强化学习训练框架",
-      "summary_cn": "发布AgentJet分布式集群训练框架，专为LLM智能体强化学习设计，支持灵活扩展，克服集中式框架的瓶颈。",
-      "why_it_matters": "提供可扩展的智能体RL训练基础设施，加速智能体研发。"
+      "title_cn": "LazyAttention：延迟位置编码实现高效检索增强生成",
+      "summary_cn": "提出LazyAttention方法，通过延迟位置编码策略优化RAG中的KV缓存复用，显著降低长上下文推理的计算开销，同时保持生成质量。",
+      "why_it_matters": "直接降低RAG系统推理成本，对部署长文档问答和知识密集型应用至关重要。"
     },
     {
       "title": "A blueprint for democratic governance of frontier AI",
@@ -90,9 +79,9 @@
       "published": "2026-06-02 02:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "人们真正想要AI做什么？偏好多样性",
-      "summary_cn": "通过大规模用户研究，揭示人类对AI偏好的多样性，挑战单一对齐目标，为RLHF提供多元偏好建模依据。",
-      "why_it_matters": "重新思考AI对齐目标，推动更符合真实用户需求的训练方法。"
+      "title_cn": "观点：部署的强化学习应是持续性的",
+      "summary_cn": "论证当前RL系统“先训练后修复”范式的局限性，提出部署后的RL应持续学习以适应环境变化，并讨论持续RL在机器人、推荐系统等场景的实践路径。",
+      "why_it_matters": "挑战现有RL部署范式，推动持续学习在真实系统中的落地，提升模型长期适应性。"
     },
     {
       "title": "Advancing youth safety and opportunity through global leadership",
@@ -123,9 +112,9 @@
       "published": "2026-06-03 10:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "LazyAttention:延迟位置编码高效RAG",
-      "summary_cn": "提出LazyAttention方法，通过延迟位置编码优化检索增强生成(RAG)中的KV缓存效率，显著加速长上下文推理。",
-      "why_it_matters": "大幅降低RAG系统推理延迟，提升长文档处理效率。"
+      "title_cn": "全球首个有机高分子材料研发智能体发布",
+      "summary_cn": "苏州材科源图发布全球首个有机高分子材料研发应用智能体，基于通用材料科学智能体框架，旨在解决材料研发中依赖专家经验、试错成本高等瓶颈。",
+      "why_it_matters": "AI驱动材料科学范式变革，加速新材料发现与产业化。"
     },
     {
       "title": "Building the infrastructure for the Intelligence Age in Michigan",
@@ -134,20 +123,9 @@
       "published": "2026-06-01 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "图引导超低位量化减少LLM隐藏成本",
-      "summary_cn": "提出图引导的超低位后训练量化方法，最小化量化尺度缩放带来的隐藏精度损失，实现LLM高效部署。",
-      "why_it_matters": "突破超低位量化精度瓶颈，降低LLM部署成本。"
-    },
-    {
-      "title": "MUFG aims to become AI-native with OpenAI",
-      "link": "https://openai.com/index/mufg",
-      "summary": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.",
-      "published": "2026-05-28 00:00:00",
-      "source": "OpenAI Blog",
-      "category": "AI Lab",
-      "title_cn": "观点：部署强化学习应持续学习",
-      "summary_cn": "论证部署后的强化学习系统应转向持续学习范式，而非传统的训练-修复模式，以适应动态环境变化。",
-      "why_it_matters": "改变RL系统部署范式，推动自适应持续学习架构。"
+      "title_cn": "通用智能体能自动化数据整理吗？",
+      "summary_cn": "探索通用AI智能体在数据整理任务上的自动化能力，评估其迭代提出、实现和验证数据清洗策略的效果，揭示当前局限。",
+      "why_it_matters": "评估AI自主数据整理潜力，可能改变数据工程工作流程。"
     },
     {
       "title": "Biodefense in the Intelligence Age",
@@ -211,9 +189,9 @@
       "published": "2026-05-29 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "企业AI智能体部署前保证框架",
-      "summary_cn": "提出基于本体仿真的预部署验证框架，弥合LLM能力基准与企业AI智能体实际部署之间的信任认证差距。",
-      "why_it_matters": "为企业AI智能体安全部署提供系统化验证方法论。"
+      "title_cn": "通用智能体能自动化数据清洗吗？",
+      "summary_cn": "探索通用AI智能体在数据清洗任务中的自动化能力，包括数据质量检测、异常修复和标注优化，评估其替代人工数据工程师的潜力与局限。",
+      "why_it_matters": "数据清洗是AI开发最耗时环节之一，自动化将大幅提升数据准备效率，加速模型迭代。"
     }
   ]
 }

@@ -1,30 +1,41 @@
 {
-  "snapshot_at": "2026-06-05T00:42:22.756198+00:00",
-  "count": 2,
+  "snapshot_at": "2026-06-09T00:08:00.018857+00:00",
+  "count": 3,
   "repos": [
     {
-      "repo_full": "NousResearch/hermes-agent",
+      "repo_full": "Panniantong/Agent-Reach",
       "description": "",
       "language": "Python",
-      "stars_today": 1913,
-      "total_stars": 180974,
-      "url": "https://github.com/NousResearch/hermes-agent",
+      "stars_today": 679,
+      "total_stars": 24080,
+      "url": "https://github.com/Panniantong/Agent-Reach",
       "paper_linked": false,
       "paper_id": null
     },
     {
-      "repo_full": "Open-LLM-VTuber/Open-LLM-VTuber",
+      "repo_full": "openai/plugins",
+      "description": "",
+      "language": "JavaScript",
+      "stars_today": 296,
+      "total_stars": 2312,
+      "url": "https://github.com/openai/plugins",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "Andyyyy64/whichllm",
       "description": "",
       "language": "Python",
-      "stars_today": 581,
-      "total_stars": 9585,
-      "url": "https://github.com/Open-LLM-VTuber/Open-LLM-VTuber",
+      "stars_today": 143,
+      "total_stars": 3438,
+      "url": "https://github.com/Andyyyy64/whichllm",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
     "2026-06-05",
-    "2026-06-05"
+    "2026-06-05",
+    "2026-06-09"
   ]
 }
