@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-06-09T08:09:24.490871",
+  "generated_at": "2026-06-13T08:08:30.401898",
   "source_health": [
     {
       "name": "Google AI",
       "category": "AI Lab",
-      "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 5,
+      "last_success": "2026-06-12T23:30:14.199816+00:00",
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "down"
+      "status": "degraded"
     },
     {
       "name": "HuggingFace Blog",
       "category": "Community",
-      "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 5,
+      "last_success": "2026-06-12T23:30:14.199816+00:00",
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "down"
+      "status": "degraded"
     },
     {
       "name": "VentureBeat AI",
       "category": "Blog",
-      "last_success": "2026-06-05T00:32:12.766234+00:00",
-      "consecutive_failures": 5,
+      "last_success": "2026-06-12T10:39:06.226384+00:00",
+      "consecutive_failures": 1,
       "article_count_last": 7,
-      "status": "down"
+      "status": "degraded"
     },
     {
       "name": "Apple ML Research",
       "category": "AI Lab",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -36,7 +36,7 @@
     {
       "name": "ArXiv cs.AI",
       "category": "Paper",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -44,7 +44,7 @@
     {
       "name": "ArXiv cs.CL",
       "category": "Paper",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -52,7 +52,7 @@
     {
       "name": "ArXiv cs.CV",
       "category": "Paper",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -60,7 +60,7 @@
     {
       "name": "ArXiv cs.LG",
       "category": "Paper",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -68,7 +68,7 @@
     {
       "name": "ArXiv stat.ML",
       "category": "Paper",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -76,7 +76,7 @@
     {
       "name": "Google DeepMind",
       "category": "AI Lab",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -84,7 +84,7 @@
     {
       "name": "NVIDIA Blog",
       "category": "AI Lab",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -92,7 +92,7 @@
     {
       "name": "OpenAI Blog",
       "category": "AI Lab",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -100,7 +100,7 @@
     {
       "name": "PyTorch Blog",
       "category": "Community",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -108,7 +108,7 @@
     {
       "name": "TechCrunch AI",
       "category": "Blog",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -116,7 +116,7 @@
     {
       "name": "量子位",
       "category": "中文媒体",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -124,25 +124,25 @@
     {
       "name": "雷锋网 AI",
       "category": "中文媒体",
-      "last_success": "2026-06-09T00:03:35.126252+00:00",
+      "last_success": "2026-06-13T00:01:30.500343+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
     }
   ],
   "score_distribution": {
-    "80-100": 8,
-    "60-79": 234,
-    "40-59": 279,
-    "20-39": 122,
-    "0-19": 34
+    "80-100": 17,
+    "60-79": 327,
+    "40-59": 360,
+    "20-39": 144,
+    "0-19": 48
   },
   "category_distribution": {
-    "Paper": 315,
-    "中文媒体": 130,
-    "AI Lab": 112,
-    "Blog": 83,
-    "Community": 37
+    "Paper": 415,
+    "中文媒体": 186,
+    "AI Lab": 134,
+    "Blog": 116,
+    "Community": 45
   },
   "daily_trends": [
     {
@@ -216,9 +216,46 @@
       "total_articles": 677,
       "new_articles": 240,
       "curated_count": 10
+    },
+    {
+      "date": "2026-06-12",
+      "total_sources": 13,
+      "successful_sources": 12,
+      "total_articles": 882,
+      "new_articles": 200,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-13",
+      "total_sources": 16,
+      "successful_sources": 13,
+      "total_articles": 896,
+      "new_articles": 220,
+      "curated_count": 10
     }
   ],
   "top_articles": [
+    {
+      "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "score": 92.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "score": 88.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 86.3,
+      "published": "2026-06-12 04:00:00"
+    },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
       "source": "ArXiv cs.AI",
@@ -248,80 +285,73 @@
       "published": "2026-06-08 04:00:00"
     },
     {
-      "title": "FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs",
-      "source": "ArXiv cs.CV",
-      "category": "Paper",
-      "score": 81.6,
-      "published": "2026-06-04 04:00:00"
-    },
-    {
-      "title": "LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "score": 81.3,
-      "published": "2026-06-04 04:00:00"
-    },
-    {
-      "title": "Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning",
-      "source": "ArXiv cs.LG",
-      "category": "Paper",
-      "score": 80.4,
-      "published": "2026-06-08 04:00:00"
-    },
-    {
-      "title": "AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "score": 80.3,
-      "published": "2026-06-04 04:00:00"
-    },
-    {
-      "title": "USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn",
-      "source": "ArXiv cs.CV",
-      "category": "Paper",
-      "score": 79.6,
-      "published": "2026-06-08 04:00:00"
-    },
-    {
-      "title": "TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection",
+      "title": "A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions",
       "source": "ArXiv stat.ML",
       "category": "Paper",
-      "score": 79.6,
-      "published": "2026-06-08 04:00:00"
+      "score": 82.6,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 82.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 82.3,
+      "published": "2026-06-12 04:00:00"
     }
   ],
   "keyword_trends": {
     "keywords": [
       {
-        "keyword": "LLM",
-        "current_count": 97,
-        "previous_count": 0,
-        "change_pct": 100,
+        "keyword": "开源",
+        "current_count": 6,
+        "previous_count": 1,
+        "change_pct": 500.0,
         "direction": "surging"
       },
       {
-        "keyword": "GPT",
-        "current_count": 21,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "Claude",
-        "current_count": 5,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "Gemini",
-        "current_count": 8,
-        "previous_count": 0,
-        "change_pct": 100,
+        "keyword": "自动驾驶",
+        "current_count": 4,
+        "previous_count": 1,
+        "change_pct": 300.0,
         "direction": "surging"
       },
       {
         "keyword": "Llama",
+        "current_count": 3,
+        "previous_count": 1,
+        "change_pct": 200.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "weights",
+        "current_count": 6,
+        "previous_count": 2,
+        "change_pct": 200.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "多模态",
+        "current_count": 8,
+        "previous_count": 3,
+        "change_pct": 166.7,
+        "direction": "surging"
+      },
+      {
+        "keyword": "部署",
+        "current_count": 5,
+        "previous_count": 2,
+        "change_pct": 150.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "Mistral",
         "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
@@ -329,115 +359,101 @@
       },
       {
         "keyword": "DeepSeek",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "多模态",
-        "current_count": 8,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "multimodal",
-        "current_count": 20,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "VLM",
-        "current_count": 10,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "视觉语言",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "RLHF",
         "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
-        "keyword": "强化学习",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
+        "keyword": "视觉语言",
+        "current_count": 0,
+        "previous_count": 1,
+        "change_pct": -100.0,
+        "direction": "falling"
       },
       {
-        "keyword": "fine-tun",
-        "current_count": 12,
+        "keyword": "DPO",
+        "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "微调",
+        "current_count": 0,
+        "previous_count": 1,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "function calling",
         "current_count": 1,
         "previous_count": 0,
         "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "MMLU",
+        "current_count": 0,
+        "previous_count": 1,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "Gemini",
+        "current_count": 1,
+        "previous_count": 8,
+        "change_pct": -87.5,
+        "direction": "falling"
+      },
+      {
+        "keyword": "embeddings",
+        "current_count": 1,
+        "previous_count": 6,
+        "change_pct": -83.3,
+        "direction": "falling"
+      },
+      {
+        "keyword": "vector",
+        "current_count": 5,
+        "previous_count": 3,
+        "change_pct": 66.7,
         "direction": "surging"
       },
       {
         "keyword": "LoRA",
-        "current_count": 13,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "QLoRA",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "RAG",
-        "current_count": 38,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "Agent",
-        "current_count": 103,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
+        "current_count": 4,
+        "previous_count": 10,
+        "change_pct": -60.0,
+        "direction": "falling"
       },
       {
         "keyword": "智能体",
-        "current_count": 10,
-        "previous_count": 0,
-        "change_pct": 100,
+        "current_count": 8,
+        "previous_count": 5,
+        "change_pct": 60.0,
         "direction": "surging"
       },
       {
-        "keyword": "量化",
-        "current_count": 4,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
+        "keyword": "open source",
+        "current_count": 2,
+        "previous_count": 5,
+        "change_pct": -60.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "Codex",
+        "current_count": 6,
+        "previous_count": 12,
+        "change_pct": -50.0,
+        "direction": "falling"
       }
     ],
     "period": {
-      "current_start": "2026-06-02",
-      "current_end": "2026-06-09",
-      "previous_start": "2026-05-26",
-      "previous_end": "2026-06-02",
+      "current_start": "2026-06-06",
+      "current_end": "2026-06-13",
+      "previous_start": "2026-05-30",
+      "previous_end": "2026-06-06",
       "window_days": 7
     }
   }

@@ -24,6 +24,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-border-default) transparent;
@@ -35,4 +38,9 @@
   ::selection {
     background: var(--color-accent-muted);
   }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }

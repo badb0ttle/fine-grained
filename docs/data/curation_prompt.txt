@@ -6,108 +6,108 @@
 3. summary_cn: 中文摘要（60-100字，突出核心信息）
 4. why_it_matters: 一句话（30字内），说明对 AI 从业者的实际影响或意义
 
-返回严格 JSON 数组格式：
+返回严格 JSON 数组格式（id 使用上方的数据库 DB ID，不是方括号序号）：
 [
-  {"id": <article_id>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."},
+  {"id": <数据库 DB ID>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."},
   ...
 ]
 
 候选文章：
-[1] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
+[1] [DB ID: 1757] [92.3] Title: Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12854v1 Announce Type: new 
+Abstract: Large Language Models such as GPT-4o and GPT-5 achieve strong zero-shot performance on biomedical claim verification, but cost and opacity limit scalab
+
+[2] [DB ID: 1758] [88.3] Title: Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12881v1 Announce Type: new 
+Abstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experim
+
+[3] [DB ID: 1700] [86.3] Title: ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12451v1 Announce Type: new 
+Abstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches re
+
+[4] [DB ID: 1479] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
     Source: ArXiv cs.AI | 2026-06-08 04:00:00
     Summary: arXiv:2606.06976v1 Announce Type: new 
 Abstract: Large language model (LLM)-based agents often make suboptimal tool-use decisions, including unsupported tool invocation and hallucinated direct respons
 
-[2] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
+[5] [DB ID: 1481] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06547v1 Announce Type: new 
 Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a "stability lag" where early decisions rema
 
-[3] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
+[6] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06546v1 Announce Type: new 
 Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
 
-[4] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
+[7] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06560v1 Announce Type: new 
 Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
 
-[5] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+[8] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
+    Source: ArXiv stat.ML | 2026-06-12 04:00:00
+    Summary: arXiv:2605.18898v1 Announce Type: cross 
+Abstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude 
+
+[9] [DB ID: 1703] [82.3] Title: Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12594v1 Announce Type: new 
+Abstract: Modern Lean theorem provers achieve strong performance only with substantial training and inference compute, driven in part by scarce verified proof da
+
+[10] [DB ID: 1713] [82.3] Title: Benchmarking AI Agents for Addressing Scientific Challenges Across Scales
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12736v1 Announce Type: new 
+Abstract: AI agents are increasingly being developed to accelerate scientific discovery, yet their practical capabilities in real research settings remain poorly
+
+[11] [DB ID: 1719] [82.3] Title: MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12809v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are trained on massive multimodal data, making data unlearning increasingly important as data owners may reque
+
+[12] [DB ID: 2421] [82.0] Title: Xiaomi's new open source, agentic AI coding harness MiMo Code beats Claude Code at ultra-long, 200+ step tasks
+    Source: VentureBeat AI | 2026-06-11 23:14:00
+    Summary: Xiaomi&#x27;s MiMo AI team has open-sourced MiMo Code V0.1.0, a terminal-native AI coding assistant that the Chinese electronics giant says outperforms Anthropic&#x27;s Claude Code on key agentic codi
+
+[13] [DB ID: 116] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
     Source: ArXiv cs.CV | 2026-06-04 04:00:00
     Summary: arXiv:2606.04282v1 Announce Type: new 
 Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
 
-[6] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+[14] [DB ID: 95] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
     Source: ArXiv cs.CL | 2026-06-04 04:00:00
     Summary: arXiv:2606.04302v1 Announce Type: new 
 Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
 
-[7] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
+[15] [DB ID: 1493] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06673v1 Announce Type: new 
 Abstract: Sparse rewards and heterogeneous task sequences remain persistent challenges in Reinforcement Learning (RL), often resulting in slow convergence, weak 
 
-[8] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+[16] [DB ID: 1709] [80.3] Title: Deployment-Centered Evaluation: Predicting Query-Level Rejection Risk in a Clinical LLM System
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12702v1 Announce Type: new 
+Abstract: Large language models (LLMs) are increasingly integrated into clinical systems, making it essential to evaluate the real-world utility of these systems
+
+[17] [DB ID: 58] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
     Source: ArXiv cs.AI | 2026-06-04 04:00:00
     Summary: arXiv:2606.04484v1 Announce Type: new 
 Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
 
-[9] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
+[18] [DB ID: 1535] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
     Source: ArXiv cs.CV | 2026-06-08 04:00:00
     Summary: arXiv:2606.06709v1 Announce Type: new 
 Abstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and d
 
-[10] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
+[19] [DB ID: 1548] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
     Source: ArXiv stat.ML | 2026-06-08 04:00:00
     Summary: arXiv:2606.06742v1 Announce Type: cross 
 Abstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression,
 
-[11] [79.4] Title: What Do People Actually Want From AI? Mapping Preference Plurality
+[20] [DB ID: 1506] [79.4] Title: What Do People Actually Want From AI? Mapping Preference Plurality
     Source: ArXiv cs.CL | 2026-06-08 04:00:00
     Summary: arXiv:2606.06674v1 Announce Type: new 
 Abstract: Large Language Models (LLMs) are often fine-tuned through Reinforcement Learning from Human Feedback (RLHF) to align with people's preferences and valu
-
-[12] [79.4] Title: What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05304v1 Announce Type: new 
-Abstract: Multi-agent systems (MAS) built on large language models are typically organized around roles, pipelines, and turn schedules, while the content that ag
-
-[13] [78.4] Title: Minimizing the Hidden Cost of Scales: Graph-Guided Ultra-Low-Bit Quantization for Large Language Models
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05429v1 Announce Type: new 
-Abstract: Post-training quantization (PTQ) is critical for the efficient deployment of large language models (LLMs). Recent ultra-low-bit PTQ methods rely on rig
-
-[14] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
-    Source: 雷锋网 AI | 2026-06-04 13:38:00
-    Summary: 在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高
-
-[15] [77.6] Title: Bradley-Terry Rankings for Recommender Systems Across Dataset Taxonomies
-    Source: ArXiv stat.ML | 2026-06-08 04:00:00
-    Summary: arXiv:2606.07492v1 Announce Type: cross 
-Abstract: The ranking of recommendation algorithms is a challenging problem since model performance is sensitive to dataset characteristics such as sparsity, s
-
-[16] [77.4] Title: How Far Did They Go? The Persuasive Tactics of Covert LLM Agents in a Discontinued Field Experiment
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05256v1 Announce Type: new 
-Abstract: This study analyzes a publicly released dataset from a discontinued field experiment on Reddit's r/ChangeMyView. The intervention, conducted by unknown
-
-[17] [77.4] Title: GITCO: Gated Inference-Time Context Optimization in TSFMs
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05332v1 Announce Type: new 
-Abstract: Patch-based Time Series Foundation Models (TSFMs) suffer from context poisoning: structurally anomalous patches capture disproportionate attention and 
-
-[18] [77.3] Title: Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification
-    Source: ArXiv cs.AI | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04037v1 Announce Type: new 
-Abstract: Pre-deployment verification of enterprise artificial intelligence (AI) agents remains a critical gap between large language model (LLM) capability benc
-
-[19] [77.3] Title: StepPRM-RTL: Stepwise Process-Reward Guided LLM Fine-Tuning for Enhanced RTL Synthesis
-    Source: ArXiv cs.AI | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04246v1 Announce Type: new 
-Abstract: Automatic generation of RTL code for digital hardware designs remains challenging due to long-horizon reasoning, multi-step dependencies, and strict co
-
-[20] [77.3] Title: Position: Deployed Reinforcement Learning should be Continual
-    Source: ArXiv cs.LG | 2026-06-04 04:00:00
-    Summary: arXiv:2606.04029v1 Announce Type: new 
-Abstract: Reinforcement Learning (RL) has received increasing attention and adoption in real-world use cases. Most of these systems follow a train-then-fix parad

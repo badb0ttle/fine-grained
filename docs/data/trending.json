@@ -1,34 +1,24 @@
 {
-  "snapshot_at": "2026-06-09T00:08:00.018857+00:00",
-  "count": 3,
+  "snapshot_at": "2026-06-12T07:54:50.216643+00:00",
+  "count": 2,
   "repos": [
     {
-      "repo_full": "Panniantong/Agent-Reach",
+      "repo_full": "addyosmani/agent-skills",
       "description": "",
-      "language": "Python",
-      "stars_today": 679,
-      "total_stars": 24080,
-      "url": "https://github.com/Panniantong/Agent-Reach",
+      "language": "Shell",
+      "stars_today": 3278,
+      "total_stars": 55626,
+      "url": "https://github.com/addyosmani/agent-skills",
       "paper_linked": false,
       "paper_id": null
     },
     {
-      "repo_full": "openai/plugins",
+      "repo_full": "kenn-io/agentsview",
       "description": "",
-      "language": "JavaScript",
-      "stars_today": 296,
-      "total_stars": 2312,
-      "url": "https://github.com/openai/plugins",
-      "paper_linked": false,
-      "paper_id": null
-    },
-    {
-      "repo_full": "Andyyyy64/whichllm",
-      "description": "",
-      "language": "Python",
-      "stars_today": 143,
-      "total_stars": 3438,
-      "url": "https://github.com/Andyyyy64/whichllm",
+      "language": "Go",
+      "stars_today": 114,
+      "total_stars": 1854,
+      "url": "https://github.com/kenn-io/agentsview",
       "paper_linked": false,
       "paper_id": null
     }
@@ -36,6 +26,7 @@
   "history_dates": [
     "2026-06-05",
     "2026-06-05",
-    "2026-06-09"
+    "2026-06-09",
+    "2026-06-12"
   ]
 }

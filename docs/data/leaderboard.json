@@ -1,6 +1,14 @@
 {
-  "generated_at": "2026-06-09T00:09:24.543074+00:00",
+  "generated_at": "2026-06-13T00:08:30.467848+00:00",
   "models": [
+    {
+      "name": "GPT-4o",
+      "provider": "OpenAI",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
+    },
     {
       "name": "GPT-5.5",
       "provider": "OpenAI",
@@ -24,6 +32,19 @@
         {
           "benchmark": "关键基准测试",
           "score": "被 MiniMax-M3 超越"
+        }
+      ]
+    },
+    {
+      "name": "MiMo Code V0.1.0",
+      "provider": "Xiaomi",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": [
+        {
+          "benchmark": "200+ 步超长 agentic 编程任务",
+          "score": "超越 Claude Code"
         }
       ]
     },

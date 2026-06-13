@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLatest, useTrending } from '../hooks/useData'
 import type { Article, CategoryKey } from '../types'
 import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
+import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
+import { HomePageSkeleton } from '../components/Skeleton'
+import { useToast } from '../components/Toast'
 
 const CATEGORY_META: Record<CategoryKey, { name: string }> = {
   'AI Lab': { name: 'AI 实验室' },
@@ -119,6 +122,7 @@ function FavButton({ link, title }: { link: string; title: string }) {
       return f.some((x: { link: string }) => x.link === link)
     } catch { return false }
   })
+  const { toast } = useToast()
 
   const toggle = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -128,9 +132,11 @@ function FavButton({ link, title }: { link: string; title: string }) {
     if (idx >= 0) {
       f.splice(idx, 1)
       setFav(false)
+      toast('已取消收藏', 'info')
     } else {
       f.unshift({ link, title: (title || '').slice(0, 80), ts: Date.now() })
       setFav(true)
+      toast('已收藏 ⭐', 'success')
     }
     localStorage.setItem('ai_fav', JSON.stringify(f.slice(0, 100)))
   }
@@ -138,7 +144,7 @@ function FavButton({ link, title }: { link: string; title: string }) {
   return (
     <button
       onClick={toggle}
-      className={`text-base hover:scale-110 transition-transform ${fav ? 'text-amber' : 'text-text-muted'}`}
+      className={`text-base hover:scale-110 active:scale-95 transition-transform ${fav ? 'text-amber drop-shadow-[0_0_4px_rgba(240,160,80,0.5)]' : 'text-text-muted'}`}
       title="收藏"
     >
       <FontAwesomeIcon icon={ICON.star} />
@@ -146,7 +152,7 @@ function FavButton({ link, title }: { link: string; title: string }) {
   )
 }
 
-function ArticleCard({ article }: { article: Article }) {
+function ArticleCard({ article, index = 0 }: { article: Article; index?: number }) {
   const title = article.title_cn || article.title
   const summary = article.summary_cn || article.summary
 
@@ -162,42 +168,44 @@ function ArticleCard({ article }: { article: Article }) {
   const catIcon = CATEGORY_ICONS[article.category] || DEFAULT_CATEGORY_ICON
 
   return (
-    <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200">
-      <div className="flex items-start justify-between gap-2">
-        <a
-          href={article.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleClick}
-          className="text-[15px] font-medium text-text-primary hover:text-accent transition-colors leading-snug flex-1"
-        >
-          {article.is_paper && (
-            <FontAwesomeIcon icon={ICON.fileLines} className="mr-1.5 text-accent/60 text-xs" />
-          )}
-          {title}
-        </a>
-        <FavButton link={article.link} title={title || ''} />
-      </div>
-      <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
-        <span>{article.category && (
-          <FontAwesomeIcon icon={catIcon} className="mr-1 text-text-muted/60" />
-        )}</span>
-        <span className="text-text-secondary">{article.source}</span>
-        <span>·</span>
-        <span>{article.published}</span>
-      </div>
-      {summary && (
-        <p className="mt-2 text-sm text-text-secondary leading-relaxed line-clamp-2">
-          {summary.slice(0, 280)}
-        </p>
-      )}
-      {article.why_it_matters && (
-        <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5 flex items-start gap-1.5">
-          <FontAwesomeIcon icon={ICON.lightbulb} className="mt-0.5 flex-shrink-0" />
-          {article.why_it_matters}
+    <ScrollReveal index={index}>
+      <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group">
+        <div className="flex items-start justify-between gap-2">
+          <a
+            href={article.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleClick}
+            className="text-[15px] font-medium text-text-primary group-hover:text-accent transition-colors leading-snug flex-1"
+          >
+            {article.is_paper && (
+              <FontAwesomeIcon icon={ICON.fileLines} className="mr-1.5 text-accent/60 text-xs" />
+            )}
+            {title}
+          </a>
+          <FavButton link={article.link} title={title || ''} />
         </div>
-      )}
-    </div>
+        <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
+          {article.category && (
+            <FontAwesomeIcon icon={catIcon} className="mr-1 text-text-muted/60" />
+          )}
+          <span className="text-text-secondary">{article.source}</span>
+          <span>·</span>
+          <span>{article.published}</span>
+        </div>
+        {summary && (
+          <p className="mt-2 text-sm text-text-secondary leading-relaxed line-clamp-2">
+            {summary.slice(0, 280)}
+          </p>
+        )}
+        {article.why_it_matters && (
+          <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5 flex items-start gap-1.5">
+            <FontAwesomeIcon icon={ICON.lightbulb} className="mt-0.5 flex-shrink-0" />
+            {article.why_it_matters}
+          </div>
+        )}
+      </div>
+    </ScrollReveal>
   )
 }
 
@@ -206,14 +214,7 @@ export function HomePage() {
   const { data: trending } = useTrending()
   const search = useSearch()
 
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center py-20">
-        <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
-        <p className="mt-4 text-text-muted">正在加载最新情报...</p>
-      </div>
-    )
-  }
+  if (loading) return <HomePageSkeleton />
 
   if (error || !data || !data.articles.length) {
     return (
@@ -233,92 +234,101 @@ export function HomePage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Hero */}
-      <div className="text-center py-6">
-        <h1 className="text-3xl font-bold text-text-primary">AI 情报站</h1>
-        <p className="mt-2 text-text-secondary">每日全球 AI 技术动态 · 自动采集精选</p>
-        <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
-          <span className="flex items-center gap-1">
-            <FontAwesomeIcon icon={ICON.timeline} />
-            {data.scanned_at?.slice(0, 16)}
-          </span>
-          <span className="flex items-center gap-1">
-            <FontAwesomeIcon icon={ICON.satelliteDish} />
-            {data.successful_sources}/{data.total_sources} 源
-          </span>
-          <span className="flex items-center gap-1">
-            <FontAwesomeIcon icon={ICON.news} />
-            {data.articles.length} 篇精选
-          </span>
+      <FadeIn>
+        <div className="text-center py-6">
+          <h1 className="text-3xl font-bold text-text-primary">AI 情报站</h1>
+          <p className="mt-2 text-text-secondary">每日全球 AI 技术动态 · 自动采集精选</p>
+          <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
+            <span className="flex items-center gap-1">
+              <FontAwesomeIcon icon={ICON.timeline} />
+              {data.scanned_at?.slice(0, 16)}
+            </span>
+            <span className="flex items-center gap-1">
+              <FontAwesomeIcon icon={ICON.satelliteDish} />
+              {data.successful_sources}/{data.total_sources} 源
+            </span>
+            <span className="flex items-center gap-1">
+              <FontAwesomeIcon icon={ICON.news} />
+              {data.articles.length} 篇精选
+            </span>
+          </div>
+          <div className="mt-4 flex justify-center">
+            <SearchBar {...search} />
+          </div>
         </div>
-        <div className="mt-4 flex justify-center">
-          <SearchBar {...search} />
-        </div>
-      </div>
+      </FadeIn>
 
       {/* Articles by category */}
-      {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
-        .filter(cat => byCat[cat])
-        .map(cat => {
-          const meta = CATEGORY_META[cat as CategoryKey] || DEFAULT_META
-          const catIcon = CATEGORY_ICONS[cat as CategoryKey] || DEFAULT_CATEGORY_ICON
-          const items = byCat[cat]
-          return (
-            <section key={cat} className="animate-in">
-              <div className="flex items-center gap-2 mb-3">
-                <FontAwesomeIcon icon={catIcon} className="text-accent" />
-                <h2 className="text-lg font-semibold text-text-primary">{meta.name}</h2>
-                <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
-              </div>
-              <div className="space-y-2">
-                {items.map((a, i) => (
-                  <ArticleCard key={i} article={a} />
-                ))}
-              </div>
-            </section>
-          )
-        })}
+      <StaggerContainer className="space-y-8">
+        {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
+          .filter(cat => byCat[cat])
+          .map(cat => {
+            const meta = CATEGORY_META[cat as CategoryKey] || DEFAULT_META
+            const catIcon = CATEGORY_ICONS[cat as CategoryKey] || DEFAULT_CATEGORY_ICON
+            const items = byCat[cat]
+            return (
+              <section key={cat}>
+                <FadeIn delay={0.05}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <FontAwesomeIcon icon={catIcon} className="text-accent" />
+                    <h2 className="text-lg font-semibold text-text-primary">{meta.name}</h2>
+                    <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
+                  </div>
+                </FadeIn>
+                <div className="space-y-2">
+                  {items.map((a, i) => (
+                    <ArticleCard key={i} article={a} index={i} />
+                  ))}
+                </div>
+              </section>
+            )
+          })}
+      </StaggerContainer>
 
       {/* Trending */}
       {trending && trending.repos && trending.repos.length > 0 && (
         <section>
-          <div className="flex items-center gap-2 mb-3">
-            <FontAwesomeIcon icon={ICON.fire} className="text-amber" />
-            <h2 className="text-lg font-semibold text-text-primary">GitHub Trending · AI/ML</h2>
-            {trending.snapshot_at && (
-              <span className="text-sm text-text-muted flex items-center gap-1">
-                <FontAwesomeIcon icon={ICON.timeline} />
-                {trending.snapshot_at.slice(0, 10)}
-              </span>
-            )}
-          </div>
+          <FadeIn delay={0.1}>
+            <div className="flex items-center gap-2 mb-3">
+              <FontAwesomeIcon icon={ICON.fire} className="text-amber" />
+              <h2 className="text-lg font-semibold text-text-primary">GitHub Trending · AI/ML</h2>
+              {trending.snapshot_at && (
+                <span className="text-sm text-text-muted flex items-center gap-1">
+                  <FontAwesomeIcon icon={ICON.timeline} />
+                  {trending.snapshot_at.slice(0, 10)}
+                </span>
+              )}
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {trending.repos.slice(0, 12).map((repo, i) => (
-              <a
-                key={i}
-                href={repo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200"
-              >
-                <div className="font-medium text-sm text-text-primary truncate">
-                  <span className="text-text-muted">{repo.repo_full.split('/')[0]}/</span>
-                  <strong>{repo.repo_full.split('/')[1]}</strong>
-                </div>
-                <p className="mt-1.5 text-xs text-text-secondary line-clamp-2">{repo.description?.slice(0, 120)}</p>
-                <div className="mt-2 flex items-center gap-3 text-xs text-text-muted">
-                  <span className="flex items-center gap-1"><FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" /> {repo.stars_today} today</span>
-                  <span>{repo.total_stars.toLocaleString()} total</span>
-                  {repo.language && <span>{repo.language}</span>}
-                  {repo.paper_linked && (
-                    <span className="text-accent/70 flex items-center gap-0.5">
-                      <FontAwesomeIcon icon={ICON.fileLines} />
-                      论文
-                    </span>
-                  )}
-                </div>
-              </a>
+              <ScrollReveal key={i} index={i}>
+                <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300"
+                >
+                  <div className="font-medium text-sm text-text-primary truncate">
+                    <span className="text-text-muted">{repo.repo_full.split('/')[0]}/</span>
+                    <strong>{repo.repo_full.split('/')[1]}</strong>
+                  </div>
+                  <p className="mt-1.5 text-xs text-text-secondary line-clamp-2">{repo.description?.slice(0, 120)}</p>
+                  <div className="mt-2 flex items-center gap-3 text-xs text-text-muted">
+                    <span className="flex items-center gap-1"><FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" /> {repo.stars_today} today</span>
+                    <span>{repo.total_stars.toLocaleString()} total</span>
+                    {repo.language && <span>{repo.language}</span>}
+                    {repo.paper_linked && (
+                      <span className="text-accent/70 flex items-center gap-0.5">
+                        <FontAwesomeIcon icon={ICON.fileLines} />
+                        论文
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </ScrollReveal>
             ))}
           </div>
         </section>
@@ -343,24 +353,26 @@ function ContinueReading() {
   if (!items.length) return null
 
   return (
-    <section>
-      <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
-        <FontAwesomeIcon icon={ICON.bookOpen} className="text-accent" />
-        继续阅读
-      </h2>
-      <div className="space-y-1">
-        {items.map((item, i) => (
-          <a
-            key={i}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-sm text-text-secondary hover:text-accent transition-colors py-1"
-          >
-            {item.title}
-          </a>
-        ))}
-      </div>
-    </section>
+    <FadeIn delay={0.2}>
+      <section>
+        <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.bookOpen} className="text-accent" />
+          继续阅读
+        </h2>
+        <div className="space-y-1">
+          {items.map((item, i) => (
+            <a
+              key={i}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-text-secondary hover:text-accent transition-colors py-1"
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      </section>
+    </FadeIn>
   )
 }

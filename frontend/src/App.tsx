@@ -1,6 +1,11 @@
 import { useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import { Header, Footer } from './components/Layout'
+import { PageTransition } from './components/Animations'
+import { ReadingProgress } from './components/ReadingProgress'
+import { BackToTop } from './components/BackToTop'
+import { ToastProvider } from './components/Toast'
 import { HomePage } from './pages/HomePage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
@@ -22,13 +27,14 @@ function SpaRedirect() {
   return null
 }
 
-export default function App() {
+function AnimatedRoutes() {
+  const location = useLocation()
+
   return (
-    <div className="min-h-dvh flex flex-col">
-      <Header />
-      <main className="flex-1 mx-auto w-full max-w-6xl px-4 pt-20 pb-8">
+    <AnimatePresence mode="wait">
+      <PageTransition key={location.pathname}>
         <SpaRedirect />
-        <Routes>
+        <Routes location={location}>
           <Route path="/" element={<HomePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
@@ -36,8 +42,23 @@ export default function App() {
           <Route path="/clusters" element={<ClustersPage />} />
           <Route path="/weekly" element={<WeeklyPage />} />
         </Routes>
-      </main>
-      <Footer />
-    </div>
+      </PageTransition>
+    </AnimatePresence>
+  )
+}
+
+export default function App() {
+  return (
+    <ToastProvider>
+      <div className="min-h-dvh flex flex-col">
+        <ReadingProgress />
+        <Header />
+        <main className="flex-1 mx-auto w-full max-w-6xl px-4 pt-20 pb-8">
+          <AnimatedRoutes />
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
+    </ToastProvider>
   )
 }

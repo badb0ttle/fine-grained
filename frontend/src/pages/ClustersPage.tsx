@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ICON } from '../lib/icons'
+import { FadeIn } from '../components/Animations'
+import { CardSkeleton } from '../components/Skeleton'
 
 interface ClusterPoint {
   id: number
@@ -65,17 +67,14 @@ function ClusterScatter({ data }: { data: ClusterData }) {
     const ctx = canvas.getContext('2d')!
     ctx.scale(dpr, dpr)
 
-    // Background
     ctx.fillStyle = '#0a0b14'
     ctx.fillRect(0, 0, W, H)
 
-    // Filter points
     let points = data.points
     if (activeCluster >= 0) {
       points = points.filter(p => p.cluster === activeCluster)
     }
 
-    // Map to canvas coords
     const plotW = W - PADDING * 2
     const plotH = H - PADDING * 2
     const canvasPoints = points.map(p => ({
@@ -84,7 +83,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
       cy: PADDING + (1 - p.y) * plotH,
     }))
 
-    // Grid
     ctx.strokeStyle = 'rgba(255,255,255,0.03)'
     ctx.lineWidth = 0.5
     for (let i = 0; i <= 4; i++) {
@@ -94,7 +92,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
       ctx.beginPath(); ctx.moveTo(PADDING, gy); ctx.lineTo(PADDING + plotW, gy); ctx.stroke()
     }
 
-    // Draw points
     for (const p of canvasPoints) {
       const color = clusterMap.current[p.cluster] || '#888'
       const alpha = activeCluster >= 0 ? 'e6' : 'a6'
@@ -109,7 +106,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
 
     setInfo(`显示 ${canvasPoints.length} 篇文章 · 共 ${data.n_clusters} 个聚类`)
 
-    // Interactions
     let hovered: (typeof canvasPoints)[0] | null = null
 
     canvas.onmousemove = (e) => {
@@ -127,7 +123,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
 
       if (closest !== hovered) {
         hovered = closest
-        // Redraw + highlight
         draw()
 
         if (closest) {
@@ -190,7 +185,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
     }
   }
 
-  // Initial draw + resize
   useEffect(() => { draw() }, [data, activeCluster])
   useEffect(() => {
     const onResize = () => draw()
@@ -200,13 +194,12 @@ function ClusterScatter({ data }: { data: ClusterData }) {
 
   return (
     <div className="space-y-3">
-      {/* Legend */}
       <div className="flex flex-wrap gap-2 justify-center">
         <button
           onClick={() => setActiveCluster(-1)}
-          className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs transition-colors border ${
+          className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs transition-all border ${
             activeCluster === -1
-              ? 'border-accent bg-accent-muted text-accent'
+              ? 'border-accent bg-accent-muted text-accent shadow-[0_0_8px_rgba(108,92,231,0.15)]'
               : 'border-transparent text-text-secondary hover:border-border-default hover:bg-bg-hover'
           }`}
         >
@@ -217,9 +210,9 @@ function ClusterScatter({ data }: { data: ClusterData }) {
           <button
             key={c.id}
             onClick={() => setActiveCluster(c.id)}
-            className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs transition-colors border ${
+            className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs transition-all border ${
               activeCluster === c.id
-                ? 'border-accent bg-accent-muted text-accent'
+                ? 'border-accent bg-accent-muted text-accent shadow-[0_0_8px_rgba(108,92,231,0.15)]'
                 : 'border-transparent text-text-secondary hover:border-border-default hover:bg-bg-hover'
             }`}
           >
@@ -229,7 +222,6 @@ function ClusterScatter({ data }: { data: ClusterData }) {
         ))}
       </div>
 
-      {/* Canvas */}
       <div className="relative w-full overflow-hidden bg-bg-secondary rounded-xl border border-border-muted">
         <canvas ref={canvasRef} className="block w-full cursor-crosshair" />
         <div
@@ -256,8 +248,9 @@ export function ClustersPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center py-20">
-        <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+      <div className="space-y-4">
+        <CardSkeleton />
+        <CardSkeleton />
       </div>
     )
   }
@@ -273,49 +266,52 @@ export function ClustersPage() {
 
   return (
     <div className="space-y-8">
-      <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
-          <FontAwesomeIcon icon={ICON.clusters} className="text-accent" />
-          聚类分析
-        </h1>
-        <p className="mt-2 text-text-muted text-sm">
-          基于 TF-IDF 语义相似度的文章聚类可视化 · {data.n_clusters} 个聚类 · {data.total_articles} 篇文章
-        </p>
-      </div>
+      <FadeIn>
+        <div className="text-center py-4">
+          <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+            <FontAwesomeIcon icon={ICON.clusters} className="text-accent" />
+            聚类分析
+          </h1>
+          <p className="mt-2 text-text-muted text-sm">
+            基于 TF-IDF 语义相似度的文章聚类可视化 · {data.n_clusters} 个聚类 · {data.total_articles} 篇文章
+          </p>
+        </div>
+      </FadeIn>
 
-      {/* Scatter plot */}
-      <ClusterScatter data={data} />
+      <FadeIn delay={0.1}>
+        <ClusterScatter data={data} />
+      </FadeIn>
 
-      {/* Card list */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {data.clusters.map((cluster) => (
-          <div
-            key={cluster.id}
-            className="bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 transition-all"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <span
-                className="w-3 h-3 rounded-full flex-shrink-0"
-                style={{ backgroundColor: cluster.color }}
-              />
-              <h2 className="text-base font-semibold text-text-primary">{cluster.title}</h2>
-              <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
-                {cluster.count} 篇
-              </span>
-            </div>
-            {cluster.keywords && cluster.keywords.length > 0 && (
-              <div className="flex flex-wrap gap-1.5 mb-3">
-                {cluster.keywords.slice(0, 8).map((kw, j) => (
-                  <span
-                    key={j}
-                    className="px-2 py-0.5 rounded-full text-[11px] bg-accent-muted text-accent"
-                  >
-                    {kw}
-                  </span>
-                ))}
+          <FadeIn key={cluster.id} delay={0.05}>
+            <div
+              className="bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span
+                  className="w-3 h-3 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: cluster.color }}
+                />
+                <h2 className="text-base font-semibold text-text-primary">{cluster.title}</h2>
+                <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
+                  {cluster.count} 篇
+                </span>
               </div>
-            )}
-          </div>
+              {cluster.keywords && cluster.keywords.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {cluster.keywords.slice(0, 8).map((kw, j) => (
+                    <span
+                      key={j}
+                      className="px-2 py-0.5 rounded-full text-[11px] bg-accent-muted text-accent"
+                    >
+                      {kw}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </FadeIn>
         ))}
       </div>
     </div>

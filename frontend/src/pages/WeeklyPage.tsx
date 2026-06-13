@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ICON } from '../lib/icons'
+import { FadeIn, ScrollReveal } from '../components/Animations'
+import { CardSkeleton } from '../components/Skeleton'
 
 interface WeeklyReport {
   date: string
@@ -14,12 +16,10 @@ export function WeeklyPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Fetch weekly index data
     fetch(`${import.meta.env.BASE_URL}data/weekly/index.json`)
       .then(r => r.json())
       .then(data => setReports(data.reports || []))
       .catch(() => {
-        // Fallback: static list
         setReports([
           {
             date: '2026-06-02',
@@ -34,21 +34,25 @@ export function WeeklyPage() {
 
   if (loading) {
     return (
-      <div className="flex justify-center py-20">
-        <div className="w-8 h-8 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+      <div className="space-y-4">
+        <CardSkeleton />
+        <CardSkeleton />
+        <CardSkeleton />
       </div>
     )
   }
 
   return (
     <div className="space-y-6">
-      <div className="text-center py-4">
-        <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
-          <FontAwesomeIcon icon={ICON.weekly} className="text-accent" />
-          每周 AI 大事记
-        </h1>
-        <p className="mt-2 text-text-muted text-sm">深度行业分析简报</p>
-      </div>
+      <FadeIn>
+        <div className="text-center py-4">
+          <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
+            <FontAwesomeIcon icon={ICON.weekly} className="text-accent" />
+            每周 AI 大事记
+          </h1>
+          <p className="mt-2 text-text-muted text-sm">深度行业分析简报</p>
+        </div>
+      </FadeIn>
 
       {reports.length === 0 ? (
         <div className="text-center py-20">
@@ -57,29 +61,30 @@ export function WeeklyPage() {
         </div>
       ) : (
         <div className="space-y-3">
-          {reports.map((report) => (
-            <a
-              key={report.date}
-              href={report.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:bg-bg-elevated transition-all duration-200 group"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center">
-                  <FontAwesomeIcon icon={ICON.weekly} className="text-accent text-lg" />
+          {reports.map((report, i) => (
+            <ScrollReveal key={report.date} index={i}>
+              <a
+                href={report.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <FontAwesomeIcon icon={ICON.weekly} className="text-accent text-lg" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-base font-semibold text-text-primary group-hover:text-accent transition-colors">
+                      {report.title} ({report.date})
+                    </h2>
+                    <p className="mt-1 text-sm text-text-secondary">{report.summary}</p>
+                  </div>
+                  <div className="flex-shrink-0 self-center">
+                    <FontAwesomeIcon icon={ICON.arrowRight} className="text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-base font-semibold text-text-primary group-hover:text-accent transition-colors">
-                    {report.title} ({report.date})
-                  </h2>
-                  <p className="mt-1 text-sm text-text-secondary">{report.summary}</p>
-                </div>
-                <div className="flex-shrink-0 self-center">
-                  <FontAwesomeIcon icon={ICON.arrowRight} className="text-text-muted group-hover:text-accent transition-colors" />
-                </div>
-              </div>
-            </a>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
       )}

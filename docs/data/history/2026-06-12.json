@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-13T00:08:30.330086+00:00",
-  "curated_at": "2026-06-13T00:08:30.330103+00:00",
+  "scanned_at": "2026-06-12T07:55:34.135915+00:00",
+  "curated_at": "2026-06-12T07:55:34.135927+00:00",
   "total_sources": 16,
   "successful_sources": 13,
-  "total_articles": 896,
-  "curated_count": 33,
+  "total_articles": 860,
+  "curated_count": 32,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -13,9 +13,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "小型 LLM 在生物医学声明验证中的高效微调",
-      "summary_cn": "探索小型语言模型在生物医学声明验证任务上的成本效益微调策略，发现结构化数据集捷径可显著提升小模型性能，跨领域泛化能力接近 GPT-4o 水平。",
-      "why_it_matters": "小模型在专业医疗领域的性价比突破，降低 AI 辅助诊断的部署门槛"
+      "title_cn": "小LLM用于生物医学声明验证",
+      "summary_cn": "研究探索了使用小型LLM进行生物医学声明验证的成本效益微调方法，发现结构数据集捷径和跨域泛化问题。相比GPT-4o等大模型，小模型在保持性能的同时显著降低计算成本。",
+      "why_it_matters": "为资源受限的医疗AI应用提供了低成本、高可靠性的验证方案。"
     },
     {
       "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
@@ -24,9 +24,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "DPO 微调聊天机器人：一项实证研究",
-      "summary_cn": "对使用 Direct Preference Optimization（DPO）微调大型语言模型进行系统实证研究，覆盖多种模型规模和训练策略，为聊天机器人对齐提供可复现的训练配方和最佳实践。",
-      "why_it_matters": "DPO 是 RLHF 的低成本替代方案，这项研究为实际部署提供了宝贵经验"
+      "title_cn": "DPO 对话微调实证研究",
+      "summary_cn": "系统性研究使用 Direct Preference Optimization (DPO) 微调大语言模型的实验方案，对比不同超参数和训练策略对对话质量的影响，为 LLM 对话微调提供实用指南。",
+      "why_it_matters": "DPO 是当前最主流的 LLM 对齐方法，本文提供的实证结论可直接指导生产级微调。"
     },
     {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
@@ -35,9 +35,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "ToolSense：审计 LLM 参数化工具知识的诊断框架",
-      "summary_cn": "提出 ToolSense 框架诊断 LLM 内部存储的工具知识质量，发现当前基于嵌入的工具检索存在系统性瓶颈，工具的语义与功能描述之间存在显著鸿沟。",
-      "why_it_matters": "揭示 LLM Agent 工具调用的根本限制，指导更可靠的 Agent 系统设计"
+      "title_cn": "ToolSense：LLM 工具知识诊断框架",
+      "summary_cn": "提出 ToolSense 诊断框架，系统审计大语言模型对工具 API 的参数化知识掌握程度，揭示 embedding 检索在处理大规模工具目录时的关键瓶颈并提出改进方向。",
+      "why_it_matters": "Agent 工具调用是 2026 年核心方向，诊断工具知识盲区对构建可靠 Agent 系统至关重要。"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -46,9 +46,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "基于不确定性对齐强化学习的 Agent 工具调用决策",
-      "summary_cn": "通过不确定性对齐的强化学习优化 LLM Agent 的工具调用决策，减少幻觉式直接回答和不支持的无效工具调用，提升 Agent 在复杂多步任务中的可靠性。",
-      "why_it_matters": "解决 Agent 执行中最头疼的工具误用问题，让 AI Agent 更可靠地完成任务"
+      "title_cn": "基于不确定性对齐的 Agent 工具调用决策",
+      "summary_cn": "利用不确定性对齐的强化学习方法优化 LLM Agent 的工具调用决策，减少不支持的工具调用和幻觉式直接回答，提升 Agent 在复杂任务中的可靠性。",
+      "why_it_matters": "解决 Agent 工具调用中的幻觉问题，直接提升 AI Agent 在实际部署中的可用性。"
     },
     {
       "title": "FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models",
@@ -57,9 +57,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "FAIR-Calib：扩散 LLM 的后训练量化校准方法",
-      "summary_cn": "针对扩散大语言模型（dLLM）的「稳定性滞后」问题，提出前沿感知的校准方法，在保持生成质量的同时大幅降低推理成本，为 dLLM 部署扫清关键障碍。",
-      "why_it_matters": "dLLM 是 LLM 新范式，量化是落地的关键——这项工作解决核心瓶颈"
+      "title_cn": "FAIR-Calib：扩散LLM后训练量化",
+      "summary_cn": "针对扩散LLM的稳定性滞后问题，提出FAIR-Calib校准方法。通过前沿感知的不稳定性重加权，实现后训练量化，在保持生成质量的同时大幅降低模型部署成本。",
+      "why_it_matters": "为扩散LLM的高效部署提供关键量化技术，降低推理成本。"
     },
     {
       "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
@@ -68,9 +68,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "MacArena：在线 macOS 环境下的 Computer Use Agent 基准",
-      "summary_cn": "提出 MacArena 基准，在真实 macOS 环境中评估 Computer Use Agent（CUA）的 GUI 操作能力，覆盖文件管理、浏览器操作、系统设置等 50+ 种交互任务。",
-      "why_it_matters": "首个真实 macOS 环境 Agent 评测基准，推动桌面级 AI 助手走向实用"
+      "title_cn": "MacArena：macOS 计算机使用 Agent 基准",
+      "summary_cn": "提出 MacArena 基准测试，在在线 macOS 环境中评估计算机使用 Agent (CUA) 的视觉理解和 GUI 操控能力，覆盖多步骤桌面操作任务。",
+      "why_it_matters": "计算机使用 Agent 是 2026 年最热门方向之一，该基准为评估 CUA 能力提供了标准化测试平台。"
     },
     {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
@@ -79,9 +79,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "AI Agent 解决跨尺度科学挑战基准评测",
-      "summary_cn": "系统评估 AI Agent 在真实科研场景中的实际能力，覆盖从分子到宇宙的多尺度科学问题，揭示当前 AI 科学发现智能体的能力边界和关键短板。",
-      "why_it_matters": "首次全面评测 AI 科学 Agent 的实战能力，为 AI4Science 落地提供方向指引"
+      "title_cn": "AI Agent 科学发现能力基准测试",
+      "summary_cn": "构建跨尺度科学挑战基准，系统评估 AI Agent 在真实科研环境中的实验设计、数据分析和假设验证能力，揭示当前 Agent 在科学发现中的实际水平。",
+      "why_it_matters": "AI for Science 是长期趋势，该基准帮助量化 Agent 在科学发现中的真实进展。"
     },
     {
       "title": "MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs",
@@ -95,26 +95,15 @@
       "why_it_matters": "数据遗忘是 AI 合规的核心需求，该基准为多模态模型的隐私保护能力提供了标准化评估。"
     },
     {
-      "title": "Xiaomi's new open source, agentic AI coding harness MiMo Code beats Claude Code at ultra-long, 200+ step tasks",
-      "link": "https://venturebeat.com/technology/xiaomis-new-open-source-agentic-ai-coding-harness-mimo-code-beats-claude-code-at-ultra-long-200-step-tasks",
-      "summary": "Xiaomi&#x27;s MiMo AI team has open-sourced MiMo Code V0.1.0, a terminal-native AI coding assistant that the Chinese electronics giant says outperforms Anthropic&#x27;s Claude Code on key agentic coding benchmarks, especially on long-horizon, multi-step tasks (200+ steps) — at least, according to its own internal beta release and survey of 576 developers. It&#x27;s also bundling limited-time free access to MiMo-V2.5, its multimodal flagship model with a million-token context window, requiring no",
-      "published": "2026-06-11 23:14:00",
-      "source": "VentureBeat AI",
-      "category": "Blog",
-      "title_cn": "小米开源 MiMo Code：在超长任务上击败 Claude Code 的 AI 编程工具",
-      "summary_cn": "小米 MiMo AI 团队开源终端原生 AI 编程助手 MiMo Code V0.1.0，在 200+ 步超长 agentic 编程任务上超越 Anthropic 的 Claude Code。这一来自中国厂商的编程 Agent 展示了开源社区在代码智能体领域的快速追赶。",
-      "why_it_matters": "国产开源 AI 编程工具首次在复杂任务上超越 Claude Code，对开发者工具生态产生冲击"
-    },
-    {
       "title": "LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding",
       "link": "https://arxiv.org/abs/2606.04302",
       "summary": "arXiv:2606.04302v1 Announce Type: new \nAbstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes even greater in long-context applications such as retrieval-augmented generation (RAG) and in-context learning (ICL). However, conventional KV caching embeds positional information directly into the cache, limiting its reusability. Existing solutions either restrict reuse to prefixes or require expe",
       "published": "2026-06-04 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "LazyAttention：延迟位置编码的高效 RAG 推理",
-      "summary_cn": "提出 LazyAttention 方法，通过延迟位置编码计算优化 RAG 场景下的 KV 缓存管理，在保持检索增强质量的同时大幅降低长上下文推理的显存和延迟开销。",
-      "why_it_matters": "RAG 推理效率的实用优化，直接降低生产环境中 LLM 服务的 TCO"
+      "title_cn": "LazyAttention：延迟位置编码的高效 RAG",
+      "summary_cn": "提出 LazyAttention 技术，通过延迟位置编码减少 RAG 场景下 KV 缓存的重复计算，显著提升长上下文推理效率，降低显存占用。",
+      "why_it_matters": "RAG 系统普遍存在推理效率瓶颈，该技术可降低生产环境的推理成本和延迟。"
     },
     {
       "title": "Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning",
@@ -145,9 +134,9 @@
       "published": "2026-06-04 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "AgentJet：Agentic RL 的灵活群体训练框架",
-      "summary_cn": "提出 AgentJet 分布式群体训练框架，支持多个 LLM Agent 并行探索、竞争与合作，显著提升稀疏奖励场景下的 RL 训练效率和策略质量。",
-      "why_it_matters": "多 Agent 并行 RL 训练框架，加速从单 Agent 到群体智能的跃迁"
+      "title_cn": "AgentJet：分布式 Agent 强化学习训练框架",
+      "summary_cn": "提出 AgentJet 分布式群体训练框架，支持大规模 LLM Agent 的强化学习训练，解决集中式框架的扩展瓶颈，实现多 Agent 并行探索和策略共享。",
+      "why_it_matters": "大规模 Agent 训练基础设施是 Agent 能力规模化的关键瓶颈，该框架填补了工程空白。"
     },
     {
       "title": "What Do People Actually Want From AI? Mapping Preference Plurality",
