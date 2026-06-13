@@ -48,7 +48,7 @@ self.addEventListener('message', event => {
 // Helper: only cache valid HTTP(S) requests
 function canCache(request) {
   const url = new URL(request.url);
-  return url.protocol === 'http:' || url.protocol === 'https:';
+  return (url.protocol === 'http:' || url.protocol === 'https:') && request.method === 'GET';
 }
 
 // Fetch — network-first for data, network-first for HTML, cache-first for static

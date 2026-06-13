@@ -42,17 +42,18 @@ function SpaRedirect() {
   return null
 }
 
-function AllRoutes() {
+// Inline routes — React Router v7 requires <Route> or <React.Fragment> as direct children of <Routes>
+function PageRoutes({ prefix = '' }: { prefix?: string }) {
   return (
     <>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/dashboard" element={<AdminGate><DashboardPage /></AdminGate>} />
-      <Route path="/leaderboard" element={<LeaderboardPage />} />
-      <Route path="/timeline" element={<TimelinePage />} />
-      <Route path="/clusters" element={<ClustersPage />} />
-      <Route path="/weekly" element={<WeeklyPage />} />
-      <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path={`${prefix}/`} element={<HomePage />} />
+      <Route path={`${prefix}/dashboard`} element={<AdminGate><DashboardPage /></AdminGate>} />
+      <Route path={`${prefix}/leaderboard`} element={<LeaderboardPage />} />
+      <Route path={`${prefix}/timeline`} element={<TimelinePage />} />
+      <Route path={`${prefix}/clusters`} element={<ClustersPage />} />
+      <Route path={`${prefix}/weekly`} element={<WeeklyPage />} />
+      <Route path={`${prefix}/weekly/:date`} element={<WeeklyDetailPage />} />
+      <Route path={`${prefix}/about`} element={<AboutPage />} />
     </>
   )
 }
@@ -66,10 +67,8 @@ function AnimatedRoutes() {
         <SpaRedirect />
         <Suspense fallback={<PageFallback />}>
           <Routes location={location}>
-            <AllRoutes />
-            <Route path="/en">
-              <AllRoutes />
-            </Route>
+            <PageRoutes prefix="" />
+            <PageRoutes prefix="/en" />
           </Routes>
         </Suspense>
       </PageTransition>
