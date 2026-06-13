@@ -218,7 +218,7 @@ def git_push() -> dict:
     run(["git", "pull", "origin", branch, "--rebase"], check=False)
 
     # Stage
-    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/search_index.json", "data/clusters.json", "data/history/", "data/ai_intel.db"], check=False)
+    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/search_index.json", "data/clusters.json", "data/model_leaderboard.json", "data/history/", "data/ai_intel.db"], check=False)
 
     # Check if anything to commit
     status = subprocess.run(
@@ -257,6 +257,11 @@ def run() -> dict:
     data = export_latest_json()
     stats = export_stats_json()
     files = export_files(data)
+
+    # Write model_leaderboard.json for model rankings
+    leaderboard_data = __import__('scripts.pipeline.model_leaderboard', fromlist=['fetch_and_export']).fetch_and_export()
+    print(f"    leaderboard: {leaderboard_data['total_models']} models")
+
     result = git_push()
 
     return {**files, **result}

@@ -107,3 +107,30 @@ export interface Top5Data {
   repos: Top5Repo[]
 }
 
+// Model Leaderboard
+export interface LeaderboardModel {
+  id: string
+  name: string
+  provider: string
+  description: string
+  created: number
+  context_length: number
+  context_display: string
+  max_output: string | null
+  max_output_raw: number | null
+  price_input: string
+  price_output: string
+  price_input_raw: number
+  price_output_raw: number
+  tags: string[]
+  modality: string
+  rank: number
+}
+
+export interface LeaderboardData {
+  updated_at: string
+  total_models: number
+  source: string
+  models: LeaderboardModel[]
+}
+
