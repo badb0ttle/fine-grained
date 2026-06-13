@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, useRoutes } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { Header, Footer } from './components/Layout'
 import { PageTransition } from './components/Animations'
@@ -10,7 +10,7 @@ import { AdminGate } from './components/AdminGate'
 import ParticleBackground from './components/ParticleBackground'
 import { ThemeProvider } from './components/ThemeToggle'
 
-// Lazy-load all pages for code splitting (named exports via .then)
+// Lazy-load all pages for code splitting
 const HomePage        = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })) as any)
 const DashboardPage   = lazy(() => import('./pages/DashboardPage').then(m => ({ default: m.DashboardPage })) as any)
 const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage').then(m => ({ default: m.LeaderboardPage })) as any)
@@ -18,7 +18,7 @@ const TimelinePage    = lazy(() => import('./pages/TimelinePage').then(m => ({ d
 const ClustersPage    = lazy(() => import('./pages/ClustersPage').then(m => ({ default: m.ClustersPage })) as any)
 const WeeklyPage      = lazy(() => import('./pages/WeeklyPage').then(m => ({ default: m.WeeklyPage })) as any)
 const WeeklyDetailPage = lazy(() => import('./pages/WeeklyDetailPage').then(m => ({ default: m.WeeklyDetailPage })) as any)
-const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })) as any)
+const AboutPage        = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })) as any)
 
 function PageFallback() {
   return (
@@ -30,7 +30,6 @@ function PageFallback() {
 
 function SpaRedirect() {
   const navigate = useNavigate()
-
   useEffect(() => {
     const redirect = sessionStorage.getItem('redirect')
     if (redirect) {
@@ -38,38 +37,38 @@ function SpaRedirect() {
       navigate(redirect, { replace: true })
     }
   }, [navigate])
-
   return null
 }
 
-// Inline routes — React Router v7 requires <Route> or <React.Fragment> as direct children of <Routes>
-function PageRoutes({ prefix = '' }: { prefix?: string }) {
-  return (
-    <>
-      <Route path={`${prefix}/`} element={<HomePage />} />
-      <Route path={`${prefix}/dashboard`} element={<AdminGate><DashboardPage /></AdminGate>} />
-      <Route path={`${prefix}/leaderboard`} element={<LeaderboardPage />} />
-      <Route path={`${prefix}/timeline`} element={<TimelinePage />} />
-      <Route path={`${prefix}/clusters`} element={<ClustersPage />} />
-      <Route path={`${prefix}/weekly`} element={<WeeklyPage />} />
-      <Route path={`${prefix}/weekly/:date`} element={<WeeklyDetailPage />} />
-      <Route path={`${prefix}/about`} element={<AboutPage />} />
-    </>
-  )
+// Build route tree so both / and /en/ share the same pages
+function buildRoutes(prefix = '') {
+  return [
+    { path: `${prefix}/`, element: <HomePage /> },
+    { path: `${prefix}/dashboard`, element: <AdminGate><DashboardPage /></AdminGate> },
+    { path: `${prefix}/leaderboard`, element: <LeaderboardPage /> },
+    { path: `${prefix}/timeline`, element: <TimelinePage /> },
+    { path: `${prefix}/clusters`, element: <ClustersPage /> },
+    { path: `${prefix}/weekly`, element: <WeeklyPage /> },
+    { path: `${prefix}/weekly/:date`, element: <WeeklyDetailPage /> },
+    { path: `${prefix}/about`, element: <AboutPage /> },
+  ]
+}
+
+function AppRoutes() {
+  return useRoutes([
+    ...buildRoutes(''),
+    ...buildRoutes('/en'),
+  ])
 }
 
 function AnimatedRoutes() {
   const location = useLocation()
-
   return (
     <AnimatePresence mode="wait">
       <PageTransition key={location.pathname}>
         <SpaRedirect />
         <Suspense fallback={<PageFallback />}>
-          <Routes location={location}>
-            <PageRoutes prefix="" />
-            <PageRoutes prefix="/en" />
-          </Routes>
+          <AppRoutes />
         </Suspense>
       </PageTransition>
     </AnimatePresence>
