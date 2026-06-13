@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T10:35:39.980829+00:00",
+  "updated_at": "2026-06-13T11:03:20.072730+00:00",
   "total_models": 301,
   "source": "OpenRouter API",
   "models": [
@@ -23,6 +23,24 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1341,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1341,
+            "win_rate": 60.4,
+            "rank": 2
+          },
+          {
+            "category": "gamedev",
+            "elo": 1272,
+            "win_rate": 49.6,
+            "rank": 22
+          }
+        ]
+      },
       "rank": 1
     },
     {
@@ -47,6 +65,63 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 64.9,
+        "coding": 62.0,
+        "agentic": 80.6,
+        "best_elo": 1416,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1416,
+            "win_rate": 71.1,
+            "rank": 1
+          },
+          {
+            "category": "dataviz",
+            "elo": 1387,
+            "win_rate": 70.8,
+            "rank": 1
+          },
+          {
+            "category": "gamedev",
+            "elo": 1383,
+            "win_rate": 65.3,
+            "rank": 1
+          },
+          {
+            "category": "svg",
+            "elo": 1374,
+            "win_rate": 72.7,
+            "rank": 1
+          },
+          {
+            "category": "3d",
+            "elo": 1370,
+            "win_rate": 67,
+            "rank": 1
+          },
+          {
+            "category": "asciiart",
+            "elo": 1364,
+            "win_rate": 70.1,
+            "rank": 1
+          },
+          {
+            "category": "codecategories",
+            "elo": 1352,
+            "win_rate": 63.4,
+            "rank": 1
+          },
+          {
+            "category": "website",
+            "elo": 1344,
+            "win_rate": 62.5,
+            "rank": 1
+          }
+        ]
+      },
       "rank": 2
     },
     {
@@ -68,6 +143,11 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 47.7,
+        "coding": 37.6,
+        "agentic": 57.1
+      },
       "rank": 3
     },
     {
@@ -90,6 +170,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 53.3,
+        "coding": 46.5,
+        "agentic": 65.1
+      },
       "rank": 4
     },
     {
@@ -113,6 +198,51 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 54.7,
+        "coding": 43.4,
+        "agentic": 68.6,
+        "best_elo": 1346,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1346,
+            "win_rate": 63.4,
+            "rank": 5
+          },
+          {
+            "category": "codecategories",
+            "elo": 1315,
+            "win_rate": 58.4,
+            "rank": 9
+          },
+          {
+            "category": "website",
+            "elo": 1309,
+            "win_rate": 57.6,
+            "rank": 10
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1304,
+            "win_rate": 57,
+            "rank": 13
+          },
+          {
+            "category": "dataviz",
+            "elo": 1292,
+            "win_rate": 57.6,
+            "rank": 9
+          },
+          {
+            "category": "gamedev",
+            "elo": 1263,
+            "win_rate": 46.2,
+            "rank": 27
+          }
+        ]
+      },
       "rank": 5
     },
     {
@@ -135,6 +265,57 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 42.6,
+        "coding": 37.1,
+        "agentic": 59.5,
+        "best_elo": 1226,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1226,
+            "win_rate": 48,
+            "rank": 41
+          },
+          {
+            "category": "codecategories",
+            "elo": 1218,
+            "win_rate": 46.7,
+            "rank": 42
+          },
+          {
+            "category": "dataviz",
+            "elo": 1216,
+            "win_rate": 48,
+            "rank": 38
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1208,
+            "win_rate": 45.3,
+            "rank": 44
+          },
+          {
+            "category": "gamedev",
+            "elo": 1203,
+            "win_rate": 43,
+            "rank": 48
+          },
+          {
+            "category": "3d",
+            "elo": 1195,
+            "win_rate": 42.8,
+            "rank": 43
+          },
+          {
+            "category": "svg",
+            "elo": 1122,
+            "win_rate": 41.1,
+            "rank": 45
+          }
+        ]
+      },
       "rank": 6
     },
     {
@@ -159,6 +340,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 7
     },
     {
@@ -182,6 +364,87 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 61.4,
+        "coding": 56.7,
+        "agentic": 77.8,
+        "best_elo": 1367,
+        "best_elo_category": "androidnative",
+        "elo_categories": [
+          {
+            "category": "androidnative",
+            "elo": 1367,
+            "win_rate": 72.9,
+            "rank": 1
+          },
+          {
+            "category": "fullstack",
+            "elo": 1331,
+            "win_rate": 67.6,
+            "rank": 2
+          },
+          {
+            "category": "asciiart",
+            "elo": 1307,
+            "win_rate": 63.2,
+            "rank": 5
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1291,
+            "win_rate": 56.9,
+            "rank": 18
+          },
+          {
+            "category": "website",
+            "elo": 1284,
+            "win_rate": 55.7,
+            "rank": 20
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1283,
+            "win_rate": 58.7,
+            "rank": 1
+          },
+          {
+            "category": "codecategories",
+            "elo": 1281,
+            "win_rate": 55.4,
+            "rank": 20
+          },
+          {
+            "category": "3d",
+            "elo": 1280,
+            "win_rate": 56.2,
+            "rank": 19
+          },
+          {
+            "category": "gamedev",
+            "elo": 1271,
+            "win_rate": 51.2,
+            "rank": 23
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1267,
+            "win_rate": 63.9,
+            "rank": 2
+          },
+          {
+            "category": "dataviz",
+            "elo": 1257,
+            "win_rate": 53.9,
+            "rank": 23
+          },
+          {
+            "category": "svg",
+            "elo": 1221,
+            "win_rate": 54.7,
+            "rank": 17
+          }
+        ]
+      },
       "rank": 8
     },
     {
@@ -203,6 +466,81 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 56.6,
+        "coding": 50.1,
+        "agentic": 66.6,
+        "best_elo": 1337,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1337,
+            "win_rate": 62.2,
+            "rank": 5
+          },
+          {
+            "category": "gamedev",
+            "elo": 1327,
+            "win_rate": 61.1,
+            "rank": 10
+          },
+          {
+            "category": "3d",
+            "elo": 1318,
+            "win_rate": 60.4,
+            "rank": 11
+          },
+          {
+            "category": "codecategories",
+            "elo": 1312,
+            "win_rate": 58.9,
+            "rank": 10
+          },
+          {
+            "category": "website",
+            "elo": 1306,
+            "win_rate": 58,
+            "rank": 11
+          },
+          {
+            "category": "dataviz",
+            "elo": 1282,
+            "win_rate": 56.3,
+            "rank": 15
+          },
+          {
+            "category": "svg",
+            "elo": 1280,
+            "win_rate": 61.5,
+            "rank": 7
+          },
+          {
+            "category": "asciiart",
+            "elo": 1269,
+            "win_rate": 55.6,
+            "rank": 9
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1216,
+            "win_rate": 46.8,
+            "rank": 11
+          },
+          {
+            "category": "fullstack",
+            "elo": 1215,
+            "win_rate": 46.9,
+            "rank": 10
+          },
+          {
+            "category": "androidnative",
+            "elo": 1124,
+            "win_rate": 38.4,
+            "rank": 16
+          }
+        ]
+      },
       "rank": 9
     },
     {
@@ -224,6 +562,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 10
     },
     {
@@ -249,6 +588,99 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-01",
+      "scores": {
+        "intelligence": 55.3,
+        "coding": 45.0,
+        "agentic": 70.3,
+        "best_elo": 1318,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1318,
+            "win_rate": 59.8,
+            "rank": 11
+          },
+          {
+            "category": "asciiart",
+            "elo": 1316,
+            "win_rate": 63.3,
+            "rank": 2
+          },
+          {
+            "category": "3d",
+            "elo": 1315,
+            "win_rate": 61.7,
+            "rank": 12
+          },
+          {
+            "category": "svg",
+            "elo": 1314,
+            "win_rate": 64.9,
+            "rank": 3
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1304,
+            "win_rate": 59.6,
+            "rank": 12
+          },
+          {
+            "category": "codecategories",
+            "elo": 1300,
+            "win_rate": 58.5,
+            "rank": 12
+          },
+          {
+            "category": "website",
+            "elo": 1292,
+            "win_rate": 57.3,
+            "rank": 16
+          },
+          {
+            "category": "fullstack",
+            "elo": 1285,
+            "win_rate": 59.2,
+            "rank": 5
+          },
+          {
+            "category": "webapps",
+            "elo": 1278,
+            "win_rate": 55,
+            "rank": 3
+          },
+          {
+            "category": "dataviz",
+            "elo": 1270,
+            "win_rate": 57.4,
+            "rank": 21
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1266,
+            "win_rate": 57,
+            "rank": 3
+          },
+          {
+            "category": "androidnative",
+            "elo": 1255,
+            "win_rate": 55.8,
+            "rank": 5
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1253,
+            "win_rate": 57.5,
+            "rank": 3
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1217,
+            "win_rate": 55.1,
+            "rank": 3
+          }
+        ]
+      },
       "rank": 11
     },
     {
@@ -273,6 +705,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 12
     },
     {
@@ -292,6 +725,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 13
     },
     {
@@ -314,6 +748,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 14
     },
     {
@@ -333,6 +768,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 38.5,
+        "coding": 33.3,
+        "agentic": 51.5
+      },
       "rank": 15
     },
     {
@@ -358,6 +798,7 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 16
     },
     {
@@ -380,6 +821,105 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 53.2,
+        "coding": 41.0,
+        "agentic": 65.9,
+        "best_elo": 1259,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1259,
+            "win_rate": 52.4,
+            "rank": 29
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1255,
+            "win_rate": 49.5,
+            "rank": 27
+          },
+          {
+            "category": "codecategories",
+            "elo": 1252,
+            "win_rate": 51,
+            "rank": 28
+          },
+          {
+            "category": "website",
+            "elo": 1251,
+            "win_rate": 51.5,
+            "rank": 29
+          },
+          {
+            "category": "dataviz",
+            "elo": 1237,
+            "win_rate": 48.6,
+            "rank": 31
+          },
+          {
+            "category": "webapps",
+            "elo": 1220,
+            "win_rate": 49.1,
+            "rank": 9
+          },
+          {
+            "category": "3d",
+            "elo": 1212,
+            "win_rate": 45.7,
+            "rank": 38
+          },
+          {
+            "category": "asciiart",
+            "elo": 1188,
+            "win_rate": 47.2,
+            "rank": 23
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1148,
+            "win_rate": 38.8,
+            "rank": 24
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1136,
+            "win_rate": 38.8,
+            "rank": 16
+          },
+          {
+            "category": "svg",
+            "elo": 1130,
+            "win_rate": 41.6,
+            "rank": 42
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1091,
+            "win_rate": 32.3,
+            "rank": 8
+          },
+          {
+            "category": "fullstack",
+            "elo": 1087,
+            "win_rate": 32.9,
+            "rank": 24
+          },
+          {
+            "category": "androidnative",
+            "elo": 1038,
+            "win_rate": 24.1,
+            "rank": 24
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1033,
+            "win_rate": 27.5,
+            "rank": 10
+          }
+        ]
+      },
       "rank": 17
     },
     {
@@ -399,6 +939,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 12.4,
+        "coding": 7.3,
+        "agentic": 10.7
+      },
       "rank": 18
     },
     {
@@ -421,6 +966,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 39.2,
+        "coding": 35.4,
+        "agentic": 53.2
+      },
       "rank": 19
     },
     {
@@ -444,6 +994,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 20
     },
     {
@@ -467,6 +1018,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 21
     },
     {
@@ -489,6 +1041,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 43.5,
+        "coding": 35.2,
+        "agentic": 58.3
+      },
       "rank": 22
     },
     {
@@ -508,6 +1065,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 51.8,
+        "coding": 44.9,
+        "agentic": 64.8
+      },
       "rank": 23
     },
     {
@@ -530,6 +1092,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 45.8,
+        "coding": 36.5,
+        "agentic": 62.9
+      },
       "rank": 24
     },
     {
@@ -554,6 +1121,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-12-01",
+      "scores": null,
       "rank": 25
     },
     {
@@ -578,6 +1146,105 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-12-01",
+      "scores": {
+        "intelligence": 60.2,
+        "coding": 59.1,
+        "agentic": 74.1,
+        "best_elo": 1352,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1352,
+            "win_rate": 64.4,
+            "rank": 2
+          },
+          {
+            "category": "asciiart",
+            "elo": 1309,
+            "win_rate": 63.1,
+            "rank": 4
+          },
+          {
+            "category": "codecategories",
+            "elo": 1298,
+            "win_rate": 57.6,
+            "rank": 13
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1297,
+            "win_rate": 58,
+            "rank": 15
+          },
+          {
+            "category": "website",
+            "elo": 1295,
+            "win_rate": 57,
+            "rank": 14
+          },
+          {
+            "category": "dataviz",
+            "elo": 1290,
+            "win_rate": 58.6,
+            "rank": 11
+          },
+          {
+            "category": "svg",
+            "elo": 1290,
+            "win_rate": 61.6,
+            "rank": 5
+          },
+          {
+            "category": "androidnative",
+            "elo": 1263,
+            "win_rate": 55.2,
+            "rank": 4
+          },
+          {
+            "category": "3d",
+            "elo": 1258,
+            "win_rate": 53.5,
+            "rank": 26
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1240,
+            "win_rate": 53,
+            "rank": 7
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1218,
+            "win_rate": 53.1,
+            "rank": 9
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1211,
+            "win_rate": 53.2,
+            "rank": 5
+          },
+          {
+            "category": "webapps",
+            "elo": 1194,
+            "win_rate": 46.1,
+            "rank": 14
+          },
+          {
+            "category": "fullstack",
+            "elo": 1169,
+            "win_rate": 46,
+            "rank": 13
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1154,
+            "win_rate": 42.5,
+            "rank": 6
+          }
+        ]
+      },
       "rank": 26
     },
     {
@@ -599,6 +1266,81 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 51.5,
+        "coding": 47.5,
+        "agentic": 67.2,
+        "best_elo": 1348,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1348,
+            "win_rate": 64.1,
+            "rank": 4
+          },
+          {
+            "category": "gamedev",
+            "elo": 1327,
+            "win_rate": 61.1,
+            "rank": 9
+          },
+          {
+            "category": "codecategories",
+            "elo": 1297,
+            "win_rate": 56.5,
+            "rank": 14
+          },
+          {
+            "category": "website",
+            "elo": 1284,
+            "win_rate": 54.7,
+            "rank": 21
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1281,
+            "win_rate": 53,
+            "rank": 21
+          },
+          {
+            "category": "dataviz",
+            "elo": 1233,
+            "win_rate": 50.9,
+            "rank": 33
+          },
+          {
+            "category": "svg",
+            "elo": 1208,
+            "win_rate": 50.6,
+            "rank": 23
+          },
+          {
+            "category": "asciiart",
+            "elo": 1198,
+            "win_rate": 47.4,
+            "rank": 19
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1098,
+            "win_rate": 34,
+            "rank": 20
+          },
+          {
+            "category": "webapps",
+            "elo": 1034,
+            "win_rate": 26.6,
+            "rank": 21
+          },
+          {
+            "category": "fullstack",
+            "elo": 948,
+            "win_rate": 22.1,
+            "rank": 27
+          }
+        ]
+      },
       "rank": 27
     },
     {
@@ -620,6 +1362,63 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 46.5,
+        "coding": 38.7,
+        "agentic": 61.3,
+        "best_elo": 1278,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1278,
+            "win_rate": 50.4,
+            "rank": 21
+          },
+          {
+            "category": "gamedev",
+            "elo": 1278,
+            "win_rate": 52.1,
+            "rank": 19
+          },
+          {
+            "category": "codecategories",
+            "elo": 1264,
+            "win_rate": 51.2,
+            "rank": 26
+          },
+          {
+            "category": "website",
+            "elo": 1258,
+            "win_rate": 52.1,
+            "rank": 28
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1229,
+            "win_rate": 48.3,
+            "rank": 35
+          },
+          {
+            "category": "svg",
+            "elo": 1210,
+            "win_rate": 50.9,
+            "rank": 21
+          },
+          {
+            "category": "asciiart",
+            "elo": 1198,
+            "win_rate": 49,
+            "rank": 18
+          },
+          {
+            "category": "dataviz",
+            "elo": 1180,
+            "win_rate": 44,
+            "rank": 53
+          }
+        ]
+      },
       "rank": 28
     },
     {
@@ -639,6 +1438,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 33.6,
+        "coding": 33.1,
+        "agentic": 48.2
+      },
       "rank": 29
     },
     {
@@ -658,6 +1462,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 41.9,
+        "coding": 36.5,
+        "agentic": 55.7
+      },
       "rank": 30
     },
     {
@@ -679,6 +1488,51 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 53.8,
+        "coding": 45.5,
+        "agentic": 67.4,
+        "best_elo": 1331,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1331,
+            "win_rate": 63.5,
+            "rank": 9
+          },
+          {
+            "category": "gamedev",
+            "elo": 1331,
+            "win_rate": 62.6,
+            "rank": 7
+          },
+          {
+            "category": "codecategories",
+            "elo": 1323,
+            "win_rate": 61.5,
+            "rank": 8
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1317,
+            "win_rate": 61.3,
+            "rank": 11
+          },
+          {
+            "category": "dataviz",
+            "elo": 1316,
+            "win_rate": 63,
+            "rank": 6
+          },
+          {
+            "category": "website",
+            "elo": 1312,
+            "win_rate": 59.9,
+            "rank": 9
+          }
+        ]
+      },
       "rank": 31
     },
     {
@@ -703,6 +1557,63 @@
       ],
       "modality": "text+image+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 49.0,
+        "coding": 42.1,
+        "agentic": 65.5,
+        "best_elo": 1318,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1318,
+            "win_rate": 56.6,
+            "rank": 10
+          },
+          {
+            "category": "codecategories",
+            "elo": 1305,
+            "win_rate": 54.9,
+            "rank": 11
+          },
+          {
+            "category": "website",
+            "elo": 1305,
+            "win_rate": 55,
+            "rank": 12
+          },
+          {
+            "category": "3d",
+            "elo": 1303,
+            "win_rate": 53.9,
+            "rank": 15
+          },
+          {
+            "category": "gamedev",
+            "elo": 1301,
+            "win_rate": 56,
+            "rank": 15
+          },
+          {
+            "category": "dataviz",
+            "elo": 1283,
+            "win_rate": 53.9,
+            "rank": 13
+          },
+          {
+            "category": "svg",
+            "elo": 1207,
+            "win_rate": 51.3,
+            "rank": 25
+          },
+          {
+            "category": "asciiart",
+            "elo": 1179,
+            "win_rate": 46.7,
+            "rank": 27
+          }
+        ]
+      },
       "rank": 32
     },
     {
@@ -726,6 +1637,7 @@
       ],
       "modality": "text+image+file->text+image",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 33
     },
     {
@@ -745,6 +1657,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 26.2,
+        "coding": 23.2,
+        "agentic": 38.1
+      },
       "rank": 34
     },
     {
@@ -766,6 +1683,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 35
     },
     {
@@ -787,6 +1705,99 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 53.9,
+        "coding": 47.1,
+        "agentic": 66.0,
+        "best_elo": 1362,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1362,
+            "win_rate": 63.4,
+            "rank": 2
+          },
+          {
+            "category": "codecategories",
+            "elo": 1332,
+            "win_rate": 58.7,
+            "rank": 4
+          },
+          {
+            "category": "gamedev",
+            "elo": 1330,
+            "win_rate": 60.3,
+            "rank": 8
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1326,
+            "win_rate": 57.9,
+            "rank": 6
+          },
+          {
+            "category": "website",
+            "elo": 1321,
+            "win_rate": 56.8,
+            "rank": 7
+          },
+          {
+            "category": "dataviz",
+            "elo": 1306,
+            "win_rate": 57.3,
+            "rank": 8
+          },
+          {
+            "category": "webapps",
+            "elo": 1276,
+            "win_rate": 59.4,
+            "rank": 4
+          },
+          {
+            "category": "svg",
+            "elo": 1242,
+            "win_rate": 53.7,
+            "rank": 13
+          },
+          {
+            "category": "fullstack",
+            "elo": 1238,
+            "win_rate": 57.3,
+            "rank": 8
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1234,
+            "win_rate": 53.3,
+            "rank": 8
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1218,
+            "win_rate": 53.4,
+            "rank": 10
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1192,
+            "win_rate": 44.6,
+            "rank": 4
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1184,
+            "win_rate": 50.3,
+            "rank": 7
+          },
+          {
+            "category": "androidnative",
+            "elo": 1174,
+            "win_rate": 46.7,
+            "rank": 12
+          }
+        ]
+      },
       "rank": 36
     },
     {
@@ -810,6 +1821,105 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 57.3,
+        "coding": 52.5,
+        "agentic": 71.3,
+        "best_elo": 1503,
+        "best_elo_category": "fullstack",
+        "elo_categories": [
+          {
+            "category": "fullstack",
+            "elo": 1503,
+            "win_rate": 80.1,
+            "rank": 1
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1353,
+            "win_rate": 66.2,
+            "rank": 3
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1348,
+            "win_rate": 65.6,
+            "rank": 1
+          },
+          {
+            "category": "webapps",
+            "elo": 1347,
+            "win_rate": 65.6,
+            "rank": 1
+          },
+          {
+            "category": "gamedev",
+            "elo": 1346,
+            "win_rate": 65.1,
+            "rank": 4
+          },
+          {
+            "category": "codecategories",
+            "elo": 1339,
+            "win_rate": 62.7,
+            "rank": 3
+          },
+          {
+            "category": "website",
+            "elo": 1337,
+            "win_rate": 62.1,
+            "rank": 4
+          },
+          {
+            "category": "dataviz",
+            "elo": 1334,
+            "win_rate": 64.8,
+            "rank": 3
+          },
+          {
+            "category": "3d",
+            "elo": 1332,
+            "win_rate": 63.2,
+            "rank": 8
+          },
+          {
+            "category": "androidnative",
+            "elo": 1321,
+            "win_rate": 61.7,
+            "rank": 2
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1289,
+            "win_rate": 64.1,
+            "rank": 1
+          },
+          {
+            "category": "asciiart",
+            "elo": 1288,
+            "win_rate": 61.6,
+            "rank": 7
+          },
+          {
+            "category": "svg",
+            "elo": 1277,
+            "win_rate": 62.1,
+            "rank": 8
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1206,
+            "win_rate": 50.9,
+            "rank": 13
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1195,
+            "win_rate": 48.9,
+            "rank": 11
+          }
+        ]
+      },
       "rank": 37
     },
     {
@@ -834,12 +1944,13 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 38
     },
     {
       "id": "z-ai/glm-5.1",
       "name": "Z.ai: GLM 5.1",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work ",
       "created": 1775578025,
       "context_length": 202752,
@@ -853,6 +1964,99 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 51.4,
+        "coding": 43.4,
+        "agentic": 67.1,
+        "best_elo": 1366,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1366,
+            "win_rate": 67,
+            "rank": 2
+          },
+          {
+            "category": "3d",
+            "elo": 1341,
+            "win_rate": 66.5,
+            "rank": 6
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1340,
+            "win_rate": 65.1,
+            "rank": 4
+          },
+          {
+            "category": "gamedev",
+            "elo": 1337,
+            "win_rate": 63.3,
+            "rank": 5
+          },
+          {
+            "category": "codecategories",
+            "elo": 1331,
+            "win_rate": 63.2,
+            "rank": 5
+          },
+          {
+            "category": "website",
+            "elo": 1313,
+            "win_rate": 60.3,
+            "rank": 8
+          },
+          {
+            "category": "svg",
+            "elo": 1294,
+            "win_rate": 64.6,
+            "rank": 4
+          },
+          {
+            "category": "webapps",
+            "elo": 1262,
+            "win_rate": 56.6,
+            "rank": 6
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1256,
+            "win_rate": 54.3,
+            "rank": 2
+          },
+          {
+            "category": "fullstack",
+            "elo": 1249,
+            "win_rate": 58,
+            "rank": 6
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1244,
+            "win_rate": 55.6,
+            "rank": 6
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1236,
+            "win_rate": 56,
+            "rank": 4
+          },
+          {
+            "category": "androidnative",
+            "elo": 1220,
+            "win_rate": 49.8,
+            "rank": 9
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1217,
+            "win_rate": 54.3,
+            "rank": 4
+          }
+        ]
+      },
       "rank": 39
     },
     {
@@ -875,6 +2079,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 31.2,
+        "coding": 22.4,
+        "agentic": 32.1
+      },
       "rank": 40
     },
     {
@@ -897,6 +2106,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 39.2,
+        "coding": 38.7,
+        "agentic": 40.9
+      },
       "rank": 41
     },
     {
@@ -920,6 +2134,63 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 50.0,
+        "coding": 42.9,
+        "agentic": 61.7,
+        "best_elo": 1288,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1288,
+            "win_rate": 52.3,
+            "rank": 20
+          },
+          {
+            "category": "gamedev",
+            "elo": 1281,
+            "win_rate": 53.4,
+            "rank": 18
+          },
+          {
+            "category": "3d",
+            "elo": 1279,
+            "win_rate": 51.5,
+            "rank": 20
+          },
+          {
+            "category": "codecategories",
+            "elo": 1278,
+            "win_rate": 52.1,
+            "rank": 22
+          },
+          {
+            "category": "dataviz",
+            "elo": 1266,
+            "win_rate": 51.1,
+            "rank": 22
+          },
+          {
+            "category": "website",
+            "elo": 1263,
+            "win_rate": 52,
+            "rank": 27
+          },
+          {
+            "category": "svg",
+            "elo": 1221,
+            "win_rate": 52.6,
+            "rank": 18
+          },
+          {
+            "category": "asciiart",
+            "elo": 1177,
+            "win_rate": 48,
+            "rank": 28
+          }
+        ]
+      },
       "rank": 42
     },
     {
@@ -939,6 +2210,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 31.9,
+        "coding": 27.2,
+        "agentic": 42.6,
+        "best_elo": 1180,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1180,
+            "win_rate": 41.5,
+            "rank": 58
+          },
+          {
+            "category": "codecategories",
+            "elo": 1168,
+            "win_rate": 40.3,
+            "rank": 58
+          },
+          {
+            "category": "3d",
+            "elo": 1161,
+            "win_rate": 41.2,
+            "rank": 55
+          },
+          {
+            "category": "dataviz",
+            "elo": 1146,
+            "win_rate": 39.7,
+            "rank": 62
+          },
+          {
+            "category": "gamedev",
+            "elo": 1146,
+            "win_rate": 38.1,
+            "rank": 65
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1100,
+            "win_rate": 32.3,
+            "rank": 69
+          },
+          {
+            "category": "asciiart",
+            "elo": 1087,
+            "win_rate": 37.7,
+            "rank": 40
+          },
+          {
+            "category": "svg",
+            "elo": 1073,
+            "win_rate": 35.1,
+            "rank": 55
+          }
+        ]
+      },
       "rank": 43
     },
     {
@@ -962,6 +2290,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-09-01",
+      "scores": null,
       "rank": 44
     },
     {
@@ -985,6 +2314,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-09-01",
+      "scores": {
+        "intelligence": 49.3,
+        "coding": 40.5,
+        "agentic": 53.9
+      },
       "rank": 45
     },
     {
@@ -1004,6 +2338,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 43.8,
+        "coding": 45.6,
+        "agentic": 50.7
+      },
       "rank": 46
     },
     {
@@ -1026,6 +2365,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 47
     },
     {
@@ -1045,6 +2385,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 49.6,
+        "coding": 41.9,
+        "agentic": 61.5,
+        "best_elo": 1286,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1286,
+            "win_rate": 54.1,
+            "rank": 19
+          },
+          {
+            "category": "codecategories",
+            "elo": 1282,
+            "win_rate": 53.3,
+            "rank": 19
+          },
+          {
+            "category": "gamedev",
+            "elo": 1276,
+            "win_rate": 53.7,
+            "rank": 21
+          },
+          {
+            "category": "dataviz",
+            "elo": 1275,
+            "win_rate": 53.3,
+            "rank": 17
+          },
+          {
+            "category": "3d",
+            "elo": 1273,
+            "win_rate": 51,
+            "rank": 24
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1266,
+            "win_rate": 50.3,
+            "rank": 24
+          },
+          {
+            "category": "svg",
+            "elo": 1195,
+            "win_rate": 51.1,
+            "rank": 30
+          },
+          {
+            "category": "asciiart",
+            "elo": 1176,
+            "win_rate": 47.5,
+            "rank": 29
+          }
+        ]
+      },
       "rank": 48
     },
     {
@@ -1067,6 +2464,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-08-31",
+      "scores": {
+        "intelligence": 44.0,
+        "coding": 43.9,
+        "agentic": 47.6
+      },
       "rank": 49
     },
     {
@@ -1090,6 +2492,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-08-31",
+      "scores": {
+        "intelligence": 48.9,
+        "coding": 51.5,
+        "agentic": 58.9
+      },
       "rank": 50
     },
     {
@@ -1111,12 +2518,17 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 27.8,
+        "coding": 24.3,
+        "agentic": 25.9
+      },
       "rank": 51
     },
     {
       "id": "z-ai/glm-5-turbo",
       "name": "Z.ai: GLM 5 Turbo",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows..",
       "created": 1773583573,
       "context_length": 262144,
@@ -1130,6 +2542,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 46.8,
+        "coding": 36.8,
+        "agentic": 66.1,
+        "best_elo": 1338,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1338,
+            "win_rate": 61.4,
+            "rank": 7
+          },
+          {
+            "category": "gamedev",
+            "elo": 1337,
+            "win_rate": 61.8,
+            "rank": 6
+          },
+          {
+            "category": "codecategories",
+            "elo": 1326,
+            "win_rate": 58.5,
+            "rank": 6
+          },
+          {
+            "category": "website",
+            "elo": 1321,
+            "win_rate": 57.5,
+            "rank": 6
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1320,
+            "win_rate": 58.2,
+            "rank": 9
+          },
+          {
+            "category": "dataviz",
+            "elo": 1309,
+            "win_rate": 58.3,
+            "rank": 7
+          },
+          {
+            "category": "svg",
+            "elo": 1270,
+            "win_rate": 59.7,
+            "rank": 9
+          },
+          {
+            "category": "asciiart",
+            "elo": 1188,
+            "win_rate": 50.2,
+            "rank": 22
+          }
+        ]
+      },
       "rank": 52
     },
     {
@@ -1151,6 +2620,11 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 36.0,
+        "coding": 31.2,
+        "agentic": 40.2
+      },
       "rank": 53
     },
     {
@@ -1173,6 +2647,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 54
     },
     {
@@ -1195,6 +2670,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 32.4,
+        "coding": 25.3,
+        "agentic": 37.4
+      },
       "rank": 55
     },
     {
@@ -1219,6 +2699,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 56
     },
     {
@@ -1243,6 +2724,93 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 56.8,
+        "coding": 57.2,
+        "agentic": 68.0,
+        "best_elo": 1305,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1305,
+            "win_rate": 58.9,
+            "rank": 13
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1302,
+            "win_rate": 59.5,
+            "rank": 14
+          },
+          {
+            "category": "dataviz",
+            "elo": 1276,
+            "win_rate": 57.3,
+            "rank": 16
+          },
+          {
+            "category": "website",
+            "elo": 1267,
+            "win_rate": 54,
+            "rank": 25
+          },
+          {
+            "category": "codecategories",
+            "elo": 1266,
+            "win_rate": 54,
+            "rank": 25
+          },
+          {
+            "category": "svg",
+            "elo": 1257,
+            "win_rate": 58.7,
+            "rank": 10
+          },
+          {
+            "category": "asciiart",
+            "elo": 1240,
+            "win_rate": 54.2,
+            "rank": 10
+          },
+          {
+            "category": "3d",
+            "elo": 1182,
+            "win_rate": 44.4,
+            "rank": 46
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1173,
+            "win_rate": 46.9,
+            "rank": 14
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1161,
+            "win_rate": 44.4,
+            "rank": 23
+          },
+          {
+            "category": "webapps",
+            "elo": 1156,
+            "win_rate": 41.7,
+            "rank": 16
+          },
+          {
+            "category": "fullstack",
+            "elo": 1100,
+            "win_rate": 40.9,
+            "rank": 22
+          },
+          {
+            "category": "androidnative",
+            "elo": 1054,
+            "win_rate": 47.4,
+            "rank": 23
+          }
+        ]
+      },
       "rank": 57
     },
     {
@@ -1262,6 +2830,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 32.8,
+        "coding": 30.6,
+        "agentic": 39.7
+      },
       "rank": 58
     },
     {
@@ -1284,6 +2857,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 59
     },
     {
@@ -1309,6 +2883,63 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 33.5,
+        "coding": 30.1,
+        "agentic": 25.7,
+        "best_elo": 1211,
+        "best_elo_category": "asciiart",
+        "elo_categories": [
+          {
+            "category": "asciiart",
+            "elo": 1211,
+            "win_rate": 50.7,
+            "rank": 17
+          },
+          {
+            "category": "3d",
+            "elo": 1129,
+            "win_rate": 39,
+            "rank": 68
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1126,
+            "win_rate": 37.6,
+            "rank": 65
+          },
+          {
+            "category": "website",
+            "elo": 1125,
+            "win_rate": 36.6,
+            "rank": 75
+          },
+          {
+            "category": "codecategories",
+            "elo": 1123,
+            "win_rate": 36.6,
+            "rank": 72
+          },
+          {
+            "category": "svg",
+            "elo": 1109,
+            "win_rate": 42.5,
+            "rank": 46
+          },
+          {
+            "category": "gamedev",
+            "elo": 1102,
+            "win_rate": 34.3,
+            "rank": 76
+          },
+          {
+            "category": "dataviz",
+            "elo": 1089,
+            "win_rate": 33.3,
+            "rank": 74
+          }
+        ]
+      },
       "rank": 60
     },
     {
@@ -1331,6 +2962,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 61
     },
     {
@@ -1352,6 +2984,30 @@
       ],
       "modality": "text+image->text+image",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1304,
+        "best_elo_category": "image",
+        "elo_categories": [
+          {
+            "category": "image",
+            "elo": 1304,
+            "win_rate": 65.4,
+            "rank": 1
+          },
+          {
+            "category": "graphicdesign",
+            "elo": 1292,
+            "win_rate": 66.6,
+            "rank": 1
+          },
+          {
+            "category": "logo",
+            "elo": 1282,
+            "win_rate": 63.5,
+            "rank": 1
+          }
+        ]
+      },
       "rank": 62
     },
     {
@@ -1374,6 +3030,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 37.1,
+        "coding": 30.3,
+        "agentic": 44.1
+      },
       "rank": 63
     },
     {
@@ -1396,6 +3057,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 42.1,
+        "coding": 34.9,
+        "agentic": 54.6
+      },
       "rank": 64
     },
     {
@@ -1418,6 +3084,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 41.6,
+        "coding": 34.7,
+        "agentic": 53.0
+      },
       "rank": 65
     },
     {
@@ -1441,6 +3112,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 66
     },
     {
@@ -1460,6 +3132,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 10.5,
+        "coding": 3.6,
+        "agentic": 3.7
+      },
       "rank": 67
     },
     {
@@ -1485,6 +3162,7 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 68
     },
     {
@@ -1508,6 +3186,93 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 53.6,
+        "coding": 53.1,
+        "agentic": 60.5,
+        "best_elo": 1231,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1231,
+            "win_rate": 51.2,
+            "rank": 37
+          },
+          {
+            "category": "dataviz",
+            "elo": 1207,
+            "win_rate": 50.4,
+            "rank": 43
+          },
+          {
+            "category": "website",
+            "elo": 1207,
+            "win_rate": 48.7,
+            "rank": 50
+          },
+          {
+            "category": "codecategories",
+            "elo": 1196,
+            "win_rate": 47.2,
+            "rank": 50
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1195,
+            "win_rate": 47.3,
+            "rank": 48
+          },
+          {
+            "category": "asciiart",
+            "elo": 1192,
+            "win_rate": 51.2,
+            "rank": 21
+          },
+          {
+            "category": "svg",
+            "elo": 1187,
+            "win_rate": 54,
+            "rank": 32
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1162,
+            "win_rate": 44.9,
+            "rank": 15
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1142,
+            "win_rate": 41.6,
+            "rank": 25
+          },
+          {
+            "category": "webapps",
+            "elo": 1135,
+            "win_rate": 39.1,
+            "rank": 19
+          },
+          {
+            "category": "3d",
+            "elo": 1088,
+            "win_rate": 35.3,
+            "rank": 73
+          },
+          {
+            "category": "androidnative",
+            "elo": 1084,
+            "win_rate": 35.2,
+            "rank": 20
+          },
+          {
+            "category": "fullstack",
+            "elo": 1065,
+            "win_rate": 36.4,
+            "rank": 26
+          }
+        ]
+      },
       "rank": 69
     },
     {
@@ -1527,6 +3292,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 70
     },
     {
@@ -1552,6 +3318,105 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 57.2,
+        "coding": 55.5,
+        "agentic": 59.1,
+        "best_elo": 1353,
+        "best_elo_category": "svg",
+        "elo_categories": [
+          {
+            "category": "svg",
+            "elo": 1353,
+            "win_rate": 71.8,
+            "rank": 2
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1323,
+            "win_rate": 68.1,
+            "rank": 7
+          },
+          {
+            "category": "asciiart",
+            "elo": 1312,
+            "win_rate": 64.2,
+            "rank": 3
+          },
+          {
+            "category": "3d",
+            "elo": 1307,
+            "win_rate": 63,
+            "rank": 14
+          },
+          {
+            "category": "website",
+            "elo": 1295,
+            "win_rate": 64.3,
+            "rank": 13
+          },
+          {
+            "category": "codecategories",
+            "elo": 1292,
+            "win_rate": 64.2,
+            "rank": 17
+          },
+          {
+            "category": "dataviz",
+            "elo": 1270,
+            "win_rate": 60.6,
+            "rank": 20
+          },
+          {
+            "category": "gamedev",
+            "elo": 1266,
+            "win_rate": 56.2,
+            "rank": 24
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1221,
+            "win_rate": 53.6,
+            "rank": 5
+          },
+          {
+            "category": "webapps",
+            "elo": 1215,
+            "win_rate": 49.7,
+            "rank": 10
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1182,
+            "win_rate": 46.6,
+            "rank": 20
+          },
+          {
+            "category": "fullstack",
+            "elo": 1154,
+            "win_rate": 46.4,
+            "rank": 14
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1149,
+            "win_rate": 43.7,
+            "rank": 8
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1112,
+            "win_rate": 31.8,
+            "rank": 7
+          },
+          {
+            "category": "androidnative",
+            "elo": 1072,
+            "win_rate": 40.4,
+            "rank": 22
+          }
+        ]
+      },
       "rank": 71
     },
     {
@@ -1576,6 +3441,99 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 51.7,
+        "coding": 50.9,
+        "agentic": 63.0,
+        "best_elo": 1326,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1326,
+            "win_rate": 63.7,
+            "rank": 5
+          },
+          {
+            "category": "website",
+            "elo": 1326,
+            "win_rate": 62.3,
+            "rank": 5
+          },
+          {
+            "category": "codecategories",
+            "elo": 1325,
+            "win_rate": 62.3,
+            "rank": 7
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1320,
+            "win_rate": 62.6,
+            "rank": 8
+          },
+          {
+            "category": "3d",
+            "elo": 1318,
+            "win_rate": 62.4,
+            "rank": 10
+          },
+          {
+            "category": "gamedev",
+            "elo": 1317,
+            "win_rate": 61.4,
+            "rank": 12
+          },
+          {
+            "category": "fullstack",
+            "elo": 1288,
+            "win_rate": 63.1,
+            "rank": 4
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1277,
+            "win_rate": 60.6,
+            "rank": 1
+          },
+          {
+            "category": "asciiart",
+            "elo": 1269,
+            "win_rate": 60.3,
+            "rank": 8
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1265,
+            "win_rate": 59.2,
+            "rank": 4
+          },
+          {
+            "category": "webapps",
+            "elo": 1264,
+            "win_rate": 55.8,
+            "rank": 5
+          },
+          {
+            "category": "svg",
+            "elo": 1256,
+            "win_rate": 60,
+            "rank": 11
+          },
+          {
+            "category": "androidnative",
+            "elo": 1238,
+            "win_rate": 61.8,
+            "rank": 6
+          },
+          {
+            "category": "agenticgamedev",
+            "elo": 1200,
+            "win_rate": 50.9,
+            "rank": 6
+          }
+        ]
+      },
       "rank": 72
     },
     {
@@ -1599,6 +3557,60 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1235,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1235,
+            "win_rate": 52.2,
+            "rank": 32
+          },
+          {
+            "category": "website",
+            "elo": 1231,
+            "win_rate": 50.1,
+            "rank": 39
+          },
+          {
+            "category": "codecategories",
+            "elo": 1218,
+            "win_rate": 48.5,
+            "rank": 41
+          },
+          {
+            "category": "3d",
+            "elo": 1201,
+            "win_rate": 47.8,
+            "rank": 42
+          },
+          {
+            "category": "dataviz",
+            "elo": 1179,
+            "win_rate": 44.8,
+            "rank": 54
+          },
+          {
+            "category": "gamedev",
+            "elo": 1177,
+            "win_rate": 42.7,
+            "rank": 54
+          },
+          {
+            "category": "svg",
+            "elo": 1166,
+            "win_rate": 48.9,
+            "rank": 36
+          },
+          {
+            "category": "asciiart",
+            "elo": 1136,
+            "win_rate": 43.2,
+            "rank": 36
+          }
+        ]
+      },
       "rank": 73
     },
     {
@@ -1621,6 +3633,57 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 45.0,
+        "coding": 41.3,
+        "agentic": 55.8,
+        "best_elo": 1241,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1241,
+            "win_rate": 56.7,
+            "rank": 31
+          },
+          {
+            "category": "website",
+            "elo": 1234,
+            "win_rate": 52.6,
+            "rank": 35
+          },
+          {
+            "category": "codecategories",
+            "elo": 1231,
+            "win_rate": 52.6,
+            "rank": 32
+          },
+          {
+            "category": "dataviz",
+            "elo": 1220,
+            "win_rate": 53.2,
+            "rank": 35
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1220,
+            "win_rate": 51.4,
+            "rank": 39
+          },
+          {
+            "category": "gamedev",
+            "elo": 1209,
+            "win_rate": 50,
+            "rank": 43
+          },
+          {
+            "category": "svg",
+            "elo": 1200,
+            "win_rate": 56.1,
+            "rank": 28
+          }
+        ]
+      },
       "rank": 74
     },
     {
@@ -1640,12 +3703,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 41.9,
+        "coding": 37.4,
+        "agentic": 55.6,
+        "best_elo": 1266,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1266,
+            "win_rate": 57.5,
+            "rank": 26
+          },
+          {
+            "category": "codecategories",
+            "elo": 1258,
+            "win_rate": 56.8,
+            "rank": 27
+          },
+          {
+            "category": "3d",
+            "elo": 1250,
+            "win_rate": 57.6,
+            "rank": 28
+          },
+          {
+            "category": "gamedev",
+            "elo": 1246,
+            "win_rate": 55.5,
+            "rank": 32
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1229,
+            "win_rate": 53.4,
+            "rank": 34
+          },
+          {
+            "category": "dataviz",
+            "elo": 1216,
+            "win_rate": 51.2,
+            "rank": 37
+          },
+          {
+            "category": "svg",
+            "elo": 1209,
+            "win_rate": 54.5,
+            "rank": 22
+          }
+        ]
+      },
       "rank": 75
     },
     {
       "id": "z-ai/glm-5",
       "name": "Z.ai: GLM 5",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on l",
       "created": 1770829182,
       "context_length": 202752,
@@ -1659,6 +3773,87 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 49.8,
+        "coding": 44.2,
+        "agentic": 63.1,
+        "best_elo": 1312,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1312,
+            "win_rate": 56.8,
+            "rank": 13
+          },
+          {
+            "category": "gamedev",
+            "elo": 1305,
+            "win_rate": 58.1,
+            "rank": 14
+          },
+          {
+            "category": "codecategories",
+            "elo": 1297,
+            "win_rate": 55.7,
+            "rank": 15
+          },
+          {
+            "category": "website",
+            "elo": 1291,
+            "win_rate": 55.1,
+            "rank": 17
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1289,
+            "win_rate": 54.1,
+            "rank": 19
+          },
+          {
+            "category": "dataviz",
+            "elo": 1272,
+            "win_rate": 52.9,
+            "rank": 19
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1238,
+            "win_rate": 54.8,
+            "rank": 3
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1230,
+            "win_rate": 53.4,
+            "rank": 10
+          },
+          {
+            "category": "androidnative",
+            "elo": 1227,
+            "win_rate": 62,
+            "rank": 8
+          },
+          {
+            "category": "svg",
+            "elo": 1225,
+            "win_rate": 54.5,
+            "rank": 15
+          },
+          {
+            "category": "fullstack",
+            "elo": 1203,
+            "win_rate": 53.8,
+            "rank": 11
+          },
+          {
+            "category": "asciiart",
+            "elo": 1186,
+            "win_rate": 47.3,
+            "rank": 24
+          }
+        ]
+      },
       "rank": 76
     },
     {
@@ -1678,6 +3873,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 39.8,
+        "coding": 30.5,
+        "agentic": 50.1
+      },
       "rank": 77
     },
     {
@@ -1701,6 +3901,87 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 52.9,
+        "coding": 48.1,
+        "agentic": 67.6,
+        "best_elo": 1356,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1356,
+            "win_rate": 66.4,
+            "rank": 2
+          },
+          {
+            "category": "3d",
+            "elo": 1355,
+            "win_rate": 66.8,
+            "rank": 3
+          },
+          {
+            "category": "gamedev",
+            "elo": 1349,
+            "win_rate": 65.1,
+            "rank": 3
+          },
+          {
+            "category": "codecategories",
+            "elo": 1343,
+            "win_rate": 64.8,
+            "rank": 2
+          },
+          {
+            "category": "website",
+            "elo": 1339,
+            "win_rate": 64.4,
+            "rank": 3
+          },
+          {
+            "category": "dataviz",
+            "elo": 1326,
+            "win_rate": 63.4,
+            "rank": 4
+          },
+          {
+            "category": "fullstack",
+            "elo": 1302,
+            "win_rate": 68.6,
+            "rank": 3
+          },
+          {
+            "category": "asciiart",
+            "elo": 1300,
+            "win_rate": 64.6,
+            "rank": 6
+          },
+          {
+            "category": "webapps",
+            "elo": 1285,
+            "win_rate": 60.9,
+            "rank": 2
+          },
+          {
+            "category": "svg",
+            "elo": 1285,
+            "win_rate": 63.4,
+            "rank": 6
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1269,
+            "win_rate": 60.5,
+            "rank": 2
+          },
+          {
+            "category": "androidnative",
+            "elo": 1228,
+            "win_rate": 68.8,
+            "rank": 7
+          }
+        ]
+      },
       "rank": 78
     },
     {
@@ -1720,6 +4001,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 28.3,
+        "coding": 22.9,
+        "agentic": 42.1
+      },
       "rank": 79
     },
     {
@@ -1739,6 +4025,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 38.5,
+        "coding": 34.6,
+        "agentic": 48.2
+      },
       "rank": 80
     },
     {
@@ -1760,6 +4051,93 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 46.8,
+        "coding": 39.6,
+        "agentic": 58.9,
+        "best_elo": 1293,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1293,
+            "win_rate": 56.1,
+            "rank": 15
+          },
+          {
+            "category": "3d",
+            "elo": 1292,
+            "win_rate": 54.1,
+            "rank": 18
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1292,
+            "win_rate": 54.1,
+            "rank": 17
+          },
+          {
+            "category": "codecategories",
+            "elo": 1288,
+            "win_rate": 54.9,
+            "rank": 18
+          },
+          {
+            "category": "gamedev",
+            "elo": 1278,
+            "win_rate": 54.5,
+            "rank": 20
+          },
+          {
+            "category": "dataviz",
+            "elo": 1273,
+            "win_rate": 52.9,
+            "rank": 18
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1257,
+            "win_rate": 59.7,
+            "rank": 2
+          },
+          {
+            "category": "asciiart",
+            "elo": 1223,
+            "win_rate": 49,
+            "rank": 14
+          },
+          {
+            "category": "svg",
+            "elo": 1216,
+            "win_rate": 51.4,
+            "rank": 19
+          },
+          {
+            "category": "webapps",
+            "elo": 1212,
+            "win_rate": 50.3,
+            "rank": 11
+          },
+          {
+            "category": "fullstack",
+            "elo": 1196,
+            "win_rate": 54.1,
+            "rank": 12
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1195,
+            "win_rate": 49.3,
+            "rank": 17
+          },
+          {
+            "category": "androidnative",
+            "elo": 1144,
+            "win_rate": 57.7,
+            "rank": 14
+          }
+        ]
+      },
       "rank": 81
     },
     {
@@ -1779,6 +4157,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 25.9,
+        "coding": 13.3,
+        "agentic": 34.9
+      },
       "rank": 82
     },
     {
@@ -1798,6 +4181,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 83
     },
     {
@@ -1820,6 +4204,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 84
     },
     {
@@ -1842,6 +4227,7 @@
       ],
       "modality": "text+audio->text+audio",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 85
     },
     {
@@ -1864,12 +4250,13 @@
       ],
       "modality": "text+audio->text+audio",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 86
     },
     {
       "id": "z-ai/glm-4.7-flash",
       "name": "Z.ai: GLM 4.7 Flash",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-hor",
       "created": 1768833913,
       "context_length": 202752,
@@ -1883,6 +4270,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 30.1,
+        "coding": 25.9,
+        "agentic": 46.0,
+        "best_elo": 1265,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1265,
+            "win_rate": 57.6,
+            "rank": 25
+          },
+          {
+            "category": "website",
+            "elo": 1238,
+            "win_rate": 54,
+            "rank": 34
+          },
+          {
+            "category": "codecategories",
+            "elo": 1229,
+            "win_rate": 53.1,
+            "rank": 33
+          },
+          {
+            "category": "gamedev",
+            "elo": 1205,
+            "win_rate": 49.7,
+            "rank": 45
+          },
+          {
+            "category": "3d",
+            "elo": 1201,
+            "win_rate": 51.2,
+            "rank": 41
+          },
+          {
+            "category": "dataviz",
+            "elo": 1168,
+            "win_rate": 45.3,
+            "rank": 58
+          },
+          {
+            "category": "svg",
+            "elo": 1096,
+            "win_rate": 44.2,
+            "rank": 48
+          }
+        ]
+      },
       "rank": 87
     },
     {
@@ -1905,6 +4343,45 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 49.0,
+        "coding": 43.0,
+        "agentic": 56.5,
+        "best_elo": 1188,
+        "best_elo_category": "godotgamedev",
+        "elo_categories": [
+          {
+            "category": "godotgamedev",
+            "elo": 1188,
+            "win_rate": 48,
+            "rank": 12
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1181,
+            "win_rate": 47.7,
+            "rank": 22
+          },
+          {
+            "category": "androidnative",
+            "elo": 1176,
+            "win_rate": 47.5,
+            "rank": 11
+          },
+          {
+            "category": "webapps",
+            "elo": 1144,
+            "win_rate": 40.5,
+            "rank": 18
+          },
+          {
+            "category": "fullstack",
+            "elo": 1074,
+            "win_rate": 37,
+            "rank": 25
+          }
+        ]
+      },
       "rank": 88
     },
     {
@@ -1927,6 +4404,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 89
     },
     {
@@ -1949,6 +4427,7 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 90
     },
     {
@@ -1968,12 +4447,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 39.4,
+        "coding": 32.8,
+        "agentic": 47.4,
+        "best_elo": 1280,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1280,
+            "win_rate": 60.9,
+            "rank": 22
+          },
+          {
+            "category": "dataviz",
+            "elo": 1251,
+            "win_rate": 57,
+            "rank": 25
+          },
+          {
+            "category": "3d",
+            "elo": 1246,
+            "win_rate": 57.5,
+            "rank": 29
+          },
+          {
+            "category": "website",
+            "elo": 1245,
+            "win_rate": 55.4,
+            "rank": 30
+          },
+          {
+            "category": "codecategories",
+            "elo": 1242,
+            "win_rate": 55.3,
+            "rank": 29
+          },
+          {
+            "category": "gamedev",
+            "elo": 1204,
+            "win_rate": 50.4,
+            "rank": 46
+          },
+          {
+            "category": "svg",
+            "elo": 1190,
+            "win_rate": 55.4,
+            "rank": 31
+          }
+        ]
+      },
       "rank": 91
     },
     {
       "id": "z-ai/glm-4.7",
       "name": "Z.ai: GLM 4.7",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements",
       "created": 1766378014,
       "context_length": 202752,
@@ -1987,6 +4517,87 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 42.1,
+        "coding": 36.3,
+        "agentic": 55.0,
+        "best_elo": 1274,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1274,
+            "win_rate": 55,
+            "rank": 23
+          },
+          {
+            "category": "website",
+            "elo": 1271,
+            "win_rate": 56,
+            "rank": 22
+          },
+          {
+            "category": "codecategories",
+            "elo": 1269,
+            "win_rate": 55.5,
+            "rank": 23
+          },
+          {
+            "category": "gamedev",
+            "elo": 1260,
+            "win_rate": 56.9,
+            "rank": 28
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1253,
+            "win_rate": 51,
+            "rank": 28
+          },
+          {
+            "category": "dataviz",
+            "elo": 1242,
+            "win_rate": 52,
+            "rank": 29
+          },
+          {
+            "category": "asciiart",
+            "elo": 1213,
+            "win_rate": 49,
+            "rank": 16
+          },
+          {
+            "category": "svg",
+            "elo": 1201,
+            "win_rate": 54.7,
+            "rank": 27
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1198,
+            "win_rate": 49.8,
+            "rank": 14
+          },
+          {
+            "category": "androidnative",
+            "elo": 1139,
+            "win_rate": 56,
+            "rank": 15
+          },
+          {
+            "category": "fullstack",
+            "elo": 1132,
+            "win_rate": 44.9,
+            "rank": 17
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1131,
+            "win_rate": 39.1,
+            "rank": 18
+          }
+        ]
+      },
       "rank": 92
     },
     {
@@ -2012,6 +4623,75 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 46.4,
+        "coding": 42.6,
+        "agentic": 49.7,
+        "best_elo": 1264,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1264,
+            "win_rate": 62.7,
+            "rank": 25
+          },
+          {
+            "category": "codecategories",
+            "elo": 1241,
+            "win_rate": 57.6,
+            "rank": 30
+          },
+          {
+            "category": "website",
+            "elo": 1240,
+            "win_rate": 57,
+            "rank": 31
+          },
+          {
+            "category": "gamedev",
+            "elo": 1237,
+            "win_rate": 58.3,
+            "rank": 36
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1220,
+            "win_rate": 52.5,
+            "rank": 7
+          },
+          {
+            "category": "webapps",
+            "elo": 1203,
+            "win_rate": 49.5,
+            "rank": 13
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1196,
+            "win_rate": 49.8,
+            "rank": 15
+          },
+          {
+            "category": "fullstack",
+            "elo": 1144,
+            "win_rate": 47.1,
+            "rank": 15
+          },
+          {
+            "category": "agenticslides",
+            "elo": 1078,
+            "win_rate": 39.3,
+            "rank": 9
+          },
+          {
+            "category": "androidnative",
+            "elo": 1075,
+            "win_rate": 47.9,
+            "rank": 21
+          }
+        ]
+      },
       "rank": 93
     },
     {
@@ -2031,6 +4711,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 41.5,
+        "coding": 33.5,
+        "agentic": 48.8,
+        "best_elo": 1210,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1210,
+            "win_rate": 50.1,
+            "rank": 48
+          },
+          {
+            "category": "codecategories",
+            "elo": 1206,
+            "win_rate": 49.6,
+            "rank": 47
+          },
+          {
+            "category": "gamedev",
+            "elo": 1201,
+            "win_rate": 49,
+            "rank": 51
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1199,
+            "win_rate": 48,
+            "rank": 47
+          },
+          {
+            "category": "3d",
+            "elo": 1194,
+            "win_rate": 49.3,
+            "rank": 44
+          },
+          {
+            "category": "dataviz",
+            "elo": 1177,
+            "win_rate": 46,
+            "rank": 55
+          },
+          {
+            "category": "svg",
+            "elo": 1087,
+            "win_rate": 40.6,
+            "rank": 51
+          },
+          {
+            "category": "asciiart",
+            "elo": 1063,
+            "win_rate": 34.3,
+            "rank": 41
+          }
+        ]
+      },
       "rank": 94
     },
     {
@@ -2050,6 +4787,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 24.3,
+        "coding": 19.0,
+        "agentic": 19.1
+      },
       "rank": 95
     },
     {
@@ -2073,6 +4815,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 96
     },
     {
@@ -2096,6 +4839,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 97
     },
     {
@@ -2119,6 +4863,93 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 51.3,
+        "coding": 48.7,
+        "agentic": 60.2,
+        "best_elo": 1265,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1265,
+            "win_rate": 56,
+            "rank": 25
+          },
+          {
+            "category": "dataviz",
+            "elo": 1246,
+            "win_rate": 56.1,
+            "rank": 28
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1244,
+            "win_rate": 52.7,
+            "rank": 29
+          },
+          {
+            "category": "website",
+            "elo": 1239,
+            "win_rate": 54.5,
+            "rank": 32
+          },
+          {
+            "category": "codecategories",
+            "elo": 1221,
+            "win_rate": 50.9,
+            "rank": 39
+          },
+          {
+            "category": "svg",
+            "elo": 1199,
+            "win_rate": 54.5,
+            "rank": 29
+          },
+          {
+            "category": "asciiart",
+            "elo": 1195,
+            "win_rate": 50.7,
+            "rank": 20
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1183,
+            "win_rate": 48.1,
+            "rank": 13
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1182,
+            "win_rate": 47.4,
+            "rank": 21
+          },
+          {
+            "category": "webapps",
+            "elo": 1175,
+            "win_rate": 45.7,
+            "rank": 15
+          },
+          {
+            "category": "3d",
+            "elo": 1159,
+            "win_rate": 43.3,
+            "rank": 56
+          },
+          {
+            "category": "fullstack",
+            "elo": 1124,
+            "win_rate": 44,
+            "rank": 19
+          },
+          {
+            "category": "androidnative",
+            "elo": 1085,
+            "win_rate": 49.2,
+            "rank": 19
+          }
+        ]
+      },
       "rank": 98
     },
     {
@@ -2140,6 +4971,11 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 22.0,
+        "coding": 23.7,
+        "agentic": 21.9
+      },
       "rank": 99
     },
     {
@@ -2159,12 +4995,13 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 100
     },
     {
       "id": "z-ai/glm-4.6v",
       "name": "Z.ai: GLM 4.6V",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-4.6V is a large multimodal model designed for high-fidelity visual understanding and long-context reasoning across images, documents, and mixed media. It supports up to 128K tokens, processes comp",
       "created": 1765207462,
       "context_length": 131072,
@@ -2181,6 +5018,11 @@
       ],
       "modality": "text+image+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 23.4,
+        "coding": 19.7,
+        "agentic": 17.5
+      },
       "rank": 101
     },
     {
@@ -2200,6 +5042,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 102
     },
     {
@@ -2219,6 +5062,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 103
     },
     {
@@ -2241,6 +5085,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 104
     },
     {
@@ -2266,6 +5111,11 @@
       ],
       "modality": "text+image+file+video->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 29.7,
+        "coding": 23.9,
+        "agentic": 32.9
+      },
       "rank": 105
     },
     {
@@ -2287,6 +5137,39 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 16.0,
+        "coding": 10.9,
+        "agentic": 17.4,
+        "best_elo": 1125,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1125,
+            "win_rate": 44.8,
+            "rank": 76
+          },
+          {
+            "category": "codecategories",
+            "elo": 1116,
+            "win_rate": 44,
+            "rank": 74
+          },
+          {
+            "category": "gamedev",
+            "elo": 1109,
+            "win_rate": 43.6,
+            "rank": 74
+          },
+          {
+            "category": "3d",
+            "elo": 1071,
+            "win_rate": 39.6,
+            "rank": 77
+          }
+        ]
+      },
       "rank": 106
     },
     {
@@ -2308,6 +5191,39 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 14.8,
+        "coding": 10.0,
+        "agentic": 16.7,
+        "best_elo": 1112,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1112,
+            "win_rate": 46.2,
+            "rank": 70
+          },
+          {
+            "category": "website",
+            "elo": 1109,
+            "win_rate": 42.9,
+            "rank": 78
+          },
+          {
+            "category": "codecategories",
+            "elo": 1104,
+            "win_rate": 42.9,
+            "rank": 76
+          },
+          {
+            "category": "gamedev",
+            "elo": 1061,
+            "win_rate": 38.7,
+            "rank": 82
+          }
+        ]
+      },
       "rank": 107
     },
     {
@@ -2329,6 +5245,39 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 11.2,
+        "coding": 4.8,
+        "agentic": 11.4,
+        "best_elo": 1072,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1072,
+            "win_rate": 38.2,
+            "rank": 86
+          },
+          {
+            "category": "codecategories",
+            "elo": 1062,
+            "win_rate": 37.3,
+            "rank": 84
+          },
+          {
+            "category": "3d",
+            "elo": 1043,
+            "win_rate": 35.9,
+            "rank": 82
+          },
+          {
+            "category": "gamedev",
+            "elo": 1019,
+            "win_rate": 33,
+            "rank": 92
+          }
+        ]
+      },
       "rank": 108
     },
     {
@@ -2351,6 +5300,63 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 22.8,
+        "coding": 22.7,
+        "agentic": 21.7,
+        "best_elo": 1206,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1206,
+            "win_rate": 49.4,
+            "rank": 51
+          },
+          {
+            "category": "codecategories",
+            "elo": 1193,
+            "win_rate": 47.6,
+            "rank": 53
+          },
+          {
+            "category": "dataviz",
+            "elo": 1181,
+            "win_rate": 45.8,
+            "rank": 52
+          },
+          {
+            "category": "3d",
+            "elo": 1180,
+            "win_rate": 46.9,
+            "rank": 47
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1158,
+            "win_rate": 43.1,
+            "rank": 55
+          },
+          {
+            "category": "gamedev",
+            "elo": 1150,
+            "win_rate": 41.5,
+            "rank": 63
+          },
+          {
+            "category": "asciiart",
+            "elo": 1111,
+            "win_rate": 40.3,
+            "rank": 39
+          },
+          {
+            "category": "svg",
+            "elo": 1049,
+            "win_rate": 38,
+            "rank": 60
+          }
+        ]
+      },
       "rank": 109
     },
     {
@@ -2370,6 +5376,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 110
     },
     {
@@ -2389,6 +5396,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 41.7,
+        "coding": 36.7,
+        "agentic": 52.9,
+        "best_elo": 1221,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1221,
+            "win_rate": 51.8,
+            "rank": 44
+          },
+          {
+            "category": "codecategories",
+            "elo": 1217,
+            "win_rate": 51.1,
+            "rank": 43
+          },
+          {
+            "category": "3d",
+            "elo": 1215,
+            "win_rate": 51.8,
+            "rank": 37
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1214,
+            "win_rate": 49.7,
+            "rank": 41
+          },
+          {
+            "category": "dataviz",
+            "elo": 1205,
+            "win_rate": 49.6,
+            "rank": 44
+          },
+          {
+            "category": "gamedev",
+            "elo": 1203,
+            "win_rate": 48.5,
+            "rank": 47
+          },
+          {
+            "category": "asciiart",
+            "elo": 1111,
+            "win_rate": 39.6,
+            "rank": 38
+          },
+          {
+            "category": "svg",
+            "elo": 1088,
+            "win_rate": 41.2,
+            "rank": 50
+          }
+        ]
+      },
       "rank": 111
     },
     {
@@ -2408,6 +5472,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 22.2,
+        "coding": 19.1,
+        "agentic": 19.8,
+        "best_elo": 1166,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1166,
+            "win_rate": 45.1,
+            "rank": 51
+          },
+          {
+            "category": "website",
+            "elo": 1160,
+            "win_rate": 43,
+            "rank": 65
+          },
+          {
+            "category": "codecategories",
+            "elo": 1158,
+            "win_rate": 42.7,
+            "rank": 64
+          },
+          {
+            "category": "gamedev",
+            "elo": 1148,
+            "win_rate": 41.4,
+            "rank": 64
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1134,
+            "win_rate": 39.1,
+            "rank": 62
+          },
+          {
+            "category": "dataviz",
+            "elo": 1126,
+            "win_rate": 38.8,
+            "rank": 70
+          },
+          {
+            "category": "svg",
+            "elo": 1049,
+            "win_rate": 34.4,
+            "rank": 59
+          },
+          {
+            "category": "asciiart",
+            "elo": 1004,
+            "win_rate": 26.8,
+            "rank": 43
+          }
+        ]
+      },
       "rank": 112
     },
     {
@@ -2431,6 +5552,87 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 49.7,
+        "coding": 47.8,
+        "agentic": 59.6,
+        "best_elo": 1298,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1298,
+            "win_rate": 60.8,
+            "rank": 16
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1295,
+            "win_rate": 60,
+            "rank": 16
+          },
+          {
+            "category": "3d",
+            "elo": 1292,
+            "win_rate": 61.4,
+            "rank": 17
+          },
+          {
+            "category": "codecategories",
+            "elo": 1292,
+            "win_rate": 60.7,
+            "rank": 16
+          },
+          {
+            "category": "website",
+            "elo": 1290,
+            "win_rate": 60.6,
+            "rank": 18
+          },
+          {
+            "category": "dataviz",
+            "elo": 1289,
+            "win_rate": 60,
+            "rank": 12
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1248,
+            "win_rate": 57.4,
+            "rank": 5
+          },
+          {
+            "category": "webapps",
+            "elo": 1240,
+            "win_rate": 54.2,
+            "rank": 7
+          },
+          {
+            "category": "fullstack",
+            "elo": 1238,
+            "win_rate": 59.9,
+            "rank": 7
+          },
+          {
+            "category": "svg",
+            "elo": 1235,
+            "win_rate": 58.7,
+            "rank": 14
+          },
+          {
+            "category": "asciiart",
+            "elo": 1224,
+            "win_rate": 54.4,
+            "rank": 12
+          },
+          {
+            "category": "androidnative",
+            "elo": 1202,
+            "win_rate": 65.5,
+            "rank": 10
+          }
+        ]
+      },
       "rank": 113
     },
     {
@@ -2450,6 +5652,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 12.1,
+        "coding": 10.5,
+        "agentic": 0.0
+      },
       "rank": 114
     },
     {
@@ -2471,6 +5678,36 @@
       ],
       "modality": "text+image->text+image",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1284,
+        "best_elo_category": "graphicdesign",
+        "elo_categories": [
+          {
+            "category": "graphicdesign",
+            "elo": 1284,
+            "win_rate": 66.2,
+            "rank": 2
+          },
+          {
+            "category": "imageediting",
+            "elo": 1276,
+            "win_rate": 66.3,
+            "rank": 1
+          },
+          {
+            "category": "image",
+            "elo": 1270,
+            "win_rate": 62.3,
+            "rank": 2
+          },
+          {
+            "category": "logo",
+            "elo": 1258,
+            "win_rate": 61.1,
+            "rank": 2
+          }
+        ]
+      },
       "rank": 115
     },
     {
@@ -2490,6 +5727,9 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "coding": 24.8
+      },
       "rank": 116
     },
     {
@@ -2512,6 +5752,69 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 47.7,
+        "coding": 44.7,
+        "agentic": 51.3,
+        "best_elo": 1249,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1249,
+            "win_rate": 58,
+            "rank": 26
+          },
+          {
+            "category": "gamedev",
+            "elo": 1249,
+            "win_rate": 55.9,
+            "rank": 31
+          },
+          {
+            "category": "website",
+            "elo": 1231,
+            "win_rate": 54.1,
+            "rank": 38
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1224,
+            "win_rate": 53,
+            "rank": 36
+          },
+          {
+            "category": "codecategories",
+            "elo": 1222,
+            "win_rate": 53.1,
+            "rank": 38
+          },
+          {
+            "category": "svg",
+            "elo": 1207,
+            "win_rate": 57.4,
+            "rank": 24
+          },
+          {
+            "category": "asciiart",
+            "elo": 1160,
+            "win_rate": 48.6,
+            "rank": 32
+          },
+          {
+            "category": "3d",
+            "elo": 1142,
+            "win_rate": 43.9,
+            "rank": 62
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1135,
+            "win_rate": 43.8,
+            "rank": 27
+          }
+        ]
+      },
       "rank": 117
     },
     {
@@ -2534,6 +5837,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 118
     },
     {
@@ -2555,6 +5859,57 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 43.1,
+        "coding": 36.6,
+        "agentic": 50.7,
+        "best_elo": 1218,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1218,
+            "win_rate": 50.7,
+            "rank": 36
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1211,
+            "win_rate": 54,
+            "rank": 12
+          },
+          {
+            "category": "gamedev",
+            "elo": 1210,
+            "win_rate": 52.3,
+            "rank": 41
+          },
+          {
+            "category": "website",
+            "elo": 1205,
+            "win_rate": 56,
+            "rank": 52
+          },
+          {
+            "category": "codecategories",
+            "elo": 1202,
+            "win_rate": 55.2,
+            "rank": 49
+          },
+          {
+            "category": "fullstack",
+            "elo": 1106,
+            "win_rate": 44.5,
+            "rank": 21
+          },
+          {
+            "category": "webapps",
+            "elo": 1105,
+            "win_rate": 44.1,
+            "rank": 20
+          }
+        ]
+      },
       "rank": 119
     },
     {
@@ -2577,6 +5932,63 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 38.6,
+        "coding": 36.4,
+        "agentic": 38.7,
+        "best_elo": 1162,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1162,
+            "win_rate": 43.5,
+            "rank": 60
+          },
+          {
+            "category": "website",
+            "elo": 1155,
+            "win_rate": 42.9,
+            "rank": 69
+          },
+          {
+            "category": "asciiart",
+            "elo": 1147,
+            "win_rate": 43,
+            "rank": 35
+          },
+          {
+            "category": "codecategories",
+            "elo": 1145,
+            "win_rate": 41.5,
+            "rank": 68
+          },
+          {
+            "category": "dataviz",
+            "elo": 1141,
+            "win_rate": 40.7,
+            "rank": 66
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1137,
+            "win_rate": 40.9,
+            "rank": 61
+          },
+          {
+            "category": "3d",
+            "elo": 1069,
+            "win_rate": 33,
+            "rank": 78
+          },
+          {
+            "category": "svg",
+            "elo": 1035,
+            "win_rate": 35.3,
+            "rank": 62
+          }
+        ]
+      },
       "rank": 120
     },
     {
@@ -2596,6 +6008,21 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 40.9,
+        "coding": 34.8,
+        "agentic": 47.9,
+        "best_elo": 1157,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1157,
+            "win_rate": 48.8,
+            "rank": 68
+          }
+        ]
+      },
       "rank": 121
     },
     {
@@ -2619,6 +6046,21 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 19.0,
+        "coding": 13.8,
+        "agentic": 16.4,
+        "best_elo": 879,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 879,
+            "win_rate": 26.2,
+            "rank": 104
+          }
+        ]
+      },
       "rank": 122
     },
     {
@@ -2640,6 +6082,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 123
     },
     {
@@ -2662,6 +6105,7 @@
       ],
       "modality": "text+file+audio->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 124
     },
     {
@@ -2681,6 +6125,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 125
     },
     {
@@ -2700,6 +6145,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 36.1,
+        "coding": 29.2,
+        "agentic": 47.5,
+        "best_elo": 1193,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1193,
+            "win_rate": 49.2,
+            "rank": 49
+          },
+          {
+            "category": "gamedev",
+            "elo": 1188,
+            "win_rate": 48.1,
+            "rank": 52
+          },
+          {
+            "category": "website",
+            "elo": 1187,
+            "win_rate": 48,
+            "rank": 57
+          },
+          {
+            "category": "codecategories",
+            "elo": 1186,
+            "win_rate": 48.1,
+            "rank": 56
+          },
+          {
+            "category": "dataviz",
+            "elo": 1185,
+            "win_rate": 50,
+            "rank": 51
+          },
+          {
+            "category": "3d",
+            "elo": 1178,
+            "win_rate": 48.3,
+            "rank": 48
+          },
+          {
+            "category": "svg",
+            "elo": 1158,
+            "win_rate": 55.3,
+            "rank": 37
+          }
+        ]
+      },
       "rank": 126
     },
     {
@@ -2721,6 +6217,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 24.7,
+        "coding": 14.5,
+        "agentic": 23.4
+      },
       "rank": 127
     },
     {
@@ -2740,6 +6241,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 7.7,
+        "coding": 5.0,
+        "agentic": 4.2
+      },
       "rank": 128
     },
     {
@@ -2759,6 +6265,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 8.4,
+        "coding": 3.6,
+        "agentic": 2.7
+      },
       "rank": 129
     },
     {
@@ -2782,6 +6293,30 @@
       ],
       "modality": "text+image+file->text+image",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1228,
+        "best_elo_category": "logo",
+        "elo_categories": [
+          {
+            "category": "logo",
+            "elo": 1228,
+            "win_rate": 53.7,
+            "rank": 3
+          },
+          {
+            "category": "image",
+            "elo": 1210,
+            "win_rate": 51.1,
+            "rank": 6
+          },
+          {
+            "category": "graphicdesign",
+            "elo": 1202,
+            "win_rate": 50.5,
+            "rank": 5
+          }
+        ]
+      },
       "rank": 130
     },
     {
@@ -2805,6 +6340,63 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 37.1,
+        "coding": 32.6,
+        "agentic": 40.2,
+        "best_elo": 1182,
+        "best_elo_category": "asciiart",
+        "elo_categories": [
+          {
+            "category": "asciiart",
+            "elo": 1182,
+            "win_rate": 49.3,
+            "rank": 26
+          },
+          {
+            "category": "dataviz",
+            "elo": 1169,
+            "win_rate": 45.7,
+            "rank": 57
+          },
+          {
+            "category": "gamedev",
+            "elo": 1167,
+            "win_rate": 44.6,
+            "rank": 57
+          },
+          {
+            "category": "codecategories",
+            "elo": 1166,
+            "win_rate": 44.8,
+            "rank": 59
+          },
+          {
+            "category": "website",
+            "elo": 1166,
+            "win_rate": 45,
+            "rank": 61
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1157,
+            "win_rate": 42.7,
+            "rank": 56
+          },
+          {
+            "category": "3d",
+            "elo": 1154,
+            "win_rate": 41.2,
+            "rank": 58
+          },
+          {
+            "category": "svg",
+            "elo": 1083,
+            "win_rate": 39.1,
+            "rank": 52
+          }
+        ]
+      },
       "rank": 131
     },
     {
@@ -2826,6 +6418,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 16.7,
+        "coding": 9.8,
+        "agentic": 15.6
+      },
       "rank": 132
     },
     {
@@ -2847,6 +6444,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": {
+        "intelligence": 14.3,
+        "coding": 7.3,
+        "agentic": 18.4
+      },
       "rank": 133
     },
     {
@@ -2870,6 +6472,30 @@
       ],
       "modality": "text+image+file->text+image",
       "knowledge_cutoff": null,
+      "scores": {
+        "best_elo": 1221,
+        "best_elo_category": "logo",
+        "elo_categories": [
+          {
+            "category": "logo",
+            "elo": 1221,
+            "win_rate": 55,
+            "rank": 4
+          },
+          {
+            "category": "image",
+            "elo": 1219,
+            "win_rate": 55,
+            "rank": 4
+          },
+          {
+            "category": "graphicdesign",
+            "elo": 1208,
+            "win_rate": 55.5,
+            "rank": 4
+          }
+        ]
+      },
       "rank": 134
     },
     {
@@ -2893,6 +6519,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 135
     },
     {
@@ -2916,6 +6543,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 136
     },
     {
@@ -2935,6 +6563,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-03-31",
+      "scores": {
+        "intelligence": 18.7,
+        "coding": 15.1,
+        "agentic": 9.4
+      },
       "rank": 137
     },
     {
@@ -2956,6 +6589,30 @@
       ],
       "modality": "text+image->text+image",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "best_elo": 1213,
+        "best_elo_category": "image",
+        "elo_categories": [
+          {
+            "category": "image",
+            "elo": 1213,
+            "win_rate": 55.6,
+            "rank": 5
+          },
+          {
+            "category": "graphicdesign",
+            "elo": 1201,
+            "win_rate": 56.9,
+            "rank": 6
+          },
+          {
+            "category": "logo",
+            "elo": 1187,
+            "win_rate": 51.5,
+            "rank": 6
+          }
+        ]
+      },
       "rank": 138
     },
     {
@@ -2977,6 +6634,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 19.7,
+        "coding": 13.1,
+        "agentic": 14.9
+      },
       "rank": 139
     },
     {
@@ -2998,6 +6660,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 16.0,
+        "coding": 14.3,
+        "agentic": 9.5
+      },
       "rank": 140
     },
     {
@@ -3021,12 +6688,13 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-09-30",
+      "scores": null,
       "rank": 141
     },
     {
       "id": "z-ai/glm-4.6",
       "name": "Z.ai: GLM 4.6",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex.",
       "created": 1759235576,
       "context_length": 202752,
@@ -3040,6 +6708,81 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 32.5,
+        "coding": 29.5,
+        "agentic": 41.6,
+        "best_elo": 1220,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1220,
+            "win_rate": 54.6,
+            "rank": 38
+          },
+          {
+            "category": "godotgamedev",
+            "elo": 1218,
+            "win_rate": 53,
+            "rank": 8
+          },
+          {
+            "category": "website",
+            "elo": 1218,
+            "win_rate": 54.4,
+            "rank": 45
+          },
+          {
+            "category": "codecategories",
+            "elo": 1217,
+            "win_rate": 54.3,
+            "rank": 45
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1215,
+            "win_rate": 54,
+            "rank": 40
+          },
+          {
+            "category": "dataviz",
+            "elo": 1209,
+            "win_rate": 52.8,
+            "rank": 40
+          },
+          {
+            "category": "3d",
+            "elo": 1208,
+            "win_rate": 54,
+            "rank": 39
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1194,
+            "win_rate": 49.3,
+            "rank": 18
+          },
+          {
+            "category": "svg",
+            "elo": 1167,
+            "win_rate": 52.1,
+            "rank": 35
+          },
+          {
+            "category": "fullstack",
+            "elo": 1112,
+            "win_rate": 42.3,
+            "rank": 20
+          },
+          {
+            "category": "androidnative",
+            "elo": 1109,
+            "win_rate": 52.4,
+            "rank": 18
+          }
+        ]
+      },
       "rank": 142
     },
     {
@@ -3064,6 +6807,81 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 43.0,
+        "coding": 38.6,
+        "agentic": 51.7,
+        "best_elo": 1243,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1243,
+            "win_rate": 55.6,
+            "rank": 30
+          },
+          {
+            "category": "gamedev",
+            "elo": 1237,
+            "win_rate": 53.8,
+            "rank": 35
+          },
+          {
+            "category": "asciiart",
+            "elo": 1236,
+            "win_rate": 55.3,
+            "rank": 11
+          },
+          {
+            "category": "codecategories",
+            "elo": 1234,
+            "win_rate": 53.8,
+            "rank": 31
+          },
+          {
+            "category": "website",
+            "elo": 1233,
+            "win_rate": 54,
+            "rank": 36
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1232,
+            "win_rate": 53.2,
+            "rank": 33
+          },
+          {
+            "category": "dataviz",
+            "elo": 1207,
+            "win_rate": 49.6,
+            "rank": 42
+          },
+          {
+            "category": "mobileapps",
+            "elo": 1192,
+            "win_rate": 48.9,
+            "rank": 19
+          },
+          {
+            "category": "svg",
+            "elo": 1170,
+            "win_rate": 53.1,
+            "rank": 34
+          },
+          {
+            "category": "webapps",
+            "elo": 1148,
+            "win_rate": 43.1,
+            "rank": 17
+          },
+          {
+            "category": "fullstack",
+            "elo": 1135,
+            "win_rate": 43.5,
+            "rank": 16
+          }
+        ]
+      },
       "rank": 143
     },
     {
@@ -3083,6 +6901,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-07-31",
+      "scores": {
+        "intelligence": 32.9,
+        "coding": 33.3,
+        "agentic": 28.7,
+        "best_elo": 1229,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1229,
+            "win_rate": 56.4,
+            "rank": 33
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1223,
+            "win_rate": 53.3,
+            "rank": 37
+          },
+          {
+            "category": "website",
+            "elo": 1223,
+            "win_rate": 54.2,
+            "rank": 42
+          },
+          {
+            "category": "codecategories",
+            "elo": 1222,
+            "win_rate": 54.2,
+            "rank": 37
+          },
+          {
+            "category": "gamedev",
+            "elo": 1215,
+            "win_rate": 53.1,
+            "rank": 39
+          },
+          {
+            "category": "dataviz",
+            "elo": 1197,
+            "win_rate": 50.6,
+            "rank": 47
+          },
+          {
+            "category": "svg",
+            "elo": 1090,
+            "win_rate": 42,
+            "rank": 49
+          }
+        ]
+      },
       "rank": 144
     },
     {
@@ -3102,6 +6971,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-04-30",
+      "scores": null,
       "rank": 145
     },
     {
@@ -3121,6 +6991,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 146
     },
     {
@@ -3146,6 +7017,51 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 21.6,
+        "coding": 18.2,
+        "agentic": 11.7,
+        "best_elo": 1144,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1144,
+            "win_rate": 48.1,
+            "rank": 73
+          },
+          {
+            "category": "dataviz",
+            "elo": 1134,
+            "win_rate": 45.5,
+            "rank": 67
+          },
+          {
+            "category": "codecategories",
+            "elo": 1132,
+            "win_rate": 47,
+            "rank": 71
+          },
+          {
+            "category": "gamedev",
+            "elo": 1117,
+            "win_rate": 45.9,
+            "rank": 72
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1078,
+            "win_rate": 41.4,
+            "rank": 73
+          },
+          {
+            "category": "3d",
+            "elo": 1048,
+            "win_rate": 36.5,
+            "rank": 80
+          }
+        ]
+      },
       "rank": 147
     },
     {
@@ -3167,6 +7083,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 27.6,
+        "coding": 20.9,
+        "agentic": 27.0
+      },
       "rank": 148
     },
     {
@@ -3188,6 +7109,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 20.8,
+        "coding": 16.5,
+        "agentic": 19.1
+      },
       "rank": 149
     },
     {
@@ -3207,6 +7133,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 31.4,
+        "coding": 26.4,
+        "agentic": 43.0,
+        "best_elo": 1172,
+        "best_elo_category": "asciiart",
+        "elo_categories": [
+          {
+            "category": "asciiart",
+            "elo": 1172,
+            "win_rate": 47.4,
+            "rank": 30
+          },
+          {
+            "category": "gamedev",
+            "elo": 1165,
+            "win_rate": 43.9,
+            "rank": 59
+          },
+          {
+            "category": "website",
+            "elo": 1163,
+            "win_rate": 44.4,
+            "rank": 64
+          },
+          {
+            "category": "codecategories",
+            "elo": 1161,
+            "win_rate": 44,
+            "rank": 62
+          },
+          {
+            "category": "3d",
+            "elo": 1154,
+            "win_rate": 43.5,
+            "rank": 59
+          },
+          {
+            "category": "dataviz",
+            "elo": 1149,
+            "win_rate": 41.8,
+            "rank": 60
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1134,
+            "win_rate": 40.1,
+            "rank": 63
+          },
+          {
+            "category": "svg",
+            "elo": 1069,
+            "win_rate": 37.3,
+            "rank": 56
+          }
+        ]
+      },
       "rank": 150
     },
     {
@@ -3228,6 +7211,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": null,
       "rank": 151
     },
     {
@@ -3250,6 +7234,21 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-09-30",
+      "scores": {
+        "intelligence": 44.6,
+        "coding": 38.9,
+        "agentic": 52.7,
+        "best_elo": 1140,
+        "best_elo_category": "mobileapps",
+        "elo_categories": [
+          {
+            "category": "mobileapps",
+            "elo": 1140,
+            "win_rate": 43.2,
+            "rank": 26
+          }
+        ]
+      },
       "rank": 152
     },
     {
@@ -3269,6 +7268,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 33.9,
+        "coding": 33.7,
+        "agentic": 29.8,
+        "best_elo": 1238,
+        "best_elo_category": "uicomponent",
+        "elo_categories": [
+          {
+            "category": "uicomponent",
+            "elo": 1238,
+            "win_rate": 59.3,
+            "rank": 31
+          },
+          {
+            "category": "website",
+            "elo": 1231,
+            "win_rate": 56.4,
+            "rank": 37
+          },
+          {
+            "category": "codecategories",
+            "elo": 1227,
+            "win_rate": 56,
+            "rank": 35
+          },
+          {
+            "category": "3d",
+            "elo": 1221,
+            "win_rate": 56,
+            "rank": 34
+          },
+          {
+            "category": "dataviz",
+            "elo": 1208,
+            "win_rate": 53,
+            "rank": 41
+          },
+          {
+            "category": "gamedev",
+            "elo": 1201,
+            "win_rate": 52.5,
+            "rank": 50
+          },
+          {
+            "category": "svg",
+            "elo": 1123,
+            "win_rate": 50.1,
+            "rank": 44
+          }
+        ]
+      },
       "rank": 153
     },
     {
@@ -3290,6 +7340,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": null,
       "rank": 154
     },
     {
@@ -3309,6 +7360,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-09-30",
+      "scores": {
+        "intelligence": 26.7,
+        "coding": 19.5,
+        "agentic": 23.6
+      },
       "rank": 155
     },
     {
@@ -3328,6 +7384,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-09-30",
+      "scores": {
+        "intelligence": 20.1,
+        "coding": 15.3,
+        "agentic": 14.2
+      },
       "rank": 156
     },
     {
@@ -3349,6 +7410,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 157
     },
     {
@@ -3370,6 +7432,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 158
     },
     {
@@ -3389,6 +7452,27 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-12-31",
+      "scores": {
+        "intelligence": 30.9,
+        "coding": 25.9,
+        "agentic": 37.7,
+        "best_elo": 1151,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1151,
+            "win_rate": 48.3,
+            "rank": 70
+          },
+          {
+            "category": "codecategories",
+            "elo": 1149,
+            "win_rate": 48.5,
+            "rank": 67
+          }
+        ]
+      },
       "rank": 159
     },
     {
@@ -3408,6 +7492,27 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 22.4,
+        "coding": 14.6,
+        "agentic": 17.7,
+        "best_elo": 974,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 974,
+            "win_rate": 35.5,
+            "rank": 98
+          },
+          {
+            "category": "dataviz",
+            "elo": 969,
+            "win_rate": 33.3,
+            "rank": 89
+          }
+        ]
+      },
       "rank": 160
     },
     {
@@ -3427,6 +7532,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 16.0,
+        "coding": 14.4,
+        "agentic": 11.7
+      },
       "rank": 161
     },
     {
@@ -3446,6 +7556,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 18.6,
+        "coding": 16.0,
+        "agentic": 12.6
+      },
       "rank": 162
     },
     {
@@ -3465,6 +7580,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 28.1,
+        "coding": 28.4,
+        "agentic": 31.9,
+        "best_elo": 1166,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1166,
+            "win_rate": 48,
+            "rank": 62
+          },
+          {
+            "category": "codecategories",
+            "elo": 1163,
+            "win_rate": 47.9,
+            "rank": 61
+          },
+          {
+            "category": "3d",
+            "elo": 1158,
+            "win_rate": 48,
+            "rank": 57
+          },
+          {
+            "category": "gamedev",
+            "elo": 1155,
+            "win_rate": 47.2,
+            "rank": 61
+          },
+          {
+            "category": "dataviz",
+            "elo": 1144,
+            "win_rate": 46.8,
+            "rank": 63
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1141,
+            "win_rate": 47.5,
+            "rank": 60
+          },
+          {
+            "category": "svg",
+            "elo": 1024,
+            "win_rate": 38.2,
+            "rank": 65
+          }
+        ]
+      },
       "rank": 163
     },
     {
@@ -3487,12 +7653,69 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 21.3,
+        "coding": 18.3,
+        "agentic": 25.3,
+        "best_elo": 1192,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1192,
+            "win_rate": 47.6,
+            "rank": 49
+          },
+          {
+            "category": "website",
+            "elo": 1177,
+            "win_rate": 46,
+            "rank": 59
+          },
+          {
+            "category": "codecategories",
+            "elo": 1172,
+            "win_rate": 45.1,
+            "rank": 57
+          },
+          {
+            "category": "3d",
+            "elo": 1163,
+            "win_rate": 44.7,
+            "rank": 54
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1156,
+            "win_rate": 43.5,
+            "rank": 57
+          },
+          {
+            "category": "gamedev",
+            "elo": 1144,
+            "win_rate": 40.7,
+            "rank": 66
+          },
+          {
+            "category": "svg",
+            "elo": 1050,
+            "win_rate": 38.2,
+            "rank": 58
+          },
+          {
+            "category": "asciiart",
+            "elo": 1040,
+            "win_rate": 30.8,
+            "rank": 42
+          }
+        ]
+      },
       "rank": 164
     },
     {
       "id": "z-ai/glm-4.5v",
       "name": "Z.ai: GLM 4.5V",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-4.5V is a vision-language foundation model for multimodal agent applications. Built on a Mixture-of-Experts (MoE) architecture with 106B parameters and 12B activated parameters, it achieves state-",
       "created": 1754922288,
       "context_length": 65536,
@@ -3508,6 +7731,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-12-31",
+      "scores": {
+        "intelligence": 15.1,
+        "coding": 10.9,
+        "agentic": 10.9
+      },
       "rank": 165
     },
     {
@@ -3527,6 +7755,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 10.9,
+        "coding": 7.8,
+        "agentic": 4.5
+      },
       "rank": 166
     },
     {
@@ -3550,6 +7783,9 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-09-30",
+      "scores": {
+        "coding": 21.2
+      },
       "rank": 167
     },
     {
@@ -3572,6 +7808,63 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-09-30",
+      "scores": {
+        "intelligence": 44.6,
+        "coding": 36.0,
+        "agentic": 54.7,
+        "best_elo": 1282,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1282,
+            "win_rate": 63.3,
+            "rank": 14
+          },
+          {
+            "category": "gamedev",
+            "elo": 1257,
+            "win_rate": 59.5,
+            "rank": 30
+          },
+          {
+            "category": "svg",
+            "elo": 1246,
+            "win_rate": 64.1,
+            "rank": 12
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1239,
+            "win_rate": 58.3,
+            "rank": 30
+          },
+          {
+            "category": "website",
+            "elo": 1228,
+            "win_rate": 53.7,
+            "rank": 40
+          },
+          {
+            "category": "codecategories",
+            "elo": 1220,
+            "win_rate": 54.7,
+            "rank": 40
+          },
+          {
+            "category": "asciiart",
+            "elo": 1184,
+            "win_rate": 49,
+            "rank": 25
+          },
+          {
+            "category": "3d",
+            "elo": 1136,
+            "win_rate": 41.4,
+            "rank": 65
+          }
+        ]
+      },
       "rank": 168
     },
     {
@@ -3595,6 +7888,63 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-05-31",
+      "scores": {
+        "intelligence": 41.2,
+        "coding": 35.3,
+        "agentic": 45.5,
+        "best_elo": 1202,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1202,
+            "win_rate": 48.4,
+            "rank": 49
+          },
+          {
+            "category": "website",
+            "elo": 1169,
+            "win_rate": 45.1,
+            "rank": 60
+          },
+          {
+            "category": "dataviz",
+            "elo": 1167,
+            "win_rate": 44.2,
+            "rank": 59
+          },
+          {
+            "category": "codecategories",
+            "elo": 1166,
+            "win_rate": 44.5,
+            "rank": 60
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1165,
+            "win_rate": 43.8,
+            "rank": 53
+          },
+          {
+            "category": "asciiart",
+            "elo": 1162,
+            "win_rate": 44.5,
+            "rank": 31
+          },
+          {
+            "category": "svg",
+            "elo": 1149,
+            "win_rate": 46.1,
+            "rank": 39
+          },
+          {
+            "category": "3d",
+            "elo": 1107,
+            "win_rate": 37.3,
+            "rank": 71
+          }
+        ]
+      },
       "rank": 169
     },
     {
@@ -3617,6 +7967,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-05-31",
+      "scores": {
+        "intelligence": 26.8,
+        "coding": 20.3,
+        "agentic": 23.2,
+        "best_elo": 1145,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1145,
+            "win_rate": 48.9,
+            "rank": 72
+          },
+          {
+            "category": "codecategories",
+            "elo": 1136,
+            "win_rate": 48.1,
+            "rank": 70
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1124,
+            "win_rate": 52,
+            "rank": 66
+          },
+          {
+            "category": "gamedev",
+            "elo": 1116,
+            "win_rate": 46.6,
+            "rank": 73
+          },
+          {
+            "category": "dataviz",
+            "elo": 1104,
+            "win_rate": 46.7,
+            "rank": 72
+          },
+          {
+            "category": "3d",
+            "elo": 1044,
+            "win_rate": 36.1,
+            "rank": 81
+          }
+        ]
+      },
       "rank": 170
     },
     {
@@ -3636,6 +8031,51 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 33.3,
+        "coding": 28.6,
+        "agentic": 37.9,
+        "best_elo": 1064,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1064,
+            "win_rate": 40.6,
+            "rank": 81
+          },
+          {
+            "category": "dataviz",
+            "elo": 1044,
+            "win_rate": 45.1,
+            "rank": 82
+          },
+          {
+            "category": "codecategories",
+            "elo": 1015,
+            "win_rate": 33.4,
+            "rank": 91
+          },
+          {
+            "category": "website",
+            "elo": 1012,
+            "win_rate": 32.5,
+            "rank": 95
+          },
+          {
+            "category": "3d",
+            "elo": 981,
+            "win_rate": 29.4,
+            "rank": 85
+          },
+          {
+            "category": "uicomponent",
+            "elo": 981,
+            "win_rate": 35.5,
+            "rank": 86
+          }
+        ]
+      },
       "rank": 171
     },
     {
@@ -3655,6 +8095,27 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 24.5,
+        "coding": 18.5,
+        "agentic": 27.6,
+        "best_elo": 978,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 978,
+            "win_rate": 39.7,
+            "rank": 87
+          },
+          {
+            "category": "website",
+            "elo": 897,
+            "win_rate": 27.9,
+            "rank": 103
+          }
+        ]
+      },
       "rank": 172
     },
     {
@@ -3677,6 +8138,61 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "coding": 36.5,
+        "best_elo": 1242,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1242,
+            "win_rate": 58.5,
+            "rank": 33
+          },
+          {
+            "category": "3d",
+            "elo": 1233,
+            "win_rate": 53.9,
+            "rank": 32
+          },
+          {
+            "category": "codecategories",
+            "elo": 1222,
+            "win_rate": 55.8,
+            "rank": 36
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1221,
+            "win_rate": 58,
+            "rank": 38
+          },
+          {
+            "category": "website",
+            "elo": 1221,
+            "win_rate": 55.3,
+            "rank": 43
+          },
+          {
+            "category": "asciiart",
+            "elo": 1213,
+            "win_rate": 52.9,
+            "rank": 15
+          },
+          {
+            "category": "dataviz",
+            "elo": 1210,
+            "win_rate": 56.4,
+            "rank": 39
+          },
+          {
+            "category": "svg",
+            "elo": 1210,
+            "win_rate": 60.8,
+            "rank": 20
+          }
+        ]
+      },
       "rank": 173
     },
     {
@@ -3698,6 +8214,48 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "best_elo": 1101,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1101,
+            "win_rate": 45.5,
+            "rank": 72
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1074,
+            "win_rate": 46.9,
+            "rank": 74
+          },
+          {
+            "category": "dataviz",
+            "elo": 1062,
+            "win_rate": 41.7,
+            "rank": 80
+          },
+          {
+            "category": "codecategories",
+            "elo": 1059,
+            "win_rate": 38.5,
+            "rank": 85
+          },
+          {
+            "category": "website",
+            "elo": 1057,
+            "win_rate": 37.8,
+            "rank": 89
+          },
+          {
+            "category": "gamedev",
+            "elo": 1037,
+            "win_rate": 36.2,
+            "rank": 87
+          }
+        ]
+      },
       "rank": 174
     },
     {
@@ -3717,6 +8275,33 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 20.0,
+        "coding": 19.4,
+        "agentic": 21.1,
+        "best_elo": 1131,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1131,
+            "win_rate": 57.1,
+            "rank": 74
+          },
+          {
+            "category": "dataviz",
+            "elo": 1129,
+            "win_rate": 54.7,
+            "rank": 69
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1104,
+            "win_rate": 54.1,
+            "rank": 68
+          }
+        ]
+      },
       "rank": 175
     },
     {
@@ -3736,12 +8321,17 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 15.0,
+        "coding": 14.2,
+        "agentic": 7.1
+      },
       "rank": 176
     },
     {
       "id": "z-ai/glm-4.5",
       "name": "Z.ai: GLM 4.5",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-4.5 is our latest flagship foundation model, purpose-built for agent-based applications. It leverages a Mixture-of-Experts (MoE) architecture and supports a context length of up to 128k tokens. GL",
       "created": 1753471347,
       "context_length": 131072,
@@ -3755,12 +8345,63 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-12-31",
+      "scores": {
+        "intelligence": 26.4,
+        "coding": 26.3,
+        "agentic": 16.2,
+        "best_elo": 1251,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1251,
+            "win_rate": 59.7,
+            "rank": 27
+          },
+          {
+            "category": "codecategories",
+            "elo": 1217,
+            "win_rate": 54.4,
+            "rank": 44
+          },
+          {
+            "category": "gamedev",
+            "elo": 1215,
+            "win_rate": 54.4,
+            "rank": 40
+          },
+          {
+            "category": "website",
+            "elo": 1214,
+            "win_rate": 53.8,
+            "rank": 46
+          },
+          {
+            "category": "dataviz",
+            "elo": 1204,
+            "win_rate": 53.3,
+            "rank": 45
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1201,
+            "win_rate": 55.1,
+            "rank": 46
+          },
+          {
+            "category": "svg",
+            "elo": 1154,
+            "win_rate": 50.8,
+            "rank": 38
+          }
+        ]
+      },
       "rank": 177
     },
     {
       "id": "z-ai/glm-4.5-air",
       "name": "Z.ai: GLM 4.5 Air",
-      "provider": "Z Ai",
+      "provider": "Z.ai",
       "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but wit",
       "created": 1753471258,
       "context_length": 131072,
@@ -3774,6 +8415,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-12-31",
+      "scores": {
+        "intelligence": 23.2,
+        "coding": 23.8,
+        "agentic": 21.0,
+        "best_elo": 1237,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1237,
+            "win_rate": 59.4,
+            "rank": 30
+          },
+          {
+            "category": "3d",
+            "elo": 1203,
+            "win_rate": 54.1,
+            "rank": 40
+          },
+          {
+            "category": "website",
+            "elo": 1191,
+            "win_rate": 51.3,
+            "rank": 55
+          },
+          {
+            "category": "codecategories",
+            "elo": 1189,
+            "win_rate": 51.5,
+            "rank": 55
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1181,
+            "win_rate": 54.6,
+            "rank": 51
+          },
+          {
+            "category": "gamedev",
+            "elo": 1165,
+            "win_rate": 48.4,
+            "rank": 58
+          },
+          {
+            "category": "svg",
+            "elo": 1129,
+            "win_rate": 50.8,
+            "rank": 43
+          }
+        ]
+      },
       "rank": 178
     },
     {
@@ -3793,6 +8485,51 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 29.5,
+        "coding": 23.2,
+        "agentic": 29.7,
+        "best_elo": 1097,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1097,
+            "win_rate": 42.1,
+            "rank": 81
+          },
+          {
+            "category": "codecategories",
+            "elo": 1084,
+            "win_rate": 40.9,
+            "rank": 79
+          },
+          {
+            "category": "3d",
+            "elo": 1080,
+            "win_rate": 40.7,
+            "rank": 75
+          },
+          {
+            "category": "gamedev",
+            "elo": 1028,
+            "win_rate": 34.3,
+            "rank": 89
+          },
+          {
+            "category": "uicomponent",
+            "elo": 999,
+            "win_rate": 33.9,
+            "rank": 85
+          },
+          {
+            "category": "dataviz",
+            "elo": 992,
+            "win_rate": 32.3,
+            "rank": 85
+          }
+        ]
+      },
       "rank": 179
     },
     {
@@ -3814,6 +8551,45 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 24.8,
+        "coding": 24.6,
+        "agentic": 18.3,
+        "best_elo": 1203,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1203,
+            "win_rate": 61.7,
+            "rank": 53
+          },
+          {
+            "category": "codecategories",
+            "elo": 1194,
+            "win_rate": 61.2,
+            "rank": 51
+          },
+          {
+            "category": "gamedev",
+            "elo": 1172,
+            "win_rate": 59,
+            "rank": 55
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1172,
+            "win_rate": 61.5,
+            "rank": 52
+          },
+          {
+            "category": "dataviz",
+            "elo": 1126,
+            "win_rate": 54.9,
+            "rank": 71
+          }
+        ]
+      },
       "rank": 180
     },
     {
@@ -3835,6 +8611,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": null,
       "rank": 181
     },
     {
@@ -3860,6 +8637,11 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 17.6,
+        "coding": 9.5,
+        "agentic": 6.1
+      },
       "rank": 182
     },
     {
@@ -3879,6 +8661,51 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-06-30",
+      "scores": {
+        "intelligence": 25.0,
+        "coding": 22.1,
+        "agentic": 22.8,
+        "best_elo": 1102,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1102,
+            "win_rate": 47.7,
+            "rank": 73
+          },
+          {
+            "category": "website",
+            "elo": 1102,
+            "win_rate": 43.7,
+            "rank": 80
+          },
+          {
+            "category": "codecategories",
+            "elo": 1090,
+            "win_rate": 42.7,
+            "rank": 77
+          },
+          {
+            "category": "3d",
+            "elo": 1074,
+            "win_rate": 41.1,
+            "rank": 76
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1023,
+            "win_rate": 38.8,
+            "rank": 81
+          },
+          {
+            "category": "gamedev",
+            "elo": 1022,
+            "win_rate": 35.2,
+            "rank": 90
+          }
+        ]
+      },
       "rank": 183
     },
     {
@@ -3898,6 +8725,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 184
     },
     {
@@ -3917,6 +8745,45 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-12-31",
+      "scores": {
+        "intelligence": 26.3,
+        "coding": 22.1,
+        "agentic": 24.3,
+        "best_elo": 1094,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1094,
+            "win_rate": 53.1,
+            "rank": 82
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1088,
+            "win_rate": 55.1,
+            "rank": 71
+          },
+          {
+            "category": "codecategories",
+            "elo": 1085,
+            "win_rate": 51.7,
+            "rank": 78
+          },
+          {
+            "category": "dataviz",
+            "elo": 1063,
+            "win_rate": 49.4,
+            "rank": 79
+          },
+          {
+            "category": "gamedev",
+            "elo": 1045,
+            "win_rate": 46.4,
+            "rank": 85
+          }
+        ]
+      },
       "rank": 185
     },
     {
@@ -3936,6 +8803,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 186
     },
     {
@@ -3955,6 +8823,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 187
     },
     {
@@ -3974,6 +8843,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 188
     },
     {
@@ -3995,6 +8865,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 189
     },
     {
@@ -4016,6 +8887,42 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "best_elo": 972,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 972,
+            "win_rate": 43.3,
+            "rank": 88
+          },
+          {
+            "category": "uicomponent",
+            "elo": 964,
+            "win_rate": 40.5,
+            "rank": 88
+          },
+          {
+            "category": "gamedev",
+            "elo": 959,
+            "win_rate": 39.4,
+            "rank": 96
+          },
+          {
+            "category": "codecategories",
+            "elo": 958,
+            "win_rate": 39.8,
+            "rank": 96
+          },
+          {
+            "category": "website",
+            "elo": 940,
+            "win_rate": 38.3,
+            "rank": 100
+          }
+        ]
+      },
       "rank": 190
     },
     {
@@ -4037,6 +8944,11 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 24.4,
+        "coding": 14.5,
+        "agentic": 29.1
+      },
       "rank": 191
     },
     {
@@ -4062,6 +8974,57 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 27.0,
+        "coding": 22.2,
+        "agentic": 18.8,
+        "best_elo": 1171,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1171,
+            "win_rate": 48.4,
+            "rank": 56
+          },
+          {
+            "category": "website",
+            "elo": 1159,
+            "win_rate": 47.1,
+            "rank": 66
+          },
+          {
+            "category": "codecategories",
+            "elo": 1155,
+            "win_rate": 46.9,
+            "rank": 65
+          },
+          {
+            "category": "3d",
+            "elo": 1152,
+            "win_rate": 47.4,
+            "rank": 60
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1150,
+            "win_rate": 48.9,
+            "rank": 59
+          },
+          {
+            "category": "gamedev",
+            "elo": 1136,
+            "win_rate": 44.3,
+            "rank": 69
+          },
+          {
+            "category": "svg",
+            "elo": 1077,
+            "win_rate": 43.1,
+            "rank": 54
+          }
+        ]
+      },
       "rank": 192
     },
     {
@@ -4087,6 +9050,51 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 34.6,
+        "coding": 32.0,
+        "agentic": 32.7,
+        "best_elo": 1290,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1290,
+            "win_rate": 71.8,
+            "rank": 10
+          },
+          {
+            "category": "website",
+            "elo": 1211,
+            "win_rate": 58.8,
+            "rank": 47
+          },
+          {
+            "category": "codecategories",
+            "elo": 1205,
+            "win_rate": 58.3,
+            "rank": 48
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1201,
+            "win_rate": 60.5,
+            "rank": 45
+          },
+          {
+            "category": "gamedev",
+            "elo": 1182,
+            "win_rate": 55.1,
+            "rank": 53
+          },
+          {
+            "category": "3d",
+            "elo": 1163,
+            "win_rate": 52.2,
+            "rank": 52
+          }
+        ]
+      },
       "rank": 193
     },
     {
@@ -4110,6 +9118,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 194
     },
     {
@@ -4134,6 +9143,7 @@
       ],
       "modality": "text+image+file+audio->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": null,
       "rank": 195
     },
     {
@@ -4153,6 +9163,57 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 27.1,
+        "coding": 24.0,
+        "agentic": 20.8,
+        "best_elo": 1223,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1223,
+            "win_rate": 60.7,
+            "rank": 34
+          },
+          {
+            "category": "website",
+            "elo": 1193,
+            "win_rate": 52.7,
+            "rank": 54
+          },
+          {
+            "category": "3d",
+            "elo": 1192,
+            "win_rate": 53.4,
+            "rank": 45
+          },
+          {
+            "category": "codecategories",
+            "elo": 1190,
+            "win_rate": 52.6,
+            "rank": 54
+          },
+          {
+            "category": "gamedev",
+            "elo": 1169,
+            "win_rate": 49.5,
+            "rank": 56
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1161,
+            "win_rate": 55.1,
+            "rank": 54
+          },
+          {
+            "category": "svg",
+            "elo": 1096,
+            "win_rate": 48.7,
+            "rank": 47
+          }
+        ]
+      },
       "rank": 196
     },
     {
@@ -4175,6 +9236,55 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "coding": 34.0,
+        "best_elo": 1241,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1241,
+            "win_rate": 59.9,
+            "rank": 34
+          },
+          {
+            "category": "3d",
+            "elo": 1219,
+            "win_rate": 57.7,
+            "rank": 36
+          },
+          {
+            "category": "codecategories",
+            "elo": 1212,
+            "win_rate": 55.6,
+            "rank": 46
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1210,
+            "win_rate": 59.2,
+            "rank": 42
+          },
+          {
+            "category": "website",
+            "elo": 1209,
+            "win_rate": 54.6,
+            "rank": 49
+          },
+          {
+            "category": "dataviz",
+            "elo": 1190,
+            "win_rate": 57.9,
+            "rank": 50
+          },
+          {
+            "category": "svg",
+            "elo": 1185,
+            "win_rate": 57.7,
+            "rank": 33
+          }
+        ]
+      },
       "rank": 197
     },
     {
@@ -4198,6 +9308,57 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 38.7,
+        "coding": 34.1,
+        "agentic": 43.0,
+        "best_elo": 1220,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1220,
+            "win_rate": 57.8,
+            "rank": 35
+          },
+          {
+            "category": "gamedev",
+            "elo": 1209,
+            "win_rate": 54.9,
+            "rank": 42
+          },
+          {
+            "category": "dataviz",
+            "elo": 1196,
+            "win_rate": 55.8,
+            "rank": 48
+          },
+          {
+            "category": "codecategories",
+            "elo": 1193,
+            "win_rate": 53.4,
+            "rank": 52
+          },
+          {
+            "category": "website",
+            "elo": 1190,
+            "win_rate": 52.4,
+            "rank": 56
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1186,
+            "win_rate": 58,
+            "rank": 50
+          },
+          {
+            "category": "svg",
+            "elo": 1136,
+            "win_rate": 51.1,
+            "rank": 41
+          }
+        ]
+      },
       "rank": 198
     },
     {
@@ -4217,6 +9378,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 6.4,
+        "coding": 4.2,
+        "agentic": 1.7
+      },
       "rank": 199
     },
     {
@@ -4239,6 +9405,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 18.8,
+        "coding": 13.6,
+        "agentic": 13.7,
+        "best_elo": 1163,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1163,
+            "win_rate": 54.6,
+            "rank": 53
+          },
+          {
+            "category": "website",
+            "elo": 1123,
+            "win_rate": 47.7,
+            "rank": 77
+          },
+          {
+            "category": "codecategories",
+            "elo": 1120,
+            "win_rate": 48.1,
+            "rank": 73
+          },
+          {
+            "category": "gamedev",
+            "elo": 1089,
+            "win_rate": 45.3,
+            "rank": 78
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1084,
+            "win_rate": 50,
+            "rank": 72
+          },
+          {
+            "category": "dataviz",
+            "elo": 1076,
+            "win_rate": 45.7,
+            "rank": 77
+          }
+        ]
+      },
       "rank": 200
     },
     {
@@ -4264,6 +9475,7 @@
       ],
       "modality": "text+image+file+audio+video->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": null,
       "rank": 201
     },
     {
@@ -4283,6 +9495,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 202
     },
     {
@@ -4302,6 +9515,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 203
     },
     {
@@ -4323,6 +9537,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": null,
       "rank": 204
     },
     {
@@ -4342,6 +9557,45 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 15.3,
+        "coding": 11.0,
+        "agentic": 12.1,
+        "best_elo": 1012,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1012,
+            "win_rate": 39,
+            "rank": 84
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1003,
+            "win_rate": 42.4,
+            "rank": 84
+          },
+          {
+            "category": "website",
+            "elo": 999,
+            "win_rate": 37.7,
+            "rank": 96
+          },
+          {
+            "category": "codecategories",
+            "elo": 993,
+            "win_rate": 37.5,
+            "rank": 93
+          },
+          {
+            "category": "gamedev",
+            "elo": 968,
+            "win_rate": 33.8,
+            "rank": 95
+          }
+        ]
+      },
       "rank": 205
     },
     {
@@ -4361,6 +9615,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 13.2,
+        "coding": 9.0,
+        "agentic": 12.6
+      },
       "rank": 206
     },
     {
@@ -4380,6 +9639,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 16.2,
+        "coding": 13.1,
+        "agentic": 14.4
+      },
       "rank": 207
     },
     {
@@ -4399,6 +9663,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 16.5,
+        "coding": 13.8,
+        "agentic": 13.5
+      },
       "rank": 208
     },
     {
@@ -4418,6 +9687,51 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": {
+        "intelligence": 19.8,
+        "coding": 17.4,
+        "agentic": 18.4,
+        "best_elo": 1075,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 1075,
+            "win_rate": 40.5,
+            "rank": 85
+          },
+          {
+            "category": "codecategories",
+            "elo": 1054,
+            "win_rate": 38.3,
+            "rank": 86
+          },
+          {
+            "category": "dataviz",
+            "elo": 1045,
+            "win_rate": 41,
+            "rank": 81
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1019,
+            "win_rate": 39.1,
+            "rank": 83
+          },
+          {
+            "category": "gamedev",
+            "elo": 999,
+            "win_rate": 33.1,
+            "rank": 93
+          },
+          {
+            "category": "3d",
+            "elo": 939,
+            "win_rate": 24.5,
+            "rank": 88
+          }
+        ]
+      },
       "rank": 209
     },
     {
@@ -4441,6 +9755,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 210
     },
     {
@@ -4464,6 +9779,45 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 38.4,
+        "coding": 38.4,
+        "agentic": 36.1,
+        "best_elo": 1200,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 1200,
+            "win_rate": 48.1,
+            "rank": 46
+          },
+          {
+            "category": "gamedev",
+            "elo": 1105,
+            "win_rate": 56.9,
+            "rank": 75
+          },
+          {
+            "category": "website",
+            "elo": 1080,
+            "win_rate": 53.8,
+            "rank": 84
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1074,
+            "win_rate": 53.3,
+            "rank": 75
+          },
+          {
+            "category": "codecategories",
+            "elo": 1071,
+            "win_rate": 51.9,
+            "rank": 81
+          }
+        ]
+      },
       "rank": 211
     },
     {
@@ -4487,6 +9841,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 33.1,
+        "coding": 25.6,
+        "agentic": 36.1,
+        "best_elo": 1073,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1073,
+            "win_rate": 50,
+            "rank": 79
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1041,
+            "win_rate": 46.9,
+            "rank": 79
+          },
+          {
+            "category": "dataviz",
+            "elo": 1035,
+            "win_rate": 50,
+            "rank": 83
+          },
+          {
+            "category": "website",
+            "elo": 1029,
+            "win_rate": 47.1,
+            "rank": 92
+          },
+          {
+            "category": "codecategories",
+            "elo": 1027,
+            "win_rate": 46.4,
+            "rank": 89
+          },
+          {
+            "category": "3d",
+            "elo": 933,
+            "win_rate": 34,
+            "rank": 89
+          }
+        ]
+      },
       "rank": 212
     },
     {
@@ -4510,6 +9909,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 26.3,
+        "coding": 21.8,
+        "agentic": 27.3,
+        "best_elo": 1150,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1150,
+            "win_rate": 59.1,
+            "rank": 62
+          },
+          {
+            "category": "dataviz",
+            "elo": 1148,
+            "win_rate": 59.5,
+            "rank": 61
+          },
+          {
+            "category": "website",
+            "elo": 1083,
+            "win_rate": 52.3,
+            "rank": 83
+          },
+          {
+            "category": "codecategories",
+            "elo": 1077,
+            "win_rate": 50.9,
+            "rank": 80
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1058,
+            "win_rate": 49.7,
+            "rank": 76
+          },
+          {
+            "category": "3d",
+            "elo": 930,
+            "win_rate": 30.9,
+            "rank": 90
+          }
+        ]
+      },
       "rank": 213
     },
     {
@@ -4534,6 +9978,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 22.9,
+        "coding": 18.5,
+        "agentic": 25.2,
+        "best_elo": 1141,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1141,
+            "win_rate": 58.5,
+            "rank": 67
+          },
+          {
+            "category": "dataviz",
+            "elo": 1077,
+            "win_rate": 49.2,
+            "rank": 75
+          },
+          {
+            "category": "codecategories",
+            "elo": 1045,
+            "win_rate": 47.5,
+            "rank": 88
+          },
+          {
+            "category": "website",
+            "elo": 1042,
+            "win_rate": 47.8,
+            "rank": 90
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1019,
+            "win_rate": 45.4,
+            "rank": 82
+          },
+          {
+            "category": "3d",
+            "elo": 917,
+            "win_rate": 30.5,
+            "rank": 91
+          }
+        ]
+      },
       "rank": 214
     },
     {
@@ -4558,6 +10047,51 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 13.0,
+        "coding": 11.2,
+        "agentic": 5.8,
+        "best_elo": 1041,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 1041,
+            "win_rate": 49.6,
+            "rank": 86
+          },
+          {
+            "category": "website",
+            "elo": 1017,
+            "win_rate": 48.1,
+            "rank": 94
+          },
+          {
+            "category": "codecategories",
+            "elo": 1014,
+            "win_rate": 47.3,
+            "rank": 92
+          },
+          {
+            "category": "3d",
+            "elo": 1005,
+            "win_rate": 46,
+            "rank": 84
+          },
+          {
+            "category": "uicomponent",
+            "elo": 974,
+            "win_rate": 43.9,
+            "rank": 87
+          },
+          {
+            "category": "dataviz",
+            "elo": 936,
+            "win_rate": 41.1,
+            "rank": 93
+          }
+        ]
+      },
       "rank": 215
     },
     {
@@ -4580,6 +10114,51 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 18.4,
+        "coding": 15.6,
+        "agentic": 7.2,
+        "best_elo": 980,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 980,
+            "win_rate": 40.2,
+            "rank": 86
+          },
+          {
+            "category": "uicomponent",
+            "elo": 957,
+            "win_rate": 40.8,
+            "rank": 89
+          },
+          {
+            "category": "codecategories",
+            "elo": 931,
+            "win_rate": 35.8,
+            "rank": 97
+          },
+          {
+            "category": "dataviz",
+            "elo": 927,
+            "win_rate": 38.4,
+            "rank": 95
+          },
+          {
+            "category": "website",
+            "elo": 915,
+            "win_rate": 34.4,
+            "rank": 101
+          },
+          {
+            "category": "gamedev",
+            "elo": 908,
+            "win_rate": 33.7,
+            "rank": 99
+          }
+        ]
+      },
       "rank": 216
     },
     {
@@ -4602,6 +10181,45 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 13.5,
+        "coding": 6.7,
+        "agentic": 5.2,
+        "best_elo": 940,
+        "best_elo_category": "dataviz",
+        "elo_categories": [
+          {
+            "category": "dataviz",
+            "elo": 940,
+            "win_rate": 39.3,
+            "rank": 91
+          },
+          {
+            "category": "gamedev",
+            "elo": 843,
+            "win_rate": 27.4,
+            "rank": 101
+          },
+          {
+            "category": "codecategories",
+            "elo": 841,
+            "win_rate": 26.6,
+            "rank": 101
+          },
+          {
+            "category": "uicomponent",
+            "elo": 825,
+            "win_rate": 25.5,
+            "rank": 95
+          },
+          {
+            "category": "website",
+            "elo": 794,
+            "win_rate": 22.7,
+            "rank": 108
+          }
+        ]
+      },
       "rank": 217
     },
     {
@@ -4621,6 +10239,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": {
+        "intelligence": 22.3,
+        "coding": 22.0,
+        "agentic": 16.3
+      },
       "rank": 218
     },
     {
@@ -4644,6 +10267,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 219
     },
     {
@@ -4665,6 +10289,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 220
     },
     {
@@ -4686,6 +10311,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 6.3,
+        "coding": 2.9,
+        "agentic": 1.7
+      },
       "rank": 221
     },
     {
@@ -4707,6 +10337,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 8.8,
+        "coding": 6.3,
+        "agentic": 3.6
+      },
       "rank": 222
     },
     {
@@ -4728,6 +10363,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": null,
       "rank": 223
     },
     {
@@ -4749,6 +10385,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 224
     },
     {
@@ -4770,6 +10407,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 225
     },
     {
@@ -4789,6 +10427,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2025-01-31",
+      "scores": {
+        "intelligence": 9.5,
+        "coding": 8.9,
+        "agentic": 0.0
+      },
       "rank": 226
     },
     {
@@ -4810,6 +10453,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": {
+        "intelligence": 10.3,
+        "coding": 9.6,
+        "agentic": 3.5
+      },
       "rank": 227
     },
     {
@@ -4829,6 +10477,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 228
     },
     {
@@ -4850,6 +10499,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 229
     },
     {
@@ -4871,6 +10521,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 230
     },
     {
@@ -4890,6 +10541,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 231
     },
     {
@@ -4911,6 +10563,7 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2024-09-30",
+      "scores": null,
       "rank": 232
     },
     {
@@ -4933,6 +10586,11 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "intelligence": 25.2,
+        "coding": 17.3,
+        "agentic": 20.9
+      },
       "rank": 233
     },
     {
@@ -4952,6 +10610,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 234
     },
     {
@@ -4971,6 +10630,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 235
     },
     {
@@ -4990,6 +10650,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 236
     },
     {
@@ -5011,6 +10672,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 237
     },
     {
@@ -5032,6 +10694,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2025-03-31",
+      "scores": null,
       "rank": 238
     },
     {
@@ -5054,6 +10717,9 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "coding": 17.9
+      },
       "rank": 239
     },
     {
@@ -5073,6 +10739,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 240
     },
     {
@@ -5092,6 +10759,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": null,
       "rank": 241
     },
     {
@@ -5113,6 +10781,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 242
     },
     {
@@ -5132,6 +10801,9 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": {
+        "coding": 11.4
+      },
       "rank": 243
     },
     {
@@ -5151,6 +10823,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": {
+        "intelligence": 18.8,
+        "coding": 15.9,
+        "agentic": 3.8
+      },
       "rank": 244
     },
     {
@@ -5173,6 +10850,7 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-03-31",
+      "scores": null,
       "rank": 245
     },
     {
@@ -5192,6 +10870,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "intelligence": 10.4,
+        "coding": 11.2,
+        "agentic": 0.0
+      },
       "rank": 246
     },
     {
@@ -5211,6 +10894,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 247
     },
     {
@@ -5230,6 +10914,54 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": {
+        "best_elo": 1168,
+        "best_elo_category": "3d",
+        "elo_categories": [
+          {
+            "category": "3d",
+            "elo": 1168,
+            "win_rate": 50.7,
+            "rank": 50
+          },
+          {
+            "category": "website",
+            "elo": 1164,
+            "win_rate": 48.5,
+            "rank": 63
+          },
+          {
+            "category": "codecategories",
+            "elo": 1160,
+            "win_rate": 48.5,
+            "rank": 63
+          },
+          {
+            "category": "uicomponent",
+            "elo": 1151,
+            "win_rate": 52.8,
+            "rank": 58
+          },
+          {
+            "category": "dataviz",
+            "elo": 1142,
+            "win_rate": 51.4,
+            "rank": 65
+          },
+          {
+            "category": "gamedev",
+            "elo": 1124,
+            "win_rate": 43.9,
+            "rank": 71
+          },
+          {
+            "category": "svg",
+            "elo": 1034,
+            "win_rate": 38.8,
+            "rank": 63
+          }
+        ]
+      },
       "rank": 248
     },
     {
@@ -5249,6 +10981,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 249
     },
     {
@@ -5272,6 +11005,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "intelligence": 30.7,
+        "coding": 20.5,
+        "agentic": 31.1
+      },
       "rank": 250
     },
     {
@@ -5293,6 +11031,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-08-31",
+      "scores": null,
       "rank": 251
     },
     {
@@ -5312,6 +11051,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 14.5,
+        "coding": 10.7,
+        "agentic": 9.1
+      },
       "rank": 252
     },
     {
@@ -5334,6 +11078,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-10-31",
+      "scores": {
+        "intelligence": 12.7,
+        "coding": 5.1,
+        "agentic": 5.8
+      },
       "rank": 253
     },
     {
@@ -5355,6 +11104,11 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-10-31",
+      "scores": {
+        "intelligence": 10.3,
+        "coding": 4.1,
+        "agentic": 4.7
+      },
       "rank": 254
     },
     {
@@ -5377,6 +11131,21 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-10-31",
+      "scores": {
+        "intelligence": 13.5,
+        "coding": 11.0,
+        "agentic": 4.7,
+        "best_elo": 840,
+        "best_elo_category": "website",
+        "elo_categories": [
+          {
+            "category": "website",
+            "elo": 840,
+            "win_rate": 21.4,
+            "rank": 107
+          }
+        ]
+      },
       "rank": 255
     },
     {
@@ -5400,6 +11169,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "intelligence": 17.3,
+        "coding": 16.7,
+        "agentic": 8.4
+      },
       "rank": 256
     },
     {
@@ -5421,6 +11195,11 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2024-03-31",
+      "scores": {
+        "intelligence": 15.1,
+        "coding": 13.8,
+        "agentic": 10.2
+      },
       "rank": 257
     },
     {
@@ -5440,6 +11219,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 258
     },
     {
@@ -5459,6 +11239,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-04-30",
+      "scores": null,
       "rank": 259
     },
     {
@@ -5481,6 +11262,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2024-07-31",
+      "scores": {
+        "intelligence": 18.7,
+        "coding": 10.7,
+        "agentic": 17.7
+      },
       "rank": 260
     },
     {
@@ -5500,6 +11286,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 261
     },
     {
@@ -5519,6 +11306,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 262
     },
     {
@@ -5538,6 +11326,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-10-31",
+      "scores": null,
       "rank": 263
     },
     {
@@ -5557,6 +11346,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-10-31",
+      "scores": null,
       "rank": 264
     },
     {
@@ -5576,6 +11366,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-04-30",
+      "scores": null,
       "rank": 265
     },
     {
@@ -5595,6 +11386,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 266
     },
     {
@@ -5614,6 +11406,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 6.3,
+        "coding": 0.6,
+        "agentic": 0.0
+      },
       "rank": 267
     },
     {
@@ -5635,6 +11432,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 8.7,
+        "coding": 4.2,
+        "agentic": 4.9
+      },
       "rank": 268
     },
     {
@@ -5654,6 +11456,9 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": {
+        "coding": 11.9
+      },
       "rank": 269
     },
     {
@@ -5675,6 +11480,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-03-31",
+      "scores": null,
       "rank": 270
     },
     {
@@ -5696,6 +11502,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2024-03-31",
+      "scores": null,
       "rank": 271
     },
     {
@@ -5715,6 +11522,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 272
     },
     {
@@ -5734,6 +11542,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 12.6,
+        "coding": 9.2,
+        "agentic": 10.0
+      },
       "rank": 273
     },
     {
@@ -5753,6 +11566,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 17.6,
+        "coding": 18.1,
+        "agentic": 11.8
+      },
       "rank": 274
     },
     {
@@ -5772,6 +11590,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 275
     },
     {
@@ -5794,6 +11613,11 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "intelligence": 18.6,
+        "coding": 16.6,
+        "agentic": 9.7
+      },
       "rank": 276
     },
     {
@@ -5813,6 +11637,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 11.8,
+        "coding": 4.9,
+        "agentic": 5.5
+      },
       "rank": 277
     },
     {
@@ -5832,6 +11661,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 12.5,
+        "coding": 10.9,
+        "agentic": 5.1
+      },
       "rank": 278
     },
     {
@@ -5851,6 +11685,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-04-30",
+      "scores": null,
       "rank": 279
     },
     {
@@ -5874,6 +11709,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 280
     },
     {
@@ -5896,6 +11732,7 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": null,
       "rank": 281
     },
     {
@@ -5915,6 +11752,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-06-30",
+      "scores": null,
       "rank": 282
     },
     {
@@ -5937,6 +11775,9 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "coding": 24.2
+      },
       "rank": 283
     },
     {
@@ -5959,6 +11800,48 @@
       ],
       "modality": "text+image+file->text",
       "knowledge_cutoff": "2023-10-31",
+      "scores": {
+        "best_elo": 977,
+        "best_elo_category": "gamedev",
+        "elo_categories": [
+          {
+            "category": "gamedev",
+            "elo": 977,
+            "win_rate": 42.3,
+            "rank": 94
+          },
+          {
+            "category": "3d",
+            "elo": 949,
+            "win_rate": 39.2,
+            "rank": 87
+          },
+          {
+            "category": "uicomponent",
+            "elo": 943,
+            "win_rate": 38.1,
+            "rank": 91
+          },
+          {
+            "category": "codecategories",
+            "elo": 912,
+            "win_rate": 34.8,
+            "rank": 99
+          },
+          {
+            "category": "dataviz",
+            "elo": 901,
+            "win_rate": 36,
+            "rank": 96
+          },
+          {
+            "category": "website",
+            "elo": 875,
+            "win_rate": 31.5,
+            "rank": 105
+          }
+        ]
+      },
       "rank": 284
     },
     {
@@ -5978,6 +11861,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 6.4,
+        "coding": 4.0,
+        "agentic": 0.0
+      },
       "rank": 285
     },
     {
@@ -5997,6 +11885,11 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "intelligence": 8.9,
+        "coding": 6.8,
+        "agentic": 0.0
+      },
       "rank": 286
     },
     {
@@ -6018,6 +11911,7 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2024-01-31",
+      "scores": null,
       "rank": 287
     },
     {
@@ -6037,6 +11931,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2024-04-30",
+      "scores": null,
       "rank": 288
     },
     {
@@ -6059,6 +11954,9 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": {
+        "coding": 21.5
+      },
       "rank": 289
     },
     {
@@ -6081,6 +11979,11 @@
       ],
       "modality": "text+image->text",
       "knowledge_cutoff": "2023-08-31",
+      "scores": {
+        "intelligence": 12.3,
+        "coding": 6.7,
+        "agentic": 7.0
+      },
       "rank": 290
     },
     {
@@ -6102,6 +12005,7 @@
       ],
       "modality": "text+file->text",
       "knowledge_cutoff": "2024-11-30",
+      "scores": null,
       "rank": 291
     },
     {
@@ -6123,6 +12027,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2023-12-31",
+      "scores": null,
       "rank": 292
     },
     {
@@ -6142,6 +12047,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2021-09-30",
+      "scores": null,
       "rank": 293
     },
     {
@@ -6167,6 +12073,7 @@
       ],
       "modality": "text+image+file+audio+video->text+image",
       "knowledge_cutoff": null,
+      "scores": null,
       "rank": 294
     },
     {
@@ -6188,6 +12095,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2021-09-30",
+      "scores": null,
       "rank": 295
     },
     {
@@ -6209,6 +12117,7 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2021-09-30",
+      "scores": null,
       "rank": 296
     },
     {
@@ -6228,6 +12137,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-06-30",
+      "scores": null,
       "rank": 297
     },
     {
@@ -6247,6 +12157,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-06-30",
+      "scores": null,
       "rank": 298
     },
     {
@@ -6266,6 +12177,7 @@
       "tags": [],
       "modality": "text->text",
       "knowledge_cutoff": "2023-06-30",
+      "scores": null,
       "rank": 299
     },
     {
@@ -6287,6 +12199,9 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2021-09-30",
+      "scores": {
+        "coding": 13.1
+      },
       "rank": 300
     },
     {
@@ -6308,6 +12223,9 @@
       ],
       "modality": "text->text",
       "knowledge_cutoff": "2021-09-30",
+      "scores": {
+        "coding": 10.7
+      },
       "rank": 301
     }
   ]

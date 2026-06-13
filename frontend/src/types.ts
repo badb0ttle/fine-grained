@@ -125,6 +125,23 @@ export interface LeaderboardModel {
   tags: string[]
   modality: string
   rank: number
+  scores: ModelScores | null
+}
+
+export interface ModelScores {
+  intelligence?: number
+  coding?: number
+  agentic?: number
+  best_elo?: number
+  best_elo_category?: string
+  elo_categories?: EloCategory[]
+}
+
+export interface EloCategory {
+  category: string
+  elo: number | null
+  win_rate: number | null
+  rank: number | null
 }
 
 export interface LeaderboardData {

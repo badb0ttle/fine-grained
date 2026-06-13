@@ -12,52 +12,23 @@ API_URL = "https://openrouter.ai/api/v1/models"
 
 # Map model ID prefix → friendly provider name
 PROVIDER_MAP = {
-    "openai": "OpenAI",
-    "anthropic": "Anthropic",
-    "google": "Google",
-    "meta-llama": "Meta",
-    "mistralai": "Mistral AI",
-    "mistral": "Mistral AI",
-    "deepseek": "DeepSeek",
-    "qwen": "Alibaba",
-    "alibaba": "Alibaba",
-    "01-ai": "01.AI",
-    "x-ai": "xAI",
-    "nvidia": "NVIDIA",
-    "moonshotai": "Moonshot AI",
-    "cohere": "Cohere",
-    "amazon": "Amazon",
-    "microsoft": "Microsoft",
-    "ai21": "AI21 Labs",
-    "minimax": "MiniMax",
-    "stepfun": "StepFun",
-    "zhipuai": "Zhipu AI",
-    "baichuan": "Baichuan",
-    "bytedance": "ByteDance",
-    "nex-agi": "Nex AGI",
-    "liquid": "Liquid AI",
-    "sao10k": "Sao10K",
-    "nousresearch": "Nous Research",
-    "perplexity": "Perplexity",
-    "phind": "Phind",
-    "recursal": "Recursal",
-    "targon": "Targon",
-    "featherless": "Featherless",
-    "infermatic": "Infermatic",
-    "kluster": "Kluster",
-    "hyperbolic": "Hyperbolic",
-    "together": "Together AI",
-    "fireworks": "Fireworks",
-    "groq": "Groq",
-    "cerebras": "Cerebras",
-    "sambanova": "SambaNova",
-    "z-ai": "Z.ai",
+    "openai": "OpenAI", "anthropic": "Anthropic", "google": "Google",
+    "meta-llama": "Meta", "mistralai": "Mistral AI", "mistral": "Mistral AI",
+    "deepseek": "DeepSeek", "qwen": "Alibaba", "alibaba": "Alibaba",
+    "01-ai": "01.AI", "x-ai": "xAI", "nvidia": "NVIDIA",
+    "moonshotai": "Moonshot AI", "cohere": "Cohere", "amazon": "Amazon",
+    "microsoft": "Microsoft", "ai21": "AI21 Labs", "minimax": "MiniMax",
+    "stepfun": "StepFun", "zhipuai": "Zhipu AI", "baichuan": "Baichuan",
+    "bytedance": "ByteDance", "nex-agi": "Nex AGI", "liquid": "Liquid AI",
+    "sao10k": "Sao10K", "nousresearch": "Nous Research", "perplexity": "Perplexity",
+    "phind": "Phind", "recursal": "Recursal", "targon": "Targon",
+    "featherless": "Featherless", "infermatic": "Infermatic", "kluster": "Kluster",
+    "hyperbolic": "Hyperbolic", "together": "Together AI", "fireworks": "Fireworks",
+    "groq": "Groq", "cerebras": "Cerebras", "sambanova": "SambaNova", "z-ai": "Z.ai",
 }
 
 
 def extract_provider(model_id: str) -> str:
-    """Extract friendly provider name from model ID."""
-    # Remove leading ~ (private), trailing :free/:beta etc.
     clean = model_id.lstrip("~")
     if "/" in clean:
         prefix = clean.split("/")[0].lower()
@@ -67,82 +38,101 @@ def extract_provider(model_id: str) -> str:
 
 
 def should_include(model: dict) -> bool:
-    """Filter out deprecated, test, and very niche models."""
     mid = model["id"]
-    name = model.get("name", "")
-
-    # Skip private betas (~ prefix)
     if mid.startswith("~"):
         return False
-    # Skip free/test variants (:free, :beta, :experimental)
     if ":free" in mid or ":beta" in mid or ":experimental" in mid:
         return False
-    # Skip if no pricing
     pricing = model.get("pricing", {})
     if not pricing.get("prompt") or float(pricing["prompt"]) == 0:
         return False
-    # Skip tiny/specialized models (context < 2048)
     if model.get("context_length", 0) < 2048:
         return False
-    # Skip specific test/demo patterns
     skip_patterns = ["test", "demo", "deprecated", "debug", "echo"]
     if any(p in mid.lower() for p in skip_patterns):
         return False
-
     return True
 
 
 def format_price(price_str: str) -> str:
-    """Convert per-token price to $/1M tokens. e.g. '0.00000095' → '$0.95'"""
     try:
         p = float(price_str) * 1_000_000
-        if p < 0.01:
-            return f"${p:.3f}"
-        elif p < 1:
-            return f"${p:.2f}"
-        else:
-            return f"${p:.1f}"
+        if p < 0.01: return f"${p:.3f}"
+        elif p < 1: return f"${p:.2f}"
+        else: return f"${p:.1f}"
     except (ValueError, TypeError):
         return "?"
 
 
 def format_context(n: int) -> str:
-    """Format context length to human readable."""
-    if n >= 1_000_000:
-        return f"{n/1_000_000:.1f}M"
-    elif n >= 1_000:
-        return f"{n//1_000}K"
+    if n >= 1_000_000: return f"{n/1_000_000:.1f}M"
+    elif n >= 1_000: return f"{n//1_000}K"
     return str(n)
 
 
 def get_tags(model: dict) -> list[str]:
-    """Extract capability tags from model data."""
     tags = []
     arch = model.get("architecture", {})
     modality = arch.get("modality", "")
-
-    if "image" in modality:
-        tags.append("vision")
-    if "video" in modality:
-        tags.append("video")
-    if "audio" in modality:
-        tags.append("audio")
-    if "file" in modality:
-        tags.append("file")
-
-    ctx = model.get("context_length", 0)
-    if ctx >= 1_000_000:
-        tags.append("1M+ctx")
-
+    if "image" in modality: tags.append("vision")
+    if "video" in modality: tags.append("video")
+    if "audio" in modality: tags.append("audio")
+    if "file" in modality: tags.append("file")
+    if model.get("context_length", 0) >= 1_000_000: tags.append("1M+ctx")
     tp = model.get("top_provider", {})
-    if tp.get("is_moderated"):
-        tags.append("moderated")
-
+    if tp.get("is_moderated"): tags.append("moderated")
     return tags
 
 
+def extract_scores(model: dict) -> dict | None:
+    """Extract benchmark scores from OpenRouter model data.
+
+    Returns dict with:
+      - intelligence: 0-100 (Artificial Analysis)
+      - coding: 0-100
+      - agentic: 0-100
+      - best_elo: max ELO from Design Arena
+      - best_elo_category: which category got the best ELO
+      - elo_categories: list of {category, elo, win_rate, rank}
+    Returns None if no benchmarks available.
+    """
+    benchmarks = model.get("benchmarks", {})
+    if not benchmarks:
+        return None
+
+    scores = {}
+
+    # Artificial Analysis: numeric indices 0-100
+    aa = benchmarks.get("artificial_analysis", {})
+    if isinstance(aa, dict):
+        ii = aa.get("intelligence_index")
+        if ii is not None:
+            scores["intelligence"] = round(float(ii), 1)
+        ci = aa.get("coding_index")
+        if ci is not None:
+            scores["coding"] = round(float(ci), 1)
+        ai = aa.get("agentic_index")
+        if ai is not None:
+            scores["agentic"] = round(float(ai), 1)
+
+    # Design Arena: ELO scores per category
+    da = benchmarks.get("design_arena", [])
+    if isinstance(da, list) and da:
+        best = max(da, key=lambda e: e.get("elo", 0) if isinstance(e, dict) else 0)
+        if isinstance(best, dict) and "elo" in best:
+            scores["best_elo"] = best["elo"]
+            scores["best_elo_category"] = best.get("category", "?")
+            scores["elo_categories"] = [
+                {"category": e.get("category", "?"), "elo": e.get("elo"),
+                 "win_rate": e.get("win_rate"), "rank": e.get("rank")}
+                for e in da if isinstance(e, dict) and e.get("elo")
+            ]
+            scores["elo_categories"].sort(key=lambda x: -(x["elo"] or 0))
+
+    return scores if scores else None
+
+
 def fetch_and_export() -> dict:
-    """Fetch OpenRouter models, filter, rank, export to JSON."""
     print("[Leaderboard] Fetching from OpenRouter API...")
     req = urllib.request.Request(API_URL, headers={"User-Agent": "AllOfAI/1.0"})
     with urllib.request.urlopen(req, timeout=20) as resp:
@@ -151,16 +141,20 @@ def fetch_and_export() -> dict:
     all_models = data.get("data", [])
     print(f"  Raw: {len(all_models)} models")
 
-    # Filter
     filtered = [m for m in all_models if should_include(m)]
     print(f"  After filter: {len(filtered)} models")
 
-    # Build leaderboard entries
+    # Stats
+    with_scores = 0
+
     entries = []
     for m in filtered:
         pricing = m.get("pricing", {})
         tp = m.get("top_provider", {})
         max_out = tp.get("max_completion_tokens") if tp else None
+        scores = extract_scores(m)
+        if scores:
+            with_scores += 1
 
         entry = {
             "id": m["id"],
@@ -179,13 +173,11 @@ def fetch_and_export() -> dict:
             "tags": get_tags(m),
             "modality": m.get("architecture", {}).get("modality", "text"),
             "knowledge_cutoff": m.get("knowledge_cutoff"),
+            "scores": scores,
         }
         entries.append(entry)
 
-    # Sort by created (newest first)
     entries.sort(key=lambda e: e.get("created", 0), reverse=True)
-
-    # Add rank
     for i, e in enumerate(entries):
         e["rank"] = i + 1
 
@@ -196,10 +188,9 @@ def fetch_and_export() -> dict:
         "models": entries,
     }
 
-    # Write JSON
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2))
-    print(f"  Exported: {OUTPUT_FILE} ({len(entries)} models)")
+    print(f"  Exported: {OUTPUT_FILE} ({len(entries)} models, {with_scores} with scores)")
 
     # Quick stats
     providers = {}
@@ -214,9 +205,12 @@ def fetch_and_export() -> dict:
 
 if __name__ == "__main__":
     result = fetch_and_export()
-    print(f"\nTop 5:")
-    for m in result["models"][:5]:
-        print(f"  #{m['rank']} {m['name']}")
-        print(f"     {m['provider']} | ctx={m['context_display']} | "
-              f"{m['price_input']}/M in, {m['price_output']}/M out | "
-              f"tags={m['tags']}")
+    # Show top with scores
+    scored = [m for m in result["models"] if m.get("scores")]
+    print(f"\nTop 5 (with scores):")
+    for m in scored[:5]:
+        s = m["scores"]
+        parts = [f"int={s.get('intelligence','?')}", f"code={s.get('coding','?')}", f"agent={s.get('agentic','?')}"]
+        if s.get("best_elo"):
+            parts.append(f"ELO={s['best_elo']}({s.get('best_elo_category','?')})")
+        print(f"  #{m['rank']} {m['name']} — {', '.join(parts)}")
