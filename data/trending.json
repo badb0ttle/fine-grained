@@ -1,13 +1,13 @@
 {
-  "snapshot_at": "2026-06-12T07:54:50.216643+00:00",
+  "snapshot_at": "2026-06-13T15:26:13.022024+00:00",
   "count": 2,
   "repos": [
     {
       "repo_full": "addyosmani/agent-skills",
       "description": "",
       "language": "Shell",
-      "stars_today": 3278,
-      "total_stars": 55626,
+      "stars_today": 1507,
+      "total_stars": 57853,
       "url": "https://github.com/addyosmani/agent-skills",
       "paper_linked": false,
       "paper_id": null
@@ -16,17 +16,15 @@
       "repo_full": "kenn-io/agentsview",
       "description": "",
       "language": "Go",
-      "stars_today": 114,
-      "total_stars": 1854,
+      "stars_today": 187,
+      "total_stars": 2214,
       "url": "https://github.com/kenn-io/agentsview",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
-    "2026-06-05",
-    "2026-06-05",
-    "2026-06-09",
-    "2026-06-12"
+    "2026-06-13",
+    "2026-06-13"
   ]
 }
