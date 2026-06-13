@@ -34,6 +34,46 @@
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
+    <!-- English alternate -->
+    <link rel="alternate" hreflang="zh" href="https://ai.hjhai.xyz/" />
+    <link rel="alternate" hreflang="en" href="https://ai.hjhai.xyz/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://ai.hjhai.xyz/" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ai.hjhai.xyz/#website",
+          "url": "https://ai.hjhai.xyz/",
+          "name": "AllOfAI",
+          "description": "Daily AI intelligence aggregator — automated scanning of 15+ global AI sources, LLM-curated with bilingual analysis.",
+          "inLanguage": ["zh-CN", "en"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ai.hjhai.xyz/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://ai.hjhai.xyz/#organization",
+          "url": "https://ai.hjhai.xyz/",
+          "name": "AllOfAI",
+          "description": "Curated AI news, papers, and analysis — updated daily.",
+          "sameAs": [
+            "https://github.com/badb0ttle"
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- Analytics: Umami (privacy-first) -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="67956d32-123d-4d40-b3da-4614077d843e"></script>
 
@@ -41,7 +81,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/index-BDKQBmGu.js"></script>
+    <script type="module" crossorigin src="/assets/index-FuxwlDrf.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-Cyuzqnbw.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CEle-rep.js">
     <link rel="modulepreload" crossorigin href="/assets/vendor-recharts-DaON3f16.js">

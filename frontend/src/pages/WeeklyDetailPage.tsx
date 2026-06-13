@@ -6,6 +6,7 @@ import { ICON } from '../lib/icons'
 import { FadeIn } from '../components/Animations'
 import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
+import { useJsonLd } from '../lib/useJsonLd'
 
 const CHART_COLORS = ['#6C5CE7', '#00b894', '#f0a050', '#74b9ff', '#fd79a8', '#e17055', '#a29bfe', '#55efc4']
 
@@ -44,6 +45,42 @@ export function WeeklyDetailPage() {
   const [stats, setStats] = useState<StatsData | null>(null)
   const [leaderboard, setLeaderboard] = useState<LeaderboardData | null>(null)
   const { locale } = useLocale()
+
+  // BreadcrumbList + NewsArticle structured data
+  const weeklySchema = useMemo(() => {
+    if (!date) return null
+    const title = locale === 'en' ? `AI Weekly Briefing (${date})` : `AI 每周大事记 (${date})`
+    const desc = locale === 'en'
+      ? `Weekly AI intelligence briefing — curated analysis of the most important AI developments.`
+      : `每周 AI 情报深度简报 — 精选本周最重要的 AI 技术动态与行业分析。`
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'AllOfAI', item: 'https://ai.hjhai.xyz/' },
+            { '@type': 'ListItem', position: 2, name: locale === 'en' ? 'Weekly Briefings' : '每周简报', item: 'https://ai.hjhai.xyz/weekly' },
+            { '@type': 'ListItem', position: 3, name: title },
+          ],
+        },
+        {
+          '@type': 'NewsArticle',
+          headline: title,
+          description: desc,
+          datePublished: date,
+          url: `https://ai.hjhai.xyz/weekly/${date}`,
+          publisher: {
+            '@type': 'Organization',
+            name: 'AllOfAI',
+            url: 'https://ai.hjhai.xyz/',
+          },
+          inLanguage: locale === 'en' ? 'en' : 'zh-CN',
+        },
+      ],
+    }
+  }, [date, locale])
+  useJsonLd(weeklySchema)
 
   useEffect(() => {
     if (!date) return

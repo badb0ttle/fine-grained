@@ -7,6 +7,7 @@ import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations
 import { HomePageSkeleton } from '../components/Skeleton'
 import { ModelLeaderboardPreview } from '../components/ModelLeaderboard'
 import { useLocale, type Locale } from '../lib/LocaleContext'
+import { useJsonLd } from '../lib/useJsonLd'
 
 // ── i18n dictionaries ──
 const T = {
@@ -341,6 +342,27 @@ export function HomePage() {
   const { data: top5 } = useTop5()
   const search = useSearch()
   const { locale } = useLocale()
+
+  // ItemList structured data for SEO
+  const itemListSchema = useMemo(() => {
+    if (!data?.articles?.length) return null
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: data.articles.slice(0, 20).map((a, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Article',
+          url: a.link,
+          name: a.title_cn || a.title,
+          description: a.summary_cn || a.summary || '',
+          datePublished: a.published,
+        },
+      })),
+    }
+  }, [data])
+  useJsonLd(itemListSchema)
 
   if (loading) return <HomePageSkeleton />
 
