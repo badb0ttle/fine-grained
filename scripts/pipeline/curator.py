@@ -45,6 +45,7 @@ def get_curation_prompt(candidates: list[dict], count: int = 10) -> str:
 2. title_cn: 中文标题（保留核心技术名词英文，20字以内）
 3. summary_cn: 中文摘要（60-100字，突出核心信息）
 4. why_it_matters: 一句话（30字内），说明对 AI 从业者的实际影响或意义
+5. 禁止使用任何 emoji 表情符号，纯文本输出
 
 返回严格 JSON 数组格式（id 使用上方的数据库 DB ID，不是方括号序号）：
 [

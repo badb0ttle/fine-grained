@@ -82,13 +82,13 @@ def get_weekly_prompt(data: dict) -> str:
 
 用 Markdown 格式写一篇连贯的分析文章（不是列表），包含：
 
-### 🔥 本周头条 (1-2 段)
+### [头条] 本周头条 (1-2 段)
 选最重要的 1-2 件事深入分析。不要复述标题，要解读背后的趋势和影响。
 
-### 📊 趋势观察 (2-3 段)
+### [趋势] 趋势观察 (2-3 段)
 从本周文章中提炼 2-3 个值得关注的趋势，用具体文章作为例证。
 
-### 🏷️ 一句话总结
+### [总结] 一句话总结
 用一句话概括本周 AI 行业的主题。
 
 ## 格式要求
@@ -96,6 +96,7 @@ def get_weekly_prompt(data: dict) -> str:
 - 文章总长 500-800 字
 - 提到具体公司/模型/论文时用原文名称
 - 不要用"本周"开头，直接进入分析
+- 禁止使用任何 emoji 表情符号（如 🔥 📊 🏷️ 等），用纯文本标记替代
 - 输出纯 HTML（可直接在浏览器打开），包含完整 <!DOCTYPE html>...<link rel="stylesheet" href="../../assets/style.css">...
 - 正文用 <article> 包裹，样式 class 参考 index.html 中的 article-item
 - 保存到 data/weekly/{{date}}.html"""
