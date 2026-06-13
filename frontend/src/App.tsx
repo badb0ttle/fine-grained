@@ -42,6 +42,21 @@ function SpaRedirect() {
   return null
 }
 
+function AllRoutes() {
+  return (
+    <>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/dashboard" element={<AdminGate><DashboardPage /></AdminGate>} />
+      <Route path="/leaderboard" element={<LeaderboardPage />} />
+      <Route path="/timeline" element={<TimelinePage />} />
+      <Route path="/clusters" element={<ClustersPage />} />
+      <Route path="/weekly" element={<WeeklyPage />} />
+      <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
+      <Route path="/about" element={<AboutPage />} />
+    </>
+  )
+}
+
 function AnimatedRoutes() {
   const location = useLocation()
 
@@ -51,14 +66,10 @@ function AnimatedRoutes() {
         <SpaRedirect />
         <Suspense fallback={<PageFallback />}>
           <Routes location={location}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/dashboard" element={<AdminGate><DashboardPage /></AdminGate>} />
-            <Route path="/leaderboard" element={<LeaderboardPage />} />
-            <Route path="/timeline" element={<TimelinePage />} />
-            <Route path="/clusters" element={<ClustersPage />} />
-            <Route path="/weekly" element={<WeeklyPage />} />
-            <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <AllRoutes />
+            <Route path="/en">
+              <AllRoutes />
+            </Route>
           </Routes>
         </Suspense>
       </PageTransition>

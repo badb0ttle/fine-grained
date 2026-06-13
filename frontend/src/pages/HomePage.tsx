@@ -6,6 +6,7 @@ import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
 import { ModelLeaderboardPreview } from '../components/ModelLeaderboard'
+import { useLocale } from '../lib/LocaleContext'
 
 const CATEGORY_META: Record<CategoryKey, { name: string }> = {
   'AI Lab': { name: 'AI 实验室' },
@@ -115,9 +116,9 @@ function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSea
   )
 }
 
-function ArticleCard({ article, index = 0 }: { article: Article; index?: number }) {
-  const title = article.title_cn || article.title
-  const summary = article.summary_cn || article.summary
+function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; index?: number; lang?: string }) {
+  const title = lang === 'en' ? (article.title || article.title_cn) : (article.title_cn || article.title)
+  const summary = lang === 'en' ? (article.summary || article.summary_cn) : (article.summary_cn || article.summary)
 
   const handleClick = () => {
     try {
@@ -176,6 +177,7 @@ export function HomePage() {
   const { data: trending } = useTrending()
   const { data: top5 } = useTop5()
   const search = useSearch()
+  const { locale } = useLocale()
 
   if (loading) return <HomePageSkeleton />
 
@@ -205,8 +207,10 @@ export function HomePage() {
             AllOfAI
           </h1>
           <p className="mt-3 text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 —
-            由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏
+            {locale === 'en'
+              ? 'Daily AI intelligence — scanning 30+ global sources, curated and translated by LLM. Stay on top of AI in 5 minutes a day.'
+              : '每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 — 由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏'
+            }
           </p>
           <div className="flex items-center justify-center gap-6 mt-4 text-sm text-text-muted">
             <span className="flex items-center gap-1">
@@ -263,7 +267,7 @@ export function HomePage() {
                 </FadeIn>
                 <div className="space-y-2">
                   {items.map((a, i) => (
-                    <ArticleCard key={i} article={a} index={i} />
+                    <ArticleCard key={i} article={a} index={i} lang={locale} />
                   ))}
                 </div>
               </section>
