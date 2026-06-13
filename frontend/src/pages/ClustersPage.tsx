@@ -146,7 +146,7 @@ function ClusterScatter({ data }: { data: ClusterData }) {
             <div style="color:#9898b0;font-size:.72rem;display:flex;gap:.5rem;flex-wrap:wrap">
               <span>${esc(closest.source)}</span>
               <span>${esc((closest.published || '').slice(0, 10))}</span>
-              <span>⭐ ${closest.score}</span>
+              <span>${closest.score}</span>
             </div>`
           tooltip.style.opacity = '1'
 
@@ -283,7 +283,13 @@ export function ClustersPage() {
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {data.clusters.map((cluster) => (
+        {data.clusters.map((cluster) => {
+          const clusterArticles = (data.points || [])
+            .filter(p => p.cluster === cluster.id)
+            .sort((a, b) => (b.score || 0) - (a.score || 0))
+            .slice(0, 8)
+
+          return (
           <FadeIn key={cluster.id} delay={0.05}>
             <div
               className="bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300"
@@ -310,9 +316,28 @@ export function ClustersPage() {
                   ))}
                 </div>
               )}
+              {/* Article links */}
+              {clusterArticles.length > 0 && (
+                <ul className="space-y-1.5 border-t border-border-muted pt-3">
+                  {clusterArticles.map((a) => (
+                    <li key={a.id}>
+                      <a
+                        href={a.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-2 text-sm text-text-secondary hover:text-accent transition-colors group"
+                      >
+                        <span className="text-[10px] text-text-muted mt-0.5 flex-shrink-0">&#9679;</span>
+                        <span className="line-clamp-1">{a.title}</span>
+                        <span className="text-xs text-text-muted flex-shrink-0 ml-auto">{a.source}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </FadeIn>
-        ))}
+        )})}
       </div>
     </div>
   )

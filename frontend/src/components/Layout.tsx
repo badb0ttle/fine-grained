@@ -76,11 +76,7 @@ export function Footer() {
   return (
     <footer className="mt-auto py-8 text-center text-text-muted text-sm border-t border-border-muted">
       <p>
-        <a href="https://ai.hjhai.xyz" className="hover:text-accent transition-colors">ai.hjhai.xyz</a>
-        {' · '}自动生成 ·{' '}
-        <a href="https://github.com/badb0ttle/fine-grained" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-          GitHub
-        </a>
+        Copyright © 2026 ℬ𝒶𝒹𝒷0𝓉𝓉𝓁ℯ
       </p>
     </footer>
   )
