@@ -18,6 +18,7 @@ const TimelinePage    = lazy(() => import('./pages/TimelinePage').then(m => ({ d
 const ClustersPage    = lazy(() => import('./pages/ClustersPage').then(m => ({ default: m.ClustersPage })) as any)
 const WeeklyPage      = lazy(() => import('./pages/WeeklyPage').then(m => ({ default: m.WeeklyPage })) as any)
 const WeeklyDetailPage = lazy(() => import('./pages/WeeklyDetailPage').then(m => ({ default: m.WeeklyDetailPage })) as any)
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })) as any)
 
 function PageFallback() {
   return (
@@ -57,6 +58,7 @@ function AnimatedRoutes() {
             <Route path="/clusters" element={<ClustersPage />} />
             <Route path="/weekly" element={<WeeklyPage />} />
             <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </Suspense>
       </PageTransition>

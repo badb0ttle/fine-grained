@@ -28,6 +28,12 @@ import {
   faChevronDown,
   faSun,
   faMoon,
+  faGear,
+  faFilter,
+  faUpload,
+  faFolder,
+  faCode,
+  faInfoCircle,
   type IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -75,6 +81,12 @@ export const ICON = {
   thumbtack: faThumbtack,
   sun: faSun,
   moon: faMoon,
+  gear: faGear,
+  filter: faFilter,
+  upload: faUpload,
+  folder: faFolder,
+  code: faCode,
+  infoCircle: faInfoCircle,
 } as const
 
 export type IconName = keyof typeof ICON

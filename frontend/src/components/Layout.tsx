@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { to: '/leaderboard', label: '排行榜', icon: ICON.leaderboard },
   { to: '/timeline', label: '时间线', icon: ICON.timeline },
   { to: '/clusters', label: '聚类', icon: ICON.clusters },
+  { to: '/about', label: '关于', icon: ICON.infoCircle },
 ]
 
 export function Header() {

@@ -16,6 +16,7 @@ def generate() -> str:
         ("/timeline", "daily", "0.8"),
         ("/clusters", "weekly", "0.7"),
         ("/weekly", "daily", "0.9"),
+        ("/about", "monthly", "0.8"),
     ]
 
     # Add weekly detail pages
