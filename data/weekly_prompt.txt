@@ -1,94 +1,94 @@
-你是一位资深 AI 行业分析师。请根据以下本周（2026-05-26 至今）的 AI 情报数据，撰写一份「本周 AI 大事记」。
+你是一位资深 AI 行业分析师。请根据以下本周（2026-06-06 至今）的 AI 情报数据，撰写一份「本周 AI 大事记」。
 
 ## 数据概览
-- 本周精选文章: 10 篇
+- 本周精选文章: 30 篇
 - 分类分布:
-- Paper: 99 篇
-- AI Lab: 33 篇
-- Blog: 27 篇
-- 中文媒体: 21 篇
-- Community: 10 篇
+- Paper: 199 篇
+- 中文媒体: 95 篇
+- Blog: 51 篇
+- AI Lab: 27 篇
+- Community: 8 篇
 
 ## 本周重点文章
-1. [Blog] MiniMax-M3 发布：关键基准测试超越 GPT-5.5 和 Gemini 3.1 Pro，成本仅为其 5-10%
-   中国 AI 初创公司 MiniMax 发布 M3 大模型，在多项关键基准测试中超越了 OpenAI 的 GPT-5.5 和 Google 的 Gemini 3.1 Pro，而推理成本仅为它们的 5-10%，在性能价格比上形成碾压优势，震动企业 AI 市场。
-   来源: VentureBeat AI | 2026-06-01 16:10:05
+1. [Paper] 小型 LLM 在生物医学声明验证中的高效微调 — 小模型在专业医疗领域的性价比突破，降低 AI 辅助诊断的部署门槛
+   探索小型语言模型在生物医学声明验证任务上的成本效益微调策略，发现结构化数据集捷径可显著提升小模型性能，跨领域泛化能力接近 GPT-4o 水平。
+   来源: ArXiv cs.CL | 2026-06-12 04:00:00
 
-2. [Paper] Distilling LLM Feedback for Lean Theorem Proving
-   
-   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+2. [Paper] DPO 微调聊天机器人：一项实证研究 — DPO 是 RLHF 的低成本替代方案，这项研究为实际部署提供了宝贵经验
+   对使用 Direct Preference Optimization（DPO）微调大型语言模型进行系统实证研究，覆盖多种模型规模和训练策略，为聊天机器人对齐提供可复现的训练配方和最佳实践。
+   来源: ArXiv cs.CL | 2026-06-12 04:00:00
 
-3. [Paper] Uncertainty-Aware and Temporally Regulated Expert Advice in Reinforcement Learning for Autonomous Driving
-   
-   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+3. [Paper] ToolSense：审计 LLM 参数化工具知识的诊断框架 — 揭示 LLM Agent 工具调用的根本限制，指导更可靠的 Agent 系统设计
+   提出 ToolSense 框架诊断 LLM 内部存储的工具知识质量，发现当前基于嵌入的工具检索存在系统性瓶颈，工具的语义与功能描述之间存在显著鸿沟。
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-4. [Paper] SAGE: A Novelty Gate for Efficient Memory Evolution in Agentic LLMs
-   
-   来源: ArXiv stat.ML | 2026-06-01 04:00:00
+4. [Paper] 基于不确定性对齐强化学习的 Agent 工具调用决策 — 解决 Agent 执行中最头疼的工具误用问题，让 AI Agent 更可靠地完成任务
+   通过不确定性对齐的强化学习优化 LLM Agent 的工具调用决策，减少幻觉式直接回答和不支持的无效工具调用，提升 Agent 在复杂多步任务中的可靠性。
+   来源: ArXiv cs.AI | 2026-06-08 04:00:00
 
-5. [Paper] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
-   
-   来源: ArXiv cs.LG | 2026-06-01 04:00:00
+5. [Paper] FAIR-Calib：扩散 LLM 的后训练量化校准方法 — dLLM 是 LLM 新范式，量化是落地的关键——这项工作解决核心瓶颈
+   针对扩散大语言模型（dLLM）的「稳定性滞后」问题，提出前沿感知的校准方法，在保持生成质量的同时大幅降低推理成本，为 dLLM 部署扫清关键障碍。
+   来源: ArXiv cs.LG | 2026-06-08 04:00:00
 
-6. [Paper] Auditing LLM Benchmarks with Item Response Theory
+6. [Paper] Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
    
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+   来源: ArXiv cs.LG | 2026-06-08 04:00:00
 
-7. [中文媒体] 一颗288核的至强6+，为什么能同时运行500个Agent？
-   
-   来源: 雷锋网 AI | 2026-06-01 10:20:00
+7. [Paper] MacArena：在线 macOS 环境下的 Computer Use Agent 基准 — 首个真实 macOS 环境 Agent 评测基准，推动桌面级 AI 助手走向实用
+   提出 MacArena 基准，在真实 macOS 环境中评估 Computer Use Agent（CUA）的 GUI 操作能力，覆盖文件管理、浏览器操作、系统设置等 50+ 种交互任务。
+   来源: ArXiv cs.LG | 2026-06-08 04:00:00
 
-8. [Paper] Benchmark of Likelihood-Free Inference Methods based on Neural and Optimal Transport Approaches
+8. [Paper] A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
    
-   来源: ArXiv stat.ML | 2026-06-01 04:00:00
+   来源: ArXiv stat.ML | 2026-06-12 04:00:00
 
-9. [Paper] Domain Adaptation and Reasoning Frameworks in Language Models: A Controlled Experiment with Historical Cosmology
+9. [Paper] Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation
    
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-10. [Paper] CanLegalRAGBench: Evaluating Retrieval-Augmented Generation on Canadian Case Law
-   
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+10. [Paper] AI Agent 解决跨尺度科学挑战基准评测 — 首次全面评测 AI 科学 Agent 的实战能力，为 AI4Science 落地提供方向指引
+   系统评估 AI Agent 在真实科研场景中的实际能力，覆盖从分子到宇宙的多尺度科学问题，揭示当前 AI 科学发现智能体的能力边界和关键短板。
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-11. [Paper] SANA-Streaming: Real-time Streaming Video Editing with Hybrid Diffusion Transformer
-   
-   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+11. [Paper] MLUBench：多模态 LLM 终身遗忘评估 — 数据遗忘是 AI 合规的核心需求，该基准为多模态模型的隐私保护能力提供了标准化评估。
+   提出 MLUBench 基准测试，评估多模态大语言模型在执行数据遗忘（unlearning）后的能力保留与遗忘效果，应对数据隐私合规需求。
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-12. [Paper] Gait2Hip-60: A Unified Deep Learning Benchmark for Predicting Hip Muscle Forces and Joint Moments from Multi-Cadence Gait Kinematics
-   
-   来源: ArXiv cs.LG | 2026-06-01 04:00:00
+12. [Blog] 小米开源 MiMo Code：在超长任务上击败 Claude Code 的 AI 编程工具 — 国产开源 AI 编程工具首次在复杂任务上超越 Claude Code，对开发者工具生态产生冲击
+   小米 MiMo AI 团队开源终端原生 AI 编程助手 MiMo Code V0.1.0，在 200+ 步超长 agentic 编程任务上超越 Anthropic 的 Claude Code。这一来自中国厂商的编程 Agent 展示了开源社区在代码智能体领域的快速追赶。
+   来源: VentureBeat AI | 2026-06-11 23:14:00
 
-13. [Paper] EHRBench: An Automated and Reliable EHR-based Benchmark for Clinical Decision Making with LLMs
-   
-   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+13. [Paper] 不确定性感知LLM引导策略塑造 — 为复杂稀疏奖励任务提供高效强化学习解决方案。
+   提出不确定性感知的LLM引导策略塑造方法，解决稀疏奖励强化学习中的收敛慢和泛化差问题。利用LLM先验知识结合不确定性估计，加速策略学习。
+   来源: ArXiv cs.LG | 2026-06-08 04:00:00
 
-14. [Paper] BilliardPhys-Bench: Benchmarking Physical Reasoning and Visual Dynamics of Multimodal LLMs
-   
-   来源: ArXiv cs.AI | 2026-06-01 04:00:00
+14. [Paper] 面向部署的临床 LLM 拒绝风险评估 — 医疗 AI 部署安全是生死攸关的问题，该评估方法为临床 LLM 上线提供了安全保障。
+   提出面向实际部署的评估方法，预测临床 LLM 系统在查询级别的拒答风险，确保医疗 AI 系统在安全边界内运行，避免高风险场景的误判。
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-15. [Paper] Generalistic or Specific Embeddings, Which is Better? An Empirical Study on Search for Clinical Coding in Non-English Languages
+15. [Paper] USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
    
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+   来源: ArXiv cs.CV | 2026-06-08 04:00:00
 
-16. [Paper] Speculative Decoding Across Languages
+16. [Paper] TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
    
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+   来源: ArXiv stat.ML | 2026-06-08 04:00:00
 
-17. [Paper] PInVerify: An Offline Embodied Benchmark for Active Instance Verification
-   
-   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+17. [Paper] 人类对 AI 的真实需求：偏好多样性图谱 — RLHF 对齐假设统一偏好，本文揭示的偏好多样性对产品设计和模型训练有直接指导意义。
+   大规模调研人类对 AI 的真实偏好，揭示不同人群对 AI 行为的期望存在显著差异，挑战单一 RLHF 对齐范式的普适性，呼吁多元对齐策略。
+   来源: ArXiv cs.CL | 2026-06-08 04:00:00
 
-18. [Paper] Seeing Before Agreeing: Aligning Multi-Agent Consensus with Visual Evidence
+18. [Paper] TrajGenAgent: A Hierarchical LLM Agent for Human Mobility Trajectory Generation
    
-   来源: ArXiv cs.CV | 2026-06-01 04:00:00
+   来源: ArXiv cs.AI | 2026-06-12 04:00:00
 
-19. [Paper] Generating and Refining Dynamic Evaluation Rubrics for LLM-as-a-Judge
+19. [Paper] Bradley-Terry Rankings for Recommender Systems Across Dataset Taxonomies
    
-   来源: ArXiv cs.CL | 2026-06-01 04:00:00
+   来源: ArXiv stat.ML | 2026-06-08 04:00:00
 
-20. [Blog] MeMo's memory model lets teams upgrade their LLM without retraining it — and performance jumps 26%
+20. [Paper] Least-Action-Guided Diffusion for Physical Extrapolation
    
-   来源: VentureBeat AI | 2026-05-29 19:28:17
+   来源: ArXiv cs.LG | 2026-06-12 04:00:00
 
 
 ## 写作要求
@@ -109,5 +109,6 @@
 - 文章总长 500-800 字
 - 提到具体公司/模型/论文时用原文名称
 - 不要用"本周"开头，直接进入分析
-- 文件头用 `# 本周 AI 大事记 (YYYY-MM-DD)`
-- 保存到 data/weekly/{date}.md
+- 输出纯 HTML（可直接在浏览器打开），包含完整 <!DOCTYPE html>...<link rel="stylesheet" href="../../assets/style.css">...
+- 正文用 <article> 包裹，样式 class 参考 index.html 中的 article-item
+- 保存到 data/weekly/{date}.html
