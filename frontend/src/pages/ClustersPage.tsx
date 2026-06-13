@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ICON } from '../lib/icons'
 import { FadeIn } from '../components/Animations'
 import { CardSkeleton } from '../components/Skeleton'
+import { useLocale } from '../lib/LocaleContext'
 
 interface ClusterPoint {
   id: number
@@ -36,7 +37,7 @@ const PADDING = 50
 const DOT_RADIUS = 4
 const HOVER_RADIUS = 8
 
-function ClusterScatter({ data }: { data: ClusterData }) {
+function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'en' }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
   const [activeCluster, setActiveCluster] = useState<number>(-1)
@@ -104,7 +105,11 @@ function ClusterScatter({ data }: { data: ClusterData }) {
       ctx.stroke()
     }
 
-    setInfo(`显示 ${canvasPoints.length} 篇文章 · 共 ${data.n_clusters} 个聚类`)
+    const en = locale === 'en'
+    setInfo(en
+      ? `Showing ${canvasPoints.length} articles · ${data.n_clusters} clusters total`
+      : `显示 ${canvasPoints.length} 篇文章 · 共 ${data.n_clusters} 个聚类`
+    )
 
     let hovered: (typeof canvasPoints)[0] | null = null
 
@@ -204,7 +209,7 @@ function ClusterScatter({ data }: { data: ClusterData }) {
           }`}
         >
           <span className="w-2.5 h-2.5 rounded-full bg-text-muted" />
-          全部 ({data.total_articles})
+          {locale === 'en' ? `All (${data.total_articles})` : `全部 (${data.total_articles})`}
         </button>
         {data.clusters.map(c => (
           <button
@@ -237,6 +242,7 @@ function ClusterScatter({ data }: { data: ClusterData }) {
 export function ClustersPage() {
   const [data, setData] = useState<ClusterData | null>(null)
   const [loading, setLoading] = useState(true)
+  const { locale } = useLocale()
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/clusters.json`)
@@ -259,7 +265,7 @@ export function ClustersPage() {
     return (
       <div className="text-center py-20">
         <FontAwesomeIcon icon={ICON.clusters} className="text-4xl text-text-muted mb-4" />
-        <p className="text-text-muted">暂无聚类数据</p>
+        <p className="text-text-muted">{locale === 'en' ? 'No cluster data yet' : '暂无聚类数据'}</p>
       </div>
     )
   }
@@ -270,16 +276,19 @@ export function ClustersPage() {
         <div className="text-center py-4">
           <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
             <FontAwesomeIcon icon={ICON.clusters} className="text-accent" />
-            聚类分析
+            {locale === 'en' ? 'Cluster Analysis' : '聚类分析'}
           </h1>
           <p className="mt-2 text-text-muted text-sm">
-            基于 TF-IDF 语义相似度的文章聚类可视化 · {data.n_clusters} 个聚类 · {data.total_articles} 篇文章
+            {locale === 'en'
+              ? `TF-IDF semantic clustering · ${data.n_clusters} clusters · ${data.total_articles} articles`
+              : `基于 TF-IDF 语义相似度的文章聚类可视化 · ${data.n_clusters} 个聚类 · ${data.total_articles} 篇文章`
+            }
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <ClusterScatter data={data} />
+        <ClusterScatter data={data} locale={locale} />
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -301,7 +310,7 @@ export function ClustersPage() {
                 />
                 <h2 className="text-base font-semibold text-text-primary">{cluster.title}</h2>
                 <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
-                  {cluster.count} 篇
+                  {cluster.count} {locale === 'en' ? '' : '篇'}
                 </span>
               </div>
               {cluster.keywords && cluster.keywords.length > 0 && (

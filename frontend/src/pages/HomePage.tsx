@@ -145,9 +145,22 @@ function useSearch() {
 }
 
 // ── Article Card ──
+function cleanSummary(raw: string): string {
+  // Strip arXiv boilerplate: "arXiv:XXXXvX Announce Type: new \nAbstract: "
+  return raw
+    .replace(/^arXiv:[\d.]+v?\d*\s*(Announce Type:\s*\w+\s*)?\n?Abstract:\s*/i, '')
+    .slice(0, 280)
+}
+
 function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; index?: number; lang?: string }) {
-  const title = lang === 'en' ? (article.title || article.title_cn) : (article.title_cn || article.title)
-  const summary = lang === 'en' ? (article.summary || article.summary_cn) : (article.summary_cn || article.summary)
+  const isEn = lang === 'en'
+  const title = isEn ? (article.title || article.title_cn) : (article.title_cn || article.title)
+  // EN: use cleaned original English abstract; ZH: use AI-generated Chinese summary
+  const summary = isEn
+    ? (article.summary ? cleanSummary(article.summary) : (article.summary_cn ? article.summary_cn.slice(0, 280) : ''))
+    : (article.summary_cn || (article.summary ? cleanSummary(article.summary) : ''))
+  // EN: hide why_it_matters (pipeline only generates Chinese); ZH: show it
+  const why = !isEn && article.why_it_matters ? article.why_it_matters : null
 
   const handleClick = () => {
     try {
@@ -190,10 +203,10 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
             {summary.slice(0, 280)}
           </p>
         )}
-        {article.why_it_matters && (
+        {why && (
           <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5 flex items-start gap-1.5">
             <FontAwesomeIcon icon={ICON.lightbulb} className="mt-0.5 flex-shrink-0" />
-            {article.why_it_matters}
+            {why}
           </div>
         )}
       </div>
