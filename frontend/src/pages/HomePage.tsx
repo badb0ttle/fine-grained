@@ -198,12 +198,17 @@ export function HomePage() {
 
   return (
     <div className="space-y-8">
-      {/* Hero */}
+      {/* Hero + About */}
       <FadeIn>
-        <div className="text-center py-6">
-          <h1 className="text-3xl font-bold text-text-primary">AllOfAI</h1>
-          <p className="mt-2 text-text-secondary">细粒度 · 每日全球 AI 技术动态</p>
-          <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
+        <div className="text-center py-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
+            AllOfAI
+          </h1>
+          <p className="mt-3 text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+            每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 —
+            由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏
+          </p>
+          <div className="flex items-center justify-center gap-6 mt-4 text-sm text-text-muted">
             <span className="flex items-center gap-1">
               <FontAwesomeIcon icon={ICON.timeline} />
               {data.scanned_at?.slice(0, 16)}
@@ -217,7 +222,16 @@ export function HomePage() {
               {data.articles.length} 篇精选
             </span>
           </div>
-          <div className="mt-4 flex justify-center">
+          {/* Source categories */}
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-text-muted">
+            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">OpenAI / Anthropic / DeepMind</span>
+            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">arXiv 论文</span>
+            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">Hacker News / Reddit</span>
+            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">GitHub Trending</span>
+            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">中文 AI 媒体</span>
+            <span className="text-accent cursor-pointer hover:underline" onClick={() => {}}>+ 更多</span>
+          </div>
+          <div className="mt-6 flex justify-center">
             <SearchBar {...search} />
           </div>
         </div>

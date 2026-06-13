@@ -6,7 +6,6 @@ import { useTheme } from './ThemeToggle'
 
 const NAV_ITEMS = [
   { to: '/', label: '首页', icon: ICON.home, end: true },
-  { to: '/dashboard', label: '仪表盘', icon: ICON.dashboard },
   { to: '/leaderboard', label: '排行榜', icon: ICON.leaderboard },
   { to: '/timeline', label: '时间线', icon: ICON.timeline },
   { to: '/clusters', label: '聚类', icon: ICON.clusters },

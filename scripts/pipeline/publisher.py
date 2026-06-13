@@ -251,7 +251,7 @@ def git_push() -> dict:
 
 
 def run() -> dict:
-    """Full publish: export JSON + git push."""
+    """Full publish: export JSON + RSS + sitemap + git push."""
     print("📦 Publisher — exporting and deploying...\n")
 
     data = export_latest_json()
@@ -261,6 +261,17 @@ def run() -> dict:
     # Write model_leaderboard.json for model rankings
     leaderboard_data = __import__('scripts.pipeline.model_leaderboard', fromlist=['fetch_and_export']).fetch_and_export()
     print(f"    leaderboard: {leaderboard_data['total_models']} models")
+
+    # Generate RSS + sitemap
+    import scripts.rss_feed as rf
+    import scripts.sitemap_gen as sg
+    rss = rf.generate()
+    if rss:
+        (REPO_DIR / "docs" / "rss.xml").write_text(rss)
+        print(f"✅ RSS feed generated")
+    sitemap = sg.generate()
+    (REPO_DIR / "docs" / "sitemap.xml").write_text(sitemap)
+    print(f"✅ Sitemap generated")
 
     result = git_push()
 

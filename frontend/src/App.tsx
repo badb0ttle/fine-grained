@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { Header, Footer } from './components/Layout'
@@ -6,16 +6,26 @@ import { PageTransition } from './components/Animations'
 import { ReadingProgress } from './components/ReadingProgress'
 import { BackToTop } from './components/BackToTop'
 import { ToastProvider } from './components/Toast'
+import { AdminGate } from './components/AdminGate'
 import ParticleBackground from './components/ParticleBackground'
-import { HomePage } from './pages/HomePage'
-import { DashboardPage } from './pages/DashboardPage'
-import { LeaderboardPage } from './pages/LeaderboardPage'
-import { TimelinePage } from './pages/TimelinePage'
-import { ClustersPage } from './pages/ClustersPage'
-import { WeeklyPage } from './pages/WeeklyPage'
-import { WeeklyDetailPage } from './pages/WeeklyDetailPage'
-
 import { ThemeProvider } from './components/ThemeToggle'
+
+// Lazy-load all pages for code splitting (named exports via .then)
+const HomePage        = lazy(() => import('./pages/HomePage').then(m => ({ default: m.HomePage })) as any)
+const DashboardPage   = lazy(() => import('./pages/DashboardPage').then(m => ({ default: m.DashboardPage })) as any)
+const LeaderboardPage = lazy(() => import('./pages/LeaderboardPage').then(m => ({ default: m.LeaderboardPage })) as any)
+const TimelinePage    = lazy(() => import('./pages/TimelinePage').then(m => ({ default: m.TimelinePage })) as any)
+const ClustersPage    = lazy(() => import('./pages/ClustersPage').then(m => ({ default: m.ClustersPage })) as any)
+const WeeklyPage      = lazy(() => import('./pages/WeeklyPage').then(m => ({ default: m.WeeklyPage })) as any)
+const WeeklyDetailPage = lazy(() => import('./pages/WeeklyDetailPage').then(m => ({ default: m.WeeklyDetailPage })) as any)
+
+function PageFallback() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <div className="w-6 h-6 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+    </div>
+  )
+}
 
 function SpaRedirect() {
   const navigate = useNavigate()
@@ -38,15 +48,17 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <PageTransition key={location.pathname}>
         <SpaRedirect />
-        <Routes location={location}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/leaderboard" element={<LeaderboardPage />} />
-          <Route path="/timeline" element={<TimelinePage />} />
-          <Route path="/clusters" element={<ClustersPage />} />
-          <Route path="/weekly" element={<WeeklyPage />} />
-          <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
-        </Routes>
+        <Suspense fallback={<PageFallback />}>
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/dashboard" element={<AdminGate><DashboardPage /></AdminGate>} />
+            <Route path="/leaderboard" element={<LeaderboardPage />} />
+            <Route path="/timeline" element={<TimelinePage />} />
+            <Route path="/clusters" element={<ClustersPage />} />
+            <Route path="/weekly" element={<WeeklyPage />} />
+            <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
+          </Routes>
+        </Suspense>
       </PageTransition>
     </AnimatePresence>
   )

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "cp -r ../data ../docs/data && cp ../assets/*.css ../docs/assets/ 2>/dev/null && cp ../sw.js ../docs/sw.js && cp ../manifest.json ../docs/manifest.json 2>/dev/null; echo '✅ Postbuild done'",
+    "postbuild": "cp -r ../data ../docs/data && cp ../assets/*.css ../docs/assets/ 2>/dev/null && cp ../sw.js ../docs/sw.js && cp ../manifest.json ../docs/manifest.json 2>/dev/null && cd .. && python3 scripts/rss_feed.py && python3 scripts/sitemap_gen.py; echo '✅ Postbuild done'",
     "lint": "eslint .",
     "preview": "vite preview"
   },

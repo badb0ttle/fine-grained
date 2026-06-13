@@ -87,7 +87,7 @@ def generate_summary(repo):
         print("  ⚠️  No DEEPSEEK_API_KEY, using description as summary", file=sys.stderr)
         return repo["description"]
 
-    prompt = f"""You are a tech analyst. In 2-3 concise Chinese sentences, explain what this open-source project does and why it matters to AI developers. Keep it short and informative.
+    prompt = f"""You are a technical writer. Explain this open-source project in 2-3 Chinese sentences — what it does and why developers should care. Be specific, avoid buzzwords like "revolutionary" or "game-changing". No emoji.
 
 Project: {repo['full_name']}
 Description: {repo['description']}
