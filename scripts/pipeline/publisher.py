@@ -273,6 +273,16 @@ def run() -> dict:
     (REPO_DIR / "docs" / "sitemap.xml").write_text(sitemap)
     print(f"✅ Sitemap generated")
 
+    # Run health monitor (writes alert to data/health_alert.txt if issues)
+    import scripts.health_monitor as hm
+    health = hm.check_health()
+    if health["alerts"]:
+        msg = hm.format_alert_message(health)
+        (REPO_DIR / "data" / "health_alert.txt").write_text(msg)
+        print(f"⚠️  Health: {health['critical']} critical, {len(health['alerts'])} total alerts")
+    else:
+        print(f"✅ Health: all sources OK")
+
     result = git_push()
 
     return {**files, **result}

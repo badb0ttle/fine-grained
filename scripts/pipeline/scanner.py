@@ -3,6 +3,7 @@
 
 import hashlib
 import json
+import random
 import re
 import time
 from datetime import datetime, timezone
@@ -25,8 +26,8 @@ def extract_paper_id(link: str) -> str | None:
     return m.group(1) if m else None
 
 
-def fetch_feed(source: dict, retries: int = 2) -> list[dict]:
-    """Fetch a single RSS feed with retry on transient errors, return list of article dicts."""
+def fetch_feed(source: dict, retries: int = 3) -> list[dict]:
+    """Fetch RSS feed with exponential backoff + jitter."""
     last_error = None
     for attempt in range(retries + 1):
         try:
@@ -59,8 +60,8 @@ def fetch_feed(source: dict, retries: int = 2) -> list[dict]:
         except Exception as e:
             last_error = e
             if attempt < retries:
-                wait = (attempt + 1) * 2
-                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait}s ({e})")
+                wait = (2 ** attempt) + random.uniform(0, 1)
+                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait:.1f}s ({e})")
                 time.sleep(wait)
             else:
                 print(f"  ⚠️  {source['name']}: {last_error}")
@@ -111,8 +112,8 @@ def fetch_wp_api(source: dict, retries: int = 2) -> list[dict]:
         except Exception as e:
             last_error = e
             if attempt < retries:
-                wait = (attempt + 1) * 2
-                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait}s ({e})")
+                wait = (2 ** attempt) + random.uniform(0, 1)
+                print(f"  🔄 {source['name']}: retry {attempt+1}/{retries} in {wait:.1f}s ({e})")
                 time.sleep(wait)
             else:
                 print(f"  ⚠️  {source['name']}: {last_error}")
