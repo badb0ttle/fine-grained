@@ -1,0 +1,1 @@
+import{q as e}from"./vendor-icons-CEle-rep.js";import{t}from"./ModelLeaderboard-BnqT21hc.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as LeaderboardPage};

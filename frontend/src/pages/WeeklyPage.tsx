@@ -8,7 +8,7 @@ import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
 
 interface WeeklyReport {
-  date: string; title: string; summary: string; url: string
+  date: string; title: string; title_en?: string; summary: string; summary_en?: string; url: string; url_en?: string
 }
 
 const T = {
@@ -115,9 +115,9 @@ export function WeeklyPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h2 className="text-base font-semibold text-text-primary group-hover:text-accent transition-colors">
-                      {report.title} ({report.date})
+                      {locale === 'en' && report.title_en ? report.title_en : report.title} ({report.date})
                     </h2>
-                    <p className="mt-1 text-sm text-text-secondary">{report.summary}</p>
+                    <p className="mt-1 text-sm text-text-secondary">{locale === 'en' && report.summary_en ? report.summary_en : report.summary}</p>
                   </div>
                   <div className="flex-shrink-0 self-center">
                     <FontAwesomeIcon icon={ICON.arrowRight} className="text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />

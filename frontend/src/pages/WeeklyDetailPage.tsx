@@ -47,45 +47,57 @@ export function WeeklyDetailPage() {
 
   useEffect(() => {
     if (!date) return
-    const url = `${import.meta.env.BASE_URL}data/weekly/${date}.html`
+    setLoading(true)
+    setError(false)
 
-    Promise.all([
-      fetch(url),
-      fetch(`${import.meta.env.BASE_URL}data/stats.json`).then(r => r.ok ? r.json() : null),
-      fetch(`${import.meta.env.BASE_URL}data/model_leaderboard.json`).then(r => r.ok ? r.json() : null),
-    ])
-      .then(([htmlRes, statsData, lbData]) => {
-        if (!htmlRes.ok) throw new Error('Not found')
-        setStats(statsData)
-        setLeaderboard(lbData)
-        return htmlRes.text()
-      })
-      .then(raw => {
-        const titleMatch = raw.match(/<title>(.*?)<\/title>/)
-        if (titleMatch) document.title = titleMatch[1]
+    const loadWeekly = async () => {
+      // Try English first if locale is 'en', fall back to Chinese
+      let htmlRes: Response
+      if (locale === 'en') {
+        htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}_en.html`)
+        if (!htmlRes.ok) htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+      } else {
+        htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+      }
 
-        let body = raw
-        const bodyStart = body.indexOf('<body>')
-        const bodyEnd = body.indexOf('</body>')
-        if (bodyStart >= 0 && bodyEnd >= 0) {
-          body = body.slice(bodyStart + 6, bodyEnd)
-        }
-        body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
-        body = body.replace(/\sstyle="[^"]*"/gi, '')
-        body = body.replace(/\sclass="[^"]*"/gi, '')
-        body = body.replace(/href="index\.html"/g, 'href="/weekly"')
-        body = body
-          .replace(/<h1>/g, '<h1 class="text-2xl font-bold text-text-primary mt-4 mb-3">')
-          .replace(/<h2>/g, '<h2 class="text-lg font-semibold text-accent mt-6 mb-2">')
-          .replace(/<p>/g, '<p class="text-text-secondary leading-relaxed my-3">')
-          .replace(/<strong>/g, '<strong class="text-text-primary font-semibold">')
-          .replace(/<a /g, '<a class="text-accent hover:text-accent-hover transition-colors" ')
+      const [statsData, lbData] = await Promise.all([
+        fetch(`${import.meta.env.BASE_URL}data/stats.json`).then(r => r.ok ? r.json() : null),
+        fetch(`${import.meta.env.BASE_URL}data/model_leaderboard.json`).then(r => r.ok ? r.json() : null),
+      ])
 
-        setHtml(body)
-      })
+      if (!htmlRes.ok) throw new Error('Not found')
+      setStats(statsData)
+      setLeaderboard(lbData)
+
+      const raw = await htmlRes.text()
+
+      const titleMatch = raw.match(/<title>(.*?)<\/title>/)
+      if (titleMatch) document.title = titleMatch[1]
+
+      let body = raw
+      const bodyStart = body.indexOf('<body>')
+      const bodyEnd = body.indexOf('</body>')
+      if (bodyStart >= 0 && bodyEnd >= 0) {
+        body = body.slice(bodyStart + 6, bodyEnd)
+      }
+      body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+      body = body.replace(/\sstyle="[^"]*"/gi, '')
+      body = body.replace(/\sclass="[^"]*"/gi, '')
+      body = body.replace(/href="index\.html"/g, 'href="/weekly"')
+      body = body
+        .replace(/<h1>/g, '<h1 class="text-2xl font-bold text-text-primary mt-4 mb-3">')
+        .replace(/<h2>/g, '<h2 class="text-lg font-semibold text-accent mt-6 mb-2">')
+        .replace(/<p>/g, '<p class="text-text-secondary leading-relaxed my-3">')
+        .replace(/<strong>/g, '<strong class="text-text-primary font-semibold">')
+        .replace(/<a /g, '<a class="text-accent hover:text-accent-hover transition-colors" ')
+
+      setHtml(body)
+    }
+
+    loadWeekly()
       .catch(() => setError(true))
       .finally(() => setLoading(false))
-  }, [date])
+  }, [date, locale])
 
   const weekStats = useMemo(() => {
     if (!stats || !date) return null

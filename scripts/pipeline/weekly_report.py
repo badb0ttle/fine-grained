@@ -116,9 +116,75 @@ def get_weekly_prompt(data: dict) -> str:
     return prompt
 
 
+def get_weekly_prompt_en(data: dict) -> str:
+    """Generate an English prompt for LLM to write a weekly AI briefing."""
+    arts = data["top_articles"]
+    article_text = []
+    for i, a in enumerate(arts[:20], 1):
+        title = a["title"]  # original English title
+        wim = f" — {a['why_it_matters']}" if a.get("why_it_matters") else ""
+        article_text.append(
+            f"{i}. [{a['category']}] {title}{wim}\n"
+            f"   {a.get('summary','')[:120]}\n"
+            f"   Source: {a['source_name']} | {a['published']}\n"
+        )
+
+    cat_text = "\n".join(f"- {c['category']}: {c['cnt']} articles" for c in data["categories"])
+
+    prompt = f"""You are a senior AI industry analyst. Write a "This Week in AI" briefing based on the following data ({data['period_start'][:10]} to now).
+
+## Data Overview
+- Curated articles this week: {data['curated_count']}
+- Category breakdown:
+{cat_text}
+
+## Top Articles This Week
+{chr(10).join(article_text)}
+
+## Writing Requirements
+
+Write a coherent analytical piece in Markdown (not a listicle), covering:
+
+### [Headlines] This Week's Top Story (1-2 paragraphs)
+Pick the 1-2 most important developments. Don't just restate titles — interpret the trends and real-world impact behind them.
+
+### [Trends] Trend Watch (2-3 paragraphs)
+Extract 2-3 notable trends from this week's articles, using specific stories as evidence.
+
+### [TL;DR] One-Sentence Summary
+Sum up the theme of this week in AI in a single sentence.
+
+## Anti-AI-Slop Rules (strictly enforced)
+Banned phrases and patterns:
+- "In the realm of..." "It is noteworthy that..." "Furthermore..." "Moreover..."
+- "showcases..." "underscores..." "highlights the importance of..."
+- "a testament to..." "ushers in a new era..." "marks a significant milestone..."
+- "delve into..." "unpack..." "it's worth noting that..." "arguably..."
+
+Writing principles:
+- Write like a newsletter to a smart friend — conversational, punchy, no academic throat-clearing
+- Facts and judgments only, no padding. Never start with "As AI continues to evolve..."
+- Be specific with numbers and names. Avoid "many" "several" "various"
+- No emoji
+- Keep technical terms in their original form
+
+## Format Requirements
+- English output
+- 400-600 words total
+- Use original names for companies/models/papers
+- Output pure HTML (ready to open in browser), including <!DOCTYPE html>...<link rel="stylesheet" href="../../assets/style.css">...
+- Wrap body text in <article> tags, with classes referencing index.html article-item styles
+- Save to data/weekly/{{date}}_en.html"""
+
+    return prompt
+
+
 if __name__ == "__main__":
     data = get_week_articles(7)
     print(f"📋 Weekly: {data['curated_count']} curated, {len(data['top_articles'])} top scored")
     prompt = get_weekly_prompt(data)
     print(f"\n--- PROMPT (first 500 chars) ---")
     print(prompt[:500])
+    print(f"\n--- EN PROMPT (first 500 chars) ---")
+    prompt_en = get_weekly_prompt_en(data)
+    print(prompt_en[:500])

@@ -3,14 +3,20 @@
     {
       "date": "2026-06-13",
       "title": "本周 AI 大事记",
+      "title_en": "This Week in AI",
       "summary": "MiMo Code · AI Agent · DPO 标准化 · AI 安全合规 · 模型效率",
-      "url": "/data/weekly/2026-06-13.html"
+      "summary_en": "MiMo Code · AI Agent · DPO Standardization · AI Safety · Model Efficiency",
+      "url": "/data/weekly/2026-06-13.html",
+      "url_en": "/data/weekly/2026-06-13_en.html"
     },
     {
       "date": "2026-06-02",
       "title": "本周 AI 大事记",
+      "title_en": "This Week in AI",
       "summary": "MiniMax M3 · Agent 规模化 · 基准测试危机 · 记忆机制",
-      "url": "/data/weekly/2026-06-02.html"
+      "summary_en": "MiniMax M3 · Agent Scaling · Benchmark Crisis · Memory Mechanisms",
+      "url": "/data/weekly/2026-06-02.html",
+      "url_en": "/data/weekly/2026-06-02_en.html"
     }
   ]
 }
