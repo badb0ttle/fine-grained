@@ -203,10 +203,10 @@ export function HomePage() {
       {/* Hero + About */}
       <FadeIn>
         <div className="text-center py-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
             AllOfAI
           </h1>
-          <p className="mt-3 text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
             {locale === 'en'
               ? 'Daily AI intelligence — scanning 30+ global sources, curated and translated by LLM. Stay on top of AI in 5 minutes a day.'
               : '每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 — 由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏'
