@@ -169,42 +169,95 @@ function SkeletonRow() {
 }
 
 // ============ Score Comparison Chart ============
+type ChartMode = 'all' | 'intelligence' | 'coding' | 'agentic'
+
+const CHART_MODES: { key: ChartMode; label: string; color: string }[] = [
+  { key: 'all', label: '综合对比', color: '' },
+  { key: 'intelligence', label: '智能', color: SCORE_COLORS.intelligence },
+  { key: 'coding', label: '编程', color: SCORE_COLORS.coding },
+  { key: 'agentic', label: '智能体', color: SCORE_COLORS.agentic },
+]
+
 function ScoreChart({ models }: { models: LeaderboardModel[] }) {
-  const chartData = useMemo(() => {
-    const scored = models
-      .filter(m => m.scores?.intelligence != null)
+  const [mode, setMode] = useState<ChartMode>('all')
+
+  const chartData: any[] = useMemo(() => {
+    if (mode === 'all') {
+      // Combined: show all three dimensions, sort by intelligence desc
+      return models
+        .filter(m => m.scores?.intelligence != null)
+        .sort((a, b) => (b.scores!.intelligence ?? 0) - (a.scores!.intelligence ?? 0))
+        .slice(0, 15)
+        .map(m => ({
+          name: m.name.split(':').pop()?.trim() || m.name,
+          intelligence: m.scores!.intelligence ?? 0,
+          coding: m.scores!.coding ?? 0,
+          agentic: m.scores!.agentic ?? 0,
+        }))
+    }
+    // Single dimension: sort by that dimension desc
+    return models
+      .filter(m => m.scores?.[mode] != null)
+      .sort((a, b) => (b.scores![mode] ?? 0) - (a.scores![mode] ?? 0))
       .slice(0, 15)
       .map(m => ({
         name: m.name.split(':').pop()?.trim() || m.name,
-        intelligence: m.scores!.intelligence ?? 0,
-        coding: m.scores!.coding ?? 0,
-        agentic: m.scores!.agentic ?? 0,
+        value: m.scores![mode] ?? 0,
       }))
-    return scored
-  }, [models])
+  }, [models, mode])
 
   if (chartData.length < 3) return null
 
+  const isAll = mode === 'all'
+  const activeColor = CHART_MODES.find(m => m.key === mode)?.color || SCORE_COLORS.intelligence
+
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-      <div className="flex items-center gap-2 mb-4">
-        <FontAwesomeIcon icon={faChartBar} className="text-accent" />
-        <h3 className="text-sm font-semibold text-text-primary">
-          Top 15 模型能力对比
-        </h3>
-        <span className="text-xs text-text-muted">Artificial Analysis 评分</span>
+      {/* Header with mode toggles */}
+      <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
+        <div className="flex items-center gap-2">
+          <FontAwesomeIcon icon={faChartBar} className="text-accent" />
+          <h3 className="text-sm font-semibold text-text-primary">
+            Top 15 模型能力对比
+          </h3>
+          <span className="text-xs text-text-muted">Artificial Analysis 评分</span>
+        </div>
+        {/* Mode toggles */}
+        <div className="flex gap-1">
+          {CHART_MODES.map(({ key, label, color }) => (
+            <button
+              key={key}
+              onClick={() => setMode(key)}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-200
+                ${mode === key
+                  ? 'bg-accent text-white shadow-sm'
+                  : 'bg-bg-secondary text-text-muted hover:text-text-secondary hover:bg-bg-hover'
+                }`}
+            >
+              {!isAll && key !== 'all' && (
+                <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
+              )}
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="flex items-center gap-4 mb-3 text-xs">
-        <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.intelligence}} /> 智能</span>
-        <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.coding}} /> 编程</span>
-        <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.agentic}} /> 智能体</span>
-      </div>
+
+      {/* Legend for combined mode */}
+      {isAll && (
+        <div className="flex items-center gap-4 mb-3 text-xs">
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.intelligence}} /> 智能</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.coding}} /> 编程</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.agentic}} /> 智能体</span>
+        </div>
+      )}
+
       <ResponsiveContainer width="100%" height={chartData.length * 28 + 40}>
         <BarChart
           data={chartData}
           layout="vertical"
           margin={{ top: 0, right: 10, left: 10, bottom: 0 }}
-          barSize={8}
+          barSize={isAll ? 8 : 14}
           barGap={2}
         >
           <CartesianGrid strokeDasharray="3 3" stroke="var(--_border-muted, #161825)" />
@@ -223,10 +276,17 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
               fontSize: '12px',
               color: 'var(--_text-primary, #e8e9f0)',
             }}
+            formatter={isAll ? undefined : ((value: any) => [value, '']) as any}
           />
-          <Bar dataKey="intelligence" fill={SCORE_COLORS.intelligence} radius={[0, 2, 2, 0]} />
-          <Bar dataKey="coding" fill={SCORE_COLORS.coding} radius={[0, 2, 2, 0]} />
-          <Bar dataKey="agentic" fill={SCORE_COLORS.agentic} radius={[0, 2, 2, 0]} />
+          {isAll ? (
+            <>
+              <Bar dataKey="intelligence" fill={SCORE_COLORS.intelligence} radius={[0, 2, 2, 0]} name="智能" />
+              <Bar dataKey="coding" fill={SCORE_COLORS.coding} radius={[0, 2, 2, 0]} name="编程" />
+              <Bar dataKey="agentic" fill={SCORE_COLORS.agentic} radius={[0, 2, 2, 0]} name="智能体" />
+            </>
+          ) : (
+            <Bar dataKey="value" fill={activeColor} radius={[0, 3, 3, 0]} />
+          )}
         </BarChart>
       </ResponsiveContainer>
     </div>
