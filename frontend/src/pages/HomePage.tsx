@@ -5,7 +5,7 @@ import type { Article, CategoryKey, Top5Data } from '../types'
 import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
-import ModelLeaderboard from '../components/ModelLeaderboard'
+import { ModelLeaderboardPreview } from '../components/ModelLeaderboard'
 
 const CATEGORY_META: Record<CategoryKey, { name: string }> = {
   'AI Lab': { name: 'AI 实验室' },
@@ -228,8 +228,8 @@ export function HomePage() {
         <GithubTop5 data={top5} />
       )}
 
-      {/* Model Leaderboard */}
-      <ModelLeaderboard />
+      {/* Model Leaderboard Preview */}
+      <ModelLeaderboardPreview />
 
       {/* Articles by category */}
       <StaggerContainer className="space-y-8">
