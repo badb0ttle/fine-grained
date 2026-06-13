@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
         <NavLink to="/" className="font-semibold text-lg tracking-tight text-text-primary hover:text-accent transition-colors flex items-center gap-2">
           <FontAwesomeIcon icon={ICON.robot} className="text-accent" />
-          AI 情报站
+          AllOfAI
         </NavLink>
         <nav className="flex items-center gap-1 overflow-x-auto">
           {NAV_ITEMS.map(item => (

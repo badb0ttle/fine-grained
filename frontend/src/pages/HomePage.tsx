@@ -200,8 +200,8 @@ export function HomePage() {
       {/* Hero */}
       <FadeIn>
         <div className="text-center py-6">
-          <h1 className="text-3xl font-bold text-text-primary">AI 情报站</h1>
-          <p className="mt-2 text-text-secondary">每日全球 AI 技术动态 · 自动采集精选</p>
+          <h1 className="text-3xl font-bold text-text-primary">AllOfAI</h1>
+          <p className="mt-2 text-text-secondary">细粒度 · 每日全球 AI 技术动态</p>
           <div className="flex items-center justify-center gap-6 mt-3 text-sm text-text-muted">
             <span className="flex items-center gap-1">
               <FontAwesomeIcon icon={ICON.timeline} />

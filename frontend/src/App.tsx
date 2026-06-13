@@ -12,6 +12,7 @@ import { LeaderboardPage } from './pages/LeaderboardPage'
 import { TimelinePage } from './pages/TimelinePage'
 import { ClustersPage } from './pages/ClustersPage'
 import { WeeklyPage } from './pages/WeeklyPage'
+import { WeeklyDetailPage } from './pages/WeeklyDetailPage'
 
 import { ThemeProvider } from './components/ThemeToggle'
 
@@ -43,6 +44,7 @@ function AnimatedRoutes() {
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/clusters" element={<ClustersPage />} />
           <Route path="/weekly" element={<WeeklyPage />} />
+          <Route path="/weekly/:date" element={<WeeklyDetailPage />} />
         </Routes>
       </PageTransition>
     </AnimatePresence>

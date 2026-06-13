@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ICON } from '../lib/icons'
 import { FadeIn, ScrollReveal } from '../components/Animations'
@@ -25,7 +26,7 @@ export function WeeklyPage() {
             date: '2026-06-02',
             title: '本周 AI 大事记',
             summary: 'MiniMax M3 · Agent 规模化 · 基准测试危机 · 记忆机制',
-            url: `${import.meta.env.BASE_URL}data/weekly/2026-06-02.html`,
+            url: '',
           },
         ])
       })
@@ -63,10 +64,8 @@ export function WeeklyPage() {
         <div className="space-y-3">
           {reports.map((report, i) => (
             <ScrollReveal key={report.date} index={i}>
-              <a
-                href={report.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={`/weekly/${report.date}`}
                 className="block bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4">
@@ -83,7 +82,7 @@ export function WeeklyPage() {
                     <FontAwesomeIcon icon={ICON.arrowRight} className="text-text-muted group-hover:text-accent group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
-              </a>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
