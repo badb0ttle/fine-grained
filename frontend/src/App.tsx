@@ -13,6 +13,8 @@ import { TimelinePage } from './pages/TimelinePage'
 import { ClustersPage } from './pages/ClustersPage'
 import { WeeklyPage } from './pages/WeeklyPage'
 
+import { ThemeProvider } from './components/ThemeToggle'
+
 function SpaRedirect() {
   const navigate = useNavigate()
 
@@ -49,6 +51,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
+    <ThemeProvider>
     <ToastProvider>
       <div className="min-h-dvh flex flex-col">
         <ReadingProgress />
@@ -60,5 +63,6 @@ export default function App() {
         <BackToTop />
       </div>
     </ToastProvider>
+    </ThemeProvider>
   )
 }

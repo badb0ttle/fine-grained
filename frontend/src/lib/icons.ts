@@ -26,6 +26,8 @@ import {
   faArrowTrendDown,
   faArrowRight,
   faChevronDown,
+  faSun,
+  faMoon,
   type IconDefinition,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -71,6 +73,8 @@ export const ICON = {
   pen: faPenToSquare,
   flask: faFlask,
   thumbtack: faThumbtack,
+  sun: faSun,
+  moon: faMoon,
 } as const
 
 export type IconName = keyof typeof ICON

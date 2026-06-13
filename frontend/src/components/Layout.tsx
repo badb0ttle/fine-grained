@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { cn } from '../lib/utils'
 import { ICON } from '../lib/icons'
+import { useTheme } from './ThemeToggle'
 
 const NAV_ITEMS = [
   { to: '/', label: '首页', icon: ICON.home, end: true },
@@ -12,6 +13,8 @@ const NAV_ITEMS = [
 ]
 
 export function Header() {
+  const { theme, toggle } = useTheme()
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-md border-b border-border-default">
       <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between">
@@ -56,6 +59,13 @@ export function Header() {
           >
             GitHub
           </a>
+          <button
+            onClick={toggle}
+            className="ml-1 w-8 h-8 rounded-lg flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-bg-hover transition-colors"
+            aria-label={theme === 'dark' ? '切换浅色模式' : '切换深色模式'}
+          >
+            <FontAwesomeIcon icon={theme === 'dark' ? ICON.sun : ICON.moon} className="text-sm" />
+          </button>
         </nav>
       </div>
     </header>

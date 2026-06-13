@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { LatestData, Stats, TrendingData, ClusterData } from '../types'
+import type { LatestData, Stats, TrendingData, ClusterData, Top5Data } from '../types'
 
 const DATA_BASE = import.meta.env.BASE_URL
 
@@ -59,6 +59,20 @@ export function useClusters() {
 
   useEffect(() => {
     fetchJSON<ClusterData>('data/clusters.json')
+      .then(setData)
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [])
+
+  return { data, loading }
+}
+
+export function useTop5() {
+  const [data, setData] = useState<Top5Data | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchJSON<Top5Data>('data/github_top5.json')
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))

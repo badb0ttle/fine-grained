@@ -1,11 +1,10 @@
 import { useState, useEffect, useMemo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useLatest, useTrending } from '../hooks/useData'
-import type { Article, CategoryKey } from '../types'
+import { useLatest, useTrending, useTop5 } from '../hooks/useData'
+import type { Article, CategoryKey, Top5Data } from '../types'
 import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
-import { useToast } from '../components/Toast'
 
 const CATEGORY_META: Record<CategoryKey, { name: string }> = {
   'AI Lab': { name: 'AI 实验室' },
@@ -115,43 +114,6 @@ function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSea
   )
 }
 
-function FavButton({ link, title }: { link: string; title: string }) {
-  const [fav, setFav] = useState(() => {
-    try {
-      const f = JSON.parse(localStorage.getItem('ai_fav') || '[]')
-      return f.some((x: { link: string }) => x.link === link)
-    } catch { return false }
-  })
-  const { toast } = useToast()
-
-  const toggle = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const f = JSON.parse(localStorage.getItem('ai_fav') || '[]')
-    const idx = f.findIndex((x: { link: string }) => x.link === link)
-    if (idx >= 0) {
-      f.splice(idx, 1)
-      setFav(false)
-      toast('已取消收藏', 'info')
-    } else {
-      f.unshift({ link, title: (title || '').slice(0, 80), ts: Date.now() })
-      setFav(true)
-      toast('已收藏 ⭐', 'success')
-    }
-    localStorage.setItem('ai_fav', JSON.stringify(f.slice(0, 100)))
-  }
-
-  return (
-    <button
-      onClick={toggle}
-      className={`text-base hover:scale-110 active:scale-95 transition-transform ${fav ? 'text-amber drop-shadow-[0_0_4px_rgba(240,160,80,0.5)]' : 'text-text-muted'}`}
-      title="收藏"
-    >
-      <FontAwesomeIcon icon={ICON.star} />
-    </button>
-  )
-}
-
 function ArticleCard({ article, index = 0 }: { article: Article; index?: number }) {
   const title = article.title_cn || article.title
   const summary = article.summary_cn || article.summary
@@ -170,7 +132,7 @@ function ArticleCard({ article, index = 0 }: { article: Article; index?: number 
   return (
     <ScrollReveal index={index}>
       <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group">
-        <div className="flex items-start justify-between gap-2">
+        <div className="flex items-start gap-2">
           <a
             href={article.link}
             target="_blank"
@@ -183,7 +145,6 @@ function ArticleCard({ article, index = 0 }: { article: Article; index?: number 
             )}
             {title}
           </a>
-          <FavButton link={article.link} title={title || ''} />
         </div>
         <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
           {article.category && (
@@ -212,6 +173,7 @@ function ArticleCard({ article, index = 0 }: { article: Article; index?: number 
 export function HomePage() {
   const { data, loading, error } = useLatest()
   const { data: trending } = useTrending()
+  const { data: top5 } = useTop5()
   const search = useSearch()
 
   if (loading) return <HomePageSkeleton />
@@ -259,6 +221,11 @@ export function HomePage() {
           </div>
         </div>
       </FadeIn>
+
+      {/* GitHub AI Top 5 */}
+      {top5 && top5.repos && top5.repos.length > 0 && (
+        <GithubTop5 data={top5} />
+      )}
 
       {/* Articles by category */}
       <StaggerContainer className="space-y-8">
@@ -371,6 +338,89 @@ function ContinueReading() {
               {item.title}
             </a>
           ))}
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
+
+function GithubTop5({ data }: { data: Top5Data }) {
+  const [expanded, setExpanded] = useState<number | null>(null)
+
+  return (
+    <FadeIn delay={0.08}>
+      <section>
+        <div className="flex items-center gap-2 mb-3">
+          <FontAwesomeIcon icon={ICON.star} className="text-amber" />
+          <h2 className="text-lg font-semibold text-text-primary">
+            GitHub AI 开源项目 · Top 5
+          </h2>
+          <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
+            按 Star 排序
+          </span>
+        </div>
+        <div className="space-y-2">
+          {data.repos.map((repo, i) => {
+            const isOpen = expanded === i
+            return (
+              <ScrollReveal key={repo.full_name} index={i}>
+                <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : i)}
+                    className="w-full text-left p-4 flex items-start gap-3"
+                  >
+                    <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-accent-muted flex items-center justify-center text-sm font-bold text-accent tabular-nums">
+                      {i + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-medium text-[15px] text-text-primary">
+                          <span className="text-text-muted font-normal">{repo.owner}/</span>
+                          {repo.name}
+                        </span>
+                        {repo.language && (
+                          <span className="text-xs px-1.5 py-0.5 rounded bg-bg-secondary text-text-muted">{repo.language}</span>
+                        )}
+                      </div>
+                      <p className="mt-1 text-sm text-text-secondary line-clamp-1">{repo.description}</p>
+                      <div className="mt-1.5 flex items-center gap-3 text-xs text-text-muted">
+                        <span className="flex items-center gap-1">
+                          <FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" />
+                          {repo.stars_formatted}
+                        </span>
+                        <span>Fork {repo.forks.toLocaleString()}</span>
+                      </div>
+                    </div>
+                    <FontAwesomeIcon
+                      icon={ICON.chevronDown}
+                      className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-4 pb-4 pl-14">
+                      <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
+                        <FontAwesomeIcon icon={ICON.robot} className="mr-1.5 text-accent/60" />
+                        {repo.summary}
+                      </div>
+                      <a
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 mt-2 text-xs text-accent hover:text-accent-hover transition-colors"
+                      >
+                        在 GitHub 上查看
+                        <FontAwesomeIcon icon={ICON.arrowRight} className="text-[10px]" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            )
+          })}
         </div>
       </section>
     </FadeIn>

@@ -85,3 +85,25 @@ export interface LatestData {
 }
 
 export type CategoryKey = 'AI Lab' | 'Paper' | '中文媒体' | 'Blog' | 'Community' | 'Discussion' | string
+
+// GitHub Top 5
+export interface Top5Repo {
+  full_name: string
+  name: string
+  owner: string
+  description: string
+  url: string
+  stars: number
+  stars_formatted: string
+  forks: number
+  language: string
+  topics: string[]
+  summary: string
+  updated_at: string
+}
+
+export interface Top5Data {
+  generated_at: string
+  repos: Top5Repo[]
+}
+

@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+/* ---- Theme tokens (must be declared in @theme for Tailwind v4) ---- */
 @theme {
-  --color-bg-primary: #050508;
-  --color-bg-secondary: #0a0b14;
-  --color-bg-card: #0e0f1a;
-  --color-bg-elevated: #12141f;
-  --color-bg-hover: #1a1c2b;
-  --color-border-default: #1e2033;
-  --color-border-muted: #161825;
-  --color-text-primary: #e8e9f0;
-  --color-text-secondary: #9898b0;
-  --color-text-muted: #686880;
-  --color-accent: #6C5CE7;
-  --color-accent-hover: #7d6ff0;
-  --color-accent-muted: rgba(108, 92, 231, 0.12);
-  --color-green: #00b894;
-  --color-amber: #f0a050;
-  --color-red: #e17055;
-  --color-blue: #74b9ff;
-  --color-pink: #fd79a8;
+  --color-bg-primary: var(--_bg-primary);
+  --color-bg-secondary: var(--_bg-secondary);
+  --color-bg-card: var(--_bg-card);
+  --color-bg-elevated: var(--_bg-elevated);
+  --color-bg-hover: var(--_bg-hover);
+  --color-border-default: var(--_border-default);
+  --color-border-muted: var(--_border-muted);
+  --color-text-primary: var(--_text-primary);
+  --color-text-secondary: var(--_text-secondary);
+  --color-text-muted: var(--_text-muted);
+  --color-accent: var(--_accent);
+  --color-accent-hover: var(--_accent-hover);
+  --color-accent-muted: var(--_accent-muted);
+  --color-green: var(--_green);
+  --color-amber: var(--_amber);
+  --color-red: var(--_red);
+  --color-blue: var(--_blue);
+  --color-pink: var(--_pink);
   --font-display: 'Fira Sans', 'Inter', system-ui, sans-serif;
   --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* ---- Dark mode (default) ---- */
+:root {
+  --_bg-primary: #050508;
+  --_bg-secondary: #0a0b14;
+  --_bg-card: #0e0f1a;
+  --_bg-elevated: #12141f;
+  --_bg-hover: #1a1c2b;
+  --_border-default: #1e2033;
+  --_border-muted: #161825;
+  --_text-primary: #e8e9f0;
+  --_text-secondary: #9898b0;
+  --_text-muted: #686880;
+  --_accent: #6C5CE7;
+  --_accent-hover: #7d6ff0;
+  --_accent-muted: rgba(108, 92, 231, 0.12);
+  --_green: #00b894;
+  --_amber: #f0a050;
+  --_red: #e17055;
+  --_blue: #74b9ff;
+  --_pink: #fd79a8;
+}
+
+/* ---- Light mode ---- */
+:root.light {
+  --_bg-primary: #f5f6fa;
+  --_bg-secondary: #ffffff;
+  --_bg-card: #ffffff;
+  --_bg-elevated: #f8f9fc;
+  --_bg-hover: #edf0f7;
+  --_border-default: #e2e5ee;
+  --_border-muted: #eef0f6;
+  --_text-primary: #1a1a2e;
+  --_text-secondary: #5a5a72;
+  --_text-muted: #9090a8;
+  --_accent: #5a4bd1;
+  --_accent-hover: #6b5ce7;
+  --_accent-muted: rgba(90, 75, 209, 0.1);
+  --_green: #00997a;
+  --_amber: #d48530;
+  --_red: #c0392b;
+  --_blue: #4a90d9;
+  --_pink: #c94d7c;
 }
 
 @layer base {
@@ -29,14 +74,15 @@
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-border-default) transparent;
+    scrollbar-color: var(--_border-default) transparent;
   }
   body {
     @apply bg-bg-primary text-text-primary font-sans antialiased;
     font-family: var(--font-display);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   ::selection {
-    background: var(--color-accent-muted);
+    background: var(--_accent-muted);
   }
 }
 
