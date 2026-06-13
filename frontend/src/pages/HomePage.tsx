@@ -229,7 +229,6 @@ export function HomePage() {
             <span className="bg-bg-secondary px-2.5 py-1 rounded-full">Hacker News / Reddit</span>
             <span className="bg-bg-secondary px-2.5 py-1 rounded-full">GitHub Trending</span>
             <span className="bg-bg-secondary px-2.5 py-1 rounded-full">中文 AI 媒体</span>
-            <span className="text-accent cursor-pointer hover:underline" onClick={() => {}}>+ 更多</span>
           </div>
           <div className="mt-6 flex justify-center">
             <SearchBar {...search} />
