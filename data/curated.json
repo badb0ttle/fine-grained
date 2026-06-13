@@ -1,62 +1,62 @@
 [
   {
+    "id": 2421,
+    "title_cn": "小米开源 MiMo Code：在超长任务上击败 Claude Code 的 AI 编程工具",
+    "summary_cn": "小米 MiMo AI 团队开源终端原生 AI 编程助手 MiMo Code V0.1.0，在 200+ 步超长 agentic 编程任务上超越 Anthropic 的 Claude Code。这一来自中国厂商的编程 Agent 展示了开源社区在代码智能体领域的快速追赶。",
+    "why_it_matters": "国产开源 AI 编程工具首次在复杂任务上超越 Claude Code，对开发者工具生态产生冲击"
+  },
+  {
     "id": 1758,
-    "title_cn": "DPO 对话微调实证研究",
-    "summary_cn": "系统性研究使用 Direct Preference Optimization (DPO) 微调大语言模型的实验方案，对比不同超参数和训练策略对对话质量的影响，为 LLM 对话微调提供实用指南。",
-    "why_it_matters": "DPO 是当前最主流的 LLM 对齐方法，本文提供的实证结论可直接指导生产级微调。"
-  },
-  {
-    "id": 1700,
-    "title_cn": "ToolSense：LLM 工具知识诊断框架",
-    "summary_cn": "提出 ToolSense 诊断框架，系统审计大语言模型对工具 API 的参数化知识掌握程度，揭示 embedding 检索在处理大规模工具目录时的关键瓶颈并提出改进方向。",
-    "why_it_matters": "Agent 工具调用是 2026 年核心方向，诊断工具知识盲区对构建可靠 Agent 系统至关重要。"
-  },
-  {
-    "id": 1479,
-    "title_cn": "基于不确定性对齐的 Agent 工具调用决策",
-    "summary_cn": "利用不确定性对齐的强化学习方法优化 LLM Agent 的工具调用决策，减少不支持的工具调用和幻觉式直接回答，提升 Agent 在复杂任务中的可靠性。",
-    "why_it_matters": "解决 Agent 工具调用中的幻觉问题，直接提升 AI Agent 在实际部署中的可用性。"
-  },
-  {
-    "id": 1483,
-    "title_cn": "MacArena：macOS 计算机使用 Agent 基准",
-    "summary_cn": "提出 MacArena 基准测试，在在线 macOS 环境中评估计算机使用 Agent (CUA) 的视觉理解和 GUI 操控能力，覆盖多步骤桌面操作任务。",
-    "why_it_matters": "计算机使用 Agent 是 2026 年最热门方向之一，该基准为评估 CUA 能力提供了标准化测试平台。"
+    "title_cn": "DPO 微调聊天机器人：一项实证研究",
+    "summary_cn": "对使用 Direct Preference Optimization（DPO）微调大型语言模型进行系统实证研究，覆盖多种模型规模和训练策略，为聊天机器人对齐提供可复现的训练配方和最佳实践。",
+    "why_it_matters": "DPO 是 RLHF 的低成本替代方案，这项研究为实际部署提供了宝贵经验"
   },
   {
     "id": 1713,
-    "title_cn": "AI Agent 科学发现能力基准测试",
-    "summary_cn": "构建跨尺度科学挑战基准，系统评估 AI Agent 在真实科研环境中的实验设计、数据分析和假设验证能力，揭示当前 Agent 在科学发现中的实际水平。",
-    "why_it_matters": "AI for Science 是长期趋势，该基准帮助量化 Agent 在科学发现中的真实进展。"
+    "title_cn": "AI Agent 解决跨尺度科学挑战基准评测",
+    "summary_cn": "系统评估 AI Agent 在真实科研场景中的实际能力，覆盖从分子到宇宙的多尺度科学问题，揭示当前 AI 科学发现智能体的能力边界和关键短板。",
+    "why_it_matters": "首次全面评测 AI 科学 Agent 的实战能力，为 AI4Science 落地提供方向指引"
   },
   {
-    "id": 1719,
-    "title_cn": "MLUBench：多模态 LLM 终身遗忘评估",
-    "summary_cn": "提出 MLUBench 基准测试，评估多模态大语言模型在执行数据遗忘（unlearning）后的能力保留与遗忘效果，应对数据隐私合规需求。",
-    "why_it_matters": "数据遗忘是 AI 合规的核心需求，该基准为多模态模型的隐私保护能力提供了标准化评估。"
+    "id": 1700,
+    "title_cn": "ToolSense：审计 LLM 参数化工具知识的诊断框架",
+    "summary_cn": "提出 ToolSense 框架诊断 LLM 内部存储的工具知识质量，发现当前基于嵌入的工具检索存在系统性瓶颈，工具的语义与功能描述之间存在显著鸿沟。",
+    "why_it_matters": "揭示 LLM Agent 工具调用的根本限制，指导更可靠的 Agent 系统设计"
   },
   {
-    "id": 95,
-    "title_cn": "LazyAttention：延迟位置编码的高效 RAG",
-    "summary_cn": "提出 LazyAttention 技术，通过延迟位置编码减少 RAG 场景下 KV 缓存的重复计算，显著提升长上下文推理效率，降低显存占用。",
-    "why_it_matters": "RAG 系统普遍存在推理效率瓶颈，该技术可降低生产环境的推理成本和延迟。"
+    "id": 1757,
+    "title_cn": "小型 LLM 在生物医学声明验证中的高效微调",
+    "summary_cn": "探索小型语言模型在生物医学声明验证任务上的成本效益微调策略，发现结构化数据集捷径可显著提升小模型性能，跨领域泛化能力接近 GPT-4o 水平。",
+    "why_it_matters": "小模型在专业医疗领域的性价比突破，降低 AI 辅助诊断的部署门槛"
   },
   {
-    "id": 1709,
-    "title_cn": "面向部署的临床 LLM 拒绝风险评估",
-    "summary_cn": "提出面向实际部署的评估方法，预测临床 LLM 系统在查询级别的拒答风险，确保医疗 AI 系统在安全边界内运行，避免高风险场景的误判。",
-    "why_it_matters": "医疗 AI 部署安全是生死攸关的问题，该评估方法为临床 LLM 上线提供了安全保障。"
+    "id": 1483,
+    "title_cn": "MacArena：在线 macOS 环境下的 Computer Use Agent 基准",
+    "summary_cn": "提出 MacArena 基准，在真实 macOS 环境中评估 Computer Use Agent（CUA）的 GUI 操作能力，覆盖文件管理、浏览器操作、系统设置等 50+ 种交互任务。",
+    "why_it_matters": "首个真实 macOS 环境 Agent 评测基准，推动桌面级 AI 助手走向实用"
   },
   {
-    "id": 1506,
-    "title_cn": "人类对 AI 的真实需求：偏好多样性图谱",
-    "summary_cn": "大规模调研人类对 AI 的真实偏好，揭示不同人群对 AI 行为的期望存在显著差异，挑战单一 RLHF 对齐范式的普适性，呼吁多元对齐策略。",
-    "why_it_matters": "RLHF 对齐假设统一偏好，本文揭示的偏好多样性对产品设计和模型训练有直接指导意义。"
+    "id": 1481,
+    "title_cn": "FAIR-Calib：扩散 LLM 的后训练量化校准方法",
+    "summary_cn": "针对扩散大语言模型（dLLM）的「稳定性滞后」问题，提出前沿感知的校准方法，在保持生成质量的同时大幅降低推理成本，为 dLLM 部署扫清关键障碍。",
+    "why_it_matters": "dLLM 是 LLM 新范式，量化是落地的关键——这项工作解决核心瓶颈"
   },
   {
     "id": 58,
-    "title_cn": "AgentJet：分布式 Agent 强化学习训练框架",
-    "summary_cn": "提出 AgentJet 分布式群体训练框架，支持大规模 LLM Agent 的强化学习训练，解决集中式框架的扩展瓶颈，实现多 Agent 并行探索和策略共享。",
-    "why_it_matters": "大规模 Agent 训练基础设施是 Agent 能力规模化的关键瓶颈，该框架填补了工程空白。"
+    "title_cn": "AgentJet：Agentic RL 的灵活群体训练框架",
+    "summary_cn": "提出 AgentJet 分布式群体训练框架，支持多个 LLM Agent 并行探索、竞争与合作，显著提升稀疏奖励场景下的 RL 训练效率和策略质量。",
+    "why_it_matters": "多 Agent 并行 RL 训练框架，加速从单 Agent 到群体智能的跃迁"
+  },
+  {
+    "id": 95,
+    "title_cn": "LazyAttention：延迟位置编码的高效 RAG 推理",
+    "summary_cn": "提出 LazyAttention 方法，通过延迟位置编码计算优化 RAG 场景下的 KV 缓存管理，在保持检索增强质量的同时大幅降低长上下文推理的显存和延迟开销。",
+    "why_it_matters": "RAG 推理效率的实用优化，直接降低生产环境中 LLM 服务的 TCO"
+  },
+  {
+    "id": 1479,
+    "title_cn": "基于不确定性对齐强化学习的 Agent 工具调用决策",
+    "summary_cn": "通过不确定性对齐的强化学习优化 LLM Agent 的工具调用决策，减少幻觉式直接回答和不支持的无效工具调用，提升 Agent 在复杂多步任务中的可靠性。",
+    "why_it_matters": "解决 Agent 执行中最头疼的工具误用问题，让 AI Agent 更可靠地完成任务"
   }
 ]

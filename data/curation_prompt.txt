@@ -68,47 +68,46 @@ Abstract: AI agents are increasingly being developed to accelerate scientific di
     Summary: arXiv:2606.12809v1 Announce Type: new 
 Abstract: Multimodal large language models (MLLMs) are trained on massive multimodal data, making data unlearning increasingly important as data owners may reque
 
-[12] [DB ID: 116] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+[12] [DB ID: 2421] [82.0] Title: Xiaomi's new open source, agentic AI coding harness MiMo Code beats Claude Code at ultra-long, 200+ step tasks
+    Source: VentureBeat AI | 2026-06-11 23:14:00
+    Summary: Xiaomi&#x27;s MiMo AI team has open-sourced MiMo Code V0.1.0, a terminal-native AI coding assistant that the Chinese electronics giant says outperforms Anthropic&#x27;s Claude Code on key agentic codi
+
+[13] [DB ID: 116] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
     Source: ArXiv cs.CV | 2026-06-04 04:00:00
     Summary: arXiv:2606.04282v1 Announce Type: new 
 Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
 
-[13] [DB ID: 95] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+[14] [DB ID: 95] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
     Source: ArXiv cs.CL | 2026-06-04 04:00:00
     Summary: arXiv:2606.04302v1 Announce Type: new 
 Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
 
-[14] [DB ID: 1493] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
+[15] [DB ID: 1493] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06673v1 Announce Type: new 
 Abstract: Sparse rewards and heterogeneous task sequences remain persistent challenges in Reinforcement Learning (RL), often resulting in slow convergence, weak 
 
-[15] [DB ID: 1709] [80.3] Title: Deployment-Centered Evaluation: Predicting Query-Level Rejection Risk in a Clinical LLM System
+[16] [DB ID: 1709] [80.3] Title: Deployment-Centered Evaluation: Predicting Query-Level Rejection Risk in a Clinical LLM System
     Source: ArXiv cs.AI | 2026-06-12 04:00:00
     Summary: arXiv:2606.12702v1 Announce Type: new 
 Abstract: Large language models (LLMs) are increasingly integrated into clinical systems, making it essential to evaluate the real-world utility of these systems
 
-[16] [DB ID: 58] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+[17] [DB ID: 58] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
     Source: ArXiv cs.AI | 2026-06-04 04:00:00
     Summary: arXiv:2606.04484v1 Announce Type: new 
 Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
 
-[17] [DB ID: 1535] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
+[18] [DB ID: 1535] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
     Source: ArXiv cs.CV | 2026-06-08 04:00:00
     Summary: arXiv:2606.06709v1 Announce Type: new 
 Abstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and d
 
-[18] [DB ID: 1548] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
+[19] [DB ID: 1548] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
     Source: ArXiv stat.ML | 2026-06-08 04:00:00
     Summary: arXiv:2606.06742v1 Announce Type: cross 
 Abstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression,
 
-[19] [DB ID: 1506] [79.4] Title: What Do People Actually Want From AI? Mapping Preference Plurality
+[20] [DB ID: 1506] [79.4] Title: What Do People Actually Want From AI? Mapping Preference Plurality
     Source: ArXiv cs.CL | 2026-06-08 04:00:00
     Summary: arXiv:2606.06674v1 Announce Type: new 
 Abstract: Large Language Models (LLMs) are often fine-tuned through Reinforcement Learning from Human Feedback (RLHF) to align with people's preferences and valu
-
-[20] [DB ID: 1121] [79.4] Title: What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems
-    Source: ArXiv cs.AI | 2026-06-06 04:00:00
-    Summary: arXiv:2606.05304v1 Announce Type: new 
-Abstract: Multi-agent systems (MAS) built on large language models are typically organized around roles, pipelines, and turn schedules, while the content that ag

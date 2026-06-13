@@ -12,53 +12,52 @@
 ]
 
 论文列表：
-[ID=1756] Paper: LoHoSearch: Benchmarking Long-Horizon Search Agents Beyond the Human Difficulty Ceiling
-    ArXiv: 2606.12837
-    Abstract: arXiv:2606.12837v1 Announce Type: new 
-Abstract: Search agent benchmarks exemplified by BrowseComp have rapidly saturated over the past year, with the strongest models surpassing 90% accuracy. Since these benchmarks are predominantly human-authored, annotators lack a global perspective on entity statistics and cannot systematically maximize search space size and structural complexity. This creates
+[ID=1751] Paper: Rigel: Reverse-Engineering the Metal 4.1 Tensor Compute Path on the Apple M4 Max GPU
+    ArXiv: 2606.12765
+    Abstract: arXiv:2606.12765v1 Announce Type: new 
+Abstract: Apple's Metal 4.1 exposes a tensor compute path: the Metal Performance Primitives (MPP) matmul2d operation over cooperative_tensor fragments, whose interface is documented but whose hardware behavior is deliberately hidden. The specification states which data-type rows are supported, never whether they are hardware-accelerated, where the operation p
 
-[ID=1735] Paper: RoVE: Rotary Value Embeddings Attention for Relative Position-dependent Value Pathways
-    ArXiv: 2606.11275
-    Abstract: arXiv:2606.11275v1 Announce Type: new 
-Abstract: Rotary Position Embeddings (RoPE) make attention scores position-relative but leave the value pathway position-blind: the message sent by a value token is the same regardless of its distance from the query. We propose RoVE, a parameter-free modification that makes values position-sensitive by rotating them simultaneously with keys, and show that it 
+[ID=1752] Paper: How Fine-Grained Should a RAG Benchmark Be? A Hierarchical Framework for Synthetic Question Generation
+    ArXiv: 2606.12789
+    Abstract: arXiv:2606.12789v1 Announce Type: new 
+Abstract: Evaluating retrieval-augmented generation (RAG) systems requires benchmarks that capture diverse question characteristics, yet practitioners lack empirical guidance on which dimensions to vary and at what granularity. We present HieraRAG, a hierarchical framework for studying granularity in RAG benchmark construction, defining optimal granularity as
 
-[ID=1738] Paper: FlowBank: Query-Adaptive Agentic Workflows Optimization through Precompute-and-Reuse
-    ArXiv: 2606.11290
-    Abstract: arXiv:2606.11290v1 Announce Type: new 
-Abstract: Large Language Model (LLM)-based multi-agent systems are increasingly powerful, but current agentic workflow optimization paradigms make an unsatisfying trade-off. Task-level methods spend substantial offline compute yet deploy only a single workflow, leaving complementary candidates unused, while query-level methods synthesize a new workflow per qu
+[ID=1523] Paper: WorldBench: A Challenging and Visually Diverse Multimodal Reasoning Benchmark
+    ArXiv: 2606.06538
+    Abstract: arXiv:2606.06538v1 Announce Type: new 
+Abstract: In real-world applications, models are expected to perform reliably across diverse settings. Yet, many existing multimodal benchmarks expand task types without capturing the visual diversity needed to handle open-ended visual inputs. We present WorldBench, a challenging and visually diverse reasoning benchmark to evaluate Multimodal Large Language M
 
-[ID=1729] Paper: PermDoRA -- Understanding Adapter Interference in Language Models: Limits of Parameter-Space Geometry
-    ArXiv: 2606.11262
-    Abstract: arXiv:2606.11262v1 Announce Type: new 
-Abstract: Access control in large language models (LLMs) requires modular mechanisms to enable domain-specific behavior without retraining or cross-domain interference. A common hypothesis is that interference during adapter composition arises from overlap in linear parameter updates, suggesting that enforcing orthogonality or directional independence should 
+[ID=1559] Paper: Predictable Compression Failures: Order Sensitivity and Information Budgeting for Evidence-Grounded Binary Adjudication
+    ArXiv: 2509.11208
+    Abstract: arXiv:2509.11208v3 Announce Type: replace 
+Abstract: Transformers used for evidence-grounded binary adjudication (e.g., support/refute, yes/no, or verifier-backed pass/fail decisions) can be sensitive to the order in which exchangeable evidence is presented, producing dispersion across permutations and unreliable attempted answers under a verifier-relative Bernoulli predicate. We treat evidence or
 
-[ID=1541] Paper: Generalization in Deep Neural Networks: Minimax Rates for Gradient Methods
-    ArXiv: 2606.06772
-    Abstract: arXiv:2606.06772v1 Announce Type: new 
-Abstract: Understanding the generalization performance of over-parameterized neural networks has become a central topic in deep learning theory. While recent advances, particularly works under the Neural Tangent Kernel (NTK) regime, have shed light on the behavior of shallow architectures, the statistical generalization properties of deep neural networks (DNN
+[ID=1763] Paper: Analyzing and Improving Fine-grained Preference Optimization in Medical LVLMs
+    ArXiv: 2606.12590
+    Abstract: arXiv:2606.12590v1 Announce Type: new 
+Abstract: Large Vision-Language Models (LVLMs) have achieved strong performance across medical imaging tasks, yet they remain prone to factual inconsistencies, poor visual grounding, and misalignment with clinically meaningful feedback. Existing post-training alignment approaches, including Direct Preference Optimization (DPO) and its variants, face three cri
 
-[ID=1484] Paper: WAV: Multi-Resolution Block Residual Routing for Deep Decoder-Only Transformers
-    ArXiv: 2606.06564
-    Abstract: arXiv:2606.06564v1 Announce Type: new 
-Abstract: Residual connections are central to training deep Transformers, but standard PreNorm residual streams aggregate sublayer updates with fixed unit weights. Recent Attention Residuals replace this fixed accumulation with content-dependent depth-wise routing, and Block Attention Residuals make the mechanism efficient by routing over block-level residual
+[ID=1789] Paper: Physics-Informed Neural Networks for Chemotherapy Pharmacokinetics: Benchmarking the Clinical Estimator and Exposing Parameter Identifiability
+    ArXiv: 2606.12658
+    Abstract: arXiv:2606.12658v1 Announce Type: cross 
+Abstract: Physics-Informed Neural Networks (PINNs) are an attractive tool for partial-observation problems in biology, where the governing dynamics are known but some compartments cannot be measured. Chemotherapy pharmacokinetics (PK) is a clean instance: drug concentration in plasma is routinely measured, but concentration in tissue -- which determines tum
 
-[ID=1509] Paper: Data-Efficient Autoregressive-to-Diffusion Language Models via On-Policy Distillation
-    ArXiv: 2606.06712
-    Abstract: arXiv:2606.06712v1 Announce Type: new 
-Abstract: We study the transformation of autoregressive models (ARLMs) into diffusion language models (DLMs). Rather than pretraining from scratch, prior work replaces the causal attention in ARLMs with bidirectional attention and then trains the resulting model using a DLM objective. However, these approaches incur two distribution shifts. First, transitioni
+[ID=1702] Paper: Strategic Decision Support for AI Agents
+    ArXiv: 2606.12587
+    Abstract: arXiv:2606.12587v1 Announce Type: new 
+Abstract: Traditionally, decision support studies how humans use machine learning models to make better decisions. In modern agentic systems, this division of roles is increasingly reversed: AI agents act on behalf of users, while humans and tools becomes support mechanisms around them. This role reversal brings reliability concerns to the forefront, since ag
 
-[ID=1518] Paper: TA-RAG: Tone-Aware Retrieval-Augmented Generation for Peer-Support Health Communication
-    ArXiv: 2606.06794
-    Abstract: arXiv:2606.06794v1 Announce Type: new 
-Abstract: Retrieval-augmented generation (RAG) successfully grounds large language model (LLM) outputs in trusted documents, but factual grounding alone is insufficient for sensitive peer-support health communication. In domains such as HIV peer support, responses must also be accessible, stigma-free, empathetic, and tailored to the recipient. This paper pres
+[ID=1704] Paper: PersonaDrive: Human-Style Retrieval-Augmented VLA Agents for Closed-Loop Driving Simulation
+    ArXiv: 2606.12616
+    Abstract: arXiv:2606.12616v1 Announce Type: new 
+Abstract: Closed-loop driving simulators typically populate their environments with non-ego traffic agents that behave largely the same way, produced either by rule-based traffic managers or by learned models trained toward a single behavioral mode. Recent work introduces style variation through post-hoc labels on observational data or LLM-inferred reward wei
 
-[ID=1707] Paper: Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents
-    ArXiv: 2606.12674
-    Abstract: arXiv:2606.12674v1 Announce Type: new 
-Abstract: Compact language models (LMs) reduce cost, latency, and deployment risk for tool agents. Yet MCP-style tool use requires more than isolated function calling: an agent must discover tools from live catalogs, satisfy schemas, preserve dependencies across intermediate outputs, and ground final responses in executed evidence. Small planners often genera
+[ID=1739] Paper: Learning from almost nothing: How neural networks survive heavy input corruption
+    ArXiv: 2606.11319
+    Abstract: arXiv:2606.11319v1 Announce Type: new 
+Abstract: Learning from imperfect data is a central theme in machine learning, connecting practical questions of robustness to fundamental questions of learnability. Here we examine attribute noise: learning from corrupted inputs while keeping the labels intact, a setting that has received considerably less analytical attention than its label-noise counterpar
 
-[ID=1716] Paper: Constructing Evaluation Datasets for Procedural Reasoning: Balancing Naturalness, Grounding, and Multi-Hop Coverage
-    ArXiv: 2606.12767
-    Abstract: arXiv:2606.12767v1 Announce Type: new 
-Abstract: Evaluating procedural reasoning in AI-supported learning systems requires question-answer datasets that are both learner-like and grounded in the instructional knowledge the system is expected to use. We study how TMK-based question generation strategies affect dataset quality for procedural and multi-hop reasoning.
-  We compare three strategies: st
+[ID=1528] Paper: Architecture-Adaptive Uncertainty Fusion for Deepfake Detection
+    ArXiv: 2606.06666
+    Abstract: arXiv:2606.06666v1 Announce Type: new 
+Abstract: Deepfake detection systems achieve near-perfect accuracy on benchmarks, yet forensic deployment demands reliable prediction uncertainty. Existing uncertainty quantification (UQ) methods rely on single sources and ignore that optimal uncertainty composition varies across architectures. We propose Correlation-Optimized Fusion (COF), an architecture-ad
