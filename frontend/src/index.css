@@ -26,7 +26,7 @@
 
 /* ---- Dark mode (default) ---- */
 :root {
-  --_bg-primary: #050508;
+  --_bg-primary: rgba(5, 5, 8, 0.90);
   --_bg-secondary: #0a0b14;
   --_bg-card: #0e0f1a;
   --_bg-elevated: #12141f;
@@ -48,7 +48,7 @@
 
 /* ---- Light mode ---- */
 :root.light {
-  --_bg-primary: #f5f6fa;
+  --_bg-primary: rgba(245, 246, 250, 0.88);
   --_bg-secondary: #ffffff;
   --_bg-card: #ffffff;
   --_bg-elevated: #f8f9fc;

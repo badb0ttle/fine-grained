@@ -6,6 +6,7 @@ import { PageTransition } from './components/Animations'
 import { ReadingProgress } from './components/ReadingProgress'
 import { BackToTop } from './components/BackToTop'
 import { ToastProvider } from './components/Toast'
+import ParticleBackground from './components/ParticleBackground'
 import { HomePage } from './pages/HomePage'
 import { DashboardPage } from './pages/DashboardPage'
 import { LeaderboardPage } from './pages/LeaderboardPage'
@@ -55,10 +56,11 @@ export default function App() {
   return (
     <ThemeProvider>
     <ToastProvider>
-      <div className="min-h-dvh flex flex-col">
+      <div className="min-h-dvh flex flex-col relative">
+        <ParticleBackground />
         <ReadingProgress />
         <Header />
-        <main className="flex-1 mx-auto w-full max-w-6xl px-4 pt-20 pb-8">
+        <main className="flex-1 mx-auto w-full max-w-6xl px-4 pt-20 pb-8 relative z-10">
           <AnimatedRoutes />
         </main>
         <Footer />
