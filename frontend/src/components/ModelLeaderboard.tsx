@@ -6,21 +6,59 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { useLeaderboard } from '../hooks/useData'
 import type { LeaderboardModel } from '../types'
 import { ScrollReveal, FadeIn } from './Animations'
+import { useLocale, type Locale } from '../lib/LocaleContext'
 
 type Tab = 'all' | 'vision' | 'coding' | 'reasoning'
 
-const TABS: { key: Tab; label: string; icon: typeof faTrophy }[] = [
-  { key: 'all', label: '全部', icon: faTrophy },
-  { key: 'vision', label: '视觉', icon: faEye },
-  { key: 'coding', label: '编程', icon: faCode },
-  { key: 'reasoning', label: '推理', icon: faBrain },
-]
+const TAB_KEYS: Tab[] = ['all', 'vision', 'coding', 'reasoning']
+
+const TAB_LABELS: Record<Tab, { zh: string; en: string }> = {
+  all:       { zh: '全部', en: 'All' },
+  vision:    { zh: '视觉', en: 'Vision' },
+  coding:    { zh: '编程', en: 'Coding' },
+  reasoning: { zh: '推理', en: 'Reasoning' },
+}
+
+const TAB_ICONS: Record<Tab, typeof faTrophy> = {
+  all:       faTrophy,
+  vision:    faEye,
+  coding:    faCode,
+  reasoning: faBrain,
+}
+
+type ChartMode = 'all' | 'intelligence' | 'coding' | 'agentic'
+const CHART_MODE_LABELS: Record<ChartMode, { zh: string; en: string }> = {
+  all:          { zh: '综合对比', en: 'All Dimensions' },
+  intelligence: { zh: '智能',     en: 'Intelligence' },
+  coding:       { zh: '编程',     en: 'Coding' },
+  agentic:      { zh: '智能体',   en: 'Agentic' },
+}
+
+const CHART_MODE_COLORS: Record<ChartMode, string> = {
+  all: '', intelligence: '#6C5CE7', coding: '#00b894', agentic: '#f0a050',
+}
 
 const SCORE_COLORS = {
   intelligence: '#6C5CE7',
   coding: '#00b894',
   agentic: '#f0a050',
   elo: '#74b9ff',
+}
+
+const L = {
+  modelLeaderboard:   { zh: 'AI 模型排行榜',     en: 'AI Model Leaderboard' },
+  dataSource:         { zh: '数据来源 OpenRouter + Artificial Analysis · 每日更新 · ', en: 'Data: OpenRouter + Artificial Analysis · Updated daily · ' },
+  models_:            { zh: ' 个模型',            en: ' models' },
+  searchPlaceholder:  { zh: '搜索模型或机构...',   en: 'Search models or providers...' },
+  noMatch:            { zh: '没有匹配的模型',       en: 'No matching models' },
+  noData:             { zh: '暂无数据',             en: 'No data' },
+  showingNofM:        { zh: ' 显示前 50 个，共 ',  en: ' Showing top 50 of ' },
+  _matchModels:       { zh: ' 个匹配模型',          en: ' matching models' },
+  top15Chart:         { zh: 'Top 15 模型能力对比',  en: 'Top 15 Model Capability Comparison' },
+  aaScore:            { zh: 'Artificial Analysis 评分', en: 'Artificial Analysis Scores' },
+  latestModels:       { zh: '最新模型',              en: 'Latest Models' },
+  viewAll:            { zh: ' 查看全部 ',            en: ' View all ' },
+  _modelsArrow:       { zh: ' 个模型 →',             en: ' models →' },
 }
 
 function filterByTab(models: LeaderboardModel[], tab: Tab): LeaderboardModel[] {
@@ -169,21 +207,11 @@ function SkeletonRow() {
 }
 
 // ============ Score Comparison Chart ============
-type ChartMode = 'all' | 'intelligence' | 'coding' | 'agentic'
-
-const CHART_MODES: { key: ChartMode; label: string; color: string }[] = [
-  { key: 'all', label: '综合对比', color: '' },
-  { key: 'intelligence', label: '智能', color: SCORE_COLORS.intelligence },
-  { key: 'coding', label: '编程', color: SCORE_COLORS.coding },
-  { key: 'agentic', label: '智能体', color: SCORE_COLORS.agentic },
-]
-
-function ScoreChart({ models }: { models: LeaderboardModel[] }) {
+function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'zh' | 'en' }) {
   const [mode, setMode] = useState<ChartMode>('all')
 
   const chartData: any[] = useMemo(() => {
     if (mode === 'all') {
-      // Combined: show all three dimensions, sort by intelligence desc
       return models
         .filter(m => m.scores?.intelligence != null)
         .sort((a, b) => (b.scores!.intelligence ?? 0) - (a.scores!.intelligence ?? 0))
@@ -195,7 +223,6 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
           agentic: m.scores!.agentic ?? 0,
         }))
     }
-    // Single dimension: sort by that dimension desc
     return models
       .filter(m => m.scores?.[mode] != null)
       .sort((a, b) => (b.scores![mode] ?? 0) - (a.scores![mode] ?? 0))
@@ -209,7 +236,7 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
   if (chartData.length < 3) return null
 
   const isAll = mode === 'all'
-  const activeColor = CHART_MODES.find(m => m.key === mode)?.color || SCORE_COLORS.intelligence
+  const activeColor = CHART_MODE_COLORS[mode] || SCORE_COLORS.intelligence
 
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-5">
@@ -218,13 +245,15 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
         <div className="flex items-center gap-2">
           <FontAwesomeIcon icon={faChartBar} className="text-accent" />
           <h3 className="text-sm font-semibold text-text-primary">
-            Top 15 模型能力对比
+            {L.top15Chart[locale]}
           </h3>
-          <span className="text-xs text-text-muted">Artificial Analysis 评分</span>
+          <span className="text-xs text-text-muted">{L.aaScore[locale]}</span>
         </div>
         {/* Mode toggles */}
         <div className="flex gap-1">
-          {CHART_MODES.map(({ key, label, color }) => (
+          {(Object.keys(CHART_MODE_LABELS) as ChartMode[]).map(key => {
+            const color = CHART_MODE_COLORS[key]
+            return (
             <button
               key={key}
               onClick={() => setMode(key)}
@@ -237,18 +266,18 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
               {!isAll && key !== 'all' && (
                 <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
               )}
-              {label}
+              {CHART_MODE_LABELS[key][locale]}
             </button>
-          ))}
+          )})}
         </div>
       </div>
 
       {/* Legend for combined mode */}
       {isAll && (
         <div className="flex items-center gap-4 mb-3 text-xs">
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.intelligence}} /> 智能</span>
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.coding}} /> 编程</span>
-          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.agentic}} /> 智能体</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.intelligence}} /> {CHART_MODE_LABELS.intelligence[locale]}</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.coding}} /> {CHART_MODE_LABELS.coding[locale]}</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.agentic}} /> {CHART_MODE_LABELS.agentic[locale]}</span>
         </div>
       )}
 
@@ -280,9 +309,9 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
           />
           {isAll ? (
             <>
-              <Bar dataKey="intelligence" fill={SCORE_COLORS.intelligence} radius={[0, 2, 2, 0]} name="智能" />
-              <Bar dataKey="coding" fill={SCORE_COLORS.coding} radius={[0, 2, 2, 0]} name="编程" />
-              <Bar dataKey="agentic" fill={SCORE_COLORS.agentic} radius={[0, 2, 2, 0]} name="智能体" />
+              <Bar dataKey="intelligence" fill={SCORE_COLORS.intelligence} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.intelligence[locale]} />
+              <Bar dataKey="coding" fill={SCORE_COLORS.coding} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.coding[locale]} />
+              <Bar dataKey="agentic" fill={SCORE_COLORS.agentic} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.agentic[locale]} />
             </>
           ) : (
             <Bar dataKey="value" fill={activeColor} radius={[0, 3, 3, 0]} />
@@ -294,7 +323,8 @@ function ScoreChart({ models }: { models: LeaderboardModel[] }) {
 }
 
 // ============ HOME PAGE PREVIEW (compact Top 5) ============
-export function ModelLeaderboardPreview() {
+export function ModelLeaderboardPreview({ locale }: { locale?: Locale }) {
+  const l = locale || 'zh'
   const { data, loading } = useLeaderboard()
 
   if (loading) return null
@@ -308,14 +338,14 @@ export function ModelLeaderboardPreview() {
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <FontAwesomeIcon icon={faTrophy} className="text-accent" />
-            <h2 className="text-base font-semibold text-text-primary">最新模型</h2>
+            <h2 className="text-base font-semibold text-text-primary">{L.latestModels[l]}</h2>
             <span className="text-xs text-text-muted">Top 5</span>
           </div>
           <Link
             to="/leaderboard"
             className="text-xs text-accent hover:text-accent-hover transition-colors font-medium"
           >
-            查看全部 {data.total_models} 个模型 →
+            {L.viewAll[l]}{data.total_models}{L._modelsArrow[l]}
           </Link>
         </div>
 
@@ -346,6 +376,7 @@ export function ModelLeaderboard() {
   const { data, loading } = useLeaderboard()
   const [tab, setTab] = useState<Tab>('all')
   const [query, setQuery] = useState('')
+  const { locale } = useLocale()
 
   const models = useMemo(() => {
     if (!data) return []
@@ -372,16 +403,16 @@ export function ModelLeaderboard() {
           <div>
             <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
               <FontAwesomeIcon icon={faTrophy} className="text-accent" />
-              AI 模型排行榜
+              {L.modelLeaderboard[locale]}
             </h1>
             <p className="text-text-muted text-sm mt-1">
-              数据来源 OpenRouter + Artificial Analysis · 每日更新 · {data?.total_models ?? '?'} 个模型
+              {L.dataSource[locale]}{data?.total_models ?? '?'}{L.models_[locale]}
             </p>
           </div>
         </div>
 
         {/* Score comparison chart */}
-        {data && <ScoreChart models={data.models} />}
+        {data && <ScoreChart models={data.models} locale={locale} />}
 
         {/* Search + Tabs */}
         <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
@@ -391,13 +422,13 @@ export function ModelLeaderboard() {
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="搜索模型或机构..."
+              placeholder={L.searchPlaceholder[locale]}
               className="w-full bg-bg-secondary border border-border-default rounded-lg pl-9 pr-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
             />
           </div>
 
           <div className="flex gap-1 overflow-x-auto">
-            {TABS.map(({ key, label, icon }) => (
+            {TAB_KEYS.map(key => (
               <button
                 key={key}
                 onClick={() => setTab(key)}
@@ -407,8 +438,8 @@ export function ModelLeaderboard() {
                     : 'bg-bg-secondary text-text-muted hover:text-text-secondary hover:bg-bg-hover'
                   }`}
               >
-                <FontAwesomeIcon icon={icon} className="text-xs" />
-                {label}
+                <FontAwesomeIcon icon={TAB_ICONS[key]} className="text-xs" />
+                {TAB_LABELS[key][locale]}
               </button>
             ))}
           </div>
@@ -420,7 +451,7 @@ export function ModelLeaderboard() {
             Array.from({ length: 8 }, (_, i) => <SkeletonRow key={i} />)
           ) : displayModels.length === 0 ? (
             <div className="text-center py-12 text-text-muted">
-              {query ? '没有匹配的模型' : '暂无数据'}
+              {query ? L.noMatch[locale] : L.noData[locale]}
             </div>
           ) : (
             displayModels.map((model, i) => (
@@ -433,7 +464,7 @@ export function ModelLeaderboard() {
 
         {models.length > 50 && (
           <div className="text-center py-4 text-xs text-text-muted">
-            显示前 50 个，共 {models.length} 个匹配模型
+            {L.showingNofM[locale]}{models.length}{L._matchModels[locale]}
           </div>
         )}
       </div>

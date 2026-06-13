@@ -6,19 +6,109 @@ import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
 import { ModelLeaderboardPreview } from '../components/ModelLeaderboard'
-import { useLocale } from '../lib/LocaleContext'
+import { useLocale, type Locale } from '../lib/LocaleContext'
 
-const CATEGORY_META: Record<CategoryKey, { name: string }> = {
-  'AI Lab': { name: 'AI 实验室' },
-  'Paper': { name: '学术论文' },
-  '中文媒体': { name: '中文媒体' },
-  'Blog': { name: '技术博客' },
-  'Community': { name: '社区动态' },
-  'Discussion': { name: '技术讨论' },
+// ── i18n dictionaries ──
+const T = {
+  categoryMeta: {
+    'AI Lab':    { zh: 'AI 实验室',    en: 'AI Labs' },
+    'Paper':     { zh: '学术论文',     en: 'Papers' },
+    '中文媒体':   { zh: '中文媒体',     en: 'Chinese Media' },
+    'Blog':      { zh: '技术博客',     en: 'Tech Blogs' },
+    'Community': { zh: '社区动态',     en: 'Community' },
+    'Discussion':{ zh: '技术讨论',     en: 'Discussion' },
+  } as Record<string, { zh: string; en: string }>,
+  defaultCategory: { zh: '其他', en: 'Other' },
+  searchPlaceholder: { zh: '搜索文章...', en: 'Search articles...' },
+  noResults: { zh: '未找到相关文章', en: 'No results found' },
+  sources: { zh: '源', en: 'sources' },
+  curated: { zh: '篇精选', en: 'curated' },
+  heroDesc: {
+    zh: '每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 — 由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏',
+    en: 'Daily AI intelligence — scanning 30+ global sources, curated and translated by LLM. Stay on top of AI in 5 minutes a day.',
+  },
+  sourceTags: [
+    'OpenAI / Anthropic / DeepMind',
+    { zh: 'arXiv 论文',       en: 'arXiv Papers' },
+    'Hacker News / Reddit',
+    'GitHub Trending',
+    { zh: '中文 AI 媒体',     en: 'Chinese AI Media' },
+  ],
+  githubTop5:        { zh: 'GitHub AI 开源项目 · Top 5', en: 'GitHub AI Open Source · Top 5' },
+  sortedByStars:     { zh: '按 Star 排序',  en: 'By Stars' },
+  viewOnGithub:      { zh: '在 GitHub 上查看', en: 'View on GitHub' },
+  paperTag:          { zh: '论文',    en: 'Paper' },
+  continueReading:   { zh: '继续阅读', en: 'Continue Reading' },
+  noData:            { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
 }
-const DEFAULT_META = { name: '其他' }
 
-const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
+function t(obj: { zh: string; en: string } | string, locale: Locale): string {
+  if (typeof obj === 'string') return obj
+  return obj[locale]
+}
+
+// ── Search Bar ──
+function SearchBar({ query, setQuery, results, clear, locale }: ReturnType<typeof useSearch> & { locale: Locale }) {
+  const [focused, setFocused] = useState(false)
+
+  return (
+    <div className="relative" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
+      <div className="relative">
+        <FontAwesomeIcon icon={ICON.search} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
+        <input
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          onFocus={() => setFocused(true)}
+          placeholder={t(T.searchPlaceholder, locale)}
+          className="w-60 lg:w-72 bg-bg-secondary border border-border-default rounded-lg pl-9 pr-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
+        />
+      </div>
+      {focused && query.length >= 2 && (
+        <div className="absolute top-full mt-2 left-0 w-80 bg-bg-card border border-border-default rounded-xl shadow-2xl overflow-hidden z-50">
+          {results.length === 0 ? (
+            <div className="p-4 text-text-muted text-sm text-center">{t(T.noResults, locale)}</div>
+          ) : (
+            results.map((a, i) => (
+              <a
+                key={i}
+                href={a.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={clear}
+                className="block px-4 py-3 hover:bg-bg-hover transition-colors border-b border-border-muted last:border-0"
+              >
+                <div className="text-sm font-medium text-text-primary truncate">
+                  {highlightText(a.title_cn || a.title || '', query)}
+                </div>
+                <div className="text-xs text-text-muted mt-1 flex items-center gap-2">
+                  <span>{a.source}</span>
+                  <span>·</span>
+                  <span>{(a.published || '').slice(0, 10)}</span>
+                  {a.category && <span className="bg-bg-secondary px-1.5 py-0.5 rounded text-[10px]">{a.category}</span>}
+                  {a.is_paper && (
+                    <span className="text-accent/70"><FontAwesomeIcon icon={ICON.fileLines} /></span>
+                  )}
+                </div>
+              </a>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function highlightText(text: string, query: string) {
+  if (!query || query.length < 2) return text
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
+  return parts.map((part, i) =>
+    part.toLowerCase() === query.toLowerCase()
+      ? <mark key={i} className="bg-accent/30 text-accent rounded-sm px-0.5">{part}</mark>
+      : part
+  )
+}
 
 function useSearch() {
   const [query, setQuery] = useState('')
@@ -54,68 +144,7 @@ function useSearch() {
   return { query, setQuery, results, clear: () => setQuery('') }
 }
 
-function highlightText(text: string, query: string) {
-  if (!query || query.length < 2) return text
-  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const parts = text.split(new RegExp(`(${escaped})`, 'gi'))
-  return parts.map((part, i) =>
-    part.toLowerCase() === query.toLowerCase()
-      ? <mark key={i} className="bg-accent/30 text-accent rounded-sm px-0.5">{part}</mark>
-      : part
-  )
-}
-
-function SearchBar({ query, setQuery, results, clear }: ReturnType<typeof useSearch>) {
-  const [focused, setFocused] = useState(false)
-
-  return (
-    <div className="relative" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
-      <div className="relative">
-        <FontAwesomeIcon icon={ICON.search} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
-        <input
-          type="text"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          onFocus={() => setFocused(true)}
-          placeholder="搜索文章..."
-          className="w-60 lg:w-72 bg-bg-secondary border border-border-default rounded-lg pl-9 pr-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
-        />
-      </div>
-      {focused && query.length >= 2 && (
-        <div className="absolute top-full mt-2 left-0 w-80 bg-bg-card border border-border-default rounded-xl shadow-2xl overflow-hidden z-50">
-          {results.length === 0 ? (
-            <div className="p-4 text-text-muted text-sm text-center">未找到相关文章</div>
-          ) : (
-            results.map((a, i) => (
-              <a
-                key={i}
-                href={a.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={clear}
-                className="block px-4 py-3 hover:bg-bg-hover transition-colors border-b border-border-muted last:border-0"
-              >
-                <div className="text-sm font-medium text-text-primary truncate">
-                  {highlightText(a.title_cn || a.title || '', query)}
-                </div>
-                <div className="text-xs text-text-muted mt-1 flex items-center gap-2">
-                  <span>{a.source}</span>
-                  <span>·</span>
-                  <span>{(a.published || '').slice(0, 10)}</span>
-                  {a.category && <span className="bg-bg-secondary px-1.5 py-0.5 rounded text-[10px]">{a.category}</span>}
-                  {a.is_paper && (
-                    <span className="text-accent/70"><FontAwesomeIcon icon={ICON.fileLines} /></span>
-                  )}
-                </div>
-              </a>
-            ))
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
-
+// ── Article Card ──
 function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; index?: number; lang?: string }) {
   const title = lang === 'en' ? (article.title || article.title_cn) : (article.title_cn || article.title)
   const summary = lang === 'en' ? (article.summary || article.summary_cn) : (article.summary_cn || article.summary)
@@ -172,6 +201,127 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
   )
 }
 
+// ── GitHub Top 5 ──
+function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
+  const [expanded, setExpanded] = useState<number | null>(null)
+
+  return (
+    <FadeIn delay={0.08}>
+      <section>
+        <div className="flex items-center gap-2 mb-3">
+          <FontAwesomeIcon icon={ICON.star} className="text-amber" />
+          <h2 className="text-lg font-semibold text-text-primary">
+            {t(T.githubTop5, locale)}
+          </h2>
+          <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
+            {t(T.sortedByStars, locale)}
+          </span>
+        </div>
+        <div className="space-y-2">
+          {data.repos.map((repo, i) => {
+            const isOpen = expanded === i
+            return (
+              <ScrollReveal key={repo.full_name} index={i}>
+                <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : i)}
+                    className="w-full text-left p-4 flex items-start gap-3"
+                  >
+                    <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-accent-muted flex items-center justify-center text-sm font-bold text-accent tabular-nums">
+                      {i + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-medium text-[15px] text-text-primary">
+                          <span className="text-text-muted font-normal">{repo.owner}/</span>
+                          {repo.name}
+                        </span>
+                        {repo.language && (
+                          <span className="text-xs px-1.5 py-0.5 rounded bg-bg-secondary text-text-muted">{repo.language}</span>
+                        )}
+                      </div>
+                      <p className="mt-1 text-sm text-text-secondary line-clamp-1">{repo.description}</p>
+                      <div className="mt-1.5 flex items-center gap-3 text-xs text-text-muted">
+                        <span className="flex items-center gap-1">
+                          <FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" />
+                          {repo.stars_formatted}
+                        </span>
+                        <span>Fork {repo.forks.toLocaleString()}</span>
+                      </div>
+                    </div>
+                    <FontAwesomeIcon
+                      icon={ICON.chevronDown}
+                      className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-4 pb-4 pl-14">
+                      <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
+                        <FontAwesomeIcon icon={ICON.robot} className="mr-1.5 text-accent/60" />
+                        {repo.summary}
+                      </div>
+                      <a
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 mt-2 text-xs text-accent hover:text-accent-hover transition-colors"
+                      >
+                        {t(T.viewOnGithub, locale)}
+                        <FontAwesomeIcon icon={ICON.arrowRight} className="text-[10px]" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            )
+          })}
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
+
+// ── Continue Reading ──
+function ContinueReading({ locale }: { locale: Locale }) {
+  const [items, setItems] = useState<{ link: string; title: string }[]>([])
+
+  useEffect(() => {
+    try {
+      const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
+      setItems(h.slice(0, 5))
+    } catch {}
+  }, [])
+
+  if (!items.length) return null
+
+  return (
+    <FadeIn delay={0.2}>
+      <section>
+        <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
+          <FontAwesomeIcon icon={ICON.bookOpen} className="text-accent" />
+          {t(T.continueReading, locale)}
+        </h2>
+        <div className="space-y-1">
+          {items.map((item, i) => (
+            <a
+              key={i}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-text-secondary hover:text-accent transition-colors py-1"
+            >
+              {item.title}
+            </a>
+          ))}
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
+
+// ── HomePage ──
+const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
+
 export function HomePage() {
   const { data, loading, error } = useLatest()
   const { data: trending } = useTrending()
@@ -185,7 +335,7 @@ export function HomePage() {
     return (
       <div className="text-center py-20">
         <FontAwesomeIcon icon={ICON.inbox} className="text-4xl text-text-muted mb-4" />
-        <p className="text-text-muted">暂无数据，等待首次扫描完成...</p>
+        <p className="text-text-muted">{t(T.noData, locale)}</p>
         {error && <p className="text-xs text-red mt-2">{error}</p>}
       </div>
     )
@@ -193,24 +343,21 @@ export function HomePage() {
 
   const byCat: Record<string, Article[]> = {}
   for (const a of data.articles) {
-    const cat = a.category || '其他'
+    const cat = a.category || 'Other'
     if (!byCat[cat]) byCat[cat] = []
     byCat[cat].push(a)
   }
 
   return (
     <div className="space-y-8">
-      {/* Hero + About */}
+      {/* Hero */}
       <FadeIn>
         <div className="text-center py-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
             AllOfAI
           </h1>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            {locale === 'en'
-              ? 'Daily AI intelligence — scanning 30+ global sources, curated and translated by LLM. Stay on top of AI in 5 minutes a day.'
-              : '每日自动扫描 30+ 全球 AI 信源 — 顶级实验室博客、学术论文、技术媒体、GitHub 热门项目 — 由 LLM 精选并深度解读，帮你 5 分钟把握 AI 技术脉搏'
-            }
+            {t(T.heroDesc, locale)}
           </p>
           <div className="flex items-center justify-center gap-6 mt-4 text-sm text-text-muted">
             <span className="flex items-center gap-1">
@@ -219,41 +366,41 @@ export function HomePage() {
             </span>
             <span className="flex items-center gap-1">
               <FontAwesomeIcon icon={ICON.satelliteDish} />
-              {data.successful_sources}/{data.total_sources} 源
+              {data.successful_sources}/{data.total_sources} {t(T.sources, locale)}
             </span>
             <span className="flex items-center gap-1">
               <FontAwesomeIcon icon={ICON.news} />
-              {data.articles.length} 篇精选
+              {data.articles.length} {t(T.curated, locale)}
             </span>
           </div>
-          {/* Source categories */}
+          {/* Source tags */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-text-muted">
-            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">OpenAI / Anthropic / DeepMind</span>
-            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">arXiv 论文</span>
-            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">Hacker News / Reddit</span>
-            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">GitHub Trending</span>
-            <span className="bg-bg-secondary px-2.5 py-1 rounded-full">中文 AI 媒体</span>
+            {T.sourceTags.map((tag, i) => (
+              <span key={i} className="bg-bg-secondary px-2.5 py-1 rounded-full">
+                {t(tag, locale)}
+              </span>
+            ))}
           </div>
           <div className="mt-6 flex justify-center">
-            <SearchBar {...search} />
+            <SearchBar {...search} locale={locale} />
           </div>
         </div>
       </FadeIn>
 
       {/* GitHub AI Top 5 */}
       {top5 && top5.repos && top5.repos.length > 0 && (
-        <GithubTop5 data={top5} />
+        <GithubTop5 data={top5} locale={locale} />
       )}
 
       {/* Model Leaderboard Preview */}
-      <ModelLeaderboardPreview />
+      <ModelLeaderboardPreview locale={locale} />
 
       {/* Articles by category */}
       <StaggerContainer className="space-y-8">
         {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
           .filter(cat => byCat[cat])
           .map(cat => {
-            const meta = CATEGORY_META[cat as CategoryKey] || DEFAULT_META
+            const meta = T.categoryMeta[cat] || T.defaultCategory
             const catIcon = CATEGORY_ICONS[cat as CategoryKey] || DEFAULT_CATEGORY_ICON
             const items = byCat[cat]
             return (
@@ -261,7 +408,7 @@ export function HomePage() {
                 <FadeIn delay={0.05}>
                   <div className="flex items-center gap-2 mb-3">
                     <FontAwesomeIcon icon={catIcon} className="text-accent" />
-                    <h2 className="text-lg font-semibold text-text-primary">{meta.name}</h2>
+                    <h2 className="text-lg font-semibold text-text-primary">{t(meta, locale)}</h2>
                     <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
                   </div>
                 </FadeIn>
@@ -311,7 +458,7 @@ export function HomePage() {
                     {repo.paper_linked && (
                       <span className="text-accent/70 flex items-center gap-0.5">
                         <FontAwesomeIcon icon={ICON.fileLines} />
-                        论文
+                        {t(T.paperTag, locale)}
                       </span>
                     )}
                   </div>
@@ -322,128 +469,7 @@ export function HomePage() {
         </section>
       )}
 
-      {/* Continue reading */}
-      <ContinueReading />
+      <ContinueReading locale={locale} />
     </div>
-  )
-}
-
-function ContinueReading() {
-  const [items, setItems] = useState<{ link: string; title: string }[]>([])
-
-  useEffect(() => {
-    try {
-      const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
-      setItems(h.slice(0, 5))
-    } catch {}
-  }, [])
-
-  if (!items.length) return null
-
-  return (
-    <FadeIn delay={0.2}>
-      <section>
-        <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
-          <FontAwesomeIcon icon={ICON.bookOpen} className="text-accent" />
-          继续阅读
-        </h2>
-        <div className="space-y-1">
-          {items.map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-text-secondary hover:text-accent transition-colors py-1"
-            >
-              {item.title}
-            </a>
-          ))}
-        </div>
-      </section>
-    </FadeIn>
-  )
-}
-
-function GithubTop5({ data }: { data: Top5Data }) {
-  const [expanded, setExpanded] = useState<number | null>(null)
-
-  return (
-    <FadeIn delay={0.08}>
-      <section>
-        <div className="flex items-center gap-2 mb-3">
-          <FontAwesomeIcon icon={ICON.star} className="text-amber" />
-          <h2 className="text-lg font-semibold text-text-primary">
-            GitHub AI 开源项目 · Top 5
-          </h2>
-          <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
-            按 Star 排序
-          </span>
-        </div>
-        <div className="space-y-2">
-          {data.repos.map((repo, i) => {
-            const isOpen = expanded === i
-            return (
-              <ScrollReveal key={repo.full_name} index={i}>
-                <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
-                  <button
-                    onClick={() => setExpanded(isOpen ? null : i)}
-                    className="w-full text-left p-4 flex items-start gap-3"
-                  >
-                    <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-accent-muted flex items-center justify-center text-sm font-bold text-accent tabular-nums">
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-medium text-[15px] text-text-primary">
-                          <span className="text-text-muted font-normal">{repo.owner}/</span>
-                          {repo.name}
-                        </span>
-                        {repo.language && (
-                          <span className="text-xs px-1.5 py-0.5 rounded bg-bg-secondary text-text-muted">{repo.language}</span>
-                        )}
-                      </div>
-                      <p className="mt-1 text-sm text-text-secondary line-clamp-1">{repo.description}</p>
-                      <div className="mt-1.5 flex items-center gap-3 text-xs text-text-muted">
-                        <span className="flex items-center gap-1">
-                          <FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" />
-                          {repo.stars_formatted}
-                        </span>
-                        <span>Fork {repo.forks.toLocaleString()}</span>
-                      </div>
-                    </div>
-                    <FontAwesomeIcon
-                      icon={ICON.chevronDown}
-                      className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                  >
-                    <div className="px-4 pb-4 pl-14">
-                      <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
-                        <FontAwesomeIcon icon={ICON.robot} className="mr-1.5 text-accent/60" />
-                        {repo.summary}
-                      </div>
-                      <a
-                        href={repo.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 mt-2 text-xs text-accent hover:text-accent-hover transition-colors"
-                      >
-                        在 GitHub 上查看
-                        <FontAwesomeIcon icon={ICON.arrowRight} className="text-[10px]" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            )
-          })}
-        </div>
-      </section>
-    </FadeIn>
   )
 }
