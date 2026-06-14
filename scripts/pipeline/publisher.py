@@ -193,6 +193,22 @@ def export_files(data: dict) -> dict:
     history_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     print(f"💾 History: {history_path.name}")
 
+    # Sync to docs/data/ for GitHub Pages (no Node.js build needed)
+    docs_data = REPO_DIR / "docs" / "data"
+    docs_data.mkdir(parents=True, exist_ok=True)
+    (docs_data / "history").mkdir(parents=True, exist_ok=True)
+    import shutil
+    for f in data_dir.glob("*.json"):
+        shutil.copy2(f, docs_data / f.name)
+    for f in (data_dir / "history").glob("*.json"):
+        shutil.copy2(f, docs_data / "history" / f.name)
+    for f in (data_dir / "weekly").glob("*"):
+        if f.is_file():
+            dest = docs_data / "weekly" / f.name
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(f, dest)
+    print(f"💾 Synced to docs/data/ for GitHub Pages")
+
     return {"latest": str(latest_path), "history": str(history_path)}
 
 
