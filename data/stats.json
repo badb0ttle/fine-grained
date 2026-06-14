@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-14T08:14:34.817769",
+  "generated_at": "2026-06-14T12:59:05.511554",
   "source_health": [
     {
       "name": "ArXiv cs.AI",
       "category": "Paper",
       "last_success": "2026-06-13T03:30:32.416582+00:00",
-      "consecutive_failures": 38,
+      "consecutive_failures": 48,
       "article_count_last": 20,
       "status": "down"
     },
@@ -13,7 +13,7 @@
       "name": "ArXiv cs.CL",
       "category": "Paper",
       "last_success": "2026-06-13T03:30:32.416582+00:00",
-      "consecutive_failures": 38,
+      "consecutive_failures": 48,
       "article_count_last": 20,
       "status": "down"
     },
@@ -21,7 +21,7 @@
       "name": "ArXiv cs.CV",
       "category": "Paper",
       "last_success": "2026-06-13T03:30:32.416582+00:00",
-      "consecutive_failures": 38,
+      "consecutive_failures": 48,
       "article_count_last": 20,
       "status": "down"
     },
@@ -29,7 +29,7 @@
       "name": "ArXiv cs.LG",
       "category": "Paper",
       "last_success": "2026-06-13T03:30:32.416582+00:00",
-      "consecutive_failures": 38,
+      "consecutive_failures": 48,
       "article_count_last": 20,
       "status": "down"
     },
@@ -37,9 +37,17 @@
       "name": "ArXiv stat.ML",
       "category": "Paper",
       "last_success": "2026-06-13T03:30:32.416582+00:00",
-      "consecutive_failures": 38,
+      "consecutive_failures": 48,
       "article_count_last": 20,
       "status": "down"
+    },
+    {
+      "name": "OpenAI Blog",
+      "category": "AI Lab",
+      "last_success": "2026-06-14T03:00:38.058989+00:00",
+      "consecutive_failures": 3,
+      "article_count_last": 20,
+      "status": "degraded"
     },
     {
       "name": "VentureBeat AI",
@@ -52,7 +60,7 @@
     {
       "name": "Apple ML Research",
       "category": "AI Lab",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -60,7 +68,7 @@
     {
       "name": "Google AI",
       "category": "AI Lab",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -68,7 +76,7 @@
     {
       "name": "Google DeepMind",
       "category": "AI Lab",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -76,7 +84,7 @@
     {
       "name": "HuggingFace Blog",
       "category": "Community",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -84,15 +92,7 @@
     {
       "name": "NVIDIA Blog",
       "category": "AI Lab",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
-      "consecutive_failures": 0,
-      "article_count_last": 20,
-      "status": "healthy"
-    },
-    {
-      "name": "OpenAI Blog",
-      "category": "AI Lab",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -100,7 +100,7 @@
     {
       "name": "PyTorch Blog",
       "category": "Community",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -124,7 +124,7 @@
     {
       "name": "雷锋网 AI",
       "category": "中文媒体",
-      "last_success": "2026-06-13T23:30:51.179738+00:00",
+      "last_success": "2026-06-14T04:30:19.958401+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -236,7 +236,7 @@
     {
       "date": "2026-06-14",
       "total_sources": 13,
-      "successful_sources": 8,
+      "successful_sources": 7,
       "total_articles": 898,
       "new_articles": 120,
       "curated_count": 10
