@@ -1,0 +1,197 @@
+{
+  "scanned_at": "2026-06-08T00:11:04.105235+00:00",
+  "curated_at": "2026-06-08T00:11:04.105250+00:00",
+  "total_sources": 16,
+  "successful_sources": 8,
+  "total_articles": 530,
+  "curated_count": 17,
+  "articles": [
+    {
+      "title": "How Endava is redesigning software delivery around AI agents",
+      "link": "https://openai.com/index/endava-frontiers",
+      "summary": "Learn how Endava is using AI agents, ChatGPT Enterprise, and Codex to accelerate software delivery, automate workflows, and build an AI-native culture across the enterprise.",
+      "published": "2026-06-04 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "FindIt：面向通用多模态大模型的格式感知视觉检测基准",
+      "summary_cn": "提出FindIt基准，评估多模态大模型在格式敏感视觉检测任务上的表现，如文档、图表、UI中的结构化元素识别，填补了现有自由形式视觉问答评测的空白。",
+      "why_it_matters": "为多模态模型在结构化视觉任务中的能力提供标准化评测，推动模型在文档智能等场景落地。"
+    },
+    {
+      "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+      "link": "https://openai.com/index/wasmer",
+      "summary": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
+      "published": "2026-06-03 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "图引导超低位量化：最小化大模型缩放隐藏成本",
+      "summary_cn": "提出图引导的超低位量化方法，通过结构感知优化减少LLM在极低比特量化下的精度损失，解决现有方法依赖严格缩放策略的局限性。",
+      "why_it_matters": "实现更高效的模型压缩，降低大模型部署的显存和带宽需求，推动边缘端应用。"
+    },
+    {
+      "title": "OpenAI frontier models and Codex are now available on AWS",
+      "link": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws",
+      "summary": "OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new path to build with OpenAI through the AWS environments, controls, and procurement workflows they already use. Customers can get started with OpenAI on AWS and move faster from evaluation to production.",
+      "published": "2026-06-01 10:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "DLLG：专家LLM的动态logit级门控机制",
+      "summary_cn": "提出DLLG方法，在logit级别动态融合多个专用LLM的输出，克服传统路由方法在适应性和稳定性之间的权衡，实现更灵活的模型组合。",
+      "why_it_matters": "提供高效的多模型协同方案，无需重新训练即可组合专家能力，降低集成成本。"
+    },
+    {
+      "title": "Introducing new capabilities to GPT-Rosalind",
+      "link": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
+      "summary": "GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental workflow capabilities.",
+      "published": "2026-06-03 13:15:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "全球首个有机高分子材料研发智能体发布",
+      "summary_cn": "苏州材科源图发布全球首个有机高分子材料研发应用智能体，基于自主材料科学智能体框架，旨在解决配方设计依赖专家经验、试错成本高等行业痛点。",
+      "why_it_matters": "AI智能体在垂直科研领域的重要落地案例，展示LLM加速材料研发的潜力。"
+    },
+    {
+      "title": "Dreaming: Better memory for a more helpful ChatGPT",
+      "link": "https://openai.com/index/chatgpt-memory-dreaming",
+      "summary": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
+      "published": "2026-06-04 09:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "LazyAttention：延迟位置编码实现高效检索增强生成",
+      "summary_cn": "提出LazyAttention方法，通过延迟位置编码策略优化RAG中的KV缓存复用，显著降低长上下文推理的计算开销，同时保持生成质量。",
+      "why_it_matters": "直接降低RAG系统推理成本，对部署长文档问答和知识密集型应用至关重要。"
+    },
+    {
+      "title": "A blueprint for democratic governance of frontier AI",
+      "link": "https://openai.com/index/frontier-safety-blueprint",
+      "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+      "published": "2026-06-03 10:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "观点：部署的强化学习应是持续性的",
+      "summary_cn": "论证实际部署的强化学习系统应转向持续学习范式，而非传统的训练-修复模式，以适应动态环境并避免性能退化。",
+      "why_it_matters": "挑战现有RL部署范式，推动持续学习在真实场景中的落地。"
+    },
+    {
+      "title": "Codex is becoming a productivity tool for everyone",
+      "link": "https://openai.com/index/codex-for-knowledge-work",
+      "summary": "The Next Era of Knowledge Work report explores how Codex is transforming productivity through AI-powered research, data analysis, workflow automation, and content creation.",
+      "published": "2026-06-02 02:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "观点：部署的强化学习应是持续性的",
+      "summary_cn": "论证当前RL系统“先训练后修复”范式的局限性，提出部署后的RL应持续学习以适应环境变化，并讨论持续RL在机器人、推荐系统等场景的实践路径。",
+      "why_it_matters": "挑战现有RL部署范式，推动持续学习在真实系统中的落地，提升模型长期适应性。"
+    },
+    {
+      "title": "Advancing youth safety and opportunity through global leadership",
+      "link": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
+      "summary": "OpenAI calls for global action on youth AI safety, proposing an international institute to strengthen safeguards, standards, and opportunities for young people.",
+      "published": "2026-06-02 07:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "DLLG：LLM专家的动态Logit级门控",
+      "summary_cn": "提出DLLG方法，在logit层面动态组合多个专用LLM专家，无需固定路由，实现灵活且稳定的多模型协同推理。",
+      "why_it_matters": "提供高效的多专家模型集成方案，兼顾灵活性与稳定性。"
+    },
+    {
+      "title": "Codex for every role, tool, and workflow",
+      "link": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "summary": "Discover new Codex plugins, sites, and annotations that help analysts, marketers, designers, investors, and other teams get more done with AI.",
+      "published": "2026-06-02 09:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "企业AI智能体部署前保障：本体驱动的仿真与信任认证",
+      "summary_cn": "提出基于本体驱动的仿真框架和信任认证机制，填补LLM智能体在企业部署前的验证空白，确保其在复杂业务场景中的可靠性和合规性。",
+      "why_it_matters": "为企业级AI智能体安全上线提供方法论，降低部署风险，增强行业信任。"
+    },
+    {
+      "title": "OpenAI public policy agenda",
+      "link": "https://openai.com/index/public-policy-agenda",
+      "summary": "OpenAI outlines its public policy agenda for AI, including safety, youth protection, workforce transition, and global standards to ensure AI benefits society.",
+      "published": "2026-06-03 10:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "全球首个有机高分子材料研发智能体发布",
+      "summary_cn": "苏州材科源图发布全球首个有机高分子材料研发应用智能体，基于通用材料科学智能体框架，旨在解决材料研发中依赖专家经验、试错成本高等瓶颈。",
+      "why_it_matters": "AI驱动材料科学范式变革，加速新材料发现与产业化。"
+    },
+    {
+      "title": "Building the infrastructure for the Intelligence Age in Michigan",
+      "link": "https://openai.com/index/stargate-michigan-data-center",
+      "summary": "OpenAI breaks ground on a 1GW data center project in Michigan as part of Stargate, building AI infrastructure to expand access, create jobs, and support communities.",
+      "published": "2026-06-01 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "通用智能体能自动化数据整理吗？",
+      "summary_cn": "探索通用AI智能体在数据整理任务上的自动化能力，评估其迭代提出、实现和验证数据清洗策略的效果，揭示当前局限。",
+      "why_it_matters": "评估AI自主数据整理潜力，可能改变数据工程工作流程。"
+    },
+    {
+      "title": "Biodefense in the Intelligence Age",
+      "link": "https://openai.com/index/biodefense-in-the-intelligence-age",
+      "summary": "An action plan for AI-powered biological resilience",
+      "published": "2026-06-04 00:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "AgentJet：面向智能体强化学习的灵活集群训练框架",
+      "summary_cn": "提出AgentJet分布式集群训练框架，支持大规模LLM智能体强化学习，相比集中式框架在扩展性和灵活性上显著提升，适用于复杂多智能体协作场景。",
+      "why_it_matters": "为训练大规模智能体系统提供高效基础设施，加速自主智能体在真实环境中的应用。"
+    },
+    {
+      "title": "How Endava builds an agentic organization with Codex",
+      "link": "https://openai.com/index/endava",
+      "summary": "Learn how Endava uses Codex to build an agentic organization, accelerating software delivery and reducing requirements analysis from weeks to hours.",
+      "published": "2026-05-28 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "元智能体挑战：当前智能体能自主开发智能体吗？",
+      "summary_cn": "提出元智能体挑战，评估AI智能体是否具备自主开发其他智能体的能力，现有基准仅测试任务执行，无法衡量这种更高层次的自主性。",
+      "why_it_matters": "定义下一代AI自主性标准，推动智能体从工具向创造者进化。"
+    },
+    {
+      "title": "How Braintrust turns customer requests into code with Codex",
+      "link": "https://openai.com/index/braintrust",
+      "summary": "How Braintrust engineers use Codex with GPT-5.5 to run experiments and code faster.",
+      "published": "2026-05-29 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "RUBAS：基于评分规则的智能体安全强化学习",
+      "summary_cn": "提出RUBAS框架，利用评分规则引导强化学习，约束LLM智能体在真实环境中的行为，减少不安全执行风险。",
+      "why_it_matters": "为工具型智能体提供可操作的安全训练方法，降低部署风险。"
+    },
+    {
+      "title": "Strengthening societal resilience with Rosalind Biodefense",
+      "link": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
+      "summary": "OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through frontier AI.",
+      "published": "2026-05-29 03:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "智能体最终考试：衡量经济价值的关键基准",
+      "summary_cn": "提出Agents' Last Exam基准，聚焦评估AI系统在真实经济任务中的表现，弥补现有基准与商业价值之间的鸿沟，测试自主完成复杂工作流的能力。",
+      "why_it_matters": "为智能体商业化提供更有意义的评估标准，引导研发聚焦高价值应用场景。"
+    },
+    {
+      "title": "Boston Children’s uses AI to unlock new diagnoses",
+      "link": "https://openai.com/index/boston-childrens-hospital",
+      "summary": "Boston Children’s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cases.",
+      "published": "2026-05-29 12:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "MiniMax-M3发布：以5-10%成本超越GPT-5.5和Gemini 3.1 Pro",
+      "summary_cn": "中国AI初创公司MiniMax发布M3大模型，在编码和推理等关键基准上超越GPT-5.5和Gemini 3.1 Pro，训练成本仅为后者的5-10%，引发行业关注。",
+      "why_it_matters": "证明低成本训练前沿模型的可能性，可能重塑大模型竞争格局，降低企业采用门槛。"
+    },
+    {
+      "title": "A shared playbook for trustworthy third party evaluations",
+      "link": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
+      "summary": "OpenAI shares guidance on third-party AI evaluations, covering how to assess model capabilities, safeguards, and validity for frontier systems.",
+      "published": "2026-05-29 00:00:00",
+      "source": "OpenAI Blog",
+      "category": "AI Lab",
+      "title_cn": "通用智能体能自动化数据清洗吗？",
+      "summary_cn": "探索通用AI智能体在数据清洗任务中的自动化能力，包括数据质量检测、异常修复和标注优化，评估其替代人工数据工程师的潜力与局限。",
+      "why_it_matters": "数据清洗是AI开发最耗时环节之一，自动化将大幅提升数据准备效率，加速模型迭代。"
+    }
+  ]
+}

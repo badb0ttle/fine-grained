@@ -1,6 +1,15 @@
 {
   "reports": [
     {
+      "date": "2026-06-14",
+      "title": "本周 AI 大事记",
+      "title_en": "This Week in AI",
+      "summary": "MiMo Code · Agent 工具调用 · AI 安全工程化 · 小模型专业化 · AI4Science 务实",
+      "summary_en": "MiMo Code · Agent Tool-Calling · AI Safety Engineering · Small Model Specialization · AI4Science Reality Check",
+      "url": "/data/weekly/2026-06-14.html",
+      "url_en": "/data/weekly/2026-06-14_en.html"
+    },
+    {
       "date": "2026-06-13",
       "title": "本周 AI 大事记",
       "title_en": "This Week in AI",
