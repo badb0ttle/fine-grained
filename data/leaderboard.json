@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T04:59:05.576960+00:00",
+  "generated_at": "2026-06-15T02:15:42.343667+00:00",
   "models": [
     {
       "name": "GPT-4o",
@@ -34,6 +34,22 @@
           "score": "被 MiniMax-M3 超越"
         }
       ]
+    },
+    {
+      "name": "Kimi K2.7-Code",
+      "provider": "Moonshot AI",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
+    },
+    {
+      "name": "MiMo Code",
+      "provider": "小米",
+      "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
     },
     {
       "name": "MiMo Code V0.1.0",
