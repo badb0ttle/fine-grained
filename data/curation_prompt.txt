@@ -1,0 +1,128 @@
+你是资深 AI 技术编辑。从以下 20 篇候选文章中选出最重要的 10 篇，写中文标题和摘要。
+
+【筛选标准】
+- 优先选有实际影响、可操作、反常识、或刚发布的新内容
+- 跳过纯 PR 稿、泛泛而谈、重复已有共识的文章
+
+【写作规范 — 严禁以下 AI 套话】
+禁止使用这些词汇和句式：
+- "在...方面" "不仅...而且..." "展现出..." "具有重要意义"
+- "标志着..." "为...提供了..." "进一步..." "全面/深入/系统"
+- "推动...发展" "实现了...突破" "引发...思考"
+
+写作原则：
+- 用口语化短句，像和朋友聊天那样写，不要论文腔
+- 只说一件事，信息密度优先
+- 技术名词保留英文（如 "RLHF" "LoRA"），不硬翻
+- 标题要有信息量，不说废话。比如 "小型 LLM 在生物医学声明验证中的高效微调" 比 "一项关于小模型微调的研究" 好
+- 禁止使用任何 emoji 表情符号
+
+每条输出：
+1. title_cn: ≤20字，信息量优先，技术名词保留英文
+2. summary_cn: 40-80字，只讲核心发现+方法，不铺垫不总结
+3. why_it_matters: ≤25字，说清楚对谁有什么实际影响
+
+返回严格 JSON 数组（id 使用 DB ID）：
+[
+  {"id": <DB ID>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."},
+  ...
+]
+
+候选文章：
+[1] [DB ID: 1757] [92.3] Title: Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12854v1 Announce Type: new 
+Abstract: Large Language Models such as GPT-4o and GPT-5 achieve strong zero-shot performance on biomedical claim verification, but cost and opacity limit scalab
+
+[2] [DB ID: 1758] [88.3] Title: Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12881v1 Announce Type: new 
+Abstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experim
+
+[3] [DB ID: 1700] [86.3] Title: ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12451v1 Announce Type: new 
+Abstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches re
+
+[4] [DB ID: 1479] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06976v1 Announce Type: new 
+Abstract: Large language model (LLM)-based agents often make suboptimal tool-use decisions, including unsupported tool invocation and hallucinated direct respons
+
+[5] [DB ID: 1481] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06547v1 Announce Type: new 
+Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a "stability lag" where early decisions rema
+
+[6] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06546v1 Announce Type: new 
+Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
+
+[7] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06560v1 Announce Type: new 
+Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
+
+[8] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
+    Source: ArXiv stat.ML | 2026-06-12 04:00:00
+    Summary: arXiv:2605.18898v1 Announce Type: cross 
+Abstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude 
+
+[9] [DB ID: 1703] [82.3] Title: Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12594v1 Announce Type: new 
+Abstract: Modern Lean theorem provers achieve strong performance only with substantial training and inference compute, driven in part by scarce verified proof da
+
+[10] [DB ID: 1713] [82.3] Title: Benchmarking AI Agents for Addressing Scientific Challenges Across Scales
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12736v1 Announce Type: new 
+Abstract: AI agents are increasingly being developed to accelerate scientific discovery, yet their practical capabilities in real research settings remain poorly
+
+[11] [DB ID: 1719] [82.3] Title: MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12809v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are trained on massive multimodal data, making data unlearning increasingly important as data owners may reque
+
+[12] [DB ID: 2421] [82.0] Title: Xiaomi's new open source, agentic AI coding harness MiMo Code beats Claude Code at ultra-long, 200+ step tasks
+    Source: VentureBeat AI | 2026-06-11 23:14:00
+    Summary: Xiaomi&#x27;s MiMo AI team has open-sourced MiMo Code V0.1.0, a terminal-native AI coding assistant that the Chinese electronics giant says outperforms Anthropic&#x27;s Claude Code on key agentic codi
+
+[13] [DB ID: 116] [81.6] Title: FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs
+    Source: ArXiv cs.CV | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04282v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, 
+
+[14] [DB ID: 95] [81.3] Title: LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
+    Source: ArXiv cs.CL | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04302v1 Announce Type: new 
+Abstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes 
+
+[15] [DB ID: 22023] [81.0] Title: Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out
+    Source: VentureBeat AI | 2026-06-12 21:55:22
+    Summary: Moonshot AI released Kimi K2.7-Code this week, an open-source update to its K2 coding model family, claiming leaner reasoning and double-digit performance gains.K2.7-Code is built on the same trillion
+
+[16] [DB ID: 1493] [80.4] Title: Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06673v1 Announce Type: new 
+Abstract: Sparse rewards and heterogeneous task sequences remain persistent challenges in Reinforcement Learning (RL), often resulting in slow convergence, weak 
+
+[17] [DB ID: 1709] [80.3] Title: Deployment-Centered Evaluation: Predicting Query-Level Rejection Risk in a Clinical LLM System
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12702v1 Announce Type: new 
+Abstract: Large language models (LLMs) are increasingly integrated into clinical systems, making it essential to evaluate the real-world utility of these systems
+
+[18] [DB ID: 58] [80.3] Title: AgentJet: A Flexible Swarm Training Framework for Agentic Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-04 04:00:00
+    Summary: arXiv:2606.04484v1 Announce Type: new 
+Abstract: We present AgentJet, a distributed swarm training framework for large language model (LLM) agent reinforcement learning. Unlike centralized frameworks 
+
+[19] [DB ID: 1535] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
+    Source: ArXiv cs.CV | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06709v1 Announce Type: new 
+Abstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and d
+
+[20] [DB ID: 1548] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
+    Source: ArXiv stat.ML | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06742v1 Announce Type: cross 
+Abstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression,
