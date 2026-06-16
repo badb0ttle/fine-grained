@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-15T02:15:42.207336+00:00",
-  "curated_at": "2026-06-15T02:15:42.207365+00:00",
+  "scanned_at": "2026-06-16T08:06:51.897949+00:00",
+  "curated_at": "2026-06-16T08:06:51.897956+00:00",
   "total_sources": 16,
-  "successful_sources": 10,
-  "total_articles": 913,
-  "curated_count": 34,
+  "successful_sources": 15,
+  "total_articles": 1159,
+  "curated_count": 40,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -13,9 +13,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "小LLM生物医学声明验证的高效微调",
-      "summary_cn": "微调7B模型在三个生物医学数据集上匹配GPT-4o零样本性能，并揭示数据集的结构性捷径与跨领域泛化瓶颈。",
-      "why_it_matters": "医疗机构可用低成本开源模型替代闭源大模型进行事实核查。"
+      "title_cn": "小LLM微调搞定生物医学验证",
+      "summary_cn": "用小模型（如GPT-4o）微调做生物医学声明验证，成本低且效果好，但发现数据集结构捷径影响泛化能力。",
+      "why_it_matters": "医院和药企可用小模型替代昂贵大模型做事实核查。"
     },
     {
       "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
@@ -29,15 +29,37 @@
       "why_it_matters": "DPO 实践者的参考手册，少踩坑"
     },
     {
+      "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+      "link": "https://arxiv.org/abs/2606.15007",
+      "summary": "arXiv:2606.15007v1 Announce Type: new \nAbstract: We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-trained Nemotron 3 Ultra on 20 trillion text tokens, then extended the context length to 1M tokens, and post-trained using Supervised Fine Tuning (SFT), Reinforcement Learning (RL), and Multi-teacher On-Policy Distillation (MOPD). Nemotron 3 Ultra is our most capable model yet, employing multiple key t",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Nemotron 3 Ultra: 550B混合架构模型",
+      "summary_cn": "开源550B参数MoE混合Mamba-Transformer模型，仅55B活跃参数，专为智能体推理设计，效率高。",
+      "why_it_matters": "开源社区获得高性能推理模型，适合部署在资源受限环境。"
+    },
+    {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
       "link": "https://arxiv.org/abs/2606.12451",
       "summary": "arXiv:2606.12451v1 Announce Type: new \nAbstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches rely on compact encoders that may under-capture specialized tool semantics, parametric tool retrieval addresses this by encoding each tool as a virtual token appended to the LLM vocabulary, fine-tuned in two stages (memorization then retrieval SFT) to use the LLM as a retriever, achieving strong perfo",
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "ToolSense：LLM工具知识审计诊断框架",
-      "summary_cn": "通过结构化探测任务揭示LLM内部参数化的工具知识盲区，用于指导检索增强的工具选择策略。",
-      "why_it_matters": "帮助工具型代理开发者定位模型容易出错的具体工具，改进检索设计。"
+      "title_cn": "ToolSense: 审计LLM工具知识的新框架",
+      "summary_cn": "提出诊断框架审计LLM参数化工具知识，解决智能体在大型工具目录中的检索瓶颈问题。",
+      "why_it_matters": "开发者可检测LLM工具调用缺陷，提升智能体可靠性。"
+    },
+    {
+      "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
+      "link": "https://arxiv.org/abs/2606.13740",
+      "summary": "arXiv:2606.13740v1 Announce Type: new \nAbstract: Diffusion large language models (dLLMs) accelerate generation by denoising multiple tokens in parallel, making them attractive for latency-sensitive mobile inference. However, repeated denoising introduces substantial computation on smartphones. Mobile neural processing units (NPUs) offer high-throughput dense matrix computation, but efficiently exploiting them remains challenging: token commitment shrinks per-block effective workloads, token revi",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "移动NPU上跑扩散LLM推理",
+      "summary_cn": "在手机NPU上高效运行扩散LLM，通过并行去噪加速生成，适合延迟敏感应用。",
+      "why_it_matters": "手机端AI应用可实时生成文本，无需联网。"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -57,9 +79,20 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "FAIR-Calib：扩散LLM的后训练量化校准",
-      "summary_cn": "针对扩散LLM早期token不可逆提交导致的稳定性滞后，重加权不稳定token选取校准样本，实现低比特量化。",
-      "why_it_matters": "首次支持扩散大模型量化部署，大幅降低推理资源需求。"
+      "title_cn": "FAIR-Calib: 扩散LLM量化校准新方法",
+      "summary_cn": "针对扩散LLM的稳定性滞后问题，提出前沿感知重加权校准方法，提升后训练量化精度。",
+      "why_it_matters": "降低扩散LLM部署成本，保持生成质量。"
+    },
+    {
+      "title": "MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios",
+      "link": "https://arxiv.org/abs/2606.14747",
+      "summary": "arXiv:2606.14747v1 Announce Type: new \nAbstract: Recent advancements have significantly expanded the theoretical context windows of Multimodal Embedding Models (MEMs). However, larger context windows do not necessarily translate into effective comprehension and representation of long-context multimodal inputs, which remains a critical bottleneck for real-world deployment. To address the lack of systematic evaluation in this setting, we introduce MMLongEmbed, the first comprehensive benchmark for",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "MMLongEmbed: 多模态长上下文嵌入基准",
+      "summary_cn": "新基准测试多模态嵌入模型在长上下文场景下的表现，发现理论窗口大但实际检索差。",
+      "why_it_matters": "指导多模态搜索和问答系统的模型选择。"
     },
     {
       "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
@@ -68,9 +101,42 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "MacArena：在线macOS环境评测计算机使用代理",
-      "summary_cn": "在真实macOS虚拟机上构建竞技场，评估代理的GUI操作敏感度和多步任务完成能力。",
-      "why_it_matters": "为桌面自动化代理提供可复现的评测标准，加速商业化落地。"
+      "title_cn": "MacArena: macOS环境智能体基准",
+      "summary_cn": "在线macOS环境测试计算机使用智能体，评估GUI操作能力，发现现有模型成功率低。",
+      "why_it_matters": "推动桌面自动化智能体研发，提升办公效率。"
+    },
+    {
+      "title": "Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2",
+      "link": "https://arxiv.org/abs/2606.14748",
+      "summary": "arXiv:2606.14748v1 Announce Type: new \nAbstract: We present the Membership Inference Test (MINT) Demo 2, a framework designed to improve transparency in machine learning training processes. MINT is a technique for experimentally determining whether specific data were used during machine learning model training. We establish the theoretical framework and propose multiple architectures for MINT depending on the amount of information known about the models that are being audited. Experimental resul",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "MINT Demo 2: 检测你的数据是否被训练",
+      "summary_cn": "成员推理测试框架，可检测视觉语言数据是否被用于模型训练，提升训练透明度。",
+      "why_it_matters": "创作者可验证数据是否被AI公司未经授权使用。"
+    },
+    {
+      "title": "WorkBench Revisited: Workplace Agents Two Years On",
+      "link": "https://arxiv.org/abs/2606.13715",
+      "summary": "arXiv:2606.13715v1 Announce Type: new \nAbstract: The best agent on WorkBench in March 2024, GPT-4, completed 43% of tasks and took an unintended harmful action, such as emailing the wrong person, on 26% of them. We re-visit the benchmark in June 2026 and find that the best agent to date, Claude Opus 4.8, completes 89% and takes an unintended harmful action on 2.5%. Aside from this considerable progress in frontier agent performance, three things stand out. First, capability and safety go togethe",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "WorkBench两年后: 智能体进步缓慢",
+      "summary_cn": "对比2024年，当前最佳智能体在WorkBench上任务完成率仅从43%升至55%，仍会犯错。",
+      "why_it_matters": "企业部署智能体需谨慎，自动化仍有安全风险。"
+    },
+    {
+      "title": "The Culture Funnel: You Can't Align What isn't in the Data",
+      "link": "https://arxiv.org/abs/2606.13808",
+      "summary": "arXiv:2606.13808v1 Announce Type: new \nAbstract: Current cultural alignment approaches focus on inference-time interventions, assuming models already contain sufficient cultural knowledge. We argue modern LLM pipelines suffer from a cultural data funnel. Using a multidimensional tagging framework across pretraining, fine-tuning, alignment, and reasoning datasets, we show explicit cultural signals decline sharply during post-training, while geographically concentrated, task-specialized data domin",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "文化漏斗: 数据缺失导致对齐失败",
+      "summary_cn": "认为文化对齐问题根源在训练数据缺失，而非推理时干预，提出数据层面解决方案。",
+      "why_it_matters": "AI公司需重新审视数据采集策略，避免文化偏见。"
     },
     {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",

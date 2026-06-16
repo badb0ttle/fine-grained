@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T08:31:12.362505",
+  "generated_at": "2026-06-16T08:31:21.311752",
   "repos": [
     {
       "full_name": "Significant-Gravitas/AutoGPT",
@@ -7,7 +7,7 @@
       "owner": "Significant-Gravitas",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "stars": 184940,
+      "stars": 184960,
       "forks": 46139,
       "language": "Python",
       "topics": [
@@ -23,9 +23,9 @@
         "openai",
         "python"
       ],
-      "updated_at": "2026-06-14T23:32:33Z",
-      "summary": "AutoGPT 是一个基于 Python 的开源项目，它允许开发者构建能够自主分解复杂任务、调用工具并迭代执行目标的 AI 代理。该项目通过将大型语言模型（如 GPT-4 或 Claude）与任务规划、记忆管理和代码执行能力结合，使开发者无需从零搭建复杂的工作流即可快速实验和部署自主代理。对于关注 AI 应用落地的开发者而言，它提供了一个可扩展的框架来测试和定制代理行为，从而降低构建实用自动化工具的门槛。",
-      "stars_formatted": "184,940"
+      "updated_at": "2026-06-15T23:18:23Z",
+      "summary": "AutoGPT 是一个基于 Python 的开源项目，它允许开发者构建能够自主分解复杂任务、调用工具并迭代执行目标的 AI 代理，而无需手动编写每一步的交互逻辑。该项目通过将大语言模型（如 GPT、Claude 或 Llama）与任务规划、记忆管理和代码执行能力结合，为开发者提供了一个可扩展的框架来实验和部署自主代理。对于关注 AI 应用落地的开发者而言，AutoGPT 降低了构建自主工作流的门槛，使其能够快速原型化从自动化研究到代码生成等实际场景。",
+      "stars_formatted": "184,960"
     },
     {
       "full_name": "huggingface/transformers",
@@ -33,8 +33,8 @@
       "owner": "huggingface",
       "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "url": "https://github.com/huggingface/transformers",
-      "stars": 161587,
-      "forks": 33499,
+      "stars": 161611,
+      "forks": 33515,
       "language": "Python",
       "topics": [
         "audio",
@@ -57,9 +57,9 @@
         "transformer",
         "vlm"
       ],
-      "updated_at": "2026-06-15T00:14:21Z",
-      "summary": "Hugging Face Transformers 是一个提供统一接口的 Python 库，允许开发者加载、微调和部署数千种预训练模型，涵盖文本、图像、音频和多模态任务。它支持 PyTorch、TensorFlow 和 JAX 等主流框架，并深度集成模型中心，使模型切换与版本管理变得标准化。开发者应关注它，因为该库大幅降低了使用前沿模型（如 BERT、GPT、Whisper）的工程门槛，让团队能快速将研究原型转化为生产级应用。",
-      "stars_formatted": "161,587"
+      "updated_at": "2026-06-16T00:06:13Z",
+      "summary": "Hugging Face Transformers 是一个提供统一接口的 Python 库，支持加载、训练和推理数百种预训练模型，涵盖文本、图像、音频及多模态任务。它降低了使用 Transformer 架构的门槛，让开发者无需从零实现复杂模型，即可快速集成 BERT、GPT、Whisper 等前沿模型。对于需要高效复用社区预训练成果或进行多模态研究的团队，该库能显著减少重复开发工作，并直接对接模型中心（Model Hub）的共享生态。",
+      "stars_formatted": "161,611"
     },
     {
       "full_name": "langflow-ai/langflow",
@@ -67,8 +67,8 @@
       "owner": "langflow-ai",
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "url": "https://github.com/langflow-ai/langflow",
-      "stars": 149666,
-      "forks": 9267,
+      "stars": 149716,
+      "forks": 9276,
       "language": "Python",
       "topics": [
         "agents",
@@ -78,9 +78,9 @@
         "multiagent",
         "react-flow"
       ],
-      "updated_at": "2026-06-15T00:28:34Z",
-      "summary": "Langflow 是一个基于 Python 的可视化编程工具，允许开发者通过拖拽组件来构建和部署由大语言模型驱动的智能体与工作流。它利用 React Flow 实现直观的节点编辑界面，特别适合快速原型设计多智能体协作系统。开发者应关注它，因为其开源特性降低了构建复杂 AI 应用的门槛，无需从头编写大量集成代码即可测试和部署 LLM 工作流。",
-      "stars_formatted": "149,666"
+      "updated_at": "2026-06-16T00:12:31Z",
+      "summary": "Langflow 是一个基于 Python 的可视化开发框架，允许开发者通过拖拽节点的方式构建多智能体协作流程和大语言模型应用，无需编写大量底层代码。它内置了与主流 LLM 及向量数据库的集成模块，能显著降低 AI 工作流的原型设计与部署门槛。对于需要快速验证 AI 产品逻辑或搭建复杂多智能体系统的团队，Langflow 提供了直观的图形化界面和可复用的组件库，从而缩短开发周期并减少调试成本。",
+      "stars_formatted": "149,716"
     },
     {
       "full_name": "open-webui/open-webui",
@@ -88,8 +88,8 @@
       "owner": "open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
       "url": "https://github.com/open-webui/open-webui",
-      "stars": 141518,
-      "forks": 20336,
+      "stars": 141664,
+      "forks": 20359,
       "language": "Python",
       "topics": [
         "ai",
@@ -108,9 +108,9 @@
         "ui",
         "webui"
       ],
-      "updated_at": "2026-06-15T00:25:50Z",
-      "summary": "open-webui 是一个自托管的 AI 对话界面，支持通过 Ollama 或 OpenAI API 连接本地或远程的大语言模型，并提供文档检索（RAG）功能。开发者可以快速部署一个隐私可控、可定制的聊天界面，无需从头构建前端，同时兼容多种模型后端。该项目拥有超过 14 万 GitHub 星标，社区活跃，适合需要灵活管理 AI 交互界面的个人或团队。",
-      "stars_formatted": "141,518"
+      "updated_at": "2026-06-16T00:18:25Z",
+      "summary": "open-webui 是一个自托管的 AI 对话界面，支持连接 Ollama、OpenAI 等多种后端 API，并提供文档检索（RAG）和模型上下文协议（MCP）等实用功能。开发者可以快速部署一个功能完整的本地 AI 交互平台，无需从头构建前端，同时能灵活切换或组合不同的大语言模型服务。该项目拥有超过 14 万星标，社区活跃且文档完善，适合需要私有化部署 AI 工具的个人或团队。",
+      "stars_formatted": "141,664"
     },
     {
       "full_name": "langchain-ai/langchain",
@@ -118,8 +118,8 @@
       "owner": "langchain-ai",
       "description": "The agent engineering platform.",
       "url": "https://github.com/langchain-ai/langchain",
-      "stars": 139281,
-      "forks": 23087,
+      "stars": 139397,
+      "forks": 23101,
       "language": "Python",
       "topics": [
         "agents",
@@ -143,9 +143,9 @@
         "rag",
         "typescript"
       ],
-      "updated_at": "2026-06-15T00:02:43Z",
-      "summary": "LangChain 是一个用于构建基于大型语言模型（LLM）的智能体（Agent）和检索增强生成（RAG）应用的 Python 框架。它通过提供统一的接口和可组合的模块，简化了将外部数据源、工具和 API 与不同模型提供商（如 OpenAI、Anthropic）集成的流程。开发者应关注它，因为它能显著降低构建复杂 AI 工作流（如多智能体协作或动态工具调用）的工程成本，并拥有成熟的社区生态和 LangGraph 等扩展支持。",
-      "stars_formatted": "139,281"
+      "updated_at": "2026-06-16T00:12:52Z",
+      "summary": "LangChain 是一个用于构建基于大语言模型（LLM）的智能体（Agent）和检索增强生成（RAG）应用的 Python 框架，它通过模块化的组件和可组合的链式调用，简化了与多种 AI 模型（如 OpenAI、Anthropic、Gemini）的集成。开发者应关注它，因为它提供了现成的工具来编排多步骤推理、工具调用和记忆管理，从而显著降低开发复杂 AI 工作流的门槛。其庞大的社区和丰富的扩展生态（如 LangGraph 用于状态化代理）使其成为生产级 LLM 应用的事实标准基础设施。",
+      "stars_formatted": "139,397"
     }
   ]
 }

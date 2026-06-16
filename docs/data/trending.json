@@ -1,24 +1,14 @@
 {
-  "snapshot_at": "2026-06-14T00:13:58.803275+00:00",
-  "count": 2,
+  "snapshot_at": "2026-06-16T08:05:56.771998+00:00",
+  "count": 1,
   "repos": [
     {
-      "repo_full": "addyosmani/agent-skills",
+      "repo_full": "Panniantong/Agent-Reach",
       "description": "",
-      "language": "Shell",
-      "stars_today": 1514,
-      "total_stars": 58338,
-      "url": "https://github.com/addyosmani/agent-skills",
-      "paper_linked": false,
-      "paper_id": null
-    },
-    {
-      "repo_full": "kenn-io/agentsview",
-      "description": "",
-      "language": "Go",
-      "stars_today": 190,
-      "total_stars": 2357,
-      "url": "https://github.com/kenn-io/agentsview",
+      "language": "Python",
+      "stars_today": 1100,
+      "total_stars": 31051,
+      "url": "https://github.com/Panniantong/Agent-Reach",
       "paper_linked": false,
       "paper_id": null
     }
@@ -28,6 +18,8 @@
     "2026-06-05",
     "2026-06-09",
     "2026-06-12",
-    "2026-06-14"
+    "2026-06-14",
+    "2026-06-16",
+    "2026-06-16"
   ]
 }
