@@ -1,6 +1,19 @@
 {
-  "generated_at": "2026-06-16T08:06:51.896693+00:00",
+  "generated_at": "2026-06-19T14:54:36.081133+00:00",
   "models": [
+    {
+      "name": "GLM-5.2",
+      "provider": "智谱",
+      "parameters": "753B",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": [
+        {
+          "benchmark": "长时编码基准",
+          "score": "超越 GPT-5.5"
+        }
+      ]
+    },
     {
       "name": "GPT-4o",
       "provider": "OpenAI",
@@ -96,7 +109,7 @@
     {
       "name": "Nemotron 3 Ultra",
       "provider": "NVIDIA",
-      "parameters": "550B (55B active)",
+      "parameters": "550B",
       "context_window": "未知",
       "release_date": null,
       "benchmarks": []

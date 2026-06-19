@@ -1,27 +1,27 @@
 {
   "Significant-Gravitas/AutoGPT": {
-    "stars": 184960,
-    "summary": "AutoGPT 是一个基于 Python 的开源项目，它允许开发者构建能够自主分解复杂任务、调用工具并迭代执行目标的 AI 代理，而无需手动编写每一步的交互逻辑。该项目通过将大语言模型（如 GPT、Claude 或 Llama）与任务规划、记忆管理和代码执行能力结合，为开发者提供了一个可扩展的框架来实验和部署自主代理。对于关注 AI 应用落地的开发者而言，AutoGPT 降低了构建自主工作流的门槛，使其能够快速原型化从自动化研究到代码生成等实际场景。",
-    "updated_at": "2026-06-15T23:18:23Z"
+    "stars": 185022,
+    "summary": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "updated_at": "2026-06-18T23:57:48Z"
   },
   "huggingface/transformers": {
-    "stars": 161611,
-    "summary": "Hugging Face Transformers 是一个提供统一接口的 Python 库，支持加载、训练和推理数百种预训练模型，涵盖文本、图像、音频及多模态任务。它降低了使用 Transformer 架构的门槛，让开发者无需从零实现复杂模型，即可快速集成 BERT、GPT、Whisper 等前沿模型。对于需要高效复用社区预训练成果或进行多模态研究的团队，该库能显著减少重复开发工作，并直接对接模型中心（Model Hub）的共享生态。",
-    "updated_at": "2026-06-16T00:06:13Z"
+    "stars": 161706,
+    "summary": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+    "updated_at": "2026-06-19T00:15:00Z"
   },
   "langflow-ai/langflow": {
-    "stars": 149716,
-    "summary": "Langflow 是一个基于 Python 的可视化开发框架，允许开发者通过拖拽节点的方式构建多智能体协作流程和大语言模型应用，无需编写大量底层代码。它内置了与主流 LLM 及向量数据库的集成模块，能显著降低 AI 工作流的原型设计与部署门槛。对于需要快速验证 AI 产品逻辑或搭建复杂多智能体系统的团队，Langflow 提供了直观的图形化界面和可复用的组件库，从而缩短开发周期并减少调试成本。",
-    "updated_at": "2026-06-16T00:12:31Z"
+    "stars": 149822,
+    "summary": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+    "updated_at": "2026-06-18T23:54:58Z"
   },
   "open-webui/open-webui": {
-    "stars": 141664,
-    "summary": "open-webui 是一个自托管的 AI 对话界面，支持连接 Ollama、OpenAI 等多种后端 API，并提供文档检索（RAG）和模型上下文协议（MCP）等实用功能。开发者可以快速部署一个功能完整的本地 AI 交互平台，无需从头构建前端，同时能灵活切换或组合不同的大语言模型服务。该项目拥有超过 14 万星标，社区活跃且文档完善，适合需要私有化部署 AI 工具的个人或团队。",
-    "updated_at": "2026-06-16T00:18:25Z"
+    "stars": 142177,
+    "summary": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+    "updated_at": "2026-06-18T23:52:35Z"
   },
   "langchain-ai/langchain": {
-    "stars": 139397,
-    "summary": "LangChain 是一个用于构建基于大语言模型（LLM）的智能体（Agent）和检索增强生成（RAG）应用的 Python 框架，它通过模块化的组件和可组合的链式调用，简化了与多种 AI 模型（如 OpenAI、Anthropic、Gemini）的集成。开发者应关注它，因为它提供了现成的工具来编排多步骤推理、工具调用和记忆管理，从而显著降低开发复杂 AI 工作流的门槛。其庞大的社区和丰富的扩展生态（如 LangGraph 用于状态化代理）使其成为生产级 LLM 应用的事实标准基础设施。",
-    "updated_at": "2026-06-16T00:12:52Z"
+    "stars": 139657,
+    "summary": "The agent engineering platform.",
+    "updated_at": "2026-06-19T00:15:23Z"
   }
 }

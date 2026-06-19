@@ -1,25 +1,25 @@
 {
-  "snapshot_at": "2026-06-16T08:05:56.771998+00:00",
+  "snapshot_at": "2026-06-19T00:01:22.987473+00:00",
   "count": 1,
   "repos": [
     {
-      "repo_full": "Panniantong/Agent-Reach",
+      "repo_full": "DeusData/codebase-memory-mcp",
       "description": "",
-      "language": "Python",
-      "stars_today": 1100,
-      "total_stars": 31051,
-      "url": "https://github.com/Panniantong/Agent-Reach",
+      "language": "C",
+      "stars_today": 2322,
+      "total_stars": 7002,
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
-    "2026-06-05",
-    "2026-06-05",
     "2026-06-09",
     "2026-06-12",
     "2026-06-14",
     "2026-06-16",
-    "2026-06-16"
+    "2026-06-16",
+    "2026-06-18",
+    "2026-06-19"
   ]
 }

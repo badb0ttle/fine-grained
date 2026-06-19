@@ -69,62 +69,61 @@ Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but 
     Summary: arXiv:2606.14747v1 Announce Type: new 
 Abstract: Recent advancements have significantly expanded the theoretical context windows of Multimodal Embedding Models (MEMs). However, larger context windows 
 
-[9] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
+[9] [DB ID: 37003] [83.6] Title: Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration
+    Source: ArXiv cs.CV | 2026-06-17 04:00:00
+    Summary: arXiv:2606.17296v1 Announce Type: new 
+Abstract: Unified multimodal models (UMMs) have recently emerged as a promising paradigm for integrating multimodal understanding and generation within a single 
+
+[10] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06546v1 Announce Type: new 
 Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
 
-[10] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
+[11] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
     Source: ArXiv cs.LG | 2026-06-08 04:00:00
     Summary: arXiv:2606.06560v1 Announce Type: new 
 Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
 
-[11] [DB ID: 34137] [83.0] Title: Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2
+[12] [DB ID: 34137] [83.0] Title: Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2
     Source: ArXiv cs.CV | 2026-06-16 04:00:00
     Summary: arXiv:2606.14748v1 Announce Type: new 
 Abstract: We present the Membership Inference Test (MINT) Demo 2, a framework designed to improve transparency in machine learning training processes. MINT is a 
 
-[12] [DB ID: 34066] [82.7] Title: PrologMCP: A Standardized Prolog Tool Interface for LLM Agents
+[13] [DB ID: 34066] [82.7] Title: PrologMCP: A Standardized Prolog Tool Interface for LLM Agents
     Source: ArXiv cs.AI | 2026-06-16 04:00:00
     Summary: arXiv:2606.14935v1 Announce Type: new 
 Abstract: Frontier reasoning-tuned language models still fail on deductive tasks at depth, and the cost of improved performance through extended internal reasoni
 
-[13] [DB ID: 34106] [82.7] Title: CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning
+[14] [DB ID: 34106] [82.7] Title: CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning
     Source: ArXiv cs.CL | 2026-06-16 04:00:00
     Summary: arXiv:2606.14961v1 Announce Type: new 
 Abstract: Chain-of-thought (CoT) reasoning can improve LLM performance, but high answer confidence may be misleading when the accompanying CoT rationale is plaus
 
-[14] [DB ID: 34109] [82.7] Title: Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals
+[15] [DB ID: 34109] [82.7] Title: Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals
     Source: ArXiv cs.CL | 2026-06-16 04:00:00
     Summary: arXiv:2606.15026v1 Announce Type: new 
 Abstract: Physiological stress and emotion recognition are important for health monitoring and affective computing. In this work, we present a comprehensive eval
 
-[15] [DB ID: 23300] [82.7] Title: WorkBench Revisited: Workplace Agents Two Years On
+[16] [DB ID: 23300] [82.7] Title: WorkBench Revisited: Workplace Agents Two Years On
     Source: ArXiv cs.AI | 2026-06-15 04:00:00
     Summary: arXiv:2606.13715v1 Announce Type: new 
 Abstract: The best agent on WorkBench in March 2024, GPT-4, completed 43% of tasks and took an unintended harmful action, such as emailing the wrong person, on 2
 
-[16] [DB ID: 23339] [82.7] Title: The Culture Funnel: You Can't Align What isn't in the Data
+[17] [DB ID: 23339] [82.7] Title: The Culture Funnel: You Can't Align What isn't in the Data
     Source: ArXiv cs.CL | 2026-06-15 04:00:00
     Summary: arXiv:2606.13808v1 Announce Type: new 
 Abstract: Current cultural alignment approaches focus on inference-time interventions, assuming models already contain sufficient cultural knowledge. We argue mo
 
-[17] [DB ID: 23342] [82.7] Title: SANA: What Matters for QA Agents over Massive Data Lakes?
+[18] [DB ID: 23342] [82.7] Title: SANA: What Matters for QA Agents over Massive Data Lakes?
     Source: ArXiv cs.CL | 2026-06-15 04:00:00
     Summary: arXiv:2606.13904v1 Announce Type: new 
 Abstract: Exploratory question answering (EQA) over data lakes requires an LLM agent to discover relevant sources, analyze retrieved data, and adapt its actions 
 
-[18] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
+[19] [DB ID: 36649] [82.7] Title: Z.ai’s open-weights GLM-5.2 beats GPT-5.5 on multiple long-horizon coding benchmarks for 1/6th the cost
+    Source: VentureBeat AI | 2026-06-16 21:26:01
+    Summary: Today, Chinese AI startup Z.ai (formerly Zhipu AI) announced the immediate release of GLM-5.2, a 753-billion parameter open-weights large language model (LLM) engineered specifically to dominate &quot
+
+[20] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
     Source: ArXiv stat.ML | 2026-06-12 04:00:00
     Summary: arXiv:2605.18898v1 Announce Type: cross 
 Abstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude 
-
-[19] [DB ID: 1703] [82.3] Title: Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation
-    Source: ArXiv cs.AI | 2026-06-12 04:00:00
-    Summary: arXiv:2606.12594v1 Announce Type: new 
-Abstract: Modern Lean theorem provers achieve strong performance only with substantial training and inference compute, driven in part by scarce verified proof da
-
-[20] [DB ID: 1713] [82.3] Title: Benchmarking AI Agents for Addressing Scientific Challenges Across Scales
-    Source: ArXiv cs.AI | 2026-06-12 04:00:00
-    Summary: arXiv:2606.12736v1 Announce Type: new 
-Abstract: AI agents are increasingly being developed to accelerate scientific discovery, yet their practical capabilities in real research settings remain poorly

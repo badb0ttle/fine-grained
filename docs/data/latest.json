@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-16T08:06:51.897949+00:00",
-  "curated_at": "2026-06-16T08:06:51.897956+00:00",
-  "total_sources": 16,
-  "successful_sources": 15,
-  "total_articles": 1159,
-  "curated_count": 40,
+  "scanned_at": "2026-06-19T14:54:36.082623+00:00",
+  "curated_at": "2026-06-19T14:54:36.082629+00:00",
+  "total_sources": 13,
+  "successful_sources": 13,
+  "total_articles": 1421,
+  "curated_count": 43,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -13,9 +13,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "小LLM微调搞定生物医学验证",
-      "summary_cn": "用小模型（如GPT-4o）微调做生物医学声明验证，成本低且效果好，但发现数据集结构捷径影响泛化能力。",
-      "why_it_matters": "医院和药企可用小模型替代昂贵大模型做事实核查。"
+      "title_cn": "小模型微调搞定生物医学声明验证",
+      "summary_cn": "用 GPT-4o 做生物医学声明验证成本高且不透明。本文发现，微调小 LLM 能达到接近性能，但数据集存在结构捷径，跨领域泛化仍是问题。",
+      "why_it_matters": "给预算有限的医疗团队提供低成本验证方案"
     },
     {
       "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
@@ -35,9 +35,9 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "Nemotron 3 Ultra: 550B混合架构模型",
-      "summary_cn": "开源550B参数MoE混合Mamba-Transformer模型，仅55B活跃参数，专为智能体推理设计，效率高。",
-      "why_it_matters": "开源社区获得高性能推理模型，适合部署在资源受限环境。"
+      "title_cn": "Nemotron 3 Ultra: 550B MoE 混合架构开源",
+      "summary_cn": "NVIDIA 发布 Nemotron 3 Ultra，550B 总参数/55B 活跃参数的 MoE 模型，混合 Mamba 和 Transformer，专为 Agent 推理设计，已开源。",
+      "why_it_matters": "开源社区获得一个高效推理的 Agent 基座模型"
     },
     {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
@@ -46,9 +46,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "ToolSense: 审计LLM工具知识的新框架",
-      "summary_cn": "提出诊断框架审计LLM参数化工具知识，解决智能体在大型工具目录中的检索瓶颈问题。",
-      "why_it_matters": "开发者可检测LLM工具调用缺陷，提升智能体可靠性。"
+      "title_cn": "ToolSense: 诊断 LLM 工具知识的新框架",
+      "summary_cn": "LLM Agent 依赖嵌入检索工具，但常出错。ToolSense 通过诊断框架审计模型对工具参数的理解，发现检索瓶颈并给出改进方向。",
+      "why_it_matters": "做 Agent 开发的团队可定位工具调用失败根因"
     },
     {
       "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
@@ -57,9 +57,9 @@
       "published": "2026-06-15 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "移动NPU上跑扩散LLM推理",
-      "summary_cn": "在手机NPU上高效运行扩散LLM，通过并行去噪加速生成，适合延迟敏感应用。",
-      "why_it_matters": "手机端AI应用可实时生成文本，无需联网。"
+      "title_cn": "手机 NPU 跑 Diffusion LLM 推理",
+      "summary_cn": "Diffusion LLM 能并行去噪加速生成，但部署在手机上仍慢。本文利用移动 NPU 优化推理，首次在端侧实现可用的 Diffusion LLM。",
+      "why_it_matters": "端侧 AI 应用可享受更快的生成速度"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -79,9 +79,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "FAIR-Calib: 扩散LLM量化校准新方法",
-      "summary_cn": "针对扩散LLM的稳定性滞后问题，提出前沿感知重加权校准方法，提升后训练量化精度。",
-      "why_it_matters": "降低扩散LLM部署成本，保持生成质量。"
+      "title_cn": "FAIR-Calib: 量化 Diffusion LLM 不掉精度",
+      "summary_cn": "Diffusion LLM 的早期决策不可逆，导致量化后精度崩。FAIR-Calib 用前沿感知重加权校准，首次实现后训练量化下 dLLM 精度无损。",
+      "why_it_matters": "模型压缩团队可安全量化新一代 Diffusion LLM"
     },
     {
       "title": "MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios",
@@ -90,9 +90,20 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CV",
       "category": "Paper",
-      "title_cn": "MMLongEmbed: 多模态长上下文嵌入基准",
-      "summary_cn": "新基准测试多模态嵌入模型在长上下文场景下的表现，发现理论窗口大但实际检索差。",
-      "why_it_matters": "指导多模态搜索和问答系统的模型选择。"
+      "title_cn": "MMLongEmbed: 多模态长上下文嵌入评测",
+      "summary_cn": "多模态嵌入模型宣称支持长上下文，但实际检索能力未知。MMLongEmbed 基准测试发现，长文本下图文检索性能断崖式下降。",
+      "why_it_matters": "多模态 RAG 系统选型时需警惕长上下文陷阱"
+    },
+    {
+      "title": "Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration",
+      "link": "https://arxiv.org/abs/2606.17296",
+      "summary": "arXiv:2606.17296v1 Announce Type: new \nAbstract: Unified multimodal models (UMMs) have recently emerged as a promising paradigm for integrating multimodal understanding and generation within a single autoregressive transformer. However, during multimodal instruction tuning, these models often exhibit pronounced modality imbalance: language gradients dominate optimization, thus leading to lower image generation quality, especially under parameter-efficient fine-tuning such as LoRA. In this work, ",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "Pareto LoRA: 解决多模态模型模态不平衡",
+      "summary_cn": "提出Pareto LoRA方法，通过帕累托最优梯度整合，缓解统一多模态模型中视觉和语言模态的不平衡问题。",
+      "why_it_matters": "训练多模态模型时可避免某一模态主导，提升整体性能。"
     },
     {
       "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
@@ -101,9 +112,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "MacArena: macOS环境智能体基准",
-      "summary_cn": "在线macOS环境测试计算机使用智能体，评估GUI操作能力，发现现有模型成功率低。",
-      "why_it_matters": "推动桌面自动化智能体研发，提升办公效率。"
+      "title_cn": "MacArena: 在真实 macOS 上测 Agent",
+      "summary_cn": "现有计算机使用 Agent 评测多基于模拟器。MacArena 在真实 macOS 环境中测试，发现 Agent 在文件操作和跨应用任务上表现远低于预期。",
+      "why_it_matters": "桌面 Agent 开发者获得更真实的性能基准"
     },
     {
       "title": "Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2",
@@ -112,9 +123,9 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CV",
       "category": "Paper",
-      "title_cn": "MINT Demo 2: 检测你的数据是否被训练",
-      "summary_cn": "成员推理测试框架，可检测视觉语言数据是否被用于模型训练，提升训练透明度。",
-      "why_it_matters": "创作者可验证数据是否被AI公司未经授权使用。"
+      "title_cn": "MINT Demo 2: 测你的数据是否被 AI 训练",
+      "summary_cn": "会员推断测试 MINT 升级版，通过黑盒 API 判断特定图文数据是否被用于训练模型，无需模型内部信息。",
+      "why_it_matters": "创作者和企业可验证数据是否被未经授权使用"
     },
     {
       "title": "WorkBench Revisited: Workplace Agents Two Years On",
@@ -123,9 +134,9 @@
       "published": "2026-06-15 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "WorkBench两年后: 智能体进步缓慢",
-      "summary_cn": "对比2024年，当前最佳智能体在WorkBench上任务完成率仅从43%升至55%，仍会犯错。",
-      "why_it_matters": "企业部署智能体需谨慎，自动化仍有安全风险。"
+      "title_cn": "WorkBench两年回顾: Agent进步有限",
+      "summary_cn": "对比2024年3月，当前最佳Agent在WorkBench上任务完成率仅从43%提升到某值，仍会误发邮件等有害操作。",
+      "why_it_matters": "企业部署Agent需谨慎，安全性和可靠性进展缓慢。"
     },
     {
       "title": "The Culture Funnel: You Can't Align What isn't in the Data",
@@ -137,6 +148,28 @@
       "title_cn": "文化漏斗: 数据缺失导致对齐失败",
       "summary_cn": "认为文化对齐问题根源在训练数据缺失，而非推理时干预，提出数据层面解决方案。",
       "why_it_matters": "AI公司需重新审视数据采集策略，避免文化偏见。"
+    },
+    {
+      "title": "SANA: What Matters for QA Agents over Massive Data Lakes?",
+      "link": "https://arxiv.org/abs/2606.13904",
+      "summary": "arXiv:2606.13904v1 Announce Type: new \nAbstract: Exploratory question answering (EQA) over data lakes requires an LLM agent to discover relevant sources, analyze retrieved data, and adapt its actions based on intermediate results. End-to-end accuracy alone cannot distinguish failures in search, planning, data analysis, or the agent's Action Policy: its decisions about what to do next and when to submit an answer. We present SANA (Search Agent Navigation Ablation framework), a diagnostic ablation",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "SANA: 数据湖问答 Agent 该关注什么",
+      "summary_cn": "在大型数据湖上做探索性问答，Agent 常迷失在源选择中。SANA 系统通过分阶段检索和自适应策略，将准确率提升 30% 以上。",
+      "why_it_matters": "数据工程师可用更少的 token 获得更准的查询结果"
+    },
+    {
+      "title": "Z.ai’s open-weights GLM-5.2 beats GPT-5.5 on multiple long-horizon coding benchmarks for 1/6th the cost",
+      "link": "https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost",
+      "summary": "Today, Chinese AI startup Z.ai (formerly Zhipu AI) announced the immediate release of GLM-5.2, a 753-billion parameter open-weights large language model (LLM) engineered specifically to dominate &quot;long-horizon&quot; autonomous coding and engineering tasks. Available immediately on Hugging Face, the Z.ai API, and more than 20 third-party coding environments, the model boasts a highly stable 1-million-token context window alongside enterprise subscription tiers starting at just $12.60 per mont",
+      "published": "2026-06-16 21:26:01",
+      "source": "VentureBeat AI",
+      "category": "Blog",
+      "title_cn": "GLM-5.2 开源，1/6 成本击败 GPT-5.5",
+      "summary_cn": "智谱开源 GLM-5.2，753B 参数，在长时编码基准上超越 GPT-5.5，推理成本仅为后者六分之一，权重已开放。",
+      "why_it_matters": "开源模型在编码任务上首次以低价碾压闭源旗舰"
     },
     {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
