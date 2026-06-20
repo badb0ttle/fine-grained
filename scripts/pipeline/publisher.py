@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Stage 5: Publisher — export JSON, commit, push to GitHub Pages."""
+"""Stage 5: Publisher — export JSON, sync to API, generate RSS/sitemap."""
 
 import json
-import subprocess
-import sys
 from pathlib import Path
 
 from . import REPO_DIR
@@ -212,69 +210,15 @@ def export_files(data: dict) -> dict:
     return {"latest": str(latest_path), "history": str(history_path)}
 
 
-def git_push() -> dict:
-    """Commit and push to GitHub Pages."""
-    token_file = REPO_DIR / ".git_token"
-    if not token_file.exists():
-        print("⚠️  .git_token not found — skipping git push")
-        return {"pushed": False, "reason": "no token"}
-
-    token = token_file.read_text().strip()
-    branch = "main"
-
-    def run(cmd, check=True):
-        result = subprocess.run(cmd, cwd=REPO_DIR, capture_output=True, text=True)
-        if check and result.returncode != 0:
-            print(f"  ⚠️  {' '.join(cmd)}: {result.stderr.strip()[:200]}")
-        return result
-
-    print("\n📤 Publishing to GitHub Pages...")
-
-    # Pull first
-    run(["git", "pull", "origin", branch, "--rebase"], check=False)
-
-    # Stage
-    run(["git", "add", "data/latest.json", "data/stats.json", "data/leaderboard.json", "data/trending.json", "data/search_index.json", "data/clusters.json", "data/model_leaderboard.json", "data/history/", "data/ai_intel.db"], check=False)
-
-    # Check if anything to commit
-    status = subprocess.run(
-        ["git", "status", "--porcelain"], cwd=REPO_DIR, capture_output=True, text=True
-    )
-    if not status.stdout.strip():
-        print("   Nothing to commit — already up to date")
-        return {"pushed": False, "reason": "no changes"}
-
-    # Commit
-    from datetime import datetime
-    date_str = datetime.now().strftime("%Y-%m-%d")
-    run(["git", "commit", "-m", f"📡 AI intel scan + curated — {date_str}"])
-
-    # Push
-    push_url = f"https://oauth2:{token}@github.com/badb0ttle/fine-grained.git"
-    result = subprocess.run(
-        ["git", "push", push_url, branch],
-        cwd=REPO_DIR, capture_output=True, text=True
-    )
-    if result.returncode == 0:
-        print("✅ Pushed! → https://ai.hjhai.xyz")
-        return {"pushed": True}
-    else:
-        if "everything up-to-date" in result.stderr:
-            print("✅ Already up to date")
-            return {"pushed": False, "reason": "up to date"}
-        print(f"⚠️  Push issue: {result.stderr[:200]}")
-        return {"pushed": False, "reason": result.stderr[:100]}
-
-
 def run() -> dict:
-    """Full publish: export JSON + API sync + RSS + sitemap + git push."""
+    """Full publish: export JSON + API sync + RSS + sitemap."""
     print("📦 Publisher — exporting and deploying...\n")
 
     data = export_latest_json()
     stats = export_stats_json()
     files = export_files(data)
 
-    # ── Phase 4: Sync to API backend ──
+    # ── Sync to API backend ──
     from .api_client import post_batch, post_curation
     from datetime import datetime
 
@@ -327,9 +271,7 @@ def run() -> dict:
     else:
         print(f"✅ Health: all sources OK")
 
-    result = git_push()
-
-    return {**files, **result}
+    return {**files}
 
 
 if __name__ == "__main__":
