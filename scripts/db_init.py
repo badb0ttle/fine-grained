@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS articles (
     published       TEXT,
     source_name     TEXT    NOT NULL,
     category        TEXT,
-    content_hash    TEXT,                          -- SHA256(title+link) for dedup
+    content_hash    TEXT    NOT NULL,               -- SHA256(title+link) for dedup
     -- LLM processing fields (Phase 2)
     title_cn        TEXT,
     summary_cn      TEXT,

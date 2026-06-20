@@ -124,15 +124,19 @@ def post_batch(
         cur = conn.cursor()
 
         for a in articles:
-            # Skip if content_hash exists
-            if a.get("content_hash"):
-                dup = conn.execute(
-                    "SELECT id FROM articles WHERE content_hash = ?",
-                    (a["content_hash"],)
-                ).fetchone()
-                if dup:
-                    skipped += 1
-                    continue
+            # Require content_hash — enforced at DB level too (NOT NULL + trigger)
+            if not a.get("content_hash"):
+                skipped += 1
+                continue
+
+            # Dedup: skip if content_hash already in DB
+            dup = conn.execute(
+                "SELECT id FROM articles WHERE content_hash = ?",
+                (a["content_hash"],)
+            ).fetchone()
+            if dup:
+                skipped += 1
+                continue
 
             cur.execute("""
                 INSERT INTO articles (

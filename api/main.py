@@ -35,6 +35,9 @@ app = FastAPI(
     description="Backend for ai.hjhai.xyz — curated AI intelligence",
     version="1.0.0",
     lifespan=lifespan,
+    docs_url=None,       # disable Swagger UI in production
+    redoc_url=None,      # disable ReDoc in production
+    openapi_url=None,    # disable OpenAPI schema in production
 )
 
 # ── CORS: allow frontend from GitHub Pages ──
