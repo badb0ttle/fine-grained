@@ -1,13 +1,26 @@
-import { useEffect, useState } from 'react'
-import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, LeaderboardData } from '../types'
+import { useEffect, useState, useCallback } from 'react'
+import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, LeaderboardData, Article } from '../types'
 
+// ── Mode configuration ──
+const API_MODE: boolean = import.meta.env.VITE_API_MODE === 'true'
+const API_BASE: string = import.meta.env.VITE_API_BASE || 'https://ai.hjhai.xyz/api'
 const DATA_BASE = import.meta.env.BASE_URL
 
+// ── Unified fetcher ──
 async function fetchJSON<T>(path: string): Promise<T> {
-  const res = await fetch(`${DATA_BASE}${path}`)
+  const url = API_MODE ? `${API_BASE}${path}` : `${DATA_BASE}data/${path}`
+  const res = await fetch(url)
   if (!res.ok) throw new Error(`${res.status}`)
   return res.json()
 }
+
+async function fetchAPI<T>(endpoint: string): Promise<T> {
+  const res = await fetch(`${API_BASE}${endpoint}`)
+  if (!res.ok) throw new Error(`${res.status}`)
+  return res.json()
+}
+
+// ── Data hooks ──
 
 export function useLatest() {
   const [data, setData] = useState<LatestData | null>(null)
@@ -15,7 +28,8 @@ export function useLatest() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetchJSON<LatestData>('data/latest.json')
+    const path = API_MODE ? '/latest' : 'latest.json'
+    fetchJSON<LatestData>(path)
       .then(setData)
       .catch(e => setError(e.message))
       .finally(() => setLoading(false))
@@ -30,7 +44,8 @@ export function useStats() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetchJSON<Stats>('data/stats.json')
+    const path = API_MODE ? '/stats' : 'stats.json'
+    fetchJSON<Stats>(path)
       .then(setData)
       .catch(e => setError(e.message))
       .finally(() => setLoading(false))
@@ -44,7 +59,8 @@ export function useTrending() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchJSON<TrendingData>('data/trending.json')
+    const path = API_MODE ? '/trending' : 'trending.json'
+    fetchJSON<TrendingData>(path)
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))
@@ -58,7 +74,8 @@ export function useClusters() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchJSON<ClusterData>('data/clusters.json')
+    const path = API_MODE ? '/clusters' : 'clusters.json'
+    fetchJSON<ClusterData>(path)
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))
@@ -72,7 +89,9 @@ export function useTop5() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchJSON<Top5Data>('data/github_top5.json')
+    // Top5 is now served via /trending endpoint
+    const path = API_MODE ? '/trending' : 'github_top5.json'
+    fetchJSON<Top5Data>(path)
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))
@@ -86,11 +105,58 @@ export function useLeaderboard() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetchJSON<LeaderboardData>('data/model_leaderboard.json')
+    const path = API_MODE ? '/model-leaderboard' : 'model_leaderboard.json'
+    fetchJSON<LeaderboardData>(path)
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))
   }, [])
 
   return { data, loading }
+}
+
+// ── API-only hooks ──
+
+export function useSearch() {
+  const [results, setResults] = useState<Article[]>([])
+  const [total, setTotal] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const search = useCallback(async (query: string, limit = 20) => {
+    if (!query.trim()) {
+      setResults([])
+      setTotal(0)
+      return
+    }
+    setLoading(true)
+    setError(null)
+    try {
+      const data = await fetchAPI<{ articles: Article[]; total: number }>(
+        `/search?q=${encodeURIComponent(query)}&limit=${limit}`
+      )
+      setResults(data.articles)
+      setTotal(data.total)
+    } catch (e: any) {
+      setError(e.message)
+    } finally {
+      setLoading(false)
+    }
+  }, [])
+
+  return { results, total, loading, error, search }
+}
+
+export function useWeekly() {
+  const [weeks, setWeeks] = useState<string[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchAPI<{ weeks: string[] }>('/weekly')
+      .then(data => setWeeks(data.weeks || []))
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [])
+
+  return { weeks, loading }
 }

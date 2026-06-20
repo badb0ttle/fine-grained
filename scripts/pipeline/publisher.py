@@ -267,12 +267,40 @@ def git_push() -> dict:
 
 
 def run() -> dict:
-    """Full publish: export JSON + RSS + sitemap + git push."""
+    """Full publish: export JSON + API sync + RSS + sitemap + git push."""
     print("📦 Publisher — exporting and deploying...\n")
 
     data = export_latest_json()
     stats = export_stats_json()
     files = export_files(data)
+
+    # ── Phase 4: Sync to API backend ──
+    from .api_client import post_batch, post_curation
+    from datetime import datetime
+
+    scan_id = f"publish-{datetime.now().strftime('%Y%m%dT%H%M%S')}"
+    api_result = {"status": "skipped"}
+
+    # POST curated articles to API
+    curated = data.get("articles", [])
+    if curated:
+        api_result = post_batch(articles=curated, stats=stats, scan_id=scan_id)
+        api_status = api_result.get("status", "error")
+        print(f"📡 API batch: {api_status} — {api_result.get('inserted', 0)} inserted, {api_result.get('skipped', 0)} skipped")
+
+        # POST curation metadata
+        curation_items = []
+        for a in curated:
+            if a.get("title_cn") or a.get("why_it_matters"):
+                curation_items.append({
+                    "id": a.get("id", 0),
+                    "title_cn": a.get("title_cn", ""),
+                    "summary_cn": a.get("summary_cn", ""),
+                    "why_it_matters": a.get("why_it_matters", ""),
+                })
+        if curation_items:
+            cr = post_curation(curated=curation_items, scan_id=scan_id)
+            print(f"📡 API curation: {cr.get('status', 'error')} — {cr.get('curated', 0)} updated")
 
     # Write model_leaderboard.json for model rankings
     leaderboard_data = __import__('scripts.pipeline.model_leaderboard', fromlist=['fetch_and_export']).fetch_and_export()

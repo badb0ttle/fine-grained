@@ -1,0 +1,28 @@
+[Unit]
+Description=AllOfAI FastAPI Backend
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/fine-grained
+ExecStart=/root/fine-grained/.venv/bin/python3 -m uvicorn api.main:app \
+    --host 127.0.0.1 \
+    --port 8001 \
+    --log-level info
+Restart=always
+RestartSec=5
+
+# Env
+Environment=PATH=/root/fine-grained/.venv/bin:/usr/local/bin:/usr/bin:/bin
+Environment=AI_INTEL_DB_PATH=/root/fine-grained/data/ai_intel.db
+Environment=AI_INTEL_API_KEY=***_INTEL_API_KEY}
+Environment=AI_INTEL_CORS_ORIGINS=https://ai.hjhai.xyz
+Environment=AI_INTEL_API_PORT=8001
+
+# Graceful shutdown
+KillMode=mixed
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
