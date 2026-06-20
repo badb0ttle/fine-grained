@@ -3,7 +3,7 @@ import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, Leaderboar
 
 // ── Mode configuration ──
 const API_MODE: boolean = import.meta.env.VITE_API_MODE === 'true'
-const API_BASE: string = import.meta.env.VITE_API_BASE || 'https://ai.hjhai.xyz/api'
+const API_BASE: string = import.meta.env.VITE_API_BASE || 'https://api.hjhai.xyz'
 const DATA_BASE = import.meta.env.BASE_URL
 
 // ── Unified fetcher ──
