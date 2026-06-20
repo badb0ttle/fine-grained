@@ -40,7 +40,7 @@ def _request(method: str, path: str, body: dict) -> dict:
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer *** ",
+        "Authorization": f"Bearer {API_KEY}",
         "X-Idempotency-Key": idempotency_key,
     }
 

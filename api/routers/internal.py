@@ -139,7 +139,7 @@ def post_batch(
                 continue
 
             cur.execute("""
-                INSERT INTO articles (
+                INSERT OR IGNORE INTO articles (
                     title, link, summary, published, source_name, category,
                     score_total, score_authority, score_timeliness,
                     score_depth, score_relevance, content_hash,
