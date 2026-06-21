@@ -14,20 +14,22 @@ const HOVER_RADIUS = 8
 function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'en' }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
+  const offscreenRef = useRef<HTMLCanvasElement | null>(null)
   const [activeCluster, setActiveCluster] = useState<number>(-1)
   const [info, setInfo] = useState('')
-
+  const coordsRef = useRef<{ cx: number; cy: number; title: string; source: string; published: string; score: number; link: string; cluster: number }[]>([])
   const clusterMap = useRef<Record<number, string>>({})
+
   useEffect(() => {
     const map: Record<number, string> = {}
     for (const c of data.clusters) map[c.id] = c.color
     clusterMap.current = map
   }, [data])
 
-  const draw = () => {
+  /** Render background (grid + all dots) to offscreen canvas — only recalculated on data/filter change. */
+  const renderBackground = () => {
     const canvas = canvasRef.current
-    const tooltip = tooltipRef.current
-    if (!canvas || !tooltip) return
+    if (!canvas) return
 
     const dpr = window.devicePixelRatio || 1
     const parent = canvas.parentElement!
@@ -39,12 +41,22 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
     canvas.style.width = W + 'px'
     canvas.style.height = H + 'px'
 
-    const ctx = canvas.getContext('2d')!
-    ctx.scale(dpr, dpr)
+    // Create or re-use offscreen canvas
+    if (!offscreenRef.current) {
+      offscreenRef.current = document.createElement('canvas')
+    }
+    const off = offscreenRef.current
+    off.width = W * dpr
+    off.height = H * dpr
 
-    ctx.fillStyle = '#0a0b14'
-    ctx.fillRect(0, 0, W, H)
+    const octx = off.getContext('2d')!
+    octx.scale(dpr, dpr)
 
+    // Background
+    octx.fillStyle = '#0a0b14'
+    octx.fillRect(0, 0, W, H)
+
+    // Points
     let points = data.points
     if (activeCluster >= 0) {
       points = points.filter(p => p.cluster === activeCluster)
@@ -52,49 +64,98 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
 
     const plotW = W - PADDING * 2
     const plotH = H - PADDING * 2
-    const canvasPoints = points.map(p => ({
-      ...p,
+    coordsRef.current = points.map(p => ({
       cx: PADDING + p.x * plotW,
       cy: PADDING + (1 - p.y) * plotH,
+      title: p.title,
+      source: p.source,
+      published: p.published || '',
+      score: p.score || 0,
+      link: p.link || '',
+      cluster: p.cluster,
     }))
 
-    ctx.strokeStyle = 'rgba(255,255,255,0.03)'
-    ctx.lineWidth = 0.5
+    // Grid
+    octx.strokeStyle = 'rgba(255,255,255,0.03)'
+    octx.lineWidth = 0.5
     for (let i = 0; i <= 4; i++) {
       const gx = PADDING + (plotW / 4) * i
       const gy = PADDING + (plotH / 4) * i
-      ctx.beginPath(); ctx.moveTo(gx, PADDING); ctx.lineTo(gx, PADDING + plotH); ctx.stroke()
-      ctx.beginPath(); ctx.moveTo(PADDING, gy); ctx.lineTo(PADDING + plotW, gy); ctx.stroke()
+      octx.beginPath(); octx.moveTo(gx, PADDING); octx.lineTo(gx, PADDING + plotH); octx.stroke()
+      octx.beginPath(); octx.moveTo(PADDING, gy); octx.lineTo(PADDING + plotW, gy); octx.stroke()
     }
 
-    for (const p of canvasPoints) {
+    // Dots
+    for (const p of coordsRef.current) {
       const color = clusterMap.current[p.cluster] || '#888'
       const alpha = activeCluster >= 0 ? 'e6' : 'a6'
-      ctx.beginPath()
-      ctx.arc(p.cx, p.cy, DOT_RADIUS, 0, Math.PI * 2)
-      ctx.fillStyle = color + alpha
-      ctx.fill()
-      ctx.strokeStyle = 'rgba(0,0,0,0.3)'
-      ctx.lineWidth = 0.3
-      ctx.stroke()
+      octx.beginPath()
+      octx.arc(p.cx, p.cy, DOT_RADIUS, 0, Math.PI * 2)
+      octx.fillStyle = color + alpha
+      octx.fill()
+      octx.strokeStyle = 'rgba(0,0,0,0.3)'
+      octx.lineWidth = 0.3
+      octx.stroke()
     }
 
     const en = locale === 'en'
     setInfo(en
-      ? `Showing ${canvasPoints.length} articles · ${data.n_clusters} clusters total`
-      : `显示 ${canvasPoints.length} 篇文章 · 共 ${data.n_clusters} 个聚类`
+      ? `Showing ${coordsRef.current.length} articles · ${data.n_clusters} clusters total`
+      : `显示 ${coordsRef.current.length} 篇文章 · 共 ${data.n_clusters} 个聚类`
     )
 
-    let hovered: (typeof canvasPoints)[0] | null = null
+    // Copy offscreen to main
+    const ctx = canvas.getContext('2d')!
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(off, 0, 0)
+  }
+
+  /** Lightweight redraw: copy offscreen + highlight only. */
+  const redrawHighlight = (hovered: typeof coordsRef.current[0] | null) => {
+    const canvas = canvasRef.current
+    const off = offscreenRef.current
+    if (!canvas || !off) return
+
+    const ctx = canvas.getContext('2d')!
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(off, 0, 0)
+
+    if (hovered) {
+      const dpr = window.devicePixelRatio || 1
+      const W = parseInt(canvas.style.width)
+      const c = clusterMap.current[hovered.cluster] || '#888'
+      ctx.save()
+      ctx.scale(dpr, dpr)
+      ctx.beginPath()
+      ctx.arc(hovered.cx, hovered.cy, HOVER_RADIUS, 0, Math.PI * 2)
+      ctx.fillStyle = c + '40'
+      ctx.fill()
+      ctx.strokeStyle = c
+      ctx.lineWidth = 2
+      ctx.stroke()
+      ctx.restore()
+    }
+  }
+
+  const draw = () => {
+    renderBackground()
+
+    const canvas = canvasRef.current
+    const tooltip = tooltipRef.current
+    if (!canvas || !tooltip) return
+
+    const W = parseInt(canvas.style.width)
+    const H = parseInt(canvas.style.height)
+    let hovered: (typeof coordsRef.current)[0] | null = null
 
     canvas.onmousemove = (e) => {
       const rect = canvas.getBoundingClientRect()
       const mx = (e.clientX - rect.left) * (W / rect.width)
       const my = (e.clientY - rect.top) * (H / rect.height)
 
-      let closest: (typeof canvasPoints)[0] | null = null
+      let closest: (typeof coordsRef.current)[0] | null = null
       let minDist = 15
-      for (const p of canvasPoints) {
+      for (const p of coordsRef.current) {
         const dx = mx - p.cx, dy = my - p.cy
         const d = Math.sqrt(dx * dx + dy * dy)
         if (d < minDist) { minDist = d; closest = p }
@@ -102,29 +163,19 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
 
       if (closest !== hovered) {
         hovered = closest
-        draw()
+        redrawHighlight(closest)
 
         if (closest) {
-          ctx.beginPath()
-          ctx.arc(closest.cx, closest.cy, HOVER_RADIUS, 0, Math.PI * 2)
-          const c = clusterMap.current[closest.cluster] || '#888'
-          ctx.fillStyle = c + '40'
-          ctx.fill()
-          ctx.strokeStyle = c
-          ctx.lineWidth = 2
-          ctx.stroke()
-
           const esc = (s: string) => {
             const d = document.createElement('div')
             d.textContent = s
             return d.innerHTML
           }
-
           tooltip.innerHTML = `
             <div style="font-weight:500;color:#e8e9f0;line-height:1.35;margin-bottom:.3rem;font-size:.8rem">${esc(closest.title)}</div>
             <div style="color:#9898b0;font-size:.72rem;display:flex;gap:.5rem;flex-wrap:wrap">
               <span>${esc(closest.source)}</span>
-              <span>${esc((closest.published || '').slice(0, 10))}</span>
+              <span>${esc(closest.published.slice(0, 10))}</span>
               <span>${closest.score}</span>
             </div>`
           tooltip.style.opacity = '1'
@@ -147,9 +198,9 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
       const mx = (e.clientX - rect.left) * (W / rect.width)
       const my = (e.clientY - rect.top) * (H / rect.height)
 
-      let closest: (typeof canvasPoints)[0] | null = null
+      let closest: (typeof coordsRef.current)[0] | null = null
       let minDist = 15
-      for (const p of canvasPoints) {
+      for (const p of coordsRef.current) {
         const dx = mx - p.cx, dy = my - p.cy
         const d = Math.sqrt(dx * dx + dy * dy)
         if (d < minDist) { minDist = d; closest = p }
@@ -160,7 +211,7 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
     canvas.onmouseleave = () => {
       tooltip.style.opacity = '0'
       hovered = null
-      draw()
+      redrawHighlight(null)
     }
   }
 

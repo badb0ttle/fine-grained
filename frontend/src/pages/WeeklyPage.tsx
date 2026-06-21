@@ -106,9 +106,9 @@ export function WeeklyPage() {
         </div>
       ) : (
         <div className="space-y-3">
-          {reports.map((report, i) => (
-            <ScrollReveal key={report.date} index={i}>
-              <Link to={`/weekly/${report.date}`} className="block bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group">
+          {reports.map((report, i) => {
+            const card = (
+              <Link key={report.date} to={`/weekly/${report.date}`} className="block bg-bg-card border border-border-muted rounded-xl p-5 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                     <FontAwesomeIcon icon={ICON.weekly} className="text-accent text-lg" />
@@ -124,8 +124,11 @@ export function WeeklyPage() {
                   </div>
                 </div>
               </Link>
-            </ScrollReveal>
-          ))}
+            )
+            return i < 12 ? (
+              <ScrollReveal key={report.date} index={i}>{card}</ScrollReveal>
+            ) : card
+          })}
         </div>
       )}
     </div>

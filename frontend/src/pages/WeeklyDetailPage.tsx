@@ -99,7 +99,7 @@ export function WeeklyDetailPage() {
 
       const [statsData, lbData] = await Promise.all([
         fetch(`${import.meta.env.BASE_URL}data/stats.json`).then(r => r.ok ? r.json() : null),
-        fetch(`${import.meta.env.BASE_URL}data/model_leaderboard.json`).then(r => r.ok ? r.json() : null),
+        fetch(`${import.meta.env.BASE_URL}data/model_leaderboard_top.json`).then(r => r.ok ? r.json() : null),
       ])
 
       if (!htmlRes.ok) throw new Error('Not found')

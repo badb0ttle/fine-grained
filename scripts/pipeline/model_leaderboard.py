@@ -221,3 +221,44 @@ if __name__ == "__main__":
         if s.get("best_elo"):
             parts.append(f"ELO={s['best_elo']}({s.get('best_elo_category','?')})")
         print(f"  #{m['rank']} {m['name']} — {', '.join(parts)}")
+
+
+def export_top_json(top_n: int = 20) -> dict:
+    """Export a streamlined top-N leaderboard for weekly/detail pages.
+    
+    Only includes fields the weekly detail sidebar needs (name, provider, scores),
+    keeping the payload under ~5KB instead of the full ~200KB leaderboard.
+    """
+    path = REPO_DIR / "data" / "model_leaderboard.json"
+    if not path.exists():
+        fetch_and_export()
+    
+    data = json.loads(path.read_text())
+    all_models = data.get("models", [])
+    
+    # Pick top scored models (already sorted by rank)
+    top = []
+    for m in all_models:
+        scores = m.get("scores")
+        if scores and scores.get("intelligence") is not None:
+            top.append({
+                "name": m["name"],
+                "provider": m.get("provider", ""),
+                "rank": m.get("rank"),
+                "scores": {
+                    "intelligence": scores.get("intelligence"),
+                },
+            })
+            if len(top) >= top_n:
+                break
+    
+    result = {
+        "updated_at": data.get("updated_at"),
+        "source": "OpenRouter API (top {} by benchmark)".format(top_n),
+        "models": top,
+    }
+    
+    top_path = REPO_DIR / "data" / "model_leaderboard_top.json"
+    top_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
+    print(f"[Leaderboard] Exported top {len(top)} to {top_path}")
+    return result

@@ -214,6 +214,14 @@ def run() -> dict:
     """Full publish: export JSON + API sync + RSS + sitemap."""
     print("📦 Publisher — exporting and deploying...\n")
 
+    # ── Phase 1: Generate all derived data (leaderboard, clusters) ──
+    # These must run BEFORE export_files so they get synced to docs/data/
+    lb = __import__('scripts.pipeline.model_leaderboard', fromlist=['fetch_and_export', 'export_top_json'])
+    leaderboard_data = lb.fetch_and_export()
+    print(f"    leaderboard: {leaderboard_data['total_models']} models")
+    lb.export_top_json(20)
+    print(f"    leaderboard top20 exported")
+
     data = export_latest_json()
     stats = export_stats_json()
     files = export_files(data)
@@ -245,10 +253,6 @@ def run() -> dict:
         if curation_items:
             cr = post_curation(curated=curation_items, scan_id=scan_id)
             print(f"📡 API curation: {cr.get('status', 'error')} — {cr.get('curated', 0)} updated")
-
-    # Write model_leaderboard.json for model rankings
-    leaderboard_data = __import__('scripts.pipeline.model_leaderboard', fromlist=['fetch_and_export']).fetch_and_export()
-    print(f"    leaderboard: {leaderboard_data['total_models']} models")
 
     # Generate RSS + sitemap
     import scripts.rss_feed as rf

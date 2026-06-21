@@ -454,11 +454,14 @@ export function ModelLeaderboard() {
               {query ? L.noMatch[locale] : L.noData[locale]}
             </div>
           ) : (
-            displayModels.map((model, i) => (
-              <ScrollReveal key={model.id} index={i}>
-                <ModelRow model={model} isTop3={model.rank <= 3} />
-              </ScrollReveal>
-            ))
+            displayModels.map((model, i) => {
+              const row = <ModelRow model={model} isTop3={model.rank <= 3} />
+              return i < 12 ? (
+                <ScrollReveal key={model.id} index={i}>{row}</ScrollReveal>
+              ) : (
+                <div key={model.id}>{row}</div>
+              )
+            })
           )}
         </div>
 
