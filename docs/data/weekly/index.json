@@ -1,6 +1,15 @@
 {
   "reports": [
     {
+      "date": "2026-06-21",
+      "title_cn": "AI (2026-06-21)",
+      "title_en": "This Week in AI (2026-06-21)",
+      "summary_cn": "这是为您生成的「本周 AI 大事记」HTML 文件，一份聚焦开源模型突破与 Agent 落地瓶颈的行业周报，可直接在浏览器中查看。 ```html 本周 AI 大事记 | 2026.06.14 - 06.20 本周 AI 大事记 2026年",
+      "summary_en": "```html This Week in AI — June 20, 2026 This Week in AI June 20, 2026 Headlines The gap between open and closed models j",
+      "url_cn": "/data/weekly/2026-06-21.html",
+      "url_en": "/data/weekly/2026-06-21_en.html"
+    },
+    {
       "date": "2026-06-14",
       "title": "本周 AI 大事记",
       "title_en": "This Week in AI",

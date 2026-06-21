@@ -35,6 +35,7 @@ if not API_KEY:
             if _l.startswith("AI_INTEL_API_KEY="):
                 API_KEY = _l.split("=", 1)[1].strip().strip('"').strip("'")
                 break
+
 API_ENABLED = os.getenv("AI_INTEL_API_ENABLED", "1") == "1"
 
 
