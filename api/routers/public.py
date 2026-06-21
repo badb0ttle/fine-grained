@@ -5,6 +5,9 @@ there is zero duplication of business logic.
 """
 
 import json
+import time
+import html
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,6 +18,32 @@ from api import PROJECT_DIR
 
 router = APIRouter(prefix="/api", tags=["public"])
 
+
+# ── In-memory cache for expensive external API calls ──
+
+_leaderboard_cache: dict | None = None
+_leaderboard_cache_time: float = 0.0
+_LEADERBOARD_CACHE_TTL = 600  # 10 minutes
+
+# ── HTML entity cleaner ──
+
+_ENTITY_RE = re.compile(r'&[a-zA-Z]+;|&#\d+;|&#x[0-9a-fA-F]+;')
+
+def _clean_html_entities(text: str | None) -> str:
+    """Decode HTML entities like &nbsp; &quot; &#x27; in text fields."""
+    if not text:
+        return ""
+    text = html.unescape(text)
+    # Second pass: catch any entities missed by unescape
+    text = _ENTITY_RE.sub('', text)
+    return text
+
+def _clean_article_fields(article: dict) -> dict:
+    """Clean HTML entities from text fields in an article dict."""
+    for key in ("title", "title_cn", "summary", "summary_cn"):
+        if key in article and isinstance(article[key], str):
+            article[key] = _clean_html_entities(article[key])
+    return article
 
 # ── Helpers ──
 
@@ -32,7 +61,11 @@ def _import_pipeline(module: str):
 def get_latest():
     """Get curated articles — same output as export_latest_json()."""
     curator = _import_pipeline("curator")
-    return curator.export_latest_json()
+    result = curator.export_latest_json()
+    articles = result.get("articles", [])
+    for a in articles:
+        _clean_article_fields(a)
+    return result
 
 
 # ════════════════════════════════════════════════════════════════════
@@ -74,7 +107,7 @@ def search(
 
         results = []
         for r in rows:
-            results.append({
+            result = {
                 "id": r["id"],
                 "title": r["title"],
                 "title_cn": r["title_cn"],
@@ -88,7 +121,8 @@ def search(
                 "is_paper": bool(r["is_paper"]),
                 "paper_id": r["paper_id"],
                 "snippet": r["snippet"],
-            })
+            }
+            results.append(_clean_article_fields(result))
 
         # Total count
         count_row = conn.execute(
@@ -135,9 +169,20 @@ def get_leaderboard():
 
 @router.get("/model-leaderboard")
 def get_model_leaderboard():
-    """Get external model rankings (OpenRouter / Chatbot Arena)."""
+    """Get external model rankings (OpenRouter / Chatbot Arena).
+    
+    Cached for 10 minutes to avoid hitting OpenRouter on every request.
+    """
+    global _leaderboard_cache, _leaderboard_cache_time
+    
+    if _leaderboard_cache is not None and (time.time() - _leaderboard_cache_time) < _LEADERBOARD_CACHE_TTL:
+        return _leaderboard_cache
+    
     lb = _import_pipeline("model_leaderboard")
-    return lb.fetch_and_export()
+    result = lb.fetch_and_export()
+    _leaderboard_cache = result
+    _leaderboard_cache_time = time.time()
+    return result
 
 
 # ════════════════════════════════════════════════════════════════════

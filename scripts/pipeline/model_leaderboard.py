@@ -177,7 +177,14 @@ def fetch_and_export() -> dict:
         }
         entries.append(entry)
 
-    entries.sort(key=lambda e: e.get("created", 0), reverse=True)
+    # Sort by benchmark strength: scored models first, then by best_elo → intelligence → coding
+    entries.sort(key=lambda e: (
+        e.get("scores") is not None,                                              # scored first
+        e["scores"].get("best_elo", 0) if e.get("scores") else 0,                 # ELO (Design Arena)
+        e["scores"].get("intelligence", 0) if e.get("scores") else 0,             # AA intelligence
+        e["scores"].get("coding", 0) if e.get("scores") else 0,                   # AA coding
+        e.get("created", 0),                                                      # tiebreaker: newest
+    ), reverse=True)
     for i, e in enumerate(entries):
         e["rank"] = i + 1
 
