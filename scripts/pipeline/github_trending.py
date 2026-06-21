@@ -246,7 +246,7 @@ def run() -> dict:
                 (repo["repo_full"], repo["description"], repo["language"],
                  repo["stars_today"], repo["total_stars"], repo["url"], snapshot_at)
             )
-            if conn.total_changes > 0:
+            if conn.execute("SELECT changes()").fetchone()[0]:
                 inserted += 1
         except Exception:
             pass

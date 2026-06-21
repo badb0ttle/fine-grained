@@ -76,7 +76,7 @@ def apply_models(models_data: list[dict]) -> dict:
             m.get("context_window", ""),
             m.get("description", ""),
         ))
-        if conn.total_changes > 0:
+        if conn.execute("SELECT changes()").fetchone()[0]:
             new_models += 1
 
         # Get model_id

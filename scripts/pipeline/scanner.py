@@ -155,7 +155,7 @@ def run() -> dict:
                          a["published"], a["source_name"], a["category"],
                          h, scanned_at, is_paper, paper_id)
                     )
-                    if conn.total_changes > 0:
+                    if conn.execute("SELECT changes()").fetchone()[0]:
                         inserted += 1
                         new_articles += 1
                 except Exception:

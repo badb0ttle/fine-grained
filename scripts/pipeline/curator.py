@@ -15,6 +15,7 @@ def get_candidates(limit: int = 20) -> list[dict]:
                score_total, score_authority, score_timeliness, score_depth, score_relevance
         FROM articles
         WHERE score_total > 0
+          AND (curated IS NULL OR curated = 0)
         ORDER BY score_total DESC
         LIMIT ?
     """, (limit,)).fetchall()

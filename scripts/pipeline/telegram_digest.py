@@ -94,7 +94,7 @@ def format_weekly_digest() -> str:
         SELECT m.name, m.provider, COUNT(*) as mentions
         FROM models m
         JOIN model_benchmarks mb ON mb.model_id = m.id
-        WHERE mb.created_at >= date('now', '-7 days')
+        WHERE mb.reported_at >= date('now', '-7 days')
         GROUP BY m.id
         ORDER BY mentions DESC LIMIT 5
     """).fetchall()

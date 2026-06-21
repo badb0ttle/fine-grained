@@ -47,9 +47,6 @@ try:
     
     scan_stats = scanner.run()
     
-    # Restore full source list
-    pipeline.SOURCES[:] = _original_sources
-    
     dedup_stats = dedup.run()
     scorer_stats = scorer.run()
 
@@ -70,3 +67,7 @@ except Exception as e:
     elapsed = time.time() - t0
     print(f"❌ Scanner failed after {elapsed:.0f}s: {e}", file=sys.stderr)
     sys.exit(1)
+
+finally:
+    # Always restore full source list — even on exceptions
+    pipeline.SOURCES[:] = _original_sources
