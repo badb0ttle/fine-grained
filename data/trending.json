@@ -1,25 +1,25 @@
 {
-  "snapshot_at": "2026-06-19T00:01:22.987473+00:00",
+  "snapshot_at": "2026-06-21T00:01:52.097142+00:00",
   "count": 1,
   "repos": [
     {
       "repo_full": "DeusData/codebase-memory-mcp",
       "description": "",
       "language": "C",
-      "stars_today": 2322,
-      "total_stars": 7002,
+      "stars_today": 1271,
+      "total_stars": 9324,
       "url": "https://github.com/DeusData/codebase-memory-mcp",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
-    "2026-06-09",
     "2026-06-12",
     "2026-06-14",
     "2026-06-16",
     "2026-06-16",
     "2026-06-18",
-    "2026-06-19"
+    "2026-06-19",
+    "2026-06-21"
   ]
 }

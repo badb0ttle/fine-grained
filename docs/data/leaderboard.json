@@ -1,13 +1,17 @@
 {
-  "generated_at": "2026-06-19T14:54:36.189730+00:00",
+  "generated_at": "2026-06-21T12:00:44.967586+00:00",
   "models": [
     {
       "name": "GLM-5.2",
-      "provider": "智谱",
+      "provider": "智谱AI",
       "parameters": "753B",
       "context_window": "未知",
       "release_date": null,
       "benchmarks": [
+        {
+          "benchmark": "长时编码基准",
+          "score": "超越GPT-5.5"
+        },
         {
           "benchmark": "长时编码基准",
           "score": "超越 GPT-5.5"
@@ -52,6 +56,14 @@
       "name": "Kimi K2.7-Code",
       "provider": "Moonshot AI",
       "parameters": "未知",
+      "context_window": "未知",
+      "release_date": null,
+      "benchmarks": []
+    },
+    {
+      "name": "Llama-3-8B",
+      "provider": "Meta",
+      "parameters": "8B",
       "context_window": "未知",
       "release_date": null,
       "benchmarks": []
@@ -109,7 +121,7 @@
     {
       "name": "Nemotron 3 Ultra",
       "provider": "NVIDIA",
-      "parameters": "550B",
+      "parameters": "550B (总参数)/55B (激活参数)",
       "context_window": "未知",
       "release_date": null,
       "benchmarks": []

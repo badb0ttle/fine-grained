@@ -23,6 +23,19 @@ from datetime import datetime, timezone
 # Default: local FastAPI server (ECS runs API on 127.0.0.1:8001 behind OpenResty)
 API_BASE = os.getenv("AI_INTEL_API_BASE", "http://127.0.0.1:8001")
 API_KEY = os.getenv("AI_INTEL_API_KEY", "")
+# 如果环境变量未设置，从 .env 文件读取（cron 环境不自动加载 .env）
+if not API_KEY:
+    from pathlib import Path as _P
+    _envf = _P(os.getenv("HERMES_HOME", "/root/.hermes")) / ".env"
+    if not _envf.exists():
+        _envf = _P("/root/fine-grained/.env")
+    if _envf.exists():
+        for _l in _envf.read_text().splitlines():
+            _l = _l.strip()
+            if _l.startswith("AI_INTEL_API_KEY="):
+                API_KEY = _l.split("=", 1)[1].strip().strip('"').strip("'")
+                break
+
 API_ENABLED = os.getenv("AI_INTEL_API_ENABLED", "1") == "1"
 
 

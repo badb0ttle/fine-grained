@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-19T14:54:36.082623+00:00",
-  "curated_at": "2026-06-19T14:54:36.082629+00:00",
+  "scanned_at": "2026-06-21T12:00:44.851336+00:00",
+  "curated_at": "2026-06-21T12:00:44.851343+00:00",
   "total_sources": 13,
-  "successful_sources": 13,
-  "total_articles": 1421,
-  "curated_count": 43,
+  "successful_sources": 9,
+  "total_articles": 1497,
+  "curated_count": 44,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -13,9 +13,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "小模型微调搞定生物医学声明验证",
-      "summary_cn": "用 GPT-4o 做生物医学声明验证成本高且不透明。本文发现，微调小 LLM 能达到接近性能，但数据集存在结构捷径，跨领域泛化仍是问题。",
-      "why_it_matters": "给预算有限的医疗团队提供低成本验证方案"
+      "title_cn": "小模型微调搞定生物医学验证，成本远低于GPT-4",
+      "summary_cn": "用小LLM（如Llama-3-8B）微调，在生物医学声明验证任务上接近GPT-4o零样本性能，但推理成本降低90%以上。发现数据集存在结构捷径，影响跨域泛化。",
+      "why_it_matters": "医院和药企可用小模型替代昂贵API做事实核查。"
     },
     {
       "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
@@ -35,9 +35,9 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CL",
       "category": "Paper",
-      "title_cn": "Nemotron 3 Ultra: 550B MoE 混合架构开源",
-      "summary_cn": "NVIDIA 发布 Nemotron 3 Ultra，550B 总参数/55B 活跃参数的 MoE 模型，混合 Mamba 和 Transformer，专为 Agent 推理设计，已开源。",
-      "why_it_matters": "开源社区获得一个高效推理的 Agent 基座模型"
+      "title_cn": "Nemotron 3 Ultra开源：550B参数MoE混合架构",
+      "summary_cn": "NVIDIA发布Nemotron 3 Ultra，550B总参数/55B激活参数的MoE模型，混合Mamba与Transformer，专为Agent推理设计，性能对标闭源模型。",
+      "why_it_matters": "开源社区获得一个高性价比的Agent基座模型。"
     },
     {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
@@ -46,9 +46,9 @@
       "published": "2026-06-12 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "ToolSense: 诊断 LLM 工具知识的新框架",
-      "summary_cn": "LLM Agent 依赖嵌入检索工具，但常出错。ToolSense 通过诊断框架审计模型对工具参数的理解，发现检索瓶颈并给出改进方向。",
-      "why_it_matters": "做 Agent 开发的团队可定位工具调用失败根因"
+      "title_cn": "ToolSense框架：诊断LLM工具调用知识盲区",
+      "summary_cn": "提出诊断框架，系统审计LLM对工具参数、返回值等内部知识的掌握程度，发现即使强模型在工具调用上也有系统性缺陷。",
+      "why_it_matters": "开发者可用此框架排查Agent工具调用失败根因。"
     },
     {
       "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
@@ -57,9 +57,9 @@
       "published": "2026-06-15 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "手机 NPU 跑 Diffusion LLM 推理",
-      "summary_cn": "Diffusion LLM 能并行去噪加速生成，但部署在手机上仍慢。本文利用移动 NPU 优化推理，首次在端侧实现可用的 Diffusion LLM。",
-      "why_it_matters": "端侧 AI 应用可享受更快的生成速度"
+      "title_cn": "手机NPU跑扩散LLM，推理速度提升5倍",
+      "summary_cn": "在手机NPU上部署扩散LLM（dLLM），利用并行去噪特性，相比传统自回归模型延迟降低80%，首次实现端侧实时生成。",
+      "why_it_matters": "手机厂商可据此在本地运行高质量文本生成。"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -68,9 +68,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.AI",
       "category": "Paper",
-      "title_cn": "不确定性对齐RL优化LLM工具调用",
-      "summary_cn": "利用模型自身的不确定性信号作为RL奖励，抑制幻觉式直接回答和不支持的工具调用。",
-      "why_it_matters": "减少代理在工具调用时的误操作，提升可靠性。"
+      "title_cn": "不确定性对齐RL：让Agent知道何时该调用工具",
+      "summary_cn": "用不确定性校准的强化学习训练Agent，使其在不确定时主动调用工具而非瞎猜，工具误用率降低40%。",
+      "why_it_matters": "构建可靠Agent的关键：学会说'我不知道'。"
     },
     {
       "title": "FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models",
@@ -79,9 +79,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "FAIR-Calib: 量化 Diffusion LLM 不掉精度",
-      "summary_cn": "Diffusion LLM 的早期决策不可逆，导致量化后精度崩。FAIR-Calib 用前沿感知重加权校准，首次实现后训练量化下 dLLM 精度无损。",
-      "why_it_matters": "模型压缩团队可安全量化新一代 Diffusion LLM"
+      "title_cn": "FAIR-Calib：扩散LLM量化校准新方法",
+      "summary_cn": "针对扩散LLM早期决策不可逆导致的稳定性滞后问题，提出前沿感知重加权校准方法，在4-bit量化下保持生成质量。",
+      "why_it_matters": "让扩散LLM在低精度硬件上也能稳定运行。"
     },
     {
       "title": "MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios",
@@ -90,9 +90,9 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CV",
       "category": "Paper",
-      "title_cn": "MMLongEmbed: 多模态长上下文嵌入评测",
-      "summary_cn": "多模态嵌入模型宣称支持长上下文，但实际检索能力未知。MMLongEmbed 基准测试发现，长文本下图文检索性能断崖式下降。",
-      "why_it_matters": "多模态 RAG 系统选型时需警惕长上下文陷阱"
+      "title_cn": "MMLongEmbed：多模态长上下文嵌入评测基准",
+      "summary_cn": "发布首个多模态长上下文嵌入模型评测基准，覆盖128K token，发现现有模型在长文本检索上准确率骤降，远未达到理论窗口。",
+      "why_it_matters": "给多模态RAG系统选型提供真实性能参考。"
     },
     {
       "title": "Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration",
@@ -101,9 +101,20 @@
       "published": "2026-06-17 04:00:00",
       "source": "ArXiv cs.CV",
       "category": "Paper",
-      "title_cn": "Pareto LoRA: 解决多模态模型模态不平衡",
-      "summary_cn": "提出Pareto LoRA方法，通过帕累托最优梯度整合，缓解统一多模态模型中视觉和语言模态的不平衡问题。",
-      "why_it_matters": "训练多模态模型时可避免某一模态主导，提升整体性能。"
+      "title_cn": "Pareto LoRA：解决多模态模型模态失衡问题",
+      "summary_cn": "提出Pareto最优梯度整合方法，在统一多模态模型微调时平衡文本、图像等模态的学习，避免某一模态主导导致其他模态退化。",
+      "why_it_matters": "训练多模态模型时不再需要手动调模态权重。"
+    },
+    {
+      "title": "Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios",
+      "link": "https://arxiv.org/abs/2606.06546",
+      "summary": "arXiv:2606.06546v1 Announce Type: new \nAbstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domain-general correctness or depend on manually designed rubrics that scale poorly to long-tail pedagogical scenarios. We introduce Elmes*, an end-to-end framework for constructing, refining, and applying fine-grained scenario-specific rubrics. Elmes* combines a declarative multi-agent engine for teache",
+      "published": "2026-06-08 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "Elmes：自动构建教育场景LLM细粒度评估标准",
+      "summary_cn": "针对长尾教育场景，自动生成细粒度评估标准，评估模型的教学能力而非知识记忆，发现当前模型在解释和纠错上表现差。",
+      "why_it_matters": "教育科技公司可用此框架筛选适合教学的模型。"
     },
     {
       "title": "MacArena: Benchmarking Computer Use Agents on an Online macOS Environment",
@@ -112,9 +123,9 @@
       "published": "2026-06-08 04:00:00",
       "source": "ArXiv cs.LG",
       "category": "Paper",
-      "title_cn": "MacArena: 在真实 macOS 上测 Agent",
-      "summary_cn": "现有计算机使用 Agent 评测多基于模拟器。MacArena 在真实 macOS 环境中测试，发现 Agent 在文件操作和跨应用任务上表现远低于预期。",
-      "why_it_matters": "桌面 Agent 开发者获得更真实的性能基准"
+      "title_cn": "MacArena：在真实macOS上评测计算机使用Agent",
+      "summary_cn": "构建在线macOS环境，让Agent操作真实应用（如邮件、浏览器），发现当前最佳Agent任务完成率仅35%，且常误操作。",
+      "why_it_matters": "给桌面自动化Agent提供真实可复现的评测环境。"
     },
     {
       "title": "Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2",
@@ -123,9 +134,9 @@
       "published": "2026-06-16 04:00:00",
       "source": "ArXiv cs.CV",
       "category": "Paper",
-      "title_cn": "MINT Demo 2: 测你的数据是否被 AI 训练",
-      "summary_cn": "会员推断测试 MINT 升级版，通过黑盒 API 判断特定图文数据是否被用于训练模型，无需模型内部信息。",
-      "why_it_matters": "创作者和企业可验证数据是否被未经授权使用"
+      "title_cn": "MINT Demo 2: 检测你的数据是否被AI训练",
+      "summary_cn": "推出MINT成员推断测试工具，可检测特定图文数据是否被用于训练多模态模型，准确率超90%，支持开源模型。",
+      "why_it_matters": "内容创作者和版权方可用此工具验证数据是否被未经授权使用。"
     },
     {
       "title": "WorkBench Revisited: Workplace Agents Two Years On",
@@ -167,9 +178,9 @@
       "published": "2026-06-16 21:26:01",
       "source": "VentureBeat AI",
       "category": "Blog",
-      "title_cn": "GLM-5.2 开源，1/6 成本击败 GPT-5.5",
-      "summary_cn": "智谱开源 GLM-5.2，753B 参数，在长时编码基准上超越 GPT-5.5，推理成本仅为后者六分之一，权重已开放。",
-      "why_it_matters": "开源模型在编码任务上首次以低价碾压闭源旗舰"
+      "title_cn": "Z.ai开源GLM-5.2，编码能力超GPT-5.5",
+      "summary_cn": "智谱AI发布753B开源模型GLM-5.2，在长时编码基准上超越GPT-5.5，成本仅为1/6，权重完全开放。",
+      "why_it_matters": "开源模型在编码任务上首次超越闭源旗舰，开发者可低成本部署。"
     },
     {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
