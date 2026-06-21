@@ -65,16 +65,32 @@ export interface TrendingData {
   repos: TrendingRepo[]
 }
 
-export interface ClusterData {
-  clusters: Cluster[]
-}
-
-export interface Cluster {
-  id: string
-  label: string
+export interface ClusterGroup {
+  id: number
+  title: string
   keywords: string[]
   count: number
-  articles: Article[]
+  color: string
+}
+
+export interface ClusterPoint {
+  id: number
+  title: string
+  source: string
+  published: string
+  link: string
+  score: number
+  x: number
+  y: number
+  cluster: number
+}
+
+export interface ClusterData {
+  generated_at: string
+  total_articles: number
+  n_clusters: number
+  clusters: ClusterGroup[]
+  points: ClusterPoint[]
 }
 
 export interface LatestData {

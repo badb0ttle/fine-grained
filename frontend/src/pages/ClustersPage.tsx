@@ -4,34 +4,8 @@ import { ICON } from '../lib/icons'
 import { FadeIn } from '../components/Animations'
 import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
-
-interface ClusterPoint {
-  id: number
-  title: string
-  source: string
-  published: string
-  link: string
-  score: number
-  x: number
-  y: number
-  cluster: number
-}
-
-interface ClusterGroup {
-  id: number
-  title: string
-  keywords: string[]
-  count: number
-  color: string
-}
-
-interface ClusterData {
-  generated_at: string
-  total_articles: number
-  n_clusters: number
-  clusters: ClusterGroup[]
-  points: ClusterPoint[]
-}
+import { useClusters } from '../hooks/useData'
+import type { ClusterData } from '../types'
 
 const PADDING = 50
 const DOT_RADIUS = 4
@@ -240,17 +214,8 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
 }
 
 export function ClustersPage() {
-  const [data, setData] = useState<ClusterData | null>(null)
-  const [loading, setLoading] = useState(true)
+  const { data, loading } = useClusters()
   const { locale } = useLocale()
-
-  useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/clusters.json`)
-      .then(r => r.json())
-      .then(setData)
-      .catch(() => {})
-      .finally(() => setLoading(false))
-  }, [])
 
   if (loading) {
     return (

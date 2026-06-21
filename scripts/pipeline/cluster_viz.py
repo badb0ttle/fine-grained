@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Phase 5: Topic clustering — TF-IDF + SVD + KMeans → 2D scatter coordinates."""
 
+import html as _html
 import json
+import re
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
@@ -27,13 +29,14 @@ def compute_clusters() -> dict:
         return {"clusters": [], "points": []}
 
     # Build text corpus — prefer Chinese, fall back to English
-    import re
     texts = []
     for r in rows:
         t = (r["title_cn"] or r["title"] or "")
         s = (r["summary_cn"] or r["summary"] or "")[:300]
-        # Clean: remove arXiv IDs, dates, common noise tokens
+        # Clean: HTML entities, arXiv IDs, dates, common noise tokens
         full = (t + " " + s)
+        full = _html.unescape(full)
+        full = re.sub(r'&\w+;', '', full)
         full = re.sub(r'arxiv:\d+\.\d+', '', full, flags=re.IGNORECASE)
         full = re.sub(r'\b\d{4}-\d{2}-\d{2}\b', '', full)
         full = re.sub(r'\b\d+:\d+\b', '', full)
@@ -89,11 +92,12 @@ def compute_clusters() -> dict:
         r = rows[best_idx]
         cluster_titles[int(i)] = (r["title_cn"] or r["title"])[:60]
 
-    # Also get top TF-IDF terms (cleaned)
+    # Also get top TF-IDF terms (cleaned) — must inverse_transform from SVD space
     cluster_terms = {}
     feature_names = vec.get_feature_names_out()
+    centers_tfidf = svd.inverse_transform(centers)  # 50D → full TF-IDF space
     for i in range(n_clusters):
-        top_idx = np.argsort(centers[i])[::-1]
+        top_idx = np.argsort(centers_tfidf[i])[::-1]
         top_terms = []
         for j in top_idx:
             term = feature_names[j]
