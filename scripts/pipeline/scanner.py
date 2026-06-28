@@ -120,8 +120,13 @@ def fetch_wp_api(source: dict, retries: int = 2) -> list[dict]:
     return []
 
 
-def run() -> dict:
-    """Run scanner, return stats dict."""
+def run(skip_stats: bool = False) -> dict:
+    """Run scanner, return stats dict.
+
+    If skip_stats=True, skip writing to daily_stats table.
+    Use this for incremental scanners that run between daily runs
+    to avoid overwriting the correct new_articles count.
+    """
     print(f"📡 Scanner — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"   {len(SOURCES)} sources configured\n")
 
@@ -186,21 +191,22 @@ def run() -> dict:
 
     conn.commit()
 
-    # Save daily stats
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    # Save daily stats (skip for incremental scans to avoid overwriting main pipeline stats)
     total = conn.execute("SELECT COUNT(*) FROM articles").fetchone()[0]
-    conn.execute(
-        """INSERT INTO daily_stats
-           (date, total_sources, successful_sources, total_articles, new_articles)
-           VALUES (?, ?, ?, ?, ?)
-           ON CONFLICT(date) DO UPDATE SET
-           total_sources = excluded.total_sources,
-           successful_sources = excluded.successful_sources,
-           total_articles = excluded.total_articles,
-           new_articles = excluded.new_articles""",
-        (date_str, len(SOURCES), success_count, total, new_articles)
-    )
-    conn.commit()
+    if not skip_stats:
+        date_str = datetime.now().strftime("%Y-%m-%d")
+        conn.execute(
+            """INSERT INTO daily_stats
+               (date, total_sources, successful_sources, total_articles, new_articles)
+               VALUES (?, ?, ?, ?, ?)
+               ON CONFLICT(date) DO UPDATE SET
+               total_sources = excluded.total_sources,
+               successful_sources = excluded.successful_sources,
+               total_articles = excluded.total_articles,
+               new_articles = excluded.new_articles""",
+            (date_str, len(SOURCES), success_count, total, new_articles)
+        )
+        conn.commit()
     conn.close()
 
     stats = {
