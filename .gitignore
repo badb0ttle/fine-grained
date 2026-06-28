@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 .env
+*.db
+.DS_Store
 data/ai_intel.db
 .venv/
 docs/data/ai_intel.db
@@ -11,3 +13,5 @@ _cron_push.py
 _cron_step2.py
 _cron_steps3456.py
 docs/data/articles.db
+# Debug scripts with local paths
+scripts/_curate_test.py

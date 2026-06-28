@@ -2,7 +2,9 @@ import { useState, type ReactNode } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 
-const PASSWORD_HASH = '5086cebc634f7a0a6a6eb011542a17bcbee5eb6eac37716bf16bfb5a514ef0af'
+// Password hash injected at build time via VITE_DASHBOARD_PASSWORD_HASH.
+// Generate: echo -n "your_password" | shasum -a 256 | cut -d' ' -f1
+const PASSWORD_HASH = import.meta.env.VITE_DASHBOARD_PASSWORD_HASH || ''
 const STORAGE_KEY = 'ai_admin_auth'
 
 async function sha256(input: string): Promise<string> {
@@ -14,7 +16,8 @@ async function sha256(input: string): Promise<string> {
 }
 
 export function useAdminAuth() {
-  return sessionStorage.getItem(STORAGE_KEY) === PASSWORD_HASH
+  const stored = sessionStorage.getItem(STORAGE_KEY)
+  return stored != null && PASSWORD_HASH !== '' && stored === PASSWORD_HASH
 }
 
 export function AdminGate({ children }: { children: ReactNode }) {
