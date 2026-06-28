@@ -227,28 +227,26 @@ def get_clusters():
 
 @router.get("/weekly")
 def list_weekly():
-    """List available weekly reports."""
+    """List available weekly reports from index.json."""
     weekly_dir = PROJECT_DIR / "data" / "weekly"
-    if not weekly_dir.exists():
+    index_path = weekly_dir / "index.json"
+    if not index_path.exists():
         return {"reports": []}
 
-    reports = []
-    for f in sorted(weekly_dir.glob("*.json"), reverse=True):
-        reports.append({
-            "id": f.stem,
-            "file": f.name,
-            "size": f.stat().st_size,
-        })
-
-    return {"reports": reports}
+    try:
+        data = json.loads(index_path.read_text())
+        return {"reports": data.get("reports", [])}
+    except Exception:
+        return {"reports": []}
 
 
 @router.get("/weekly/{report_id}")
-def get_weekly(report_id: str):
-    """Get a specific weekly report by ID (e.g. '2026-W25')."""
-    path = PROJECT_DIR / "data" / "weekly" / f"{report_id}.json"
+def get_weekly(report_id: str, lang: str = "zh"):
+    """Get a specific weekly report HTML by date (e.g. '2026-06-28')."""
+    suffix = "_en" if lang == "en" else ""
+    path = PROJECT_DIR / "data" / "weekly" / f"{report_id}{suffix}.html"
     if not path.exists():
         raise HTTPException(status_code=404, detail=f"Weekly report '{report_id}' not found")
 
-    data = json.loads(path.read_text())
-    return data
+    from fastapi.responses import HTMLResponse
+    return HTMLResponse(content=path.read_text(), media_type="text/html; charset=utf-8")

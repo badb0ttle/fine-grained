@@ -122,7 +122,6 @@ function ClusterScatter({ data, locale }: { data: ClusterData; locale: 'zh' | 'e
 
     if (hovered) {
       const dpr = window.devicePixelRatio || 1
-      const W = parseInt(canvas.style.width)
       const c = clusterMap.current[hovered.cluster] || '#888'
       ctx.save()
       ctx.scale(dpr, dpr)

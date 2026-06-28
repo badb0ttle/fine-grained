@@ -1,0 +1,129 @@
+你是资深 AI 技术编辑。从以下 20 篇候选文章中选出最重要的 10 篇，写中文标题和摘要。
+
+【筛选标准】
+- 优先选有实际影响、可操作、反常识、或刚发布的新内容
+- 跳过纯 PR 稿、泛泛而谈、重复已有共识的文章
+
+【写作规范 — 严禁以下 AI 套话】
+禁止使用这些词汇和句式：
+- "在...方面" "不仅...而且..." "展现出..." "具有重要意义"
+- "标志着..." "为...提供了..." "进一步..." "全面/深入/系统"
+- "推动...发展" "实现了...突破" "引发...思考"
+
+写作原则：
+- 用口语化短句，像和朋友聊天那样写，不要论文腔
+- 只说一件事，信息密度优先
+- 技术名词保留英文（如 "RLHF" "LoRA"），不硬翻
+- 标题要有信息量，不说废话。比如 "小型 LLM 在生物医学声明验证中的高效微调" 比 "一项关于小模型微调的研究" 好
+- 禁止使用任何 emoji 表情符号
+
+每条输出：
+1. title_cn: ≤20字，信息量优先，技术名词保留英文
+2. summary_cn: 40-80字，只讲核心发现+方法，不铺垫不总结
+3. why_it_matters: ≤25字，说清楚对谁有什么实际影响
+
+返回严格 JSON 数组（id 使用 DB ID）：
+[
+  {"id": <DB ID>, "title_cn": "...", "summary_cn": "...", "why_it_matters": "..."},
+  ...
+]
+
+候选文章：
+[1] [DB ID: 1757] [92.3] Title: Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12854v1 Announce Type: new 
+Abstract: Large Language Models such as GPT-4o and GPT-5 achieve strong zero-shot performance on biomedical claim verification, but cost and opacity limit scalab
+
+[2] [DB ID: 1758] [88.3] Title: Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study
+    Source: ArXiv cs.CL | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12881v1 Announce Type: new 
+Abstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experim
+
+[3] [DB ID: 34107] [86.7] Title: Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning
+    Source: ArXiv cs.CL | 2026-06-16 04:00:00
+    Summary: arXiv:2606.15007v1 Announce Type: new 
+Abstract: We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-tra
+
+[4] [DB ID: 1700] [86.3] Title: ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs
+    Source: ArXiv cs.AI | 2026-06-12 04:00:00
+    Summary: arXiv:2606.12451v1 Announce Type: new 
+Abstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches re
+
+[5] [DB ID: 23316] [84.7] Title: Efficient On-Device Diffusion LLM Inference with Mobile NPU
+    Source: ArXiv cs.LG | 2026-06-15 04:00:00
+    Summary: arXiv:2606.13740v1 Announce Type: new 
+Abstract: Diffusion large language models (dLLMs) accelerate generation by denoising multiple tokens in parallel, making them attractive for latency-sensitive mo
+
+[6] [DB ID: 1479] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
+    Source: ArXiv cs.AI | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06976v1 Announce Type: new 
+Abstract: Large language model (LLM)-based agents often make suboptimal tool-use decisions, including unsupported tool invocation and hallucinated direct respons
+
+[7] [DB ID: 1481] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06547v1 Announce Type: new 
+Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a "stability lag" where early decisions rema
+
+[8] [DB ID: 34136] [84.0] Title: MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios
+    Source: ArXiv cs.CV | 2026-06-16 04:00:00
+    Summary: arXiv:2606.14747v1 Announce Type: new 
+Abstract: Recent advancements have significantly expanded the theoretical context windows of Multimodal Embedding Models (MEMs). However, larger context windows 
+
+[9] [DB ID: 37003] [83.6] Title: Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration
+    Source: ArXiv cs.CV | 2026-06-17 04:00:00
+    Summary: arXiv:2606.17296v1 Announce Type: new 
+Abstract: Unified multimodal models (UMMs) have recently emerged as a promising paradigm for integrating multimodal understanding and generation within a single 
+
+[10] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06546v1 Announce Type: new 
+Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
+
+[11] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
+    Source: ArXiv cs.LG | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06560v1 Announce Type: new 
+Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
+
+[12] [DB ID: 34137] [83.0] Title: Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2
+    Source: ArXiv cs.CV | 2026-06-16 04:00:00
+    Summary: arXiv:2606.14748v1 Announce Type: new 
+Abstract: We present the Membership Inference Test (MINT) Demo 2, a framework designed to improve transparency in machine learning training processes. MINT is a 
+
+[13] [DB ID: 34066] [82.7] Title: PrologMCP: A Standardized Prolog Tool Interface for LLM Agents
+    Source: ArXiv cs.AI | 2026-06-16 04:00:00
+    Summary: arXiv:2606.14935v1 Announce Type: new 
+Abstract: Frontier reasoning-tuned language models still fail on deductive tasks at depth, and the cost of improved performance through extended internal reasoni
+
+[14] [DB ID: 34106] [82.7] Title: CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning
+    Source: ArXiv cs.CL | 2026-06-16 04:00:00
+    Summary: arXiv:2606.14961v1 Announce Type: new 
+Abstract: Chain-of-thought (CoT) reasoning can improve LLM performance, but high answer confidence may be misleading when the accompanying CoT rationale is plaus
+
+[15] [DB ID: 34109] [82.7] Title: Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals
+    Source: ArXiv cs.CL | 2026-06-16 04:00:00
+    Summary: arXiv:2606.15026v1 Announce Type: new 
+Abstract: Physiological stress and emotion recognition are important for health monitoring and affective computing. In this work, we present a comprehensive eval
+
+[16] [DB ID: 23300] [82.7] Title: WorkBench Revisited: Workplace Agents Two Years On
+    Source: ArXiv cs.AI | 2026-06-15 04:00:00
+    Summary: arXiv:2606.13715v1 Announce Type: new 
+Abstract: The best agent on WorkBench in March 2024, GPT-4, completed 43% of tasks and took an unintended harmful action, such as emailing the wrong person, on 2
+
+[17] [DB ID: 23339] [82.7] Title: The Culture Funnel: You Can't Align What isn't in the Data
+    Source: ArXiv cs.CL | 2026-06-15 04:00:00
+    Summary: arXiv:2606.13808v1 Announce Type: new 
+Abstract: Current cultural alignment approaches focus on inference-time interventions, assuming models already contain sufficient cultural knowledge. We argue mo
+
+[18] [DB ID: 23342] [82.7] Title: SANA: What Matters for QA Agents over Massive Data Lakes?
+    Source: ArXiv cs.CL | 2026-06-15 04:00:00
+    Summary: arXiv:2606.13904v1 Announce Type: new 
+Abstract: Exploratory question answering (EQA) over data lakes requires an LLM agent to discover relevant sources, analyze retrieved data, and adapt its actions 
+
+[19] [DB ID: 36649] [82.7] Title: Z.ai’s open-weights GLM-5.2 beats GPT-5.5 on multiple long-horizon coding benchmarks for 1/6th the cost
+    Source: VentureBeat AI | 2026-06-16 21:26:01
+    Summary: Today, Chinese AI startup Z.ai (formerly Zhipu AI) announced the immediate release of GLM-5.2, a 753-billion parameter open-weights large language model (LLM) engineered specifically to dominate &quot
+
+[20] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
+    Source: ArXiv stat.ML | 2026-06-12 04:00:00
+    Summary: arXiv:2605.18898v1 Announce Type: cross 
+Abstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude 

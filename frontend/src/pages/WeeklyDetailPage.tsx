@@ -8,6 +8,9 @@ import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
 import { useJsonLd } from '../lib/useJsonLd'
 
+const API_MODE = import.meta.env.VITE_API_MODE === 'true'
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://api.hjhai.xyz'
+
 const CHART_COLORS = ['#6C5CE7', '#00b894', '#f0a050', '#74b9ff', '#fd79a8', '#e17055', '#a29bfe', '#55efc4']
 
 interface StatsData {
@@ -88,13 +91,22 @@ export function WeeklyDetailPage() {
     setError(false)
 
     const loadWeekly = async () => {
-      // Try English first if locale is 'en', fall back to Chinese
+      // Fetch HTML — from API when in API mode, static otherwise
       let htmlRes: Response
-      if (locale === 'en') {
-        htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}_en.html`)
-        if (!htmlRes.ok) htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+      const lang = locale === 'en' ? 'en' : 'zh'
+      if (API_MODE) {
+        htmlRes = await fetch(`${API_BASE}/weekly/${date}?lang=${lang}`)
+        // If English not found (404), fall back to Chinese
+        if (!htmlRes.ok && lang === 'en') {
+          htmlRes = await fetch(`${API_BASE}/weekly/${date}?lang=zh`)
+        }
       } else {
-        htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+        if (locale === 'en') {
+          htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}_en.html`)
+          if (!htmlRes.ok) htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+        } else {
+          htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
+        }
       }
 
       const [statsData, lbData] = await Promise.all([

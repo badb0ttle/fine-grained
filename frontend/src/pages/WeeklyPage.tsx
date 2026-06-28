@@ -11,6 +11,9 @@ interface WeeklyReport {
   date: string; title: string; title_en?: string; summary: string; summary_en?: string; url: string; url_en?: string
 }
 
+const API_MODE = import.meta.env.VITE_API_MODE === 'true'
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://api.hjhai.xyz'
+
 const T = {
   weeklyReport:  { zh: '每周 AI 大事记',   en: 'Weekly AI Briefing' },
   subhead:       { zh: '深度行业分析简报',   en: 'In-depth industry analysis' },
@@ -31,14 +34,21 @@ export function WeeklyPage() {
   const { locale } = useLocale()
 
   useEffect(() => {
-    Promise.all([
-      fetch(`${import.meta.env.BASE_URL}data/weekly/index.json`).then(r => r.json()),
-      fetch(`${import.meta.env.BASE_URL}data/stats.json`).then(r => r.ok ? r.json() : null),
-    ])
-      .then(([indexData, statsData]) => {
-        setReports(indexData.reports || [])
-        setStats(statsData)
-      })
+    const fetchData = async () => {
+      let indexData: { reports: WeeklyReport[] }
+      if (API_MODE) {
+        const res = await fetch(`${API_BASE}/weekly`)
+        indexData = await res.json()
+      } else {
+        const res = await fetch(`${import.meta.env.BASE_URL}data/weekly/index.json`)
+        indexData = await res.json()
+      }
+      const statsRes = await fetch(`${import.meta.env.BASE_URL}data/stats.json`)
+      const statsData = statsRes.ok ? await statsRes.json() : null
+      setReports(indexData.reports || [])
+      setStats(statsData)
+    }
+    fetchData()
       .catch(() => {})
       .finally(() => setLoading(false))
   }, [])

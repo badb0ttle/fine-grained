@@ -1,0 +1,485 @@
+{
+  "generated_at": "2026-06-21T20:00:44.886796",
+  "source_health": [
+    {
+      "name": "ArXiv cs.CV",
+      "category": "Paper",
+      "last_success": "2026-06-19T00:01:23.272752+00:00",
+      "consecutive_failures": 4,
+      "article_count_last": 20,
+      "status": "down"
+    },
+    {
+      "name": "ArXiv cs.LG",
+      "category": "Paper",
+      "last_success": "2026-06-19T00:01:23.272752+00:00",
+      "consecutive_failures": 4,
+      "article_count_last": 20,
+      "status": "down"
+    },
+    {
+      "name": "ArXiv stat.ML",
+      "category": "Paper",
+      "last_success": "2026-06-19T00:01:23.272752+00:00",
+      "consecutive_failures": 4,
+      "article_count_last": 20,
+      "status": "down"
+    },
+    {
+      "name": "OpenAI Blog",
+      "category": "AI Lab",
+      "last_success": "2026-06-21T00:00:58.334916+00:00",
+      "consecutive_failures": 1,
+      "article_count_last": 20,
+      "status": "degraded"
+    },
+    {
+      "name": "量子位",
+      "category": "中文媒体",
+      "last_success": "2026-06-20T22:12:21.676819+00:00",
+      "consecutive_failures": 1,
+      "article_count_last": 20,
+      "status": "degraded"
+    },
+    {
+      "name": "Apple ML Research",
+      "category": "AI Lab",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 10,
+      "status": "healthy"
+    },
+    {
+      "name": "ArXiv cs.AI",
+      "category": "Paper",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "ArXiv cs.CL",
+      "category": "Paper",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "Google AI",
+      "category": "AI Lab",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "Google DeepMind",
+      "category": "AI Lab",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "HuggingFace Blog",
+      "category": "Community",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "NVIDIA Blog",
+      "category": "AI Lab",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "PyTorch Blog",
+      "category": "Community",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 10,
+      "status": "healthy"
+    },
+    {
+      "name": "TechCrunch AI",
+      "category": "Blog",
+      "last_success": "2026-06-21T00:00:58.334916+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "VentureBeat AI",
+      "category": "Blog",
+      "last_success": "2026-06-21T00:00:58.334916+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 7,
+      "status": "healthy"
+    },
+    {
+      "name": "雷锋网 AI",
+      "category": "中文媒体",
+      "last_success": "2026-06-21T00:01:52.422458+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 20,
+      "status": "healthy"
+    }
+  ],
+  "score_distribution": {
+    "80-100": 40,
+    "60-79": 685,
+    "40-59": 546,
+    "20-39": 167,
+    "0-19": 59
+  },
+  "category_distribution": {
+    "Paper": 809,
+    "中文媒体": 271,
+    "Blog": 208,
+    "AI Lab": 151,
+    "Community": 56,
+    "AI": 2
+  },
+  "daily_trends": [
+    {
+      "date": "2026-06-05",
+      "total_sources": 16,
+      "successful_sources": 13,
+      "total_articles": 453,
+      "new_articles": 220,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-06",
+      "total_sources": 16,
+      "successful_sources": 0,
+      "total_articles": 465,
+      "new_articles": 0,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-07",
+      "total_sources": 16,
+      "successful_sources": 9,
+      "total_articles": 522,
+      "new_articles": 140,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-08",
+      "total_sources": 16,
+      "successful_sources": 8,
+      "total_articles": 530,
+      "new_articles": 120,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-09",
+      "total_sources": 16,
+      "successful_sources": 13,
+      "total_articles": 677,
+      "new_articles": 240,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-12",
+      "total_sources": 13,
+      "successful_sources": 12,
+      "total_articles": 882,
+      "new_articles": 200,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-13",
+      "total_sources": 13,
+      "successful_sources": 7,
+      "total_articles": 898,
+      "new_articles": 100,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-14",
+      "total_sources": 13,
+      "successful_sources": 0,
+      "total_articles": 898,
+      "new_articles": 0,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-15",
+      "total_sources": 13,
+      "successful_sources": 12,
+      "total_articles": 1025,
+      "new_articles": 200,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-16",
+      "total_sources": 13,
+      "successful_sources": 13,
+      "total_articles": 1163,
+      "new_articles": 220,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-17",
+      "total_sources": 13,
+      "successful_sources": 13,
+      "total_articles": 1187,
+      "new_articles": 220,
+      "curated_count": null
+    },
+    {
+      "date": "2026-06-18",
+      "total_sources": 13,
+      "successful_sources": 13,
+      "total_articles": 1303,
+      "new_articles": 220,
+      "curated_count": null
+    },
+    {
+      "date": "2026-06-19",
+      "total_sources": 13,
+      "successful_sources": 13,
+      "total_articles": 1421,
+      "new_articles": 220,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-06-21",
+      "total_sources": 13,
+      "successful_sources": 9,
+      "total_articles": 1497,
+      "new_articles": 160,
+      "curated_count": 10
+    }
+  ],
+  "top_articles": [
+    {
+      "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "score": 92.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "score": 88.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "score": 86.7,
+      "published": "2026-06-16 04:00:00"
+    },
+    {
+      "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 86.3,
+      "published": "2026-06-12 04:00:00"
+    },
+    {
+      "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "score": 84.7,
+      "published": "2026-06-15 04:00:00"
+    },
+    {
+      "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 84.4,
+      "published": "2026-06-08 04:00:00"
+    },
+    {
+      "title": "FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "score": 84.4,
+      "published": "2026-06-08 04:00:00"
+    },
+    {
+      "title": "MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "score": 84.0,
+      "published": "2026-06-16 04:00:00"
+    },
+    {
+      "title": "Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "score": 83.6,
+      "published": "2026-06-17 04:00:00"
+    },
+    {
+      "title": "Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "score": 83.4,
+      "published": "2026-06-08 04:00:00"
+    }
+  ],
+  "keyword_trends": {
+    "keywords": [
+      {
+        "keyword": "Gemini",
+        "current_count": 10,
+        "previous_count": 1,
+        "change_pct": 900.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "embeddings",
+        "current_count": 7,
+        "previous_count": 1,
+        "change_pct": 600.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "robotics",
+        "current_count": 4,
+        "previous_count": 1,
+        "change_pct": 300.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "autonomous",
+        "current_count": 19,
+        "previous_count": 6,
+        "change_pct": 216.7,
+        "direction": "surging"
+      },
+      {
+        "keyword": "强化学习",
+        "current_count": 6,
+        "previous_count": 2,
+        "change_pct": 200.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "LoRA",
+        "current_count": 12,
+        "previous_count": 4,
+        "change_pct": 200.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "RAG",
+        "current_count": 51,
+        "previous_count": 22,
+        "change_pct": 131.8,
+        "direction": "surging"
+      },
+      {
+        "keyword": "Mistral",
+        "current_count": 0,
+        "previous_count": 2,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "Llama",
+        "current_count": 0,
+        "previous_count": 3,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "RLHF",
+        "current_count": 2,
+        "previous_count": 1,
+        "change_pct": 100.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "微调",
+        "current_count": 3,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "QLoRA",
+        "current_count": 0,
+        "previous_count": 1,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "function calling",
+        "current_count": 0,
+        "previous_count": 1,
+        "change_pct": -100.0,
+        "direction": "falling"
+      },
+      {
+        "keyword": "代码生成",
+        "current_count": 2,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "推理",
+        "current_count": 6,
+        "previous_count": 3,
+        "change_pct": 100.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "蛋白质",
+        "current_count": 1,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "protein",
+        "current_count": 2,
+        "previous_count": 1,
+        "change_pct": 100.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "对齐",
+        "current_count": 5,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "LLM",
+        "current_count": 101,
+        "previous_count": 54,
+        "change_pct": 87.0,
+        "direction": "surging"
+      },
+      {
+        "keyword": "Codex",
+        "current_count": 1,
+        "previous_count": 6,
+        "change_pct": -83.3,
+        "direction": "falling"
+      }
+    ],
+    "period": {
+      "current_start": "2026-06-14",
+      "current_end": "2026-06-21",
+      "previous_start": "2026-06-07",
+      "previous_end": "2026-06-14",
+      "window_days": 7
+    }
+  }
+}

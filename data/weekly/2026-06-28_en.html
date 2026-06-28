@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Week in AI | 2026-06-21 to 2026-06-27</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+    <article class="article-item">
+        <h1>This Week in AI: Token Hidden Costs and the Agent Safety Wake-Up Call</h1>
+        
+        <p><strong>June 21 – 27, 2026</strong></p>
+
+        <h2>This Week's Top Story</h2>
+        <p>Two papers this week should force every engineering team to re-examine their deployment assumptions. First, <strong>Quantization Inflates Reasoning</strong> dropped a quiet bomb: low-bit quantization, the go-to trick for running models on cheaper hardware, actually inflates token consumption during reasoning tasks. The paper shows that a 4-bit model can burn 30-50% more tokens to reach the same answer as its full-precision counterpart. For any team billing by the token or running latency-sensitive services, this means the "free lunch" of quantization comes with a hidden line item that can wipe out the cost savings.</p>
+        <p>Second, <strong>MIRAGE: Stealthy Visual Prompt Injection for Vulnerability Detection in Web Agents</strong> exposed a critical security hole in multimodal agents. The authors demonstrate that adversarial images—think a slightly doctored screenshot or a manipulated UI element—can silently hijack a web agent's behavior. This isn't a theoretical flaw; it's a reproducible attack that works on current production systems. Any team deploying a visual agent for tasks like form filling or data extraction needs to patch their input validation pipeline immediately.</p>
+
+        <h2>Trend Watch</h2>
+        <p><strong>Trend 1: The cost of reasoning is being re-evaluated from multiple angles.</strong> Beyond the quantization paper, <strong>Grouped Query Experts (GQE)</strong> offers a direct architectural fix to lower long-context inference costs by routing attention through expert groups. Meanwhile, <strong>Dustin</strong> introduces draft-augmented sparse verification to cut speculative decoding overhead for long outputs. The common thread: as models get smarter, the community is realizing that the operational cost of that intelligence—not just the training bill—is the next bottleneck.</p>
+        <p><strong>Trend 2: Agent safety is moving from academic curiosity to engineering necessity.</strong> MIRAGE is joined by <strong>REALM</strong>, a red-teaming benchmark for physical-world VLMs, and <strong>Jury Duty</strong>, which shows that using an MLLM as a judge fails when cultural context is ambiguous. These papers collectively argue that "safe" isn't a checkbox; it's a continuous testing problem that depends on the deployment environment. Teams building autonomous agents should treat this week's findings as a mandatory reading list for their next security review.</p>
+        <p><strong>Trend 3: Diffusion models are finally competitive with autoregressive models on language.</strong> The <strong>Improved Large Language Diffusion Models</strong> paper reports that diffusion-based language models now match autoregressive ones on standard benchmarks. This isn't just a lab curiosity—diffusion models offer different scaling properties and could unlock new efficiency regimes for generation tasks. Watch for inference stacks to start supporting both architectures as a standard option.</p>
+
+        <h2>TL;DR</h2>
+        <p>This week in AI: quantization hides a token tax, web agents have a visual injection vulnerability that needs patching now, and diffusion models just became a real alternative to autoregressive language models.</p>
+    </article>
+</body>
+</html>

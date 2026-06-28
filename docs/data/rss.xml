@@ -5,15 +5,15 @@
     <link>https://ai.hjhai.xyz</link>
     <description>每日自动扫描全球 AI 信源，由 LLM 精选并深度解读的 AI 技术情报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 21 Jun 2026 12:00:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 14:54:36 +0000</lastBuildDate>
     <atom:link href="https://ai.hjhai.xyz/rss.xml" rel="self" type="application/rss+xml"/>
     <generator>AllOfAI Pipeline</generator>
     <item>
-      <title>小模型微调搞定生物医学验证，成本远低于GPT-4</title>
+      <title>小模型微调搞定生物医学声明验证</title>
       <link>https://arxiv.org/abs/2606.12854</link>
       <guid isPermaLink="false">ai-intel-2606.12854</guid>
       <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>用小LLM（如Llama-3-8B）微调，在生物医学声明验证任务上接近GPT-4o零样本性能，但推理成本降低90%以上。发现数据集存在结构捷径，影响跨域泛化。</p><p><strong>重要性：</strong>医院和药企可用小模型替代昂贵API做事实核查。</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <description><p>用 GPT-4o 做生物医学声明验证成本高且不透明。本文发现，微调小 LLM 能达到接近性能，但数据集存在结构捷径，跨领域泛化仍是问题。</p><p><strong>重要性：</strong>给预算有限的医疗团队提供低成本验证方案</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
@@ -27,92 +27,83 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
-      <title>Nemotron 3 Ultra开源：550B参数MoE混合架构</title>
+      <title>Nemotron 3 Ultra: 550B MoE 混合架构开源</title>
       <link>https://arxiv.org/abs/2606.15007</link>
       <guid isPermaLink="false">ai-intel-2606.15007</guid>
       <pubDate>Tue, 16 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>NVIDIA发布Nemotron 3 Ultra，550B总参数/55B激活参数的MoE模型，混合Mamba与Transformer，专为Agent推理设计，性能对标闭源模型。</p><p><strong>重要性：</strong>开源社区获得一个高性价比的Agent基座模型。</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <description><p>NVIDIA 发布 Nemotron 3 Ultra，550B 总参数/55B 活跃参数的 MoE 模型，混合 Mamba 和 Transformer，专为 Agent 推理设计，已开源。</p><p><strong>重要性：</strong>开源社区获得一个高效推理的 Agent 基座模型</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
-      <title>ToolSense框架：诊断LLM工具调用知识盲区</title>
+      <title>ToolSense: 诊断 LLM 工具知识的新框架</title>
       <link>https://arxiv.org/abs/2606.12451</link>
       <guid isPermaLink="false">ai-intel-2606.12451</guid>
       <pubDate>Fri, 12 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>提出诊断框架，系统审计LLM对工具参数、返回值等内部知识的掌握程度，发现即使强模型在工具调用上也有系统性缺陷。</p><p><strong>重要性：</strong>开发者可用此框架排查Agent工具调用失败根因。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <description><p>LLM Agent 依赖嵌入检索工具，但常出错。ToolSense 通过诊断框架审计模型对工具参数的理解，发现检索瓶颈并给出改进方向。</p><p><strong>重要性：</strong>做 Agent 开发的团队可定位工具调用失败根因</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
-      <title>手机NPU跑扩散LLM，推理速度提升5倍</title>
+      <title>手机 NPU 跑 Diffusion LLM 推理</title>
       <link>https://arxiv.org/abs/2606.13740</link>
       <guid isPermaLink="false">ai-intel-2606.13740</guid>
       <pubDate>Mon, 15 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>在手机NPU上部署扩散LLM（dLLM），利用并行去噪特性，相比传统自回归模型延迟降低80%，首次实现端侧实时生成。</p><p><strong>重要性：</strong>手机厂商可据此在本地运行高质量文本生成。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <description><p>Diffusion LLM 能并行去噪加速生成，但部署在手机上仍慢。本文利用移动 NPU 优化推理，首次在端侧实现可用的 Diffusion LLM。</p><p><strong>重要性：</strong>端侧 AI 应用可享受更快的生成速度</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
-      <title>不确定性对齐RL：让Agent知道何时该调用工具</title>
+      <title>不确定性对齐RL优化LLM工具调用</title>
       <link>https://arxiv.org/abs/2606.06976</link>
       <guid isPermaLink="false">ai-intel-2606.06976</guid>
       <pubDate>Mon, 08 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>用不确定性校准的强化学习训练Agent，使其在不确定时主动调用工具而非瞎猜，工具误用率降低40%。</p><p><strong>重要性：</strong>构建可靠Agent的关键：学会说&#x27;我不知道&#x27;。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <description><p>利用模型自身的不确定性信号作为RL奖励，抑制幻觉式直接回答和不支持的工具调用。</p><p><strong>重要性：</strong>减少代理在工具调用时的误操作，提升可靠性。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
-      <title>FAIR-Calib：扩散LLM量化校准新方法</title>
+      <title>FAIR-Calib: 量化 Diffusion LLM 不掉精度</title>
       <link>https://arxiv.org/abs/2606.06547</link>
       <guid isPermaLink="false">ai-intel-2606.06547</guid>
       <pubDate>Mon, 08 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>针对扩散LLM早期决策不可逆导致的稳定性滞后问题，提出前沿感知重加权校准方法，在4-bit量化下保持生成质量。</p><p><strong>重要性：</strong>让扩散LLM在低精度硬件上也能稳定运行。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <description><p>Diffusion LLM 的早期决策不可逆，导致量化后精度崩。FAIR-Calib 用前沿感知重加权校准，首次实现后训练量化下 dLLM 精度无损。</p><p><strong>重要性：</strong>模型压缩团队可安全量化新一代 Diffusion LLM</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
-      <title>MMLongEmbed：多模态长上下文嵌入评测基准</title>
+      <title>MMLongEmbed: 多模态长上下文嵌入评测</title>
       <link>https://arxiv.org/abs/2606.14747</link>
       <guid isPermaLink="false">ai-intel-2606.14747</guid>
       <pubDate>Tue, 16 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>发布首个多模态长上下文嵌入模型评测基准，覆盖128K token，发现现有模型在长文本检索上准确率骤降，远未达到理论窗口。</p><p><strong>重要性：</strong>给多模态RAG系统选型提供真实性能参考。</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
+      <description><p>多模态嵌入模型宣称支持长上下文，但实际检索能力未知。MMLongEmbed 基准测试发现，长文本下图文检索性能断崖式下降。</p><p><strong>重要性：</strong>多模态 RAG 系统选型时需警惕长上下文陷阱</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
     </item>
     <item>
-      <title>Pareto LoRA：解决多模态模型模态失衡问题</title>
+      <title>Pareto LoRA: 解决多模态模型模态不平衡</title>
       <link>https://arxiv.org/abs/2606.17296</link>
       <guid isPermaLink="false">ai-intel-2606.17296</guid>
       <pubDate>Wed, 17 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>提出Pareto最优梯度整合方法，在统一多模态模型微调时平衡文本、图像等模态的学习，避免某一模态主导导致其他模态退化。</p><p><strong>重要性：</strong>训练多模态模型时不再需要手动调模态权重。</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
+      <description><p>提出Pareto LoRA方法，通过帕累托最优梯度整合，缓解统一多模态模型中视觉和语言模态的不平衡问题。</p><p><strong>重要性：</strong>训练多模态模型时可避免某一模态主导，提升整体性能。</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
     </item>
     <item>
-      <title>Elmes：自动构建教育场景LLM细粒度评估标准</title>
-      <link>https://arxiv.org/abs/2606.06546</link>
-      <guid isPermaLink="false">ai-intel-2606.06546</guid>
-      <pubDate>Mon, 08 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>针对长尾教育场景，自动生成细粒度评估标准，评估模型的教学能力而非知识记忆，发现当前模型在解释和纠错上表现差。</p><p><strong>重要性：</strong>教育科技公司可用此框架筛选适合教学的模型。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
-    </item>
-    <item>
-      <title>MacArena：在真实macOS上评测计算机使用Agent</title>
+      <title>MacArena: 在真实 macOS 上测 Agent</title>
       <link>https://arxiv.org/abs/2606.06560</link>
       <guid isPermaLink="false">ai-intel-2606.06560</guid>
       <pubDate>Mon, 08 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>构建在线macOS环境，让Agent操作真实应用（如邮件、浏览器），发现当前最佳Agent任务完成率仅35%，且常误操作。</p><p><strong>重要性：</strong>给桌面自动化Agent提供真实可复现的评测环境。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <description><p>现有计算机使用 Agent 评测多基于模拟器。MacArena 在真实 macOS 环境中测试，发现 Agent 在文件操作和跨应用任务上表现远低于预期。</p><p><strong>重要性：</strong>桌面 Agent 开发者获得更真实的性能基准</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
-      <title>MINT Demo 2: 检测你的数据是否被AI训练</title>
+      <title>MINT Demo 2: 测你的数据是否被 AI 训练</title>
       <link>https://arxiv.org/abs/2606.14748</link>
       <guid isPermaLink="false">ai-intel-2606.14748</guid>
       <pubDate>Tue, 16 Jun 2026 04:00:00 +0000</pubDate>
-      <description><p>推出MINT成员推断测试工具，可检测特定图文数据是否被用于训练多模态模型，准确率超90%，支持开源模型。</p><p><strong>重要性：</strong>内容创作者和版权方可用此工具验证数据是否被未经授权使用。</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
+      <description><p>会员推断测试 MINT 升级版，通过黑盒 API 判断特定图文数据是否被用于训练模型，无需模型内部信息。</p><p><strong>重要性：</strong>创作者和企业可验证数据是否被未经授权使用</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
     </item>
@@ -144,11 +135,11 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
-      <title>Z.ai开源GLM-5.2，编码能力超GPT-5.5</title>
+      <title>GLM-5.2 开源，1/6 成本击败 GPT-5.5</title>
       <link>https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost</link>
       <guid isPermaLink="false">ai-intel-z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost</guid>
       <pubDate>Tue, 16 Jun 2026 21:26:01 +0000</pubDate>
-      <description><p>智谱AI发布753B开源模型GLM-5.2，在长时编码基准上超越GPT-5.5，成本仅为1/6，权重完全开放。</p><p><strong>重要性：</strong>开源模型在编码任务上首次超越闭源旗舰，开发者可低成本部署。</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
+      <description><p>智谱开源 GLM-5.2，753B 参数，在长时编码基准上超越 GPT-5.5，推理成本仅为后者六分之一，权重已开放。</p><p><strong>重要性：</strong>开源模型在编码任务上首次以低价碾压闭源旗舰</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
       <category>Blog</category>
       <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
     </item>
@@ -275,6 +266,15 @@
       <guid isPermaLink="false">ai-intel-chatgpt-memory-dreaming</guid>
       <pubDate>Thu, 04 Jun 2026 09:00:00 +0000</pubDate>
       <description><p>针对扩散大语言模型(dLLM)迭代生成中的稳定性滞后问题，提出前沿感知不稳定性重加权校准方法，实现高效后训练量化。</p><p><strong>重要性：</strong>解决扩散LLM部署中的量化精度损失关键问题。</p><p>来源：OpenAI Blog · 分类：AI Lab</p></description>
+      <category>AI Lab</category>
+      <source url="https://ai.hjhai.xyz">OpenAI Blog</source>
+    </item>
+    <item>
+      <title>AgentJet:灵活智能体强化学习训练框架</title>
+      <link>https://openai.com/index/travelers</link>
+      <guid isPermaLink="false">ai-intel-travelers</guid>
+      <pubDate>Tue, 02 Jun 2026 12:00:00 +0000</pubDate>
+      <description><p>发布AgentJet分布式集群训练框架，专为LLM智能体强化学习设计，支持灵活扩展，克服集中式框架的瓶颈。</p><p><strong>重要性：</strong>提供可扩展的智能体RL训练基础设施，加速智能体研发。</p><p>来源：OpenAI Blog · 分类：AI Lab</p></description>
       <category>AI Lab</category>
       <source url="https://ai.hjhai.xyz">OpenAI Blog</source>
     </item>
