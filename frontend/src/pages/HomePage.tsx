@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useLatest, useTrending, useTop5 } from '../hooks/useData'
-import type { Article, CategoryKey, Top5Data } from '../types'
+import { useLatest, useTrending, useTop5, useAgentTools, useEvents } from '../hooks/useData'
+import type { Article, CategoryKey, Top5Data, AgentToolsData, EventsData } from '../types'
 import { CATEGORY_ICONS, DEFAULT_CATEGORY_ICON, ICON } from '../lib/icons'
 import { ScrollReveal, StaggerContainer, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
@@ -38,6 +39,13 @@ const T = {
   githubTop5:        { zh: 'GitHub AI 开源项目 · Top 5', en: 'GitHub AI Open Source · Top 5' },
   sortedByStars:     { zh: '按 Star 排序',  en: 'By Stars' },
   viewOnGithub:      { zh: '在 GitHub 上查看', en: 'View on GitHub' },
+  agentTools:        { zh: 'Agent & MCP 工具周榜', en: 'Agent & MCP Tools Weekly' },
+  agentTypeMCP:      { zh: 'MCP 服务器', en: 'MCP Server' },
+  agentTypeTool:     { zh: 'Agent 工具', en: 'Agent Tool' },
+  agentTypeSkill:    { zh: 'Agent 技能', en: 'Agent Skill' },
+  eventsTitle:       { zh: '多源事件聚合', en: 'Cross-source Events' },
+  eventsSubtitle:    { zh: '按事件聚合', en: 'Grouped by event' },
+  eventsArticles:    { zh: '篇报道', en: 'articles' },
   paperTag:          { zh: '论文',    en: 'Paper' },
   continueReading:   { zh: '继续阅读', en: 'Continue Reading' },
   noData:            { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
@@ -215,7 +223,107 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
   )
 }
 
-// ── GitHub Top 5 ──
+// ── Agent & MCP Tools Weekly ──
+function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) {
+  const [expanded, setExpanded] = useState<number | null>(null)
+
+  const typeBadge = (type: string) => {
+    switch (type) {
+      case 'mcp-server': return { label: t(T.agentTypeMCP, locale), className: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' }
+      case 'agent-tool': return { label: t(T.agentTypeTool, locale), className: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400' }
+      case 'agent-skill': return { label: t(T.agentTypeSkill, locale), className: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' }
+      default: return { label: type, className: 'bg-bg-secondary text-text-muted' }
+    }
+  }
+
+  return (
+    <FadeIn delay={0.09}>
+      <section>
+        <div className="flex items-center gap-2 mb-3">
+          <FontAwesomeIcon icon={ICON.robot} className="text-accent" />
+          <h2 className="text-lg font-semibold text-text-primary">
+            {t(T.agentTools, locale)}
+          </h2>
+          {data.stats && (
+            <div className="flex items-center gap-1.5 ml-auto">
+              <span className="text-[11px] px-1.5 py-0.5 rounded bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400">
+                MCP {data.stats.total_mcp}
+              </span>
+              <span className="text-[11px] px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400">
+                Agent {data.stats.total_agent}
+              </span>
+              <span className="text-[11px] px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                Skill {data.stats.total_skill}
+              </span>
+            </div>
+          )}
+        </div>
+        <div className="space-y-2">
+          {data.tools.map((tool, i) => {
+            const isOpen = expanded === i
+            const badge = typeBadge(tool.type)
+            return (
+              <ScrollReveal key={tool.full_name} index={i}>
+                <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : i)}
+                    className="w-full text-left p-4 flex items-start gap-3"
+                  >
+                    <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-accent-muted flex items-center justify-center text-sm font-bold text-accent tabular-nums">
+                      {i + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-medium text-[15px] text-text-primary">
+                          <span className="text-text-muted font-normal">{tool.owner}/</span>
+                          {tool.name}
+                        </span>
+                        <span className={`text-[11px] px-1.5 py-0.5 rounded ${badge.className}`}>
+                          {badge.label}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-sm text-text-secondary line-clamp-1">{tool.description}</p>
+                      <div className="mt-1.5 flex items-center gap-3 text-xs text-text-muted">
+                        <span className="flex items-center gap-1">
+                          <FontAwesomeIcon icon={ICON.star} className="text-amber text-[10px]" />
+                          {tool.stars_formatted}
+                        </span>
+                        <span>Fork {(tool.forks ?? 0).toLocaleString()}</span>
+                      </div>
+                    </div>
+                    <FontAwesomeIcon
+                      icon={ICON.chevronDown}
+                      className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-4 pb-4 pl-14">
+                      <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
+                        <FontAwesomeIcon icon={ICON.robot} className="mr-1.5 text-accent/60" />
+                        {tool.summary}
+                      </div>
+                      <a
+                        href={tool.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 mt-2 text-xs text-accent hover:text-accent-hover transition-colors"
+                      >
+                        {t(T.viewOnGithub, locale)}
+                        <FontAwesomeIcon icon={ICON.arrowRight} className="text-[10px]" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            )
+          })}
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
+
+// ── GithubTop5 ──
 function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
   const [expanded, setExpanded] = useState<number | null>(null)
 
@@ -295,6 +403,86 @@ function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
   )
 }
 
+// ── Cross-source Events ──
+function Events({ data, locale }: { data: EventsData; locale: Locale }) {
+  const [expanded, setExpanded] = useState<string | null>(null)
+
+  return (
+    <FadeIn delay={0.10}>
+      <section>
+        <div className="flex items-center gap-2 mb-3">
+          <FontAwesomeIcon icon={ICON.globe} className="text-accent" />
+          <h2 className="text-lg font-semibold text-text-primary">
+            {t(T.eventsTitle, locale)}
+          </h2>
+          <span className="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">
+            {t(T.eventsSubtitle, locale)}
+          </span>
+          <span className="text-xs text-text-muted ml-auto">
+            {data.events.length} clusters · {data.source_articles} {t(T.eventsArticles, locale)}
+          </span>
+        </div>
+        <div className="space-y-2">
+          {data.events.map((event) => {
+            const isOpen = expanded === event.id
+            return (
+              <ScrollReveal key={event.id} index={data.events.indexOf(event)}>
+                <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : event.id)}
+                    className="w-full text-left p-4 flex items-start gap-3"
+                  >
+                    <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-accent-muted flex items-center justify-center text-sm font-bold text-accent">
+                      {event.article_count}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <span className="font-medium text-[15px] text-text-primary">{event.title}</span>
+                      <div className="mt-1.5 flex items-center gap-3 text-xs text-text-muted">
+                        <span>{event.time_range.start} → {event.time_range.end}</span>
+                        <span className="flex items-center gap-1 flex-wrap">
+                          {event.categories.map((c, j) => (
+                            <span key={j} className="bg-bg-secondary px-1.5 py-0.5 rounded text-[10px]">{c}</span>
+                          ))}
+                        </span>
+                      </div>
+                    </div>
+                    <FontAwesomeIcon
+                      icon={ICON.chevronDown}
+                      className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-4 pb-4 pl-14 space-y-2">
+                      {event.sources.length > 0 && (
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {event.sources.map((s, j) => (
+                            <span key={j} className="text-[11px] bg-accent-muted text-accent px-2 py-0.5 rounded">{s}</span>
+                          ))}
+                        </div>
+                      )}
+                      {event.articles.slice(0, 5).map((a: any) => (
+                        <a
+                          key={a.id}
+                          href={a.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-xs text-text-secondary hover:text-accent transition-colors border-l-2 border-border-muted hover:border-accent/50 pl-3 py-1"
+                        >
+                          [{a.source}] {a.title}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            )
+          })}
+        </div>
+      </section>
+    </FadeIn>
+  )
+}
+
 // ── Continue Reading ──
 function ContinueReading({ locale }: { locale: Locale }) {
   const [items, setItems] = useState<{ link: string; title: string }[]>([])
@@ -340,6 +528,8 @@ export function HomePage() {
   const { data, loading, error } = useLatest()
   const { data: trending } = useTrending()
   const { data: top5 } = useTop5()
+  const { data: agentTools } = useAgentTools()
+  const { data: events } = useEvents()
   const search = useSearch()
   const { locale } = useLocale()
 
@@ -427,6 +617,16 @@ export function HomePage() {
         <GithubTop5 data={top5} locale={locale} />
       )}
 
+      {/* Agent & MCP Tools Weekly */}
+      {agentTools && agentTools.tools && agentTools.tools.length > 0 && (
+        <AgentTools data={agentTools} locale={locale} />
+      )}
+
+      {/* Cross-source Events */}
+      {events && events.events && events.events.length > 0 && (
+        <Events data={events} locale={locale} />
+      )}
+
       {/* Model Leaderboard Preview */}
       <ModelLeaderboardPreview locale={locale} />
 
@@ -448,9 +648,18 @@ export function HomePage() {
                   </div>
                 </FadeIn>
                 <div className="space-y-2">
-                  {items.map((a, i) => (
+                  {items.slice(0, 5).map((a, i) => (
                     <ArticleCard key={i} article={a} index={i} lang={locale} />
                   ))}
+                  {items.length > 5 && (
+                    <Link
+                      to={`/category/${encodeURIComponent(cat)}`}
+                      className="flex items-center justify-center gap-1.5 py-2.5 text-sm text-accent hover:text-accent-hover bg-bg-secondary/50 hover:bg-bg-secondary rounded-lg transition-all duration-200"
+                    >
+                      {locale === 'en' ? `View all ${items.length} articles` : `查看全部 ${items.length} 篇`}
+                      <FontAwesomeIcon icon={ICON.arrowRight} className="text-xs" />
+                    </Link>
+                  )}
                 </div>
               </section>
             )

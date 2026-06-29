@@ -1,0 +1,1 @@
+import{J as e}from"./vendor-icons-D8aePk2f.js";import{t}from"./ModelLeaderboard-CAdzTZTR.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as LeaderboardPage};

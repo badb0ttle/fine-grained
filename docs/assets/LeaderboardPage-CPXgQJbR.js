@@ -1,1 +1,0 @@
-import{q as e}from"./vendor-icons-CEle-rep.js";import{t}from"./ModelLeaderboard-Cxklg_gR.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as LeaderboardPage};
