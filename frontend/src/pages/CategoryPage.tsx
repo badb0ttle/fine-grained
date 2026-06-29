@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useLatest } from '../hooks/useData'
@@ -8,21 +8,26 @@ import { ScrollReveal, FadeIn } from '../components/Animations'
 import { HomePageSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
 
+const PAGE_SIZE = 20
+
 // ── i18n ──
 const T = {
   categoryMeta: {
-    'AI Lab':    { zh: 'AI 实验室',    en: 'AI Labs' },
-    'Paper':     { zh: '学术论文',     en: 'Papers' },
-    '中文媒体':   { zh: '中文媒体',     en: 'Chinese Media' },
-    'Blog':      { zh: '技术博客',     en: 'Tech Blogs' },
-    'Community': { zh: '社区动态',     en: 'Community' },
-    'Discussion':{ zh: '技术讨论',     en: 'Discussion' },
+    'AI Lab':     { zh: 'AI 实验室',    en: 'AI Labs' },
+    'Paper':      { zh: '学术论文',     en: 'Papers' },
+    '中文媒体':    { zh: '中文媒体',     en: 'Chinese Media' },
+    'Blog':       { zh: '技术博客',     en: 'Tech Blogs' },
+    'Community':  { zh: '社区动态',     en: 'Community' },
+    'Discussion': { zh: '技术讨论',     en: 'Discussion' },
   } as Record<string, { zh: string; en: string }>,
   defaultCategory: { zh: '其他', en: 'Other' },
-  backHome:       { zh: '← 返回首页', en: '← Back to Home' },
-  totalArticles:  { zh: '篇', en: 'articles' },
-  noData:         { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
-  paperTag:       { zh: '论文', en: 'Paper' },
+  backHome:        { zh: '← 返回首页', en: '← Back to Home' },
+  totalArticles:   { zh: '篇', en: 'articles' },
+  noData:          { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
+  paperTag:        { zh: '论文', en: 'Paper' },
+  searchPlaceholder: { zh: '搜索标题或摘要...', en: 'Search titles & summaries...' },
+  noMatch:         { zh: '未找到匹配的文章', en: 'No matching articles' },
+  pageInfo:        { zh: '第 {current} / {total} 页', en: 'Page {current} of {total}' },
 }
 
 function t(obj: { zh: string; en: string } | string, locale: string): string {
@@ -45,13 +50,76 @@ export function CategoryPage() {
 
   const categoryName = decodeURIComponent(name || '')
 
+  // local search state
+  const [query, setQuery] = useState('')
+  const [page, setPage] = useState(1)
+
+  // reset pagination when category or query changes
+  const normalizedQuery = query.trim().toLowerCase()
+
   const articles = useMemo(() => {
     if (!data?.articles) return []
-    return data.articles.filter(a => (a.category || 'Other') === categoryName)
-  }, [data, categoryName])
+    let subset = data.articles.filter(a => (a.category || 'Other') === categoryName)
+    if (normalizedQuery) {
+      subset = subset.filter(a => {
+        const isEn = locale === 'en'
+        const title = isEn ? (a.title || a.title_cn || '') : (a.title_cn || a.title || '')
+        const summary = isEn
+          ? (a.summary || a.summary_cn || '')
+          : (a.summary_cn || a.summary || '')
+        return title.toLowerCase().includes(normalizedQuery)
+          || summary.toLowerCase().includes(normalizedQuery)
+      })
+    }
+    return subset
+  }, [data, categoryName, normalizedQuery, locale])
+
+  const totalPages = Math.max(1, Math.ceil(articles.length / PAGE_SIZE))
+  const safePage = Math.min(page, totalPages)
+  const pagedArticles = useMemo(
+    () => articles.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE),
+    [articles, safePage],
+  )
+
+  // ensure page doesn't exceed bounds after filter change
+  if (safePage !== page) {
+    // defer state update to avoid render-cycle setState
+    setTimeout(() => setPage(safePage), 0)
+  }
 
   const meta = T.categoryMeta[categoryName] || T.defaultCategory
   const catIcon = CATEGORY_ICONS[categoryName as CategoryKey] || DEFAULT_CATEGORY_ICON
+
+  // page window for navigation
+  const pageWindow = useMemo(() => {
+    const pages: (number | '...')[] = []
+    const delta = 2
+    let start = Math.max(1, safePage - delta)
+    let end = Math.min(totalPages, safePage + delta)
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i)
+    } else {
+      if (start > 2) pages.push(1, '...')
+      else if (start === 2) pages.push(1)
+      for (let i = start; i <= end; i++) pages.push(i)
+      if (end < totalPages - 1) pages.push('...', totalPages)
+      else if (end === totalPages - 1) pages.push(totalPages)
+    }
+    return pages
+  }, [safePage, totalPages])
+
+  const handlePageChange = (p: number) => {
+    if (p >= 1 && p <= totalPages) {
+      setPage(p)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  // search handler — reset to page 1 on input
+  const handleSearch = (value: string) => {
+    setQuery(value)
+    setPage(1)
+  }
 
   if (loading) return <HomePageSkeleton />
 
@@ -68,7 +136,8 @@ export function CategoryPage() {
   return (
     <div className="space-y-6">
       <FadeIn>
-        <div className="flex items-center gap-3 mb-6">
+        {/* back link */}
+        <div className="flex items-center gap-3 mb-4">
           <Link
             to="/"
             className="text-sm text-text-muted hover:text-accent transition-colors flex items-center gap-1"
@@ -77,23 +146,54 @@ export function CategoryPage() {
             {t(T.backHome, locale)}
           </Link>
         </div>
-        <div className="flex items-center gap-2">
-          <FontAwesomeIcon icon={catIcon} className="text-accent text-xl" />
-          <h1 className="text-2xl font-bold text-text-primary">{t(meta, locale)}</h1>
-          <span className="text-sm text-text-muted bg-bg-secondary px-2.5 py-0.5 rounded-full">
-            {articles.length} {t(T.totalArticles, locale)}
-          </span>
+
+        {/* header */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+          <div className="flex items-center gap-2">
+            <FontAwesomeIcon icon={catIcon} className="text-accent text-xl" />
+            <h1 className="text-2xl font-bold text-text-primary">{t(meta, locale)}</h1>
+            <span className="text-sm text-text-muted bg-bg-secondary px-2.5 py-0.5 rounded-full">
+              {articles.length} {t(T.totalArticles, locale)}
+            </span>
+          </div>
+
+          {/* search */}
+          <div className="relative w-full sm:w-72">
+            <FontAwesomeIcon
+              icon={ICON.search}
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm pointer-events-none"
+            />
+            <input
+              type="text"
+              value={query}
+              onChange={e => handleSearch(e.target.value)}
+              placeholder={t(T.searchPlaceholder, locale)}
+              className="w-full pl-9 pr-8 py-2 text-sm bg-bg-secondary border border-border-muted rounded-lg text-text-primary placeholder:text-text-muted/60 focus:outline-none focus:border-accent/40 transition-colors"
+            />
+            {query && (
+              <button
+                onClick={() => handleSearch('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-secondary transition-colors"
+                aria-label="Clear search"
+              >
+                <FontAwesomeIcon icon={ICON.times} className="text-xs" />
+              </button>
+            )}
+          </div>
         </div>
       </FadeIn>
 
-      {articles.length === 0 ? (
+      {/* article list */}
+      {pagedArticles.length === 0 ? (
         <div className="text-center py-16">
           <FontAwesomeIcon icon={ICON.inbox} className="text-4xl text-text-muted mb-3" />
-          <p className="text-text-muted">{t(T.noData, locale)}</p>
+          <p className="text-text-muted">
+            {normalizedQuery ? t(T.noMatch, locale) : t(T.noData, locale)}
+          </p>
         </div>
       ) : (
         <div className="space-y-2">
-          {articles.map((a, i) => {
+          {pagedArticles.map((a, i) => {
             const isEn = locale === 'en'
             const title = isEn ? (a.title || a.title_cn) : (a.title_cn || a.title)
             const summary = isEn
@@ -141,6 +241,53 @@ export function CategoryPage() {
             )
           })}
         </div>
+      )}
+
+      {/* pagination */}
+      {totalPages > 1 && (
+        <FadeIn>
+          <div className="flex items-center justify-center gap-1.5 pt-4 pb-8">
+            {/* prev */}
+            <button
+              onClick={() => handlePageChange(safePage - 1)}
+              disabled={safePage <= 1}
+              className="w-9 h-9 flex items-center justify-center rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              aria-label="Previous page"
+            >
+              <FontAwesomeIcon icon={ICON.chevronLeft} className="text-xs" />
+            </button>
+
+            {pageWindow.map((p, idx) =>
+              p === '...' ? (
+                <span key={`dots-${idx}`} className="w-9 h-9 flex items-center justify-center text-sm text-text-muted">
+                  …
+                </span>
+              ) : (
+                <button
+                  key={p}
+                  onClick={() => handlePageChange(p)}
+                  className={`w-9 h-9 flex items-center justify-center rounded-lg text-sm transition-colors ${
+                    p === safePage
+                      ? 'bg-accent text-white font-medium'
+                      : 'text-text-muted hover:text-text-primary hover:bg-bg-secondary'
+                  }`}
+                >
+                  {p}
+                </button>
+              ),
+            )}
+
+            {/* next */}
+            <button
+              onClick={() => handlePageChange(safePage + 1)}
+              disabled={safePage >= totalPages}
+              className="w-9 h-9 flex items-center justify-center rounded-lg text-sm text-text-muted hover:text-text-primary hover:bg-bg-secondary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              aria-label="Next page"
+            >
+              <FontAwesomeIcon icon={ICON.chevronRight} className="text-xs" />
+            </button>
+          </div>
+        </FadeIn>
       )}
     </div>
   )

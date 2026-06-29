@@ -167,3 +167,58 @@ export interface LeaderboardData {
   models: LeaderboardModel[]
 }
 
+// Agent & MCP Tools
+export interface AgentTool {
+  full_name: string
+  name: string
+  owner: string
+  description: string
+  url: string
+  stars: number
+  forks: number
+  language: string
+  topics: string[]
+  summary: string
+  updated_at: string
+  stars_formatted: string
+  type: 'mcp-server' | 'agent-tool' | 'agent-skill'
+  type_label: string
+}
+
+export interface AgentToolsData {
+  generated_at: string | null
+  generated_week: string | null
+  tools: AgentTool[]
+  stats: {
+    total_mcp: number
+    total_agent: number
+    total_skill: number
+  }
+}
+
+// Event Clusters
+export interface EventArticle {
+  id: number
+  title: string
+  source: string
+  category: string
+  link: string
+  published: string
+}
+
+export interface EventCluster {
+  id: string
+  title: string
+  sources: string[]
+  categories: string[]
+  time_range: { start: string; end: string }
+  article_count: number
+  articles: EventArticle[]
+}
+
+export interface EventsData {
+  generated_at: string
+  source_articles: number
+  events: EventCluster[]
+}
+

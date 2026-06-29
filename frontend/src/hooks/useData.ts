@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, Top5Repo, LeaderboardData, Article } from '../types'
+import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, Top5Repo, LeaderboardData, Article, AgentToolsData, EventsData } from '../types'
 
 // ── Mode configuration ──
 const API_MODE: boolean = import.meta.env.VITE_API_MODE === 'true'
@@ -182,4 +182,34 @@ export function useWeekly() {
   }, [])
 
   return { weeks, loading }
+}
+
+export function useAgentTools() {
+  const [data, setData] = useState<AgentToolsData | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const path = API_MODE ? '/agent-tools' : 'agent_tools.json'
+    fetchJSON<AgentToolsData>(path)
+      .then(setData)
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [])
+
+  return { data, loading }
+}
+
+export function useEvents() {
+  const [data, setData] = useState<EventsData | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const path = API_MODE ? '/events' : 'events.json'
+    fetchJSON<EventsData>(path)
+      .then(setData)
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [])
+
+  return { data, loading }
 }

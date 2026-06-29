@@ -170,7 +170,75 @@ def get_leaderboard():
 
 
 # ════════════════════════════════════════════════════════════════════
-# GET /api/model-leaderboard — external model rankings (replaces data/model_leaderboard.json)
+# GET /api/agent-tools — Agent & MCP 工具周榜 (data/agent_tools.json)
+# ════════════════════════════════════════════════════════════════════
+
+_agent_tools_cache = None
+_agent_tools_cache_time = 0.0
+_AGENT_TOOLS_CACHE_TTL = 600  # 10 min
+
+
+@router.get("/agent-tools")
+def get_agent_tools():
+    """Get Agent & MCP tools leaderboard from pre-generated agent_tools.json."""
+    global _agent_tools_cache, _agent_tools_cache_time
+
+    now = time.time()
+    if _agent_tools_cache and (now - _agent_tools_cache_time) < _AGENT_TOOLS_CACHE_TTL:
+        return _agent_tools_cache
+
+    tools_path = DATA_DIR / "agent_tools.json"
+    if tools_path.exists():
+        try:
+            data = json.loads(tools_path.read_text())
+            _agent_tools_cache = data
+            _agent_tools_cache_time = now
+            return data
+        except Exception:
+            pass
+
+    # Fallback: return empty structure
+    return {
+        "generated_at": None,
+        "generated_week": None,
+        "tools": [],
+        "stats": {"total_mcp": 0, "total_agent": 0, "total_skill": 0},
+    }
+
+
+# ════════════════════════════════════════════════════════════════════
+# GET /api/events — 多源事件聚合 (data/events.json)
+# ════════════════════════════════════════════════════════════════════
+
+_events_cache = None
+_events_cache_time = 0.0
+_EVENTS_CACHE_TTL = 600  # 10 min
+
+
+@router.get("/events")
+def get_events():
+    """Get multi-source event clusters from pre-generated events.json."""
+    global _events_cache, _events_cache_time
+
+    now = time.time()
+    if _events_cache and (now - _events_cache_time) < _EVENTS_CACHE_TTL:
+        return _events_cache
+
+    path = DATA_DIR / "events.json"
+    if path.exists():
+        try:
+            data = json.loads(path.read_text())
+            _events_cache = data
+            _events_cache_time = now
+            return data
+        except Exception:
+            pass
+
+    return {"generated_at": None, "source_articles": 0, "events": []}
+
+
+# ════════════════════════════════════════════════════════════════════
+# GET /api/clusters — topic clusters (replaces data/clusters.json)
 # ════════════════════════════════════════════════════════════════════
 
 @router.get("/model-leaderboard")
