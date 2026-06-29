@@ -13,7 +13,7 @@ import { useJsonLd } from '../lib/useJsonLd'
 // ── i18n dictionaries ──
 const T = {
   categoryMeta: {
-    'AI Lab':    { zh: 'AI 实验室',    en: 'AI Labs' },
+    'AI Lab':    { zh: '热点文章',    en: 'Hot Articles' },
     'Paper':     { zh: '学术论文',     en: 'Papers' },
     '中文媒体':   { zh: '中文媒体',     en: 'Chinese Media' },
     'Blog':      { zh: '技术博客',     en: 'Tech Blogs' },
@@ -653,7 +653,7 @@ export function HomePage() {
                   ))}
                   {items.length > 5 && (
                     <Link
-                      to={`/category/${encodeURIComponent(cat)}`}
+                      to={`${locale === 'en' ? '/en' : ''}/category/${encodeURIComponent(cat)}`}
                       className="flex items-center justify-center gap-1.5 py-2.5 text-sm text-accent hover:text-accent-hover bg-bg-secondary/50 hover:bg-bg-secondary rounded-lg transition-all duration-200"
                     >
                       {locale === 'en' ? `View all ${items.length} articles` : `查看全部 ${items.length} 篇`}

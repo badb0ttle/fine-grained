@@ -57,7 +57,7 @@ const T = {
     { zh_label: '定时任务',       en_label: 'Scheduler',     value: 'Hermes Cron (scan every 6h, weekly report every 24h)' },
   ],
   catLabels: {
-    'AI Lab':     { zh: 'AI 实验室', en: 'AI Labs' },
+    'AI Lab':     { zh: '热点文章', en: 'Hot Articles' },
     'Paper':      { zh: '学术论文',   en: 'Papers' },
     'Blog':       { zh: '技术博客',   en: 'Tech Blogs' },
     'Community':  { zh: '社区动态',   en: 'Community' },

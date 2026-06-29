@@ -42,14 +42,14 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
   }, [locale])
 
-  // Sync locale with URL (when user navigates directly to /en/...)
+  // Sync locale from URL (only when URL explicitly has /en prefix)
   useEffect(() => {
     const isEnPath = location.pathname.startsWith('/en')
     if (isEnPath && locale !== 'en') {
       setLocaleState('en')
-    } else if (!isEnPath && locale !== 'zh') {
-      setLocaleState('zh')
+      localStorage.setItem('ai_locale', 'en')
     }
+    // Don't force zh when path lacks /en — let user preference persist
   }, [location.pathname])
 
   const setLocale = useCallback((l: Locale) => {
