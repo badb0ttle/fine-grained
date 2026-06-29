@@ -13,7 +13,7 @@ const PAGE_SIZE = 20
 // ── i18n ──
 const T = {
   categoryMeta: {
-    'AI Lab':     { zh: 'AI 实验室',    en: 'AI Labs' },
+    'AI Lab':     { zh: '热点文章',    en: 'Hot Articles' },
     'Paper':      { zh: '学术论文',     en: 'Papers' },
     '中文媒体':    { zh: '中文媒体',     en: 'Chinese Media' },
     'Blog':       { zh: '技术博客',     en: 'Tech Blogs' },
@@ -21,7 +21,7 @@ const T = {
     'Discussion': { zh: '技术讨论',     en: 'Discussion' },
   } as Record<string, { zh: string; en: string }>,
   defaultCategory: { zh: '其他', en: 'Other' },
-  backHome:        { zh: '← 返回首页', en: '← Back to Home' },
+  backHome:        { zh: '返回首页', en: 'Back to Home' },
   totalArticles:   { zh: '篇', en: 'articles' },
   noData:          { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
   paperTag:        { zh: '论文', en: 'Paper' },
@@ -94,16 +94,26 @@ export function CategoryPage() {
   const pageWindow = useMemo(() => {
     const pages: (number | '...')[] = []
     const delta = 2
+    const EDGE_FIRST = 4  // show first N pages at beginning
+    const EDGE_LAST = 3   // show last N pages at end
     let start = Math.max(1, safePage - delta)
     let end = Math.min(totalPages, safePage + delta)
-    if (totalPages <= 7) {
+    if (totalPages <= 10) {
       for (let i = 1; i <= totalPages; i++) pages.push(i)
     } else {
-      if (start > 2) pages.push(1, '...')
-      else if (start === 2) pages.push(1)
+      if (start > EDGE_FIRST + 1) {
+        for (let i = 1; i <= EDGE_FIRST; i++) pages.push(i)
+        pages.push('...')
+      } else {
+        for (let i = 1; i < start; i++) pages.push(i)
+      }
       for (let i = start; i <= end; i++) pages.push(i)
-      if (end < totalPages - 1) pages.push('...', totalPages)
-      else if (end === totalPages - 1) pages.push(totalPages)
+      if (end < totalPages - EDGE_LAST) {
+        pages.push('...')
+        for (let i = totalPages - EDGE_LAST + 1; i <= totalPages; i++) pages.push(i)
+      } else {
+        for (let i = end + 1; i <= totalPages; i++) pages.push(i)
+      }
     }
     return pages
   }, [safePage, totalPages])
