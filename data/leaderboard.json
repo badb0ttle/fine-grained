@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T12:00:44.967586+00:00",
+  "generated_at": "2026-06-30T07:28:38.025180+00:00",
   "models": [
     {
       "name": "GLM-5.2",
@@ -33,6 +33,10 @@
       "context_window": "未知",
       "release_date": null,
       "benchmarks": [
+        {
+          "benchmark": "长时编码基准",
+          "score": "被GLM-5.2超越"
+        },
         {
           "benchmark": "关键基准测试",
           "score": "被 MiniMax-M3 超越"
@@ -121,7 +125,7 @@
     {
       "name": "Nemotron 3 Ultra",
       "provider": "NVIDIA",
-      "parameters": "550B (总参数)/55B (激活参数)",
+      "parameters": "550B",
       "context_window": "未知",
       "release_date": null,
       "benchmarks": []

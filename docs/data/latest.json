@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-21T12:00:44.851336+00:00",
-  "curated_at": "2026-06-21T12:00:44.851343+00:00",
-  "total_sources": 13,
-  "successful_sources": 9,
-  "total_articles": 1497,
-  "curated_count": 44,
+  "scanned_at": "2026-06-30T07:28:37.934013+00:00",
+  "curated_at": "2026-06-30T07:28:37.934021+00:00",
+  "total_sources": 16,
+  "successful_sources": 15,
+  "total_articles": 2117,
+  "curated_count": 104,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -18,6 +18,17 @@
       "why_it_matters": "医院和药企可用小模型替代昂贵API做事实核查。"
     },
     {
+      "title": "Quantization Inflates Reasoning: Token Inflation as a Hidden Cost of Low-Bit Reasoning Models",
+      "link": "https://arxiv.org/abs/2606.25519",
+      "summary": "arXiv:2606.25519v1 Announce Type: new \nAbstract: Quantization is widely used to reduce the inference cost of large language models, but its effect on reasoning models is not fully captured by final-answer accuracy or per-token latency. We show that low-bit post-training quantization can introduce a hidden test-time compute cost: quantized reasoning models often generate longer chains of thought even when they still answer correctly. Across mathematical reasoning, code generation, scientific ques",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "量化让推理模型更费token",
+      "summary_cn": "量化虽降低LLM推理成本，但会导致推理模型生成更多token，抵消部分收益。论文量化了这一隐藏代价，并分析了原因。",
+      "why_it_matters": "部署量化模型时需重新评估实际token消耗。"
+    },
+    {
       "title": "Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study",
       "link": "https://arxiv.org/abs/2606.12881",
       "summary": "arXiv:2606.12881v1 Announce Type: new \nAbstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experimental results demonstrate that DPO simplifies the training pipeline, improves computational efficiency, and achieves competitive performance. The evaluation using BLEU, ROUGE, and cosine similarity metrics indicates effective learning and convergence, though further investigation is needed to addres",
@@ -27,6 +38,28 @@
       "title_cn": "DPO 微调聊天机器人：一项系统的实证研究",
       "summary_cn": "全面实验 DPO 在大模型微调中的效果，覆盖不同模型规模、数据配比和超参选择，给出可操作的调优建议",
       "why_it_matters": "DPO 实践者的参考手册，少踩坑"
+    },
+    {
+      "title": "The Hitchhiker's Guide to Agentic AI: From Foundations to Systems",
+      "link": "https://arxiv.org/abs/2606.24937",
+      "summary": "arXiv:2606.24937v1 Announce Type: new \nAbstract: The Hitchhiker's Guide to Agentic AI is a comprehensive practitioner's reference for building autonomous AI systems. The book covers the full stack from first principles to production deployment, organized around a central thesis: building great agentic systems requires understanding every layer of the pipeline, not just one. The book opens with the LLM substrate -- transformer architecture, GPU systems, training and fine-tuning (SFT,LoRA, MoE), m",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "Agentic AI系统构建实战指南",
+      "summary_cn": "一篇面向从业者的Agentic AI参考书，覆盖从基础到完整系统的全栈构建方法，包含大量可复用的设计模式。",
+      "why_it_matters": "给想搭建自主AI系统的工程师提供了系统化路线图。"
+    },
+    {
+      "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
+      "link": "https://arxiv.org/abs/2606.27814",
+      "summary": "arXiv:2606.27814v1 Announce Type: new \nAbstract: Training small language-model agents for long-horizon interactive tasks requires both fast imitation and reward-driven improvement. On-policy distillation (OPD) provides dense teacher guidance and typically improves rapidly in the early stage, but its gains saturate once the student approaches the teacher, limiting the final performance ceiling. Reinforcement learning (RL) directly optimizes environment rewards and encourages exploratory improveme",
+      "published": "2026-06-30 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "ATOD: 多轮对话Agent的退火蒸馏训练",
+      "summary_cn": "提出ATOD方法，通过退火策略和回合感知的on-policy蒸馏，让小语言模型在长周期交互任务中同时提升模仿和奖励驱动能力。",
+      "why_it_matters": "让小型Agent在复杂多轮任务中追上大模型性能，降低部署成本。"
     },
     {
       "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
@@ -60,6 +93,17 @@
       "title_cn": "手机NPU跑扩散LLM，推理速度提升5倍",
       "summary_cn": "在手机NPU上部署扩散LLM（dLLM），利用并行去噪特性，相比传统自回归模型延迟降低80%，首次实现端侧实时生成。",
       "why_it_matters": "手机厂商可据此在本地运行高质量文本生成。"
+    },
+    {
+      "title": "MIRAGE: Stealthy Visual Prompt Injection for Vulnerability Detection in Web Agents",
+      "link": "https://arxiv.org/abs/2606.20717",
+      "summary": "arXiv:2606.20717v1 Announce Type: new \nAbstract: Multimodal Large Language Model (MLLM)-based web agents provide practical, high-precision solutions for visual browser automation; however, they inherently expand the attack surface, introducing novel vision-based vulnerabilities. Existing adversarial evaluations targeting these agents frequently rely on permissive threat models and visually conspicuous artifacts. In this paper, we investigate a constrained vulnerability detection setting: a trust",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "MIRAGE: 视觉提示注入攻击Web Agent",
+      "summary_cn": "提出MIRAGE攻击方法，通过向网页图像注入视觉提示，让多模态LLM驱动的Web Agent执行恶意操作，如转账。实验显示攻击成功率很高。",
+      "why_it_matters": "暴露了多模态Agent的安全漏洞，开发者需立即修补"
     },
     {
       "title": "Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning",
@@ -139,6 +183,39 @@
       "why_it_matters": "内容创作者和版权方可用此工具验证数据是否被未经授权使用。"
     },
     {
+      "title": "PrologMCP: A Standardized Prolog Tool Interface for LLM Agents",
+      "link": "https://arxiv.org/abs/2606.14935",
+      "summary": "arXiv:2606.14935v1 Announce Type: new \nAbstract: Frontier reasoning-tuned language models still fail on deductive tasks at depth, and the cost of improved performance through extended internal reasoning scales poorly. Symbolic delegation offers a complementary route: a language model translates the problem, while a solver performs the inference. However, current autoformalization pipelines for logic programming are typically bespoke integrations tied to particular tasks or agents. We introduce P",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "PrologMCP：给LLM Agent装个逻辑推理外挂",
+      "summary_cn": "推理增强型LLM在深层演绎推理上依然拉胯。PrologMCP通过标准接口把Prolog逻辑引擎挂到LLM Agent上，让模型用符号推理补足自身短板。",
+      "why_it_matters": "做Agent开发的人可以直接拿来提升逻辑推理能力，不用改模型"
+    },
+    {
+      "title": "CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning",
+      "link": "https://arxiv.org/abs/2606.14961",
+      "summary": "arXiv:2606.14961v1 Announce Type: new \nAbstract: Chain-of-thought (CoT) reasoning can improve LLM performance, but high answer confidence may be misleading when the accompanying CoT rationale is plausible yet incomplete or poorly supported. We study confidence--rationale alignment: whether a model's confidence in its committed answer is justified by its generated rationale. We introduce a GRPO-based reinforcement learning framework that jointly rewards answer correctness, committed-answer probab",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "CoRA：让CoT推理的理由和答案一样可信",
+      "summary_cn": "CoT推理中答案置信度高但推理过程可能胡扯。CoRA通过置信度-理由对齐训练，让模型在给出高置信答案时，推理步骤也经得起推敲。",
+      "why_it_matters": "需要可解释AI的场景，比如医疗、金融，能减少误判风险"
+    },
+    {
+      "title": "Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals",
+      "link": "https://arxiv.org/abs/2606.15026",
+      "summary": "arXiv:2606.15026v1 Announce Type: new \nAbstract: Physiological stress and emotion recognition are important for health monitoring and affective computing. In this work, we present a comprehensive evaluation of deep learning models such as Long Short-Term Memory (LSTM), Temporal Convolutional Networks (TCN), and Transformer on the WESAD dataset for multimodal affect recognition using wrist and chest sensor signals. We perform ablation studies to assess the individual contributions of each modalit",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "多模态生理信号情绪识别新方法",
+      "summary_cn": "提出深度时序建模与集成融合框架，从生理信号中识别情绪和压力，在多个数据集上提升准确率。",
+      "why_it_matters": "健康监测和情感计算领域可直接应用，提升实时情绪识别精度。"
+    },
+    {
       "title": "WorkBench Revisited: Workplace Agents Two Years On",
       "link": "https://arxiv.org/abs/2606.13715",
       "summary": "arXiv:2606.13715v1 Announce Type: new \nAbstract: The best agent on WorkBench in March 2024, GPT-4, completed 43% of tasks and took an unintended harmful action, such as emailing the wrong person, on 26% of them. We re-visit the benchmark in June 2026 and find that the best agent to date, Claude Opus 4.8, completes 89% and takes an unintended harmful action on 2.5%. Aside from this considerable progress in frontier agent performance, three things stand out. First, capability and safety go togethe",
@@ -183,6 +260,83 @@
       "why_it_matters": "开源模型在编码任务上首次超越闭源旗舰，开发者可低成本部署。"
     },
     {
+      "title": "A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions",
+      "link": "https://arxiv.org/abs/2605.18898",
+      "summary": "arXiv:2605.18898v1 Announce Type: cross \nAbstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude distributions in transformers. At initialization, i.i.d. Gaussian weights give |w| ~ HalfNormal, yielding k ~ 1.20 via middle-80% probability-plot fit (the protocol used throughout this work). This anchor makes k a principled, architecture-independent measuring stick for training dynamics; fitting e",
+      "published": "2026-06-12 04:00:00",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "title_cn": "双参数Weibull框架诊断Transformer权重分布",
+      "summary_cn": "用极值理论中的Weibull分布诊断Transformer各层权重异常，提前发现训练崩溃。",
+      "why_it_matters": "训练大模型时提前预警权重异常，减少无效训练"
+    },
+    {
+      "title": "MindAlign: Decoding Inner Speech from fMRI Signals via Multimodal Embedding Alignment under Limited Data",
+      "link": "https://arxiv.org/abs/2606.20696",
+      "summary": "arXiv:2606.20696v1 Announce Type: new \nAbstract: Decoding inner speech from non-invasive brain signals remains a fundamental challenge due to the absence of overt linguistic output, limited training data, and large inter-subject variability. Existing brain-to-text approaches often rely on task-specific decoder fine-tuning, which restricts scalability and complicates adaptation to new participants. We propose MindAlign, a decoupled two-stage brain-to-language framework that enables open-ended tex",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "MindAlign: fMRI解码内心独白",
+      "summary_cn": "用多模态嵌入对齐方法，在少量fMRI数据下解码被试的内心言语。通过对齐脑信号与文本嵌入，实现非侵入式脑机接口。",
+      "why_it_matters": "为脑机接口提供低数据量方案，加速临床应用"
+    },
+    {
+      "title": "Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty",
+      "link": "https://arxiv.org/abs/2606.25198",
+      "summary": "arXiv:2606.25198v1 Announce Type: new \nAbstract: Autonomous AI Research promises to accelerate the scientific progress of machine learning. To realise this goal, current Large Language Model (LLM)-based agents need to go beyond just writing code, to mastering the exploration of simultaneously performant, diverse and novel ideas. To this end, we introduce Heuresis, a framework that abstracts the research pipeline into a set of general and composable primitives, enabling open-ended scientific expl",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "AI科研智能体的搜索策略对比",
+      "summary_cn": "对比了多种搜索策略对AI科研智能体生成结果的质量、多样性和新颖性的影响，发现不同策略各有优劣。",
+      "why_it_matters": "指导如何设计能产出真正新发现的AI研究助手。"
+    },
+    {
+      "title": "LLM-Based Scientific Peer Review: Methods, Benchmarks, and Reliability Challenges",
+      "link": "https://arxiv.org/abs/2606.25057",
+      "summary": "arXiv:2606.25057v1 Announce Type: new \nAbstract: The rapid growth of scientific submissions has pushed traditional peer review toward its scalability limits, motivating the exploration of large language models (LLMs) as intelligent automated evaluation assistants. Although recent studies show that LLMs can generate fluent critiques and approximate reviewer scores, their reliability, robustness, and security as decision-support systems remain insufficiently understood. This survey offers a system",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "LLM做同行评审：方法、基准与可靠性",
+      "summary_cn": "系统评估了LLM在科学同行评审中的表现，构建了专用基准，并指出了当前方法在可靠性和偏见上的主要挑战。",
+      "why_it_matters": "为用AI辅助审稿提供了性能边界和风险警示。"
+    },
+    {
+      "title": "Improved Large Language Diffusion Models",
+      "link": "https://arxiv.org/abs/2606.25331",
+      "summary": "arXiv:2606.25331v1 Announce Type: new \nAbstract: Modern large language models are predominantly trained with autoregressive factorization and causal attention. We present \\emph{iLLaDA}, an 8B masked diffusion language model trained from scratch with fully bidirectional attention. iLLaDA keeps the masked diffusion objective throughout pre-training and supervised fine-tuning (SFT), scaling pre-training to 12T tokens and fine-tuning on a 25B-token instruction corpus for 12 epochs. We further use va",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "iLLaDA：8B参数扩散语言模型",
+      "summary_cn": "提出iLLaDA，一个8B参数的掩码扩散语言模型，在多项任务上匹敌同规模自回归模型，但生成方式不同。",
+      "why_it_matters": "扩散模型在语言建模上首次达到与自回归模型相当的水平。"
+    },
+    {
+      "title": "MODE: Modality-Decomposed Expert-Level Mixed-Precision Quantization for MoE Multimodal LLMs",
+      "link": "https://arxiv.org/abs/2606.17118",
+      "summary": "arXiv:2606.17118v1 Announce Type: new \nAbstract: Mixture-of-Experts Multimodal Large Language Models (MoE-MLLMs) offer remarkable performance but incur prohibitive GPU memory costs, making compression essential. Among PTQ methods, expert-level mixed-precision quantization has proven effective for MoE-LLMs, yet suffers notable degradation on MoE-MLLMs due to two overlooked biases in expert importance estimation. (1) At the cross-modal level, the numerical dominance of vision tokens causes expert ",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "MODE：MoE多模态大模型量化压缩新方案",
+      "summary_cn": "MoE多模态LLM性能好但显存爆炸。MODE按模态和专家做混合精度量化，在保持性能的同时大幅降低GPU内存占用。",
+      "why_it_matters": "跑MoE多模态模型的人可以省下显存，部署更便宜"
+    },
+    {
+      "title": "Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation",
+      "link": "https://arxiv.org/abs/2606.12594",
+      "summary": "arXiv:2606.12594v1 Announce Type: new \nAbstract: Modern Lean theorem provers achieve strong performance only with substantial training and inference compute, driven in part by scarce verified proof data and the long reasoning traces of formal proof search, making both supervised fine-tuning (SFT) and sampling expensive. We introduce Pythagoras-Prover, a compute-efficient open-source family of Lean theorem provers built for practical compute budgets. The family spans two generation paradigms: aut",
+      "published": "2026-06-12 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "Pythagoras-Prover：用数据增强搞定Lean定理证明",
+      "summary_cn": "Lean定理证明器训练数据稀缺。Pythagoras-Prover通过自动扩充形式化证明数据，在更少算力下达到SOTA证明能力。",
+      "why_it_matters": "做形式化验证的人可以用更少资源训练更强的证明器"
+    },
+    {
       "title": "Benchmarking AI Agents for Addressing Scientific Challenges Across Scales",
       "link": "https://arxiv.org/abs/2606.12736",
       "summary": "arXiv:2606.12736v1 Announce Type: new \nAbstract: AI agents are increasingly being developed to accelerate scientific discovery, yet their practical capabilities in real research settings remain poorly understood. Existing benchmarks for AI agents rarely capture the complexity, heterogeneity, and extended reasoning required by scientific work, whereas benchmarks for scientific tasks often reduce research to static, direct problems and provide limited support for interactive evaluation. Here, we i",
@@ -216,6 +370,39 @@
       "why_it_matters": "开发者可立即试用开源代理编码工具，可能替代闭源方案。"
     },
     {
+      "title": "Evaluation of Medical Vision Language Models HuluMed and MedGemma, and general purpose chatbots Gemma 3, ChatGPT Plus, and Claude Pro on real previously unseen wound images",
+      "link": "https://arxiv.org/abs/2606.20723",
+      "summary": "arXiv:2606.20723v1 Announce Type: new \nAbstract: Chronic wound assessment remains a clinically challenging task that requires accurate interpretation of wound morphology, tissue composition, vascular characteristics, and infection risk. Recent advances in Vision-Language Models (VLMs) have introduced the possibility of automated multimodal wound analysis through image understanding combined with clinical reasoning. This study evaluates the performance of several general-purpose and medically spe",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "医疗VLM在真实伤口图像上翻车",
+      "summary_cn": "测试HuluMed、MedGemma等医疗VLM和通用ChatGPT、Claude在真实伤口图像上的表现，发现所有模型准确率远低于临床需求。",
+      "why_it_matters": "提醒医疗AI开发者不要高估现有模型能力"
+    },
+    {
+      "title": "Training LLMs with Reinforcement Learning over Digital Twin Representations for Reasoning-Intensive Surgical VideoQA",
+      "link": "https://arxiv.org/abs/2606.17279",
+      "summary": "arXiv:2606.17279v1 Announce Type: new \nAbstract: Surgical video question answering requires multi-step reasoning across semantic, spatial, and temporal dimensions. Existing methods architecturally compress videos into discrete token representations and couple visual perception with reasoning. This approach fragments continuous spatial-temporal relationships and has been shown to restrict multi-step reasoning capabilities. We introduce a reinforcement learning (RL) framework that trains large lan",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "用RL训练LLM做手术视频问答",
+      "summary_cn": "在数字孪生表示上使用强化学习训练LLM，用于需要多步推理的手术视频问答任务，效果优于现有方法。",
+      "why_it_matters": "医疗AI中手术辅助决策可受益，提升复杂视频理解能力。"
+    },
+    {
+      "title": "FindIt: A Format-Informed Visual Detection Benchmark for Generalist Multimodal LLMs",
+      "link": "https://arxiv.org/abs/2606.04282",
+      "summary": "arXiv:2606.04282v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) are predominantly evaluated on free-form vision-language tasks such as visual question answering, captioning, and summarization. However, their practical use is rapidly expanding to more structured computer vision settings, where users prompt models to perform localization-centric tasks such as object detection, often within larger agentic or decision-making systems. Despite this shift, there is currently n",
+      "published": "2026-06-04 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "FindIt：多模态大模型视觉检测基准来了",
+      "summary_cn": "现有MLLM评测偏问答和描述，缺乏格式感知的视觉检测能力。FindIt基准专门测试模型在特定格式下找目标的能力，暴露了通用模型的短板。",
+      "why_it_matters": "做多模态模型评估的人有了新标尺，能发现模型真实视觉能力"
+    },
+    {
       "title": "LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding",
       "link": "https://arxiv.org/abs/2606.04302",
       "summary": "arXiv:2606.04302v1 Announce Type: new \nAbstract: Key-value (KV) caching accelerates inference of large language models (LLMs) by reusing past computations for generated tokens. Its importance becomes even greater in long-context applications such as retrieval-augmented generation (RAG) and in-context learning (ICL). However, conventional KV caching embeds positional information directly into the cache, limiting its reusability. Existing solutions either restrict reuse to prefixes or require expe",
@@ -236,6 +423,94 @@
       "title_cn": "Kimi K2.7-Code减少思考token但性能存疑",
       "summary_cn": "新模型宣称推理token减少30%且编码基准分提升，社区测试指出基准评估方式有缺陷。",
       "why_it_matters": "提醒开发者对模型宣称的性能要独立验证，实际提升待确认。"
+    },
+    {
+      "title": "Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation",
+      "link": "https://arxiv.org/abs/2606.15077",
+      "summary": "arXiv:2606.15077v1 Announce Type: new \nAbstract: We present an LLM-driven framework for retrieving remote sensing data from cloud-based geospatial catalogues using natural language queries. The system converts user intent into structured API calls, enabling efficient access to satellite imagery and environmental datasets. The architecture integrates three agents: Guardrail for safety and policy enforcement, General-QA for intent interpretation, and Recommender-Analyst for schema-aware API call g",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "风险感知LLM代理检索地理数据",
+      "summary_cn": "提出LLM驱动的框架，用自然语言从云端地理目录检索遥感数据，并加入对抗性评估来识别风险。",
+      "why_it_matters": "地理信息检索更安全可靠，适合应急管理和环境监测场景。"
+    },
+    {
+      "title": "Zero-order Parameter-free Optimization for LMO-based Methods: Novel Approach for Efficient Fine-tuning",
+      "link": "https://arxiv.org/abs/2606.14970",
+      "summary": "arXiv:2606.14970v1 Announce Type: new \nAbstract: Fine-tuning large language models (LLMs) has become a central application of modern optimization, enabling pretrained models to adapt to diverse downstream tasks and domain-specific data. A major obstacle in large-scale fine-tuning is the memory overhead of backpropagation, which requires storing activations, gradients, and optimizer states. Zeroth-order (ZO) optimization offers a memory-efficient alternative, but its performance is highly sensiti",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "零阶无参数优化：LLM微调新路子",
+      "summary_cn": "传统微调依赖梯度计算，显存开销大。这篇提出零阶无参数优化方法，不计算梯度也能高效微调LLM，适合资源受限场景。",
+      "why_it_matters": "显存不够的人也能微调大模型，降低硬件门槛"
+    },
+    {
+      "title": "Diffusion Language Models: An Experimental Analysis",
+      "link": "https://arxiv.org/abs/2606.19475",
+      "summary": "arXiv:2606.19475v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have revolutionized language modeling through autoregressive generation, enabling strong performance across a wide range of tasks. Recently, Diffusion Language Models (DLMs) have emerged as an alternative paradigm that generates text through iterative denoising rather than next-token prediction, allowing parallel refinement of entire sequences. While numerous diffusion-based architectures have been proposed, difference",
+      "published": "2026-06-20 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "扩散语言模型到底行不行？实验分析来了",
+      "summary_cn": "扩散语言模型是自回归之外的另一种生成范式。这篇系统对比了扩散模型和自回归模型在质量、速度、可控性上的差异，给出了实用建议。",
+      "why_it_matters": "想尝试非自回归生成的人可以看这篇选型参考"
+    },
+    {
+      "title": "Grouped Query Experts: Mixture-of-Experts on GQA Self-Attention",
+      "link": "https://arxiv.org/abs/2606.20945",
+      "summary": "arXiv:2606.20945v1 Announce Type: new \nAbstract: Self-attention is central to Transformer performance and is often the most expensive part of the Transformer at long context lengths because its pairwise token interactions scale quadratically with sequence length. Standard dense attention also applies the same set of attention heads to every token regardless of token difficulty or information content. This uniform activation can waste compute, especially as sequences grow longer and attention cos",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "GQE: 分组查询专家加速注意力",
+      "summary_cn": "将Mixture-of-Experts引入GQA自注意力，每个查询组分配不同专家，在长上下文场景下降低计算量且保持质量。",
+      "why_it_matters": "直接降低长文本推理成本，适合部署"
+    },
+    {
+      "title": "VISUALSKILL: Multimodal Skills for Computer-Use Agents",
+      "link": "https://arxiv.org/abs/2606.18448",
+      "summary": "arXiv:2606.18448v1 Announce Type: new \nAbstract: Computer-use agents (CUAs) approach human-level performance on standardised benchmarks but still struggle on long-horizon tasks and unseen software. Existing skill libraries address this with reusable skills, but represent the skill artifact as text only, despite the visual nature of GUI interaction. We propose VISUALSKILL: a hierarchical multimodal skill, tailored to each target application and organised as a central index over per-topic files, w",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "VISUALSKILL：给电脑操作Agent装上多模态技能",
+      "summary_cn": "现有电脑操作Agent在长任务和陌生软件上表现差。VISUALSKILL让Agent学习多模态技能（截图、点击、拖拽等），提升跨软件泛化能力。",
+      "why_it_matters": "做RPA或桌面自动化的人可以直接复用这套技能库"
+    },
+    {
+      "title": "Towards Scalable Customization and Deployment of Multi-Agent Systems for Enterprise Applications",
+      "link": "https://arxiv.org/abs/2606.18502",
+      "summary": "arXiv:2606.18502v1 Announce Type: new \nAbstract: Large language model (LLM)-based multi-agent systems demonstrate strong performance on complex reasoning and task execution, enabling broad enterprise applications. However, production deployment remains challenging due to domain-specific customization requirements and high latency and inference costs in agentic workflows. We propose a unified framework for customization and efficient deployment of multi-agent systems in real-world settings. The f",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "企业级多智能体系统规模化部署方案",
+      "summary_cn": "提出可扩展的多智能体系统定制与部署框架，支持企业应用中的复杂推理和任务执行。",
+      "why_it_matters": "企业可快速落地LLM多智能体应用，降低集成成本。"
+    },
+    {
+      "title": "PragReST: Self-Reinforcing Counterfactual Reasoning for Pragmatic Language Understanding",
+      "link": "https://arxiv.org/abs/2606.18624",
+      "summary": "arXiv:2606.18624v1 Announce Type: new \nAbstract: Natural language understanding often depends on meanings that are implied rather than explicitly stated, requiring pragmatic reasoning. Despite strong performance on math and logical reasoning, large language models (LLMs) still struggle with making pragmatic inferences, often choosing literal interpretations. To improve LLM pragmatic reasoning, we introduce PragReST, a self-supervised framework that constructs pragmatic QA data, generates counter",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "反事实推理提升语言语用理解",
+      "summary_cn": "PragReST通过自我强化的反事实推理，让模型理解隐含含义，在语用推理任务上超越现有方法。",
+      "why_it_matters": "对话系统和NLP应用能更好处理言外之意，提升交互自然度。"
+    },
+    {
+      "title": "The Critical Role of Model Selection in Causal Inference: A Comparative Analysis of Classification Models within the InferBERT Framework for Pharmacovigilance",
+      "link": "https://arxiv.org/abs/2606.17113",
+      "summary": "arXiv:2606.17113v1 Announce Type: new \nAbstract: Distinguishing causal adverse drug events (ADEs) from spurious correlations remains a central challenge in pharmacovigilance. The InferBERT framework integrates transformer models with Do-calculus, but its success hinges on the underlying classification model. This study evaluates the impact of model choice in InferBERT, assessing whether simpler models suffice, if domain-specific pre-training helps, whether scaling to LLMs improves causal detecti",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "模型选择决定因果推断成败",
+      "summary_cn": "在InferBERT框架中比较多种分类模型，发现模型选择对区分药物因果不良反应至关重要。",
+      "why_it_matters": "药物警戒领域需谨慎选模型，否则因果推断结果不可靠。"
     },
     {
       "title": "Uncertainty-Aware LLM-Guided Policy Shaping for Sparse-Reward Reinforcement Learning",
@@ -271,6 +546,149 @@
       "why_it_matters": "多 Agent 并行 RL 训练框架，加速从单 Agent 到群体智能的跃迁"
     },
     {
+      "title": "刷新权威榜单SOTA！ACE-Ego 解锁“以人为中心”的规模化具身模型训练新范式",
+      "link": "https://www.leiphone.com/category/ai/Dt3i3KlHCTdZGukZ.html",
+      "summary": "&nbsp;近日，大晓机器人联合香港中文大学多媒体实验室（CUHK MMLab）正式发布全新“一脑多型”具身操作VLA模型 ACE-Ego，并向行业开源。作为“以人为中心”ACE 研发范式在具身模型预训练的核心落地成果，ACE-Ego提出大规模第一视角人类视频与多型机器人数据高效联合预训练的新范式，在两大国际权威具身智能基准上双双领先，并在复杂零售场景中展现出强泛化落地能力，为具身操作模型的规模化演进开辟了全新路径。&nbsp;在国际公认的人形机器人操作基准 RoboCasa GR1 TableTop 上，ACE-Ego 以72.8%的平均成功率刷新当前最高纪录，夺得榜首，大幅超越英伟达 GR00T、PI π₀.₅、京东JoyAI-RA 等主流模型；在高难度双臂操作基准 RoboTwin 2.0 的强域随机化测试中，ACE-Ego 以90.62%的成功率展现出远超行业平均水平的环境鲁棒性。2025年12月，大晓机器人提出“以人为中心（Human-centric）” 的ACE具身研发范式，将人类与物理世界的互动规律作为核心研究起点，构建了一套从“环境式数据采集—开悟世界模型3.0—具身交",
+      "published": "2026-06-17 06:30:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "ACE-Ego开源具身模型刷新SOTA",
+      "summary_cn": "大晓机器人联合港中大发布ACE-Ego，用第一视角人类视频预训练具身操作模型，在两大基准上领先。",
+      "why_it_matters": "具身智能领域开源新范式，机器人操作可借鉴人类经验。"
+    },
+    {
+      "title": "VigilFormer: Deformable Attention for Video Anomaly Detection with Causal Risk Inference",
+      "link": "https://arxiv.org/abs/2606.14724",
+      "summary": "arXiv:2606.14724v1 Announce Type: new \nAbstract: Video anomaly detection in surveillance settings must balance detection accuracy against real-time throughput, a tension that existing methods address either through stronger feature extractors or more efficient architectures, but rarely both. We present VigilFormer, a unified framework that combines deformable spatio-temporal attention with causal temporal modeling to detect anomalies in untrimmed surveillance video. The proposed Deformable Spati",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "VigilFormer视频异常检测兼顾速度",
+      "summary_cn": "用可变形注意力机制实现视频异常检测，同时保持高准确率和实时吞吐量，并加入因果风险推断。",
+      "why_it_matters": "安防监控系统可实时检测异常，不牺牲性能。"
+    },
+    {
+      "title": "Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents",
+      "link": "https://arxiv.org/abs/2606.15017",
+      "summary": "arXiv:2606.15017v1 Announce Type: new \nAbstract: Online web agents often augment a base actor with memory, workflow, or skill modules. These modules can improve performance, but they also consume test-time tokens, a cost rarely reported alongside the actor's inference cost. We study online augmentation, where this overhead is paid on every task, and re-evaluate its benefits under a fixed total inference budget. We compare AWM, ASI, and ReasoningBank with a token-matched vanilla baseline that use",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Web Agent的模块不是越多越好：预算约束下的实验",
+      "summary_cn": "给Web Agent加记忆、工作流、技能模块能提性能，但消耗更多token。这篇在预算约束下测试发现，某些模块的收益抵不上成本。",
+      "why_it_matters": "做Web Agent的人可以按预算选模块，避免浪费token"
+    },
+    {
+      "title": "MA-ProofBench: A Two-Tiered Evaluation of LLMs for Theorem Proving in Mathematical Analysis",
+      "link": "https://arxiv.org/abs/2606.13782",
+      "summary": "arXiv:2606.13782v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have made notable progress in automated theorem proving, yet existing formal benchmarks remain limited in both mathematical coverage and difficulty. Most are concentrated in areas that are easier to formalize, such as algebra and elementary number theory, and provide limited coverage of subfields that require deeper reasoning, including mathematical analysis. To address this gap, we introduce MA-ProofBench, to the best",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "MA-ProofBench：LLM数学分析定理证明新基准",
+      "summary_cn": "现有定理证明基准局限于简单数学领域。MA-ProofBench聚焦数学分析，包含大量需要实数、极限、连续等概念的证明题，对LLM是硬挑战。",
+      "why_it_matters": "做定理证明的人有了更难更专业的评测集"
+    },
+    {
+      "title": "Jury Duty: Calibration and Orientation Failures in MLLM-as-a-Judge Under Cultural Ambiguity",
+      "link": "https://arxiv.org/abs/2606.20676",
+      "summary": "arXiv:2606.20676v1 Announce Type: new \nAbstract: MLLM-as-a-Judge is conventionally validated by agreement with human annotations, but this metric is undefined when the human pool is culturally heterogeneous. We introduce VOIR DIRE, a multimodal benchmark of 626 culturally paired image--prompt artifacts spanning U.S. and mainland Chinese contexts across food, fashion, and architecture, with annotator pools that are within-pool reliable (a = 0.86/0.74) but cross-pool divergent on evaluation (Q1 r ",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "MLLM当裁判在文化歧义下失灵",
+      "summary_cn": "发现MLLM-as-a-Judge在文化歧义场景下校准失败，不同文化背景的标注者意见不一致时，模型无法给出可靠评分。",
+      "why_it_matters": "挑战了AI裁判的通用性，评估需考虑文化因素"
+    },
+    {
+      "title": "Rethinking Text-to-Image as Semantic-Aware Data Augmentation for Indoor Scene Recognition",
+      "link": "https://arxiv.org/abs/2606.18555",
+      "summary": "arXiv:2606.18555v1 Announce Type: new \nAbstract: In the realm of computer vision, indoor image recognition presents challenges due to the intricate interplay of lighting conditions, occlusions, and diverse object arrangements within confined spaces. To address the lacks of training indoor images, we introduce a novel approach leveraging Stable Diffusion (SD) for the generation of synthetic images, which serve as a powerful data augmentation tool. The utilization of SD offers a principled framewo",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "文本到图像作为室内场景数据增强",
+      "summary_cn": "将文本到图像生成视为语义感知数据增强方法，用于室内场景识别，缓解光照和遮挡问题。",
+      "why_it_matters": "室内视觉识别任务可低成本扩充数据，提升泛化能力。"
+    },
+    {
+      "title": "REALM: A Unified Red-Teaming Benchmark for Physical-World VLMs",
+      "link": "https://arxiv.org/abs/2606.23892",
+      "summary": "arXiv:2606.23892v1 Announce Type: new \nAbstract: Vision-language models (VLMs) are increasingly used as perception-reasoning backbones for embodied intelligence in safety-critical physical systems, where perception or reasoning errors can lead to unsafe decisions or actions. Although many red-teaming methods have been developed to probe VLM vulnerabilities, their evaluation remains fragmented across datasets, metrics, and threat models, making direct comparison difficult and obscuring whether ob",
+      "published": "2026-06-24 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "REALM: 物理世界VLM红队测试统一基准",
+      "summary_cn": "提出REALM基准，系统评估VLM在物理安全场景下的对抗鲁棒性，覆盖感知、推理等环节。",
+      "why_it_matters": "给做具身智能和机器人安全的团队一个标准测试集"
+    },
+    {
+      "title": "Not Truly Multilingual: Script Consistency as a Missing Dimension in VLM Evaluation",
+      "link": "https://arxiv.org/abs/2606.17188",
+      "summary": "arXiv:2606.17188v1 Announce Type: new \nAbstract: Current multilingual evaluations for Vision-Language Models (VLMs) assume a one-to-one mapping between language and orthography, overlooking billions of users of multi-script languages. We introduce PuMVR (Punjabi Multimodal Visual Reasoning), a benchmark of 1,000 strictly parallel image-text instances across Punjabi's three active scripts: Gurmukhi, Shahmukhi, and Roman. Evaluating 10 state-of-the-art VLMs, we expose a substantial and systematic ",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "VLM多语言评估忽略文字一致性",
+      "summary_cn": "发现当前VLM多语言评估假设语言与文字一一对应，忽略了跨文字使用场景，导致评估偏差。",
+      "why_it_matters": "多语言VLM评估标准需修正，否则误导模型能力判断。"
+    },
+    {
+      "title": "USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn",
+      "link": "https://arxiv.org/abs/2606.06709",
+      "summary": "arXiv:2606.06709v1 Announce Type: new \nAbstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and deep learning remain constrained by the scarcity of field-representative training datasets. We present USU-Corn-WeedDB, a publicly available UAV RGB image dataset collected from a commercial forage corn field in Cache Valley, Utah, designed to support multi-class weed detection under both supervised ",
+      "published": "2026-06-08 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "USU-Corn-WeedDB: 无人机杂草检测数据集",
+      "summary_cn": "发布无人机RGB图像数据集，用于饲料玉米中多物种杂草检测，覆盖多种生长阶段和光照条件。",
+      "why_it_matters": "为精准农业提供公开基准，降低杂草检测模型开发门槛。"
+    },
+    {
+      "title": "TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection",
+      "link": "https://arxiv.org/abs/2606.06742",
+      "summary": "arXiv:2606.06742v1 Announce Type: cross \nAbstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression, with GPU acceleration. The library features a scikit-learn-style API and is designed to exploit GPU-friendly linear algebra, accelerating the full training and model-selection pipeline through intelligent reuse of matrix operations. Benchmarks show competitive predictive performance together with s",
+      "published": "2026-06-08 04:00:00",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "title_cn": "TorchKM: GPU加速的核学习库",
+      "summary_cn": "开源TorchKM库，在GPU上高效实现SVM、核逻辑回归等核方法，比传统CPU实现快数十倍。",
+      "why_it_matters": "让核方法重回实用，适合小样本和可解释性要求高的场景。"
+    },
+    {
+      "title": "Omni-Perception Policy Optimization for Multimodal Emotion Reasoning",
+      "link": "https://arxiv.org/abs/2606.25325",
+      "summary": "arXiv:2606.25325v1 Announce Type: new \nAbstract: We find that current emotion-oriented Omni-MLLMs still lack reliable omni-modal perception: they (i) underutilize multimodal cues in their reasoning trajectories and (ii) exhibit unfaithful behavior, often hallucinating modality-specific statements from other modalities. Building on these insights, we propose OPPO (Omni-Perception Policy Optimization), a reinforcement learning framework that explicitly optimizes multimodal perception. First, an Om",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "多模态情感推理的感知优化",
+      "summary_cn": "发现现有情感多模态大模型未能充分利用多模态线索，提出Omni-Perception策略优化其推理过程中的感知能力。",
+      "why_it_matters": "提升情感AI系统对真实场景中多模态信号的利用率。"
+    },
+    {
+      "title": "NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning",
+      "link": "https://arxiv.org/abs/2606.27826",
+      "summary": "arXiv:2606.27826v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) are increasingly deployed as embodied planners in egocentric environments, where task success requires not only achieving instructed goals but also acting in socially appropriate ways. While explicit goals may render certain actions optimal, implicit social norms often impose hidden constraints. Existing evaluations typically focus on explicit goal achievement or direct norm knowledge, seldom assessing whet",
+      "published": "2026-06-30 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "NormAct: 具身规划中的隐性社会规范基准",
+      "summary_cn": "发布NormAct基准，测试多模态大模型在具身规划中是否遵守隐性社会规范，发现当前模型普遍忽视这类约束。",
+      "why_it_matters": "暴露了具身Agent在真实场景中的安全隐患，推动对齐研究。"
+    },
+    {
+      "title": "Labeling Training Data for Entity Matching Using Large Language Models",
+      "link": "https://arxiv.org/abs/2606.28823",
+      "summary": "arXiv:2606.28823v1 Announce Type: new \nAbstract: Recent large language models (LLMs) achieve strong performance on entity matching without requiring task-specific training data. However, applying these models to large sets of candidate pairs remains slow and costly. In contrast, entity matchers using traditional machine learning methods or small language models (SLMs), such as RoBERTa, offer much faster inference but require task-specific training data.\n  This paper investigates whether the need",
+      "published": "2026-06-30 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "用LLM标注实体匹配训练数据",
+      "summary_cn": "研究用大语言模型自动标注实体匹配数据，替代人工标注，在多个数据集上达到接近人工标注的效果。",
+      "why_it_matters": "大幅降低数据标注成本，加速数据清洗和知识图谱构建。"
+    },
+    {
       "title": "What Do People Actually Want From AI? Mapping Preference Plurality",
       "link": "https://arxiv.org/abs/2606.06674",
       "summary": "arXiv:2606.06674v1 Announce Type: new \nAbstract: Large Language Models (LLMs) are often fine-tuned through Reinforcement Learning from Human Feedback (RLHF) to align with people's preferences and values. However, this method has known limitations: it aggregates conflicting preferences, often relies on unrepresentative samples, and uses only binary comparisons. Analysing 1,500 open-ended responses from the PRISM dataset across 75 countries, we examine what people actually want from AI systems and",
@@ -280,6 +698,248 @@
       "title_cn": "用户到底想要 AI 做什么？大规模偏好多样性调研",
       "summary_cn": "大规模调查人类对 AI 的真实偏好分布，发现不同人群对 helpfulness/honesty/harmlessness 的优先级差异显著，RLHF 的「平均偏好」可能并不合理",
       "why_it_matters": "RLHF 对齐的是平均值，不是真实用户群体的多样性"
+    },
+    {
+      "title": "What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems",
+      "link": "https://arxiv.org/abs/2606.05304",
+      "summary": "arXiv:2606.05304v1 Announce Type: new \nAbstract: Multi-agent systems (MAS) built on large language models are typically organized around roles, pipelines, and turn schedules, while the content that agents pass to one another is often left as unconstrained natural language. However, this free-form communication can rapidly inflate token usage, consume the shared context window, and ultimately affect both system performance and inference cost. We analyze five common inter-agent communication strat",
+      "published": "2026-06-06 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "Agent间该说什么？动作状态通信",
+      "summary_cn": "提出动作状态通信机制，让多Agent系统只交换关键动作和状态信息而非全部对话，大幅提升协作效率。",
+      "why_it_matters": "优化多Agent系统通信，减少冗余计算"
+    },
+    {
+      "title": "TrajGenAgent: A Hierarchical LLM Agent for Human Mobility Trajectory Generation",
+      "link": "https://arxiv.org/abs/2606.12657",
+      "summary": "arXiv:2606.12657v1 Announce Type: new \nAbstract: Human mobility data is important for transportation, urban planning, and epidemic control, but large-scale trajectory collection is often costly and privacy-constrained, motivating realistic synthetic trajectory generation. Existing LLM-based generators typically rely on either prompt engineering, which preserves zero-shot reasoning but lacks fine-grained spatiotemporal grounding, or trajectory-level fine-tuning, which improves statistical precisi",
+      "published": "2026-06-12 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "TrajGenAgent: 分层LLM生成人类移动轨迹",
+      "summary_cn": "提出分层LLM Agent框架，生成逼真的人类移动轨迹，解决真实数据采集成本高和隐私问题。",
+      "why_it_matters": "为交通规划、流行病控制提供低成本、高保真的合成数据。"
+    },
+    {
+      "title": "HorusEye: Language as Dynamic Attention for Emergency Visual Analysis",
+      "link": "https://arxiv.org/abs/2606.14741",
+      "summary": "arXiv:2606.14741v1 Announce Type: new \nAbstract: We introduce HorusEye, Language as Dynamic Attention for Emergency Visual Analysis. Our investigation followed five stages. The first one is benchmarking RefCOCO-Degraded, a dataset of 15,244 images (3,811 base images x 4 conditions: Clean, Fog, Smoke and Thermal) with systematic visual degradation. Through four research questions, we evaluate multiple VLMs (Gemini, Qwen2-VL, BLIP-2, LLaVA, Kosmos-2) across visual grounding the second stage, langu",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "HorusEye: 语言作为动态注意力做应急视觉分析",
+      "summary_cn": "用语言指令动态引导视觉注意力，在应急场景下比固定注意力机制更准更快。",
+      "why_it_matters": "应急响应系统可直接用，减少误报和延迟"
+    },
+    {
+      "title": "Style-CCL: Content-Preserving Style Transfer via Curriculum Continual Learning",
+      "link": "https://arxiv.org/abs/2606.14746",
+      "summary": "arXiv:2606.14746v1 Announce Type: new \nAbstract: Content-Preserving Style transfer, given content and style references, remains challenging for Diffusion Transformers (DiTs) due to entangled content and style features. With a reverse triplet synthesis pipeline to build a million-scale training set and a dual-branch Style-Content DiT (SC-DiT) that decouples style and content via separate ROPE embeddings and causal masking, we observe that such a one-stage training paradigm on mixed style categori",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "Style-CCL: 持续学习实现内容保持风格迁移",
+      "summary_cn": "用课程持续学习方法，让扩散Transformer在风格迁移时保留内容结构，解决内容与风格纠缠问题。",
+      "why_it_matters": "提升图像编辑和风格化应用的质量，减少内容失真。"
+    },
+    {
+      "title": "Mirage Probes: How Vision Models Fake Visual Understanding",
+      "link": "https://arxiv.org/abs/2606.13870",
+      "summary": "arXiv:2606.13870v1 Announce Type: new \nAbstract: Vision-language models (VLMs) can answer image-based questions confidently, and often correctly, even when no image is provided. This mirage behavior inflates benchmark scores without reflecting visual grounding. Prior work treats this as a single failure mode. We argue it is two. Using Mirage Probes, a contrastive probing framework that pairs paraphrased question variants with matched mirage and non-mirage labels on the same image, we show that m",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "Mirage Probes: VLM假装看懂图像",
+      "summary_cn": "发现视觉语言模型即使不输入图像也能正确回答图像问题，说明模型依赖文本先验而非真正视觉理解，称为海市蜃楼行为。",
+      "why_it_matters": "揭露VLM视觉理解的虚假性，影响可靠性评估"
+    },
+    {
+      "title": "How do Self-Supervised Remote Sensing Vision Models Transfer to Downstream Tasks?",
+      "link": "https://arxiv.org/abs/2606.13896",
+      "summary": "arXiv:2606.13896v1 Announce Type: new \nAbstract: Self-supervised geospatial foundation models (GeoFMs) learn transferable representations from remote sensing data, but their downstream behavior is difficult to characterize. We study six representative GeoFMs spanning joint-embedding, reconstruction, and multimodal pretraining families, and evaluate transfer across classification, regression, and segmentation benchmarks under different label availability and downstream pipelines. We find that mod",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "自监督遥感模型迁移效果实测",
+      "summary_cn": "系统评估自监督遥感基础模型在下游任务中的迁移表现，发现不同预训练策略对分割、分类等任务影响差异巨大。",
+      "why_it_matters": "为遥感从业者选择预训练模型提供实用指南"
+    },
+    {
+      "title": "HiLo-Token: Input-Adaptive High-Low Frequency Token Compression for Efficient Image Editing",
+      "link": "https://arxiv.org/abs/2606.13898",
+      "summary": "arXiv:2606.13898v1 Announce Type: new \nAbstract: Creative image editing tools, such as Photoshop's Remove or Generative Fill buttons, are central to everyday customer use and account for a major share of traffic in Photoshop and Lightroom. However, current generative AI models face significant latency challenges, which become even more pronounced when transitioning from convolution-based U-Nets to Diffusion Transformers (DiTs). In our evaluation on hundreds of representative image editing sample",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "HiLo-Token: 高低频压缩加速图像编辑",
+      "summary_cn": "提出输入自适应的token压缩方法，对高频区域保留细节、低频区域合并，使图像编辑工具推理速度提升数倍。",
+      "why_it_matters": "直接加速Photoshop等编辑工具，用户体验提升"
+    },
+    {
+      "title": "GRAPE: Guided Parameter-Space Evolution for Compact Adversarial Robustness",
+      "link": "https://arxiv.org/abs/2606.14865",
+      "summary": "arXiv:2606.14865v1 Announce Type: new \nAbstract: Adversarial Training (AT) improves neural network robustness, but most methods train a fixed parameter space from the start. This paper asks whether the order in which parameters become optimizable can affect the final robust solution, even when the final architecture or computation budget is controlled.\n  We propose GRAPE, Guided Parameter-Space Evolution, a training framework for compact adversarial robustness. GRAPE combines parameter-space sta",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "GRAPE: 引导参数空间演化做紧凑对抗鲁棒性",
+      "summary_cn": "不固定参数空间，用演化策略动态搜索紧凑鲁棒模型，对抗训练效率翻倍。",
+      "why_it_matters": "边缘设备部署鲁棒模型时省显存省算力"
+    },
+    {
+      "title": "GEOPHYS: The Geometry of Physical Plausibility",
+      "link": "https://arxiv.org/abs/2606.20707",
+      "summary": "arXiv:2606.20707v1 Announce Type: new \nAbstract: While humans can identify physically implausible events within milliseconds, machine learning approaches addressing the same problem are extremely slow and expensive. They either rely on external multimodal-LLM judges or require ad-hoc modifications to the training procedure. In this work, we argue that indicators of physical plausibility are implicitly captured by five geometric properties of the per-frame embeddings produced by frozen image enco",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "GEOPHYS: 几何方法检测物理不合理",
+      "summary_cn": "用几何约束检测图像中的物理不合理事件，比现有深度学习方法快几个数量级，且无需训练数据。",
+      "why_it_matters": "为物理合理性检测提供轻量级替代方案"
+    },
+    {
+      "title": "Reasoning as Intersection: Consensus-Frame Alignment for Visual Focus in Video-MLLMs",
+      "link": "https://arxiv.org/abs/2606.18441",
+      "summary": "arXiv:2606.18441v1 Announce Type: new \nAbstract: Reinforcement learning has improved the reasoning ability of large language models, but applying outcome-only rewards to video multimodal large language models (Video-MLLMs) provides limited guidance on which visual evidence should support the answer. Inspired by multisensory integration, where consistent cues can enhance the salience and reliability of perceptual estimates, we introduce Consensus Frame GRPO (CF-GRPO), a temporal-annotation-free p",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "视频MLLM推理: 共识帧对齐做视觉聚焦",
+      "summary_cn": "用多帧共识对齐替代单帧奖励，解决视频MLLM推理中视觉焦点漂移问题。",
+      "why_it_matters": "视频理解模型推理更稳定，减少幻觉"
+    },
+    {
+      "title": "ELADO: Elliptic PDE Assessment Datasets for Operator Learning",
+      "link": "https://arxiv.org/abs/2606.20771",
+      "summary": "arXiv:2606.20771v1 Announce Type: new \nAbstract: We introduce ELADO (Elliptic PDE Assessment Datasets for Operator Learning), a systematic benchmark suite constructed to show and quantify failure modes of neural operator architectures when learning solution operators of elliptic PDEs. While the benchmarks of existing datasets focus on average case performance, the ELADO datasets are constructed to highlight challenges that arise naturally in elliptic PDE problems. In particular, we construct sev",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "ELADO: 椭圆PDE算子学习失效模式基准",
+      "summary_cn": "系统构建椭圆PDE数据集，量化现有算子学习模型在边界、系数突变等场景的失败模式。",
+      "why_it_matters": "给科学计算团队一个找模型短板的工具"
+    },
+    {
+      "title": "Dustin: Draft-Augmented Sparse Verification for Efficient Long-Context Generation with Speculative Decoding",
+      "link": "https://arxiv.org/abs/2606.24957",
+      "summary": "arXiv:2606.24957v1 Announce Type: new \nAbstract: While speculative decoding improves inference throughput for multi-batch long-context Large Language Models (LLMs), its efficiency is often limited by a verification bottleneck where Key-Value (KV) cache loading dominates latency. Existing compression methods fail in this regime: static eviction incurs accuracy loss due to saliency shift, while dynamic selection introduces prohibitive computational overhead during the verification path. We propose",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Dustin：长上下文投机解码加速",
+      "summary_cn": "提出Dustin方法，用草稿增强稀疏验证来加速长上下文LLM的投机解码，显著提升多batch推理吞吐。",
+      "why_it_matters": "直接降低长上下文场景的推理延迟和成本。"
+    },
+    {
+      "title": "ProCUA-SFT Technical Report",
+      "link": "https://arxiv.org/abs/2606.17321",
+      "summary": "arXiv:2606.17321v1 Announce Type: new \nAbstract: Training computer-use agents (CUAs) -- models that interact with graphical desktops through screenshots and keyboard/mouse actions -- requires large-scale, diverse trajectory data collected in full desktop environments. The largest public resource, AgentNet (22.5K human trajectories), leads to negative transfer when used for supervised fine-tuning (SFT): continuing training UI-TARS 7B on AgentNet causes OSWorld success rate to fall from 26.3% to 8",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "ProCUA-SFT: 计算机使用智能体训练技术报告",
+      "summary_cn": "公开大规模屏幕截图+鼠标键盘操作数据集，用SFT训练出能操作桌面软件的CUA。",
+      "why_it_matters": "做桌面自动化Agent的团队可以直接用这个数据集"
+    },
+    {
+      "title": "Minimizing the Hidden Cost of Scales: Graph-Guided Ultra-Low-Bit Quantization for Large Language Models",
+      "link": "https://arxiv.org/abs/2606.05429",
+      "summary": "arXiv:2606.05429v1 Announce Type: new \nAbstract: Post-training quantization (PTQ) is critical for the efficient deployment of large language models (LLMs). Recent ultra-low-bit PTQ methods rely on rigid weight-saliency assumptions or position heuristics, introducing substantial hidden scaling overhead. We propose SAGE-PTQ (Saliency-Aware Graph-guided Efficient PTQ), a novel ultra-low-bit quantization framework for LLMs that minimizes hidden scaling cost. SAGE-PTQ separates salient and unsalient ",
+      "published": "2026-06-06 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "图引导超低位量化: 隐藏缩放代价最小化",
+      "summary_cn": "用图结构引导量化缩放因子分配，在2-3bit量化下LLM困惑度下降15%以上。",
+      "why_it_matters": "大模型部署到手机/边缘设备时省一半内存"
+    },
+    {
+      "title": "Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models",
+      "link": "https://arxiv.org/abs/2606.15070",
+      "summary": "arXiv:2606.15070v1 Announce Type: new \nAbstract: By incorporating test-time compute scaling, large reasoning models (LRMs) can solve complex problems through explicit chain-of-thought (CoT) reasoning processes. However, they often suffer from overthinking, resulting in redundant token outputs and degraded accuracy. Current methods to mitigate this issue remain limited: training-based approaches require substantial computational resources, while training-free methods rely on well-crafted prompts ",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "推理模型何时该停止思考",
+      "summary_cn": "提出注意力状态自适应生成方法，让推理模型在推理链不再贡献新信息时自动停止，节省计算资源。",
+      "why_it_matters": "减少推理模型不必要的计算浪费，提升效率。"
+    },
+    {
+      "title": "Ling and Ring 2.6 Technical Report: Efficient and Instant Agentic Intelligence at Trillion-Parameter Scale",
+      "link": "https://arxiv.org/abs/2606.15079",
+      "summary": "arXiv:2606.15079v1 Announce Type: new \nAbstract: Efficient and scalable agentic intelligence requires models that can deliver both low-latency responses and strong reasoning capabilities while remaining practical to train, serve, and deploy. In this report, we present Ling-2.6 and Ring-2.6, a family of models designed to address this challenge at scale. Ling-2.6 is optimized for instant response generation and high capability per output token, whereas Ring-2.6 is tailored for deeper reasoning an",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Ling and Ring 2.6: 万亿参数级即时Agent智能",
+      "summary_cn": "万亿参数模型实现低延迟推理+强推理能力，支持即时Agent交互。",
+      "why_it_matters": "万亿模型做Agent不再慢到不能用"
+    },
+    {
+      "title": "SuperThoughts: Reasoning Tokens in Superposition",
+      "link": "https://arxiv.org/abs/2606.13862",
+      "summary": "arXiv:2606.13862v1 Announce Type: new \nAbstract: Long Chain-of-Thought (CoT) reasoning improves LLM problem-solving but is computationally expensive due to sequential token generation. While recent works explore reasoning in continuous latent spaces to bypass discrete token generation, they often struggle with training stability and fail to scale to complex, long-horizon tasks due to lack of supervision signal. We propose SuperThoughts, which compresses pairs of consecutive CoT tokens into singl",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "SuperThoughts：叠加态推理token",
+      "summary_cn": "将多个推理token压缩到叠加态中并行计算，大幅减少长CoT推理的序列生成步数，加速推理。",
+      "why_it_matters": "可能改变长链推理模型的计算效率瓶颈。"
+    },
+    {
+      "title": "Gefen: Optimized Stochastic Optimizer",
+      "link": "https://arxiv.org/abs/2606.13894",
+      "summary": "arXiv:2606.13894v1 Announce Type: new \nAbstract: AdamW is a default optimizer for modern deep learning, but its first and second moment states add roughly two parameter-sized buffers to training memory. We propose Gefen, a memory-efficient optimizer that automatically shares second-moment estimates across parameter blocks and quantizes the first moment using a learned codebook, thereby reducing AdamW's memory footprint by ~8x while maintaining the same performance, corresponding to a reduction o",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "Gefen：替代AdamW的优化器",
+      "summary_cn": "提出Gefen优化器，去掉AdamW的一阶和二阶动量缓存，在保持收敛质量的同时将训练内存占用减半。",
+      "why_it_matters": "大模型训练可直接省下一半优化器内存。"
+    },
+    {
+      "title": "Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents",
+      "link": "https://arxiv.org/abs/2606.13995",
+      "summary": "arXiv:2606.13995v1 Announce Type: new \nAbstract: AI coding agents have rapidly transformed software engineering, powering widely used interactive coding assistants. Despite their interactive real-world use, existing benchmarks evaluate them as fully-autonomous systems. In this work, we introduce Dialogue SWE-Bench, an automatic benchmark dataset for evaluating the ability of coding agents to resolve real-world software engineering problems through dialogue with a user. We design a novel, persona",
+      "published": "2026-06-15 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Dialogue SWE-Bench: 对话式编程Agent评测",
+      "summary_cn": "发布新基准，评估AI编程Agent在真实对话场景下的交互能力，发现现有模型在理解上下文和迭代修改上表现不佳。",
+      "why_it_matters": "填补了编程Agent交互能力评测空白，指导下一代工具开发。"
+    },
+    {
+      "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
+      "link": "https://arxiv.org/abs/2606.19704",
+      "summary": "arXiv:2606.19704v1 Announce Type: new \nAbstract: Agent benchmarks are growing fast, but no single benchmark touches more than four or five of the dimensions that deployment exposes. This paper aggregates the largest coordinated deep-dive of one MCP-based industrial-agent benchmark to date: fourteen parallel implementation studies covering new asset classes (including a multi-modal visual extension), alternative orchestrations, retrieval strategies, reasoning modes, infrastructure optimizations, ",
+      "published": "2026-06-20 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "超越静态榜单: LLM Agent的预测有效性评估",
+      "summary_cn": "提出用预测有效性替代静态榜单，评估LLM Agent在真实部署中的表现，发现榜单排名与实际性能差距大。",
+      "why_it_matters": "改变Agent评测方式，让实验室结果更贴近生产环境。"
+    },
+    {
+      "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+      "link": "https://arxiv.org/abs/2606.19348",
+      "summary": "arXiv:2606.19348v1 Announce Type: new \nAbstract: We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T parameters (49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) -- both supporting a context length of one million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and optimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention",
+      "published": "2026-06-20 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "DeepSeek-V4预览: 百万Token上下文的高效MoE",
+      "summary_cn": "发布DeepSeek-V4-Pro和V4-Lite，采用MoE架构，支持百万Token上下文，推理效率大幅提升。",
+      "why_it_matters": "长上下文模型进入实用阶段，对文档分析、代码库理解等场景影响直接。"
+    },
+    {
+      "title": "Can Agents Read the Room? Benchmarking Visual Social Intelligence in Multimodal Simulation",
+      "link": "https://arxiv.org/abs/2606.15152",
+      "summary": "arXiv:2606.15152v1 Announce Type: new \nAbstract: Social interaction depends on both language and visible social signals, such as facial expressions, posture, gaze, and emotional shifts. Yet existing social-agent benchmarks are largely text-based and rarely test whether multimodal agents can use visual cues to guide interaction. We introduce \\textsc{\\benchmarkname{}}, a benchmark evaluating visual social intelligence in multimodal social simulation. It contains 240 scenarios, 585 role instances, ",
+      "published": "2026-06-16 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "推理模型自适应停止: 注意力状态决定何时停",
+      "summary_cn": "监控注意力状态，当模型不再获取新信息时自动停止推理，节省30%计算量。",
+      "why_it_matters": "长推理链模型推理成本直接降低"
     },
     {
       "title": "How Endava is redesigning software delivery around AI agents",
@@ -299,9 +959,9 @@
       "published": "2026-06-03 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "图引导超低位量化：最小化大模型缩放隐藏成本",
-      "summary_cn": "提出图引导的超低位量化方法，通过结构感知优化减少LLM在极低比特量化下的精度损失，解决现有方法依赖严格缩放策略的局限性。",
-      "why_it_matters": "实现更高效的模型压缩，降低大模型部署的显存和带宽需求，推动边缘端应用。"
+      "title_cn": "TrajGenAgent：用 LLM Agent 生成人类移动轨迹数据",
+      "summary_cn": "提出 TrajGenAgent，用分层 LLM Agent 生成人类移动轨迹数据，解决真实轨迹采集成本高、隐私风险大的问题。",
+      "why_it_matters": "做交通规划、流行病模拟的团队，可以用它低成本生成合成轨迹数据。"
     },
     {
       "title": "OpenAI frontier models and Codex are now available on AWS",
@@ -321,9 +981,9 @@
       "published": "2026-06-03 13:15:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "MacArena:在线macOS环境智能体基准",
-      "summary_cn": "提出MacArena基准，用于评估计算机使用智能体(CUA)在真实在线macOS环境中的GUI操作能力，涵盖视觉和控制原始任务。",
-      "why_it_matters": "为CUA智能体提供真实环境评估标准，推动自主操作发展。"
+      "title_cn": "Montreal Forced Aligner十年回顾：语音对齐现状",
+      "summary_cn": "回顾MFA从2016年发布至今的发展，分析当前语音-文本对齐技术的精度、速度和应用边界。",
+      "why_it_matters": "做语音识别和语言学的人需要知道这个工具还能不能用。"
     },
     {
       "title": "Dreaming: Better memory for a more helpful ChatGPT",
@@ -354,9 +1014,9 @@
       "published": "2026-06-03 10:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "观点：部署的强化学习应是持续性的",
-      "summary_cn": "论证实际部署的强化学习系统应转向持续学习范式，而非传统的训练-修复模式，以适应动态环境并避免性能退化。",
-      "why_it_matters": "挑战现有RL部署范式，推动持续学习在真实场景中的落地。"
+      "title_cn": "材科源图发布全球首个有机高分子AI智能体",
+      "summary_cn": "基于自研材料科学智能体框架，面向有机高分子研发，自动完成配方设计、性能预测等任务，减少试错成本。",
+      "why_it_matters": "材料科学家可以用AI加速新聚合物研发，省掉大量实验时间。"
     },
     {
       "title": "Codex is becoming a productivity tool for everyone",
@@ -365,9 +1025,9 @@
       "published": "2026-06-02 02:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "人们真正想要AI做什么？偏好多样性",
-      "summary_cn": "通过大规模用户研究，揭示人类对AI偏好的多样性，挑战单一对齐目标，为RLHF提供多元偏好建模依据。",
-      "why_it_matters": "重新思考AI对齐目标，推动更符合真实用户需求的训练方法。"
+      "title_cn": "Dialogue SWE-Bench：对话式编程Agent新基准",
+      "summary_cn": "新基准测试AI编程助手在真实交互场景中的能力，包含多轮对话和代码修改任务，比静态评测更贴近实际使用。",
+      "why_it_matters": "帮助开发者评估和选择真正好用的AI编程助手。"
     },
     {
       "title": "Advancing youth safety and opportunity through global leadership",
@@ -387,9 +1047,9 @@
       "published": "2026-06-02 09:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "企业AI智能体部署前保障：本体驱动的仿真与信任认证",
-      "summary_cn": "提出基于本体驱动的仿真框架和信任认证机制，填补LLM智能体在企业部署前的验证空白，确保其在复杂业务场景中的可靠性和合规性。",
-      "why_it_matters": "为企业级AI智能体安全上线提供方法论，降低部署风险，增强行业信任。"
+      "title_cn": "Transformer学会了数学家30年前的启发式规则",
+      "summary_cn": "两层Transformer编码器从椭圆曲线数据中自动学到Mestre-Nagao启发式，用于判断曲线秩，无需人工特征工程。",
+      "why_it_matters": "AI能发现数学家未明确编码的规律，可能加速数论研究。"
     },
     {
       "title": "OpenAI public policy agenda",
@@ -420,9 +1080,9 @@
       "published": "2026-05-28 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "观点：部署强化学习应持续学习",
-      "summary_cn": "论证部署后的强化学习系统应转向持续学习范式，而非传统的训练-修复模式，以适应动态环境变化。",
-      "why_it_matters": "改变RL系统部署范式，推动自适应持续学习架构。"
+      "title_cn": "Token 级对比：Transformer 与混合模型谁更优",
+      "summary_cn": "在 Token 级别对比纯 Transformer 和混合模型（注意力+循环层），发现混合模型在长序列上更高效，但短序列上 Transformer 仍占优。",
+      "why_it_matters": "做模型架构选型时，可以根据序列长度直接参考这个对比结果。"
     },
     {
       "title": "Biodefense in the Intelligence Age",
@@ -431,9 +1091,9 @@
       "published": "2026-06-04 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "AgentJet：面向智能体强化学习的灵活集群训练框架",
-      "summary_cn": "提出AgentJet分布式集群训练框架，支持大规模LLM智能体强化学习，相比集中式框架在扩展性和灵活性上显著提升，适用于复杂多智能体协作场景。",
-      "why_it_matters": "为训练大规模智能体系统提供高效基础设施，加速自主智能体在真实环境中的应用。"
+      "title_cn": "TorchKM：GPU加速的核方法库",
+      "summary_cn": "开源库，在GPU上高效实现SVM、核逻辑回归等核方法，支持自动模型选择，比传统CPU实现快数倍。",
+      "why_it_matters": "做小样本或非线性分类的人，不用再忍受核方法的速度瓶颈。"
     },
     {
       "title": "How Endava builds an agentic organization with Codex",
@@ -442,9 +1102,9 @@
       "published": "2026-05-28 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "元智能体挑战：当前智能体能自主开发智能体吗？",
-      "summary_cn": "提出元智能体挑战，评估AI智能体是否具备自主开发其他智能体的能力，现有基准仅测试任务执行，无法衡量这种更高层次的自主性。",
-      "why_it_matters": "定义下一代AI自主性标准，推动智能体从工具向创造者进化。"
+      "title_cn": "脑电基础模型B[FM]^2：用Flow Matching统一EEG表征",
+      "summary_cn": "基于Flow Matching和SplitUNet架构，在大规模EEG数据上预训练，一个模型适配多种临床任务。",
+      "why_it_matters": "脑机接口和神经疾病诊断可减少对标注数据的依赖。"
     },
     {
       "title": "How Braintrust turns customer requests into code with Codex",
@@ -453,9 +1113,9 @@
       "published": "2026-05-29 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "RUBAS：基于评分规则的智能体安全强化学习",
-      "summary_cn": "提出RUBAS框架，利用评分规则引导强化学习，约束LLM智能体在真实环境中的行为，减少不安全执行风险。",
-      "why_it_matters": "为工具型智能体提供可操作的安全训练方法，降低部署风险。"
+      "title_cn": "DeepSeek-V4预览版发布，1.6T参数支持百万Token",
+      "summary_cn": "DeepSeek-V4-Pro和DeepSeek-V4-Lite两款MoE模型，Pro版1.6T参数，支持百万级上下文，推理效率大幅提升。",
+      "why_it_matters": "长上下文LLM的实用门槛被拉低，适合处理超长文档和代码库的开发者。"
     },
     {
       "title": "Strengthening societal resilience with Rosalind Biodefense",
@@ -464,9 +1124,9 @@
       "published": "2026-05-29 03:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "智能体最终考试：衡量经济价值的关键基准",
-      "summary_cn": "提出Agents' Last Exam基准，聚焦评估AI系统在真实经济任务中的表现，弥补现有基准与商业价值之间的鸿沟，测试自主完成复杂工作流的能力。",
-      "why_it_matters": "为智能体商业化提供更有意义的评估标准，引导研发聚焦高价值应用场景。"
+      "title_cn": "因果剪枝CAP：剪掉参数不伤推理能力",
+      "summary_cn": "通过因果归因识别对推理关键参数，只剪枝无关部分，在保持LLM多步推理性能的同时降低推理成本。",
+      "why_it_matters": "想部署大模型但被算力卡住的人，可以更便宜地跑推理。"
     },
     {
       "title": "Boston Children’s uses AI to unlock new diagnoses",
@@ -475,9 +1135,9 @@
       "published": "2026-05-29 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "MiniMax-M3发布：以5-10%成本超越GPT-5.5和Gemini 3.1 Pro",
-      "summary_cn": "中国AI初创公司MiniMax发布M3大模型，在编码和推理等关键基准上超越GPT-5.5和Gemini 3.1 Pro，训练成本仅为后者的5-10%，引发行业关注。",
-      "why_it_matters": "证明低成本训练前沿模型的可能性，可能重塑大模型竞争格局，降低企业采用门槛。"
+      "title_cn": "LLM Agent评测：静态榜单不如预测有效性",
+      "summary_cn": "研究发现现有Agent榜单覆盖维度太少，提出用预测有效性替代静态排名，评估模型在真实部署中的表现。",
+      "why_it_matters": "做Agent开发的人别再迷信榜单，选模型要看实际场景。"
     },
     {
       "title": "A shared playbook for trustworthy third party evaluations",
@@ -486,9 +1146,9 @@
       "published": "2026-05-29 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "企业AI智能体部署前保证框架",
-      "summary_cn": "提出基于本体仿真的预部署验证框架，弥合LLM能力基准与企业AI智能体实际部署之间的信任认证差距。",
-      "why_it_matters": "为企业AI智能体安全部署提供系统化验证方法论。"
+      "title_cn": "SPARC：多Agent系统搞定电路图问答",
+      "summary_cn": "用多个专用Agent协作，分别处理电路图解析、数学计算和推理，解决多模态LLM在电路题上的弱项。",
+      "why_it_matters": "教育科技和电子设计自动化领域可直接复用此架构。"
     }
   ]
 }

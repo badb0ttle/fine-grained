@@ -29,101 +29,100 @@
 ]
 
 候选文章：
-[1] [DB ID: 1757] [92.3] Title: Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization
-    Source: ArXiv cs.CL | 2026-06-12 04:00:00
-    Summary: arXiv:2606.12854v1 Announce Type: new 
-Abstract: Large Language Models such as GPT-4o and GPT-5 achieve strong zero-shot performance on biomedical claim verification, but cost and opacity limit scalab
+[1] [DB ID: 41230] [87.4] Title: ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents
+    Source: ArXiv cs.AI | 2026-06-30 04:00:00
+    Summary: arXiv:2606.27814v1 Announce Type: new 
+Abstract: Training small language-model agents for long-horizon interactive tasks requires both fast imitation and reward-driven improvement. On-policy distillat
 
-[2] [DB ID: 1758] [88.3] Title: Direct Preference Optimization for Chatbot Fine-Tuning: An Empirical Study
-    Source: ArXiv cs.CL | 2026-06-12 04:00:00
-    Summary: arXiv:2606.12881v1 Announce Type: new 
-Abstract: We present an approach to fine-tuning large language models using Direct Preference Optimization (DPO), a reinforcement learning technique. Our experim
+[2] [DB ID: 41306] [86.6] Title: Generalization Analysis of Transformers in Distribution Regression
+    Source: ArXiv stat.ML | 2026-06-30 04:00:00
+    Summary: arXiv:2606.29256v1 Announce Type: new 
+Abstract: In recent years, models based on the Transformer architecture have seen widespread applications and have become one of the core tools in the field of d
 
-[3] [DB ID: 34107] [86.7] Title: Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning
-    Source: ArXiv cs.CL | 2026-06-16 04:00:00
-    Summary: arXiv:2606.15007v1 Announce Type: new 
-Abstract: We introduce Nemotron 3 Ultra, a 550 billion total and 55 billion active parameter Mixture-of-Experts Hybrid Mamba-Attention language model. We pre-tra
+[3] [DB ID: 39857] [79.6] Title: Density-Informed Pseudo-Counts for Calibrated Evidential Deep Learning
+    Source: ArXiv stat.ML | 2026-06-24 04:00:00
+    Summary: arXiv:2602.01477v2 Announce Type: replace 
+Abstract: Evidential Deep Learning (EDL) is a popular framework for uncertainty-aware classification that models predictive uncertainty via Dirichlet distrib
 
-[4] [DB ID: 1700] [86.3] Title: ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs
+[4] [DB ID: 1535] [79.6] Title: USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn
+    Source: ArXiv cs.CV | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06709v1 Announce Type: new 
+Abstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and d
+
+[5] [DB ID: 1548] [79.6] Title: TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection
+    Source: ArXiv stat.ML | 2026-06-08 04:00:00
+    Summary: arXiv:2606.06742v1 Announce Type: cross 
+Abstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression,
+
+[6] [DB ID: 37491] [79.4] Title: Montreal Forced Aligner and the state of speech-to-text alignment in 2026
+    Source: ArXiv cs.CL | 2026-06-18 04:00:00
+    Summary: arXiv:2606.18466v1 Announce Type: new 
+Abstract: The Montreal Forced Aligner (MFA) was released in 2016 and has since become the most widely used tool for forced alignment in research and industry. In
+
+[7] [DB ID: 41231] [79.4] Title: NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning
+    Source: ArXiv cs.AI | 2026-06-30 04:00:00
+    Summary: arXiv:2606.27826v1 Announce Type: new 
+Abstract: Multimodal large language models (MLLMs) are increasingly deployed as embodied planners in egocentric environments, where task success requires not onl
+
+[8] [DB ID: 41276] [79.4] Title: Labeling Training Data for Entity Matching Using Large Language Models
+    Source: ArXiv cs.CL | 2026-06-30 04:00:00
+    Summary: arXiv:2606.28823v1 Announce Type: new 
+Abstract: Recent large language models (LLMs) achieve strong performance on entity matching without requiring task-specific training data. However, applying thes
+
+[9] [DB ID: 1706] [79.3] Title: TrajGenAgent: A Hierarchical LLM Agent for Human Mobility Trajectory Generation
     Source: ArXiv cs.AI | 2026-06-12 04:00:00
-    Summary: arXiv:2606.12451v1 Announce Type: new 
-Abstract: Large language models deployed as agents over large tool catalogs face a critical tool-retrieval bottleneck. As embedding-based retrieval approaches re
+    Summary: arXiv:2606.12657v1 Announce Type: new 
+Abstract: Human mobility data is important for transportation, urban planning, and epidemic control, but large-scale trajectory collection is often costly and pr
 
-[5] [DB ID: 23316] [84.7] Title: Efficient On-Device Diffusion LLM Inference with Mobile NPU
-    Source: ArXiv cs.LG | 2026-06-15 04:00:00
-    Summary: arXiv:2606.13740v1 Announce Type: new 
-Abstract: Diffusion large language models (dLLMs) accelerate generation by denoising multiple tokens in parallel, making them attractive for latency-sensitive mo
-
-[6] [DB ID: 1479] [84.4] Title: Exploring Agentic Tool-Calling Decisions via Uncertainty-Aligned Reinforcement Learning
-    Source: ArXiv cs.AI | 2026-06-08 04:00:00
-    Summary: arXiv:2606.06976v1 Announce Type: new 
-Abstract: Large language model (LLM)-based agents often make suboptimal tool-use decisions, including unsupported tool invocation and hallucinated direct respons
-
-[7] [DB ID: 1481] [84.4] Title: FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
-    Source: ArXiv cs.LG | 2026-06-08 04:00:00
-    Summary: arXiv:2606.06547v1 Announce Type: new 
-Abstract: Diffusion Large Language Models (dLLMs) refine tokens iteratively but commit them irreversibly, leading to a "stability lag" where early decisions rema
-
-[8] [DB ID: 34136] [84.0] Title: MMLongEmbed: Benchmarking Multimodal Embedding Models in Long-Context Scenarios
+[10] [DB ID: 34135] [79.0] Title: Style-CCL: Content-Preserving Style Transfer via Curriculum Continual Learning
     Source: ArXiv cs.CV | 2026-06-16 04:00:00
-    Summary: arXiv:2606.14747v1 Announce Type: new 
-Abstract: Recent advancements have significantly expanded the theoretical context windows of Multimodal Embedding Models (MEMs). However, larger context windows 
+    Summary: arXiv:2606.14746v1 Announce Type: new 
+Abstract: Content-Preserving Style transfer, given content and style references, remains challenging for Diffusion Transformers (DiTs) due to entangled content a
 
-[9] [DB ID: 37003] [83.6] Title: Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration
-    Source: ArXiv cs.CV | 2026-06-17 04:00:00
-    Summary: arXiv:2606.17296v1 Announce Type: new 
-Abstract: Unified multimodal models (UMMs) have recently emerged as a promising paradigm for integrating multimodal understanding and generation within a single 
+[11] [DB ID: 221] [77.9] Title: 全球首个！材科源图发布有机高分子应用智能体
+    Source: 雷锋网 AI | 2026-06-04 13:38:00
+    Summary: 在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高
 
-[10] [DB ID: 1480] [83.4] Title: Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios
-    Source: ArXiv cs.LG | 2026-06-08 04:00:00
-    Summary: arXiv:2606.06546v1 Announce Type: new 
-Abstract: Evaluating large language models (LLMs) for education requires measuring how models teach, not only what they know. Existing benchmarks emphasize domai
+[12] [DB ID: 34095] [77.7] Title: Unlocking Latent Dimensions: Exploring Representations of Large-Scale X-ray Scattering Data using Variational Autoencoders
+    Source: ArXiv cs.LG | 2026-06-16 04:00:00
+    Summary: arXiv:2606.14999v1 Announce Type: new 
+Abstract: Scientific user facilities generate X-ray scattering data faster than traditional workflows can process them. We address this challenge across two sett
 
-[11] [DB ID: 1483] [83.4] Title: MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
-    Source: ArXiv cs.LG | 2026-06-08 04:00:00
-    Summary: arXiv:2606.06560v1 Announce Type: new 
-Abstract: Computer-use agents (CUAs) operate graphical user interfaces (GUIs) through vision and control primitives, and their capabilities have advanced rapidly
+[13] [DB ID: 34097] [77.7] Title: Transformers Learn the Mestre-Nagao Heuristic
+    Source: ArXiv cs.LG | 2026-06-16 04:00:00
+    Summary: arXiv:2606.15036v1 Announce Type: new 
+Abstract: We train a two-layer transformer encoder to classify rational elliptic curves $E/\mathbb{Q}$ of conductor $\leq 10000$ as either rank 0 or rank 1 from 
 
-[12] [DB ID: 34137] [83.0] Title: Is My Vision-Language Data in Your AI? Membership Inference Test (MINT) Demo 2
-    Source: ArXiv cs.CV | 2026-06-16 04:00:00
-    Summary: arXiv:2606.14748v1 Announce Type: new 
-Abstract: We present the Membership Inference Test (MINT) Demo 2, a framework designed to improve transparency in machine learning training processes. MINT is a 
+[14] [DB ID: 34101] [77.7] Title: Machine Learning and the Random Walk Puzzle: Forecasting the CAD/USD Exchange Rate with Expanding Window Evaluation and SHAP Interpretability
+    Source: ArXiv cs.LG | 2026-06-16 04:00:00
+    Summary: arXiv:2606.15058v1 Announce Type: new 
+Abstract: This study examines whether machine learning (ML) models can outperform the naive random walk benchmark in forecasting the monthly USD/CAD exchange rat
 
-[13] [DB ID: 34066] [82.7] Title: PrologMCP: A Standardized Prolog Tool Interface for LLM Agents
-    Source: ArXiv cs.AI | 2026-06-16 04:00:00
-    Summary: arXiv:2606.14935v1 Announce Type: new 
-Abstract: Frontier reasoning-tuned language models still fail on deductive tasks at depth, and the cost of improved performance through extended internal reasoni
-
-[14] [DB ID: 34106] [82.7] Title: CoRA: Confidence-Rationale Alignment for Reliable Chain-of-Thought Reasoning
-    Source: ArXiv cs.CL | 2026-06-16 04:00:00
-    Summary: arXiv:2606.14961v1 Announce Type: new 
-Abstract: Chain-of-thought (CoT) reasoning can improve LLM performance, but high answer confidence may be misleading when the accompanying CoT rationale is plaus
-
-[15] [DB ID: 34109] [82.7] Title: Deep Temporal Modeling and Ensemble Fusion for Multimodal Emotion Recognition from Physiological Signals
-    Source: ArXiv cs.CL | 2026-06-16 04:00:00
-    Summary: arXiv:2606.15026v1 Announce Type: new 
-Abstract: Physiological stress and emotion recognition are important for health monitoring and affective computing. In this work, we present a comprehensive eval
-
-[16] [DB ID: 23300] [82.7] Title: WorkBench Revisited: Workplace Agents Two Years On
-    Source: ArXiv cs.AI | 2026-06-15 04:00:00
-    Summary: arXiv:2606.13715v1 Announce Type: new 
-Abstract: The best agent on WorkBench in March 2024, GPT-4, completed 43% of tasks and took an unintended harmful action, such as emailing the wrong person, on 2
-
-[17] [DB ID: 23339] [82.7] Title: The Culture Funnel: You Can't Align What isn't in the Data
+[15] [DB ID: 23350] [77.7] Title: Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents
     Source: ArXiv cs.CL | 2026-06-15 04:00:00
-    Summary: arXiv:2606.13808v1 Announce Type: new 
-Abstract: Current cultural alignment approaches focus on inference-time interventions, assuming models already contain sufficient cultural knowledge. We argue mo
+    Summary: arXiv:2606.13995v1 Announce Type: new 
+Abstract: AI coding agents have rapidly transformed software engineering, powering widely used interactive coding assistants. Despite their interactive real-worl
 
-[18] [DB ID: 23342] [82.7] Title: SANA: What Matters for QA Agents over Massive Data Lakes?
-    Source: ArXiv cs.CL | 2026-06-15 04:00:00
-    Summary: arXiv:2606.13904v1 Announce Type: new 
-Abstract: Exploratory question answering (EQA) over data lakes requires an LLM agent to discover relevant sources, analyze retrieved data, and adapt its actions 
+[16] [DB ID: 37117] [77.6] Title: 给 AI 建「流水线」，九章云极看清了什么？
+    Source: 雷锋网 AI | 2026-06-17 10:32:00
+    Summary: 当一个行业的核心问题开始转移，旧的基础设施就会在无声中失效——AI，正在经历这样的时刻。2026年3月，国家数据局公布了一个数字：中国日均Token调用量已达140万亿；4月，斯坦福人工智能指数报告写道，过去两年推理成本下降了280倍；Gartner的预测则显示，2026年将有40%的企业把AI Agent嵌入自己的业务系统。这些数字拼在一起，看起来像是一个时代到来的宣告。九章云极创始人兼董事长方
 
-[19] [DB ID: 36649] [82.7] Title: Z.ai’s open-weights GLM-5.2 beats GPT-5.5 on multiple long-horizon coding benchmarks for 1/6th the cost
-    Source: VentureBeat AI | 2026-06-16 21:26:01
-    Summary: Today, Chinese AI startup Z.ai (formerly Zhipu AI) announced the immediate release of GLM-5.2, a 753-billion parameter open-weights large language model (LLM) engineered specifically to dominate &quot
+[17] [DB ID: 37517] [77.6] Title: Experimental Analysis of Neural Network-Based Image Classification on the CIFAR-10 Dataset
+    Source: ArXiv cs.CV | 2026-06-18 04:00:00
+    Summary: arXiv:2606.18565v1 Announce Type: new 
+Abstract: An experimental investigation of neural image classification on the CIFAR-10 benchmark is presented through fully connected and convolutional network f
 
-[20] [DB ID: 1787] [82.6] Title: A Two-Parameter Weibull Framework for Diagnosing Transformer Weight Distributions
-    Source: ArXiv stat.ML | 2026-06-12 04:00:00
-    Summary: arXiv:2605.18898v1 Announce Type: cross 
-Abstract: We apply the Weibull distribution -- a two-parameter family from extreme-value theory -- as a diagnostic framework for element-wise weight magnitude 
+[18] [DB ID: 1558] [77.6] Title: Bradley-Terry Rankings for Recommender Systems Across Dataset Taxonomies
+    Source: ArXiv stat.ML | 2026-06-08 04:00:00
+    Summary: arXiv:2606.07492v1 Announce Type: cross 
+Abstract: The ranking of recommendation algorithms is a challenging problem since model performance is sensitive to dataset characteristics such as sparsity, s
+
+[19] [DB ID: 37948] [77.6] Title: Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents
+    Source: ArXiv cs.AI | 2026-06-20 04:00:00
+    Summary: arXiv:2606.19704v1 Announce Type: new 
+Abstract: Agent benchmarks are growing fast, but no single benchmark touches more than four or five of the dimensions that deployment exposes. This paper aggrega
+
+[20] [DB ID: 37954] [77.6] Title: DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence
+    Source: ArXiv cs.CL | 2026-06-20 04:00:00
+    Summary: arXiv:2606.19348v1 Announce Type: new 
+Abstract: We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T paramete

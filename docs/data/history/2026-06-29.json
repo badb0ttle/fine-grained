@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-30T07:28:37.934013+00:00",
-  "curated_at": "2026-06-30T07:28:37.934021+00:00",
+  "scanned_at": "2026-06-29T00:03:38.452522+00:00",
+  "curated_at": "2026-06-29T00:03:38.452528+00:00",
   "total_sources": 16,
-  "successful_sources": 15,
-  "total_articles": 2117,
-  "curated_count": 104,
+  "successful_sources": 10,
+  "total_articles": 1978,
+  "curated_count": 94,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -49,17 +49,6 @@
       "title_cn": "Agentic AI系统构建实战指南",
       "summary_cn": "一篇面向从业者的Agentic AI参考书，覆盖从基础到完整系统的全栈构建方法，包含大量可复用的设计模式。",
       "why_it_matters": "给想搭建自主AI系统的工程师提供了系统化路线图。"
-    },
-    {
-      "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
-      "link": "https://arxiv.org/abs/2606.27814",
-      "summary": "arXiv:2606.27814v1 Announce Type: new \nAbstract: Training small language-model agents for long-horizon interactive tasks requires both fast imitation and reward-driven improvement. On-policy distillation (OPD) provides dense teacher guidance and typically improves rapidly in the early stage, but its gains saturate once the student approaches the teacher, limiting the final performance ceiling. Reinforcement learning (RL) directly optimizes environment rewards and encourages exploratory improveme",
-      "published": "2026-06-30 04:00:00",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "title_cn": "ATOD: 多轮对话Agent的退火蒸馏训练",
-      "summary_cn": "提出ATOD方法，通过退火策略和回合感知的on-policy蒸馏，让小语言模型在长周期交互任务中同时提升模仿和奖励驱动能力。",
-      "why_it_matters": "让小型Agent在复杂多轮任务中追上大模型性能，降低部署成本。"
     },
     {
       "title": "Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning",
@@ -634,28 +623,6 @@
       "why_it_matters": "多语言VLM评估标准需修正，否则误导模型能力判断。"
     },
     {
-      "title": "USU-Corn-WeedDB: A UAV RGB Image Dataset for Multi-Species Weed Detection in Forage Corn",
-      "link": "https://arxiv.org/abs/2606.06709",
-      "summary": "arXiv:2606.06709v1 Announce Type: new \nAbstract: Weed pressure in forage corn production causes yield losses of up to 31.5%, yet site-specific weed management (SSWM) systems built on UAV imagery and deep learning remain constrained by the scarcity of field-representative training datasets. We present USU-Corn-WeedDB, a publicly available UAV RGB image dataset collected from a commercial forage corn field in Cache Valley, Utah, designed to support multi-class weed detection under both supervised ",
-      "published": "2026-06-08 04:00:00",
-      "source": "ArXiv cs.CV",
-      "category": "Paper",
-      "title_cn": "USU-Corn-WeedDB: 无人机杂草检测数据集",
-      "summary_cn": "发布无人机RGB图像数据集，用于饲料玉米中多物种杂草检测，覆盖多种生长阶段和光照条件。",
-      "why_it_matters": "为精准农业提供公开基准，降低杂草检测模型开发门槛。"
-    },
-    {
-      "title": "TorchKM: A GPU-Oriented Library for Kernel Learning and Model Selection",
-      "link": "https://arxiv.org/abs/2606.06742",
-      "summary": "arXiv:2606.06742v1 Announce Type: cross \nAbstract: TorchKM is an open-source library for kernel machines, including support vector machines, kernel logistic regression, and kernel quantile regression, with GPU acceleration. The library features a scikit-learn-style API and is designed to exploit GPU-friendly linear algebra, accelerating the full training and model-selection pipeline through intelligent reuse of matrix operations. Benchmarks show competitive predictive performance together with s",
-      "published": "2026-06-08 04:00:00",
-      "source": "ArXiv stat.ML",
-      "category": "Paper",
-      "title_cn": "TorchKM: GPU加速的核学习库",
-      "summary_cn": "开源TorchKM库，在GPU上高效实现SVM、核逻辑回归等核方法，比传统CPU实现快数十倍。",
-      "why_it_matters": "让核方法重回实用，适合小样本和可解释性要求高的场景。"
-    },
-    {
       "title": "Omni-Perception Policy Optimization for Multimodal Emotion Reasoning",
       "link": "https://arxiv.org/abs/2606.25325",
       "summary": "arXiv:2606.25325v1 Announce Type: new \nAbstract: We find that current emotion-oriented Omni-MLLMs still lack reliable omni-modal perception: they (i) underutilize multimodal cues in their reasoning trajectories and (ii) exhibit unfaithful behavior, often hallucinating modality-specific statements from other modalities. Building on these insights, we propose OPPO (Omni-Perception Policy Optimization), a reinforcement learning framework that explicitly optimizes multimodal perception. First, an Om",
@@ -665,28 +632,6 @@
       "title_cn": "多模态情感推理的感知优化",
       "summary_cn": "发现现有情感多模态大模型未能充分利用多模态线索，提出Omni-Perception策略优化其推理过程中的感知能力。",
       "why_it_matters": "提升情感AI系统对真实场景中多模态信号的利用率。"
-    },
-    {
-      "title": "NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning",
-      "link": "https://arxiv.org/abs/2606.27826",
-      "summary": "arXiv:2606.27826v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) are increasingly deployed as embodied planners in egocentric environments, where task success requires not only achieving instructed goals but also acting in socially appropriate ways. While explicit goals may render certain actions optimal, implicit social norms often impose hidden constraints. Existing evaluations typically focus on explicit goal achievement or direct norm knowledge, seldom assessing whet",
-      "published": "2026-06-30 04:00:00",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "title_cn": "NormAct: 具身规划中的隐性社会规范基准",
-      "summary_cn": "发布NormAct基准，测试多模态大模型在具身规划中是否遵守隐性社会规范，发现当前模型普遍忽视这类约束。",
-      "why_it_matters": "暴露了具身Agent在真实场景中的安全隐患，推动对齐研究。"
-    },
-    {
-      "title": "Labeling Training Data for Entity Matching Using Large Language Models",
-      "link": "https://arxiv.org/abs/2606.28823",
-      "summary": "arXiv:2606.28823v1 Announce Type: new \nAbstract: Recent large language models (LLMs) achieve strong performance on entity matching without requiring task-specific training data. However, applying these models to large sets of candidate pairs remains slow and costly. In contrast, entity matchers using traditional machine learning methods or small language models (SLMs), such as RoBERTa, offer much faster inference but require task-specific training data.\n  This paper investigates whether the need",
-      "published": "2026-06-30 04:00:00",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "title_cn": "用LLM标注实体匹配训练数据",
-      "summary_cn": "研究用大语言模型自动标注实体匹配数据，替代人工标注，在多个数据集上达到接近人工标注的效果。",
-      "why_it_matters": "大幅降低数据标注成本，加速数据清洗和知识图谱构建。"
     },
     {
       "title": "What Do People Actually Want From AI? Mapping Preference Plurality",
@@ -711,17 +656,6 @@
       "why_it_matters": "优化多Agent系统通信，减少冗余计算"
     },
     {
-      "title": "TrajGenAgent: A Hierarchical LLM Agent for Human Mobility Trajectory Generation",
-      "link": "https://arxiv.org/abs/2606.12657",
-      "summary": "arXiv:2606.12657v1 Announce Type: new \nAbstract: Human mobility data is important for transportation, urban planning, and epidemic control, but large-scale trajectory collection is often costly and privacy-constrained, motivating realistic synthetic trajectory generation. Existing LLM-based generators typically rely on either prompt engineering, which preserves zero-shot reasoning but lacks fine-grained spatiotemporal grounding, or trajectory-level fine-tuning, which improves statistical precisi",
-      "published": "2026-06-12 04:00:00",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "title_cn": "TrajGenAgent: 分层LLM生成人类移动轨迹",
-      "summary_cn": "提出分层LLM Agent框架，生成逼真的人类移动轨迹，解决真实数据采集成本高和隐私问题。",
-      "why_it_matters": "为交通规划、流行病控制提供低成本、高保真的合成数据。"
-    },
-    {
       "title": "HorusEye: Language as Dynamic Attention for Emergency Visual Analysis",
       "link": "https://arxiv.org/abs/2606.14741",
       "summary": "arXiv:2606.14741v1 Announce Type: new \nAbstract: We introduce HorusEye, Language as Dynamic Attention for Emergency Visual Analysis. Our investigation followed five stages. The first one is benchmarking RefCOCO-Degraded, a dataset of 15,244 images (3,811 base images x 4 conditions: Clean, Fog, Smoke and Thermal) with systematic visual degradation. Through four research questions, we evaluate multiple VLMs (Gemini, Qwen2-VL, BLIP-2, LLaVA, Kosmos-2) across visual grounding the second stage, langu",
@@ -731,17 +665,6 @@
       "title_cn": "HorusEye: 语言作为动态注意力做应急视觉分析",
       "summary_cn": "用语言指令动态引导视觉注意力，在应急场景下比固定注意力机制更准更快。",
       "why_it_matters": "应急响应系统可直接用，减少误报和延迟"
-    },
-    {
-      "title": "Style-CCL: Content-Preserving Style Transfer via Curriculum Continual Learning",
-      "link": "https://arxiv.org/abs/2606.14746",
-      "summary": "arXiv:2606.14746v1 Announce Type: new \nAbstract: Content-Preserving Style transfer, given content and style references, remains challenging for Diffusion Transformers (DiTs) due to entangled content and style features. With a reverse triplet synthesis pipeline to build a million-scale training set and a dual-branch Style-Content DiT (SC-DiT) that decouples style and content via separate ROPE embeddings and causal masking, we observe that such a one-stage training paradigm on mixed style categori",
-      "published": "2026-06-16 04:00:00",
-      "source": "ArXiv cs.CV",
-      "category": "Paper",
-      "title_cn": "Style-CCL: 持续学习实现内容保持风格迁移",
-      "summary_cn": "用课程持续学习方法，让扩散Transformer在风格迁移时保留内容结构，解决内容与风格纠缠问题。",
-      "why_it_matters": "提升图像编辑和风格化应用的质量，减少内容失真。"
     },
     {
       "title": "Mirage Probes: How Vision Models Fake Visual Understanding",
@@ -898,39 +821,6 @@
       "why_it_matters": "大模型训练可直接省下一半优化器内存。"
     },
     {
-      "title": "Dialogue SWE-Bench: A Benchmark for Dialogue-Driven Coding Agents",
-      "link": "https://arxiv.org/abs/2606.13995",
-      "summary": "arXiv:2606.13995v1 Announce Type: new \nAbstract: AI coding agents have rapidly transformed software engineering, powering widely used interactive coding assistants. Despite their interactive real-world use, existing benchmarks evaluate them as fully-autonomous systems. In this work, we introduce Dialogue SWE-Bench, an automatic benchmark dataset for evaluating the ability of coding agents to resolve real-world software engineering problems through dialogue with a user. We design a novel, persona",
-      "published": "2026-06-15 04:00:00",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "title_cn": "Dialogue SWE-Bench: 对话式编程Agent评测",
-      "summary_cn": "发布新基准，评估AI编程Agent在真实对话场景下的交互能力，发现现有模型在理解上下文和迭代修改上表现不佳。",
-      "why_it_matters": "填补了编程Agent交互能力评测空白，指导下一代工具开发。"
-    },
-    {
-      "title": "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
-      "link": "https://arxiv.org/abs/2606.19704",
-      "summary": "arXiv:2606.19704v1 Announce Type: new \nAbstract: Agent benchmarks are growing fast, but no single benchmark touches more than four or five of the dimensions that deployment exposes. This paper aggregates the largest coordinated deep-dive of one MCP-based industrial-agent benchmark to date: fourteen parallel implementation studies covering new asset classes (including a multi-modal visual extension), alternative orchestrations, retrieval strategies, reasoning modes, infrastructure optimizations, ",
-      "published": "2026-06-20 04:00:00",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "title_cn": "超越静态榜单: LLM Agent的预测有效性评估",
-      "summary_cn": "提出用预测有效性替代静态榜单，评估LLM Agent在真实部署中的表现，发现榜单排名与实际性能差距大。",
-      "why_it_matters": "改变Agent评测方式，让实验室结果更贴近生产环境。"
-    },
-    {
-      "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
-      "link": "https://arxiv.org/abs/2606.19348",
-      "summary": "arXiv:2606.19348v1 Announce Type: new \nAbstract: We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T parameters (49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) -- both supporting a context length of one million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and optimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention",
-      "published": "2026-06-20 04:00:00",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "title_cn": "DeepSeek-V4预览: 百万Token上下文的高效MoE",
-      "summary_cn": "发布DeepSeek-V4-Pro和V4-Lite，采用MoE架构，支持百万Token上下文，推理效率大幅提升。",
-      "why_it_matters": "长上下文模型进入实用阶段，对文档分析、代码库理解等场景影响直接。"
-    },
-    {
       "title": "Can Agents Read the Room? Benchmarking Visual Social Intelligence in Multimodal Simulation",
       "link": "https://arxiv.org/abs/2606.15152",
       "summary": "arXiv:2606.15152v1 Announce Type: new \nAbstract: Social interaction depends on both language and visible social signals, such as facial expressions, posture, gaze, and emotional shifts. Yet existing social-agent benchmarks are largely text-based and rarely test whether multimodal agents can use visual cues to guide interaction. We introduce \\textsc{\\benchmarkname{}}, a benchmark evaluating visual social intelligence in multimodal social simulation. It contains 240 scenarios, 585 role instances, ",
@@ -981,9 +871,9 @@
       "published": "2026-06-03 13:15:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "Montreal Forced Aligner十年回顾：语音对齐现状",
-      "summary_cn": "回顾MFA从2016年发布至今的发展，分析当前语音-文本对齐技术的精度、速度和应用边界。",
-      "why_it_matters": "做语音识别和语言学的人需要知道这个工具还能不能用。"
+      "title_cn": "MFA 十年：2026 年语音对齐技术现状",
+      "summary_cn": "回顾 Montreal Forced Aligner 十年发展，分析当前语音-文本对齐技术的精度、速度与局限。",
+      "why_it_matters": "语音对齐是语音识别和语音合成的关键环节，该综述为从业者提供技术选型参考。"
     },
     {
       "title": "Dreaming: Better memory for a more helpful ChatGPT",
@@ -1014,9 +904,9 @@
       "published": "2026-06-03 10:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "材科源图发布全球首个有机高分子AI智能体",
-      "summary_cn": "基于自研材料科学智能体框架，面向有机高分子研发，自动完成配方设计、性能预测等任务，减少试错成本。",
-      "why_it_matters": "材料科学家可以用AI加速新聚合物研发，省掉大量实验时间。"
+      "title_cn": "观点：部署的强化学习应是持续性的",
+      "summary_cn": "论证实际部署的强化学习系统应转向持续学习范式，而非传统的训练-修复模式，以适应动态环境并避免性能退化。",
+      "why_it_matters": "挑战现有RL部署范式，推动持续学习在真实场景中的落地。"
     },
     {
       "title": "Codex is becoming a productivity tool for everyone",
@@ -1025,9 +915,9 @@
       "published": "2026-06-02 02:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "Dialogue SWE-Bench：对话式编程Agent新基准",
-      "summary_cn": "新基准测试AI编程助手在真实交互场景中的能力，包含多轮对话和代码修改任务，比静态评测更贴近实际使用。",
-      "why_it_matters": "帮助开发者评估和选择真正好用的AI编程助手。"
+      "title_cn": "Dialogue SWE-Bench：首个对话式编码智能体评测基准",
+      "summary_cn": "发布 Dialogue SWE-Bench 基准，专门评估对话式编码智能体在真实交互场景下的表现，填补了现有静态基准的空白。",
+      "why_it_matters": "给做 AI 编程助手的团队一个更贴近真实使用场景的测试标准。"
     },
     {
       "title": "Advancing youth safety and opportunity through global leadership",
@@ -1047,9 +937,9 @@
       "published": "2026-06-02 09:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "Transformer学会了数学家30年前的启发式规则",
-      "summary_cn": "两层Transformer编码器从椭圆曲线数据中自动学到Mestre-Nagao启发式，用于判断曲线秩，无需人工特征工程。",
-      "why_it_matters": "AI能发现数学家未明确编码的规律，可能加速数论研究。"
+      "title_cn": "Transformer 学会了数论启发式算法",
+      "summary_cn": "训练两层 Transformer 编码器从椭圆曲线数据中学习 Mestre-Nagao 启发式算法，证明 Transformer 能自动发现数论中的经典启发式方法。",
+      "why_it_matters": "对数学家和 AI 研究者来说，这展示了 Transformer 在符号推理上的潜力。"
     },
     {
       "title": "OpenAI public policy agenda",
@@ -1091,9 +981,9 @@
       "published": "2026-06-04 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "TorchKM：GPU加速的核方法库",
-      "summary_cn": "开源库，在GPU上高效实现SVM、核逻辑回归等核方法，支持自动模型选择，比传统CPU实现快数倍。",
-      "why_it_matters": "做小样本或非线性分类的人，不用再忍受核方法的速度瓶颈。"
+      "title_cn": "TorchKM：GPU 加速的核方法开源库",
+      "summary_cn": "TorchKM 是一个开源 GPU 加速库，支持 SVM、核逻辑回归、核分位数回归等核方法，并提供模型选择功能。",
+      "why_it_matters": "做传统机器学习但想用 GPU 加速的团队，可以直接拿来用。"
     },
     {
       "title": "How Endava builds an agentic organization with Codex",
@@ -1102,9 +992,9 @@
       "published": "2026-05-28 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "脑电基础模型B[FM]^2：用Flow Matching统一EEG表征",
-      "summary_cn": "基于Flow Matching和SplitUNet架构，在大规模EEG数据上预训练，一个模型适配多种临床任务。",
-      "why_it_matters": "脑机接口和神经疾病诊断可减少对标注数据的依赖。"
+      "title_cn": "BFM^2：基于 Flow Matching 的脑电图基础模型",
+      "summary_cn": "提出 BFM^2，基于 Flow Matching 和 SplitUNet 的脑电图基础模型，能从大规模 EEG 数据中学习通用表征，迁移到多种临床任务。",
+      "why_it_matters": "脑机接口和神经科学领域的研究者，可以用它做跨任务迁移学习。"
     },
     {
       "title": "How Braintrust turns customer requests into code with Codex",
@@ -1113,9 +1003,9 @@
       "published": "2026-05-29 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "DeepSeek-V4预览版发布，1.6T参数支持百万Token",
-      "summary_cn": "DeepSeek-V4-Pro和DeepSeek-V4-Lite两款MoE模型，Pro版1.6T参数，支持百万级上下文，推理效率大幅提升。",
-      "why_it_matters": "长上下文LLM的实用门槛被拉低，适合处理超长文档和代码库的开发者。"
+      "title_cn": "DeepSeek-V4 预览版：1.6T 参数 MoE 支持百万 Token 上下文",
+      "summary_cn": "DeepSeek 发布 V4 系列预览，包含 1.6T 参数的 Pro 模型和 236B 的 Lite 模型，主打百万 Token 上下文处理能力，采用 MoE 架构提升效率。",
+      "why_it_matters": "国产大模型在超长上下文和参数规模上直接对标 GPT-4，对需要处理长文档的开发者是实打实的利好。"
     },
     {
       "title": "Strengthening societal resilience with Rosalind Biodefense",
@@ -1124,9 +1014,9 @@
       "published": "2026-05-29 03:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "因果剪枝CAP：剪掉参数不伤推理能力",
-      "summary_cn": "通过因果归因识别对推理关键参数，只剪枝无关部分，在保持LLM多步推理性能的同时降低推理成本。",
-      "why_it_matters": "想部署大模型但被算力卡住的人，可以更便宜地跑推理。"
+      "title_cn": "因果归因剪枝：不伤推理能力的大模型瘦身法",
+      "summary_cn": "提出 Causal Attribution Pruning (CAP) 方法，通过因果归因识别关键神经元进行剪枝，在保持推理能力的同时降低 LLM 推理成本。",
+      "why_it_matters": "想部署大模型但 GPU 不够的团队，可以用这个办法省显存而不丢推理质量。"
     },
     {
       "title": "Boston Children’s uses AI to unlock new diagnoses",
@@ -1135,9 +1025,9 @@
       "published": "2026-05-29 12:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "LLM Agent评测：静态榜单不如预测有效性",
-      "summary_cn": "研究发现现有Agent榜单覆盖维度太少，提出用预测有效性替代静态排名，评估模型在真实部署中的表现。",
-      "why_it_matters": "做Agent开发的人别再迷信榜单，选模型要看实际场景。"
+      "title_cn": "别信排行榜：LLM Agent 评测需要预测有效性",
+      "summary_cn": "指出当前 Agent 基准测试维度单一，无法预测实际部署表现，提出用预测有效性方法替代静态排行榜来评估 LLM Agent。",
+      "why_it_matters": "企业选型时别再迷信榜单分数，这篇给出了更靠谱的评估思路。"
     },
     {
       "title": "A shared playbook for trustworthy third party evaluations",
@@ -1146,9 +1036,9 @@
       "published": "2026-05-29 00:00:00",
       "source": "OpenAI Blog",
       "category": "AI Lab",
-      "title_cn": "SPARC：多Agent系统搞定电路图问答",
-      "summary_cn": "用多个专用Agent协作，分别处理电路图解析、数学计算和推理，解决多模态LLM在电路题上的弱项。",
-      "why_it_matters": "教育科技和电子设计自动化领域可直接复用此架构。"
+      "title_cn": "SPARC：多智能体系统专攻电路图问答推理",
+      "summary_cn": "SPARC 是一个多智能体系统，专门解决电路图问答中的复杂数学推理问题，比直接使用多模态 LLM 效果更好。",
+      "why_it_matters": "教育科技和硬件设计领域可以拿来直接做电路图自动答疑。"
     }
   ]
 }

@@ -1,0 +1,166 @@
+{
+  "updated_at": "2026-06-30T07:28:37.918397+00:00",
+  "source": "OpenRouter API (top 20 by benchmark)",
+  "models": [
+    {
+      "name": "Anthropic: Claude Opus 4.7",
+      "provider": "Anthropic",
+      "rank": 1,
+      "scores": {
+        "intelligence": 53.5
+      }
+    },
+    {
+      "name": "Anthropic: Claude Fable 5",
+      "provider": "Anthropic",
+      "rank": 2,
+      "scores": {
+        "intelligence": 59.9
+      }
+    },
+    {
+      "name": "Z.ai: GLM 5.2",
+      "provider": "Z.ai",
+      "rank": 3,
+      "scores": {
+        "intelligence": 51.1
+      }
+    },
+    {
+      "name": "Z.ai: GLM 5.1",
+      "provider": "Z.ai",
+      "rank": 4,
+      "scores": {
+        "intelligence": 40.2
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2.6",
+      "provider": "Moonshot AI",
+      "rank": 5,
+      "scores": {
+        "intelligence": 42.8
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.5",
+      "provider": "OpenAI",
+      "rank": 7,
+      "scores": {
+        "intelligence": 54.8
+      }
+    },
+    {
+      "name": "Google: Gemini 3.1 Pro Preview",
+      "provider": "Google",
+      "rank": 8,
+      "scores": {
+        "intelligence": 46.5
+      }
+    },
+    {
+      "name": "Anthropic: Claude Opus 4.8",
+      "provider": "Anthropic",
+      "rank": 9,
+      "scores": {
+        "intelligence": 55.7
+      }
+    },
+    {
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "provider": "Xiaomi",
+      "rank": 10,
+      "scores": {
+        "intelligence": 42.2
+      }
+    },
+    {
+      "name": "Google: Gemini 3.5 Flash",
+      "provider": "Google",
+      "rank": 12,
+      "scores": {
+        "intelligence": 50.2
+      }
+    },
+    {
+      "name": "Qwen: Qwen3.7 Max",
+      "provider": "Alibaba",
+      "rank": 13,
+      "scores": {
+        "intelligence": 46.0
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek V4 Pro",
+      "provider": "DeepSeek",
+      "rank": 14,
+      "scores": {
+        "intelligence": 44.3
+      }
+    },
+    {
+      "name": "Anthropic: Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "rank": 15,
+      "scores": {
+        "intelligence": 47.2
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2.7 Code",
+      "provider": "Moonshot AI",
+      "rank": 17,
+      "scores": {
+        "intelligence": 41.9
+      }
+    },
+    {
+      "name": "MiniMax: MiniMax M3",
+      "provider": "MiniMax",
+      "rank": 19,
+      "scores": {
+        "intelligence": 44.4
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.4",
+      "provider": "OpenAI",
+      "rank": 21,
+      "scores": {
+        "intelligence": 51.4
+      }
+    },
+    {
+      "name": "Google: Gemini 2.5 Pro",
+      "provider": "Google",
+      "rank": 25,
+      "scores": {
+        "intelligence": 25.8
+      }
+    },
+    {
+      "name": "MiniMax: MiniMax M2.7",
+      "provider": "MiniMax",
+      "rank": 27,
+      "scores": {
+        "intelligence": 38.1
+      }
+    },
+    {
+      "name": "Qwen: Qwen3.6 Plus",
+      "provider": "Alibaba",
+      "rank": 29,
+      "scores": {
+        "intelligence": 39.6
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek V4 Flash",
+      "provider": "DeepSeek",
+      "rank": 32,
+      "scores": {
+        "intelligence": 40.3
+      }
+    }
+  ]
+}
