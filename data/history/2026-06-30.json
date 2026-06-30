@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-06-30T07:28:37.934013+00:00",
-  "curated_at": "2026-06-30T07:28:37.934021+00:00",
+  "scanned_at": "2026-06-30T07:29:54.465130+00:00",
+  "curated_at": "2026-06-30T07:29:54.465138+00:00",
   "total_sources": 16,
   "successful_sources": 15,
   "total_articles": 2117,
-  "curated_count": 104,
+  "curated_count": 114,
   "articles": [
     {
       "title": "Small LLMs for Biomedical Claim Verification: Cost-Effective Fine-Tuning, Structural Dataset Shortcuts, and Cross-Domain Generalization",
@@ -71,6 +71,17 @@
       "title_cn": "Nemotron 3 Ultra开源：550B参数MoE混合架构",
       "summary_cn": "NVIDIA发布Nemotron 3 Ultra，550B总参数/55B激活参数的MoE模型，混合Mamba与Transformer，专为Agent推理设计，性能对标闭源模型。",
       "why_it_matters": "开源社区获得一个高性价比的Agent基座模型。"
+    },
+    {
+      "title": "Generalization Analysis of Transformers in Distribution Regression",
+      "link": "https://arxiv.org/abs/2606.29256",
+      "summary": "arXiv:2606.29256v1 Announce Type: new \nAbstract: In recent years, models based on the Transformer architecture have seen widespread applications and have become one of the core tools in the field of deep learning. Numerous successful techniques, such as parameter-efficient fine-tuning and efficient scaling, have been proposed surrounding their applications to further enhance performance. However, the success of these strategies has always lacked the support of rigorous mathematical theory. To st",
+      "published": "2026-06-30 04:00:00",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "title_cn": "Transformer分布回归泛化分析",
+      "summary_cn": "论文对Transformer在分布回归任务中的泛化性能进行了理论分析，揭示了其与数据分布特性的关联。",
+      "why_it_matters": "为Transformer在非标准回归任务中的使用提供理论指导。"
     },
     {
       "title": "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs",
@@ -656,6 +667,17 @@
       "why_it_matters": "让核方法重回实用，适合小样本和可解释性要求高的场景。"
     },
     {
+      "title": "Montreal Forced Aligner and the state of speech-to-text alignment in 2026",
+      "link": "https://arxiv.org/abs/2606.18466",
+      "summary": "arXiv:2606.18466v1 Announce Type: new \nAbstract: The Montreal Forced Aligner (MFA) was released in 2016 and has since become the most widely used tool for forced alignment in research and industry. In the decade since, MFA has undergone substantial development, including expanded coverage across more languages and dialects using larger open-source datasets, harmonized IPA dictionaries, model adaptation, cross-language phone remapping, and support utilities. This paper documents MFA 3.0's develop",
+      "published": "2026-06-18 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "MFA语音对齐工具2026年现状",
+      "summary_cn": "回顾Montreal Forced Aligner十年发展，评估其在语音-文本对齐任务中的当前性能与局限。",
+      "why_it_matters": "语音研究者和工程师可据此决定是否继续使用MFA。"
+    },
+    {
       "title": "Omni-Perception Policy Optimization for Multimodal Emotion Reasoning",
       "link": "https://arxiv.org/abs/2606.25325",
       "summary": "arXiv:2606.25325v1 Announce Type: new \nAbstract: We find that current emotion-oriented Omni-MLLMs still lack reliable omni-modal perception: they (i) underutilize multimodal cues in their reasoning trajectories and (ii) exhibit unfaithful behavior, often hallucinating modality-specific statements from other modalities. Building on these insights, we propose OPPO (Omni-Perception Policy Optimization), a reinforcement learning framework that explicitly optimizes multimodal perception. First, an Om",
@@ -854,6 +876,17 @@
       "why_it_matters": "大模型部署到手机/边缘设备时省一半内存"
     },
     {
+      "title": "全球首个！材科源图发布有机高分子应用智能体",
+      "link": "https://www.leiphone.com/category/ai/cPAorDy6hbflU7fy.html",
+      "summary": "在人工智能重塑科研范式的科技浪潮中，因体系复杂、配方变量多，长期面临高度依赖专家经验、试错成本高、知识难以沉淀复用等行业瓶颈，研发效率提升亟待突破。近日，据雷峰网了解，苏州材科源图（MatSource)正式发布全球首个有机高分子材料研发应用智能体（Organic Polymer Agent）。该智能体依托自主构建的通用材料科学智能体框架（Materials Agent Framework），面向高分子材料研发场景打造专家级人工智能系统，推动“人工驱动”向“人工智能协同驱动”加速跃迁，为高新材料的高效自主研发提供了关键的技术支撑。01 面向复杂研发场景，构建高分子材料研发“智能中枢”作为材科源图（MatSource)&nbsp;材料科学智能体体系的重要组成部分，有机高分子应用智能体聚焦高分子材料研发中的关键痛点，融合材料知识图谱、多模态数据理解、大模型推理与领域机理模型能力，构建覆盖“设计-预测-优化-决策”的全流程智能研发体系。依托这一技术架构，系统可实现高分子分子结构设计与性能预测、配方体系智能生成与多目标优化、工艺参数推荐与实验路径规划，以及文献知识解析、研发知识沉淀等核心功能，推",
+      "published": "2026-06-04 13:38:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "全球首个有机高分子材料AI智能体发布",
+      "summary_cn": "材科源图发布Organic Polymer Agent，基于通用材料科学智能体框架，用于有机高分子材料研发。",
+      "why_it_matters": "材料科学家可直接用AI加速配方设计与筛选。"
+    },
+    {
       "title": "Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models",
       "link": "https://arxiv.org/abs/2606.15070",
       "summary": "arXiv:2606.15070v1 Announce Type: new \nAbstract: By incorporating test-time compute scaling, large reasoning models (LRMs) can solve complex problems through explicit chain-of-thought (CoT) reasoning processes. However, they often suffer from overthinking, resulting in redundant token outputs and degraded accuracy. Current methods to mitigate this issue remain limited: training-based approaches require substantial computational resources, while training-free methods rely on well-crafted prompts ",
@@ -929,6 +962,83 @@
       "title_cn": "DeepSeek-V4预览: 百万Token上下文的高效MoE",
       "summary_cn": "发布DeepSeek-V4-Pro和V4-Lite，采用MoE架构，支持百万Token上下文，推理效率大幅提升。",
       "why_it_matters": "长上下文模型进入实用阶段，对文档分析、代码库理解等场景影响直接。"
+    },
+    {
+      "title": "Pruning via Causal Attribution Preserves Reasoning Performance in Large Language Models",
+      "link": "https://arxiv.org/abs/2606.19350",
+      "summary": "arXiv:2606.19350v1 Announce Type: new \nAbstract: Large language models (LLMs) excel at multi-step reasoning but incur substantial inference cost. We introduce Causal Attribution Pruning (CAP), a training-free method that identifies critical attention heads by measuring their causal impact on reasoning tasks and uses these head-level scores to guide fine-grained weight pruning. For each attention head, CAP estimates the expected performance degradation when the head is masked during forward passe",
+      "published": "2026-06-20 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "因果剪枝保留LLM推理能力",
+      "summary_cn": "提出Causal Attribution Pruning方法，在剪枝LLM时通过因果归因保留推理相关参数，减少性能损失。",
+      "why_it_matters": "降低LLM部署成本，同时保持推理质量。"
+    },
+    {
+      "title": "SPARC: A Multi-Agent System for Electrical Circuit Question Answering",
+      "link": "https://arxiv.org/abs/2606.20643",
+      "summary": "arXiv:2606.20643v1 Announce Type: new \nAbstract: Electrical circuit diagram QA tasks require complex mathematical reasoning, which remains challenging for multimodal LLMs. We present SPARC, a multi-agent system that answers questions over circuit diagrams by grounding reasoning in executable physics-based simulations. SPARC uses LLM agents to synthesize, execute, and analyze simulation programs, improving accuracy and reliability by design. It achieves 83% accuracy, with up to a 58% absolute imp",
+      "published": "2026-06-23 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "SPARC多智能体系统解电路图题",
+      "summary_cn": "SPARC用多智能体协作处理电路图问答，解决多模态LLM在复杂数学推理上的短板。",
+      "why_it_matters": "教育或工程领域可自动解析电路图问题。"
+    },
+    {
+      "title": "To Isolate or to Score? Model-Adaptive Assessment for Cost-Efficient Multi-Agent RAG",
+      "link": "https://arxiv.org/abs/2606.25191",
+      "summary": "arXiv:2606.25191v1 Announce Type: new \nAbstract: Multi-agent document assessment for retrieval-augmented generation is computationally expensive, driving practitioners toward smaller, deployable models whose assessment mechanisms remain poorly understood. We conduct a controlled study of training-free interventions on 7B-9B instruction-tuned models across diverse QA benchmarks, revealing a sharp dichotomy in how models benefit from assessment. For weaker baselines, the dominant mechanism is per-",
+      "published": "2026-06-25 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "模型自适应评估降低多智能体RAG成本",
+      "summary_cn": "提出模型自适应评估策略，根据文档难度动态选择评估方式，减少多智能体RAG的计算开销。",
+      "why_it_matters": "企业部署RAG系统时可大幅节省推理成本。"
+    },
+    {
+      "title": "Weight-Space Geometry of Offline Reasoning Training",
+      "link": "https://arxiv.org/abs/2606.23740",
+      "summary": "arXiv:2606.23740v1 Announce Type: new \nAbstract: Offline reinforcement-learning losses (RFT, RIFT, DFT, Offline GRPO, DPO) are widely used to distill reasoning from large teachers into smaller students, and are typically compared on downstream accuracy alone. We ask whether they are mechanistically distinct or converge to a similar weight update. Training six methods (SFT, RFT, DFT, RIFT, Offline GRPO, DPO) on identical math rollouts from a single base model (Qwen3-4B) with attention-only LoRA, ",
+      "published": "2026-06-24 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "离线推理训练的权重空间几何",
+      "summary_cn": "分析RFT、DPO等离线强化学习损失在权重空间中的几何特性，解释它们如何影响小模型推理能力。",
+      "why_it_matters": "帮助研究者选择更合适的离线训练方法蒸馏推理能力。"
+    },
+    {
+      "title": "MemTrace: Probing What Final Accuracy Misses in Long-Term Memory",
+      "link": "https://arxiv.org/abs/2606.17328",
+      "summary": "arXiv:2606.17328v1 Announce Type: new \nAbstract: LLM agents increasingly maintain long-term memory of user facts across sessions. Yet such memory is usually evaluated by aggregating accuracy over question rows or episodes. Because this approach scores question rows independently, even when several questions probe the same fact, it cannot show how that fact behaves as conditions change. We introduce MemTrace, a benchmark whose unit of measurement is the knowledge point: a single typed fact about ",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "MemTrace揭示LLM长期记忆盲区",
+      "summary_cn": "提出MemTrace方法，发现LLM长期记忆评估中准确率掩盖了关键事实的遗忘模式。",
+      "why_it_matters": "开发者可据此改进记忆机制，避免关键信息丢失。"
+    },
+    {
+      "title": "Can LLMs Be CEOs? Benchmarking Strategic Resource Reallocation with Multi-Role Agent Simulation",
+      "link": "https://arxiv.org/abs/2606.17459",
+      "summary": "arXiv:2606.17459v1 Announce Type: new \nAbstract: Evaluating the decision-making capabilities of large language models (LLMs) is a growing research priority, yet existing benchmarks focus on isolated cognitive tasks such as reasoning, knowledge retrieval, and economic rationality in stylized settings. These evaluations overlook the defining challenge of real executive decision-making: integrating conflicting recommendations from specialized stakeholders under information asymmetry, organizational",
+      "published": "2026-06-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "LLM当CEO？多角色模拟资源分配",
+      "summary_cn": "构建多角色模拟基准，测试LLM在战略资源重分配中的决策能力，发现其与人类CEO差距。",
+      "why_it_matters": "评估LLM在高层管理决策中的实际可用性。"
+    },
+    {
+      "title": "MER-R1: Multimodal Emotion Reasoning via Slow-Fast Thinking Synergy",
+      "link": "https://arxiv.org/abs/2606.27652",
+      "summary": "arXiv:2606.27652v1 Announce Type: new \nAbstract: We find that explicit reasoning does not necessarily translate into better multimodal emotion recognition (MER) accuracy, even though it makes predictions more interpretable. Specifically, for reasoning-based MLLMs, fast thinking by triggering direct answers often outperforms slow thinking after deliberative reasoning. Our empirical analyses show that fast thinking improves recall with broader and more confident predictions, whereas slow thinking ",
+      "published": "2026-06-30 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "MER-R1慢快思考协同多模态情感推理",
+      "summary_cn": "发现显式推理不一定提升多模态情感识别准确率，提出慢快思考协同框架平衡可解释性与性能。",
+      "why_it_matters": "情感计算应用可在不牺牲准确率下获得可解释推理。"
     },
     {
       "title": "Can Agents Read the Room? Benchmarking Visual Social Intelligence in Multimodal Simulation",
