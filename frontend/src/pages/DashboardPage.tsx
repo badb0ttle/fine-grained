@@ -1,3 +1,22 @@
+/**
+ * DashboardPage - 管理仪表盘页面（密码保护）
+ * 
+ * 页面功能：Pipeline 数据总览仪表盘，展示：
+ *          - KPI 卡片：总文章数、信源健康、高分文章数(80+)、论文数
+ *          - 每日采集趋势折线图（总文章 / 新增 / 精选三条线）
+ *          - 分类分布饼图（甜甜圈图）
+ *          - 信源健康表（状态列带颜色指示灯）
+ *          - 最高分文章排行榜（带进度条）
+ *          - 关键词趋势标签（7 天变化率 + 方向指示）
+ * 
+ * 路由路径：/dashboard（受 AdminGate 密码保护）
+ * 
+ * 数据来源：useStats() → data/stats.json
+ * 
+ * Props：无
+ * 注意：此页面在 App.tsx 中被 <AdminGate> 包裹，需输入仪表盘密码才能访问
+ */
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useStats } from '../hooks/useData'
 import { ICON } from '../lib/icons'
@@ -8,6 +27,7 @@ import {
   PieChart as RePieChart, Pie, Cell, Legend,
 } from 'recharts'
 
+/** 分类饼图配色表 */
 const COLORS: Record<string, string> = {
   'AI Lab': '#6C5CE7',
   'Paper': '#00b894',
@@ -17,19 +37,27 @@ const COLORS: Record<string, string> = {
   'Discussion': '#e17055',
 }
 
+/** 关键词趋势方向映射：方向名 → 中文标签 + 对应图标 */
 const DIRECTION_MAP: Record<string, { label: string; icon: typeof ICON.trendUp }> = {
-  surging: { label: '飙升', icon: ICON.rocket },
-  rising: { label: '上升', icon: ICON.trendUp },
-  falling: { label: '下降', icon: ICON.trendDown },
-  declining: { label: '下滑', icon: ICON.chevronDown },
-  stable: { label: '平稳', icon: ICON.arrowRight },
+  surging:  { label: '飙升', icon: ICON.rocket },
+  rising:   { label: '上升', icon: ICON.trendUp },
+  falling:  { label: '下降', icon: ICON.trendDown },
+  declining:{ label: '下滑', icon: ICON.chevronDown },
+  stable:   { label: '平稳', icon: ICON.arrowRight },
 }
 
+/**
+ * DashboardPage - 管理仪表盘页面组件
+ * 
+ * 数据源：useStats() → data/stats.json（daily_trends, source_health, category_distribution, top_articles, keyword_trends）
+ */
 export function DashboardPage() {
   const { data, loading, error } = useStats()
 
+  // 加载中 → 专用仪表盘骨架屏
   if (loading) return <DashboardSkeleton />
 
+  // 错误/空数据状态
   if (error || !data) {
     return (
       <div className="text-center py-20">
@@ -40,11 +68,16 @@ export function DashboardPage() {
     )
   }
 
+  /** tr：每日趋势数组 */
   const tr = data.daily_trends || []
+  /** sh：信源健康数组 */
   const sh = data.source_health || []
+  /** healthy：健康信源数量 */
   const healthy = sh.filter(s => s.status === 'healthy').length
+  /** cats：分类分布对象 */
   const cats = data.category_distribution || {}
 
+  /** trendData：Recharts 折线图数据（日期简化到月-日） */
   const trendData = tr.map(r => ({
     date: r.date.slice(5),
     总文章: r.total_articles,
@@ -52,10 +85,12 @@ export function DashboardPage() {
     精选: r.curated_count,
   }))
 
+  /** catData：Recharts 饼图数据 */
   const catData = Object.entries(cats).map(([name, value]) => ({ name, value }))
 
   return (
     <div className="space-y-6">
+      {/* ========== 页面标题 ========== */}
       <FadeIn>
         <div className="text-center py-4">
           <h1 className="text-3xl font-bold text-text-primary flex items-center justify-center gap-2">
@@ -70,7 +105,7 @@ export function DashboardPage() {
         </div>
       </FadeIn>
 
-      {/* KPI Cards */}
+      {/* ========== KPI 卡片（2x2 或 4列响应式网格） ========== */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {[
           { value: tr.length ? tr[tr.length - 1].total_articles : 0, label: '总文章数', icon: ICON.news, delay: 0 },
@@ -84,8 +119,9 @@ export function DashboardPage() {
         ))}
       </div>
 
-      {/* Charts row */}
+      {/* ========== 图表行：趋势折线图 + 分类饼图 ========== */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* 每日采集趋势折线图 */}
         {tr.length > 1 && (
           <FadeIn delay={0.15}>
             <div className="bg-bg-card border border-border-muted rounded-xl p-5">
@@ -107,6 +143,7 @@ export function DashboardPage() {
                       fontSize: '13px',
                     }}
                   />
+                  {/* 三条线：总文章(紫)、新增(绿)、精选(橙) */}
                   <Line type="monotone" dataKey="总文章" stroke="#6C5CE7" strokeWidth={2} dot={false} />
                   <Line type="monotone" dataKey="新增" stroke="#00b894" strokeWidth={2} dot={false} />
                   <Line type="monotone" dataKey="精选" stroke="#f0a050" strokeWidth={2} dot={false} />
@@ -116,6 +153,7 @@ export function DashboardPage() {
           </FadeIn>
         )}
 
+        {/* 分类分布饼图 */}
         {Object.keys(cats).length > 0 && (
           <FadeIn delay={0.2}>
             <div className="bg-bg-card border border-border-muted rounded-xl p-5">
@@ -129,7 +167,7 @@ export function DashboardPage() {
                     data={catData}
                     cx="50%"
                     cy="50%"
-                    innerRadius={60}
+                    innerRadius={60}        // 甜甜圈样式
                     outerRadius={100}
                     paddingAngle={2}
                     dataKey="value"
@@ -158,7 +196,7 @@ export function DashboardPage() {
         )}
       </div>
 
-      {/* Source Health */}
+      {/* ========== 信源健康表 ========== */}
       <FadeIn delay={0.25}>
         <div className="bg-bg-card border border-border-muted rounded-xl p-5">
           <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
@@ -182,6 +220,7 @@ export function DashboardPage() {
                       <span className="ml-2 text-xs text-text-muted">{s.category}</span>
                     </td>
                     <td className="py-2.5">
+                      {/* 状态徽章：绿(healthy) / 黄(degraded) / 红(其他) */}
                       <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
                         s.status === 'healthy' ? 'bg-green/10 text-green' :
                         s.status === 'degraded' ? 'bg-amber/10 text-amber' :
@@ -205,7 +244,7 @@ export function DashboardPage() {
         </div>
       </FadeIn>
 
-      {/* Top Articles */}
+      {/* ========== 最高分文章排行榜 ========== */}
       <FadeIn delay={0.3}>
         <div className="bg-bg-card border border-border-muted rounded-xl p-5">
           <h2 className="text-base font-semibold text-text-primary mb-4 flex items-center gap-2">
@@ -226,6 +265,7 @@ export function DashboardPage() {
                   <tr key={i} className="border-b border-border-muted/50 last:border-0">
                     <td className="py-2.5 text-text-primary max-w-[220px] truncate">{a.title}</td>
                     <td className="py-2.5">
+                      {/* 分数进度条（0-100） */}
                       <div className="flex items-center gap-2">
                         <div className="flex-1 h-1.5 bg-bg-secondary rounded-full max-w-[80px]">
                           <div
@@ -245,7 +285,7 @@ export function DashboardPage() {
         </div>
       </FadeIn>
 
-      {/* Keyword Trends */}
+      {/* ========== 关键词趋势（7 天，最多 18 个） ========== */}
       {data.keyword_trends?.keywords && data.keyword_trends.keywords.length > 0 && (
         <FadeIn delay={0.35}>
           <div className="bg-bg-card border border-border-muted rounded-xl p-5">
@@ -255,6 +295,7 @@ export function DashboardPage() {
             </h2>
             <div className="flex flex-wrap gap-2">
               {data.keyword_trends.keywords.slice(0, 18).map((t, i) => {
+                /** opacity：根据变化百分比计算透明度（越大越明显） */
                 const opacity = Math.min(1, 0.3 + Math.abs(t.change_pct) / 100)
                 const dir = DIRECTION_MAP[t.direction] || DIRECTION_MAP.stable
                 return (
@@ -266,6 +307,7 @@ export function DashboardPage() {
                     <FontAwesomeIcon icon={dir.icon} className="text-text-muted" />
                     <span className="text-text-muted">{dir.label}</span>
                     <strong className="text-text-primary">{t.keyword}</strong>
+                    {/* 变化率：正绿色/负红色 */}
                     <span style={{ color: t.change_pct > 0 ? '#00b894' : '#e17055' }}>
                       {t.change_pct > 0 ? '+' : ''}{t.change_pct}%
                     </span>
@@ -280,6 +322,14 @@ export function DashboardPage() {
   )
 }
 
+/**
+ * KpiCard - KPI 统计卡片组件
+ * 
+ * Props：
+ *   - value：数值（string | number）
+ *   - label：标签文本
+ *   - icon：图标
+ */
 function KpiCard({ value, label, icon }: { value: string | number; label: string; icon: typeof ICON.star }) {
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300">

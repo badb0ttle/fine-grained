@@ -1,3 +1,23 @@
+/**
+ * ModelLeaderboard - AI 模型排行榜组件（首页预览 + 完整排行榜页面）
+ * 
+ * 功能：
+ *   - ModelLeaderboardPreview：首页 "最新模型" 紧凑 Top 5 预览（链接到完整排行榜）
+ *   - ModelLeaderboard：完整排行榜页面（/leaderboard 路由）
+ *     - 搜索过滤（按模型名、提供商、ID、标签搜索）
+ *     - 分类 Tab 切换（全部 / 视觉 / 编程 / 推理）
+ *     - 模型卡片展示（排名、名称、提供商、ELO 评分、价格、上下文长度、标签、评分条）
+ *     - ScoreChart：Top 15 模型能力对比柱状图（recharts BarChart）
+ *       - 支持综合对比（intelligence + coding + agentic 三维度分组柱状图）
+ *       - 支持单维度排序查看
+ *     - 滚动入场动画（ScrollReveal）前12个模型
+ *     - 最多展示 50 个模型
+ * 
+ * 数据来源：
+ *   - useLeaderboard() Hook（来自 ../hooks/useData）
+ *   - 数据：OpenRouter + Artificial Analysis 评分
+ */
+
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,10 +28,13 @@ import type { LeaderboardModel } from '../types'
 import { ScrollReveal, FadeIn } from './Animations'
 import { useLocale, type Locale } from '../lib/LocaleContext'
 
+/** Tab 类型：全部 / 视觉 / 编程 / 推理 */
 type Tab = 'all' | 'vision' | 'coding' | 'reasoning'
 
+/** 所有 Tab 的 key 列表 */
 const TAB_KEYS: Tab[] = ['all', 'vision', 'coding', 'reasoning']
 
+/** 各 Tab 的中/英文标签 */
 const TAB_LABELS: Record<Tab, { zh: string; en: string }> = {
   all:       { zh: '全部', en: 'All' },
   vision:    { zh: '视觉', en: 'Vision' },
@@ -19,6 +42,7 @@ const TAB_LABELS: Record<Tab, { zh: string; en: string }> = {
   reasoning: { zh: '推理', en: 'Reasoning' },
 }
 
+/** 各 Tab 对应的图标 */
 const TAB_ICONS: Record<Tab, typeof faTrophy> = {
   all:       faTrophy,
   vision:    faEye,
@@ -26,7 +50,10 @@ const TAB_ICONS: Record<Tab, typeof faTrophy> = {
   reasoning: faBrain,
 }
 
+/** 图表模式：综合对比 / 智能 / 编程 / 智能体 */
 type ChartMode = 'all' | 'intelligence' | 'coding' | 'agentic'
+
+/** 图表模式的中/英文标签 */
 const CHART_MODE_LABELS: Record<ChartMode, { zh: string; en: string }> = {
   all:          { zh: '综合对比', en: 'All Dimensions' },
   intelligence: { zh: '智能',     en: 'Intelligence' },
@@ -34,10 +61,12 @@ const CHART_MODE_LABELS: Record<ChartMode, { zh: string; en: string }> = {
   agentic:      { zh: '智能体',   en: 'Agentic' },
 }
 
+/** 图表模式对应的颜色（综合模式为空，使用分维度颜色） */
 const CHART_MODE_COLORS: Record<ChartMode, string> = {
   all: '', intelligence: '#6C5CE7', coding: '#00b894', agentic: '#f0a050',
 }
 
+/** 各评分维度的颜色常量 */
 const SCORE_COLORS = {
   intelligence: '#6C5CE7',
   coding: '#00b894',
@@ -45,6 +74,7 @@ const SCORE_COLORS = {
   elo: '#74b9ff',
 }
 
+/** UI 文案字典（中/英文） */
 const L = {
   modelLeaderboard:   { zh: 'AI 模型排行榜',     en: 'AI Model Leaderboard' },
   dataSource:         { zh: '数据来源 OpenRouter + Artificial Analysis · 每日更新 · ', en: 'Data: OpenRouter + Artificial Analysis · Updated daily · ' },
@@ -61,6 +91,7 @@ const L = {
   _modelsArrow:       { zh: ' 个模型 →',             en: ' models →' },
 }
 
+/** 根据 Tab 过滤模型列表 */
 function filterByTab(models: LeaderboardModel[], tab: Tab): LeaderboardModel[] {
   if (tab === 'all') return models
   if (tab === 'vision') return models.filter(m => m.tags.includes('vision') || m.tags.includes('video'))
@@ -80,12 +111,14 @@ function filterByTab(models: LeaderboardModel[], tab: Tab): LeaderboardModel[] {
   })
 }
 
+/** 格式化 Unix 时间戳为日期字符串（月/日） */
 function formatDate(unix: number): string {
   if (!unix) return '?'
   return new Date(unix * 1000).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })
 }
 
-// ============ Score Bar ============
+// ============ ScoreBar - 评分进度条组件 ============
+/** 单个维度的评分条（标签 + 进度条 + 数值） */
 function ScoreBar({ value, color, label }: { value: number; color: string; label: string }) {
   const pct = Math.min(value, 100)
   return (
@@ -102,21 +135,23 @@ function ScoreBar({ value, color, label }: { value: number; color: string; label
   )
 }
 
-// ============ Model Row ============
+// ============ ModelRow - 单个模型卡片行 ============
+/** 单个模型的信息卡片（排名、名称、提供商、ELO、价格、上下文、评分条、标签） */
 function ModelRow({ model, isTop3 }: { model: LeaderboardModel; isTop3: boolean }) {
   const s = model.scores
 
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 transition-all duration-300">
       <div className="flex items-start gap-3">
-        {/* Rank */}
+        {/* 排名 Badge（Top3 高亮） */}
         <span className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold tabular-nums
           ${isTop3 ? 'bg-accent text-white' : 'bg-bg-hover text-text-muted'}`}>
           {model.rank}
         </span>
 
-        {/* Main info */}
+        {/* 模型主信息区域 */}
         <div className="flex-1 min-w-0">
+          {/* 模型名称 + 提供商 Badge + ELO 评分 */}
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-semibold text-[15px] text-text-primary truncate">
               {model.name}
@@ -131,7 +166,7 @@ function ModelRow({ model, isTop3 }: { model: LeaderboardModel; isTop3: boolean 
             )}
           </div>
 
-          {/* Specs row */}
+          {/* 规格信息行（价格、上下文长度、最大输出、创建日期） */}
           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-muted">
             <span className="inline-flex items-center gap-1">
               <FontAwesomeIcon icon={faDollarSign} className="text-[10px] text-green" />
@@ -159,7 +194,7 @@ function ModelRow({ model, isTop3 }: { model: LeaderboardModel; isTop3: boolean 
             </span>
           </div>
 
-          {/* Score bars */}
+          {/* Artificial Analysis 评分条 */}
           {s && (s.intelligence || s.coding || s.agentic) && (
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-0.5">
               {s.intelligence != null && <ScoreBar value={s.intelligence} color={SCORE_COLORS.intelligence} label="AI" />}
@@ -168,7 +203,7 @@ function ModelRow({ model, isTop3 }: { model: LeaderboardModel; isTop3: boolean 
             </div>
           )}
 
-          {/* Tags */}
+          {/* 标签列表 */}
           {model.tags.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">
               {model.tags.map(tag => (
@@ -184,7 +219,8 @@ function ModelRow({ model, isTop3 }: { model: LeaderboardModel; isTop3: boolean 
   )
 }
 
-// ============ Skeleton ============
+// ============ SkeletonRow - 模型卡片骨架屏 ============
+/** 加载中的模型卡片骨架屏（pulse 动画） */
 function SkeletonRow() {
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-4 animate-pulse">
@@ -206,12 +242,16 @@ function SkeletonRow() {
   )
 }
 
-// ============ Score Comparison Chart ============
+// ============ ScoreChart - 能力对比柱状图 ============
+/** Top 15 模型能力对比图表（recharts 水平柱状图，支持综合/单维度切换） */
 function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'zh' | 'en' }) {
+  /** chartMode：当前图表显示模式（综合/all / 智能 / 编程 / 智能体） */
   const [mode, setMode] = useState<ChartMode>('all')
 
+  /** 根据当前 mode 构建图表数据（Top 15 排序） */
   const chartData: any[] = useMemo(() => {
     if (mode === 'all') {
+      // 综合模式：按 intelligence 排序，展示三个维度
       return models
         .filter(m => m.scores?.intelligence != null)
         .sort((a, b) => (b.scores!.intelligence ?? 0) - (a.scores!.intelligence ?? 0))
@@ -223,6 +263,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
           agentic: m.scores!.agentic ?? 0,
         }))
     }
+    // 单维度模式：按该维度排序，只展示 value
     return models
       .filter(m => m.scores?.[mode] != null)
       .sort((a, b) => (b.scores![mode] ?? 0) - (a.scores![mode] ?? 0))
@@ -233,6 +274,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
       }))
   }, [models, mode])
 
+  // 数据不足时不渲染图表
   if (chartData.length < 3) return null
 
   const isAll = mode === 'all'
@@ -240,7 +282,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
 
   return (
     <div className="bg-bg-card border border-border-muted rounded-xl p-5">
-      {/* Header with mode toggles */}
+      {/* 图表标题 + 模式切换按钮 */}
       <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
         <div className="flex items-center gap-2">
           <FontAwesomeIcon icon={faChartBar} className="text-accent" />
@@ -249,7 +291,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
           </h3>
           <span className="text-xs text-text-muted">{L.aaScore[locale]}</span>
         </div>
-        {/* Mode toggles */}
+        {/* 模式切换 Tab */}
         <div className="flex gap-1">
           {(Object.keys(CHART_MODE_LABELS) as ChartMode[]).map(key => {
             const color = CHART_MODE_COLORS[key]
@@ -272,7 +314,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
         </div>
       </div>
 
-      {/* Legend for combined mode */}
+      {/* 综合模式：显示图例（三个维度的颜色说明） */}
       {isAll && (
         <div className="flex items-center gap-4 mb-3 text-xs">
           <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-sm" style={{background: SCORE_COLORS.intelligence}} /> {CHART_MODE_LABELS.intelligence[locale]}</span>
@@ -281,6 +323,7 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
         </div>
       )}
 
+      {/* recharts 水平柱状图 */}
       <ResponsiveContainer width="100%" height={chartData.length * 28 + 40}>
         <BarChart
           data={chartData}
@@ -308,12 +351,14 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
             formatter={isAll ? undefined : ((value: any) => [value, '']) as any}
           />
           {isAll ? (
+            // 综合模式：三个维度分组柱状图
             <>
               <Bar dataKey="intelligence" fill={SCORE_COLORS.intelligence} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.intelligence[locale]} />
               <Bar dataKey="coding" fill={SCORE_COLORS.coding} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.coding[locale]} />
               <Bar dataKey="agentic" fill={SCORE_COLORS.agentic} radius={[0, 2, 2, 0]} name={CHART_MODE_LABELS.agentic[locale]} />
             </>
           ) : (
+            // 单维度模式：单一颜色柱状图
             <Bar dataKey="value" fill={activeColor} radius={[0, 3, 3, 0]} />
           )}
         </BarChart>
@@ -322,7 +367,8 @@ function ScoreChart({ models, locale }: { models: LeaderboardModel[]; locale: 'z
   )
 }
 
-// ============ HOME PAGE PREVIEW (compact Top 5) ============
+// ============ ModelLeaderboardPreview - 首页 Top 5 预览 ============
+/** 首页 "最新模型" 紧凑预览（Top 5 模型列表 + 链接到完整排行榜） */
 export function ModelLeaderboardPreview({ locale }: { locale?: Locale }) {
   const l = locale || 'zh'
   const { data, loading } = useLeaderboard()
@@ -330,6 +376,7 @@ export function ModelLeaderboardPreview({ locale }: { locale?: Locale }) {
   if (loading) return null
   if (!data || !data.models.length) return null
 
+  /** top5：排行榜前5名模型 */
   const top5 = data.models.slice(0, 5)
 
   return (
@@ -349,6 +396,7 @@ export function ModelLeaderboardPreview({ locale }: { locale?: Locale }) {
           </Link>
         </div>
 
+        {/* Top 5 模型列表（紧凑卡片） */}
         <div className="space-y-1.5">
           {top5.map((m, i) => (
             <Link
@@ -371,13 +419,17 @@ export function ModelLeaderboardPreview({ locale }: { locale?: Locale }) {
   )
 }
 
-// ============ FULL PAGE (for /leaderboard) ============
+// ============ ModelLeaderboard - 完整排行榜页面 ============
+/** 完整排行榜页面（/leaderboard 路由） */
 export function ModelLeaderboard() {
   const { data, loading } = useLeaderboard()
+  /** tab：当前选中的分类（全部/视觉/编程/推理） */
   const [tab, setTab] = useState<Tab>('all')
+  /** query：搜索关键词 */
   const [query, setQuery] = useState('')
   const { locale } = useLocale()
 
+  /** 根据 tab 和 query 过滤后的模型列表 */
   const models = useMemo(() => {
     if (!data) return []
     let filtered = filterByTab(data.models, tab)
@@ -393,12 +445,13 @@ export function ModelLeaderboard() {
     return filtered
   }, [data, tab, query])
 
+  /** 最多展示前 50 个模型 */
   const displayModels = models.slice(0, 50)
 
   return (
     <FadeIn>
       <div className="space-y-6">
-        {/* Header */}
+        {/* 页面标题 + 数据来源 */}
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
             <h1 className="text-2xl font-bold text-text-primary flex items-center gap-2">
@@ -411,11 +464,12 @@ export function ModelLeaderboard() {
           </div>
         </div>
 
-        {/* Score comparison chart */}
+        {/* 能力对比柱状图 */}
         {data && <ScoreChart models={data.models} locale={locale} />}
 
-        {/* Search + Tabs */}
+        {/* 搜索框 + 分类 Tab */}
         <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+          {/* 搜索输入框 */}
           <div className="relative flex-1 max-w-sm">
             <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
             <input
@@ -427,6 +481,7 @@ export function ModelLeaderboard() {
             />
           </div>
 
+          {/* 分类 Tab 按钮组 */}
           <div className="flex gap-1 overflow-x-auto">
             {TAB_KEYS.map(key => (
               <button
@@ -445,15 +500,18 @@ export function ModelLeaderboard() {
           </div>
         </div>
 
-        {/* Model list */}
+        {/* 模型列表 */}
         <div className="space-y-2">
           {loading ? (
+            // 加载中：骨架屏
             Array.from({ length: 8 }, (_, i) => <SkeletonRow key={i} />)
           ) : displayModels.length === 0 ? (
+            // 无数据：空状态提示
             <div className="text-center py-12 text-text-muted">
               {query ? L.noMatch[locale] : L.noData[locale]}
             </div>
           ) : (
+            // 模型卡片列表（前12个有滚动入场动画）
             displayModels.map((model, i) => {
               const row = <ModelRow model={model} isTop3={model.rank <= 3} />
               return i < 12 ? (
@@ -465,6 +523,7 @@ export function ModelLeaderboard() {
           )}
         </div>
 
+        {/* 超过 50 个模型时显示提示 */}
         {models.length > 50 && (
           <div className="text-center py-4 text-xs text-text-muted">
             {L.showingNofM[locale]}{models.length}{L._matchModels[locale]}

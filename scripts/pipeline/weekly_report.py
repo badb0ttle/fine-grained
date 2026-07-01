@@ -1,5 +1,38 @@
 #!/usr/bin/env python3
-"""Weekly Report — generate a prompt for LLM to write a weekly AI briefing."""
+"""
+周日周报生成器 — 生成中英双语 Prompt 供 LLM 撰写 AI 行业周报。
+
+================================================================================
+模块功能
+================================================================================
+每周日运行的周报生成模块，不直接调用 LLM API，而是:
+  1. get_week_articles: 从数据库提取过去 7 天的高分文章和相关统计数据
+  2. get_weekly_prompt: 生成中文 Prompt，供 LLM 撰写中文周报
+  3. get_weekly_prompt_en: 生成英文 Prompt，供 LLM 撰写英文周报
+
+实际 LLM 调用由外部调度系统（如 Hermes Agent Cron）执行。
+
+================================================================================
+周报结构
+================================================================================
+【中文版】
+  ### [头条] 本周头条 (1-2段): 深入分析最重要的 1-2 件事
+  ### [趋势] 趋势观察 (2-3段): 提炼 2-3 个趋势，用具体文章例证
+  ### [总结] 一句话总结: 概括本周 AI 行业主题
+
+【英文版】结构相同，英文输出:
+  ### [Headlines] This Week's Top Story
+  ### [Trends] Trend Watch
+  ### [TL;DR] One-Sentence Summary
+
+================================================================================
+去 AI 套话规则
+================================================================================
+中英双语都需要严格遵循反 AI 套话规则:
+  - 中文黑名单: "在...方面" "展现出..." "具有重要意义" 等
+  - 英文黑名单: "In the realm of..." "showcases..." "a testament to..." 等
+  - 写作原则: 口语化短句、信息密度优先、禁止 emoji
+"""
 
 from datetime import datetime, timedelta
 
@@ -7,11 +40,36 @@ from . import get_db
 
 
 def get_week_articles(days: int = 7) -> dict:
-    """Get curated articles from the past N days for weekly analysis."""
+    """
+    获取过去 N 天的周报所需数据。
+
+    提取四个维度:
+      1. top_articles (最多 50 篇): 高分文章列表，含中英文标题和摘要
+      2. categories: 按分类聚合的文章数量分布
+      3. curated_count: 本周精选文章数量
+      4. source_health: 信源健康状态（含连续失败次数）
+
+    时间筛选使用 published >= since，确保只包含本周发布的文章。
+    注意: 使用 datetime.utcnow() 而非 timezone.utc，保持与数据库时间格式一致。
+
+    Args:
+        days: 统计天数，默认 7（一周）
+
+    Returns:
+        {
+          top_articles: [{ title, title_cn, summary_cn, why_it_matters, source_name, category, score_total, published }],
+          categories: [{ category, cnt }],
+          curated_count: int,
+          source_health: [{ name, consecutive_failures, article_count_last }],
+          period_start: str (ISO 格式起始日期),
+          period_days: int,
+        }
+    """
     conn = get_db()
+    # 计算起始日期: 当前 UTC 时间 - days 天
     since = (datetime.utcnow() - timedelta(days=days)).isoformat()
 
-    # Top scored articles this week
+    # ---- 1. 本周高分文章 (top 50) ----
     top = conn.execute("""
         SELECT title, title_cn, summary_cn, why_it_matters, source_name,
                category, score_total, published
@@ -21,7 +79,7 @@ def get_week_articles(days: int = 7) -> dict:
         LIMIT 50
     """, (since,)).fetchall()
 
-    # Category breakdown
+    # ---- 2. 分类分布 ----
     cats = conn.execute("""
         SELECT category, COUNT(*) as cnt
         FROM articles
@@ -29,13 +87,14 @@ def get_week_articles(days: int = 7) -> dict:
         GROUP BY category ORDER BY cnt DESC
     """, (since,)).fetchall()
 
-    # Curated count
+    # ---- 3. 精选文章计数 ----
     curated = conn.execute("""
         SELECT COUNT(*) FROM articles
         WHERE curated = 1 AND curated_at >= ?
     """, (since,)).fetchone()[0]
 
-    # Source stats
+    # ---- 4. 信源健康状态 ----
+    # 按连续失败次数降序，优先展示有问题的信源
     sources = conn.execute("""
         SELECT name, consecutive_failures, article_count_last
         FROM sources ORDER BY consecutive_failures DESC
@@ -54,10 +113,34 @@ def get_week_articles(days: int = 7) -> dict:
 
 
 def get_weekly_prompt(data: dict) -> str:
-    """Generate a prompt for LLM to write a weekly AI briefing."""
+    """
+    生成中文周报的 LLM Prompt。
+
+    Prompt 结构:
+      1. 角色设定: "资深 AI 行业分析师"
+      2. 数据概览: 精选文章数、分类分布
+      3. 本周重点文章: 最多 20 篇格式化列表
+      4. 写作要求:
+         - [头条] 深入分析 1-2 件事
+         - [趋势] 提炼 2-3 个趋势
+         - [总结] 一句话概括
+      5. 去 AI 味写作规则（与 curator.py 保持一致）
+      6. 格式要求: 中文输出、纯 HTML、article 包裹
+
+    输出格式为纯 HTML（含 DOCTYPE 和 CSS 引用），可直接在浏览器打开。
+    保存路径: data/weekly/{date}.html
+
+    Args:
+        data: get_week_articles() 的返回值
+
+    Returns:
+        完整的中文 Prompt 字符串
+    """
     arts = data["top_articles"]
+    # 构建文章列表文本（最多 20 篇，取最重要的）
     article_text = []
     for i, a in enumerate(arts[:20], 1):
+        # 优先使用中文标题，回退到英文原文标题
         title = a["title_cn"] or a["title"]
         wim = f" — {a['why_it_matters']}" if a.get("why_it_matters") else ""
         article_text.append(
@@ -66,6 +149,7 @@ def get_weekly_prompt(data: dict) -> str:
             f"   来源: {a['source_name']} | {a['published']}\n"
         )
 
+    # 构建分类分布文本
     cat_text = "\n".join(f"- {c['category']}: {c['cnt']} 篇" for c in data["categories"])
 
     prompt = f"""你是一位资深 AI 行业分析师。请根据以下本周（{data['period_start'][:10]} 至今）的 AI 情报数据，撰写一份「本周 AI 大事记」。
@@ -117,11 +201,27 @@ def get_weekly_prompt(data: dict) -> str:
 
 
 def get_weekly_prompt_en(data: dict) -> str:
-    """Generate an English prompt for LLM to write a weekly AI briefing."""
+    """
+    生成英文周报的 LLM Prompt。
+
+    结构与中文版完全对应，但:
+      - 使用英文角色设定和写作要求
+      - 使用原始英文标题（不使用中文翻译）
+      - 英文特有的反 AI 套话规则
+
+    输出格式同样是纯 HTML，保存为 data/weekly/{date}_en.html。
+
+    Args:
+        data: get_week_articles() 的返回值
+
+    Returns:
+        完整的英文 Prompt 字符串
+    """
     arts = data["top_articles"]
     article_text = []
     for i, a in enumerate(arts[:20], 1):
-        title = a["title"]  # original English title
+        # 英文版使用原始英文标题
+        title = a["title"]
         wim = f" — {a['why_it_matters']}" if a.get("why_it_matters") else ""
         article_text.append(
             f"{i}. [{a['category']}] {title}{wim}\n"

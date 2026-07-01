@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
-"""GitHub Trending scraper — daily snapshot of AI/ML repositories.
+"""
+GitHub Trending 追踪模块 (GitHub Trending Scraper)
+==================================================
+每日抓取 github.com/trending 页面，筛选 AI/ML 相关仓库，记录 star 增量数据，
+并尝试与数据库中已有的 ArXiv 论文进行关联。
 
-Uses pure regex parsing (no BeautifulSoup dependency) to scrape
-github.com/trending and extract AI/ML repos with star counts.
+技术选型：纯正则解析 HTML（零依赖，不引入 BeautifulSoup），避免依赖膨胀。
+数据存储：github_trending 表（自建表，不在 db_init 中统一管理）。
 """
 
 import json
@@ -14,7 +18,8 @@ import requests
 
 from . import get_db
 
-# AI/ML related topics and keywords to filter
+# AI/ML 相关关键词列表，用于判断仓库是否与AI相关
+# 使用正则 pattern 格式（. 匹配任意字符），覆盖算法、框架、模型、Agent等维度
 AI_KEYWORDS = [
     "machine.learning", "deep.learning", "large.language.model",
     "natural.language", "computer.vision", "reinforcement.learning",
@@ -29,7 +34,18 @@ AI_KEYWORDS = [
 
 
 def _is_ai_repo(text: str) -> bool:
-    """Check if repo description/handle hints at AI/ML."""
+    """
+    判断仓库描述/名称是否与 AI/ML 相关。
+
+    对输入的文本（仓库全名 + 描述）进行小写转换后，
+    逐一匹配 AI_KEYWORDS 中的正则模式。
+
+    Args:
+        text: 仓库 full_name + description 拼接字符串。
+
+    Returns:
+        bool: True 表示为 AI/ML 相关仓库。
+    """
     text_lower = text.lower()
     for kw in AI_KEYWORDS:
         if re.search(kw, text_lower):
@@ -38,11 +54,22 @@ def _is_ai_repo(text: str) -> bool:
 
 
 def fetch_trending() -> list[dict]:
-    """Scrape GitHub Trending page for AI/ML repos.
+    """
+    抓取 GitHub Trending 页面并提取 AI/ML 仓库信息。
 
-    Returns list of repo dicts sorted by stars_today descending.
+    解析策略：
+    1. HTTP GET 请求 github.com/trending?since=daily（最多重试2次）
+    2. 用正则提取 <article class="Box-row"> 仓库卡片
+    3. 从每个卡片中提取：repo_full, description, language, stars_today, total_stars
+    4. 过滤非 AI/ML 仓库
+    5. 按 stars_today 降序排列，返回前30个
+
+    Returns:
+        list[dict]: 仓库字典列表，每项含 repo_full, description, language,
+                    stars_today, total_stars, url。
     """
     html = None
+    # 最多 2 次请求尝试，间隔 3 秒
     for attempt in range(2):
         try:
             resp = requests.get(
@@ -63,43 +90,47 @@ def fetch_trending() -> list[dict]:
         return []
 
     repos = []
-    seen = set()
+    seen = set()  # 去重集合
 
-    # Find all article blocks — each is a repo card
-    # Pattern: <article class="Box-row"> ... </article>
+    # ---- 步骤1：提取所有仓库卡片块 ----
+    # 匹配 <article class="Box-row"> ... </article>
     articles = re.findall(
         r'<article\s+class="Box-row"[^>]*>(.*?)</article>\s*(?=<article|$|</div>\s*</div>\s*$)',
         html, re.DOTALL
     )
 
     for block in articles:
-        # Extract repo_full: /owner/repo
+        # ---- 提取仓库全名：/owner/repo ----
         repo_match = re.search(r'href="(/([^/"]+)/([^/"]+))"', block)
         if not repo_match:
             continue
         repo_full = repo_match.group(1).strip("/")
         if repo_full in seen:
-            continue
+            continue  # 跳过已处理过的仓库
 
-        # Skip if not AI-related (check description + repo name)
+        # ---- 提取描述文本 ----
         desc_match = re.search(
             r'<p\s+class="(?:col-9\s+)?(?:color-fg-muted\s+)?(?:my-1\s+)?pr-4"[^>]*>\s*(.*?)\s*</p>',
             block, re.DOTALL
         )
+        # 去除 HTML 标签，保留纯文本
         description = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else ""
 
+        # ---- AI 相关性过滤 ----
+        # 同时检查仓库名和描述，提高召回率
         if not _is_ai_repo(f"{repo_full} {description}"):
             continue
         seen.add(repo_full)
 
-        # Language
+        # ---- 提取编程语言 ----
         lang_match = re.search(
             r'itemprop="programmingLanguage"[^>]*>\s*([^<]+)\s*<',
             block
         )
         language = lang_match.group(1).strip() if lang_match else ""
 
-        # Stars today
+        # ---- 提取今日新增 Star 数 ----
+        # 主策略：匹配 "N stars today" 格式（float-sm-right 定位）
         stars_today = 0
         star_texts = re.findall(
             r'<span[^>]*float-sm-right[^>]*>\s*([\d,]+)\s+stars?\s+today\s*</span>',
@@ -108,7 +139,7 @@ def fetch_trending() -> list[dict]:
         if star_texts:
             stars_today = int(star_texts[0].replace(",", ""))
         else:
-            # Fallback: any span with "stars today"
+            # 备用策略：匹配任何 "N stars today" 文本
             alt = re.findall(
                 r'([\d,]+)\s+stars?\s+today',
                 block, re.IGNORECASE
@@ -116,7 +147,8 @@ def fetch_trending() -> list[dict]:
             if alt:
                 stars_today = int(alt[0].replace(",", ""))
 
-        # Total stars
+        # ---- 提取总 Star 数 ----
+        # 策略：寻找 </a> 前的大数字（通常总 Star 数是卡片中最大的数字）
         total_stars = 0
         ts_match = re.findall(
             r'([\d,]+)\s*</a>\s*$',
@@ -127,10 +159,9 @@ def fetch_trending() -> list[dict]:
             if val.isdigit():
                 total_stars = max(total_stars, int(val))
 
-        # Fallback: find any number preceding </a> that could be total stars
+        # 备用策略：取所有数字中最大的那个（排除今日Star数）
         if total_stars == 0:
             all_nums = re.findall(r'>\s*([\d,]+)\s*<', block)
-            # The largest number is likely total stars
             for n in sorted([int(x.replace(",", "")) for x in all_nums], reverse=True):
                 if n > stars_today and n > 10:
                     total_stars = n
@@ -138,19 +169,29 @@ def fetch_trending() -> list[dict]:
 
         repos.append({
             "repo_full": repo_full,
-            "description": description[:500],
+            "description": description[:500],  # 截断过长描述
             "language": language,
             "stars_today": stars_today,
             "total_stars": total_stars,
             "url": f"https://github.com/{repo_full}",
         })
 
+    # 按今日 Star 数降序排列，返回 Top 30
     repos.sort(key=lambda r: r["stars_today"], reverse=True)
     return repos[:30]
 
 
 def ensure_table(conn):
-    """Create github_trending table if not exists."""
+    """
+    确保 github_trending 表及其索引存在（幂等操作）。
+
+    表结构：
+    - repo_full + snapshot_at 联合唯一约束（同一天不重复记录同一仓库）
+    - 索引覆盖 snapshot_at（按时间查询）和 repo_full（按仓库查询）
+
+    Args:
+        conn: SQLite 数据库连接对象。
+    """
     conn.executescript("""
         CREATE TABLE IF NOT EXISTS github_trending (
             id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -175,7 +216,20 @@ def ensure_table(conn):
 
 
 def cross_link_papers(conn) -> int:
-    """Link trending repos to ArXiv papers in our DB. Returns count linked."""
+    """
+    将 Trending 仓库与数据库中的 ArXiv 论文进行关联。
+
+    关联策略（两阶段）：
+    1. 精确匹配：articles.github_repo 字段是否包含仓库名
+    2. 模糊匹配：仓库名分词后，匹配论文标题中的关键词组合
+
+    Args:
+        conn: SQLite 数据库连接对象。
+
+    Returns:
+        int: 成功关联的仓库数量。
+    """
+    # 仅处理当次快照中尚未关联的仓库
     rows = conn.execute("""
         SELECT id, repo_full FROM github_trending
         WHERE paper_linked = 0 AND snapshot_at = (
@@ -185,9 +239,10 @@ def cross_link_papers(conn) -> int:
 
     linked = 0
     for row in rows:
+        # 提取仓库名（owner/repo → repo）
         repo_name = row["repo_full"].split("/")[-1].lower()
 
-        # Strategy 1: exact github_repo match
+        # ---- 策略1：精确 github_repo 字段匹配 ----
         papers = conn.execute("""
             SELECT paper_id, github_repo FROM articles
             WHERE github_repo IS NOT NULL AND LOWER(github_repo) LIKE ?
@@ -202,9 +257,11 @@ def cross_link_papers(conn) -> int:
             linked += 1
             continue
 
-        # Strategy 2: fuzzy — check if any paper title contains repo name words
+        # ---- 策略2：模糊标题关键词匹配 ----
+        # 将仓库名的连字符/下划线替换为空格后分词
         words = repo_name.replace("-", " ").replace("_", " ").split()
         if len(words) >= 2:
+            # 构造 LIKE 模式：%word1%word2%word3%
             pattern = "%" + "%".join(words[:3]) + "%"
             paper_matches = conn.execute("""
                 SELECT paper_id FROM articles
@@ -223,7 +280,14 @@ def cross_link_papers(conn) -> int:
 
 
 def run() -> dict:
-    """Run GitHub Trending scraper. Returns stats dict."""
+    """
+    执行完整的 GitHub Trending 抓取流程。
+
+    流程：抓取 → 建表 → 入库存 → 论文关联 → 统计输出
+
+    Returns:
+        dict: {"repos_found": int, "new_repos": int, "paper_linked": int}
+    """
     print(f"\n🔥 GitHub Trending — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     repos = fetch_trending()
@@ -233,9 +297,10 @@ def run() -> dict:
 
     conn = get_db()
     ensure_table(conn)
-    snapshot_at = datetime.now(timezone.utc).isoformat()
+    snapshot_at = datetime.now(timezone.utc).isoformat()  # 当前快照时间戳
     inserted = 0
 
+    # 逐条 INSERT OR IGNORE（联合唯一约束自动跳过当天重复记录）
     for repo in repos:
         try:
             conn.execute(
@@ -249,13 +314,15 @@ def run() -> dict:
             if conn.execute("SELECT changes()").fetchone()[0]:
                 inserted += 1
         except Exception:
-            pass
+            pass  # 静默跳过写入失败的单条记录
 
     conn.commit()
 
+    # 尝试与论文关联
     linked = cross_link_papers(conn)
     conn.commit()
 
+    # 输出 Top 3 仓库名
     top3 = ", ".join(r["repo_full"].split("/")[-1] for r in repos[:3])
     print(f"   ✅ {len(repos)} AI/ML repos ({inserted} new, {linked} paper-linked)")
     print(f"   🔝 {top3}")
@@ -265,10 +332,16 @@ def run() -> dict:
 
 
 def export_trending_json() -> dict:
-    """Export latest trending data for frontend display."""
+    """
+    导出最新一期 Trending 数据为前端可用的 JSON 格式。
+
+    Returns:
+        dict: 包含 snapshot_at, count, repos 列表, history_dates（最近7天快照日期）。
+    """
     conn = get_db()
     ensure_table(conn)
 
+    # 查询最新快照的 Top 30 仓库
     rows = conn.execute("""
         SELECT repo_full, description, language, stars_today, total_stars,
                url, snapshot_at, paper_linked, paper_id
@@ -291,6 +364,7 @@ def export_trending_json() -> dict:
             "paper_id": r["paper_id"],
         })
 
+    # 获取最近 7 天的快照日期（用于前端历史选择器）
     history = conn.execute("""
         SELECT DISTINCT snapshot_at
         FROM github_trending

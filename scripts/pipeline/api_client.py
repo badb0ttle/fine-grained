@@ -1,13 +1,19 @@
-"""API client for the AllOfAI backend — called by cron pipelines.
+"""
+API 客户端模块 (API Client)
+===========================
+AllOfAI 后端 API 调用封装，供 cron Pipeline 使用。
 
-This module POSTs scan/curation results to the FastAPI backend so the
-frontend fetches live data instead of static JSON files.
+功能：
+- 将扫描/精选结果 POST 到 FastAPI 后端（本地 127.0.0.1:8001）
+- 前端通过 API 获取实时数据，替代静态 JSON 文件方案
+- 支持幂等键（Idempotency Key）保证重试安全
 
-Usage:
-    from .api_client import post_batch, post_curation
+配置：
+- AI_INTEL_API_BASE：API 地址（默认 http://127.0.0.1:8001）
+- AI_INTEL_API_KEY：Bearer Token 认证密钥
+- AI_INTEL_API_ENABLED：是否启用 API 推送（默认 1=启用）
 
-    post_batch(articles=[...], stats={...}, scan_id="2026-W25")
-    post_curation(curated=[...], scan_id="2026-W25")
+注意：cron 环境不自动加载 .env，模块内置了 fallback 读取逻辑。
 """
 
 import json
@@ -18,14 +24,17 @@ import urllib.error
 from datetime import datetime, timezone
 
 
-# ── Config ──
+# ── 配置区 ──
 
-# Default: local FastAPI server (ECS runs API on 127.0.0.1:8001 behind OpenResty)
+# 默认地址：ECS 上用 OpenResty 反向代理到本地 8001 端口
 API_BASE = os.getenv("AI_INTEL_API_BASE", "http://127.0.0.1:8001")
 API_KEY = os.getenv("AI_INTEL_API_KEY", "")
-# Cron / non-login shells don't auto-load .env — fallback to reading it directly
+
+# Cron / 非登录 shell 环境不会自动加载 .env 文件
+# 这里做 fallback：直接读取文件解析 API_KEY
 if not API_KEY:
     from pathlib import Path as _P
+    # 尝试多个可能的 .env 路径
     _envf = _P(os.getenv("HERMES_HOME", "/root/.hermes")) / ".env"
     if not _envf.exists():
         _envf = _P("/root/fine-grained/.env")
@@ -33,21 +42,39 @@ if not API_KEY:
         for _l in _envf.read_text().splitlines():
             _l = _l.strip()
             if _l.startswith("AI_INTEL_API_KEY="):
+                # 去除引号（支持单引号和双引号）
                 API_KEY = _l.split("=", 1)[1].strip().strip('"').strip("'")
                 break
 
+# 通过环境变量控制是否启用 API 推送
 API_ENABLED = os.getenv("AI_INTEL_API_ENABLED", "1") == "1"
 
 
 def _request(method: str, path: str, body: dict) -> dict:
-    """Send an authenticated request to the API. Returns parsed JSON response."""
+    """
+    发送带认证的 HTTP 请求到 API。
+
+    自动附加：
+    - Authorization: Bearer Token
+    - X-Idempotency-Key：基于 scan_id + 时间戳的幂等键（防重复提交）
+
+    Args:
+        method: HTTP 方法（POST/PUT/GET）。
+        path: API 路径（如 "/api/admin/batch"）。
+        body: 请求体 dict，会被 JSON 序列化。
+
+    Returns:
+        dict: API 返回的 JSON 响应，失败时含 status: "error" 和错误详情。
+    """
     if not API_ENABLED:
         return {"status": "disabled", "reason": "AI_INTEL_API_ENABLED=0"}
 
     url = f"{API_BASE}{path}"
+    # JSON 序列化请求体，确保中文字符不被转义
     data = json.dumps(body, ensure_ascii=False).encode("utf-8")
 
-    # Generate idempotency key: scan_id + timestamp for retry safety
+    # 构造幂等键：scan_id + UTC 时间戳（精确到秒）
+    # 确保同一批数据不会因网络重试被重复处理
     scan_id = body.get("scan_id", "unknown")
     idempotency_key = f"{scan_id}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')}"
 
@@ -62,24 +89,33 @@ def _request(method: str, path: str, body: dict) -> dict:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
+        # HTTP 4xx/5xx 错误：读取响应体作为错误详情
         body = e.read().decode("utf-8", errors="replace")
         return {"status": "error", "http_status": e.code, "detail": body}
     except urllib.error.URLError as e:
+        # 网络层错误（DNS、连接超时等）
         return {"status": "error", "reason": str(e.reason)}
 
 
 def post_batch(articles: list, stats: dict = None, scan_id: str = "") -> dict:
-    """POST a batch of articles + daily stats to the API.
+    """
+    批量提交文章和每日统计到 API。
+
+    将 DB 行格式的文章转换为 API 兼容格式（字段映射），
+    可选附带 daily_stats 统计信息。
 
     Args:
-        articles: list of article dicts (same shape as DB rows)
-        stats: optional daily_stats dict
-        scan_id: identifier for this scan run
+        articles: 文章字典列表（与 DB 行结构一致）。
+        stats: 可选的每日统计字典（daily_stats 表数据）。
+        scan_id: 扫描批次标识符（如 "2026-W25"）。
+
+    Returns:
+        dict: API 响应。
     """
     if not API_ENABLED:
         return {"status": "disabled"}
 
-    # Build API-compatible article list
+    # 构造 API 兼容的文章列表（字段白名单 + 类型转换）
     api_articles = []
     for a in articles:
         api_articles.append({
@@ -110,11 +146,15 @@ def post_batch(articles: list, stats: dict = None, scan_id: str = "") -> dict:
 
 
 def post_curation(curated: list, scan_id: str = "") -> dict:
-    """POST curation results to the API.
+    """
+    提交精选结果到 API。
 
     Args:
-        curated: list of dicts with 'id', 'title_cn', 'summary_cn', 'why_it_matters'
-        scan_id: identifier for this curation run
+        curated: 精选文章列表，每项含 id, title_cn, summary_cn, why_it_matters。
+        scan_id: 批次标识符。
+
+    Returns:
+        dict: API 响应。
     """
     return _request("POST", "/api/admin/curation", {
         "scan_id": scan_id,
@@ -123,7 +163,14 @@ def post_curation(curated: list, scan_id: str = "") -> dict:
 
 
 def health_check() -> dict:
-    """Check if the API is reachable."""
+    """
+    检查 API 是否可达。
+
+    调用 /health 端点，5 秒超时。
+
+    Returns:
+        dict: API 健康状态，失败时含 status: "error"。
+    """
     try:
         url = f"{API_BASE}/health"
         with urllib.request.urlopen(url, timeout=5) as resp:

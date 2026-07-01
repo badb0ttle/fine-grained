@@ -1,238 +1,230 @@
 #!/usr/bin/env python3
 """
-Agent & MCP 工具周榜 — 三路 GitHub Search → DeepSeek 中文摘要 → JSON。
-每周追踪 MCP 服务器、AI Agent 工具、Agent Skill 三个维度的 GitHub 新星项目。
-输出: data/agent_tools.json
+AI Agent 追踪器 (Agent Tracker)
+================================
+监控和追踪 AI Agent 领域的新闻动态，从多信源自动识别 Agent 相关文章。
+
+功能：
+1. 从 raw.json 中筛选标题含 Agent 关键词的文章
+2. 调用 DeepSeek API 对候选文章进行摘要和分类
+3. 生成 data/agent_articles.json 供前端 Agent Tracker 页面渲染
+
+Agent 关键词匹配（不区分大小写）：
+- Agent / AI Agent / 智能体
+- Agentic / Agentic AI / Agentic Workflow
+- Multi-agent / Agent Framework / Agent Platform
+- LangChain / AutoGPT / CrewAI / MetaGPT（Agent 框架）
+
+技术栈：
+- DeepSeek API (deepseek-chat) 用于智能筛选
+- api_client 模块用于幂等 API 调用
 """
-import json, os, sys, time
-from datetime import datetime
+
+import json
+import os
+import sys
+import re
 from pathlib import Path
+from datetime import datetime, timezone
 
-import requests
+# ── 项目路径设置 ──
+REPO_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO_DIR))
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-OUTPUT_FILE = DATA_DIR / "agent_tools.json"
-CACHE_FILE = DATA_DIR / ".agent_tools_cache.json"
+from scripts.pipeline.api_client import call_llm, get_api_key
 
-# Three search dimensions: MCP servers, Agent tools, Agent skills
-SEARCH_URL = "https://api.github.com/search/repositories"
-
-SEARCHES = [
-    {
-        "id": "mcp-server",
-        "label": "MCP 服务器",
-        "query": "mcp-server in:name,description stars:>50",
-        "sort": "stars",
-        "per_page": 8,
-    },
-    {
-        "id": "agent-tool",
-        "label": "Agent 工具",
-        "query": "ai-agent OR agent-framework in:name,description stars:>500",
-        "sort": "stars",
-        "per_page": 8,
-    },
-    {
-        "id": "agent-skill",
-        "label": "Agent 技能",
-        "query": "agent-skill OR mcp-tool in:name,description stars:>30",
-        "sort": "stars",
-        "per_page": 5,
-    },
+# ── Agent 关键词列表 ──
+# 两阶段筛选：
+#   第一阶段（快速）：正则匹配关键词，快速过滤 >90% 不相关文章
+#   第二阶段（LLM）：DeepSeek 确认是否为 Agent 领域文章
+AGENT_KEYWORDS = [
+    r"\bagent\b", r"\bAgent\b", r"\bagents\b", r"\bAgents\b",
+    r"\bagentic\b", r"\bAgentic\b",
+    r"multi.agent", r"Multi.Agent",
+    r"\bLangChain\b", r"\bLangGraph\b",
+    r"\bAutoGPT\b", r"\bCrewAI\b",
+    r"\bMetaGPT\b", r"\bTaskWeaver\b",
+    r"智能体",  # 中文
+    r"agent.framework", r"Agent.Framework",
+    r"agent.platform", r"Agent.Platform",
+    r"\bAutoGen\b",
 ]
 
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 
+def load_articles() -> list:
+    """
+    从 raw.json 加载当天所有文章。
 
-def get_github_token():
-    """Try to get GitHub token from env."""
-    return os.environ.get("GITHUB_TOKEN", "")
-
-
-def fetch_search(searcher):
-    """Fetch repos from a single GitHub search query."""
-    headers = {"Accept": "application/vnd.github.v3+json"}
-    token = get_github_token()
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-
-    params = {
-        "q": searcher["query"],
-        "sort": searcher["sort"],
-        "order": "desc",
-        "per_page": searcher["per_page"],
-    }
-
-    try:
-        resp = requests.get(SEARCH_URL, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as e:
-        print(f"  ⚠️  Search failed for {searcher['id']}: {e}", file=sys.stderr)
+    Returns:
+        list[dict]: 文章列表。
+    """
+    raw_path = REPO_DIR.parent / "data" / "raw.json"
+    if not raw_path.exists():
+        print("❌ raw.json not found — run rss_scanner.py first")
         return []
 
-    repos = []
-    for item in data.get("items", []):
-        repos.append({
-            "full_name": item["full_name"],
-            "name": item["name"],
-            "owner": item["owner"]["login"],
-            "description": (item.get("description") or "")[:300],
-            "url": item["html_url"],
-            "stars": item["stargazers_count"],
-            "forks": item["forks_count"],
-            "language": item.get("language") or "Unknown",
-            "topics": item.get("topics", []),
-            "updated_at": item["updated_at"],
-            "type": searcher["id"],
-            "type_label": searcher["label"],
-        })
-    return repos
+    with open(raw_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("articles", [])
 
 
-def merge_deduplicate(all_repos, top_n=10):
-    """Merge results from multiple searches, deduplicate by full_name, pick top N by stars."""
-    seen = set()
-    unique = []
-    for repo in all_repos:
-        if repo["full_name"] in seen:
-            continue
-        seen.add(repo["full_name"])
-        unique.append(repo)
+def keyword_filter(articles: list) -> list:
+    """
+    第一阶段过滤：用正则关键词快速筛选 Agent 相关文章。
 
-    unique.sort(key=lambda r: r["stars"], reverse=True)
-    return unique[:top_n]
+    对每篇文章，将 title + summary 拼接后，检查是否匹配任一 Agent 关键词。
+
+    Args:
+        articles: 全量文章列表。
+
+    Returns:
+        list[dict]: 通过关键词筛选的候选文章。
+    """
+    candidates = []
+    for a in articles:
+        text = a.get("title", "") + " " + a.get("summary", "")
+        # 遍历关键词列表，任一匹配即可
+        for pattern in AGENT_KEYWORDS:
+            if re.search(pattern, text, re.IGNORECASE):
+                candidates.append(a)
+                break  # 匹配到一个就停止，避免重复添加
+
+    return candidates
 
 
-def load_cache():
-    """Load cached results to avoid re-generating summaries."""
-    if CACHE_FILE.exists():
+def llm_filter(candidates: list) -> list:
+    """
+    第二阶段过滤：调用 DeepSeek API 判断文章是否为 Agent 领域。
+
+    使用批量判断 prompt，一次 API 调用处理多篇文章，节省 token。
+
+    Args:
+        candidates: 关键词过滤后的候选文章列表。
+
+    Returns:
+        list[dict]: 被 LLM 确认为 Agent 领域的文章（附带 AI 摘要）。
+    """
+    if not candidates:
+        return []
+
+    api_key = get_api_key()
+    if not api_key:
+        print("⚠️  No API key — using keyword-only mode")
+        # 无 API key 时：为每篇文章添加默认摘要
+        for a in candidates:
+            a["agent_summary"] = a.get("summary", "")[:200]
+            a["agent_category"] = "Agent News"
+        return candidates
+
+    results = []
+    # 每次处理最多 10 篇文章（API 上下文窗口限制）
+    batch_size = 10
+    for i in range(0, len(candidates), batch_size):
+        batch = candidates[i : i + batch_size]
+
+        # 构造判断 prompt
+        articles_text = ""
+        for j, a in enumerate(batch):
+            articles_text += (
+                f"[{j+1}] Title: {a.get('title', 'N/A')}\n"
+                f"    Summary: {a.get('summary', 'N/A')[:200]}\n\n"
+            )
+
+        prompt = f"""你是一个 AI Agent 领域专家。请判断以下文章是否与 AI Agent（智能体）相关。
+
+相关定义：文章讨论 AI Agent、Agentic AI、多智能体系统、Agent 框架、自主决策系统、
+Agent 工具使用、Agent 规划/推理等话题。
+
+请为每篇文章输出 JSON 格式：
+[
+  {{"index": 1, "is_agent": true/false, "summary_cn": "中文摘要（50字以内）", "category": "分类"}},
+  ...
+]
+
+分类可选：Agent Framework, Agent Research, Agent Application, Agent News
+
+{articles_text}"""
+
         try:
-            return json.loads(CACHE_FILE.read_text())
-        except Exception:
-            pass
-    return {}
+            resp = call_llm(
+                prompt=prompt,
+                system_prompt="你是 AI Agent 领域专家。请严格按照 JSON 格式回复，不要添加任何额外内容。",
+                max_tokens=2000,
+            )
 
+            # 解析 LLM 返回的 JSON
+            response_text = resp.get("content", "[]")
+            # 提取 JSON 数组（LLM 可能在前后加额外文字）
+            json_match = re.search(r"\[.*\]", response_text, re.DOTALL)
+            if json_match:
+                parsed = json.loads(json_match.group())
+                for item in parsed:
+                    idx = item.get("index", 0) - 1
+                    if 0 <= idx < len(batch) and item.get("is_agent", False):
+                        article = batch[idx].copy()
+                        article["agent_summary"] = item.get("summary_cn", "")
+                        article["agent_category"] = item.get("category", "Agent News")
+                        results.append(article)
 
-def save_cache(repos, summaries):
-    """Cache repo data keyed by full_name."""
-    cache = {}
-    for r in repos:
-        name = r["full_name"]
-        cache[name] = {
-            "stars": r["stars"],
-            "summary": summaries.get(name, ""),
-            "updated_at": r["updated_at"],
-            "type": r["type"],
-        }
-    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+        except Exception as e:
+            print(f"  ⚠️ LLM filter error for batch {i//batch_size + 1}: {e}")
+            # 失败回退：将这批全部纳入结果
+            for a in batch:
+                a.setdefault("agent_summary", a.get("summary", "")[:200])
+                a.setdefault("agent_category", "Agent News")
+            results.extend(batch)
 
-
-def generate_summary(repo):
-    """Generate a brief AI summary of an agent/MCP tool using DeepSeek."""
-    if not DEEPSEEK_API_KEY:
-        print("  ⚠️  No DEEPSEEK_API_KEY, using description as summary", file=sys.stderr)
-        return repo["description"]
-
-    type_hint = {
-        "mcp-server": "这是一个 MCP (Model Context Protocol) 服务器",
-        "agent-tool": "这是一个 AI Agent 工具或框架",
-        "agent-skill": "这是一个 Agent Skill 或 MCP 工具包",
-    }.get(repo["type"], "这是一个 AI 相关工具")
-
-    prompt = f"""你是一名技术写作者。用 2-3 句中文字介绍这个开源项目——它是什么、怎么用、为什么 AI 开发者应当关注。具体、不空洞。禁止使用 emoji，禁止使用「革命性」「游戏规则改变者」等 buzzwords。
-
-{type_hint}。
-项目: {repo['full_name']}
-描述: {repo['description']}
-语言: {repo['language']}
-Star: {repo['stars']:,}
-类型标签: {', '.join(repo.get('topics', []))}"""
-
-    try:
-        resp = requests.post(
-            DEEPSEEK_URL,
-            headers={
-                "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": "deepseek-chat",
-                "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 200,
-                "temperature": 0.3,
-            },
-            timeout=20,
-        )
-        resp.raise_for_status()
-        result = resp.json()
-        return result["choices"][0]["message"]["content"].strip()
-    except Exception as e:
-        print(f"  ⚠️  DeepSeek error for {repo['full_name']}: {e}", file=sys.stderr)
-        return repo["description"]
+    return results
 
 
 def main():
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] Fetching Agent & MCP Tools...", file=sys.stderr)
+    """
+    主函数：加载 → 关键词过滤 → LLM 过滤 → 保存结果。
 
-    # Fetch from all three search dimensions
-    all_repos = []
-    for searcher in SEARCHES:
-        print(f"  Searching: {searcher['label']}...", file=sys.stderr)
-        repos = fetch_search(searcher)
-        print(f"    Found {len(repos)} repos", file=sys.stderr)
-        all_repos.extend(repos)
+    Returns:
+        int: 0 成功，1 失败。
+    """
+    print("🤖 AI Agent Tracker\n")
 
-    # Merge, deduplicate, pick top 10
-    top_repos = merge_deduplicate(all_repos, top_n=10)
-    print(f"  Merged to {len(top_repos)} unique repos", file=sys.stderr)
+    # Step 1: 加载全量文章
+    articles = load_articles()
+    if not articles:
+        print("No articles to process.")
+        return 1
 
-    # Load cache
-    cache = load_cache()
+    print(f"📄 {len(articles)} articles loaded")
 
-    # Generate summaries (skip if cached and stars unchanged)
-    summaries = {}
-    for repo in top_repos:
-        name = repo["full_name"]
-        cached = cache.get(name, {})
-        if cached and cached.get("stars") == repo["stars"] and cached.get("summary"):
-            print(f"  {name} — cached (⭐ {repo['stars']:,}) [{repo['type_label']}]", file=sys.stderr)
-            summaries[name] = cached["summary"]
-        else:
-            print(f"  {name} — generating summary (⭐ {repo['stars']:,}) [{repo['type_label']}]...", file=sys.stderr)
-            summaries[name] = generate_summary(repo)
-            time.sleep(0.5)  # rate limit
+    # Step 2: 第一阶段 — 关键词快速过滤
+    candidates = keyword_filter(articles)
+    print(f"🔑 {len(candidates)} candidates after keyword filter")
 
-    # Build output
+    # Step 3: 第二阶段 — LLM 深度判断
+    agent_articles = llm_filter(candidates)
+    print(f"🤖 {len(agent_articles)} confirmed Agent articles via LLM")
+
+    # Step 4: 保存结果
     output = {
-        "generated_at": datetime.now().isoformat(),
-        "generated_week": datetime.now().strftime("%Y-W%W"),
-        "tools": [
-            {
-                **repo,
-                "summary": summaries[repo["full_name"]],
-                "stars_formatted": f"{repo['stars']:,}",
-            }
-            for repo in top_repos
-        ],
-        "stats": {
-            "total_mcp": sum(1 for r in top_repos if r["type"] == "mcp-server"),
-            "total_agent": sum(1 for r in top_repos if r["type"] == "agent-tool"),
-            "total_skill": sum(1 for r in top_repos if r["type"] == "agent-skill"),
-        },
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "total_articles": len(articles),
+        "candidates": len(candidates),
+        "agent_articles": len(agent_articles),
+        "articles": agent_articles,
     }
 
-    # Write output
-    OUTPUT_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2))
+    out_path = REPO_DIR.parent / "data" / "agent_articles.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
-    # Update cache
-    save_cache(top_repos, summaries)
+    print(f"\n✅ Saved to {out_path}")
 
-    print(f"  ✅ Written to {OUTPUT_FILE}", file=sys.stderr)
-    print(f"     MCP: {output['stats']['total_mcp']} | Agent: {output['stats']['total_agent']} | Skill: {output['stats']['total_skill']}", file=sys.stderr)
+    # 简要预览
+    for a in agent_articles[:5]:
+        print(f"  • [{a.get('agent_category', 'N/A')}] {a.get('title', '')}")
+        print(f"    {a.get('agent_summary', '')}")
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

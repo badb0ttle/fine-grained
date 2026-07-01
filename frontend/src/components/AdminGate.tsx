@@ -1,12 +1,27 @@
+/**
+ * AdminGate - 仪表盘密码门组件
+ * 
+ * 功能：
+ *   - 对 /dashboard 路由包裹密码验证（仅在验证通过后渲染子组件）
+ *   - 密码哈希存储：构建时通过 VITE_DASHBOARD_PASSWORD_HASH 环境变量注入 SHA-256 哈希
+ *   - 会话级认证：验证通过后将哈希存入 sessionStorage（key: ai_admin_auth），刷新页面后需重新验证
+ *   - 前端密码验证：使用 Web Crypto API（crypto.subtle.digest）计算 SHA-256 并与哈希比对
+ * 
+ * 导出：
+ *   - AdminGate：包裹受保护路由的组件（已验证 → children，未验证 → 密码输入表单）
+ *   - useAdminAuth()：检查当前会话是否已认证（供其他组件判断认证状态）
+ */
+
 import { useState, type ReactNode } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 
-// Password hash injected at build time via VITE_DASHBOARD_PASSWORD_HASH.
-// Generate: echo -n "your_password" | shasum -a 256 | cut -d' ' -f1
+/** 构建时注入的密码 SHA-256 哈希（通过 VITE_DASHBOARD_PASSWORD_HASH 环境变量） */
 const PASSWORD_HASH = import.meta.env.VITE_DASHBOARD_PASSWORD_HASH || ''
+/** sessionStorage 中存储认证状态的 key */
 const STORAGE_KEY = 'ai_admin_auth'
 
+/** 使用 Web Crypto API 计算输入的 SHA-256 哈希（返回 hex 字符串） */
 async function sha256(input: string): Promise<string> {
   const buf = new TextEncoder().encode(input)
   const hash = await crypto.subtle.digest('SHA-256', buf)
@@ -15,16 +30,22 @@ async function sha256(input: string): Promise<string> {
     .join('')
 }
 
+/** useAdminAuth Hook：检查当前 sessionStorage 中是否存在有效认证 */
 export function useAdminAuth() {
   const stored = sessionStorage.getItem(STORAGE_KEY)
   return stored != null && PASSWORD_HASH !== '' && stored === PASSWORD_HASH
 }
 
+/** AdminGate - 密码验证门组件 */
 export function AdminGate({ children }: { children: ReactNode }) {
+  /** password：用户输入的密码 */
   const [password, setPassword] = useState('')
+  /** error：密码错误标识（控制错误提示显示） */
   const [error, setError] = useState(false)
+  /** authenticated：是否已通过验证（初始化时检查 sessionStorage） */
   const [authenticated, setAuthenticated] = useState(() => useAdminAuth())
 
+  /** 提交密码：计算 SHA-256 并与构建时哈希比对 */
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     const hash = await sha256(password)
@@ -38,8 +59,10 @@ export function AdminGate({ children }: { children: ReactNode }) {
     }
   }
 
+  // 已验证：直接渲染子组件
   if (authenticated) return <>{children}</>
 
+  // 未验证：渲染密码输入表单
   return (
     <div className="flex items-center justify-center py-24 px-4">
       <div className="bg-bg-card border border-border-muted rounded-2xl p-8 w-full max-w-sm">

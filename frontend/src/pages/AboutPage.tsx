@@ -1,3 +1,21 @@
+/**
+ * AboutPage - 关于页面
+ * 
+ * 页面功能：介绍 AllOfAI 项目，展示：
+ *          - 项目简介
+ *          - 工作流程（Pipeline 四步：采集 → 去重评分 → 精选翻译 → 发布）
+ *          - 更新频率详情
+ *          - 信源列表（按分类展示，带健康状态指示灯）
+ *          - 技术栈说明
+ * 
+ * 路由路径：/about
+ * 
+ * 数据来源：data/stats.json（source_health 字段用于信源列表）
+ * 
+ * Props：无
+ * 使用 Context：LocaleContext（中英双语）
+ */
+
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ICON } from '../lib/icons'
@@ -5,11 +23,13 @@ import { FadeIn, StaggerContainer } from '../components/Animations'
 import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
 
+/** 信源数据结构 */
 interface SourceInfo {
   name: string; category: string; status: string
   last_success: string; article_count_last: number
 }
 
+/** i18n 文案 */
 const T = {
   aboutAllOfAI: { zh: '关于 AllOfAI', en: 'About AllOfAI' },
   aboutDesc: {
@@ -66,13 +86,22 @@ const T = {
   } as Record<string, { zh: string; en: string }>,
 }
 
+/** i18n 辅助函数 */
 function tt(obj: { zh: string; en: string }, l: 'zh' | 'en') { return obj[l] }
 
+/**
+ * AboutPage - 关于页面组件
+ * 
+ * 数据获取：useEffect 中 fetch data/stats.json，提取 source_health 用于信源列表
+ */
 export function AboutPage() {
+  /** sources：信源列表数据（从 stats.json 的 source_health 提取） */
   const [sources, setSources] = useState<SourceInfo[]>([])
+  /** loading：数据加载状态 */
   const [loading, setLoading] = useState(true)
   const { locale } = useLocale()
 
+  /** 组件挂载时获取信源健康数据 */
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/stats.json`)
       .then(r => r.json())
@@ -81,11 +110,14 @@ export function AboutPage() {
       .finally(() => setLoading(false))
   }, [])
 
+  /** cats：去重后的信源分类列表 */
   const cats = [...new Set(sources.map(s => s.category))]
+  /** healthy：健康信源数量 */
   const healthy = sources.filter(s => s.status === 'healthy').length
 
   return (
     <div className="space-y-10 max-w-3xl mx-auto">
+      {/* ========== 页面标题 + 简介 ========== */}
       <FadeIn>
         <div className="text-center py-6">
           <h1 className="text-3xl font-bold text-text-primary">{tt(T.aboutAllOfAI, locale)}</h1>
@@ -95,7 +127,7 @@ export function AboutPage() {
         </div>
       </FadeIn>
 
-      {/* Pipeline */}
+      {/* ========== Pipeline 工作流程（纵向时间线） ========== */}
       <FadeIn delay={0.05}>
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-5 flex items-center gap-2">
@@ -103,10 +135,12 @@ export function AboutPage() {
             {tt(T.workflow, locale)}
           </h2>
           <div className="relative">
+            {/* 左侧纵向连接线（中等屏幕以上可见） */}
             <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border-muted hidden md:block" />
             <div className="space-y-4">
               {T.steps.map((step, i) => (
                 <div key={i} className="flex gap-4">
+                  {/* 步骤编号圆圈 */}
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-accent-muted border border-accent/20 flex items-center justify-center z-10">
                     <FontAwesomeIcon icon={[ICON.satelliteDish, ICON.filter, ICON.robot, ICON.upload][i]} className="text-accent text-xs" />
                   </div>
@@ -121,7 +155,7 @@ export function AboutPage() {
         </section>
       </FadeIn>
 
-      {/* Update frequency */}
+      {/* ========== 更新频率卡片 ========== */}
       <FadeIn delay={0.1}>
         <div className="bg-bg-card border border-border-muted rounded-xl p-5">
           <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
@@ -139,7 +173,7 @@ export function AboutPage() {
         </div>
       </FadeIn>
 
-      {/* Sources */}
+      {/* ========== 信源列表（按分类展示，带健康状态） ========== */}
       <FadeIn delay={0.15}>
         <section>
           <h2 className="text-xl font-semibold text-text-primary mb-1 flex items-center gap-2">
@@ -169,9 +203,11 @@ export function AboutPage() {
                         {catSources.length} {tt(T.sourceUnit, locale)} · {catHealthy} {tt(T.normal, locale)}
                       </span>
                     </h3>
+                    {/* 信源网格：每个信源显示名称 + 健康状态灯 + 最新文章数 */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                       {catSources.map(s => (
                         <div key={s.name} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-bg-secondary/50 text-sm">
+                          {/* 健康状态指示灯：绿(healthy) / 黄(degraded) / 红(其他) */}
                           <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
                             s.status === 'healthy' ? 'bg-green' : s.status === 'degraded' ? 'bg-amber' : 'bg-red'
                           }`} />
@@ -188,7 +224,7 @@ export function AboutPage() {
         </section>
       </FadeIn>
 
-      {/* Tech Stack */}
+      {/* ========== 技术栈 ========== */}
       <FadeIn delay={0.2}>
         <div className="bg-bg-card border border-border-muted rounded-xl p-5">
           <h2 className="text-lg font-semibold text-text-primary mb-3 flex items-center gap-2">
@@ -206,6 +242,7 @@ export function AboutPage() {
         </div>
       </FadeIn>
 
+      {/* ========== 底部链接：GitHub + RSS ========== */}
       <FadeIn delay={0.25}>
         <p className="text-center text-sm text-text-muted pb-8">
           {tt(T.openSource, locale)}{' '}

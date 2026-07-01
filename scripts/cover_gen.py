@@ -1,155 +1,201 @@
-"""Generate Zhihu cover image for weekly AI briefing."""
-import sys, os, json, re, textwrap
+#!/usr/bin/env python3
+"""
+封面图生成器 (Cover Gen)
+=========================
+为周报和文章自动生成社交媒体封面图（Open Graph / Twitter Card）。
+
+功能：
+1. 读取 weekly index.json 获取最新周报信息
+2. 使用 Pillow 渲染模板（渐变背景 + 标题文字 + 日期 + Logo）
+3. 输出 1200×630 PNG 图片到 docs/covers/ 目录
+
+模板设计：
+- 渐变背景：深蓝 (#1a1a2e) → 深紫 (#16213e)
+- 标题：白色，PingFang SC / Noto Sans 字体，居中
+- 日期：灰色小字
+- Logo 区：左下角 "AllOfAI" 品牌标识
+
+技术栈：Pillow（Python Imaging Library）
+"""
+
+import json
+import sys
 from pathlib import Path
-from datetime import date
+from datetime import datetime
+
 from PIL import Image, ImageDraw, ImageFont
 
-W, H = 1200, 675  # 16:9
+# ── 路径常量 ──
+REPO_DIR = Path(__file__).resolve().parent
+COVERS_DIR = REPO_DIR.parent / "docs" / "covers"
+WEEKLY_INDEX = REPO_DIR.parent / "data" / "weekly" / "index.json"
 
-def hex_to_rgb(h):
-    h = h.lstrip('#')
-    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+# ── 封面尺寸（Open Graph 标准） ──
+WIDTH, HEIGHT = 1200, 630
 
-def make_cover(date_str, keywords, out_path):
-    """Generate cover with dark theme + purple gradient + keywords."""
-    bg = Image.new('RGBA', (W, H), hex_to_rgb('#0a0a0f'))
-    draw = ImageDraw.Draw(bg)
+# ── 配色方案 ──
+BG_TOP = (26, 26, 46)        # 深蓝
+BG_BOTTOM = (22, 33, 62)     # 深紫
+TEXT_COLOR = (255, 255, 255)  # 白色
+SUB_TEXT_COLOR = (180, 180, 200)  # 灰紫色
 
-    # Gradient overlay (top-left purple to bottom-right cyan)
-    for y in range(H):
-        t = y / H
-        r = int(108 * (1 - t) + 0 * t)    # #6C5CE7 → #00cec9
-        g = int(92 * (1 - t) + 206 * t)
-        b = int(231 * (1 - t) + 201 * t)
-        for x in range(0, W, 4):
-            alpha = int(20 * (1 - abs(x/W - 0.5) * 1.5))
-            alpha = max(0, min(30, alpha))
-            color = (r, g, b)
-            bg.putpixel((x, y), color + (alpha,))
 
-    # Convert back to RGB for JPEG compatibility
-    bg_rgb = Image.new('RGB', (W, H), (10, 10, 15))
-    bg_rgb.paste(bg, (0, 0), bg)
-    draw = ImageDraw.Draw(bg_rgb)
+def load_weekly_data() -> dict:
+    """
+    加载周报索引信息。
 
-    # Try to load system fonts
-    font_paths = [
-        '/System/Library/Fonts/PingFang.ttc',
-        '/System/Library/Fonts/STHeiti Light.ttc',
-        '/System/Library/Fonts/Hiragino Sans GB.ttc',
-        '/System/Library/Fonts/Helvetica.ttc',
-    ]
-    title_font = None
-    body_font = None
-    for fp in font_paths:
-        if os.path.exists(fp):
-            try:
-                if title_font is None:
-                    title_font = ImageFont.truetype(fp, 48)
-                elif body_font is None:
-                    body_font = ImageFont.truetype(fp, 22)
-            except:
-                pass
-        if title_font and body_font:
-            break
+    Returns:
+        dict: 周报索引数据，含 reports 列表。无数据时返回空 dict。
+    """
+    if not WEEKLY_INDEX.exists():
+        return {}
+    with open(WEEKLY_INDEX, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-    if title_font is None:
-        title_font = ImageFont.load_default()
-        body_font = ImageFont.load_default()
 
-    # Draw decorative line (top)
-    for x in range(80, W - 80):
-        alpha = int(40 * (1 - abs(x/W - 0.5) * 2))
-        if alpha > 0:
-            draw.point((x, 60), fill=(108, 92, 231))
+def draw_gradient_background(draw, width, height):
+    """
+    绘制从上到下的双色渐变背景。
 
-    # Title: 本周 AI 大事记
-    title = "本周 AI 大事记"
-    bbox = draw.textbbox((0, 0), title, font=title_font)
-    tw = bbox[2] - bbox[0]
-    draw.text(((W - tw) // 2, 120), title, fill=(232, 233, 240), font=title_font)
+    算法：逐行插值 BG_TOP → BG_BOTTOM。
 
-    # Date
-    date_display = date_str
-    bbox = draw.textbbox((0, 0), date_display, font=ImageFont.truetype(font_paths[0], 28) if os.path.exists(font_paths[0]) else body_font)
-    dw = bbox[2] - bbox[0]
-    date_color = (0, 206, 201)  # cyan
+    Args:
+        draw: PIL ImageDraw 对象。
+        width: 图片宽度。
+        height: 图片高度。
+    """
+    for y in range(height):
+        # 线性插值：t = 0（顶部）→ 1（底部）
+        t = y / height
+        r = int(BG_TOP[0] + (BG_BOTTOM[0] - BG_TOP[0]) * t)
+        g = int(BG_TOP[1] + (BG_BOTTOM[1] - BG_TOP[1]) * t)
+        b = int(BG_TOP[2] + (BG_BOTTOM[2] - BG_TOP[2]) * t)
+        # 逐行绘制（高效替代：ImageDraw.rectangle 批量绘制）
+        draw.line([(0, y), (width, y)], fill=(r, g, b))
+
+
+def create_cover(title: str, date_str: str, issue_num: int) -> Image.Image:
+    """
+    生成单张封面图。
+
+    布局（从上到下）：
+    - ~30% 空白留白
+    - 大号标题（自动换行，最多3行）
+    - 日期 + 期号
+    - ~20% 底部品牌标识
+
+    Args:
+        title: 封面标题文本。
+        date_str: 日期字符串（如 "2025-01-15 ~ 2025-01-21"）。
+        issue_num: 周报期号。
+
+    Returns:
+        PIL.Image: 生成的封面图像。
+    """
+    img = Image.new("RGB", (WIDTH, HEIGHT), BG_TOP)
+    draw = ImageDraw.Draw(img)
+
+    # ── 绘制渐变背景 ──
+    draw_gradient_background(draw, WIDTH, HEIGHT)
+
+    # ── 加载字体（PingFang SC 是 macOS 默认中文字体） ──
     try:
-        date_font = ImageFont.truetype(font_paths[0], 28)
-    except:
-        date_font = body_font
-    draw.text(((W - dw) // 2, 195), date_display, fill=date_color, font=date_font)
+        font_title = ImageFont.truetype("/System/Library/Fonts/PingFang.ttc", 56)
+        font_date = ImageFont.truetype("/System/Library/Fonts/PingFang.ttc", 28)
+        font_brand = ImageFont.truetype("/System/Library/Fonts/PingFang.ttc", 24)
+    except (OSError, IOError):
+        # fallback：使用 Pillow 默认字体（可能不支持中文）
+        font_title = ImageFont.load_default()
+        font_date = ImageFont.load_default()
+        font_brand = ImageFont.load_default()
 
-    # Keywords (2-3 lines max)
-    keyword_font = body_font
-    if keywords:
-        # Wrap keywords to fit
-        max_line_w = W - 200
-        lines = []
-        current = ''
-        for kw in keywords.replace('·', '·').split('·'):
-            kw = kw.strip()
-            if not kw:
-                continue
-            test = (current + ' · ' + kw) if current else kw
-            bbox = draw.textbbox((0, 0), test, font=keyword_font)
-            if bbox[2] - bbox[0] > max_line_w and current:
-                lines.append(current)
-                current = kw
-            else:
-                current = test
-        if current:
-            lines.append(current)
+    # ── 标题文字：居中，自动换行 ──
+    title_lines = []
+    max_chars_per_line = 22  # 1200px 宽度大约 22 个中文字符
+    words = list(title)
+    current_line = ""
+    for word in words:
+        if len(current_line) + 1 <= max_chars_per_line:
+            current_line += word
+        else:
+            title_lines.append(current_line)
+            current_line = word
+    if current_line:
+        title_lines.append(current_line)
 
-        y_start = 280
-        for i, line in enumerate(lines[:3]):
-            bbox = draw.textbbox((0, 0), line, font=keyword_font)
-            lw = bbox[2] - bbox[0]
-            draw.text(((W - lw) // 2, y_start + i * 38), line, fill=(196, 196, 212), font=keyword_font)
+    # 限制最多 3 行
+    title_lines = title_lines[:3]
 
-    # Bottom: website URL + decorative line
-    for x in range(80, W - 80):
-        alpha = int(40 * (1 - abs(x/W - 0.5) * 2))
-        if alpha > 0:
-            draw.point((x, H - 60), fill=(0, 206, 201))
+    line_height = 70  # 行间距
+    total_title_height = len(title_lines) * line_height
+    title_start_y = 180  # 标题区域起始 Y 坐标
 
-    url = "ai.hjhai.xyz"
-    try:
-        url_font = ImageFont.truetype(font_paths[0], 18) if os.path.exists(font_paths[0]) else body_font
-    except:
-        url_font = body_font
-    bbox = draw.textbbox((0, 0), url, font=url_font)
-    uw = bbox[2] - bbox[0]
-    draw.text(((W - uw) // 2, H - 45), url, fill=(108, 92, 231), font=url_font)
+    for idx, line in enumerate(title_lines):
+        # 使用 textbbox 计算文字宽度，实现精确居中
+        bbox = draw.textbbox((0, 0), line, font=font_title)
+        text_width = bbox[2] - bbox[0]
+        x = (WIDTH - text_width) / 2
+        y = title_start_y + idx * line_height
+        draw.text((x, y), line, fill=TEXT_COLOR, font=font_title)
 
-    # Subtle branding top-left
-    try:
-        brand_font = ImageFont.truetype(font_paths[0], 14) if os.path.exists(font_paths[0]) else body_font
-    except:
-        brand_font = body_font
-    draw.text((80, 32), "AllOfAI", fill=(108, 92, 231, 128), font=brand_font)
+    # ── 日期 + 期号 ──
+    date_text = f"📅 {date_str}  ·  第 {issue_num} 期"
+    date_y = title_start_y + total_title_height + 40
+    bbox = draw.textbbox((0, 0), date_text, font=font_date)
+    date_width = bbox[2] - bbox[0]
+    draw.text(
+        ((WIDTH - date_width) / 2, date_y),
+        date_text,
+        fill=SUB_TEXT_COLOR,
+        font=font_date,
+    )
 
-    bg_rgb.save(out_path, 'PNG', quality=95)
-    print(f"Cover saved: {out_path}")
+    # ── 底部品牌标识 ──
+    brand_text = "AllOfAI  ·  ai.hjhai.xyz"
+    draw.text((40, HEIGHT - 60), brand_text, fill=SUB_TEXT_COLOR, font=font_brand)
+
+    return img
 
 
-if __name__ == '__main__':
-    if len(sys.argv) >= 4:
-        date_str = sys.argv[1]
-        keywords = sys.argv[2]
-        out_path = sys.argv[3]
-    else:
-        # Default: use latest week
-        date_str = date.today().strftime('%Y-%m-%d')
-        # Try to read keywords from index.json
-        idx_path = Path('/Users/mac/Desktop/Projects/ai-intel/data/weekly/index.json')
-        keywords = "AI Agent · LLM · 模型效率"
-        if idx_path.exists():
-            data = json.loads(idx_path.read_text())
-            if data.get('reports'):
-                kw = data['reports'][0].get('summary', keywords)
-                if kw:
-                    keywords = kw
-        out_path = f'/Users/mac/Desktop/ZhiHu/cover_{date_str}.png'
+def main():
+    """
+    主函数：从周报索引读取最新一期信息并生成封面图。
 
-    make_cover(date_str, keywords, out_path)
+    Returns:
+        int: 0 成功，1 没有周报数据，2 其他错误。
+    """
+    print("🎨 Cover Generator\n")
+
+    data = load_weekly_data()
+    reports = data.get("reports", [])
+
+    if not reports:
+        print("⚠️  No weekly reports found")
+        return 1
+
+    COVERS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # ── 为最近一期生成封面 ──
+    latest = reports[0]
+    date_str = latest.get("date", datetime.now().strftime("%Y-%m-%d"))
+    title = latest.get("title", "AI 技术周报")
+    issue_num = latest.get("issue", len(reports))
+
+    print(f"  标题: {title}")
+    print(f"  日期: {date_str}")
+    print(f"  期号: 第 {issue_num} 期")
+
+    # 生成封面图
+    img = create_cover(title, date_str, issue_num)
+
+    # 保存到 docs/covers/ 目录
+    filename = f"weekly-{date_str}.png"
+    out_path = COVERS_DIR / filename
+    img.save(out_path, "PNG", optimize=True)
+    print(f"\n✅ Cover saved: {out_path} ({out_path.stat().st_size} bytes)")
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

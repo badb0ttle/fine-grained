@@ -1,18 +1,31 @@
 #!/usr/bin/env python3
-"""Migrate existing JSON data into SQLite."""
+"""
+数据迁移模块 (DB Migrate)
+=========================
+将旧的 JSON 格式数据（raw.json / latest.json / history/*.json）迁移到 SQLite 数据库。
+
+迁移内容：
+1. sources 表：从 SOURCES 定义注册所有信源
+2. articles 表：从 raw.json 导入原始扫描文章
+3. curated 数据：从 latest.json 应用精选标记 + 中文翻译
+4. daily_stats 表：从 history/ 目录的 JSON 文件导入每日统计
+
+迁移策略：所有写入使用 INSERT OR IGNORE，幂等可重复执行。
+"""
 
 import hashlib
 import json
 import sqlite3
 from pathlib import Path
 
+# ── 路径常量 ──
 REPO_DIR = Path(__file__).parent.parent
 DB_PATH = REPO_DIR / "data" / "ai_intel.db"
 RAW_JSON = REPO_DIR / "data" / "raw.json"
 LATEST_JSON = REPO_DIR / "data" / "latest.json"
 HISTORY_DIR = REPO_DIR / "data" / "history"
 
-# Source definitions (mirror of rss_scanner.py SOURCES)
+# ── 信源定义（与 rss_scanner.py 的 SOURCES 保持一致） ──
 SOURCES = [
     {"name": "OpenAI Blog",          "url": "https://openai.com/blog/rss.xml",                    "category": "AI Lab"},
     {"name": "Google AI",            "url": "https://blog.research.google/feeds/posts/default",   "category": "AI Lab"},
@@ -33,11 +46,31 @@ SOURCES = [
 
 
 def content_hash(title: str, link: str) -> str:
+    """
+    计算文章内容的去重哈希值。
+
+    使用 SHA256 对 "title|link"（小写+去空白）生成64位十六进制摘要。
+    与 db_init.py 中 content_hash 字段的 UNIQUE 约束配合使用。
+
+    Args:
+        title: 文章标题。
+        link: 文章链接。
+
+    Returns:
+        str: SHA256 哈希十六进制字符串。
+    """
     return hashlib.sha256(f"{title.strip().lower()}|{link.strip()}".encode()).hexdigest()
 
 
 def migrate_sources(conn: sqlite3.Connection):
-    """Populate sources table from SOURCES definitions."""
+    """
+    将 SOURCES 定义注册到 sources 表。
+
+    使用 INSERT OR IGNORE，重复执行不会产生重复记录。
+
+    Args:
+        conn: SQLite 数据库连接。
+    """
     for s in SOURCES:
         conn.execute(
             """INSERT OR IGNORE INTO sources (name, url, category)
@@ -50,18 +83,25 @@ def migrate_sources(conn: sqlite3.Connection):
 
 
 def migrate_raw(conn: sqlite3.Connection):
-    """Import raw.json articles."""
+    """
+    从 raw.json 导入原始扫描文章到 articles 表。
+
+    每条记录计算 content_hash 用于去重，使用 INSERT OR IGNORE 跳过重复。
+
+    Args:
+        conn: SQLite 数据库连接。
+    """
     if not RAW_JSON.exists():
         print("  ⚠️  raw.json not found, skipping")
         return
 
     data = json.loads(RAW_JSON.read_text())
-    scanned_at = data.get("scanned_at", "")
+    scanned_at = data.get("scanned_at", "")  # 批次时间戳
     articles = data.get("articles", [])
     inserted = 0
 
     for a in articles:
-        h = content_hash(a["title"], a["link"])
+        h = content_hash(a["title"], a["link"])  # 计算去重哈希
         try:
             conn.execute(
                 """INSERT OR IGNORE INTO articles
@@ -72,23 +112,33 @@ def migrate_raw(conn: sqlite3.Connection):
                  a.get("published", ""), a.get("source", ""),
                  a.get("category", ""), h, scanned_at)
             )
+            # 注意：INSERT OR IGNORE 跳过的行不会触发 total_changes 递增
             if conn.total_changes > 0:
                 inserted += 1
         except sqlite3.IntegrityError:
-            pass
+            pass  # 唯一约束冲突，静默跳过
 
     conn.commit()
     print(f"  📄 raw.json: {inserted} articles imported (total {len(articles)} in file)")
 
 
 def migrate_curated(conn: sqlite3.Connection):
-    """Apply curated data from latest.json (title_cn, summary_cn, curated flag)."""
+    """
+    从 latest.json 应用精选数据到 articles 表。
+
+    更新字段：title_cn（中文标题）、summary_cn（中文摘要）、
+    curated=1（精选标记）、curated_at（精选时间）。
+    通过 link 字段匹配文章。
+
+    Args:
+        conn: SQLite 数据库连接。
+    """
     if not LATEST_JSON.exists():
         print("  ⚠️  latest.json not found, skipping")
         return
 
     data = json.loads(LATEST_JSON.read_text())
-    curated_at = data.get("curated_at", "")
+    curated_at = data.get("curated_at", "")  # 精选时间
     articles = data.get("articles", [])
     updated = 0
 
@@ -113,7 +163,15 @@ def migrate_curated(conn: sqlite3.Connection):
 
 
 def migrate_history(conn: sqlite3.Connection):
-    """Import daily_stats from history JSON files."""
+    """
+    从 history/ 目录的 JSON 文件导入每日统计到 daily_stats 表。
+
+    文件名格式："YYYY‑MM‑DD.json"，作为 daily_stats 的 date 主键。
+    使用 INSERT OR IGNORE 确保幂等性。
+
+    Args:
+        conn: SQLite 数据库连接。
+    """
     if not HISTORY_DIR.exists():
         print("  ⚠️  history dir not found, skipping")
         return
@@ -121,7 +179,7 @@ def migrate_history(conn: sqlite3.Connection):
     count = 0
     for f in sorted(HISTORY_DIR.glob("*.json")):
         data = json.loads(f.read_text())
-        date_str = f.stem  # "2026-06-02"
+        date_str = f.stem  # 文件名（不含扩展名）如 "2026-06-02"
         scanned_at = data.get("scanned_at", "")
 
         try:
@@ -135,14 +193,18 @@ def migrate_history(conn: sqlite3.Connection):
             )
             count += 1
         except sqlite3.IntegrityError:
-            pass
+            pass  # 主键冲突，跳过
 
     conn.commit()
     print(f"  📅 History: {count} daily stats imported")
 
 
 def main():
+    """
+    主迁移流程：依次执行 sources → raw → curated → history 迁移。
+    """
     conn = sqlite3.connect(str(DB_PATH))
+    # 启用 WAL 模式提升并发写入性能
     conn.execute("PRAGMA journal_mode=WAL")
 
     print("🔄 Migrating data to SQLite...\n")
@@ -151,7 +213,7 @@ def main():
     migrate_curated(conn)
     migrate_history(conn)
 
-    # Summary
+    # 输出迁移后汇总统计
     total = conn.execute("SELECT COUNT(*) FROM articles").fetchone()[0]
     curated = conn.execute("SELECT COUNT(*) FROM articles WHERE curated=1").fetchone()[0]
     conn.close()

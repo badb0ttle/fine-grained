@@ -1,283 +1,255 @@
 #!/usr/bin/env python3
 """
-Multi-Source Event Linker — 多源事件聚合。
-从最近 7 天文章中提取标题关键词 → 计算 Jaccard 相似度 → 聚类 → DeepSeek 事件摘要。
-输出: data/events.json
+事件关联引擎 (Event Linker)
+============================
+基于语义相似度发现文章之间的关联关系，构建事件-文章网络。
+
+核心算法：
+- 使用 sentence-transformers/all-MiniLM-L6-v2 对文章标题+摘要编码为向量
+- 余弦相似度配对计算（阈值 > 0.75 认为相关）
+- 相似文章分组为事件簇（连通分量算法）
+- 输出到 data/event_links.json（供前端可视化）
+
+适用场景：
+- Timeline 视图的事件时间线
+- Cluster 视图的文章聚类
+- 知识图谱的关系边
 """
-import json, os, re, sqlite3, sys, time
-from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+
+import json
+import sys
 from pathlib import Path
+from typing import List, Dict
+from datetime import datetime
 
-import requests
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
-# ── Paths ──
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-DB_PATH = DATA_DIR / "ai_intel.db"
-OUTPUT_FILE = DATA_DIR / "events.json"
-CACHE_FILE = DATA_DIR / ".events_cache.json"
-
-# ── Config ──
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
-SIMILARITY_THRESHOLD = 0.25
-MIN_CLUSTER_SIZE = 3
-MAX_CLUSTERS = 12
-LOOKBACK_DAYS = 7
+REPO_DIR = Path(__file__).resolve().parent
 
 
-def now_utc() -> str:
-    return datetime.now(timezone.utc).isoformat()
+def load_articles() -> list:
+    """
+    从 raw.json 加载所有文章。
+
+    Returns:
+        list[dict]: 文章列表，含 title, summary, link 等字段。
+    """
+    raw_path = REPO_DIR.parent / "data" / "raw.json"
+    if not raw_path.exists():
+        print("❌ raw.json not found — run rss_scanner.py first")
+        return []
+
+    with open(raw_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("articles", [])
 
 
-def load_cache() -> dict:
-    if CACHE_FILE.exists():
-        try:
-            return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-    return {}
+def build_embeddings(articles: list, model) -> np.ndarray:
+    """
+    使用预训练的 sentence-transformer 模型编码文章文本。
+
+    每条文章编码内容：title + summary（截断至模型 max_seq_length）
+
+    Args:
+        articles: 文章列表。
+        model: sentence-transformers 模型实例。
+
+    Returns:
+        np.ndarray: (N, 384) 的归一化向量矩阵（all-MiniLM-L6-v2 输出维度 384）。
+    """
+    # 构造输入文本：标题 + 摘要（截断）
+    texts = []
+    for a in articles:
+        text = a.get("title", "") + " " + a.get("summary", "")
+        texts.append(text[:512])  # MiniLM 最大上下文窗口为 512 tokens 的近似
+
+    # 批量编码（show_progress_bar 在 cron 环境输出到 stderr）
+    embeddings = model.encode(
+        texts,
+        convert_to_numpy=True,
+        normalize_embeddings=True,  # 归一化后余弦相似度 = 内积
+        show_progress_bar=False,
+    )
+    return embeddings
 
 
-def save_cache(cache: dict):
-    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+def compute_links(articles: list, embeddings: np.ndarray, threshold: float = 0.75) -> list:
+    """
+    计算文章间的相似度并生成关联边。
+
+    算法：
+    - 计算 N×N 余弦相似度矩阵
+    - 取上三角（避免重复 + 忽略自环）
+    - 筛选相似度 > threshold 的配对
+    - 按相似度降序排序
+
+    Args:
+        articles: 文章列表。
+        embeddings: (N, 384) 归一化向量矩阵。
+        threshold: 相似度阈值（0.75 实测过滤掉弱关联）。
+
+    Returns:
+        list[dict]: 关联边列表，每条含 source, target (文章标题), score。
+    """
+    # 余弦相似度矩阵（归一化后等价于内积）
+    sim_matrix = cosine_similarity(embeddings)
+
+    links = []
+    n = len(articles)
+
+    for i in range(n):
+        for j in range(i + 1, n):  # 只遍历上三角
+            score = float(sim_matrix[i][j])
+            if score > threshold:
+                links.append({
+                    "source": articles[i].get("title", ""),
+                    "source_link": articles[i].get("link", ""),
+                    "target": articles[j].get("title", ""),
+                    "target_link": articles[j].get("link", ""),
+                    "score": round(score, 4),
+                })
+
+    # 按相似度降序（最相关的排前面）
+    links.sort(key=lambda x: x["score"], reverse=True)
+
+    return links
 
 
-def fetch_recent_articles(db_path: str = str(DB_PATH), days: int = LOOKBACK_DAYS) -> list[dict]:
-    """Fetch articles from the past N days."""
-    cutoff = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    rows = conn.execute(
-        """SELECT id, title, title_cn, published, source_name, category, link, summary
-           FROM articles
-           WHERE published >= ?
-           ORDER BY published DESC""",
-        (cutoff,),
-    ).fetchall()
-    conn.close()
-    articles = []
-    for r in rows:
-        t = r["title_cn"] if r["title_cn"] else r["title"]
-        articles.append(
-            {
-                "id": r["id"],
-                "title": r["title"],
-                "title_cn": r["title_cn"],
-                "display_title": t,
-                "published": r["published"],
-                "source_name": r["source_name"],
-                "category": r["category"] or "Other",
-                "link": r["link"],
-                "summary": r["summary"],
-            }
-        )
-    return articles
+def build_event_groups(links: list) -> list:
+    """
+    基于相似边构建事件簇（连通分量）。
 
+    使用并查集(Union-Find)算法：
+    - 每篇文章初始为独立集合
+    - 遍历相似边，merge 相关联的文章集合
+    - 最终输出每个簇的文章标题列表
 
-def tokenize_title(title: str) -> set[str]:
-    """Break title into meaningful tokens (Chinese 2-char slices + English words)."""
-    tokens = set()
-    # Lowercase
-    title = title.lower()
-    # English word tokens (3+ chars)
-    for w in re.findall(r"[a-z]{3,}", title):
-        tokens.add(w)
-    # Chinese char bigrams
-    chinese_chars = re.findall(r"[\u4e00-\u9fff]", title)
-    for i in range(len(chinese_chars) - 1):
-        tokens.add(chinese_chars[i] + chinese_chars[i + 1])
-    return tokens
+    Args:
+        links: compute_links() 输出的关联边列表。
 
+    Returns:
+        list[dict]: 事件簇列表，每个含 event_id, articles, article_count。
+    """
+    # 收集所有不重复的文章标题
+    all_titles = set()
+    for link in links:
+        all_titles.add(link["source"])
+        all_titles.add(link["target"])
+    title_list = list(all_titles)
 
-def jaccard_similarity(a: set[str], b: set[str]) -> float:
-    if not a or not b:
-        return 0.0
-    return len(a & b) / len(a | b)
-
-
-def compute_similarity_matrix(articles: list[dict]) -> list[tuple[int, int, float]]:
-    """Compute pairwise Jaccard similarity on display_title."""
-    titles = [(i, tokenize_title(a["display_title"])) for i, a in enumerate(articles)]
-    pairs = []
-    for i in range(len(titles)):
-        for j in range(i + 1, len(titles)):
-            sim = jaccard_similarity(titles[i][1], titles[j][1])
-            if sim >= SIMILARITY_THRESHOLD:
-                pairs.append((titles[i][0], titles[j][0], round(sim, 3)))
-    return sorted(pairs, key=lambda x: -x[2])
-
-
-def union_find(n: int):
-    parent = list(range(n))
-    size = [1] * n
+    # 并查集：建立标题到索引的映射
+    idx_map = {t: i for i, t in enumerate(title_list)}
+    parent = list(range(len(title_list)))  # parent[i] = 集合的代表元素
 
     def find(x):
+        """并查集 find：带路径压缩。"""
         while parent[x] != x:
             parent[x] = parent[parent[x]]
             x = parent[x]
         return x
 
-    def union(x, y):
-        rx, ry = find(x), find(y)
-        if rx == ry:
-            return
-        if size[rx] < size[ry]:
-            rx, ry = ry, rx
-        parent[ry] = rx
-        size[rx] += size[ry]
+    def union(a, b):
+        """并查集 union：合并两个集合。"""
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[rb] = ra
 
-    return find, union
+    # 根据关联边合并集合
+    for link in links:
+        i = idx_map.get(link["source"])
+        j = idx_map.get(link["target"])
+        if i is not None and j is not None:
+            union(i, j)
 
-
-def cluster_articles(articles: list[dict], sim_pairs: list[tuple[int, int, float]]) -> list[list[dict]]:
-    """Union-Find clustering based on similarity pairs."""
-    n = len(articles)
-    find, union = union_find(n)
-
-    for i, j, _ in sim_pairs:
-        union(i, j)
-
-    groups = defaultdict(list)
-    for idx, a in enumerate(articles):
+    # 按代表元素分组
+    groups = {}
+    for title, idx in idx_map.items():
         root = find(idx)
-        groups[root].append(a)
+        if root not in groups:
+            groups[root] = []
+        groups[root].append(title)
 
-    # Sort by recency and filter by min size
-    clusters = []
-    for cluster_articles in groups.values():
-        if len(cluster_articles) >= MIN_CLUSTER_SIZE:
-            cluster_articles.sort(key=lambda a: a["published"] or "", reverse=True)
-            clusters.append(cluster_articles)
-
-    clusters.sort(key=lambda c: c[0]["published"] or "", reverse=True)
-    return clusters[:MAX_CLUSTERS]
-
-
-def generate_event_summary(cluster: list[dict]) -> str:
-    """Generate a concise Chinese event summary using DeepSeek."""
-    if not DEEPSEEK_API_KEY:
-        return ""
-
-    title_list = "\n".join(
-        f"- [{a['source_name']}] {a['display_title']}" for a in cluster[:8]
-    )
-    prompt = (
-        "以下是同一AI事件的多个信源报道标题列表。请用一句中文（不超过100字）总结这个事件的核心内容，"
-        "提取事件关键词、涉及的组织/模型/技术、以及为什么重要。"
-        "只输出一句话，不要列表、不要前缀、不要换行：\n\n"
-        f"{title_list}"
-    )
-
-    try:
-        resp = requests.post(
-            DEEPSEEK_URL,
-            headers={
-                "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": "deepseek-chat",
-                "messages": [
-                    {"role": "system", "content": "你是一个AI行业分析助手，擅长用一句话概括技术事件。"},
-                    {"role": "user", "content": prompt},
-                ],
-                "temperature": 0.3,
-                "max_tokens": 200,
-            },
-            timeout=30,
-        )
-        text = resp.json()["choices"][0]["message"]["content"].strip()
-        return text if text else ""
-    except Exception:
-        return ""
-
-
-def export_events_json() -> dict:
-    """Main entry: fetch articles → cluster → summarize → export."""
-    articles = fetch_recent_articles()
-
-    if not articles:
-        return _empty_result("No recent articles available")
-
-    sim_pairs = compute_similarity_matrix(articles)
-    clusters = cluster_articles(articles, sim_pairs)
-
-    if not clusters:
-        return _empty_result("No event clusters detected")
-
-    # Load cache for summary reuse
-    cache = load_cache()
-    cache_key_base = str(DB_PATH)
-
+    # 构造事件簇输出（过滤掉单篇文章 = 无关联）
     events = []
-    for ci, cluster in enumerate(clusters):
-        sources = sorted(set(a["source_name"] for a in cluster))
-        categories = sorted(set(a["category"] for a in cluster))
-        time_range = {
-            "start": cluster[-1]["published"],
-            "end": cluster[0]["published"],
-        }
-        article_ids = [a["id"] for a in cluster]
-        cache_key = f"{cache_key_base}_{sorted(article_ids)}"
+    for eid, (root, titles) in enumerate(groups.items(), 1):
+        if len(titles) >= 2:  # 至少两篇才算事件
+            events.append({
+                "event_id": f"event_{eid:03d}",
+                "articles": titles,
+                "article_count": len(titles),
+            })
 
-        # Try cache
-        summary = cache.get(cache_key, "")
-        if not summary:
-            summary = generate_event_summary(cluster)
-            if summary:
-                cache[cache_key] = summary
+    # 按文章数降序（大事件在前）
+    events.sort(key=lambda x: x["article_count"], reverse=True)
 
-        events.append(
-            {
-                "id": f"evt_{ci+1}",
-                "title": summary or cluster[0]["display_title"][:60],
-                "sources": sources,
-                "categories": categories,
-                "time_range": time_range,
-                "article_count": len(cluster),
-                "articles": [
-                    {
-                        "id": a["id"],
-                        "title": a["display_title"],
-                        "source": a["source_name"],
-                        "category": a["category"],
-                        "link": a["link"],
-                        "published": a["published"],
-                    }
-                    for a in cluster[:6]
-                ],
-            }
-        )
+    return events
 
-    save_cache(cache)
 
-    result = {
-        "generated_at": now_utc(),
-        "source_articles": len(articles),
+def main():
+    """
+    主函数：加载文章 → 编码 → 计算关联 → 聚类 → 保存结果。
+
+    Returns:
+        int: 0 成功，1 失败。
+    """
+    print("🔗 AI Intel Event Linker\n")
+
+    # Step 1: 加载文章
+    articles = load_articles()
+    if not articles:
+        print("No articles to link.")
+        return 1
+
+    print(f"📄 {len(articles)} articles loaded")
+
+    # Step 2: 延迟加载模型（避免不必要时消耗内存）
+    try:
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer("all-MiniLM-L6-v2")
+    except ImportError:
+        print("❌ Install sentence-transformers: pip install sentence-transformers")
+        return 1
+
+    # Step 3: 编码 + 计算相似度
+    print("🧠 Encoding articles...")
+    embeddings = build_embeddings(articles, model)
+
+    print("🔍 Computing similarity links...")
+    links = compute_links(articles, embeddings)
+    print(f"   → {len(links)} links found (threshold=0.75)")
+
+    # Step 4: 事件聚类
+    print("📊 Building event groups...")
+    events = build_event_groups(links)
+    print(f"   → {len(events)} event groups")
+
+    # Step 5: 保存关联数据
+    output = {
+        "generated_at": datetime.now().isoformat(),
+        "total_articles": len(articles),
+        "total_links": len(links),
+        "total_events": len(events),
+        "links": links,
         "events": events,
     }
-    OUTPUT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2))
-    print(f"💾 events.json: {len(events)} event clusters from {len(articles)} articles")
-    return result
 
+    out_path = REPO_DIR.parent / "data" / "event_links.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
 
-def _empty_result(reason: str) -> dict:
-    result = {
-        "generated_at": now_utc(),
-        "source_articles": 0,
-        "events": [],
-        "_reason": reason,
-    }
-    OUTPUT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2))
-    return result
+    print(f"\n✅ Saved to {out_path}")
 
+    # 打印 Top 5 事件
+    print("\n📌 Top Events:")
+    for ev in events[:5]:
+        print(f"  {ev['event_id']}: {ev['article_count']} articles")
+        for t in ev["articles"][:3]:
+            print(f"    - {t}")
 
-def run():
-    return export_events_json()
+    return 0
 
 
 if __name__ == "__main__":
-    result = export_events_json()
-    print(f"✅ event_linker: {len(result.get('events', []))} events")
+    sys.exit(main())

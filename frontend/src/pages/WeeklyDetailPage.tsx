@@ -1,3 +1,20 @@
+/**
+ * WeeklyDetailPage - 周报详情页
+ * 
+ * 页面功能：展示指定日期的 AI 周报完整内容（内嵌 HTML），附带侧边栏数据面板
+ *          侧边栏包含：本周统计卡片、每日趋势图、分类分布饼图、Top 5 模型排行
+ * 
+ * 路由路径：/weekly/:date（如 /weekly/2026-06-30）
+ * 
+ * 数据来源：
+ *   - 周报 HTML：API 模式取 ${API_BASE}/weekly/${date}?lang=xx，静态模式取 data/weekly/${date}.html
+ *   - 统计数据：data/stats.json（趋势、分类分布、信源健康）
+ *   - 模型排行榜：data/model_leaderboard_top.json
+ * 
+ * Props：无（从 URL params 获取 date）
+ * 使用 Context：LocaleContext、useJsonLd（SEO schema）
+ */
+
 import { useEffect, useState, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +25,14 @@ import { CardSkeleton } from '../components/Skeleton'
 import { useLocale } from '../lib/LocaleContext'
 import { useJsonLd } from '../lib/useJsonLd'
 
+/** API 模式开关及 API 基础地址 */
 const API_MODE = import.meta.env.VITE_API_MODE === 'true'
 const API_BASE = import.meta.env.VITE_API_BASE || 'https://api.hjhai.xyz'
 
+/** 分类分布饼图配色 */
 const CHART_COLORS = ['#6C5CE7', '#00b894', '#f0a050', '#74b9ff', '#fd79a8', '#e17055', '#a29bfe', '#55efc4']
 
+/** 统计数据类型定义 */
 interface StatsData {
   daily_trends: { date: string; new_articles: number; curated_count: number; total_articles: number }[]
   category_distribution: Record<string, number>
@@ -20,10 +40,12 @@ interface StatsData {
   top_articles: { title: string; score: number; source: string; category: string }[]
 }
 
+/** 模型排行榜数据类型 */
 interface LeaderboardData {
   models: { name: string; provider: string; scores: { intelligence?: number } | null }[]
 }
 
+/** i18n 文案 */
 const T = {
   notFound:       { zh: '找不到该周报',      en: 'Report not found' },
   backToList:     { zh: '返回周报列表',       en: 'Back to reports' },
@@ -40,16 +62,25 @@ const T = {
 }
 function t(o: {zh:string;en:string}, l:'zh'|'en') { return o[l] }
 
+/**
+ * WeeklyDetailPage - 周报详情页组件
+ */
 export function WeeklyDetailPage() {
+  /** date：URL 路径中的日期参数（如 '2026-06-30'） */
   const { date } = useParams<{ date: string }>()
+  /** html：处理后的周报 HTML 内容（用于 dangerouslySetInnerHTML） */
   const [html, setHtml] = useState<string | null>(null)
+  /** loading：内容加载状态 */
   const [loading, setLoading] = useState(true)
+  /** error：加载失败状态 */
   const [error, setError] = useState(false)
+  /** stats：统计数据（趋势、分类、信源） */
   const [stats, setStats] = useState<StatsData | null>(null)
+  /** leaderboard：模型排行榜数据 */
   const [leaderboard, setLeaderboard] = useState<LeaderboardData | null>(null)
   const { locale } = useLocale()
 
-  // BreadcrumbList + NewsArticle structured data
+  // 构建 BreadcrumbList + NewsArticle 结构化数据（SEO）
   const weeklySchema = useMemo(() => {
     if (!date) return null
     const title = locale === 'en' ? `AI Weekly Briefing (${date})` : `AI 每周大事记 (${date})`
@@ -85,22 +116,24 @@ export function WeeklyDetailPage() {
   }, [date, locale])
   useJsonLd(weeklySchema)
 
+  // date 或 locale 变化时重新加载周报内容
   useEffect(() => {
     if (!date) return
     setLoading(true)
     setError(false)
 
     const loadWeekly = async () => {
-      // Fetch HTML — from API when in API mode, static otherwise
+      // 加载周报 HTML — 根据 API_MODE 选择来源
       let htmlRes: Response
       const lang = locale === 'en' ? 'en' : 'zh'
       if (API_MODE) {
         htmlRes = await fetch(`${API_BASE}/weekly/${date}?lang=${lang}`)
-        // If English not found (404), fall back to Chinese
+        // 如果英文版不存在 (404)，回退到中文版
         if (!htmlRes.ok && lang === 'en') {
           htmlRes = await fetch(`${API_BASE}/weekly/${date}?lang=zh`)
         }
       } else {
+        // 静态模式下，英文版优先尝试 _en.html，不存在则回退到 .html
         if (locale === 'en') {
           htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}_en.html`)
           if (!htmlRes.ok) htmlRes = await fetch(`${import.meta.env.BASE_URL}data/weekly/${date}.html`)
@@ -109,6 +142,7 @@ export function WeeklyDetailPage() {
         }
       }
 
+      // 并行加载统计数据和排行榜
       const [statsData, lbData] = await Promise.all([
         fetch(`${import.meta.env.BASE_URL}data/stats.json`).then(r => r.ok ? r.json() : null),
         fetch(`${import.meta.env.BASE_URL}data/model_leaderboard_top.json`).then(r => r.ok ? r.json() : null),
@@ -120,9 +154,11 @@ export function WeeklyDetailPage() {
 
       const raw = await htmlRes.text()
 
+      // 提取 <title> 并设置页面标题
       const titleMatch = raw.match(/<title>(.*?)<\/title>/)
       if (titleMatch) document.title = titleMatch[1]
 
+      // 提取 <body> 内内容，去除 <style>、style/class 属性，替换标签样式
       let body = raw
       const bodyStart = body.indexOf('<body>')
       const bodyEnd = body.indexOf('</body>')
@@ -133,6 +169,7 @@ export function WeeklyDetailPage() {
       body = body.replace(/\sstyle="[^"]*"/gi, '')
       body = body.replace(/\sclass="[^"]*"/gi, '')
       body = body.replace(/href="index\.html"/g, 'href="/weekly"')
+      // 注入 Tailwind CSS 类名使内容适配站点样式
       body = body
         .replace(/<h1>/g, '<h1 class="text-2xl font-bold text-text-primary mt-4 mb-3">')
         .replace(/<h2>/g, '<h2 class="text-lg font-semibold text-accent mt-6 mb-2">')
@@ -148,6 +185,7 @@ export function WeeklyDetailPage() {
       .finally(() => setLoading(false))
   }, [date, locale])
 
+  /** weekStats：计算本周期（过去 7 天）的各项统计数据 */
   const weekStats = useMemo(() => {
     if (!stats || !date) return null
     const d = new Date(date + 'T00:00:00')
@@ -178,8 +216,10 @@ export function WeeklyDetailPage() {
     return { weekTrends, totalArticles, totalCurated, avgPerDay, catEntries, healthySources, totalSources, top5 }
   }, [stats, leaderboard, date])
 
+  // 加载中 → 骨架屏
   if (loading) return <div className="space-y-4 pt-8"><CardSkeleton /></div>
 
+  // 错误/空数据 → 404 提示
   if (error || !html) {
     return (
       <div className="text-center py-20">
@@ -194,18 +234,22 @@ export function WeeklyDetailPage() {
 
   return (
     <FadeIn>
+      {/* ========== 返回链接 ========== */}
       <Link to="/weekly" className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mb-6">
         <FontAwesomeIcon icon={ICON.arrowRight} className="rotate-180 text-xs" />
         {t(T.backToList, locale)}
       </Link>
 
       <div className="flex flex-col lg:flex-row gap-6 pb-12">
+        {/* ========== 主体：周报 HTML 内容（左/上） ========== */}
         <article className="flex-1 min-w-0 max-w-3xl prose-custom"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
+        {/* ========== 侧边栏：数据面板（右/下） ========== */}
         {weekStats && (
           <aside className="lg:w-80 flex-shrink-0 space-y-4">
+            {/* 本周统计卡片 */}
             <div className="bg-bg-card border border-border-muted rounded-xl p-4">
               <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
                 <FontAwesomeIcon icon={ICON.dashboard} className="text-accent text-xs" />
@@ -231,6 +275,7 @@ export function WeeklyDetailPage() {
               </div>
             </div>
 
+            {/* 每日趋势折线图 */}
             {weekStats.weekTrends.length >= 3 && (
               <div className="bg-bg-card border border-border-muted rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
@@ -250,6 +295,7 @@ export function WeeklyDetailPage() {
               </div>
             )}
 
+            {/* 分类分布饼图 */}
             {weekStats.catEntries.length >= 2 && (
               <div className="bg-bg-card border border-border-muted rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
@@ -266,6 +312,7 @@ export function WeeklyDetailPage() {
                     <Tooltip contentStyle={{ background: 'var(--_bg-elevated, #12141f)', border: '1px solid var(--_border-default, #1e2033)', borderRadius: '8px', fontSize: '12px', color: 'var(--_text-primary, #e8e9f0)' }} />
                   </PieChart>
                 </ResponsiveContainer>
+                {/* 图例 */}
                 <div className="flex flex-wrap gap-2 mt-2">
                   {weekStats.catEntries.map(([name], i) => (
                     <span key={name} className="flex items-center gap-1 text-xs text-text-muted">
@@ -277,6 +324,7 @@ export function WeeklyDetailPage() {
               </div>
             )}
 
+            {/* Top 5 模型排行榜 */}
             {weekStats.top5.length > 0 && (
               <div className="bg-bg-card border border-border-muted rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-text-primary mb-3 flex items-center gap-2">
@@ -300,6 +348,7 @@ export function WeeklyDetailPage() {
         )}
       </div>
 
+      {/* ========== 底部返回链接 ========== */}
       <Link to="/weekly" className="inline-flex items-center gap-1 text-sm text-text-muted hover:text-accent transition-colors mt-4">
         <FontAwesomeIcon icon={ICON.arrowRight} className="rotate-180 text-xs" />
         {t(T.backToList, locale)}

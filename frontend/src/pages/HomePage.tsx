@@ -1,3 +1,23 @@
+/**
+ * HomePage - 首页组件
+ * 
+ * 页面功能：AllOfAI 首页，展示精选文章列表（按分类分组）、搜索栏、统计卡片、
+ *          GitHub Top 5 开源项目、Agent & MCP 工具周榜、多源事件聚合、
+ *          模型排行榜预览、GitHub Trending 仓库
+ * 
+ * 路由路径：/
+ * 
+ * 依赖数据：
+ *   - useLatest()    → 获取最新精选文章列表（data/latest.json）
+ *   - useTrending()  → 获取 GitHub Trending 仓库（data/trending.json）
+ *   - useTop5()      → 获取 GitHub Top 5 开源项目（data/github_top5.json）
+ *   - useAgentTools()→ 获取 Agent & MCP 工具周榜（data/agent_tools.json）
+ *   - useEvents()    → 获取多源事件聚合（data/events.json）
+ *   - search_index.json → 前端搜索索引
+ * 
+ * 使用 Context：LocaleContext（中英双语）、useJsonLd（SEO schema）
+ */
+
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +30,7 @@ import { ModelLeaderboardPreview } from '../components/ModelLeaderboard'
 import { useLocale, type Locale } from '../lib/LocaleContext'
 import { useJsonLd } from '../lib/useJsonLd'
 
-// ── i18n dictionaries ──
+// ── i18n dictionaries（中英双语文案映射）──
 const T = {
   categoryMeta: {
     'AI Lab':    { zh: '热点文章',    en: 'Hot Articles' },
@@ -51,17 +71,29 @@ const T = {
   noData:            { zh: '暂无数据，等待首次扫描完成...', en: 'No data yet. Waiting for the first scan...' },
 }
 
+/** i18n 翻译辅助函数：根据当前 locale 返回对应语言的文案 */
 function t(obj: { zh: string; en: string } | string, locale: Locale): string {
   if (typeof obj === 'string') return obj
   return obj[locale]
 }
 
-// ── Search Bar ──
+// ── SearchBar（顶部搜索栏组件）──
+
+/**
+ * SearchBar - 文章搜索栏
+ * 
+ * 功能：支持模糊搜索文章（标题、摘要、来源），下拉展示搜索结果
+ * Props：
+ *   - query / setQuery / results / clear：由 useSearch() hook 提供的搜索状态
+ *   - locale：当前语言
+ */
 function SearchBar({ query, setQuery, results, clear, locale }: ReturnType<typeof useSearch> & { locale: Locale }) {
+  /** focused：聚焦状态，用于控制下拉面板的显示/隐藏 */
   const [focused, setFocused] = useState(false)
 
   return (
     <div className="relative" onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false) }}>
+      {/* 搜索输入框 */}
       <div className="relative">
         <FontAwesomeIcon icon={ICON.search} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-sm" />
         <input
@@ -73,6 +105,7 @@ function SearchBar({ query, setQuery, results, clear, locale }: ReturnType<typeo
           className="w-60 lg:w-72 bg-bg-secondary border border-border-default rounded-lg pl-9 pr-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent/50 transition-colors"
         />
       </div>
+      {/* 搜索结果下拉面板：输入 ≥2 个字符时显示 */}
       {focused && query.length >= 2 && (
         <div className="absolute top-full mt-2 left-0 w-80 bg-bg-card border border-border-default rounded-xl shadow-2xl overflow-hidden z-50">
           {results.length === 0 ? (
@@ -108,6 +141,7 @@ function SearchBar({ query, setQuery, results, clear, locale }: ReturnType<typeo
   )
 }
 
+/** 高亮搜索关键词（不区分大小写） */
 function highlightText(text: string, query: string) {
   if (!query || query.length < 2) return text
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -119,10 +153,20 @@ function highlightText(text: string, query: string) {
   )
 }
 
+/**
+ * useSearch - 前端搜索 Hook
+ * 
+ * 数据来源：data/search_index.json（部署时生成的搜索索引）
+ * 搜索逻辑：按标题(+10)、标题前缀(+5)、摘要(+3)、来源(+2) 加权打分
+ * 返回前 12 个结果
+ */
 function useSearch() {
+  /** query：搜索输入字符串 */
   const [query, setQuery] = useState('')
+  /** index：从 search_index.json 加载的文章索引数组 */
   const [index, setIndex] = useState<Article[]>([])
 
+  // 组件挂载时加载搜索索引 JSON
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/search_index.json`)
       .then(r => r.json())
@@ -130,6 +174,7 @@ function useSearch() {
       .catch(() => {})
   }, [])
 
+  /** results：根据 query 计算加权的搜索结果（useMemo 缓存） */
   const results = useMemo(() => {
     if (query.length < 2 || !index.length) return []
     const q = query.toLowerCase()
@@ -153,7 +198,9 @@ function useSearch() {
   return { query, setQuery, results, clear: () => setQuery('') }
 }
 
-// ── Article Card ──
+// ── ArticleCard（文章卡片组件）──
+
+/** 清理 arXiv boilerplate 文本，如 "arXiv:XXXXvX Announce Type: new \nAbstract: " */
 function cleanSummary(raw: string): string {
   // Strip arXiv boilerplate: "arXiv:XXXXvX Announce Type: new \nAbstract: "
   return raw
@@ -161,16 +208,27 @@ function cleanSummary(raw: string): string {
     .slice(0, 280)
 }
 
+/**
+ * ArticleCard - 单篇文章卡片
+ * 
+ * Props：
+ *   - article：文章数据
+ *   - index：在列表中的索引（用于滚动动画延迟）
+ *   - lang：'zh' | 'en'，控制显示中/英文内容
+ * 
+ * 点击后记录到 localStorage 的 ai_read 历史中（最多 50 条）
+ */
 function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; index?: number; lang?: string }) {
   const isEn = lang === 'en'
   const title = isEn ? (article.title || article.title_cn) : (article.title_cn || article.title)
-  // EN: use cleaned original English abstract; ZH: use AI-generated Chinese summary
+  // EN: 使用清理后的英文原文摘要；ZH: 使用 AI 生成的中文摘要
   const summary = isEn
     ? (article.summary ? cleanSummary(article.summary) : (article.summary_cn ? article.summary_cn.slice(0, 280) : ''))
     : (article.summary_cn || (article.summary ? cleanSummary(article.summary) : ''))
-  // EN: hide why_it_matters (pipeline only generates Chinese); ZH: show it
+  // EN: 隐藏 why_it_matters（pipeline 只生成中文版）；ZH: 显示
   const why = !isEn && article.why_it_matters ? article.why_it_matters : null
 
+  /** 点击文章后，将链接保存到 localStorage 的 ai_read 阅读历史 */
   const handleClick = () => {
     try {
       const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
@@ -185,6 +243,7 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
   return (
     <ScrollReveal index={index}>
       <div className="article-item bg-bg-card border border-border-muted rounded-xl p-4 hover:border-accent/20 hover:bg-bg-elevated hover:shadow-[0_0_20px_-8px_rgba(108,92,231,0.1)] transition-all duration-300 group">
+        {/* 标题行：带论文图标 + 外链 */}
         <div className="flex items-start gap-2">
           <a
             href={article.link}
@@ -199,6 +258,7 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
             {title}
           </a>
         </div>
+        {/* 元数据行：分类图标、来源、发布日期 */}
         <div className="flex items-center gap-2 mt-1.5 text-xs text-text-muted">
           {article.category && (
             <FontAwesomeIcon icon={catIcon} className="mr-1 text-text-muted/60" />
@@ -207,11 +267,13 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
           <span>·</span>
           <span>{article.published}</span>
         </div>
+        {/* 摘要文本：最多 2 行（line-clamp-2） */}
         {summary && (
           <p className="mt-2 text-sm text-text-secondary leading-relaxed line-clamp-2">
             {summary.slice(0, 280)}
           </p>
         )}
+        {/* "为什么重要"解读：仅在中文模式下显示，琥珀色高亮 */}
         {why && (
           <div className="mt-2 text-xs text-amber/80 bg-amber/5 border border-amber/10 rounded-lg px-3 py-1.5 flex items-start gap-1.5">
             <FontAwesomeIcon icon={ICON.lightbulb} className="mt-0.5 flex-shrink-0" />
@@ -223,10 +285,19 @@ function ArticleCard({ article, index = 0, lang = 'zh' }: { article: Article; in
   )
 }
 
-// ── Agent & MCP Tools Weekly ──
+// ── Agent & MCP Tools Weekly（Agent/MCP 工具周榜区域）──
+
+/**
+ * AgentTools - Agent & MCP 工具周榜组件
+ * 
+ * 数据来源：useAgentTools() → data/agent_tools.json
+ * 功能：展示本周最热 Agent 工具 / MCP 服务器 / Agent 技能，带展开/折叠详情
+ */
 function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) {
+  /** expanded：当前展开的条目索引（null = 全部折叠） */
   const [expanded, setExpanded] = useState<number | null>(null)
 
+  /** 根据工具类型返回对应的徽章样式 */
   const typeBadge = (type: string) => {
     switch (type) {
       case 'mcp-server': return { label: t(T.agentTypeMCP, locale), className: 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' }
@@ -239,6 +310,7 @@ function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) 
   return (
     <FadeIn delay={0.09}>
       <section>
+        {/* 区域标题 + 统计徽章 */}
         <div className="flex items-center gap-2 mb-3">
           <FontAwesomeIcon icon={ICON.robot} className="text-accent" />
           <h2 className="text-lg font-semibold text-text-primary">
@@ -258,6 +330,7 @@ function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) 
             </div>
           )}
         </div>
+        {/* 工具列表：每条可展开/折叠 */}
         <div className="space-y-2">
           {data.tools.map((tool, i) => {
             const isOpen = expanded === i
@@ -265,6 +338,7 @@ function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) 
             return (
               <ScrollReveal key={tool.full_name} index={i}>
                 <div className="bg-bg-card border border-border-muted rounded-xl overflow-hidden hover:border-accent/20 transition-all duration-300">
+                  {/* 点击展开/折叠 */}
                   <button
                     onClick={() => setExpanded(isOpen ? null : i)}
                     className="w-full text-left p-4 flex items-start gap-3"
@@ -296,6 +370,7 @@ function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) 
                       className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
+                  {/* 展开区域：LLM 生成的摘要 + GitHub 链接 */}
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="px-4 pb-4 pl-14">
                       <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
@@ -323,8 +398,16 @@ function AgentTools({ data, locale }: { data: AgentToolsData; locale: Locale }) 
   )
 }
 
-// ── GithubTop5 ──
+// ── GithubTop5（GitHub Top 5 项目区域）──
+
+/**
+ * GithubTop5 - GitHub AI 开源项目 Top 5 组件
+ * 
+ * 数据来源：useTop5() → data/github_top5.json
+ * 功能：展示按 Star 排序的 GitHub AI 开源项目 Top 5，带展开/折叠详情
+ */
 function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
+  /** expanded：当前展开的条目索引 */
   const [expanded, setExpanded] = useState<number | null>(null)
 
   return (
@@ -339,6 +422,7 @@ function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
             {t(T.sortedByStars, locale)}
           </span>
         </div>
+        {/* 项目列表 */}
         <div className="space-y-2">
           {data.repos.map((repo, i) => {
             const isOpen = expanded === i
@@ -376,6 +460,7 @@ function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
                       className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
+                  {/* 展开区域 */}
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="px-4 pb-4 pl-14">
                       <div className="text-xs text-accent/80 bg-accent-muted border border-accent/10 rounded-lg px-3 py-2.5 leading-relaxed">
@@ -403,8 +488,16 @@ function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
   )
 }
 
-// ── Cross-source Events ──
+// ── Cross-source Events（多源事件聚合区域）──
+
+/**
+ * Events - 多源事件聚合组件
+ * 
+ * 数据来源：useEvents() → data/events.json
+ * 功能：将多个来源的同类文章按事件分组展示，点击展开可查看文章列表
+ */
 function Events({ data, locale }: { data: EventsData; locale: Locale }) {
+  /** expanded：当前展开的事件 ID（null = 全部折叠） */
   const [expanded, setExpanded] = useState<string | null>(null)
 
   return (
@@ -422,6 +515,7 @@ function Events({ data, locale }: { data: EventsData; locale: Locale }) {
             {data.events.length} clusters · {data.source_articles} {t(T.eventsArticles, locale)}
           </span>
         </div>
+        {/* 事件列表 */}
         <div className="space-y-2">
           {data.events.map((event) => {
             const isOpen = expanded === event.id
@@ -451,6 +545,7 @@ function Events({ data, locale }: { data: EventsData; locale: Locale }) {
                       className={`flex-shrink-0 mt-1 text-text-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
+                  {/* 展开区域：来源标签 + 前5篇文章链接 */}
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
                     <div className="px-4 pb-4 pl-14 space-y-2">
                       {event.sources.length > 0 && (
@@ -483,10 +578,19 @@ function Events({ data, locale }: { data: EventsData; locale: Locale }) {
   )
 }
 
-// ── Continue Reading ──
+// ── ContinueReading（继续阅读区域）──
+
+/**
+ * ContinueReading - 继续阅读组件
+ * 
+ * 数据来源：localStorage 中的 ai_read 阅读历史
+ * 功能：展示用户最近点击过的文章（最多 5 条），点击跳转到原文章链接
+ */
 function ContinueReading({ locale }: { locale: Locale }) {
+  /** items：从 localStorage 读取的阅读历史 */
   const [items, setItems] = useState<{ link: string; title: string }[]>([])
 
+  /** 组件挂载时从 localStorage 读取阅读历史（ai_read），取最近 5 条 */
   useEffect(() => {
     try {
       const h = JSON.parse(localStorage.getItem('ai_read') || '[]')
@@ -521,9 +625,33 @@ function ContinueReading({ locale }: { locale: Locale }) {
   )
 }
 
-// ── HomePage ──
+// ── HomePage（首页主体组件）──
+
+/** 分类展示顺序：按此顺序渲染各分类的文章区域 */
 const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
 
+/**
+ * HomePage - 首页主体
+ * 
+ * 路由：/
+ * 
+ * 页面结构：
+ *   1. Hero 区域（标题、描述、统计数据、信源标签、搜索栏）
+ *   2. GitHub Top 5 开源项目
+ *   3. Agent & MCP 工具周榜
+ *   4. 多源事件聚合
+ *   5. 模型排行榜预览
+ *   6. 按分类展示文章列表
+ *   7. GitHub Trending
+ *   8. 继续阅读
+ * 
+ * 数据依赖（5 个并行 Hook）：
+ *   - useLatest()    → data/latest.json
+ *   - useTrending()  → data/trending.json
+ *   - useTop5()      → data/github_top5.json
+ *   - useAgentTools()→ data/agent_tools.json
+ *   - useEvents()    → data/events.json
+ */
 export function HomePage() {
   const { data, loading, error } = useLatest()
   const { data: trending } = useTrending()
@@ -533,7 +661,7 @@ export function HomePage() {
   const search = useSearch()
   const { locale } = useLocale()
 
-  // ItemList structured data for SEO
+  // 构建 ItemList 结构化数据（SEO），前 20 篇文章
   const itemListSchema = useMemo(() => {
     if (!data?.articles?.length) return null
     return {
@@ -554,8 +682,10 @@ export function HomePage() {
   }, [data])
   useJsonLd(itemListSchema)
 
+  // 加载中状态 → 骨架屏
   if (loading) return <HomePageSkeleton />
 
+  // 错误或空数据状态
   if (error || !data || !data.articles.length) {
     return (
       <div className="text-center py-20">
@@ -566,6 +696,7 @@ export function HomePage() {
     )
   }
 
+  /** 按分类将文章分组 */
   const byCat: Record<string, Article[]> = {}
   for (const a of data.articles) {
     const cat = a.category || 'Other'
@@ -575,7 +706,7 @@ export function HomePage() {
 
   return (
     <div className="space-y-8">
-      {/* Hero */}
+      {/* ========== Hero 区域 ========== */}
       <FadeIn>
         <div className="text-center py-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
@@ -584,6 +715,7 @@ export function HomePage() {
           <p className="mt-3 text-sm sm:text-base md:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
             {t(T.heroDesc, locale)}
           </p>
+          {/* 统计卡片：扫描时间、信源数、精选数 */}
           <div className="flex items-center justify-center gap-6 mt-4 text-sm text-text-muted">
             <span className="flex items-center gap-1">
               <FontAwesomeIcon icon={ICON.timeline} />
@@ -598,7 +730,7 @@ export function HomePage() {
               {data.articles.length} {t(T.curated, locale)}
             </span>
           </div>
-          {/* Source tags */}
+          {/* 信源标签列表 */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs text-text-muted">
             {T.sourceTags.map((tag, i) => (
               <span key={i} className="bg-bg-secondary px-2.5 py-1 rounded-full">
@@ -612,25 +744,25 @@ export function HomePage() {
         </div>
       </FadeIn>
 
-      {/* GitHub AI Top 5 */}
+      {/* ========== GitHub AI Top 5 ========== */}
       {top5 && top5.repos && top5.repos.length > 0 && (
         <GithubTop5 data={top5} locale={locale} />
       )}
 
-      {/* Agent & MCP Tools Weekly */}
+      {/* ========== Agent & MCP 工具周榜 ========== */}
       {agentTools && agentTools.tools && agentTools.tools.length > 0 && (
         <AgentTools data={agentTools} locale={locale} />
       )}
 
-      {/* Cross-source Events */}
+      {/* ========== 多源事件聚合 ========== */}
       {events && events.events && events.events.length > 0 && (
         <Events data={events} locale={locale} />
       )}
 
-      {/* Model Leaderboard Preview */}
+      {/* ========== 模型排行榜预览 ========== */}
       <ModelLeaderboardPreview locale={locale} />
 
-      {/* Articles by category */}
+      {/* ========== 按分类展示文章 ========== */}
       <StaggerContainer className="space-y-8">
         {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
           .filter(cat => byCat[cat])
@@ -640,6 +772,7 @@ export function HomePage() {
             const items = byCat[cat]
             return (
               <section key={cat}>
+                {/* 分类标题 + 文章数量 */}
                 <FadeIn delay={0.05}>
                   <div className="flex items-center gap-2 mb-3">
                     <FontAwesomeIcon icon={catIcon} className="text-accent" />
@@ -647,10 +780,12 @@ export function HomePage() {
                     <span className="text-sm text-text-muted bg-bg-secondary px-2 py-0.5 rounded-full">{items.length}</span>
                   </div>
                 </FadeIn>
+                {/* 前 5 篇文章卡片 */}
                 <div className="space-y-2">
                   {items.slice(0, 5).map((a, i) => (
                     <ArticleCard key={i} article={a} index={i} lang={locale} />
                   ))}
+                  {/* "查看全部"链接 */}
                   {items.length > 5 && (
                     <Link
                       to={`${locale === 'en' ? '/en' : ''}/category/${encodeURIComponent(cat)}`}
@@ -666,7 +801,7 @@ export function HomePage() {
           })}
       </StaggerContainer>
 
-      {/* Trending */}
+      {/* ========== GitHub Trending ========== */}
       {trending && trending.repos && trending.repos.length > 0 && (
         <section>
           <FadeIn delay={0.1}>
@@ -681,6 +816,7 @@ export function HomePage() {
               )}
             </div>
           </FadeIn>
+          {/* Trending 仓库网格：响应式 1/2/3 列，最多 12 个 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {trending.repos.slice(0, 12).map((repo, i) => (
               <ScrollReveal key={i} index={i}>
@@ -713,6 +849,7 @@ export function HomePage() {
         </section>
       )}
 
+      {/* ========== 继续阅读 ========== */}
       <ContinueReading locale={locale} />
     </div>
   )
