@@ -1,25 +1,31 @@
 {
-  "snapshot_at": "2026-06-29T00:01:20.060212+00:00",
-  "count": 1,
+  "snapshot_at": "2026-08-15T01:48:58.880578+00:00",
+  "count": 2,
   "repos": [
     {
-      "repo_full": "DeusData/codebase-memory-mcp",
+      "repo_full": "infiniflow/ragflow",
       "description": "",
-      "language": "C",
-      "stars_today": 2190,
-      "total_stars": 19583,
-      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "language": "Go",
+      "stars_today": 473,
+      "total_stars": 88392,
+      "url": "https://github.com/infiniflow/ragflow",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "deepseek-ai/awesome-deepseek-agent",
+      "description": "",
+      "language": "",
+      "stars_today": 222,
+      "total_stars": 5719,
+      "url": "https://github.com/deepseek-ai/awesome-deepseek-agent",
       "paper_linked": false,
       "paper_id": null
     }
   ],
   "history_dates": [
-    "2026-06-22",
-    "2026-06-23",
-    "2026-06-24",
-    "2026-06-25",
-    "2026-06-26",
-    "2026-06-28",
-    "2026-06-29"
+    "2026-06-13",
+    "2026-06-13",
+    "2026-08-15"
   ]
 }
