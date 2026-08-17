@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-08-15T01:51:03.741053+00:00",
-  "curated_at": "2026-08-15T01:51:03.741073+00:00",
+  "scanned_at": "2026-08-17T00:38:00.382888+00:00",
+  "curated_at": "2026-08-17T00:38:00.382894+00:00",
   "total_sources": 16,
-  "successful_sources": 16,
-  "total_articles": 453,
-  "curated_count": 21,
+  "successful_sources": 11,
+  "total_articles": 477,
+  "curated_count": 31,
   "articles": [
     {
       "title": "Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out",
@@ -84,6 +84,17 @@
       "why_it_matters": "机器人在人群中行动，安全判断得先靠谱"
     },
     {
+      "title": "When Can You Trust Offline Evaluation of Equal-Cost Top-k Allocation? A Controlled, Reproducible Benchmark and Practitioner's Guide",
+      "link": "https://arxiv.org/abs/2608.12489",
+      "summary": "arXiv:2608.12489v1 Announce Type: new \nAbstract: Organizations decide whom to treat under a budget and want to know what a targeting rule would have earned before deploying it. Off-policy evaluation promises this from logged data, but the deployable rule is a deterministic top-k policy: it removes all averaging over actions, so weak overlap hits the estimate directly. We benchmark six estimators across five datasets and two known-effect sweeps, and validate the mechanisms against a non-simulated",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "离线评估Top-k分配何时可信",
+      "summary_cn": "预算约束下决定救助谁，off-policy评估能否预测规则上线后收益？给出可复现基准和实用指南，厘清可信边界。",
+      "why_it_matters": "资源分配上线前先验证收益"
+    },
+    {
       "title": "阿里开源Qwen3.8，千问大模型全球下载超30亿次",
       "link": "https://www.leiphone.com/category/industrynews/GJAhmR3wyL91CzjO.html",
       "summary": "8月14日晚，阿里千问正式开源Qwen3.8系列模型，所有开发者、科研机构和企业均可自由下载、部署和使用。全新开源的Qwen3.8-27B，系原生多模态稠密（Dense）模型，仅270亿参数规模，整体水平便超越了Qwen3.7-Plus，在编程及办公的真实场景中表现出色。新模型响应速度快，完成质量高，部署便捷，量化后在“消费级”显卡上即可流畅运行，是最受全球AI社区期待的开源模型。Qwen3.8-27B采用宽松的Apache2.0协议开源，有望成为本地部署的主力模型。&nbsp;此前，旗舰模型Qwen3.8-Max也已开源模型权重。公开数据显示，阿里已累计向全球AI社区开源460余个模型，Qwen模型在全球下载总量超30亿次，衍生模型数超30万个，稳居全球第一开源模型。&nbsp;",
@@ -93,6 +104,28 @@
       "title_cn": "阿里开源Qwen3.8-27B多模态",
       "summary_cn": "8月14日阿里开源Qwen3.8系列，其中27B稠密模型原生多模态，整体水平超Qwen3.7-Plus，量化后可在消费级显卡运行，千问全系下载量破30亿次。",
       "why_it_matters": "开发者可免费商用，消费级显卡即可部署强模型"
+    },
+    {
+      "title": "Backtrader-Bench: Benchmarking LLM Agents on Algorithmic Trading with Self-Generated MCQs",
+      "link": "https://arxiv.org/abs/2608.11232",
+      "summary": "arXiv:2608.11232v1 Announce Type: new \nAbstract: Evaluating LLM coding agents in algorithmic trading is difficult because static benchmarks risk data contamination and numerical backtest outputs require ground truth from actual code execution. We present Backtrader-Bench, a framework with two complementary pipelines. A deterministic multiple-choice question (MCQ) pipeline generates questions from backtest configurations across five trading strategies, 33 templates, and three difficulty tiers, wi",
+      "published": "2026-08-13 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "自生成MCQ测评LLM交易Agent",
+      "summary_cn": "用模型自生成的MCQ题目评测LLM编程Agent的算法交易能力，避开静态题库的数据污染，同时核对回测数值的正确性。",
+      "why_it_matters": "给量化交易选LLM Agent提供标尺"
+    },
+    {
+      "title": "InfraBench: Evaluating Infrastructure Agents Across Layers, Lifecycle, and Risk",
+      "link": "https://arxiv.org/abs/2608.11234",
+      "summary": "arXiv:2608.11234v1 Announce Type: new \nAbstract: Managing modern computing infrastructure has become a steadily harder problem due to the ever-increasing complexity. Recent advances in AI agents create a timely opportunity to automate infrastructure management tasks, but it remains unclear how well such agents can handle real-world infrastructure complexity. We present InfraBench, a benchmark suite for evaluating AI agents on realistic infrastructure tasks across the full system stack and full o",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "InfraBench测评基础设施Agent",
+      "summary_cn": "从层级、生命周期、风险三个维度评测管理计算基础设施的AI Agent，填补基础设施运维场景的自动化测评空白。",
+      "why_it_matters": "云厂商选运维Agent有据可依"
     },
     {
       "title": "MARCH: Scaling Recurrent Memory with Content-Routed State Anchors",
@@ -128,6 +161,17 @@
       "why_it_matters": "长文档处理翻倍，办公场景可直接切换使用"
     },
     {
+      "title": "Qwen3.8首日可用，助力存量算力长期有用：智源FlagOS开源开放生态共享",
+      "link": "https://www.leiphone.com/category/ai/rbIV873aEJjUGpyU.html",
+      "summary": "阿里巴巴开源超大规模Mo E模型Qwen3.8-2.4T-A95B,众智Flag OS社区同步完成Day0多芯片适配。Qwen3.8-2.4T-A95B已在平头哥、英伟达、摩尔线程、华为昇腾、沐曦、昆仑芯、海光、清微智能、隧原等9家AI芯片上完成基于Flag OS统一开源技术栈的多芯适配、精度对齐与部署验证,针对不同芯片情况提供包括BF16FP8INT8等多种精度的版本,开发者可直接获取对应芯片的开箱即用方案。从今年2月首次开展MiniCPM4.5-o模型的多芯片Day0适配,到今天实现Qwen3.8-2.4T模型在9款芯片上的Day0适配,Flag OS已累计完成来自7大头部模型团队、12款主流开源模型、覆盖多达10款芯片的跨芯Day0适配,向AI芯片与大模型产业验证了:基于统一、开放的系统软件栈,实现前沿模型&quot;—次开发、多芯快速适配&quot;已具备规模化落地能力。本次发布的Qwen3.8-2.4T-A95B是阿里巴巴开源模型系列中规模最大、能力最强的一代,首次将Qwen-Max级别的模型开放出来。主要特性:超大规模Mo E架构,总参数2.4T,激活参数95B,纯文本模型",
+      "published": "2026-08-13 08:56:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "Qwen3.8开源，9家芯片首日适配",
+      "summary_cn": "阿里开源MoE模型Qwen3.8-2.4T-A95B，FlagOS当天适配平头哥、昇腾、摩尔线程等9家芯片，提供BF16/FP8/INT8多精度版本。",
+      "why_it_matters": "存量国产算力可直接跑旗舰开源模型"
+    },
+    {
       "title": "Reinforcing Step-level Reasoning for Effective Self-Correction in LLMs",
       "link": "https://arxiv.org/abs/2608.11573",
       "summary": "arXiv:2608.11573v1 Announce Type: new \nAbstract: Achieving effective self-correction, where models verify and correct their own mistakes, remains a fundamental challenge for large language models (LLMs). In this work, we propose Self-Fix Step-DPO (SFS-DPO), a reinforcement learning based, two-stage framework for step-level self-verification and self-correction. The first stage strengthens step-level reasoning via step-level preference optimization, while the second stage explicitly trains models",
@@ -139,6 +183,17 @@
       "why_it_matters": "模型能自查自纠，推理可靠性提升"
     },
     {
+      "title": "Dynamic Governance of Multi-LLM Agent Systems for Collaborative Conversational Outcomes",
+      "link": "https://arxiv.org/abs/2608.11207",
+      "summary": "arXiv:2608.11207v1 Announce Type: new \nAbstract: When two LLM agents with structurally opposed objectives interact across multiple turns, the absence of a shared goal function produces not competition but collapse: the visitor capitulates, the site agent stops varying its approach, and the conversation terminates without achieving either agent's stated objective. This paper asks whether a control-theoretic governance layer can substitute for that missing goal function. The Experience Orchestrato",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "多LLM Agent系统动态治理",
+      "summary_cn": "两个目标冲突的LLM Agent多轮对话时，缺共享目标函数会导致协作崩坏而非良性竞争；提出动态治理机制对齐多方目标。",
+      "why_it_matters": "多Agent协作对齐有了新解法"
+    },
+    {
       "title": "LinearKV: One Cached State Suffices for Position-Independent Caching in Hybrid LLMs",
       "link": "https://arxiv.org/abs/2608.11231",
       "summary": "arXiv:2608.11231v1 Announce Type: new \nAbstract: LLM serving is increasingly accelerated by position-independent caching (PIC). Existing PIC methods, however, are built for full-attention models, where a token-indexed KV cache underlies its core operations: matching reusable token chunks, concatenating their KV entries, and selectively recomputing a few tokens to restore cross-chunk context. Hybrid LLMs break these primitives---they replace most attention layers with linear recurrences that expo",
@@ -148,6 +203,61 @@
       "title_cn": "LinearKV：混合LLM一个缓存状态",
       "summary_cn": "现有位置无关缓存PIC只服务全注意力模型，LinearKV把它扩展到注意力加线性注意力混合的LLM，证明只需缓存一个状态即可加速推理。",
       "why_it_matters": "混合架构LLM推理更快更省显存"
+    },
+    {
+      "title": "CORA-Diff: Confidence-Oriented Residual Acceptance for Efficient Diffusion Language Model Inference",
+      "link": "https://arxiv.org/abs/2608.11235",
+      "summary": "arXiv:2608.11235v1 Announce Type: new \nAbstract: Diffusion language models (DLMs) update many tokens in parallel, yet practical decoders often use a fixed denoising horizon. Many predictions stabilize early, but blockwise decoding continues until all positions are resolved, causing repeated dense forward passes. Existing accelerators often rely on learned filters, modified scores, dependency models, or cache-specific mechanisms. We ask whether native trajectory signals can identify residual posi",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "CORA-Diff加速扩散语言模型推理",
+      "summary_cn": "按置信度提前接收已经稳定的token，跳过固定去噪步数里的冗余计算，降低diffusion language model的推理开销。",
+      "why_it_matters": "扩散语言模型推理更快更省算力"
+    },
+    {
+      "title": "Geometric and Behavioral Stratification in Transformer Residual Streams",
+      "link": "https://arxiv.org/abs/2608.12447",
+      "summary": "arXiv:2608.12447v1 Announce Type: new \nAbstract: Trained transformer models develop privileged bases: coordinate axes whose statistics differ from the rest of the residual stream. But what kind of direction does such a basis select? We investigate the prediction direction, the unembedding direction of the token a model currently predicts, and find that it functions as a content-defined privileged anchor. Measured with respect to this anchor, residual-stream variation is geometrically and behavio",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "Transformer残差流的几何分层",
+      "summary_cn": "训练后的Transformer残差流存在特权基方向，统计特性异于其余维度；本文刻画这些方向的几何与行为结构。",
+      "why_it_matters": "模型表征解释多了条线索"
+    },
+    {
+      "title": "Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost",
+      "link": "https://arxiv.org/abs/2608.11338",
+      "summary": "arXiv:2608.11338v1 Announce Type: new \nAbstract: Recently, the practice of augmenting LLM agent capability with skills has gained prevalence. We explore the cost effective adaptation of agents to novel domains by means of learning skills. Existing works focus on performance gain over cost effectiveness. As a result, little is known about what skill learning strategies save cost. We argue that among all the different skill learning methods, those that view skills as programs can achieve the best ",
+      "published": "2026-08-13 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "程序化技能学习最省Agent成本",
+      "summary_cn": "对比多种给LLM Agent加技能的方法，可执行代码形式的程序化技能在适配新任务时成本最低、效果最好。",
+      "why_it_matters": "企业低成本扩展Agent能力"
+    },
+    {
+      "title": "Poor Man's Agentic Modeling: Simulating Large LLM-Agent Societies on a Laptop",
+      "link": "https://arxiv.org/abs/2608.11215",
+      "summary": "arXiv:2608.11215v1 Announce Type: new \nAbstract: Simulating societies of many large language model (LLM) agents is expensive, yet the questions asked of such simulations are usually macroscopic: phase behaviour, stylised facts, and scaling with the number of agents $N$, not the cognition of any single agent. We turn a statistical-physics observation into a method: replace each LLM agent by a low-parameter model fitted from a few hundred to a few thousand cheap queries, then run the society at an",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "笔记本上模拟大规模Agent社会",
+      "summary_cn": "用宏观统计方法在单台笔记本上模拟大量LLM Agent组成的群体，回答相变、极化等宏观问题，省掉昂贵的逐体仿真。",
+      "why_it_matters": "研究Agent社会无需烧GPU"
+    },
+    {
+      "title": "Harnessing agent memory to build lifelong AI partners for materials scientists",
+      "link": "https://arxiv.org/abs/2608.11224",
+      "summary": "arXiv:2608.11224v1 Announce Type: new \nAbstract: Materials research advances through accumulated experience - scripts that work, protocols that are trusted, warnings attached to failed calculations or experiments, and judgement that links a new question to an old result. This experience is essential for reproducibility and knowledge transfer, yet it is usually fragmented across notebooks, repositories, job logs and individual memory, and it is rarely portable across artificial-intelligence agent",
+      "published": "2026-08-14 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "给材料科学家造终身AI伙伴",
+      "summary_cn": "把材料研究积累的脚本、协议和失败记录做成Agent记忆，让AI助手跨项目复用经验，长期陪伴材料科学家。",
+      "why_it_matters": "科研Agent靠记忆积累经验"
     },
     {
       "title": "PixelRAG beats text parsers on accuracy and cuts AI agent token costs 10x",

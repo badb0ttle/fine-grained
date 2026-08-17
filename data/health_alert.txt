@@ -1,9 +1,8 @@
 [Pipeline 健康告警]
 
-  警告 — Google AI (AI Lab) 失败 2 次
-  警告 — ArXiv cs.LG (Paper) 失败 2 次
-  警告 — ArXiv cs.CV (Paper) 失败 2 次
-  警告 — ArXiv stat.ML (Paper) 失败 2 次
-  警告 — HuggingFace Blog (Community) 失败 2 次
-  警告 — VentureBeat AI (Blog) 失败 2 次
-检测时间: 2026-06-20T22:32:33
+  警告 — ArXiv cs.AI (Paper) 失败 1 次
+  警告 — ArXiv cs.LG (Paper) 失败 1 次
+  警告 — ArXiv cs.CL (Paper) 失败 1 次
+  警告 — ArXiv cs.CV (Paper) 失败 1 次
+  警告 — ArXiv stat.ML (Paper) 失败 1 次
+检测时间: 2026-08-17T00:38:06

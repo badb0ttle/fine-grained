@@ -1,58 +1,58 @@
 {
-  "generated_at": "2026-08-15T09:51:03.781812",
+  "generated_at": "2026-08-17T08:38:00.527713",
   "source_health": [
-    {
-      "name": "Apple ML Research",
-      "category": "AI Lab",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
-      "article_count_last": 10,
-      "status": "healthy"
-    },
     {
       "name": "ArXiv cs.AI",
       "category": "Paper",
       "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "healthy"
+      "status": "degraded"
     },
     {
       "name": "ArXiv cs.CL",
       "category": "Paper",
       "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "healthy"
+      "status": "degraded"
     },
     {
       "name": "ArXiv cs.CV",
       "category": "Paper",
       "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "healthy"
+      "status": "degraded"
     },
     {
       "name": "ArXiv cs.LG",
       "category": "Paper",
       "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "article_count_last": 20,
-      "status": "healthy"
+      "status": "degraded"
     },
     {
       "name": "ArXiv stat.ML",
       "category": "Paper",
       "last_success": "2026-08-15T01:48:42.089428+00:00",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "article_count_last": 20,
+      "status": "degraded"
+    },
+    {
+      "name": "Apple ML Research",
+      "category": "AI Lab",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 10,
       "status": "healthy"
     },
     {
       "name": "Google AI",
       "category": "AI Lab",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -60,7 +60,7 @@
     {
       "name": "Google DeepMind",
       "category": "AI Lab",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -68,7 +68,7 @@
     {
       "name": "HuggingFace Blog",
       "category": "Community",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -76,7 +76,7 @@
     {
       "name": "NVIDIA Blog",
       "category": "AI Lab",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -84,7 +84,7 @@
     {
       "name": "OpenAI Blog",
       "category": "AI Lab",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -92,7 +92,7 @@
     {
       "name": "PyTorch Blog",
       "category": "Community",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -100,7 +100,7 @@
     {
       "name": "TechCrunch AI",
       "category": "Blog",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -108,7 +108,7 @@
     {
       "name": "VentureBeat AI",
       "category": "Blog",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 7,
       "status": "healthy"
@@ -116,7 +116,7 @@
     {
       "name": "量子位",
       "category": "中文媒体",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -124,7 +124,7 @@
     {
       "name": "雷锋网 AI",
       "category": "中文媒体",
-      "last_success": "2026-08-15T01:48:42.089428+00:00",
+      "last_success": "2026-08-17T00:34:49.972161+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -132,17 +132,17 @@
   ],
   "score_distribution": {
     "80-100": 2,
-    "60-79": 89,
-    "40-59": 184,
-    "20-39": 154,
-    "0-19": 24
+    "60-79": 92,
+    "40-59": 191,
+    "20-39": 162,
+    "0-19": 30
   },
   "category_distribution": {
     "AI Lab": 160,
     "Paper": 98,
-    "中文媒体": 80,
+    "中文媒体": 95,
+    "Blog": 63,
     "Community": 60,
-    "Blog": 54,
     "test": 1
   },
   "daily_trends": [
@@ -168,6 +168,14 @@
       "successful_sources": 16,
       "total_articles": 453,
       "new_articles": 265,
+      "curated_count": 10
+    },
+    {
+      "date": "2026-08-17",
+      "total_sources": 16,
+      "successful_sources": 11,
+      "total_articles": 477,
+      "new_articles": 24,
       "curated_count": 10
     }
   ],
@@ -247,7 +255,7 @@
     "keywords": [
       {
         "keyword": "LLM",
-        "current_count": 20,
+        "current_count": 22,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -261,7 +269,7 @@
       },
       {
         "keyword": "Claude",
-        "current_count": 4,
+        "current_count": 7,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -275,14 +283,14 @@
       },
       {
         "keyword": "DeepSeek",
-        "current_count": 6,
+        "current_count": 8,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "多模态",
-        "current_count": 1,
+        "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -331,28 +339,28 @@
       },
       {
         "keyword": "RAG",
-        "current_count": 14,
+        "current_count": 15,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Agent",
-        "current_count": 50,
+        "current_count": 52,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "智能体",
-        "current_count": 4,
+        "current_count": 5,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "量化",
-        "current_count": 1,
+        "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -366,14 +374,14 @@
       },
       {
         "keyword": "code",
-        "current_count": 22,
+        "current_count": 24,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Codex",
-        "current_count": 2,
+        "current_count": 3,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -387,10 +395,10 @@
       }
     ],
     "period": {
-      "current_start": "2026-08-08",
-      "current_end": "2026-08-15",
-      "previous_start": "2026-08-01",
-      "previous_end": "2026-08-08",
+      "current_start": "2026-08-10",
+      "current_end": "2026-08-17",
+      "previous_start": "2026-08-03",
+      "previous_end": "2026-08-10",
       "window_days": 7
     }
   }

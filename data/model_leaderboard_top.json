@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-15T01:51:03.719894+00:00",
+  "updated_at": "2026-08-17T00:38:00.373037+00:00",
   "source": "OpenRouter API (top 20 by benchmark)",
   "models": [
     {
@@ -43,17 +43,9 @@
       }
     },
     {
-      "name": "Qwen: Qwen3.8 Max",
-      "provider": "Alibaba",
-      "rank": 6,
-      "scores": {
-        "intelligence": 58.1
-      }
-    },
-    {
       "name": "Anthropic: Claude Fable 5",
       "provider": "Anthropic",
-      "rank": 7,
+      "rank": 6,
       "scores": {
         "intelligence": 62.1
       }
@@ -61,15 +53,39 @@
     {
       "name": "Anthropic: Claude Fable 5 (batch)",
       "provider": "Anthropic",
-      "rank": 8,
+      "rank": 7,
       "scores": {
         "intelligence": 62.1
       }
     },
     {
+      "name": "Qwen: Qwen3.8 Max",
+      "provider": "Alibaba",
+      "rank": 8,
+      "scores": {
+        "intelligence": 58.1
+      }
+    },
+    {
+      "name": "Google: Gemini 3.7 Flash",
+      "provider": "Google",
+      "rank": 9,
+      "scores": {
+        "intelligence": 56.0
+      }
+    },
+    {
+      "name": "Google: Gemini 3.7 Flash (batch)",
+      "provider": "Google",
+      "rank": 10,
+      "scores": {
+        "intelligence": 56.0
+      }
+    },
+    {
       "name": "Z.ai: GLM 5.1",
       "provider": "Z.ai",
-      "rank": 9,
+      "rank": 11,
       "scores": {
         "intelligence": 41.0
       }
@@ -77,7 +93,7 @@
     {
       "name": "Z.ai: GLM 5.2",
       "provider": "Z.ai",
-      "rank": 11,
+      "rank": 13,
       "scores": {
         "intelligence": 52.6
       }
@@ -85,7 +101,7 @@
     {
       "name": "Z.ai: GLM 5.2 (batch)",
       "provider": "Z.ai",
-      "rank": 12,
+      "rank": 14,
       "scores": {
         "intelligence": 52.6
       }
@@ -93,7 +109,7 @@
     {
       "name": "SpaceXAI: Grok 4.6",
       "provider": "xAI",
-      "rank": 13,
+      "rank": 15,
       "scores": {
         "intelligence": 60.9
       }
@@ -101,7 +117,7 @@
     {
       "name": "Anthropic: Claude Sonnet 5",
       "provider": "Anthropic",
-      "rank": 14,
+      "rank": 16,
       "scores": {
         "intelligence": 55.3
       }
@@ -109,7 +125,7 @@
     {
       "name": "Anthropic: Claude Sonnet 5 (batch)",
       "provider": "Anthropic",
-      "rank": 15,
+      "rank": 17,
       "scores": {
         "intelligence": 55.3
       }
@@ -117,7 +133,7 @@
     {
       "name": "OpenAI: GPT-5.5",
       "provider": "OpenAI",
-      "rank": 16,
+      "rank": 18,
       "scores": {
         "intelligence": 56.3
       }
@@ -125,7 +141,7 @@
     {
       "name": "OpenAI: GPT-5.5 (batch)",
       "provider": "OpenAI",
-      "rank": 17,
+      "rank": 19,
       "scores": {
         "intelligence": 56.3
       }
@@ -133,7 +149,7 @@
     {
       "name": "Google: Gemini 3.6 Flash",
       "provider": "Google",
-      "rank": 18,
+      "rank": 20,
       "scores": {
         "intelligence": 51.6
       }
@@ -141,25 +157,9 @@
     {
       "name": "Google: Gemini 3.6 Flash (batch)",
       "provider": "Google",
-      "rank": 19,
+      "rank": 21,
       "scores": {
         "intelligence": 51.6
-      }
-    },
-    {
-      "name": "Meta: Muse Spark 1.1",
-      "provider": "Meta",
-      "rank": 20,
-      "scores": {
-        "intelligence": 53.2
-      }
-    },
-    {
-      "name": "MoonshotAI: Kimi K2.6",
-      "provider": "Moonshot AI",
-      "rank": 23,
-      "scores": {
-        "intelligence": 45.1
       }
     }
   ]

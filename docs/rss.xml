@@ -5,7 +5,7 @@
     <link>https://ai.hjhai.xyz</link>
     <description>每日自动扫描全球 AI 信源，由 LLM 精选并深度解读的 AI 技术情报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 15 Aug 2026 01:51:03 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 00:38:00 +0000</lastBuildDate>
     <atom:link href="https://ai.hjhai.xyz/rss.xml" rel="self" type="application/rss+xml"/>
     <generator>AllOfAI Pipeline</generator>
     <item>
@@ -72,6 +72,15 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
     </item>
     <item>
+      <title>离线评估Top-k分配何时可信</title>
+      <link>https://arxiv.org/abs/2608.12489</link>
+      <guid isPermaLink="false">ai-intel-2608.12489</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>预算约束下决定救助谁，off-policy评估能否预测规则上线后收益？给出可复现基准和实用指南，厘清可信边界。</p><p><strong>重要性：</strong>资源分配上线前先验证收益</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
       <title>阿里开源Qwen3.8-27B多模态</title>
       <link>https://www.leiphone.com/category/industrynews/GJAhmR3wyL91CzjO.html</link>
       <guid isPermaLink="false">ai-intel-GJAhmR3wyL91CzjO.html</guid>
@@ -79,6 +88,24 @@
       <description><p>8月14日阿里开源Qwen3.8系列，其中27B稠密模型原生多模态，整体水平超Qwen3.7-Plus，量化后可在消费级显卡运行，千问全系下载量破30亿次。</p><p><strong>重要性：</strong>开发者可免费商用，消费级显卡即可部署强模型</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
       <category>中文媒体</category>
       <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
+    </item>
+    <item>
+      <title>自生成MCQ测评LLM交易Agent</title>
+      <link>https://arxiv.org/abs/2608.11232</link>
+      <guid isPermaLink="false">ai-intel-2608.11232</guid>
+      <pubDate>Thu, 13 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>用模型自生成的MCQ题目评测LLM编程Agent的算法交易能力，避开静态题库的数据污染，同时核对回测数值的正确性。</p><p><strong>重要性：</strong>给量化交易选LLM Agent提供标尺</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
+    </item>
+    <item>
+      <title>InfraBench测评基础设施Agent</title>
+      <link>https://arxiv.org/abs/2608.11234</link>
+      <guid isPermaLink="false">ai-intel-2608.11234</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>从层级、生命周期、风险三个维度评测管理计算基础设施的AI Agent，填补基础设施运维场景的自动化测评空白。</p><p><strong>重要性：</strong>云厂商选运维Agent有据可依</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
       <title>MARCH用内容路由扩展循环记忆</title>
@@ -108,6 +135,15 @@
       <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
     </item>
     <item>
+      <title>Qwen3.8开源，9家芯片首日适配</title>
+      <link>https://www.leiphone.com/category/ai/rbIV873aEJjUGpyU.html</link>
+      <guid isPermaLink="false">ai-intel-rbIV873aEJjUGpyU.html</guid>
+      <pubDate>Thu, 13 Aug 2026 08:56:00 +0000</pubDate>
+      <description><p>阿里开源MoE模型Qwen3.8-2.4T-A95B，FlagOS当天适配平头哥、昇腾、摩尔线程等9家芯片，提供BF16/FP8/INT8多精度版本。</p><p><strong>重要性：</strong>存量国产算力可直接跑旗舰开源模型</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
+      <category>中文媒体</category>
+      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
+    </item>
+    <item>
       <title>强化逐步推理，让LLM真能自我纠错</title>
       <link>https://arxiv.org/abs/2608.11573</link>
       <guid isPermaLink="false">ai-intel-2608.11573</guid>
@@ -117,11 +153,65 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
+      <title>多LLM Agent系统动态治理</title>
+      <link>https://arxiv.org/abs/2608.11207</link>
+      <guid isPermaLink="false">ai-intel-2608.11207</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>两个目标冲突的LLM Agent多轮对话时，缺共享目标函数会导致协作崩坏而非良性竞争；提出动态治理机制对齐多方目标。</p><p><strong>重要性：</strong>多Agent协作对齐有了新解法</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
       <title>LinearKV：混合LLM一个缓存状态</title>
       <link>https://arxiv.org/abs/2608.11231</link>
       <guid isPermaLink="false">ai-intel-2608.11231</guid>
       <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
       <description><p>现有位置无关缓存PIC只服务全注意力模型，LinearKV把它扩展到注意力加线性注意力混合的LLM，证明只需缓存一个状态即可加速推理。</p><p><strong>重要性：</strong>混合架构LLM推理更快更省显存</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>CORA-Diff加速扩散语言模型推理</title>
+      <link>https://arxiv.org/abs/2608.11235</link>
+      <guid isPermaLink="false">ai-intel-2608.11235</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>按置信度提前接收已经稳定的token，跳过固定去噪步数里的冗余计算，降低diffusion language model的推理开销。</p><p><strong>重要性：</strong>扩散语言模型推理更快更省算力</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>Transformer残差流的几何分层</title>
+      <link>https://arxiv.org/abs/2608.12447</link>
+      <guid isPermaLink="false">ai-intel-2608.12447</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>训练后的Transformer残差流存在特权基方向，统计特性异于其余维度；本文刻画这些方向的几何与行为结构。</p><p><strong>重要性：</strong>模型表征解释多了条线索</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
+      <title>程序化技能学习最省Agent成本</title>
+      <link>https://arxiv.org/abs/2608.11338</link>
+      <guid isPermaLink="false">ai-intel-2608.11338</guid>
+      <pubDate>Thu, 13 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>对比多种给LLM Agent加技能的方法，可执行代码形式的程序化技能在适配新任务时成本最低、效果最好。</p><p><strong>重要性：</strong>企业低成本扩展Agent能力</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
+    </item>
+    <item>
+      <title>笔记本上模拟大规模Agent社会</title>
+      <link>https://arxiv.org/abs/2608.11215</link>
+      <guid isPermaLink="false">ai-intel-2608.11215</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>用宏观统计方法在单台笔记本上模拟大量LLM Agent组成的群体，回答相变、极化等宏观问题，省掉昂贵的逐体仿真。</p><p><strong>重要性：</strong>研究Agent社会无需烧GPU</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>给材料科学家造终身AI伙伴</title>
+      <link>https://arxiv.org/abs/2608.11224</link>
+      <guid isPermaLink="false">ai-intel-2608.11224</guid>
+      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>把材料研究积累的脚本、协议和失败记录做成Agent记忆，让AI助手跨项目复用经验，长期陪伴材料科学家。</p><p><strong>重要性：</strong>科研Agent靠记忆积累经验</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
@@ -137,7 +227,7 @@
     <item>
       <title>NVIDIA 发布首个 agentic coding 评测</title>
       <link>https://developer.nvidia.com/blog/nvidia-achieves-leading-agentic-coding-performance-on-first-agentic-ai-benchmark/</link>
-      <guid isPermaLink="false">ai-intel-14</guid>
+      <guid isPermaLink="false">ai-intel-24</guid>
       <pubDate>Fri, 12 Jun 2026 21:12:40 +0000</pubDate>
       <description><p>NVIDIA 推出首个 AI agent 编程基准测试，填补 agentic coding 缺乏统一评测的空白，推动推理负载标准化。</p><p><strong>重要性：</strong>agent 代码能力终于有了统一尺子</p><p>来源：NVIDIA Blog · 分类：AI Lab</p></description>
       <category>AI Lab</category>
@@ -173,7 +263,7 @@
     <item>
       <title>Helion 让 vLLM 推理内核跨 GPU 可移植</title>
       <link>https://pytorch.org/blog/portable-vllm-model-inference-kernels-in-helion/</link>
-      <guid isPermaLink="false">ai-intel-18</guid>
+      <guid isPermaLink="false">ai-intel-28</guid>
       <pubDate>Wed, 10 Jun 2026 17:00:13 +0000</pubDate>
       <description><p>PyTorch 推出 Helion 推理内核，集成 vLLM 支持 FP8 量化，在 H100 和 B200 上都能原生运行，告别 CUDA 重写。</p><p><strong>重要性：</strong>vLLM 推理从 NVIDIA 绑定走向可移植</p><p>来源：PyTorch Blog · 分类：Community</p></description>
       <category>Community</category>
@@ -185,15 +275,6 @@
       <guid isPermaLink="false">ai-intel-openai-to-acquire-ona</guid>
       <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
       <description><p>OpenAI 计划收购 Ona，为 Codex 提供安全持久云端环境，让 agent 能执行长时间企业工作流，从代码补全跃迁到全流程代理。</p><p><strong>重要性：</strong>Codex 从代码工具升级为企业 agent 平台</p><p>来源：OpenAI Blog · 分类：AI Lab</p></description>
-      <category>AI Lab</category>
-      <source url="https://ai.hjhai.xyz">OpenAI Blog</source>
-    </item>
-    <item>
-      <title>API 测试标题</title>
-      <link>https://openai.com/index/academy-courses-applying-ai-at-work</link>
-      <guid isPermaLink="false">ai-intel-academy-courses-applying-ai-at-work</guid>
-      <pubDate>Fri, 12 Jun 2026 10:00:00 +0000</pubDate>
-      <description><p>通过 API 端点的中文摘要测试</p><p><strong>重要性：</strong>验证 API 可用性</p><p>来源：OpenAI Blog · 分类：AI Lab</p></description>
       <category>AI Lab</category>
       <source url="https://ai.hjhai.xyz">OpenAI Blog</source>
     </item>
