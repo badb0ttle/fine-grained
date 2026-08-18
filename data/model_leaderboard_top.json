@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T00:38:00.373037+00:00",
+  "updated_at": "2026-08-18T00:34:38.951722+00:00",
   "source": "OpenRouter API (top 20 by benchmark)",
   "models": [
     {
@@ -27,15 +27,15 @@
       }
     },
     {
-      "name": "Claude Opus 5",
-      "provider": "Anthropic",
+      "name": "Qwen: Qwen3.8 Max",
+      "provider": "Alibaba",
       "rank": 4,
       "scores": {
-        "intelligence": 63.1
+        "intelligence": 58.1
       }
     },
     {
-      "name": "Claude Opus 5 (batch)",
+      "name": "Claude Opus 5",
       "provider": "Anthropic",
       "rank": 5,
       "scores": {
@@ -43,15 +43,15 @@
       }
     },
     {
-      "name": "Anthropic: Claude Fable 5",
+      "name": "Claude Opus 5 (batch)",
       "provider": "Anthropic",
       "rank": 6,
       "scores": {
-        "intelligence": 62.1
+        "intelligence": 63.1
       }
     },
     {
-      "name": "Anthropic: Claude Fable 5 (batch)",
+      "name": "Anthropic: Claude Fable 5",
       "provider": "Anthropic",
       "rank": 7,
       "scores": {
@@ -59,11 +59,11 @@
       }
     },
     {
-      "name": "Qwen: Qwen3.8 Max",
-      "provider": "Alibaba",
+      "name": "Anthropic: Claude Fable 5 (batch)",
+      "provider": "Anthropic",
       "rank": 8,
       "scores": {
-        "intelligence": 58.1
+        "intelligence": 62.1
       }
     },
     {
@@ -88,6 +88,14 @@
       "rank": 11,
       "scores": {
         "intelligence": 41.0
+      }
+    },
+    {
+      "name": "Meta: Muse Spark 1.2",
+      "provider": "Meta",
+      "rank": 12,
+      "scores": {
+        "intelligence": 56.8
       }
     },
     {
@@ -150,14 +158,6 @@
       "name": "Google: Gemini 3.6 Flash",
       "provider": "Google",
       "rank": 20,
-      "scores": {
-        "intelligence": 51.6
-      }
-    },
-    {
-      "name": "Google: Gemini 3.6 Flash (batch)",
-      "provider": "Google",
-      "rank": 21,
       "scores": {
         "intelligence": 51.6
       }

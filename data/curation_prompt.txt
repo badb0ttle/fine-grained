@@ -33,96 +33,96 @@
     Source: TestSource | 2026-06-21T14:00:00Z
     Summary: Testing batch insert via API
 
-[2] [DB ID: 496] [75.2] Title: When Can You Trust Offline Evaluation of Equal-Cost Top-k Allocation? A Controlled, Reproducible Benchmark and Practitioner's Guide
-    Source: ArXiv cs.LG | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12489v1 Announce Type: new 
-Abstract: Organizations decide whom to treat under a budget and want to know what a targeting rule would have earned before deploying it. Off-policy evaluation p
+[2] [DB ID: 952] [80.3] Title: Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13608v1 Announce Type: new 
+Abstract: Agentic "Continual Learning Harnesses", systems that pair an LLM with retrieval or memory to improve from feedback without retraining, have shown growi
 
-[3] [DB ID: 506] [74.3] Title: Backtrader-Bench: Benchmarking LLM Agents on Algorithmic Trading with Self-Generated MCQs
-    Source: ArXiv cs.CL | 2026-08-13 04:00:00
-    Summary: arXiv:2608.11232v1 Announce Type: new 
-Abstract: Evaluating LLM coding agents in algorithmic trading is difficult because static benchmarks risk data contamination and numerical backtest outputs requi
+[3] [DB ID: 1033] [79.6] Title: QUASAR: Lowering the Loss Floor of Quantization-Aware Training with Loss-Aware Reconstruction
+    Source: ArXiv stat.ML | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13966v1 Announce Type: cross 
+Abstract: As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-a
 
-[4] [DB ID: 483] [74.2] Title: InfraBench: Evaluating Infrastructure Agents Across Layers, Lifecycle, and Risk
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11234v1 Announce Type: new 
-Abstract: Managing modern computing infrastructure has become a steadily harder problem due to the ever-increasing complexity. Recent advances in AI agents creat
+[4] [DB ID: 950] [79.3] Title: MobileMem: Learning from a Year of Mobile Experiences
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13606v1 Announce Type: new 
+Abstract: The next generation of AI agents is increasingly moving beyond systems that answer isolated questions toward persistent personal assistants that can un
 
-[5] [DB ID: 489] [74.2] Title: Multi-AUV Ad-hoc network-based Target Tracking: A Value Gradient Guidance Multi-Agent Diffusion Reinforcement Learning Approach
+[5] [DB ID: 972] [79.3] Title: The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference
+    Source: ArXiv cs.LG | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13756v1 Announce Type: new 
+Abstract: Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable. We test that assumption: holding the checkpoin
+
+[6] [DB ID: 989] [79.3] Title: TeachMateGPT: A Multi-Agent Knowledge-Grounded Framework for Pedagogical Assessment Generation from Science Curriculum Materials
+    Source: ArXiv cs.CL | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13708v1 Announce Type: new 
+Abstract: Automatically generating textbook-grounded assessment items can reduce science teachers' workload, but existing retrieval-augmented generation (RAG) sy
+
+[7] [DB ID: 940] [77.3] Title: Inducing Reward-Free Judging Rubrics that Reduce Over-Crediting in Agent Evaluation
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13564v1 Announce Type: new 
+Abstract: Evaluating language-model agents at scale increasingly relies on a second language model as an automatic judge, because the gold signal, an executable 
+
+[8] [DB ID: 1004] [76.6] Title: Limitations of Synthetic Data Generation in Specialized Data-Scarce Domains
+    Source: ArXiv cs.CV | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13729v1 Announce Type: new 
+Abstract: Advances in diffusion-based generative models have motivated the use of synthetic image generation to alleviate data scarcity in vision tasks. While th
+
+[9] [DB ID: 961] [76.3] Title: Don't Claim Benchmark-Oriented Optimization Improves General Coding Capability -- Diverse Evaluation Is Required
+    Source: ArXiv cs.LG | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13566v1 Announce Type: new 
+Abstract: Post-training papers, model cards, and blog posts often treat scores on a small set of coding benchmarks (e.g., SWE-bench and LiveCodeBench) as evidenc
+
+[10] [DB ID: 982] [76.3] Title: Not All Tokens Are Equal: Inflation-Aware Routing for Agentic LLM Systems
+    Source: ArXiv cs.CL | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13571v1 Announce Type: new 
+Abstract: When a language model fails to answer a query on the first attempt, an agentic system retries, consuming additional tokens each time. This retry overhe
+
+[11] [DB ID: 953] [75.3] Title: SemPlan: Benchmarking Structured Semantic Planning for LLM-Based Queries over Enterprise Data
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13612v1 Announce Type: new 
+Abstract: Natural-language interfaces to enterprise data must translate underspecified requests into governed, executable behavior while controlling invalid quer
+
+[12] [DB ID: 984] [75.3] Title: Jais 2: A Family of Arabic-Centric Open Large Language Models
+    Source: ArXiv cs.CL | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13580v1 Announce Type: new 
+Abstract: Jais 2 is a family of Arabic-centric large language models developed jointly by MBZUAI, Cerebras, and Inception, designed to advance Arabic-centric lan
+
+[13] [DB ID: 951] [74.3] Title: No Universal Signal Predicts Sample-Level LLM Regression under Version Updates
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13607v1 Announce Type: new 
+Abstract: Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate. But aggregate gains say little about individual samples:
+
+[14] [DB ID: 968] [74.3] Title: From BERT to Frontier Agents: Eight Years of Language-Model Progress, the Collapse of the Capability-Cost Curve, and the Rise of Task-Targeted Models
+    Source: ArXiv cs.LG | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13675v1 Announce Type: new 
+Abstract: Between October 2018 and July 2026 AI models progressed from simple systems like BERT to massive agents that solve complex math and write software. The
+
+[15] [DB ID: 970] [74.3] Title: SAGE: Surrogate-gradient Adaptation via Attention-Guided Entropy for Spiking Transformers
+    Source: ArXiv cs.LG | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13702v1 Announce Type: new 
+Abstract: Spiking neural networks (SNNs) offer an energy-efficient alternative to conventional deep neural networks by exploiting sparse event-driven computation
+
+[16] [DB ID: 983] [74.3] Title: BCMT: Blockwise Causal Memory Transformer
+    Source: ArXiv cs.CL | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13578v1 Announce Type: new 
+Abstract: Transformer architectures rely on dense self-attention to model long-range dependencies, but this mechanism exhibits quadratic complexity with respect 
+
+[17] [DB ID: 489] [74.2] Title: Multi-AUV Ad-hoc network-based Target Tracking: A Value Gradient Guidance Multi-Agent Diffusion Reinforcement Learning Approach
     Source: ArXiv cs.LG | 2026-08-14 04:00:00
     Summary: arXiv:2608.12436v1 Announce Type: new 
 Abstract: Multi-AUV ad-hoc network-based target tracking requires networked autonomous underwater vehicles (AUVs) to cooperatively track maneuvering targets unde
 
-[6] [DB ID: 548] [73.4] Title: Online Inference for Quantile Temporal Difference Learning in Distributional Reinforcement Learning
+[18] [DB ID: 1084] [73.9] Title: 别再乱调图像塔了！浙大 IJCAI 论文揭露 VLM 非对称性真相，给 CLIP 微调「踩刹车」
+    Source: 雷锋网 AI | 2026-08-17 04:45:00
+    Summary: A3B2自适应非对称适配器，诠释大模型微调的“克制”艺术。&nbsp; &nbsp; 作者丨张 &nbsp; 璐&nbsp; &nbsp; 编辑丨幸丽娟&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp
+
+[19] [DB ID: 1037] [73.6] Title: Designing Reinforcement Learning for Diffusion Models: A Unified Path-Space View
+    Source: ArXiv stat.ML | 2026-08-17 04:00:00
+    Summary: arXiv:2608.14430v1 Announce Type: cross 
+Abstract: Reinforcement learning (RL) post-training provides a direct way to align diffusion models with human preferences and task-specific rewards. However, 
+
+[20] [DB ID: 548] [73.4] Title: Online Inference for Quantile Temporal Difference Learning in Distributional Reinforcement Learning
     Source: ArXiv stat.ML | 2026-08-14 04:00:00
     Summary: arXiv:2608.12973v1 Announce Type: new 
 Abstract: In this paper, we study how to perform statistical inference for quantile temporal difference learning (QTD) in distributional reinforcement learning. 
-
-[7] [DB ID: 504] [72.2] Title: Structure-preserving uncertainty quantification for GENERIC dynamics
-    Source: ArXiv cs.LG | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12624v1 Announce Type: new 
-Abstract: Structure-preserving machine learning embeds physical structure directly into model architectures, yet uncertainty quantification (UQ) for such hard-co
-
-[8] [DB ID: 543] [71.4] Title: Scaling Representation Diversity: Modulated Attention and Reconstructive Regularization for Visual Grounding
-    Source: ArXiv cs.CV | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12748v1 Announce Type: new 
-Abstract: Referring Expression Comprehension (REC) is commonly studied under dataset-specific fine-tuning, resulting in specialist models with limited cross-data
-
-[9] [DB ID: 611] [71.4] Title: Qwen3.8首日可用，助力存量算力长期有用：智源FlagOS开源开放生态共享
-    Source: 雷锋网 AI | 2026-08-13 08:56:00
-    Summary: 阿里巴巴开源超大规模Mo E模型Qwen3.8-2.4T-A95B,众智Flag OS社区同步完成Day0多芯片适配。Qwen3.8-2.4T-A95B已在平头哥、英伟达、摩尔线程、华为昇腾、沐曦、昆仑芯、海光、清微智能、隧原等9家AI芯片上完成基于Flag OS统一开源技术栈的多芯适配、精度对齐与部署验证,针对不同芯片情况提供包括BF16FP8INT8等多种精度的版本,开发者可直接获取对应芯片的
-
-[10] [DB ID: 466] [71.2] Title: Dynamic Governance of Multi-LLM Agent Systems for Collaborative Conversational Outcomes
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11207v1 Announce Type: new 
-Abstract: When two LLM agents with structurally opposed objectives interact across multiple turns, the absence of a shared goal function produces not competition
-
-[11] [DB ID: 484] [71.2] Title: CORA-Diff: Confidence-Oriented Residual Acceptance for Efficient Diffusion Language Model Inference
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11235v1 Announce Type: new 
-Abstract: Diffusion language models (DLMs) update many tokens in parallel, yet practical decoders often use a fixed denoising horizon. Many predictions stabilize
-
-[12] [DB ID: 493] [71.2] Title: Geometric and Behavioral Stratification in Transformer Residual Streams
-    Source: ArXiv cs.LG | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12447v1 Announce Type: new 
-Abstract: Trained transformer models develop privileged bases: coordinate axes whose statistics differ from the rest of the residual stream. But what kind of dir
-
-[13] [DB ID: 491] [70.2] Title: Dual Spatial-Temporal Attribution: Architecture-Aligned Post-Hoc Explainability for Recurrent Graph Anomaly Detection
-    Source: ArXiv cs.LG | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12441v1 Announce Type: new 
-Abstract: Deep learning detectors for anomalies in dynamic graphs have reached strong accuracy, yet they remain opaque: when an edge is flagged, the analyst rece
-
-[14] [DB ID: 526] [69.4] Title: MV2: Multi-View Multi-Vehicle Driving Dataset for Novel View Synthesis
-    Source: ArXiv cs.CV | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12442v1 Announce Type: new 
-Abstract: Differentiable rendering has advanced novel view synthesis (NVS), yet applying it to real-world driving remains difficult due to sparse capture viewpoi
-
-[15] [DB ID: 560] [69.4] Title: Training Under Challenge: Executable Certificates and Challenge-Closed Optimality for Neural Networks
-    Source: ArXiv stat.ML | 2026-08-14 04:00:00
-    Summary: arXiv:2608.12655v1 Announce Type: cross 
-Abstract: A flat training curve does not reveal whether a neural network has reached a global optimum, is locally trapped, is representation-limited, or is mis
-
-[16] [DB ID: 508] [69.3] Title: TRACE Bench: Task-driven Roleplay Agentic Checklist Evaluation
-    Source: ArXiv cs.CL | 2026-08-13 04:00:00
-    Summary: arXiv:2608.11236v1 Announce Type: new 
-Abstract: Roleplay evaluation should do more than assign a single score: it should reveal which role requirements were tested, which failed, and which dialogue e
-
-[17] [DB ID: 512] [69.3] Title: Better, Faster, Stronger: Programmatic Skill Learning Best Reduces Agent Cost
-    Source: ArXiv cs.CL | 2026-08-13 04:00:00
-    Summary: arXiv:2608.11338v1 Announce Type: new 
-Abstract: Recently, the practice of augmenting LLM agent capability with skills has gained prevalence. We explore the cost effective adaptation of agents to nove
-
-[18] [DB ID: 470] [69.2] Title: Poor Man's Agentic Modeling: Simulating Large LLM-Agent Societies on a Laptop
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11215v1 Announce Type: new 
-Abstract: Simulating societies of many large language model (LLM) agents is expensive, yet the questions asked of such simulations are usually macroscopic: phase
-
-[19] [DB ID: 472] [69.2] Title: MaSRead: Content-Addressed Reading of Replicated Latent Stores
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11218v1 Announce Type: new 
-Abstract: Independent agents that reason in latent space can share computed state as key-value cache fragments rather than text. Merged by a conflict-free replic
-
-[20] [DB ID: 476] [69.2] Title: Harnessing agent memory to build lifelong AI partners for materials scientists
-    Source: ArXiv cs.AI | 2026-08-14 04:00:00
-    Summary: arXiv:2608.11224v1 Announce Type: new 
-Abstract: Materials research advances through accumulated experience - scripts that work, protocols that are trusted, warnings attached to failed calculations or

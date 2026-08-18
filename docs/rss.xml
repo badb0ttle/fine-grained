@@ -5,7 +5,7 @@
     <link>https://ai.hjhai.xyz</link>
     <description>每日自动扫描全球 AI 信源，由 LLM 精选并深度解读的 AI 技术情报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 17 Aug 2026 00:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 00:34:38 +0000</lastBuildDate>
     <atom:link href="https://ai.hjhai.xyz/rss.xml" rel="self" type="application/rss+xml"/>
     <generator>AllOfAI Pipeline</generator>
     <item>
@@ -16,6 +16,33 @@
       <description><p>Moonshot 发布开源编程模型 K2.7-Code，声称推理效率提升 30%。但开发者实测后指出基准测试存在夸大，实际体验未达宣传水平。</p><p><strong>重要性：</strong>国产编程模型密集发布，需实测甄别</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
       <category>Blog</category>
       <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
+    </item>
+    <item>
+      <title>无标签也能测 Agent 学习能力</title>
+      <link>https://arxiv.org/abs/2608.13608</link>
+      <guid isPermaLink="false">ai-intel-2608.13608</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>agent 持续学习 harness 靠检索或记忆从反馈中进步，但评测缺标签。论文用 scaling hypothesis，无需标注就能评估这类系统的学习能力。</p><p><strong>重要性：</strong>省掉人工标注的评测成本</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>QUASAR 拉低量化训练损失下限</title>
+      <link>https://arxiv.org/abs/2608.13966</link>
+      <guid isPermaLink="false">ai-intel-2608.13966</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>低精度推理让 PTQ 越来越脆。QUASAR 用 loss-aware reconstruction 改进量化感知训练，降低 QAT 的损失下限，量化后模型精度更高。</p><p><strong>重要性：</strong>让低比特模型更接近全精度</p><p>来源：ArXiv stat.ML · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv stat.ML</source>
+    </item>
+    <item>
+      <title>让手机 AI 助手记一整年</title>
+      <link>https://arxiv.org/abs/2608.13606</link>
+      <guid isPermaLink="false">ai-intel-2608.13606</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>论文提出 MobileMem，从长达一年的手机使用数据中学习，让个人助手理解长期上下文，回答关于过去行为的查询，而不只是孤立问答。</p><p><strong>重要性：</strong>个人助手开始有长期记忆</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
       <title>具身智能体靠技能演化自我进化</title>
@@ -45,6 +72,15 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
+      <title>教 LLM 裁判别乱打高分</title>
+      <link>https://arxiv.org/abs/2608.13564</link>
+      <guid isPermaLink="false">ai-intel-2608.13564</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>用 LLM 当 agent 评测裁判时，它常常过度给分。论文诱导出一套 reward-free 的评分 rubric，减少过度认可，让评测分数更接近真实执行结果。</p><p><strong>重要性：</strong>让 agent 评测分数不再虚高</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
       <title>RL实测降低LLM训练数据中心能耗</title>
       <link>https://arxiv.org/abs/2608.11226</link>
       <guid isPermaLink="false">ai-intel-2608.11226</guid>
@@ -63,6 +99,33 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
+      <title>合成数据救不了小众领域</title>
+      <link>https://arxiv.org/abs/2608.13729</link>
+      <guid isPermaLink="false">ai-intel-2608.13729</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>扩散模型生成的合成图像常被用来补数据稀缺，但在专业小众领域效果有限。论文揭示合成数据在 specialized 领域的局限。</p><p><strong>重要性：</strong>合成数据不是万能补丁</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
+    </item>
+    <item>
+      <title>刷榜不等于代码能力变强</title>
+      <link>https://arxiv.org/abs/2608.13566</link>
+      <guid isPermaLink="false">ai-intel-2608.13566</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>论文指出只刷 SWE-bench 等少数 coding 基准，测不出真实代码能力。作者用多样化评测发现，benchmark 优化带来的收益往往不迁移到一般编程任务。</p><p><strong>重要性：</strong>别再只看 SWE-bench 分数选模型</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
+      <title>按 token 通胀优化 Agent 重试路由</title>
+      <link>https://arxiv.org/abs/2608.13571</link>
+      <guid isPermaLink="false">ai-intel-2608.13571</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>agent 首答失败会反复重试，多烧 token。论文提出 inflation-aware 路由，把重试成本算进决策，减少无效 token 消耗。</p><p><strong>重要性：</strong>直接省 agent 推理成本</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
+    </item>
+    <item>
       <title>VLM能否判断机器人靠近风险</title>
       <link>https://arxiv.org/abs/2608.12515</link>
       <guid isPermaLink="false">ai-intel-2608.12515</guid>
@@ -70,6 +133,15 @@
       <description><p>检验视觉语言模型能否从机器人第一视角图像判断人际距离风险，评估其在人类环境安全导航的可靠性，揭示现有VLM局限。</p><p><strong>重要性：</strong>机器人在人群中行动，安全判断得先靠谱</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
+    </item>
+    <item>
+      <title>Jais 2：阿拉伯语开源 LLM 家族</title>
+      <link>https://arxiv.org/abs/2608.13580</link>
+      <guid isPermaLink="false">ai-intel-2608.13580</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>MBZUAI、Cerebras、Inception 联合发布 Jais 2，一套以阿拉伯语为核心的开放 LLM，覆盖不同规模，主打阿拉伯语及多语言能力。</p><p><strong>重要性：</strong>补齐非英语 LLM 的开源空白</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
       <title>离线评估Top-k分配何时可信</title>
@@ -88,6 +160,15 @@
       <description><p>8月14日阿里开源Qwen3.8系列，其中27B稠密模型原生多模态，整体水平超Qwen3.7-Plus，量化后可在消费级显卡运行，千问全系下载量破30亿次。</p><p><strong>重要性：</strong>开发者可免费商用，消费级显卡即可部署强模型</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
       <category>中文媒体</category>
       <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
+    </item>
+    <item>
+      <title>模型升级未必样样更好</title>
+      <link>https://arxiv.org/abs/2608.13607</link>
+      <guid isPermaLink="false">ai-intel-2608.13607</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>前沿 LLM 升级后整体更强，但单条样本可能变差。论文测试多种信号，发现没有一个能普遍预测版本更新后哪些样本会退化。</p><p><strong>重要性：</strong>上线新版本前别只看平均分</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
       <title>自生成MCQ测评LLM交易Agent</title>
@@ -115,6 +196,15 @@
       <description><p>MARCH引入内容路由的状态锚点扩展循环记忆，兼顾Transformer长上下文检索能力与固定内存开销，摆脱token级记忆随上下文线性增长的瓶颈。</p><p><strong>重要性：</strong>长上下文推理内存可控，成本不再线性涨</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
+      <title>VLM 图像塔别乱调，微调要克制</title>
+      <link>https://www.leiphone.com/category/private/xQX0laen8XifhvXD.html</link>
+      <guid isPermaLink="false">ai-intel-xQX0laen8XifhvXD.html</guid>
+      <pubDate>Mon, 17 Aug 2026 04:45:00 +0000</pubDate>
+      <description><p>浙大 IJCAI 论文发现 VLM 存在非对称性，提出 A3B2 自适应非对称适配器。结论是 CLIP 微调该踩刹车，克制比全面调参更有效。</p><p><strong>重要性：</strong>VLM 微调少走弯路</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
+      <category>中文媒体</category>
+      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
     </item>
     <item>
       <title>开悟世界模型四项权威评测登顶</title>
@@ -187,96 +277,6 @@
       <description><p>训练后的Transformer残差流存在特权基方向，统计特性异于其余维度；本文刻画这些方向的几何与行为结构。</p><p><strong>重要性：</strong>模型表征解释多了条线索</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
-    </item>
-    <item>
-      <title>程序化技能学习最省Agent成本</title>
-      <link>https://arxiv.org/abs/2608.11338</link>
-      <guid isPermaLink="false">ai-intel-2608.11338</guid>
-      <pubDate>Thu, 13 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>对比多种给LLM Agent加技能的方法，可执行代码形式的程序化技能在适配新任务时成本最低、效果最好。</p><p><strong>重要性：</strong>企业低成本扩展Agent能力</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
-    </item>
-    <item>
-      <title>笔记本上模拟大规模Agent社会</title>
-      <link>https://arxiv.org/abs/2608.11215</link>
-      <guid isPermaLink="false">ai-intel-2608.11215</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>用宏观统计方法在单台笔记本上模拟大量LLM Agent组成的群体，回答相变、极化等宏观问题，省掉昂贵的逐体仿真。</p><p><strong>重要性：</strong>研究Agent社会无需烧GPU</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
-    </item>
-    <item>
-      <title>给材料科学家造终身AI伙伴</title>
-      <link>https://arxiv.org/abs/2608.11224</link>
-      <guid isPermaLink="false">ai-intel-2608.11224</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>把材料研究积累的脚本、协议和失败记录做成Agent记忆，让AI助手跨项目复用经验，长期陪伴材料科学家。</p><p><strong>重要性：</strong>科研Agent靠记忆积累经验</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
-    </item>
-    <item>
-      <title>PixelRAG 视觉检索降 token 成本 10 倍</title>
-      <link>https://venturebeat.com/data/pixelrag-beats-text-parsers-on-accuracy-and-cuts-ai-agent-token-costs-10x</link>
-      <guid isPermaLink="false">ai-intel-pixelrag-beats-text-parsers-on-accuracy-and-cuts-ai-agent-token-costs-10x</guid>
-      <pubDate>Fri, 12 Jun 2026 15:39:11 +0000</pubDate>
-      <description><p>PixelRAG 直接用视觉编码器处理文档截图，跳过文本解析。精度高于传统 parser，AI agent token 消耗砍掉 90%。</p><p><strong>重要性：</strong>RAG 管道从文本转向视觉，成本骤降</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
-      <category>Blog</category>
-      <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
-    </item>
-    <item>
-      <title>NVIDIA 发布首个 agentic coding 评测</title>
-      <link>https://developer.nvidia.com/blog/nvidia-achieves-leading-agentic-coding-performance-on-first-agentic-ai-benchmark/</link>
-      <guid isPermaLink="false">ai-intel-24</guid>
-      <pubDate>Fri, 12 Jun 2026 21:12:40 +0000</pubDate>
-      <description><p>NVIDIA 推出首个 AI agent 编程基准测试，填补 agentic coding 缺乏统一评测的空白，推动推理负载标准化。</p><p><strong>重要性：</strong>agent 代码能力终于有了统一尺子</p><p>来源：NVIDIA Blog · 分类：AI Lab</p></description>
-      <category>AI Lab</category>
-      <source url="https://ai.hjhai.xyz">NVIDIA Blog</source>
-    </item>
-    <item>
-      <title>微软 SkillOpt 自动升级 agent 技能</title>
-      <link>https://venturebeat.com/orchestration/microsofts-open-source-skillopt-automatically-upgrades-ai-agent-skills-without-touching-model-weights</link>
-      <guid isPermaLink="false">ai-intel-microsofts-open-source-skillopt-automatically-upgrades-ai-agent-skills-without-touching-model-weights</guid>
-      <pubDate>Thu, 11 Jun 2026 23:37:00 +0000</pubDate>
-      <description><p>微软开源 SkillOpt，不动模型权重就能自动优化 agent 的 markdown 技能文件，让 agent 能力随任务持续进化。</p><p><strong>重要性：</strong>agent 技能可像软件一样迭代更新</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
-      <category>Blog</category>
-      <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
-    </item>
-    <item>
-      <title>NanoClaw 联合 JFrog 构建 agent 免疫系统</title>
-      <link>https://venturebeat.com/security/nanoclaw-and-jfrog-launch-immune-system-to-block-ai-agents-from-downloading-malicious-code</link>
-      <guid isPermaLink="false">ai-intel-nanoclaw-and-jfrog-launch-immune-system-to-block-ai-agents-from-downloading-malicious-code</guid>
-      <pubDate>Fri, 12 Jun 2026 16:46:00 +0000</pubDate>
-      <description><p>NanoClaw 与 JFrog 合作推出安全集成，在 AI agent 下载代码时自动拦截恶意软件，给 agent 装上实时杀毒。</p><p><strong>重要性：</strong>agent 安全从可选功能变成标配</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
-      <category>Blog</category>
-      <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
-    </item>
-    <item>
-      <title>Google 提出「可信不确定性」反幻觉</title>
-      <link>https://venturebeat.com/orchestration/google-researchers-introduce-faithful-uncertainty-allowing-llms-to-offer-best-guesses-instead-of-hallucinations</link>
-      <guid isPermaLink="false">ai-intel-google-researchers-introduce-faithful-uncertainty-allowing-llms-to-offer-best-guesses-instead-of-hallucinations</guid>
-      <pubDate>Fri, 12 Jun 2026 21:27:29 +0000</pubDate>
-      <description><p>Google 研究者提出 faithful uncertainty 方法，让 LLM 不确定时给最佳猜测而非胡编，减少幻觉同时保持输出有用。</p><p><strong>重要性：</strong>降低幻觉的新路线，不是简单拒答</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
-      <category>Blog</category>
-      <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
-    </item>
-    <item>
-      <title>Helion 让 vLLM 推理内核跨 GPU 可移植</title>
-      <link>https://pytorch.org/blog/portable-vllm-model-inference-kernels-in-helion/</link>
-      <guid isPermaLink="false">ai-intel-28</guid>
-      <pubDate>Wed, 10 Jun 2026 17:00:13 +0000</pubDate>
-      <description><p>PyTorch 推出 Helion 推理内核，集成 vLLM 支持 FP8 量化，在 H100 和 B200 上都能原生运行，告别 CUDA 重写。</p><p><strong>重要性：</strong>vLLM 推理从 NVIDIA 绑定走向可移植</p><p>来源：PyTorch Blog · 分类：Community</p></description>
-      <category>Community</category>
-      <source url="https://ai.hjhai.xyz">PyTorch Blog</source>
-    </item>
-    <item>
-      <title>OpenAI 收购 Ona 扩展 Codex 云环境</title>
-      <link>https://openai.com/index/openai-to-acquire-ona</link>
-      <guid isPermaLink="false">ai-intel-openai-to-acquire-ona</guid>
-      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
-      <description><p>OpenAI 计划收购 Ona，为 Codex 提供安全持久云端环境，让 agent 能执行长时间企业工作流，从代码补全跃迁到全流程代理。</p><p><strong>重要性：</strong>Codex 从代码工具升级为企业 agent 平台</p><p>来源：OpenAI Blog · 分类：AI Lab</p></description>
-      <category>AI Lab</category>
-      <source url="https://ai.hjhai.xyz">OpenAI Blog</source>
     </item>
   </channel>
 </rss>

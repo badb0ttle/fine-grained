@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-08-17T00:38:00.382888+00:00",
-  "curated_at": "2026-08-17T00:38:00.382894+00:00",
+  "scanned_at": "2026-08-18T00:34:38.962542+00:00",
+  "curated_at": "2026-08-18T00:34:38.962549+00:00",
   "total_sources": 16,
-  "successful_sources": 11,
-  "total_articles": 477,
-  "curated_count": 31,
+  "successful_sources": 16,
+  "total_articles": 617,
+  "curated_count": 41,
   "articles": [
     {
       "title": "Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out",
@@ -16,6 +16,39 @@
       "title_cn": "Kimi K2.7-Code 减少推理 token 30%",
       "summary_cn": "Moonshot 发布开源编程模型 K2.7-Code，声称推理效率提升 30%。但开发者实测后指出基准测试存在夸大，实际体验未达宣传水平。",
       "why_it_matters": "国产编程模型密集发布，需实测甄别"
+    },
+    {
+      "title": "Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis",
+      "link": "https://arxiv.org/abs/2608.13608",
+      "summary": "arXiv:2608.13608v1 Announce Type: new \nAbstract: Agentic \"Continual Learning Harnesses\", systems that pair an LLM with retrieval or memory to improve from feedback without retraining, have shown growing value in cybersecurity. But their value is conventionally measured by gains against labeled benchmarks, an approach that often fails in operational security settings. Benchmark labels are scarce, stale, and unrepresentative, so a practitioner often cannot tell whether a given harness helps at all",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "无标签也能测 Agent 学习能力",
+      "summary_cn": "agent 持续学习 harness 靠检索或记忆从反馈中进步，但评测缺标签。论文用 scaling hypothesis，无需标注就能评估这类系统的学习能力。",
+      "why_it_matters": "省掉人工标注的评测成本"
+    },
+    {
+      "title": "QUASAR: Lowering the Loss Floor of Quantization-Aware Training with Loss-Aware Reconstruction",
+      "link": "https://arxiv.org/abs/2608.13966",
+      "summary": "arXiv:2608.13966v1 Announce Type: cross \nAbstract: As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-aware training (QAT) essential for preserving model quality. However, QAT computes the loss and surrogate gradients using a lossy reconstruction of latent full-precision weights, while applying updates to the latent weights themselves. This mismatch can lead to suboptimal training trajectories and a ",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv stat.ML",
+      "category": "Paper",
+      "title_cn": "QUASAR 拉低量化训练损失下限",
+      "summary_cn": "低精度推理让 PTQ 越来越脆。QUASAR 用 loss-aware reconstruction 改进量化感知训练，降低 QAT 的损失下限，量化后模型精度更高。",
+      "why_it_matters": "让低比特模型更接近全精度"
+    },
+    {
+      "title": "MobileMem: Learning from a Year of Mobile Experiences",
+      "link": "https://arxiv.org/abs/2608.13606",
+      "summary": "arXiv:2608.13606v1 Announce Type: new \nAbstract: The next generation of AI agents is increasingly moving beyond systems that answer isolated questions toward persistent personal assistants that can understand, remember, and continuously learn from users' experiences. Such assistants require long-term memory to accumulate and leverage user-specific experiences over time, yet existing benchmarks remain inadequate for realistic mobile settings, where experiences are heterogeneous, multimodal, evolv",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "让手机 AI 助手记一整年",
+      "summary_cn": "论文提出 MobileMem，从长达一年的手机使用数据中学习，让个人助手理解长期上下文，回答关于过去行为的查询，而不只是孤立问答。",
+      "why_it_matters": "个人助手开始有长期记忆"
     },
     {
       "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
@@ -51,6 +84,17 @@
       "why_it_matters": "世界模型有了统一打分，研究可横向比较"
     },
     {
+      "title": "Inducing Reward-Free Judging Rubrics that Reduce Over-Crediting in Agent Evaluation",
+      "link": "https://arxiv.org/abs/2608.13564",
+      "summary": "arXiv:2608.13564v1 Announce Type: new \nAbstract: Evaluating language-model agents at scale increasingly relies on a second language model as an automatic judge, because the gold signal, an executable environment reward, is expensive, slow, or unavailable at deployment time. Such a judge is a reward-free proxy whose value depends on whether it can be trusted, yet existing judges either hand-write the scoring rubric, as in G-Eval, or fine-tune the judge's weights, and both tend to credit fluent bu",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "教 LLM 裁判别乱打高分",
+      "summary_cn": "用 LLM 当 agent 评测裁判时，它常常过度给分。论文诱导出一套 reward-free 的评分 rubric，减少过度认可，让评测分数更接近真实执行结果。",
+      "why_it_matters": "让 agent 评测分数不再虚高"
+    },
+    {
       "title": "Cutting AI Datacenter Energy with Reinforcement Learning: Measured Power Control of LLM Training from One GPU to the Fleet",
       "link": "https://arxiv.org/abs/2608.11226",
       "summary": "arXiv:2608.11226v1 Announce Type: new \nAbstract: Reinforcement-learning post-training dominates modern language-model development, yet its power behavior on GPU hardware has not been characterized, and datacenters manage GPU power with workload-blind mechanisms, static caps and reactive throttling, that slow hardware indiscriminately. We instrument GRPO training with half-second power telemetry at 7B, 14B, and 72B scales on one to four A100s (380,000+ samples), and train a PPO meta-controller th",
@@ -73,6 +117,39 @@
       "why_it_matters": "预训练算力下降，中小团队也能训大模型"
     },
     {
+      "title": "Limitations of Synthetic Data Generation in Specialized Data-Scarce Domains",
+      "link": "https://arxiv.org/abs/2608.13729",
+      "summary": "arXiv:2608.13729v1 Announce Type: new \nAbstract: Advances in diffusion-based generative models have motivated the use of synthetic image generation to alleviate data scarcity in vision tasks. While this strategy has shown promise in natural image benchmarks such as ImageNet, its effectiveness in sparse, high-variance real-world domains remains unclear. In this work, we focus on domains where images differ substantially from common image datasets and additional data are expensive to obtain. Again",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "合成数据救不了小众领域",
+      "summary_cn": "扩散模型生成的合成图像常被用来补数据稀缺，但在专业小众领域效果有限。论文揭示合成数据在 specialized 领域的局限。",
+      "why_it_matters": "合成数据不是万能补丁"
+    },
+    {
+      "title": "Don't Claim Benchmark-Oriented Optimization Improves General Coding Capability -- Diverse Evaluation Is Required",
+      "link": "https://arxiv.org/abs/2608.13566",
+      "summary": "arXiv:2608.13566v1 Announce Type: new \nAbstract: Post-training papers, model cards, and blog posts often treat scores on a small set of coding benchmarks (e.g., SWE-bench and LiveCodeBench) as evidence of broad coding capability, both for research artifacts and user-facing systems. We argue that optimization for these benchmarks leads to measuring task-specific performance, creating a meaning gap between measured scores and claims of general coding ability. We examine this gap with a Django-base",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "刷榜不等于代码能力变强",
+      "summary_cn": "论文指出只刷 SWE-bench 等少数 coding 基准，测不出真实代码能力。作者用多样化评测发现，benchmark 优化带来的收益往往不迁移到一般编程任务。",
+      "why_it_matters": "别再只看 SWE-bench 分数选模型"
+    },
+    {
+      "title": "Not All Tokens Are Equal: Inflation-Aware Routing for Agentic LLM Systems",
+      "link": "https://arxiv.org/abs/2608.13571",
+      "summary": "arXiv:2608.13571v1 Announce Type: new \nAbstract: When a language model fails to answer a query on the first attempt, an agentic system retries, consuming additional tokens each time. This retry overhead creates a gap between what a model's per-token price implies and what a full workflow actually costs. We call this gap \\emph{token inflation} and define it as the ratio of true workflow cost to single-call cost. Systems like FrugalGPT route based on the latter, which can underestimate real cost b",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "按 token 通胀优化 Agent 重试路由",
+      "summary_cn": "agent 首答失败会反复重试，多烧 token。论文提出 inflation-aware 路由，把重试成本算进决策，减少无效 token 消耗。",
+      "why_it_matters": "直接省 agent 推理成本"
+    },
+    {
       "title": "Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?",
       "link": "https://arxiv.org/abs/2608.12515",
       "summary": "arXiv:2608.12515v1 Announce Type: new \nAbstract: Assessing proxemic danger from a robot's egocentric perspective is critical for safe embodied navigation in human environments and requires both visual and contextual reasoning. We evaluate three opensource vision-language models (VLMs) (\\textit{InternVL}, \\textit{Qwen-VL}, and \\textit{SmolVLM}) on the classification of egocentric robot images into four danger levels, comparing three prompting strategies and two rounds of QLoRA fine-tuning against",
@@ -82,6 +159,17 @@
       "title_cn": "VLM能否判断机器人靠近风险",
       "summary_cn": "检验视觉语言模型能否从机器人第一视角图像判断人际距离风险，评估其在人类环境安全导航的可靠性，揭示现有VLM局限。",
       "why_it_matters": "机器人在人群中行动，安全判断得先靠谱"
+    },
+    {
+      "title": "Jais 2: A Family of Arabic-Centric Open Large Language Models",
+      "link": "https://arxiv.org/abs/2608.13580",
+      "summary": "arXiv:2608.13580v1 Announce Type: new \nAbstract: Jais 2 is a family of Arabic-centric large language models developed jointly by MBZUAI, Cerebras, and Inception, designed to advance Arabic-centric language modeling, with strong performance across the Arabic and culturally grounded benchmarks evaluated in this report. The family includes, to our knowledge, the largest open Arabic-centric LLM trained from scratch at 70B parameters, and a competitive 8B-parameter variant among the evaluated open mo",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.CL",
+      "category": "Paper",
+      "title_cn": "Jais 2：阿拉伯语开源 LLM 家族",
+      "summary_cn": "MBZUAI、Cerebras、Inception 联合发布 Jais 2，一套以阿拉伯语为核心的开放 LLM，覆盖不同规模，主打阿拉伯语及多语言能力。",
+      "why_it_matters": "补齐非英语 LLM 的开源空白"
     },
     {
       "title": "When Can You Trust Offline Evaluation of Equal-Cost Top-k Allocation? A Controlled, Reproducible Benchmark and Practitioner's Guide",
@@ -104,6 +192,17 @@
       "title_cn": "阿里开源Qwen3.8-27B多模态",
       "summary_cn": "8月14日阿里开源Qwen3.8系列，其中27B稠密模型原生多模态，整体水平超Qwen3.7-Plus，量化后可在消费级显卡运行，千问全系下载量破30亿次。",
       "why_it_matters": "开发者可免费商用，消费级显卡即可部署强模型"
+    },
+    {
+      "title": "No Universal Signal Predicts Sample-Level LLM Regression under Version Updates",
+      "link": "https://arxiv.org/abs/2608.13607",
+      "summary": "arXiv:2608.13607v1 Announce Type: new \nAbstract: Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate. But aggregate gains say little about individual samples: an update can still cause sample-level regression, where a response correct under the old model becomes incorrect under the new one. This paper studies how to predict such regressions from signals available at inference time. We compare single-model signals (confidence, logit margin, attention entr",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "模型升级未必样样更好",
+      "summary_cn": "前沿 LLM 升级后整体更强，但单条样本可能变差。论文测试多种信号，发现没有一个能普遍预测版本更新后哪些样本会退化。",
+      "why_it_matters": "上线新版本前别只看平均分"
     },
     {
       "title": "Backtrader-Bench: Benchmarking LLM Agents on Algorithmic Trading with Self-Generated MCQs",
@@ -137,6 +236,17 @@
       "title_cn": "MARCH用内容路由扩展循环记忆",
       "summary_cn": "MARCH引入内容路由的状态锚点扩展循环记忆，兼顾Transformer长上下文检索能力与固定内存开销，摆脱token级记忆随上下文线性增长的瓶颈。",
       "why_it_matters": "长上下文推理内存可控，成本不再线性涨"
+    },
+    {
+      "title": "别再乱调图像塔了！浙大 IJCAI 论文揭露 VLM 非对称性真相，给 CLIP 微调「踩刹车」",
+      "link": "https://www.leiphone.com/category/private/xQX0laen8XifhvXD.html",
+      "summary": "A3B2自适应非对称适配器，诠释大模型微调的“克制”艺术。&nbsp; &nbsp; 作者丨张 &nbsp; 璐&nbsp; &nbsp; 编辑丨幸丽娟&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;在视觉语言大模型（VLM）落地少样本迁移任务时，高效参数微调（PEFT）是大家普遍采用的低成本方案。然而，业界长期存在一个",
+      "published": "2026-08-17 04:45:00",
+      "source": "雷锋网 AI",
+      "category": "中文媒体",
+      "title_cn": "VLM 图像塔别乱调，微调要克制",
+      "summary_cn": "浙大 IJCAI 论文发现 VLM 存在非对称性，提出 A3B2 自适应非对称适配器。结论是 CLIP 微调该踩刹车，克制比全面调参更有效。",
+      "why_it_matters": "VLM 微调少走弯路"
     },
     {
       "title": "生成预测四大权威榜单第一！开悟世界模型确立具身智能世界模型新标杆",
