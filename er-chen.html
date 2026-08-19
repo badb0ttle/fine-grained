@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI情报聚合站 — ER 图（Chen 表示法）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #fff;
+    color: #000;
+    font-family: serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+  }
+  svg { max-width: 100%; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+
+  <!-- ─── 图例（左上角） ─── -->
+  <rect x="20" y="20" width="300" height="130" fill="none" stroke="#000" stroke-width="1" rx="4"/>
+  <text x="170" y="42" text-anchor="middle" font-size="13" font-weight="bold">图例</text>
+
+  <rect x="40" y="55" width="50" height="22" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="65" y="70" text-anchor="middle" font-size="11">实体</text>
+
+  <ellipse cx="65" cy="100" rx="25" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="65" y="104" text-anchor="middle" font-size="11">属性</text>
+
+  <polygon points="165,60 190,72 165,84 140,72" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="165" y="76" text-anchor="middle" font-size="11">关系</text>
+
+  <line x1="60" y1="138" x2="310" y2="138" stroke="#000" stroke-width="1"/>
+  <text x="185" y="138" text-anchor="middle" font-size="10" dominant-baseline="middle" fill="#000">—— 连线 (含基数标注 1 / N)</text>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 1: articles  (文章)   左上区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="80" y="220" width="110" height="40" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="135" y="245" text-anchor="middle" font-size="13" font-weight="bold">articles</text>
+  <text x="135" y="258" text-anchor="middle" font-size="10">文章</text>
+
+  <!-- articles 属性（左侧） -->
+  <ellipse cx="42" cy="280" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="284" text-anchor="middle" font-size="10">id (PK)</text>
+  <line x1="42" y1="268" x2="80" y2="235" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="310" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="314" text-anchor="middle" font-size="10">title</text>
+  <line x1="42" y1="298" x2="80" y2="240" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="340" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="344" text-anchor="middle" font-size="10">link</text>
+  <line x1="42" y1="328" x2="80" y2="245" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="370" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="374" text-anchor="middle" font-size="10">content_hash</text>
+  <line x1="42" y1="358" x2="80" y2="250" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="400" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="404" text-anchor="middle" font-size="10">published</text>
+  <line x1="42" y1="388" x2="80" y2="255" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="430" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="434" text-anchor="middle" font-size="10">source_name</text>
+  <line x1="42" y1="418" x2="80" y2="260" stroke="#000" stroke-width="1"/>
+
+  <!-- articles 属性（右侧） -->
+  <ellipse cx="310" cy="280" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="284" text-anchor="middle" font-size="10">score_total</text>
+  <line x1="310" y1="268" x2="190" y2="235" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="310" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="314" text-anchor="middle" font-size="10">curated</text>
+  <line x1="310" y1="298" x2="190" y2="242" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="340" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="344" text-anchor="middle" font-size="10">category</text>
+  <line x1="310" y1="328" x2="190" y2="248" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="370" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="374" text-anchor="middle" font-size="10">title_cn</text>
+  <line x1="310" y1="358" x2="190" y2="252" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="400" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="404" text-anchor="middle" font-size="10">summary_cn</text>
+  <line x1="310" y1="388" x2="190" y2="255" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="430" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="434" text-anchor="middle" font-size="10">is_paper</text>
+  <line x1="310" y1="418" x2="190" y2="258" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="310" cy="460" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="310" y="464" text-anchor="middle" font-size="10">paper_id</text>
+  <line x1="310" y1="448" x2="190" y2="260" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 2: sources  (信源)   中上区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="480" y="220" width="110" height="40" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="535" y="245" text-anchor="middle" font-size="13" font-weight="bold">sources</text>
+  <text x="535" y="258" text-anchor="middle" font-size="10">信源</text>
+
+  <ellipse cx="442" cy="280" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="442" y="284" text-anchor="middle" font-size="10">name (PK)</text>
+  <line x1="442" y1="268" x2="480" y2="235" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="442" cy="310" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="442" y="314" text-anchor="middle" font-size="10">url</text>
+  <line x1="442" y1="298" x2="480" y2="242" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="442" cy="340" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="442" y="344" text-anchor="middle" font-size="10">category</text>
+  <line x1="442" y1="328" x2="480" y2="248" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="628" cy="280" rx="48" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="628" y="284" text-anchor="middle" font-size="10">consecutive_failures</text>
+  <line x1="628" y1="268" x2="590" y2="235" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="628" cy="310" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="628" y="314" text-anchor="middle" font-size="10">last_success</text>
+  <line x1="628" y1="298" x2="590" y2="242" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 3: articles_fts  (全文搜索)   右上区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="830" y="130" width="130" height="40" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="895" y="155" text-anchor="middle" font-size="13" font-weight="bold">articles_fts</text>
+  <text x="895" y="168" text-anchor="middle" font-size="10">FTS5全文搜索</text>
+
+  <ellipse cx="750" cy="155" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="750" y="159" text-anchor="middle" font-size="10">title</text>
+  <line x1="750" y1="150" x2="830" y2="145" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="750" cy="185" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="750" y="189" text-anchor="middle" font-size="10">title_cn</text>
+  <line x1="750" y1="180" x2="830" y2="152" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="1040" cy="155" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1040" y="159" text-anchor="middle" font-size="10">summary</text>
+  <line x1="1040" y1="150" x2="960" y2="145" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="1040" cy="185" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1040" y="189" text-anchor="middle" font-size="10">summary_cn</text>
+  <line x1="1040" y1="180" x2="960" y2="152" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 4: daily_stats  (每日统计)   中右区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="860" y="420" width="120" height="50" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="920" y="448" text-anchor="middle" font-size="13" font-weight="bold">daily_stats</text>
+  <text x="920" y="463" text-anchor="middle" font-size="10">每日统计</text>
+
+  <ellipse cx="1060" cy="445" rx="35" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1060" y="449" text-anchor="middle" font-size="10">date (PK)</text>
+  <line x1="1060" y1="438" x2="980" y2="440" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="1060" cy="480" rx="42" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1060" y="484" text-anchor="middle" font-size="10">total_articles</text>
+  <line x1="1060" y1="472" x2="980" y2="448" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="1060" cy="515" rx="42" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1060" y="519" text-anchor="middle" font-size="10">new_articles</text>
+  <line x1="1060" y1="507" x2="980" y2="458" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="1060" cy="550" rx="42" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="1060" y="554" text-anchor="middle" font-size="10">curated_count</text>
+  <line x1="1060" y1="542" x2="980" y2="465" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 5: models  (模型)    左下区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="80" y="580" width="110" height="40" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="135" y="605" text-anchor="middle" font-size="13" font-weight="bold">models</text>
+  <text x="135" y="618" text-anchor="middle" font-size="10">模型</text>
+
+  <ellipse cx="42" cy="610" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="614" text-anchor="middle" font-size="10">id (PK)</text>
+  <line x1="42" y1="600" x2="80" y2="595" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="42" cy="640" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="42" y="644" text-anchor="middle" font-size="10">name</text>
+  <line x1="42" y1="630" x2="80" y2="602" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="230" cy="610" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="230" y="614" text-anchor="middle" font-size="10">provider</text>
+  <line x1="230" y1="600" x2="190" y2="595" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="230" cy="640" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="230" y="644" text-anchor="middle" font-size="10">parameters</text>
+  <line x1="230" y1="630" x2="190" y2="602" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 实体 6: model_benchmarks  (评测)    右下区域 -->
+  <!-- ════════════════════════════════════════════ -->
+  <rect x="480" y="580" width="160" height="50" fill="none" stroke="#000" stroke-width="2" rx="2"/>
+  <text x="560" y="608" text-anchor="middle" font-size="13" font-weight="bold">model_benchmarks</text>
+  <text x="560" y="623" text-anchor="middle" font-size="10">模型评测</text>
+
+  <ellipse cx="380" cy="605" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="380" y="609" text-anchor="middle" font-size="10">id (PK)</text>
+  <line x1="380" y1="598" x2="480" y2="598" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="380" cy="635" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="380" y="639" text-anchor="middle" font-size="10">benchmark</text>
+  <line x1="380" y1="628" x2="480" y2="605" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="380" cy="665" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="380" y="669" text-anchor="middle" font-size="10">score</text>
+  <line x1="380" y1="658" x2="480" y2="612" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="380" cy="695" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="380" y="699" text-anchor="middle" font-size="10">model_id (FK)</text>
+  <line x1="380" y1="688" x2="480" y2="618" stroke="#000" stroke-width="1"/>
+
+  <ellipse cx="770" cy="605" rx="38" ry="12" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="770" y="609" text-anchor="middle" font-size="10">source_article</text>
+  <line x1="770" y1="598" x2="640" y2="598" stroke="#000" stroke-width="1"/>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 关系 1: sources ──◇── articles  (1:N) -->
+  <!-- ════════════════════════════════════════════ -->
+  <line x1="480" y1="240" x2="370" y2="240" stroke="#000" stroke-width="1.5"/>
+  <polygon points="370,232 355,240 370,248" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="425" y="232" text-anchor="middle" font-size="10" font-weight="bold">1</text>
+  <line x1="290" y1="240" x2="275" y2="240" stroke="#000" stroke-width="1.5"/>
+  <text x="330" y="232" text-anchor="middle" font-size="10" font-weight="bold">N</text>
+
+  <!-- 关系菱形 -->
+  <polygon points="320,228 340,240 320,252 300,240" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="320" y="244" text-anchor="middle" font-size="9">产出</text>
+
+  <text x="380" y="278" text-anchor="middle" font-size="9">source_name</text>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 关系 2: articles ──◇── articles_fts  (1:1, 触发器) -->
+  <!-- ════════════════════════════════════════════ -->
+  <line x1="190" y1="220" x2="190" y2="195" stroke="#000" stroke-width="1.5"/>
+  <line x1="190" y1="195" x2="830" y2="195" stroke="#000" stroke-width="1.5"/>
+  <line x1="830" y1="195" x2="830" y2="170" stroke="#000" stroke-width="1.5"/>
+
+  <polygon points="830,178 815,195 830,212" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="785" y="187" text-anchor="middle" font-size="10" font-weight="bold">1</text>
+
+  <polygon points="230,183 245,195 230,207 215,195" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="260" y="187" text-anchor="middle" font-size="9">同步</text>
+
+  <line x1="175" y1="195" x2="190" y2="195" stroke="#000" stroke-width="1.5"/>
+  <text x="215" y="228" text-anchor="middle" font-size="9">FTS5 触发器</text>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 关系 3: models ──◇── model_benchmarks  (1:N) -->
+  <!-- ════════════════════════════════════════════ -->
+  <line x1="190" y1="605" x2="480" y2="605" stroke="#000" stroke-width="1.5"/>
+
+  <polygon points="190,597 175,605 190,613" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="250" y="597" text-anchor="middle" font-size="10" font-weight="bold">1</text>
+
+  <polygon points="340,597 360,605 340,613 320,605" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="340" y="609" text-anchor="middle" font-size="9">评测</text>
+
+  <line x1="465" y1="605" x2="480" y2="605" stroke="#000" stroke-width="1.5"/>
+  <text x="420" y="597" text-anchor="middle" font-size="10" font-weight="bold">N</text>
+
+  <text x="335" y="630" text-anchor="middle" font-size="9">model_id (FK)</text>
+
+  <!-- ════════════════════════════════════════════ -->
+  <!-- 标题 -->
+  <!-- ════════════════════════════════════════════ -->
+  <text x="700" y="870" text-anchor="middle" font-size="16" font-weight="bold">AI 情报智能聚合站 — ER 图（Chen 表示法）</text>
+  <text x="700" y="895" text-anchor="middle" font-size="11">▢ 实体 &nbsp;&nbsp; ◇ 关系 &nbsp;&nbsp; ◯ 属性 &nbsp;&nbsp; —— 连线 (1 / N 基数)</text>
+  <text x="700" y="915" text-anchor="middle" font-size="10">articles ↔ 每日统计之间为弱关联：Pipeline 结束写入 daily_stats，不建立外键约束</text>
+  <text x="700" y="930" text-anchor="middle" font-size="10">github_trending 与 api_idempotency_keys 为辅助表，省略显示</text>
+
+</svg>
+</body>
+</html>

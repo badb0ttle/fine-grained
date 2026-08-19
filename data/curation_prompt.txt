@@ -33,96 +33,96 @@
     Source: TestSource | 2026-06-21T14:00:00Z
     Summary: Testing batch insert via API
 
-[2] [DB ID: 952] [80.3] Title: Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis
-    Source: ArXiv cs.AI | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13608v1 Announce Type: new 
-Abstract: Agentic "Continual Learning Harnesses", systems that pair an LLM with retrieval or memory to improve from feedback without retraining, have shown growi
+[2] [DB ID: 1242] [88.3] Title: An Agentic Framework Using Rules and LLMs for Embedding and Annotating Descriptive Document Layouts: A Plant Science Use Case
+    Source: ArXiv cs.AI | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14587v1 Announce Type: new 
+Abstract: Background: Recent advances in information retrieval (IR) leverage both dense and sparse representations, large language models (LLMs), and specialized
 
-[3] [DB ID: 1033] [79.6] Title: QUASAR: Lowering the Loss Floor of Quantization-Aware Training with Loss-Aware Reconstruction
-    Source: ArXiv stat.ML | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13966v1 Announce Type: cross 
-Abstract: As large language model inference shifts toward lower precision, post-training quantization (PTQ) becomes increasingly brittle, making quantization-a
+[3] [DB ID: 1295] [84.5] Title: VideoGAIA: A Benchmark for General AI Assistants on Agentic Video Understanding
+    Source: ArXiv cs.CV | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14718v1 Announce Type: new 
+Abstract: Video understanding is a fundamental task for evaluating the capabilities of multimodal large language models (MLLMs). However, existing leading models
 
-[4] [DB ID: 950] [79.3] Title: MobileMem: Learning from a Year of Mobile Experiences
-    Source: ArXiv cs.AI | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13606v1 Announce Type: new 
-Abstract: The next generation of AI agents is increasingly moving beyond systems that answer isolated questions toward persistent personal assistants that can un
+[4] [DB ID: 1248] [83.3] Title: Forward Pass Domain Adaptation (Without Cross-Layer Backpropagation)
+    Source: ArXiv cs.LG | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14563v1 Announce Type: new 
+Abstract: Forward-Pass-Only MLP training (FPO) adapts large language models without a backward pass through the model body, achieving 2.7--3.2x the throughput of
 
-[5] [DB ID: 972] [79.3] Title: The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference
+[5] [DB ID: 1266] [82.3] Title: Discrete Diffusion Language Models Are Training-Free Multi-Label Classifiers
+    Source: ArXiv cs.LG | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14649v1 Announce Type: new 
+Abstract: We present dLLM-SetScore, a training-free method that uses discrete masked-diffusion language models for multi-label text classification. For each cand
+
+[6] [DB ID: 972] [79.3] Title: The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference
     Source: ArXiv cs.LG | 2026-08-17 04:00:00
     Summary: arXiv:2608.13756v1 Announce Type: new 
 Abstract: Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable. We test that assumption: holding the checkpoin
 
-[6] [DB ID: 989] [79.3] Title: TeachMateGPT: A Multi-Agent Knowledge-Grounded Framework for Pedagogical Assessment Generation from Science Curriculum Materials
+[7] [DB ID: 989] [79.3] Title: TeachMateGPT: A Multi-Agent Knowledge-Grounded Framework for Pedagogical Assessment Generation from Science Curriculum Materials
     Source: ArXiv cs.CL | 2026-08-17 04:00:00
     Summary: arXiv:2608.13708v1 Announce Type: new 
 Abstract: Automatically generating textbook-grounded assessment items can reduce science teachers' workload, but existing retrieval-augmented generation (RAG) sy
 
-[7] [DB ID: 940] [77.3] Title: Inducing Reward-Free Judging Rubrics that Reduce Over-Crediting in Agent Evaluation
-    Source: ArXiv cs.AI | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13564v1 Announce Type: new 
-Abstract: Evaluating language-model agents at scale increasingly relies on a second language model as an automatic judge, because the gold signal, an executable 
+[8] [DB ID: 1240] [76.3] Title: OGX: An Open-Source, Vendor-Neutral Generative AI Application Server
+    Source: ArXiv cs.AI | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14580v1 Announce Type: new 
+Abstract: OGX (Open GenAI Stack) is an open-source AI application server and Python library that implements the APIs of major frontier labs (OpenAI, Anthropic, G
 
-[8] [DB ID: 1004] [76.6] Title: Limitations of Synthetic Data Generation in Specialized Data-Scarce Domains
-    Source: ArXiv cs.CV | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13729v1 Announce Type: new 
-Abstract: Advances in diffusion-based generative models have motivated the use of synthetic image generation to alleviate data scarcity in vision tasks. While th
-
-[9] [DB ID: 961] [76.3] Title: Don't Claim Benchmark-Oriented Optimization Improves General Coding Capability -- Diverse Evaluation Is Required
-    Source: ArXiv cs.LG | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13566v1 Announce Type: new 
-Abstract: Post-training papers, model cards, and blog posts often treat scores on a small set of coding benchmarks (e.g., SWE-bench and LiveCodeBench) as evidenc
-
-[10] [DB ID: 982] [76.3] Title: Not All Tokens Are Equal: Inflation-Aware Routing for Agentic LLM Systems
-    Source: ArXiv cs.CL | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13571v1 Announce Type: new 
-Abstract: When a language model fails to answer a query on the first attempt, an agentic system retries, consuming additional tokens each time. This retry overhe
-
-[11] [DB ID: 953] [75.3] Title: SemPlan: Benchmarking Structured Semantic Planning for LLM-Based Queries over Enterprise Data
+[9] [DB ID: 953] [75.3] Title: SemPlan: Benchmarking Structured Semantic Planning for LLM-Based Queries over Enterprise Data
     Source: ArXiv cs.AI | 2026-08-17 04:00:00
     Summary: arXiv:2608.13612v1 Announce Type: new 
 Abstract: Natural-language interfaces to enterprise data must translate underspecified requests into governed, executable behavior while controlling invalid quer
 
-[12] [DB ID: 984] [75.3] Title: Jais 2: A Family of Arabic-Centric Open Large Language Models
-    Source: ArXiv cs.CL | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13580v1 Announce Type: new 
-Abstract: Jais 2 is a family of Arabic-centric large language models developed jointly by MBZUAI, Cerebras, and Inception, designed to advance Arabic-centric lan
+[10] [DB ID: 1360] [74.5] Title: 以GLM-5为例，探究九章智算云强化学习系统如何落地“训推一致”
+    Source: 雷锋网 AI | 2026-08-18 09:51:00
+    Summary: 过去几年，大模型竞争的主线很清晰：更大的模型、更多的数据和更强的GPU集群。但随着预训练边际收益递减，模型能力Scaling正从单纯的预训练堆叠向后训练强化学习（RL）转变，数学推理、代码生成、复杂决策、长时序Agent等高阶能力，越来越依赖后训练强化学习（RL）激发。RL通过生成、执行、反馈和奖励，让模型持续学习推理、规划与自我纠错的能力。由此，大模型发展从“一次性训练”进入“持续训练”，模型能
 
-[13] [DB ID: 951] [74.3] Title: No Universal Signal Predicts Sample-Level LLM Regression under Version Updates
-    Source: ArXiv cs.AI | 2026-08-17 04:00:00
-    Summary: arXiv:2608.13607v1 Announce Type: new 
-Abstract: Frontier LLMs are updated frequently and typically outperform their predecessors in aggregate. But aggregate gains say little about individual samples:
-
-[14] [DB ID: 968] [74.3] Title: From BERT to Frontier Agents: Eight Years of Language-Model Progress, the Collapse of the Capability-Cost Curve, and the Rise of Task-Targeted Models
+[11] [DB ID: 968] [74.3] Title: From BERT to Frontier Agents: Eight Years of Language-Model Progress, the Collapse of the Capability-Cost Curve, and the Rise of Task-Targeted Models
     Source: ArXiv cs.LG | 2026-08-17 04:00:00
     Summary: arXiv:2608.13675v1 Announce Type: new 
 Abstract: Between October 2018 and July 2026 AI models progressed from simple systems like BERT to massive agents that solve complex math and write software. The
 
-[15] [DB ID: 970] [74.3] Title: SAGE: Surrogate-gradient Adaptation via Attention-Guided Entropy for Spiking Transformers
+[12] [DB ID: 970] [74.3] Title: SAGE: Surrogate-gradient Adaptation via Attention-Guided Entropy for Spiking Transformers
     Source: ArXiv cs.LG | 2026-08-17 04:00:00
     Summary: arXiv:2608.13702v1 Announce Type: new 
 Abstract: Spiking neural networks (SNNs) offer an energy-efficient alternative to conventional deep neural networks by exploiting sparse event-driven computation
 
-[16] [DB ID: 983] [74.3] Title: BCMT: Blockwise Causal Memory Transformer
+[13] [DB ID: 983] [74.3] Title: BCMT: Blockwise Causal Memory Transformer
     Source: ArXiv cs.CL | 2026-08-17 04:00:00
     Summary: arXiv:2608.13578v1 Announce Type: new 
 Abstract: Transformer architectures rely on dense self-attention to model long-range dependencies, but this mechanism exhibits quadratic complexity with respect 
+
+[14] [DB ID: 1229] [74.3] Title: The Unwritten Benchmark: A New Challenge for Multimodal Machine Learning in Abstract Perceptual Reasoning
+    Source: ArXiv cs.AI | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14558v1 Announce Type: new 
+Abstract: Current multimodal models have demonstrated remarkable proficiency in recognizing static visual and auditory content. However, their capacity for abstr
+
+[15] [DB ID: 1261] [74.3] Title: Training and Evaluating Ethical Reinforcement Learning Agents on Per-Episode Distributions
+    Source: ArXiv cs.LG | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14642v1 Announce Type: new 
+Abstract: Reinforcement Learning (RL) agents trained on a single reward signal exploit the gap between the designed reward and the intended behavior. This is par
+
+[16] [DB ID: 1262] [74.3] Title: DUET: Dual-Teacher On-Policy Distillation via Same-Weight Disagreement for Prohibition Compliance
+    Source: ArXiv cs.LG | 2026-08-18 04:00:00
+    Summary: arXiv:2608.14644v1 Announce Type: new 
+Abstract: Real-world LLM deployments increasingly rely on runtime-injected prohibitions--enterprise policies, PII redlines, tool boundaries--that vary per reques
 
 [17] [DB ID: 489] [74.2] Title: Multi-AUV Ad-hoc network-based Target Tracking: A Value Gradient Guidance Multi-Agent Diffusion Reinforcement Learning Approach
     Source: ArXiv cs.LG | 2026-08-14 04:00:00
     Summary: arXiv:2608.12436v1 Announce Type: new 
 Abstract: Multi-AUV ad-hoc network-based target tracking requires networked autonomous underwater vehicles (AUVs) to cooperatively track maneuvering targets unde
 
-[18] [DB ID: 1084] [73.9] Title: 别再乱调图像塔了！浙大 IJCAI 论文揭露 VLM 非对称性真相，给 CLIP 微调「踩刹车」
-    Source: 雷锋网 AI | 2026-08-17 04:45:00
-    Summary: A3B2自适应非对称适配器，诠释大模型微调的“克制”艺术。&nbsp; &nbsp; 作者丨张 &nbsp; 璐&nbsp; &nbsp; 编辑丨幸丽娟&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp
-
-[19] [DB ID: 1037] [73.6] Title: Designing Reinforcement Learning for Diffusion Models: A Unified Path-Space View
+[18] [DB ID: 1037] [73.6] Title: Designing Reinforcement Learning for Diffusion Models: A Unified Path-Space View
     Source: ArXiv stat.ML | 2026-08-17 04:00:00
     Summary: arXiv:2608.14430v1 Announce Type: cross 
 Abstract: Reinforcement learning (RL) post-training provides a direct way to align diffusion models with human preferences and task-specific rewards. However, 
 
-[20] [DB ID: 548] [73.4] Title: Online Inference for Quantile Temporal Difference Learning in Distributional Reinforcement Learning
+[19] [DB ID: 548] [73.4] Title: Online Inference for Quantile Temporal Difference Learning in Distributional Reinforcement Learning
     Source: ArXiv stat.ML | 2026-08-14 04:00:00
     Summary: arXiv:2608.12973v1 Announce Type: new 
 Abstract: In this paper, we study how to perform statistical inference for quantile temporal difference learning (QTD) in distributional reinforcement learning. 
+
+[20] [DB ID: 943] [72.3] Title: A Year in LLM Serving: Workload Evolution, Caching and Load-Balancing
+    Source: ArXiv cs.AI | 2026-08-17 04:00:00
+    Summary: arXiv:2608.13573v1 Announce Type: new 
+Abstract: Large Language Model (LLM) serving has become a critical cloud workload, and realistic traces are essential for motivating and benchmarking serving sys

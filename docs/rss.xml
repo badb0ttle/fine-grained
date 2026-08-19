@@ -5,7 +5,7 @@
     <link>https://ai.hjhai.xyz</link>
     <description>每日自动扫描全球 AI 信源，由 LLM 精选并深度解读的 AI 技术情报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 18 Aug 2026 00:34:38 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 00:37:35 +0000</lastBuildDate>
     <atom:link href="https://ai.hjhai.xyz/rss.xml" rel="self" type="application/rss+xml"/>
     <generator>AllOfAI Pipeline</generator>
     <item>
@@ -16,6 +16,33 @@
       <description><p>Moonshot 发布开源编程模型 K2.7-Code，声称推理效率提升 30%。但开发者实测后指出基准测试存在夸大，实际体验未达宣传水平。</p><p><strong>重要性：</strong>国产编程模型密集发布，需实测甄别</p><p>来源：VentureBeat AI · 分类：Blog</p></description>
       <category>Blog</category>
       <source url="https://ai.hjhai.xyz">VentureBeat AI</source>
+    </item>
+    <item>
+      <title>VideoGAIA：智能体视频理解基准</title>
+      <link>https://arxiv.org/abs/2608.14718</link>
+      <guid isPermaLink="false">ai-intel-2608.14718</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>VideoGAIA 评测通用 AI 助手对视频的智能体式理解，现有 MLLM 在长视频推理和交互任务上明显落后于人类。</p><p><strong>重要性：</strong>多模态模型团队能看清视频理解短板在哪。</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
+    </item>
+    <item>
+      <title>FPO 免反向传播微调，吞吐提 3 倍</title>
+      <link>https://arxiv.org/abs/2608.14563</link>
+      <guid isPermaLink="false">ai-intel-2608.14563</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>FPO 只训练前向 MLP 层，跳过模型主体的反向传播，微调 LLM 的吞吐是常规方法的 2.7-3.2 倍。</p><p><strong>重要性：</strong>微调大模型的工程师能省下大半算力和时间。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
+      <title>离散扩散 LLM 免训练做多标签分类</title>
+      <link>https://arxiv.org/abs/2608.14649</link>
+      <guid isPermaLink="false">ai-intel-2608.14649</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>dLLM-SetScore 用 masked diffusion 语言模型做多标签分类，无需训练，对每个候选标签算得分即可完成标注。</p><p><strong>重要性：</strong>没有标注数据时也能快速搭出分类器。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
       <title>无标签也能测 Agent 学习能力</title>
@@ -43,6 +70,15 @@
       <description><p>论文提出 MobileMem，从长达一年的手机使用数据中学习，让个人助手理解长期上下文，回答关于过去行为的查询，而不只是孤立问答。</p><p><strong>重要性：</strong>个人助手开始有长期记忆</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>INT8 推理：同一 GEMM 内核结果不同</title>
+      <link>https://arxiv.org/abs/2608.13756</link>
+      <guid isPermaLink="false">ai-intel-2608.13756</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>测试发现实现同一 scaled INT8 GEMM 接口的两个 GPU 内核，在相同 checkpoint 下结果并不等价，跨内核发散被定位到具体来源。</p><p><strong>重要性：</strong>部署量化模型的团队要警惕内核差异带来的精度漂移。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>
     <item>
       <title>具身智能体靠技能演化自我进化</title>
@@ -126,6 +162,15 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
     </item>
     <item>
+      <title>OGX：厂商中立的开源 GenAI 应用服务器</title>
+      <link>https://arxiv.org/abs/2608.14580</link>
+      <guid isPermaLink="false">ai-intel-2608.14580</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>OGX 用 Python 实现 OpenAI、Anthropic、Google 等主流 API，一个接口切换多家模型，避免被单一厂商锁定。</p><p><strong>重要性：</strong>开发者可自由切换模型厂商，降低锁定风险。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
       <title>VLM能否判断机器人靠近风险</title>
       <link>https://arxiv.org/abs/2608.12515</link>
       <guid isPermaLink="false">ai-intel-2608.12515</guid>
@@ -133,6 +178,15 @@
       <description><p>检验视觉语言模型能否从机器人第一视角图像判断人际距离风险，评估其在人类环境安全导航的可靠性，揭示现有VLM局限。</p><p><strong>重要性：</strong>机器人在人群中行动，安全判断得先靠谱</p><p>来源：ArXiv cs.CV · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.CV</source>
+    </item>
+    <item>
+      <title>SemPlan：企业数据语义规划基准</title>
+      <link>https://arxiv.org/abs/2608.13612</link>
+      <guid isPermaLink="false">ai-intel-2608.13612</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>SemPlan 评测 LLM 把模糊的企业数据查询转成受治理、可执行计划的能力，重点考察拦截非法查询。</p><p><strong>重要性：</strong>做 NL2SQL 或企业数据问答的团队有基准可测。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
       <title>Jais 2：阿拉伯语开源 LLM 家族</title>
@@ -171,6 +225,33 @@
       <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
     </item>
     <item>
+      <title>八年 LLM 进化：能力-成本曲线塌缩</title>
+      <link>https://arxiv.org/abs/2608.13675</link>
+      <guid isPermaLink="false">ai-intel-2608.13675</guid>
+      <pubDate>Mon, 17 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>回顾 2018 到 2026 年模型演进，指出能力-成本曲线已塌缩，任务定向的小模型正取代通用巨模型。</p><p><strong>重要性：</strong>选型时别盲目追大模型，小模型更划算。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
+      <title>Unwritten：抽象感知推理新基准</title>
+      <link>https://arxiv.org/abs/2608.14558</link>
+      <guid isPermaLink="false">ai-intel-2608.14558</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>现有多模态模型擅长识别静态图像音频，但抽象感知推理缺乏评测，该基准用隐含规则类任务填补空白。</p><p><strong>重要性：</strong>多模态模型的推理短板有了可量化的测法。</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
+    </item>
+    <item>
+      <title>DUET：让 LLM 遵守运行时禁令</title>
+      <link>https://arxiv.org/abs/2608.14644</link>
+      <guid isPermaLink="false">ai-intel-2608.14644</guid>
+      <pubDate>Tue, 18 Aug 2026 04:00:00 +0000</pubDate>
+      <description><p>DUET 用双教师同权重分歧做在线蒸馏，让 LLM 遵守企业策略、PII 红线、工具边界等运行时注入的禁令。</p><p><strong>重要性：</strong>企业部署 LLM 时能动态加规则而不重训。</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
+      <category>Paper</category>
+      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
+    </item>
+    <item>
       <title>自生成MCQ测评LLM交易Agent</title>
       <link>https://arxiv.org/abs/2608.11232</link>
       <guid isPermaLink="false">ai-intel-2608.11232</guid>
@@ -194,87 +275,6 @@
       <guid isPermaLink="false">ai-intel-2608.12435</guid>
       <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
       <description><p>MARCH引入内容路由的状态锚点扩展循环记忆，兼顾Transformer长上下文检索能力与固定内存开销，摆脱token级记忆随上下文线性增长的瓶颈。</p><p><strong>重要性：</strong>长上下文推理内存可控，成本不再线性涨</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
-    </item>
-    <item>
-      <title>VLM 图像塔别乱调，微调要克制</title>
-      <link>https://www.leiphone.com/category/private/xQX0laen8XifhvXD.html</link>
-      <guid isPermaLink="false">ai-intel-xQX0laen8XifhvXD.html</guid>
-      <pubDate>Mon, 17 Aug 2026 04:45:00 +0000</pubDate>
-      <description><p>浙大 IJCAI 论文发现 VLM 存在非对称性，提出 A3B2 自适应非对称适配器。结论是 CLIP 微调该踩刹车，克制比全面调参更有效。</p><p><strong>重要性：</strong>VLM 微调少走弯路</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
-      <category>中文媒体</category>
-      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
-    </item>
-    <item>
-      <title>开悟世界模型四项权威评测登顶</title>
-      <link>https://www.leiphone.com/category/ai/G88m8g2T61aivI2F.html</link>
-      <guid isPermaLink="false">ai-intel-G88m8g2T61aivI2F.html</guid>
-      <pubDate>Fri, 12 Jun 2026 05:27:00 +0000</pubDate>
-      <description><p>大晓机器人开悟 Kairos 世界模型在 RoboTwin 2.0、LIBERO-Plus 等四项具身智能评测中全部第一，超越 Cosmos3、PI 等主流模型。</p><p><strong>重要性：</strong>具身智能世界模型，中国公司领先</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
-      <category>中文媒体</category>
-      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
-    </item>
-    <item>
-      <title>V4-Pro支持百万token上下文</title>
-      <link>https://www.leiphone.com/category/industrynews/a6tI2iy4DnB3jOir.html</link>
-      <guid isPermaLink="false">ai-intel-a6tI2iy4DnB3jOir.html</guid>
-      <pubDate>Thu, 13 Aug 2026 09:38:00 +0000</pubDate>
-      <description><p>金山办公灵犀接入DeepSeek-V4-Pro-0813，原生支持100万token上下文，单次输出38.4万token，基准成绩好于Preview版。</p><p><strong>重要性：</strong>长文档处理翻倍，办公场景可直接切换使用</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
-      <category>中文媒体</category>
-      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
-    </item>
-    <item>
-      <title>Qwen3.8开源，9家芯片首日适配</title>
-      <link>https://www.leiphone.com/category/ai/rbIV873aEJjUGpyU.html</link>
-      <guid isPermaLink="false">ai-intel-rbIV873aEJjUGpyU.html</guid>
-      <pubDate>Thu, 13 Aug 2026 08:56:00 +0000</pubDate>
-      <description><p>阿里开源MoE模型Qwen3.8-2.4T-A95B，FlagOS当天适配平头哥、昇腾、摩尔线程等9家芯片，提供BF16/FP8/INT8多精度版本。</p><p><strong>重要性：</strong>存量国产算力可直接跑旗舰开源模型</p><p>来源：雷锋网 AI · 分类：中文媒体</p></description>
-      <category>中文媒体</category>
-      <source url="https://ai.hjhai.xyz">雷锋网 AI</source>
-    </item>
-    <item>
-      <title>强化逐步推理，让LLM真能自我纠错</title>
-      <link>https://arxiv.org/abs/2608.11573</link>
-      <guid isPermaLink="false">ai-intel-2608.11573</guid>
-      <pubDate>Thu, 13 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>针对LLM自我纠错长期失效的难题，用强化学习奖励逐步推理过程而非最终答案，让模型能定位并修正自己的错误。</p><p><strong>重要性：</strong>模型能自查自纠，推理可靠性提升</p><p>来源：ArXiv cs.CL · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.CL</source>
-    </item>
-    <item>
-      <title>多LLM Agent系统动态治理</title>
-      <link>https://arxiv.org/abs/2608.11207</link>
-      <guid isPermaLink="false">ai-intel-2608.11207</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>两个目标冲突的LLM Agent多轮对话时，缺共享目标函数会导致协作崩坏而非良性竞争；提出动态治理机制对齐多方目标。</p><p><strong>重要性：</strong>多Agent协作对齐有了新解法</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
-    </item>
-    <item>
-      <title>LinearKV：混合LLM一个缓存状态</title>
-      <link>https://arxiv.org/abs/2608.11231</link>
-      <guid isPermaLink="false">ai-intel-2608.11231</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>现有位置无关缓存PIC只服务全注意力模型，LinearKV把它扩展到注意力加线性注意力混合的LLM，证明只需缓存一个状态即可加速推理。</p><p><strong>重要性：</strong>混合架构LLM推理更快更省显存</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
-    </item>
-    <item>
-      <title>CORA-Diff加速扩散语言模型推理</title>
-      <link>https://arxiv.org/abs/2608.11235</link>
-      <guid isPermaLink="false">ai-intel-2608.11235</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>按置信度提前接收已经稳定的token，跳过固定去噪步数里的冗余计算，降低diffusion language model的推理开销。</p><p><strong>重要性：</strong>扩散语言模型推理更快更省算力</p><p>来源：ArXiv cs.AI · 分类：Paper</p></description>
-      <category>Paper</category>
-      <source url="https://ai.hjhai.xyz">ArXiv cs.AI</source>
-    </item>
-    <item>
-      <title>Transformer残差流的几何分层</title>
-      <link>https://arxiv.org/abs/2608.12447</link>
-      <guid isPermaLink="false">ai-intel-2608.12447</guid>
-      <pubDate>Fri, 14 Aug 2026 04:00:00 +0000</pubDate>
-      <description><p>训练后的Transformer残差流存在特权基方向，统计特性异于其余维度；本文刻画这些方向的几何与行为结构。</p><p><strong>重要性：</strong>模型表征解释多了条线索</p><p>来源：ArXiv cs.LG · 分类：Paper</p></description>
       <category>Paper</category>
       <source url="https://ai.hjhai.xyz">ArXiv cs.LG</source>
     </item>

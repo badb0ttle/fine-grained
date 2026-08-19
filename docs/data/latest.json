@@ -1,10 +1,10 @@
 {
-  "scanned_at": "2026-08-18T00:34:38.962542+00:00",
-  "curated_at": "2026-08-18T00:34:38.962549+00:00",
+  "scanned_at": "2026-08-19T00:37:35.955681+00:00",
+  "curated_at": "2026-08-19T00:37:35.955704+00:00",
   "total_sources": 16,
   "successful_sources": 16,
-  "total_articles": 617,
-  "curated_count": 41,
+  "total_articles": 751,
+  "curated_count": 51,
   "articles": [
     {
       "title": "Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out",
@@ -16,6 +16,39 @@
       "title_cn": "Kimi K2.7-Code 减少推理 token 30%",
       "summary_cn": "Moonshot 发布开源编程模型 K2.7-Code，声称推理效率提升 30%。但开发者实测后指出基准测试存在夸大，实际体验未达宣传水平。",
       "why_it_matters": "国产编程模型密集发布，需实测甄别"
+    },
+    {
+      "title": "VideoGAIA: A Benchmark for General AI Assistants on Agentic Video Understanding",
+      "link": "https://arxiv.org/abs/2608.14718",
+      "summary": "arXiv:2608.14718v1 Announce Type: new \nAbstract: Video understanding is a fundamental task for evaluating the capabilities of multimodal large language models (MLLMs). However, existing leading models have already achieved approximately 90% accuracy on the Video-MME leaderboard, suggesting that conventional single-turn video understanding tasks are becoming increasingly saturated and insufficient for assessing the intelligence of advanced MLLMs. Towards this end, we introduce VideoGAIA, an agent",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "title_cn": "VideoGAIA：智能体视频理解基准",
+      "summary_cn": "VideoGAIA 评测通用 AI 助手对视频的智能体式理解，现有 MLLM 在长视频推理和交互任务上明显落后于人类。",
+      "why_it_matters": "多模态模型团队能看清视频理解短板在哪。"
+    },
+    {
+      "title": "Forward Pass Domain Adaptation (Without Cross-Layer Backpropagation)",
+      "link": "https://arxiv.org/abs/2608.14563",
+      "summary": "arXiv:2608.14563v1 Announce Type: new \nAbstract: Forward-Pass-Only MLP training (FPO) adapts large language models without a backward pass through the model body, achieving 2.7--3.2x the throughput of standard fine-tuning at ~40% less peak training memory, while leaving off-domain benchmarks within seed-noise of baseline, a property that full-network fine-tuning does not reliably reproduce. FPO rests on a single empirical observation: at late layers of a transformer, the output-layer prediction ",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "FPO 免反向传播微调，吞吐提 3 倍",
+      "summary_cn": "FPO 只训练前向 MLP 层，跳过模型主体的反向传播，微调 LLM 的吞吐是常规方法的 2.7-3.2 倍。",
+      "why_it_matters": "微调大模型的工程师能省下大半算力和时间。"
+    },
+    {
+      "title": "Discrete Diffusion Language Models Are Training-Free Multi-Label Classifiers",
+      "link": "https://arxiv.org/abs/2608.14649",
+      "summary": "arXiv:2608.14649v1 Announce Type: new \nAbstract: We present dLLM-SetScore, a training-free method that uses discrete masked-diffusion language models for multi-label text classification. For each candidate label, it asks a short yes/no question and compares the probabilities of the two answer tokens at one masked position. The method uses no task-specific fine-tuning or training on textual-entailment datasets; a 200-example labelled validation slice selects thresholds, temperature, and prompt wo",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "离散扩散 LLM 免训练做多标签分类",
+      "summary_cn": "dLLM-SetScore 用 masked diffusion 语言模型做多标签分类，无需训练，对每个候选标签算得分即可完成标注。",
+      "why_it_matters": "没有标注数据时也能快速搭出分类器。"
     },
     {
       "title": "Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis",
@@ -49,6 +82,17 @@
       "title_cn": "让手机 AI 助手记一整年",
       "summary_cn": "论文提出 MobileMem，从长达一年的手机使用数据中学习，让个人助手理解长期上下文，回答关于过去行为的查询，而不只是孤立问答。",
       "why_it_matters": "个人助手开始有长期记忆"
+    },
+    {
+      "title": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
+      "link": "https://arxiv.org/abs/2608.13756",
+      "summary": "arXiv:2608.13756v1 Announce Type: new \nAbstract: Two GPU kernels implementing the same scaled INT8 GEMM interface are usually treated as interchangeable. We test that assumption: holding the checkpoint, prompts, hardware, inference engine, decoding, and quantization configuration fixed, we swap only the INT8 linear kernel (CUTLASS versus Triton) inside vLLM. At 1.7B each arm reproduces itself bit-for-bit across cold restarts, yet the arms agree on no sequence in any end-to-end comparison we ran ",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "INT8 推理：同一 GEMM 内核结果不同",
+      "summary_cn": "测试发现实现同一 scaled INT8 GEMM 接口的两个 GPU 内核，在相同 checkpoint 下结果并不等价，跨内核发散被定位到具体来源。",
+      "why_it_matters": "部署量化模型的团队要警惕内核差异带来的精度漂移。"
     },
     {
       "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
@@ -150,6 +194,17 @@
       "why_it_matters": "直接省 agent 推理成本"
     },
     {
+      "title": "OGX: An Open-Source, Vendor-Neutral Generative AI Application Server",
+      "link": "https://arxiv.org/abs/2608.14580",
+      "summary": "arXiv:2608.14580v1 Announce Type: new \nAbstract: OGX (Open GenAI Stack) is an open-source AI application server and Python library that implements the APIs of major frontier labs (OpenAI, Anthropic, Google) with pluggable backend providers. Developers building agentic AI applications--such as retrieval-augmented generation pipelines, multi-turn agents, and tool-calling workflows--can develop against a single API surface and deploy with any combination of inference engine, vector database, and sa",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "OGX：厂商中立的开源 GenAI 应用服务器",
+      "summary_cn": "OGX 用 Python 实现 OpenAI、Anthropic、Google 等主流 API，一个接口切换多家模型，避免被单一厂商锁定。",
+      "why_it_matters": "开发者可自由切换模型厂商，降低锁定风险。"
+    },
+    {
       "title": "Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?",
       "link": "https://arxiv.org/abs/2608.12515",
       "summary": "arXiv:2608.12515v1 Announce Type: new \nAbstract: Assessing proxemic danger from a robot's egocentric perspective is critical for safe embodied navigation in human environments and requires both visual and contextual reasoning. We evaluate three opensource vision-language models (VLMs) (\\textit{InternVL}, \\textit{Qwen-VL}, and \\textit{SmolVLM}) on the classification of egocentric robot images into four danger levels, comparing three prompting strategies and two rounds of QLoRA fine-tuning against",
@@ -159,6 +214,17 @@
       "title_cn": "VLM能否判断机器人靠近风险",
       "summary_cn": "检验视觉语言模型能否从机器人第一视角图像判断人际距离风险，评估其在人类环境安全导航的可靠性，揭示现有VLM局限。",
       "why_it_matters": "机器人在人群中行动，安全判断得先靠谱"
+    },
+    {
+      "title": "SemPlan: Benchmarking Structured Semantic Planning for LLM-Based Queries over Enterprise Data",
+      "link": "https://arxiv.org/abs/2608.13612",
+      "summary": "arXiv:2608.13612v1 Announce Type: new \nAbstract: Natural-language interfaces to enterprise data must translate underspecified requests into governed, executable behavior while controlling invalid queries, policy failures, cost, and nondeterminism. SemPlan Benchmark evaluates this architectural design space with a deterministic synthetic bilingual benchmark containing 1,800 cases in English and Brazilian Portuguese; 1,200 cases form the frozen scientific evaluation subset. Four architectures are ",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "SemPlan：企业数据语义规划基准",
+      "summary_cn": "SemPlan 评测 LLM 把模糊的企业数据查询转成受治理、可执行计划的能力，重点考察拦截非法查询。",
+      "why_it_matters": "做 NL2SQL 或企业数据问答的团队有基准可测。"
     },
     {
       "title": "Jais 2: A Family of Arabic-Centric Open Large Language Models",
@@ -205,6 +271,39 @@
       "why_it_matters": "上线新版本前别只看平均分"
     },
     {
+      "title": "From BERT to Frontier Agents: Eight Years of Language-Model Progress, the Collapse of the Capability-Cost Curve, and the Rise of Task-Targeted Models",
+      "link": "https://arxiv.org/abs/2608.13675",
+      "summary": "arXiv:2608.13675v1 Announce Type: new \nAbstract: Between October 2018 and July 2026 AI models progressed from simple systems like BERT to massive agents that solve complex math and write software. The ability to resolve real coding issues improved by nearly six times per year since late 2024. During this time costs dropped sharply with OpenAIs budget model GPT 5 point 6 Luna matching flagship capabilities for just one to six dollars per million tokens beating older versions at a fraction of the ",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "八年 LLM 进化：能力-成本曲线塌缩",
+      "summary_cn": "回顾 2018 到 2026 年模型演进，指出能力-成本曲线已塌缩，任务定向的小模型正取代通用巨模型。",
+      "why_it_matters": "选型时别盲目追大模型，小模型更划算。"
+    },
+    {
+      "title": "The Unwritten Benchmark: A New Challenge for Multimodal Machine Learning in Abstract Perceptual Reasoning",
+      "link": "https://arxiv.org/abs/2608.14558",
+      "summary": "arXiv:2608.14558v1 Announce Type: new \nAbstract: Current multimodal models have demonstrated remarkable proficiency in recognizing static visual and auditory content. However, their capacity for abstract perceptual reasoning, inferring unseen information from dynamic, generative processes, remains a critical and underexplored frontier. In this paper, we introduce The Unwritten Benchmark, a new challenge designed to probe this abstract perceptual and cognitive ability. We define the core task as ",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "Unwritten：抽象感知推理新基准",
+      "summary_cn": "现有多模态模型擅长识别静态图像音频，但抽象感知推理缺乏评测，该基准用隐含规则类任务填补空白。",
+      "why_it_matters": "多模态模型的推理短板有了可量化的测法。"
+    },
+    {
+      "title": "DUET: Dual-Teacher On-Policy Distillation via Same-Weight Disagreement for Prohibition Compliance",
+      "link": "https://arxiv.org/abs/2608.14644",
+      "summary": "arXiv:2608.14644v1 Announce Type: new \nAbstract: Real-world LLM deployments increasingly rely on runtime-injected prohibitions--enterprise policies, PII redlines, tool boundaries--that vary per request and per tenant. Conventional post-training is structurally ill-suited: SFT hides the violation signal in compliant labels, and DPO's sequence-level preferences mismatch token-localized violations. We propose DUET, a token-selective on-policy distillation method for prohibition compliance. DUET pai",
+      "published": "2026-08-18 04:00:00",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "title_cn": "DUET：让 LLM 遵守运行时禁令",
+      "summary_cn": "DUET 用双教师同权重分歧做在线蒸馏，让 LLM 遵守企业策略、PII 红线、工具边界等运行时注入的禁令。",
+      "why_it_matters": "企业部署 LLM 时能动态加规则而不重训。"
+    },
+    {
       "title": "Backtrader-Bench: Benchmarking LLM Agents on Algorithmic Trading with Self-Generated MCQs",
       "link": "https://arxiv.org/abs/2608.11232",
       "summary": "arXiv:2608.11232v1 Announce Type: new \nAbstract: Evaluating LLM coding agents in algorithmic trading is difficult because static benchmarks risk data contamination and numerical backtest outputs require ground truth from actual code execution. We present Backtrader-Bench, a framework with two complementary pipelines. A deterministic multiple-choice question (MCQ) pipeline generates questions from backtest configurations across five trading strategies, 33 templates, and three difficulty tiers, wi",
@@ -247,6 +346,17 @@
       "title_cn": "VLM 图像塔别乱调，微调要克制",
       "summary_cn": "浙大 IJCAI 论文发现 VLM 存在非对称性，提出 A3B2 自适应非对称适配器。结论是 CLIP 微调该踩刹车，克制比全面调参更有效。",
       "why_it_matters": "VLM 微调少走弯路"
+    },
+    {
+      "title": "A Year in LLM Serving: Workload Evolution, Caching and Load-Balancing",
+      "link": "https://arxiv.org/abs/2608.13573",
+      "summary": "arXiv:2608.13573v1 Announce Type: new \nAbstract: Large Language Model (LLM) serving has become a critical cloud workload, and realistic traces are essential for motivating and benchmarking serving systems. However, existing LLM serving workload studies remain limited in scale and scope. They often observe short time periods and provide limited visibility into how users interact with models in production. As a result, they do not fully capture how LLM serving workloads evolve over time or how use",
+      "published": "2026-08-17 04:00:00",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "title_cn": "一年 LLM Serving：缓存与负载均衡",
+      "summary_cn": "发布一年真实 LLM 推理 trace，覆盖负载演变、前缀缓存与负载均衡，为 serving 系统评测提供真实基准。",
+      "why_it_matters": "做 LLM serving 的团队能拿真实数据调优系统。"
     },
     {
       "title": "生成预测四大权威榜单第一！开悟世界模型确立具身智能世界模型新标杆",

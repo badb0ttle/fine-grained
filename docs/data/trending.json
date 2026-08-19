@@ -1,24 +1,14 @@
 {
-  "snapshot_at": "2026-08-15T01:48:58.880578+00:00",
-  "count": 2,
+  "snapshot_at": "2026-08-19T00:35:51.101207+00:00",
+  "count": 1,
   "repos": [
     {
-      "repo_full": "infiniflow/ragflow",
+      "repo_full": "bojieli/ai-agent-book",
       "description": "",
-      "language": "Go",
-      "stars_today": 473,
-      "total_stars": 88392,
-      "url": "https://github.com/infiniflow/ragflow",
-      "paper_linked": false,
-      "paper_id": null
-    },
-    {
-      "repo_full": "deepseek-ai/awesome-deepseek-agent",
-      "description": "",
-      "language": "",
-      "stars_today": 222,
-      "total_stars": 5719,
-      "url": "https://github.com/deepseek-ai/awesome-deepseek-agent",
+      "language": "Python",
+      "stars_today": 543,
+      "total_stars": 39102,
+      "url": "https://github.com/bojieli/ai-agent-book",
       "paper_linked": false,
       "paper_id": null
     }
@@ -26,6 +16,7 @@
   "history_dates": [
     "2026-06-13",
     "2026-06-13",
-    "2026-08-15"
+    "2026-08-15",
+    "2026-08-19"
   ]
 }

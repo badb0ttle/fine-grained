@@ -1,0 +1,17 @@
+AI Intel source submission
+
+Included:
+- api/: backend source and dependency declaration
+- scripts/: data pipeline source
+- frontend/src/: frontend source
+- frontend project configuration and dependency lockfile
+- root web source files under assets/, manifest.json, and sw.js
+
+Excluded:
+- .env files and credentials
+- .git metadata
+- node_modules and .venv
+- generated docs/build output
+- databases, caches, and generated data
+- local OS/editor files
+

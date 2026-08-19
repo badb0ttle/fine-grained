@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-18T08:34:38.994922",
+  "generated_at": "2026-08-19T08:37:36.215244",
   "source_health": [
     {
       "name": "Apple ML Research",
       "category": "AI Lab",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -12,7 +12,7 @@
     {
       "name": "ArXiv cs.AI",
       "category": "Paper",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -20,7 +20,7 @@
     {
       "name": "ArXiv cs.CL",
       "category": "Paper",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -28,7 +28,7 @@
     {
       "name": "ArXiv cs.CV",
       "category": "Paper",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -36,7 +36,7 @@
     {
       "name": "ArXiv cs.LG",
       "category": "Paper",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -44,7 +44,7 @@
     {
       "name": "ArXiv stat.ML",
       "category": "Paper",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -52,7 +52,7 @@
     {
       "name": "Google AI",
       "category": "AI Lab",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -60,7 +60,7 @@
     {
       "name": "Google DeepMind",
       "category": "AI Lab",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -68,7 +68,7 @@
     {
       "name": "HuggingFace Blog",
       "category": "Community",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -76,7 +76,7 @@
     {
       "name": "NVIDIA Blog",
       "category": "AI Lab",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -84,7 +84,7 @@
     {
       "name": "OpenAI Blog",
       "category": "AI Lab",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -92,7 +92,7 @@
     {
       "name": "PyTorch Blog",
       "category": "Community",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 10,
       "status": "healthy"
@@ -100,7 +100,7 @@
     {
       "name": "TechCrunch AI",
       "category": "Blog",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -108,7 +108,7 @@
     {
       "name": "VentureBeat AI",
       "category": "Blog",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 7,
       "status": "healthy"
@@ -116,7 +116,7 @@
     {
       "name": "量子位",
       "category": "中文媒体",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
@@ -124,25 +124,25 @@
     {
       "name": "雷锋网 AI",
       "category": "中文媒体",
-      "last_success": "2026-08-18T00:33:10.343915+00:00",
+      "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
       "status": "healthy"
     }
   ],
   "score_distribution": {
-    "80-100": 3,
-    "60-79": 173,
-    "40-59": 242,
-    "20-39": 167,
-    "0-19": 32
+    "80-100": 7,
+    "60-79": 233,
+    "40-59": 301,
+    "20-39": 173,
+    "0-19": 37
   },
   "category_distribution": {
-    "Paper": 196,
-    "AI Lab": 165,
-    "中文媒体": 120,
-    "Blog": 74,
-    "Community": 61,
+    "Paper": 276,
+    "AI Lab": 176,
+    "中文媒体": 148,
+    "Blog": 87,
+    "Community": 63,
     "test": 1
   },
   "daily_trends": [
@@ -185,6 +185,14 @@
       "total_articles": 617,
       "new_articles": 140,
       "curated_count": 10
+    },
+    {
+      "date": "2026-08-19",
+      "total_sources": 16,
+      "successful_sources": 16,
+      "total_articles": 751,
+      "new_articles": 134,
+      "curated_count": 10
     }
   ],
   "top_articles": [
@@ -196,11 +204,39 @@
       "published": "2026-06-21T14:00:00Z"
     },
     {
+      "title": "An Agentic Framework Using Rules and LLMs for Embedding and Annotating Descriptive Document Layouts: A Plant Science Use Case",
+      "source": "ArXiv cs.AI",
+      "category": "Paper",
+      "score": 88.3,
+      "published": "2026-08-18 04:00:00"
+    },
+    {
       "title": "Kimi K2.7-Code cuts thinking tokens 30% — but practitioners say the benchmarks don't check out",
       "source": "VentureBeat AI",
       "category": "Blog",
       "score": 84.9,
       "published": "2026-06-12 21:55:22"
+    },
+    {
+      "title": "VideoGAIA: A Benchmark for General AI Assistants on Agentic Video Understanding",
+      "source": "ArXiv cs.CV",
+      "category": "Paper",
+      "score": 84.5,
+      "published": "2026-08-18 04:00:00"
+    },
+    {
+      "title": "Forward Pass Domain Adaptation (Without Cross-Layer Backpropagation)",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "score": 83.3,
+      "published": "2026-08-18 04:00:00"
+    },
+    {
+      "title": "Discrete Diffusion Language Models Are Training-Free Multi-Label Classifiers",
+      "source": "ArXiv cs.LG",
+      "category": "Paper",
+      "score": 82.3,
+      "published": "2026-08-18 04:00:00"
     },
     {
       "title": "Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis",
@@ -229,55 +265,27 @@
       "category": "Paper",
       "score": 79.3,
       "published": "2026-08-17 04:00:00"
-    },
-    {
-      "title": "TeachMateGPT: A Multi-Agent Knowledge-Grounded Framework for Pedagogical Assessment Generation from Science Curriculum Materials",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "score": 79.3,
-      "published": "2026-08-17 04:00:00"
-    },
-    {
-      "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
-      "source": "ArXiv cs.CL",
-      "category": "Paper",
-      "score": 79.3,
-      "published": "2026-08-13 04:00:00"
-    },
-    {
-      "title": "Xiaomi's new open source, agentic AI coding harness MiMo Code beats Claude Code at ultra-long, 200+ step tasks",
-      "source": "VentureBeat AI",
-      "category": "Blog",
-      "score": 78.2,
-      "published": "2026-06-11 23:14:00"
-    },
-    {
-      "title": "AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research",
-      "source": "ArXiv cs.AI",
-      "category": "Paper",
-      "score": 78.2,
-      "published": "2026-08-14 04:00:00"
     }
   ],
   "keyword_trends": {
     "keywords": [
       {
         "keyword": "LLM",
-        "current_count": 36,
+        "current_count": 48,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "GPT",
-        "current_count": 18,
+        "current_count": 22,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Claude",
-        "current_count": 8,
+        "current_count": 9,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -297,8 +305,15 @@
         "direction": "surging"
       },
       {
+        "keyword": "Llama",
+        "current_count": 1,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
         "keyword": "DeepSeek",
-        "current_count": 9,
+        "current_count": 10,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -312,14 +327,14 @@
       },
       {
         "keyword": "multimodal",
-        "current_count": 8,
+        "current_count": 11,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "VLM",
-        "current_count": 5,
+        "current_count": 6,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -333,6 +348,13 @@
       },
       {
         "keyword": "DPO",
+        "current_count": 2,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "强化学习",
         "current_count": 1,
         "previous_count": 0,
         "change_pct": 100,
@@ -340,7 +362,7 @@
       },
       {
         "keyword": "fine-tun",
-        "current_count": 9,
+        "current_count": 11,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -354,7 +376,7 @@
       },
       {
         "keyword": "LoRA",
-        "current_count": 1,
+        "current_count": 2,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -368,45 +390,31 @@
       },
       {
         "keyword": "RAG",
-        "current_count": 27,
+        "current_count": 38,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Agent",
-        "current_count": 71,
+        "current_count": 92,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "智能体",
-        "current_count": 6,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "function calling",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "量化",
-        "current_count": 3,
+        "current_count": 8,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       }
     ],
     "period": {
-      "current_start": "2026-08-11",
-      "current_end": "2026-08-18",
-      "previous_start": "2026-08-04",
-      "previous_end": "2026-08-11",
+      "current_start": "2026-08-12",
+      "current_end": "2026-08-19",
+      "previous_start": "2026-08-05",
+      "previous_end": "2026-08-12",
       "window_days": 7
     }
   }
