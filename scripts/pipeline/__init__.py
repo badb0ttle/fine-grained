@@ -7,7 +7,7 @@ AI情报聚合站 (AllOfAI) Pipeline — 共享配置与数据库访问模块。
 ================================================================================
 本模块是 Pipeline 各阶段的公共基础设施，提供：
   1. 项目根目录路径 (REPO_DIR) 和 SQLite 数据库路径 (DB_PATH)
-  2. 16个 RSS/API 信源定义 (SOURCES 列表)
+  2. 17个 RSS/API 信源定义 (SOURCES 列表)
   3. 统一的 WAL 模式数据库连接工厂函数 (get_db)
 
 ================================================================================
@@ -32,6 +32,7 @@ SOURCES 列表每个元素包含:
   - url:      RSS feed URL 或 WordPress REST API 端点
   - category: 信源分类（AI Lab / Paper / Community / Blog / 中文媒体）
   - type:     可选，默认为 "rss"；设为 "wp_api" 表示 WordPress REST API 格式
+  - max_entries: 可选，RSS 单次采集上限，默认 20
 
 分类说明:
   - AI Lab:    顶级 AI 研究机构的官方博客（OpenAI, Google, DeepMind, Apple, NVIDIA）
@@ -54,7 +55,7 @@ REPO_DIR = Path(__file__).parent.parent.parent
 DB_PATH = REPO_DIR / "data" / "ai_intel.db"
 
 # ---------------------------------------------------------------------------
-# 信源定义 — 16 个 RSS/API 数据源
+# 信源定义 — 17 个 RSS/API 数据源
 # ---------------------------------------------------------------------------
 # 每个信源的 category 用于前端分类展示和评分权重计算
 # type="wp_api" 表示该源使用 WordPress REST API JSON 格式，而非标准 RSS XML
@@ -87,6 +88,9 @@ SOURCES = [
     # --- 英文科技媒体 (Blog) ---
     {"name": "TechCrunch AI",        "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "Blog"},
     {"name": "VentureBeat AI",       "url": "https://feeds.feedburner.com/venturebeat/SZYF",       "category": "Blog"},
+    # BestBlogs 公开精选聚合 RSS；链接指向 BestBlogs 页面，并非原作者 URL
+    {"name": "BestBlogs", "url": "https://www.bestblogs.dev/zh/feeds/rss?category=ai&type=article&minScore=85&timeFilter=1w",
+     "category": "中文媒体", "max_entries": 100},
 ]
 
 

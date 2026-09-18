@@ -5,7 +5,7 @@
 ================================================================================
 模块功能
 ================================================================================
-Pipeline 第一阶段：从 16 个配置好的信源采集文章。
+Pipeline 第一阶段：从配置好的信源采集文章。
   1. 遍历 SOURCES 列表，对每个信源发起 HTTP 请求
   2. 支持两种协议：标准 RSS feed（feedparser 解析）和 WordPress REST API（JSON 解析）
   3. 使用指数退避 + 随机抖动的重试策略（最多 3 次）
@@ -29,6 +29,7 @@ import random
 import re
 import time
 from datetime import datetime, timezone
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 import feedparser
 import requests
@@ -98,7 +99,7 @@ def fetch_feed(source: dict, retries: int = 3) -> list[dict]:
       - 第 2 次重试: 等待 ~4s  (2^2 + random)
       随机抖动 [0,1) 秒可避免同时重试的多个请求产生"惊群效应"
 
-    取前 20 条文章，对每条提取:
+    按 source.max_entries 取文章（默认 20），对每条提取:
       - 发布时间（优先 published_parsed，回退 updated_parsed）
       - 摘要（去除 HTML 标签，截断至 500 字符）
 
@@ -121,8 +122,8 @@ def fetch_feed(source: dict, retries: int = 3) -> list[dict]:
             feed = feedparser.parse(resp.content)
 
             articles = []
-            # 只取前 20 条，兼顾时效性和处理效率
-            for entry in feed.entries[:20]:
+            # 默认仍取 20 条；BestBlogs 配置为 100，避免截断周内精选
+            for entry in feed.entries[:source.get("max_entries", 20)]:
                 pub_date = None
                 # 优先使用 published（首次发布时间），回退 updated（最后更新时间）
                 if hasattr(entry, "published_parsed") and entry.published_parsed:
@@ -134,9 +135,17 @@ def fetch_feed(source: dict, retries: int = 3) -> list[dict]:
                 summary = entry.get("summary", "") or ""
                 clean_summary = re.sub(r"<[^>]+>", "", summary)[:500]
 
+                link = entry.get("link", "")
+                if source["name"] == "BestBlogs":
+                    # 仅本源去 UTM；保留 BestBlogs 页面、其他参数和来源署名
+                    parts = urlsplit(link)
+                    query = [(key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True)
+                             if not key.lower().startswith("utm_")]
+                    link = urlunsplit(parts._replace(query=urlencode(query)))
+
                 articles.append({
                     "title": entry.get("title", "Untitled"),
-                    "link": entry.get("link", ""),
+                    "link": link,
                     "summary": clean_summary,
                     "published": pub_date or "Unknown",
                     "source_name": source["name"],

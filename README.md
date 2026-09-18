@@ -57,7 +57,7 @@ data/
 ## Data Flow / 数据流
 
 ```
-15 RSS Sources → scanner.py → articles table (SQLite)
+17 RSS/API Sources → scanner.py → articles table (SQLite)
                        ↓
                   dedup.py (cross-source hash dedup)
                        ↓
@@ -82,7 +82,20 @@ Weekly: `weekly_report.py` → LLM generates zh+en HTML → saved to `data/weekl
 | Papers | ArXiv (cs.AI, cs.LG, cs.CL, cs.CV, stat.ML) |
 | Community | HuggingFace Blog, PyTorch Blog |
 | Blogs | TechCrunch AI, VentureBeat AI |
-| 中文媒体 | 雷锋网 AI, 量子位 |
+| 中文媒体 | 雷锋网 AI, 量子位, BestBlogs |
+
+### BestBlogs public RSS / BestBlogs 公开 RSS
+
+- Feed: `https://www.bestblogs.dev/zh/feeds/rss?category=ai&type=article&minScore=85&timeFilter=1w`
+- AI articles, minimum BestBlogs score 85, past week; the scanner accepts up to 100 entries per scan (`max_entries: 100`). Other RSS sources retain the default limit of 20; no existing source is replaced. The upstream score filter is not AllOfAI's quality score.
+- AI 文章、BestBlogs 评分至少 85、最近一周；单次最多采集 100 条，其他 RSS 源仍默认 20 条，不替换已有源。上游筛选分数并非 AllOfAI 的质量评分。
+- Attribution remains **BestBlogs**. RSS links point to BestBlogs article pages, not verified original-author URLs. Only this source's `utm_*` link parameters are removed before storage/hashing; other parameters and fragments remain. Repeated scans use the existing SQLite deduplication constraints.
+- 保留 **BestBlogs** 署名。RSS 链接是 BestBlogs 文章页，不标称为原作者链接；仅对此源在入库和计算哈希前去除 `utm_*` 参数，保留其他参数与片段。重复扫描沿用 SQLite 去重约束。
+
+Offline regression tests / 离线回归测试：
+```bash
+/opt/anaconda3/bin/python3 -m unittest discover -s tests -p 'test_bestblogs.py' -v
+```
 
 ## Features / 功能
 
