@@ -251,6 +251,14 @@ def export_files(data: dict) -> dict:
     lb_path.write_text(json.dumps(leaderboard_data, ensure_ascii=False, indent=2))
     print(f"💾 leaderboard.json: {len(leaderboard_data.get('models',[]))} models")
 
+    # ---- 独立刷新 GitHub Top5；失败保留原快照，不影响文章发布 ----
+    from scripts.github_top5 import refresh as refresh_github_top5
+    try:
+        top5 = refresh_github_top5(data_dir / "github_top5.json")
+        print(f"GitHub Top5: {len(top5['repos'])} repos refreshed")
+    except Exception as exc:
+        print(f"WARNING: GitHub Top5 refresh failed; previous snapshot retained: {exc}")
+
     # ---- 写入 trending.json (GitHub Trending) ----
     trending_data = __import__('scripts.pipeline.github_trending', fromlist=['export_trending_json']).export_trending_json()
     trending_path = data_dir / "trending.json"

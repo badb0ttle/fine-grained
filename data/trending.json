@@ -1,14 +1,124 @@
 {
-  "snapshot_at": "2026-08-19T00:35:51.101207+00:00",
-  "count": 1,
+  "snapshot_at": "2026-09-18T09:58:48.611360+00:00",
+  "count": 12,
   "repos": [
     {
-      "repo_full": "bojieli/ai-agent-book",
-      "description": "",
+      "repo_full": "cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars_today": 3607,
+      "total_stars": 11602,
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars_today": 3286,
+      "total_stars": 36016,
+      "url": "https://github.com/alibaba/open-code-review",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "Tencent/BrowserSkill",
+      "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
+      "language": "TypeScript",
+      "stars_today": 1302,
+      "total_stars": 4786,
+      "url": "https://github.com/Tencent/BrowserSkill",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars_today": 1171,
+      "total_stars": 261472,
+      "url": "https://github.com/affaan-m/ECC",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "Tencent/WeKnora",
+      "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "language": "Go",
+      "stars_today": 1125,
+      "total_stars": 26730,
+      "url": "https://github.com/Tencent/WeKnora",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "alphaXiv/OpenResearch",
+      "description": "Turn your coding agents into research agents",
+      "language": "Rust",
+      "stars_today": 939,
+      "total_stars": 5197,
+      "url": "https://github.com/alphaXiv/OpenResearch",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars_today": 680,
+      "total_stars": 96107,
+      "url": "https://github.com/addyosmani/agent-skills",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars_today": 538,
+      "total_stars": 146020,
+      "url": "https://github.com/anthropics/claude-code",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "cline/cline",
+      "description": "Autonomous coding agent as an SDK, IDE extension, or CLI assistant.",
+      "language": "TypeScript",
+      "stars_today": 380,
+      "total_stars": 68653,
+      "url": "https://github.com/cline/cline",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "TencentCloud/Octop",
+      "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
       "language": "Python",
-      "stars_today": 543,
-      "total_stars": 39102,
-      "url": "https://github.com/bojieli/ai-agent-book",
+      "stars_today": 367,
+      "total_stars": 3740,
+      "url": "https://github.com/TencentCloud/Octop",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "roboflow/supervision",
+      "description": "We write your reusable computer vision tools. 💜",
+      "language": "Python",
+      "stars_today": 329,
+      "total_stars": 50905,
+      "url": "https://github.com/roboflow/supervision",
+      "paper_linked": false,
+      "paper_id": null
+    },
+    {
+      "repo_full": "coder/coder",
+      "description": "Secure environments for developers and their agents",
+      "language": "Go",
+      "stars_today": 145,
+      "total_stars": 15013,
+      "url": "https://github.com/coder/coder",
       "paper_linked": false,
       "paper_id": null
     }
@@ -17,6 +127,7 @@
     "2026-06-13",
     "2026-06-13",
     "2026-08-15",
-    "2026-08-19"
+    "2026-08-19",
+    "2026-09-18"
   ]
 }

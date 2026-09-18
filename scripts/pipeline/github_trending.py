@@ -5,7 +5,7 @@ GitHub Trending 追踪模块 (GitHub Trending Scraper)
 每日抓取 github.com/trending 页面，筛选 AI/ML 相关仓库，记录 star 增量数据，
 并尝试与数据库中已有的 ArXiv 论文进行关联。
 
-技术选型：纯正则解析 HTML（零依赖，不引入 BeautifulSoup），避免依赖膨胀。
+技术选型：复用项目已有的 BeautifulSoup，按 HTML 结构解析仓库卡片。
 数据存储：github_trending 表（自建表，不在 db_init 中统一管理）。
 """
 
@@ -15,6 +15,7 @@ import time
 from datetime import datetime, timezone
 
 import requests
+from bs4 import BeautifulSoup
 
 from . import get_db
 
@@ -59,7 +60,7 @@ def fetch_trending() -> list[dict]:
 
     解析策略：
     1. HTTP GET 请求 github.com/trending?since=daily（最多重试2次）
-    2. 用正则提取 <article class="Box-row"> 仓库卡片
+    2. 用 HTML 解析器提取 article.Box-row 仓库卡片
     3. 从每个卡片中提取：repo_full, description, language, stars_today, total_stars
     4. 过滤非 AI/ML 仓库
     5. 按 stars_today 降序排列，返回前30个
@@ -92,80 +93,40 @@ def fetch_trending() -> list[dict]:
     repos = []
     seen = set()  # 去重集合
 
-    # ---- 步骤1：提取所有仓库卡片块 ----
-    # 匹配 <article class="Box-row"> ... </article>
-    articles = re.findall(
-        r'<article\s+class="Box-row"[^>]*>(.*?)</article>\s*(?=<article|$|</div>\s*</div>\s*$)',
-        html, re.DOTALL
-    )
-
-    for block in articles:
-        # ---- 提取仓库全名：/owner/repo ----
-        repo_match = re.search(r'href="(/([^/"]+)/([^/"]+))"', block)
-        if not repo_match:
+    # 按 HTML 结构定位，不依赖样式类顺序或最后一张卡片之后的内容。
+    soup = BeautifulSoup(html, "html.parser")
+    for block in soup.select("article.Box-row"):
+        repo_link = block.select_one("h2 a[href]")
+        if repo_link is None:
             continue
-        repo_full = repo_match.group(1).strip("/")
+        repo_path = str(repo_link.get("href", ""))
+        if not re.fullmatch(r"/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/?", repo_path):
+            continue
+        repo_full = repo_path.strip("/")
         if repo_full in seen:
-            continue  # 跳过已处理过的仓库
+            continue
 
-        # ---- 提取描述文本 ----
-        desc_match = re.search(
-            r'<p\s+class="(?:col-9\s+)?(?:color-fg-muted\s+)?(?:my-1\s+)?pr-4"[^>]*>\s*(.*?)\s*</p>',
-            block, re.DOTALL
-        )
-        # 去除 HTML 标签，保留纯文本
-        description = re.sub(r'<[^>]+>', '', desc_match.group(1)).strip() if desc_match else ""
-
-        # ---- AI 相关性过滤 ----
-        # 同时检查仓库名和描述，提高召回率
+        # 描述不依赖 pr-4/tmp-pr-4 等展示类，同时解码实体并折叠空白。
+        desc = block.find("p")
+        description = " ".join(desc.get_text(" ", strip=True).split()) if desc else ""
         if not _is_ai_repo(f"{repo_full} {description}"):
             continue
         seen.add(repo_full)
 
-        # ---- 提取编程语言 ----
-        lang_match = re.search(
-            r'itemprop="programmingLanguage"[^>]*>\s*([^<]+)\s*<',
-            block
-        )
-        language = lang_match.group(1).strip() if lang_match else ""
+        lang = block.select_one('[itemprop="programmingLanguage"]')
+        language = lang.get_text(strip=True) if lang else ""
 
-        # ---- 提取今日新增 Star 数 ----
-        # 主策略：匹配 "N stars today" 格式（float-sm-right 定位）
         stars_today = 0
-        star_texts = re.findall(
-            r'<span[^>]*float-sm-right[^>]*>\s*([\d,]+)\s+stars?\s+today\s*</span>',
-            block, re.IGNORECASE
-        )
-        if star_texts:
-            stars_today = int(star_texts[0].replace(",", ""))
-        else:
-            # 备用策略：匹配任何 "N stars today" 文本
-            alt = re.findall(
-                r'([\d,]+)\s+stars?\s+today',
-                block, re.IGNORECASE
-            )
-            if alt:
-                stars_today = int(alt[0].replace(",", ""))
+        for span in block.select("span.float-sm-right"):
+            match = re.search(r"([\d,]+)\s+stars?\s+today", span.get_text(" ", strip=True), re.IGNORECASE)
+            if match:
+                stars_today = int(match.group(1).replace(",", ""))
+                break
 
-        # ---- 提取总 Star 数 ----
-        # 策略：寻找 </a> 前的大数字（通常总 Star 数是卡片中最大的数字）
-        total_stars = 0
-        ts_match = re.findall(
-            r'([\d,]+)\s*</a>\s*$',
-            block, re.MULTILINE
-        )
-        for m in ts_match:
-            val = m.replace(",", "").strip()
-            if val.isdigit():
-                total_stars = max(total_stars, int(val))
-
-        # 备用策略：取所有数字中最大的那个（排除今日Star数）
-        if total_stars == 0:
-            all_nums = re.findall(r'>\s*([\d,]+)\s*<', block)
-            for n in sorted([int(x.replace(",", "")) for x in all_nums], reverse=True):
-                if n > stars_today and n > 10:
-                    total_stars = n
-                    break
+        # 仅使用该仓库的 stargazers 链接，不能把 forks 或其他数字当作 stars。
+        star_link = block.find("a", href=f"/{repo_full}/stargazers")
+        star_text = star_link.get_text(strip=True).replace(",", "") if star_link else ""
+        total_stars = int(star_text) if star_text.isdigit() else 0
 
         repos.append({
             "repo_full": repo_full,

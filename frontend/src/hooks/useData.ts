@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, Top5Repo, LeaderboardData, Article, AgentToolsData, EventsData } from '../types'
+import type { LatestData, Stats, TrendingData, ClusterData, Top5Data, LeaderboardData, Article, AgentToolsData, EventsData } from '../types'
 
 // ── Mode configuration ──
 const API_MODE: boolean = import.meta.env.VITE_API_MODE === 'true'
@@ -89,31 +89,16 @@ export function useTop5() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Top5 is now served via /trending endpoint
-    const path = API_MODE ? '/trending' : 'github_top5.json'
-    fetchJSON<TrendingData>(path)
+    // Canonical Top5 data is hosted on this site in both API and static modes.
+    fetch(`${DATA_BASE}data/github_top5.json`)
+      .then((res): Promise<Top5Data> => {
+        if (!res.ok) throw new Error(`${res.status}`)
+        return res.json()
+      })
       .then(raw => {
-        // Transform TrendingRepo[] → Top5Repo[]
-        const repos: Top5Repo[] = (raw.repos || []).map((r: any) => {
-          const [owner, name] = (r.repo_full || '').split('/')
-          return {
-            full_name: r.repo_full || '',
-            name: name || r.repo_full || '',
-            owner: owner || '',
-            description: r.description || '',
-            url: r.url || '',
-            stars: r.total_stars || 0,
-            stars_formatted: (r.total_stars || 0).toLocaleString(),
-            forks: 0,  // not available from trending endpoint
-            language: r.language || '',
-            topics: [],
-            summary: '',
-            updated_at: raw.snapshot_at || '',
-          }
-        })
         setData({
-          generated_at: raw.snapshot_at || '',
-          repos,
+          ...raw,
+          repos: [...raw.repos].sort((a, b) => b.stars - a.stars).slice(0, 5),
         })
       })
       .catch(() => {})
