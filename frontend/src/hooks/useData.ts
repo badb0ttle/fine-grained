@@ -44,8 +44,12 @@ export function useStats() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const path = API_MODE ? '/stats' : 'stats.json'
-    fetchJSON<Stats>(path)
+    // Canonical stats are hosted on this site in both API and static modes.
+    fetch(`${DATA_BASE}data/stats.json`)
+      .then((res): Promise<Stats> => {
+        if (!res.ok) throw new Error(`${res.status}`)
+        return res.json()
+      })
       .then(setData)
       .catch(e => setError(e.message))
       .finally(() => setLoading(false))

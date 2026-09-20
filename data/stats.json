@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T08:37:36.215244",
+  "generated_at": "2026-09-20T15:15:15.398765",
   "source_health": [
     {
       "name": "Apple ML Research",
@@ -47,6 +47,14 @@
       "last_success": "2026-08-19T00:34:56.146831+00:00",
       "consecutive_failures": 0,
       "article_count_last": 20,
+      "status": "healthy"
+    },
+    {
+      "name": "BestBlogs",
+      "category": "中文媒体",
+      "last_success": "2026-09-18T11:09:56.649682+00:00",
+      "consecutive_failures": 0,
+      "article_count_last": 100,
       "status": "healthy"
     },
     {
@@ -271,70 +279,49 @@
     "keywords": [
       {
         "keyword": "LLM",
-        "current_count": 48,
+        "current_count": 3,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "GPT",
-        "current_count": 22,
+        "current_count": 8,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Claude",
-        "current_count": 9,
+        "current_count": 5,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Gemini",
-        "current_count": 6,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "Mistral",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "Llama",
-        "current_count": 1,
+        "current_count": 3,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "DeepSeek",
-        "current_count": 10,
+        "current_count": 5,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "多模态",
-        "current_count": 4,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "multimodal",
-        "current_count": 11,
+        "current_count": 9,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "VLM",
-        "current_count": 6,
+        "current_count": 3,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
@@ -347,74 +334,95 @@
         "direction": "surging"
       },
       {
-        "keyword": "DPO",
-        "current_count": 2,
+        "keyword": "RLHF",
+        "current_count": 1,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "强化学习",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "fine-tun",
-        "current_count": 11,
+        "current_count": 10,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "微调",
-        "current_count": 1,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "LoRA",
-        "current_count": 2,
-        "previous_count": 0,
-        "change_pct": 100,
-        "direction": "surging"
-      },
-      {
-        "keyword": "QLoRA",
-        "current_count": 1,
+        "current_count": 4,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "RAG",
-        "current_count": 38,
+        "current_count": 1,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "Agent",
-        "current_count": 92,
+        "current_count": 34,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       },
       {
         "keyword": "智能体",
-        "current_count": 8,
+        "current_count": 7,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "量化",
+        "current_count": 2,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "code",
+        "current_count": 6,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "推理",
+        "current_count": 25,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "reasoning",
+        "current_count": 2,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "向量",
+        "current_count": 1,
+        "previous_count": 0,
+        "change_pct": 100,
+        "direction": "surging"
+      },
+      {
+        "keyword": "开源",
+        "current_count": 18,
         "previous_count": 0,
         "change_pct": 100,
         "direction": "surging"
       }
     ],
     "period": {
-      "current_start": "2026-08-12",
-      "current_end": "2026-08-19",
-      "previous_start": "2026-08-05",
-      "previous_end": "2026-08-12",
+      "current_start": "2026-09-13",
+      "current_end": "2026-09-20",
+      "previous_start": "2026-09-06",
+      "previous_end": "2026-09-13",
       "window_days": 7
     }
   }
