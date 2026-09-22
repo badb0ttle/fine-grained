@@ -1,0 +1,1 @@
+import{O as e,T as t}from"./index-qI4D4w-p.js";var n=e(t(),1);function r(e){(0,n.useEffect)(()=>{if(!e)return;let t=document.createElement(`script`);return t.type=`application/ld+json`,t.textContent=JSON.stringify(e),document.head.appendChild(t),()=>{document.head.removeChild(t)}},[e])}export{r as t};

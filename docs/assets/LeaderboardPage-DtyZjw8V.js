@@ -1,0 +1,1 @@
+import{x as e}from"./index-qI4D4w-p.js";import{t}from"./ModelLeaderboard-CXFcPR-S.js";var n=e();function r(){return(0,n.jsx)(t,{})}export{r as LeaderboardPage};

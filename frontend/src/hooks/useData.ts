@@ -117,8 +117,12 @@ export function useLeaderboard() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const path = API_MODE ? '/model-leaderboard' : 'model_leaderboard.json'
-    fetchJSON<LeaderboardData>(path)
+    // Canonical leaderboard is hosted on this site in both API and static modes.
+    fetch(`${DATA_BASE}data/model_leaderboard.json`)
+      .then((res): Promise<LeaderboardData> => {
+        if (!res.ok) throw new Error(`${res.status}`)
+        return res.json()
+      })
       .then(setData)
       .catch(() => {})
       .finally(() => setLoading(false))
