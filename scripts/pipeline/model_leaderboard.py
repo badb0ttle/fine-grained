@@ -455,6 +455,7 @@ def export_top_json(top_n: int = 20) -> dict:
 
 if __name__ == "__main__":
     result = fetch_and_export()
+    export_top_json()
     # 展示 Top 5 有 benchmark 分数的模型
     scored = [m for m in result["models"] if m.get("scores")]
     print(f"\nTop 5 (with scores):")

@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-22T11:07:38.571268+00:00",
+  "updated_at": "2026-09-24T02:16:12.950507+00:00",
   "source": "OpenRouter API (top 20 by benchmark)",
   "models": [
     {
       "name": "Anthropic: Claude Fable 5.1",
       "provider": "Anthropic",
-      "rank": 1,
+      "rank": 2,
       "scores": {
         "intelligence": 53.4
       }
@@ -13,7 +13,7 @@
     {
       "name": "Anthropic: Claude Fable 5.1 (batch)",
       "provider": "Anthropic",
-      "rank": 2,
+      "rank": 3,
       "scores": {
         "intelligence": 53.4
       }
@@ -27,25 +27,17 @@
       }
     },
     {
-      "name": "Anthropic: Claude Opus 5",
-      "provider": "Anthropic",
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "provider": "Moonshot AI",
       "rank": 5,
       "scores": {
-        "intelligence": 50.8
-      }
-    },
-    {
-      "name": "Anthropic: Claude Opus 5 (batch)",
-      "provider": "Anthropic",
-      "rank": 6,
-      "scores": {
-        "intelligence": 50.8
+        "intelligence": 43.6
       }
     },
     {
       "name": "Z.ai: GLM 5.3",
       "provider": "Z.ai",
-      "rank": 7,
+      "rank": 6,
       "scores": {
         "intelligence": 44.8
       }
@@ -53,25 +45,33 @@
     {
       "name": "Z.ai: GLM 5.3 (batch)",
       "provider": "Z.ai",
-      "rank": 8,
+      "rank": 7,
       "scores": {
         "intelligence": 44.8
       }
     },
     {
-      "name": "Z.ai: GLM 5.1",
-      "provider": "Z.ai",
-      "rank": 9,
+      "name": "Anthropic: Claude Opus 5",
+      "provider": "Anthropic",
+      "rank": 8,
       "scores": {
-        "intelligence": 26.1
+        "intelligence": 50.8
       }
     },
     {
-      "name": "Meta: Muse Spark 1.2",
-      "provider": "Meta",
+      "name": "Anthropic: Claude Opus 5 (batch)",
+      "provider": "Anthropic",
+      "rank": 9,
+      "scores": {
+        "intelligence": 50.8
+      }
+    },
+    {
+      "name": "Z.ai: GLM 5.1",
+      "provider": "Z.ai",
       "rank": 10,
       "scores": {
-        "intelligence": 39.6
+        "intelligence": 26.1
       }
     },
     {
@@ -91,9 +91,25 @@
       }
     },
     {
+      "name": "Meta: Muse Spark 1.2",
+      "provider": "Meta",
+      "rank": 13,
+      "scores": {
+        "intelligence": 39.6
+      }
+    },
+    {
+      "name": "Xiaomi: MiMo-V2.6-Pro",
+      "provider": "Xiaomi",
+      "rank": 14,
+      "scores": {
+        "intelligence": 46.3
+      }
+    },
+    {
       "name": "Z.ai: GLM 5.3 Flash",
       "provider": "Z.ai",
-      "rank": 13,
+      "rank": 15,
       "scores": {
         "intelligence": 41.8
       }
@@ -101,7 +117,7 @@
     {
       "name": "Z.ai: GLM 5.3 Flash (batch)",
       "provider": "Z.ai",
-      "rank": 14,
+      "rank": 16,
       "scores": {
         "intelligence": 41.8
       }
@@ -109,7 +125,7 @@
     {
       "name": "Google: Gemini 3.7 Flash",
       "provider": "Google",
-      "rank": 15,
+      "rank": 17,
       "scores": {
         "intelligence": 39.1
       }
@@ -117,7 +133,7 @@
     {
       "name": "Google: Gemini 3.7 Flash (batch)",
       "provider": "Google",
-      "rank": 16,
+      "rank": 18,
       "scores": {
         "intelligence": 39.1
       }
@@ -125,7 +141,7 @@
     {
       "name": "Google: Gemini 3.8 Flash",
       "provider": "Google",
-      "rank": 17,
+      "rank": 19,
       "scores": {
         "intelligence": 40.9
       }
@@ -133,7 +149,7 @@
     {
       "name": "Google: Gemini 3.8 Flash (batch)",
       "provider": "Google",
-      "rank": 18,
+      "rank": 20,
       "scores": {
         "intelligence": 40.9
       }
@@ -141,25 +157,9 @@
     {
       "name": "SpaceXAI: Grok 4.6",
       "provider": "xAI",
-      "rank": 19,
-      "scores": {
-        "intelligence": 44.3
-      }
-    },
-    {
-      "name": "OpenAI: GPT-5.5",
-      "provider": "OpenAI",
-      "rank": 20,
-      "scores": {
-        "intelligence": 38.4
-      }
-    },
-    {
-      "name": "OpenAI: GPT-5.5 (batch)",
-      "provider": "OpenAI",
       "rank": 21,
       "scores": {
-        "intelligence": 38.4
+        "intelligence": 44.3
       }
     }
   ]
