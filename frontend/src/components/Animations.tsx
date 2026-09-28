@@ -83,12 +83,13 @@ const staggerVariants: Variants = {
 }
 
 /** StaggerContainer - 包裹多个子元素，子元素按序交错淡入 */
-export function StaggerContainer({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function StaggerContainer({ children, className = '', id }: { children: ReactNode; className?: string; id?: string }) {
   return (
     <motion.div
       variants={staggerVariants}
       initial="hidden"
       animate="visible"
+      id={id}
       className={className}
     >
       {children}

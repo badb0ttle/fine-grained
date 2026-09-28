@@ -80,6 +80,7 @@ AUTHORITY = {
     # 科技媒体 — 信息丰富但非一手来源
     "TechCrunch AI":    70,
     "VentureBeat AI":   68,
+    "BestBlogs":        70,  # 精选聚合源，低于一手研究机构
     "雷锋网 AI":        65,
 }
 

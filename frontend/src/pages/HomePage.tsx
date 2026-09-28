@@ -412,7 +412,7 @@ function GithubTop5({ data, locale }: { data: Top5Data; locale: Locale }) {
 
   return (
     <FadeIn delay={0.08}>
-      <section>
+      <section id="github-top5" className="scroll-mt-24">
         <div className="flex items-center gap-2 mb-3">
           <FontAwesomeIcon icon={ICON.star} className="text-amber" />
           <h2 className="text-lg font-semibold text-text-primary">
@@ -627,6 +627,20 @@ function ContinueReading({ locale }: { locale: Locale }) {
 
 // ── HomePage（首页主体组件）──
 
+function HomeDirectory({ data, top5, trending, locale }: { data: any; top5: Top5Data | null; trending: any; locale: Locale }) {
+  const counts = data.articles.reduce((m: Record<string, number>, a: Article) => { const k = a.category || 'Other'; m[k] = (m[k] || 0) + 1; return m }, {})
+  const items = [
+    top5?.repos?.length ? ['github-top5', t(T.githubTop5, locale)] : null,
+    ['model-leaderboard', locale === 'zh' ? '最新模型' : 'Latest Models'],
+    ['curated-articles', locale === 'zh' ? '热点文章' : 'Hot Articles'],
+    ...Object.entries(counts).map(([cat, n]) => [`category-${encodeURIComponent(cat)}`, `${t(T.categoryMeta[cat] || T.defaultCategory, locale)} ${n}`]),
+    trending?.repos?.length ? ['github-trending', 'GitHub Trending'] : null,
+  ].filter(Boolean) as string[][]
+  return <nav aria-label={locale === 'zh' ? '页面目录' : 'Contents'} className="sticky top-4 z-10 hidden xl:block float-right w-52 ml-6 mb-4 bg-bg-card/90 border border-border-muted rounded-xl p-3"><div className="text-xs font-semibold text-text-primary mb-2">{locale === 'zh' ? '页面目录' : 'Contents'}</div><div className="space-y-1">{items.map(([id, label]) => <a key={id} href={`#${id}`} className="block text-xs text-text-muted hover:text-accent truncate py-1">{label}</a>)}</div></nav>
+}
+
+// ── HomePage（首页主体组件）──
+
 /** 分类展示顺序：按此顺序渲染各分类的文章区域 */
 const CAT_ORDER: CategoryKey[] = ['AI Lab', 'Paper', '中文媒体', 'Blog', 'Community', 'Discussion']
 
@@ -705,8 +719,8 @@ export function HomePage() {
   }
 
   return (
-    <div className="space-y-8">
-      {/* ========== Hero 区域 ========== */}
+    <div className="relative space-y-8">
+      <HomeDirectory data={data} top5={top5} trending={trending} locale={locale} />
       <FadeIn>
         <div className="text-center py-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary tracking-tight">
@@ -760,10 +774,12 @@ export function HomePage() {
       )}
 
       {/* ========== 模型排行榜预览 ========== */}
-      <ModelLeaderboardPreview locale={locale} />
+      <section id="model-leaderboard" className="scroll-mt-24">
+        <ModelLeaderboardPreview locale={locale} />
+      </section>
 
       {/* ========== 按分类展示文章 ========== */}
-      <StaggerContainer className="space-y-8">
+      <StaggerContainer id="curated-articles" className="space-y-8 scroll-mt-24">
         {[...CAT_ORDER, ...Object.keys(byCat).filter(c => !CAT_ORDER.includes(c as CategoryKey))]
           .filter(cat => byCat[cat])
           .map(cat => {
@@ -771,7 +787,7 @@ export function HomePage() {
             const catIcon = CATEGORY_ICONS[cat as CategoryKey] || DEFAULT_CATEGORY_ICON
             const items = byCat[cat]
             return (
-              <section key={cat}>
+              <section id={`category-${encodeURIComponent(cat)}`} className="scroll-mt-24" key={cat}>
                 {/* 分类标题 + 文章数量 */}
                 <FadeIn delay={0.05}>
                   <div className="flex items-center gap-2 mb-3">
@@ -801,9 +817,8 @@ export function HomePage() {
           })}
       </StaggerContainer>
 
-      {/* ========== GitHub Trending ========== */}
       {trending && trending.repos && trending.repos.length > 0 && (
-        <section>
+        <section id="github-trending" className="scroll-mt-24">
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-2 mb-3">
               <FontAwesomeIcon icon={ICON.fire} className="text-amber" />
