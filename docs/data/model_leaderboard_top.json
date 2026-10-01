@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T00:14:49.548460+00:00",
+  "updated_at": "2026-10-01T23:37:01.243198+00:00",
   "source": "OpenRouter API (top 20 by benchmark)",
   "models": [
     {
@@ -19,25 +19,9 @@
       }
     },
     {
-      "name": "MoonshotAI: Kimi K3",
-      "provider": "Moonshot AI",
-      "rank": 4,
-      "scores": {
-        "intelligence": 43.6
-      }
-    },
-    {
-      "name": "MoonshotAI: Kimi K3 (batch)",
-      "provider": "Moonshot AI",
-      "rank": 5,
-      "scores": {
-        "intelligence": 43.6
-      }
-    },
-    {
       "name": "Anthropic: Claude Fable 5.1",
       "provider": "Anthropic",
-      "rank": 6,
+      "rank": 4,
       "scores": {
         "intelligence": 53.4
       }
@@ -45,9 +29,25 @@
     {
       "name": "Anthropic: Claude Fable 5.1 (batch)",
       "provider": "Anthropic",
-      "rank": 7,
+      "rank": 5,
       "scores": {
         "intelligence": 53.4
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K3",
+      "provider": "Moonshot AI",
+      "rank": 6,
+      "scores": {
+        "intelligence": 43.6
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "provider": "Moonshot AI",
+      "rank": 7,
+      "scores": {
+        "intelligence": 43.6
       }
     },
     {
@@ -67,15 +67,15 @@
       }
     },
     {
-      "name": "Anthropic: Claude Opus 5",
-      "provider": "Anthropic",
+      "name": "Z.ai: GLM 5.1",
+      "provider": "Z.ai",
       "rank": 10,
       "scores": {
-        "intelligence": 50.8
+        "intelligence": 26.1
       }
     },
     {
-      "name": "Anthropic: Claude Opus 5 (batch)",
+      "name": "Anthropic: Claude Opus 5",
       "provider": "Anthropic",
       "rank": 11,
       "scores": {
@@ -83,11 +83,11 @@
       }
     },
     {
-      "name": "Z.ai: GLM 5.1",
-      "provider": "Z.ai",
+      "name": "Anthropic: Claude Opus 5 (batch)",
+      "provider": "Anthropic",
       "rank": 12,
       "scores": {
-        "intelligence": 26.1
+        "intelligence": 50.8
       }
     },
     {
@@ -123,25 +123,9 @@
       }
     },
     {
-      "name": "Z.ai: GLM 5.3 Flash",
-      "provider": "Z.ai",
-      "rank": 17,
-      "scores": {
-        "intelligence": 41.8
-      }
-    },
-    {
-      "name": "Z.ai: GLM 5.3 Flash (batch)",
-      "provider": "Z.ai",
-      "rank": 18,
-      "scores": {
-        "intelligence": 41.8
-      }
-    },
-    {
       "name": "Google: Gemini 3.7 Flash",
       "provider": "Google",
-      "rank": 19,
+      "rank": 17,
       "scores": {
         "intelligence": 39.1
       }
@@ -149,9 +133,25 @@
     {
       "name": "Google: Gemini 3.7 Flash (batch)",
       "provider": "Google",
-      "rank": 20,
+      "rank": 18,
       "scores": {
         "intelligence": 39.1
+      }
+    },
+    {
+      "name": "Z.ai: GLM 5.3 Flash",
+      "provider": "Z.ai",
+      "rank": 19,
+      "scores": {
+        "intelligence": 41.8
+      }
+    },
+    {
+      "name": "Z.ai: GLM 5.3 Flash (batch)",
+      "provider": "Z.ai",
+      "rank": 20,
+      "scores": {
+        "intelligence": 41.8
       }
     },
     {
