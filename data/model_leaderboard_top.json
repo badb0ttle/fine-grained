@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T00:33:51.308348+00:00",
+  "updated_at": "2026-10-09T23:41:51.849246+00:00",
   "source": "OpenRouter API (top 20 by benchmark)",
   "models": [
     {
@@ -19,49 +19,9 @@
       }
     },
     {
-      "name": "Meta: Muse Spark 1.3",
-      "provider": "Meta",
-      "rank": 3,
-      "scores": {
-        "intelligence": 48.1
-      }
-    },
-    {
-      "name": "Anthropic: Claude Fable 5.1",
-      "provider": "Anthropic",
-      "rank": 4,
-      "scores": {
-        "intelligence": 53.4
-      }
-    },
-    {
-      "name": "Anthropic: Claude Fable 5.1 (batch)",
-      "provider": "Anthropic",
-      "rank": 5,
-      "scores": {
-        "intelligence": 53.4
-      }
-    },
-    {
-      "name": "MoonshotAI: Kimi K3",
-      "provider": "Moonshot AI",
-      "rank": 6,
-      "scores": {
-        "intelligence": 43.6
-      }
-    },
-    {
-      "name": "MoonshotAI: Kimi K3 (batch)",
-      "provider": "Moonshot AI",
-      "rank": 7,
-      "scores": {
-        "intelligence": 43.6
-      }
-    },
-    {
       "name": "Anthropic: Claude Sonnet 5.5",
       "provider": "Anthropic",
-      "rank": 8,
+      "rank": 3,
       "scores": {
         "intelligence": 56.0
       }
@@ -69,15 +29,71 @@
     {
       "name": "Anthropic: Claude Sonnet 5.5 (batch)",
       "provider": "Anthropic",
-      "rank": 9,
+      "rank": 4,
       "scores": {
         "intelligence": 56.0
       }
     },
     {
+      "name": "Meta: Muse Spark 1.3",
+      "provider": "Meta",
+      "rank": 5,
+      "scores": {
+        "intelligence": 48.1
+      }
+    },
+    {
+      "name": "Anthropic: Claude Fable 5.1",
+      "provider": "Anthropic",
+      "rank": 6,
+      "scores": {
+        "intelligence": 53.4
+      }
+    },
+    {
+      "name": "Anthropic: Claude Fable 5.1 (batch)",
+      "provider": "Anthropic",
+      "rank": 7,
+      "scores": {
+        "intelligence": 53.4
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K3",
+      "provider": "Moonshot AI",
+      "rank": 8,
+      "scores": {
+        "intelligence": 43.6
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K3 (batch)",
+      "provider": "Moonshot AI",
+      "rank": 9,
+      "scores": {
+        "intelligence": 43.6
+      }
+    },
+    {
+      "name": "OpenAI: GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "rank": 10,
+      "scores": {
+        "intelligence": 51.8
+      }
+    },
+    {
+      "name": "OpenAI: GPT-6.1 Sol (batch)",
+      "provider": "OpenAI",
+      "rank": 11,
+      "scores": {
+        "intelligence": 51.8
+      }
+    },
+    {
       "name": "Z.ai: GLM 5.1",
       "provider": "Z.ai",
-      "rank": 10,
+      "rank": 12,
       "scores": {
         "intelligence": 26.1
       }
@@ -85,7 +101,7 @@
     {
       "name": "Anthropic: Claude Opus 5",
       "provider": "Anthropic",
-      "rank": 11,
+      "rank": 13,
       "scores": {
         "intelligence": 50.8
       }
@@ -93,7 +109,7 @@
     {
       "name": "Anthropic: Claude Opus 5 (batch)",
       "provider": "Anthropic",
-      "rank": 12,
+      "rank": 14,
       "scores": {
         "intelligence": 50.8
       }
@@ -101,7 +117,7 @@
     {
       "name": "Z.ai: GLM 5.3",
       "provider": "Z.ai",
-      "rank": 13,
+      "rank": 15,
       "scores": {
         "intelligence": 44.8
       }
@@ -109,7 +125,7 @@
     {
       "name": "Z.ai: GLM 5.3 (batch)",
       "provider": "Z.ai",
-      "rank": 14,
+      "rank": 16,
       "scores": {
         "intelligence": 44.8
       }
@@ -117,7 +133,7 @@
     {
       "name": "Meta: Muse Spark 1.2",
       "provider": "Meta",
-      "rank": 15,
+      "rank": 17,
       "scores": {
         "intelligence": 39.6
       }
@@ -125,7 +141,7 @@
     {
       "name": "Anthropic: Claude Fable 5",
       "provider": "Anthropic",
-      "rank": 16,
+      "rank": 18,
       "scores": {
         "intelligence": 49.6
       }
@@ -133,7 +149,7 @@
     {
       "name": "Anthropic: Claude Fable 5 (batch)",
       "provider": "Anthropic",
-      "rank": 17,
+      "rank": 19,
       "scores": {
         "intelligence": 49.6
       }
@@ -141,25 +157,9 @@
     {
       "name": "Xiaomi: MiMo-V2.6-Pro",
       "provider": "Xiaomi",
-      "rank": 18,
-      "scores": {
-        "intelligence": 46.3
-      }
-    },
-    {
-      "name": "Google: Gemini 3.7 Flash",
-      "provider": "Google",
-      "rank": 19,
-      "scores": {
-        "intelligence": 39.6
-      }
-    },
-    {
-      "name": "Google: Gemini 3.7 Flash (batch)",
-      "provider": "Google",
       "rank": 20,
       "scores": {
-        "intelligence": 39.6
+        "intelligence": 46.3
       }
     }
   ]
